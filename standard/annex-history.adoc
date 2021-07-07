@@ -1,0 +1,9 @@
+[appendix]
+:appendix-caption: Annex
+== Revision History
+
+[width="90%",options="header"]
+|===
+|Date |Release |Editor | Primary clauses modified |Description
+|2021-07-06 |0.1 |Taehoon Kim |all |initial version
+|===
