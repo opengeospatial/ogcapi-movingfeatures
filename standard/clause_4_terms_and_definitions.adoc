@@ -10,8 +10,71 @@ The definitions of terms such as standard, specification, requirement, and confo
 
 For the purposes of this document, the following additional terms and definitions apply.
 
-term name::
-text of the definition
+application programming interface (API)::
+a formally defined set of types and methods which establish a contract between client code which uses the API
+and implementation code which provides the API
 
-term name::
-text of the definition
+coordinate::
+one of a sequence of numbers designating the position of a point +
+[small]#Note 1 to entry: In a spatial coordinate reference system, the coordinate numbers are qualified by units.# +
+ [source: ISO 19111]
+
+coordinate reference system (CRS)::
+coordinate system that is related to an object by a datum +
+[small]#Note 1 to entry: Geodetic and vertical datums are referred to as reference frames.# +
+[small]#Note 2 to entry: For geodetic and vertical reference frames, the object will be the Earth.
+In planetary applications, geodetic and vertical reference frames may be applied to other celestial bodies.# +
+ [source: ISO 19111]
+
+dataset::
+identifiable collection of data +
+ [source: ISO 19115-1]
+
+datatype::
+specification of a value domain with operations allowed on values in this domain +
+[small]#Examples: `Integer`, `Real`, `Boolean`, `String` and `Date`.# +
+[small]#Note 1 to entry: Data types include primitive predefined types and user definable types.# +
+ [source: ISO 19103]
+
+dynamic attribute::
+characteristic of a feature in which its value varies with time +
+ [source: OGC 16-140]
+
+feature::
+abstraction of a real world phenomena +
+[small]#Note 1 to entry: A feature can occur as a type or an instance.
+Feature type or feature instance should be used when only one is meant.# +
+ [source: ISO 19109]
+
+feature attribute::
+characteristic of a feature +
+[small]#Note 1 to entry: A feature attribute can occur as a type or an instance.
+Feature attribute type or feature attribute instance is used when only one is meant.# +
+ [source: ISO 19109]
+
+feature table::
+table where the columns represent feature attributes, and the rows represent features +
+ [source: OGC 06-104]
+
+geographic feature::
+representation of real world phenomenon associated with a location relative to the Earth +
+ [source: ISO 19101-2]
+
+geometric object::
+spatial object representing a geometric set +
+ [source: ISO 19107:2003]
+
+moving feature::
+feature whose location changes over time +
+[small]#Note 1 to entry: Its base representation uses a local origin and local coordinate vectors
+of a geometric object at a given reference time.# +
+[small]#Note 2 to entry: The local origin and ordinate vectors establish an engineering coordinate
+reference system (ISO 19111), also called a local frame or a local Euclidean coordinate system.#
+
+property::
+facet or attribute of an object referenced by a name +
+ [source: ISO 19143]
+
+trajectory::
+path of a moving point described by a one parameter set of points +
+ [source: ISO 19141]
