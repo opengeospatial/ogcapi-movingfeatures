@@ -1,1 +1,137 @@
 == Overview
+=== General
+
+The https://ogcapi.ogc.org/[OGC API] standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, etc.). https://ogcapi.ogc.org/common/[OGC API-Common] defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API-Common with features specific to a resource type. This OGC API-MovingFeatures standard defines an API with two goals:
+
+. Provide access to *_Moving Features_* conformant to the <<mf-json-encoding-schema-overview,OGC Moving Features JSON encoding standard>>.
+. Provide functionality comparable to that of the <<mf-access-overview,OGC Moving Features Access standard>>.
+
+[[mf-json-encoding-schema-overview]]
+=== Moving Features JSON Encoding Schema
+
+[#mf-prism-uml,reftext='{figure-caption} {counter:figure-num}']
+.Class diagram for MF-JSON Prism
+image::./images/mf-geojson-prism.png[mf-prism-uml, pdfwidth=100%, width=95%, align="center"]
+
+
+[[movingFeatures-definition]]
+=== Moving Features Schema
+
+The following table lists the properties that may be included in a moving feature.
+
+[[moving-feature-properties]]
+[reftext='{table-caption} {counter:table-num}']
+.Table of the properties related to the moving feature
+[cols="2,5",options="header"]
+|===
+|Property           |Description
+|id                 |An identifier for the resource assigned by an external entity.
+|type               |A feature type of GeoJSON (i.e., one of 'Feature' or 'FeatureCollection').
+|geometry           |A projective geometry of the moving feature.
+|properties         |A set of property of GeoJSON.
+|temporalGeometry   |A <<temporalGeometry-definition,TemporalGeometry>> object.
+|temporalProperties |A set of <<temporalProperty-definition,TemporalProperty>> object.
+|bbox               |A bounding box information for the moving feature.
+|time               |A life span information for the moving feature.
+|crs                |A coordinate reference system used for spatial-temporal values.
+|trs                |A temporal coordinate reference system used for spatial-temporal values.
+|===
+
+[[temporalGeometry-definition]]
+=== Temporal Geometry Schema
+
+
+[[temporalProperty-definition]]
+=== Temporal Property Schema
+
+
+[[movingFeaturesCollection-definition]]
+=== Moving Feature Collection Schema
+
+A moving feature collection is an object that groups and describes a set of related <<movingFeatures-definition,Moving Feature>>.  The collection object is the primary access point from which a deployed set of moving features can be accessed.
+
+Depending on the deployment pattern, the collection may provide a link to each individual moving feature of the collection or a link to a search access point for retrieving sub-sets of moving features.
+
+<<moving-feature-collection-properties>> list the _core_ set of properties that may be used to describe a moving feature collection.
+
+[[moving-feature-collection-properties]]
+[reftext='{table-caption} {counter:table-num}']
+.Additional collection information properties
+[cols="30,70",options="header"]
+|===
+|Property           |Description
+|_**id**_           |A unique identifier for the collection
+|_**title**_        |A human-readable name given to the collection.
+|_**description**_  |A description of the members of the collection.
+|_**attribution**_  |An attribution for the collection.
+|_**links**_        |A list of references to other documents include one link per record that is part of this collection.
+|_**extent**_       |The spatio-temporal coverage of the resources aggregated by this collection.
+|_**itemType**_     |An indicator about the type of the items in the collection.
+|_**crs**_          |A list of coordinate reference system used for spatial-temporal values.
+|updateFrequency    |A time interval of sampling location.
+|keywords           |A list of keywords or tag associated with the collection.
+|===
+
+NOTE: The properties in bold are inherited from OGC API Common and OGC API Features.
+
+It is anticipated that this set of properties will be extended to enrich the information content of the collection metadata to suit specific needs.
+
+[[mf-access-overview]]
+=== Moving Features Access Schema
+
+
+=== Resource Paths
+
+<<mf-api-paths>> summarizes the access paths and relation types defined in this standard.
+
+[#mf-api-paths,reftext='{table-caption} {counter:table-num}']
+.Moving Features API Paths
+[width="90%",cols="2,^1,4",options="header"]
+|===
+^|**Path Template** ^|**Relation** ^|**Resource**
+
+3+^|**Common**
+|<<landing-page,{root}/>>|none|Landing page for this dataset distribution
+|<<api-definition,{root}/api>>|`service-desc or service-doc`|API Description (optional)
+|<<conformance-classes,{root}/conformance>>|`conformance`|Conformance Classes
+
+3+^|**Collections**
+|<<collections,{root}/collections>>|`data`|Metadata describing the <<movingFeaturesCollection-definition,MovingFeatureCollection>> of data available from this API.
+|<<collections,{root}/collections/{collectionId}>>| |Metadata describing the <<movingFeaturesCollection-definition,MovingFeatureCollection>> of data which has the unique identifier `{collectionId}`
+
+3+^|**Moving Features**
+|<<moving-features,{root}/collections/{collectionId}/mfeatures>>|`items`|Retrieve metadata about available items
+|<<moving-features,{root}/collections/{collectionId}/mfeatures/{mFeatureId}>>|`item`|
+|<<moving-features,{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalGeometry>>|`items`|
+|<<moving-features,{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalGeometry/{tGeometryId}>>|`item`|
+|<<moving-features,{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalProperties>>|`items`|
+|<<moving-features,{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalProperties/{tPropertyName}>>|`item`|
+
+3+^|**Processes**
+|===
+
+Where:
+
+* `{root}`          = Base URI for the API server
+* `{collectionId}`  = an identifier for a specific <<movingFeaturesCollection-definition,MovingFeatureCollection>> of data
+* `{mFeatureId}`    = an identifier for a specific <<movingFeatures-definition,MovingFeatures>> of a specific <<movingFeaturesCollection-definition,MovingFeatureCollection>> of data
+* `{tGeometryId}`   = an identifier for a specific <<temporalGeometry-definition,TemporalGeometry>> of a specific <<movingFeatures-definition,MovingFeatures>> of data
+* `{tPropertyName}` = an identifier for a specific <<temporalProperty-definition,TemporalProperty>> of a specific <<movingFeatures-definition,MovingFeatures>> of data
+
+[[api-behavior-model-overview]]
+==== API Behavior Model
+
+==== Search
+
+The core search capability is based on https://ogcapi.ogc.org/common/[OGC API-Common] and thus supports:
+
+* bounding box searches,
+* time instant or time period searches,
+* and equality predicates (i.e. _property_=_value_).
+
+OGC API-MovingFeatures extends these core search capabilities to include:
+
+* keyword searches.
+
+[[dependencies-overview]]
+==== Dependencies
