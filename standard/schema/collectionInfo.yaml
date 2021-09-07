@@ -1,0 +1,29 @@
+type: object
+required:
+  - id
+  - links
+  - itemType
+properties:
+  id:
+    description: identifier of the collection used, for example, in URIs
+    type: string
+  title:
+    description: human readable title of the collection
+    type: string
+    example: address
+  description:
+    description: a description of the features in the collection
+    type: string
+    example: An address.
+  links:
+    type: array
+    items:
+      $ref: link.yaml
+  extent:
+    $ref: extent.yaml
+  itemType:
+    description: indicator about the type of the items in the collection.
+    type: string
+    enum:
+      - feature
+      - movingfeature

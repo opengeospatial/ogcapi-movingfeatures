@@ -578,31 +578,73 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_overview">7. Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_general">7.1. General</a></li>
-<li><a href="#mf-json-encoding-schema-overview">7.2. Moving Features JSON Encoding Schema</a></li>
-<li><a href="#movingFeatures-definition">7.3. Moving Features Schema</a></li>
-<li><a href="#temporalGeometry-definition">7.4. Temporal Geometry Schema</a></li>
-<li><a href="#temporalProperty-definition">7.5. Temporal Property Schema</a></li>
-<li><a href="#movingFeaturesCollection-definition">7.6. Moving Feature Collection Schema</a></li>
-<li><a href="#mf-access-overview">7.7. Moving Features Access Schema</a></li>
-<li><a href="#_resource_paths">7.8. Resource Paths</a>
-<ul class="sectlevel3">
-<li><a href="#api-behavior-model-overview">7.8.1. API Behavior Model</a></li>
-<li><a href="#_search">7.8.2. Search</a></li>
-<li><a href="#dependencies-overview">7.8.3. Dependencies</a></li>
+<li><a href="#api-behavior-model-overview">7.2. API Behavior Model</a></li>
+<li><a href="#_search">7.3. Search</a></li>
+<li><a href="#dependencies-overview">7.4. Dependencies</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#_requirements_classes_for_moving_features">8. Requirements Classes for Moving Features</a>
+<li><a href="#clause-core-collection">8. Requirements Class "Collection Catalog"</a>
 <ul class="sectlevel2">
-<li><a href="#_requirements_class_movingfeaturecollection">8.1. Requirements Class "MovingFeatureCollection"</a></li>
-<li><a href="#_requirements_class_movingfeatures">8.2. Requirements Class "MovingFeatures"</a></li>
-<li><a href="#_requirements_class_temporalgeometry">8.3. Requirements Class "TemporalGeometry"</a></li>
-<li><a href="#_requirements_class_temporalproperties">8.4. Requirements Class "TemporalProperties"</a></li>
+<li><a href="#_overview_2">8.1. Overview</a></li>
+<li><a href="#collection-schema">8.2. Schema of a collection metadata</a>
+<ul class="sectlevel3">
+<li><a href="#_update_frequency">8.2.1. Update Frequency</a></li>
 </ul>
 </li>
-<li><a href="#_query_and_information_resources">9. Query and Information Resources</a></li>
-<li><a href="#_general_requirements">10. General Requirements</a></li>
+<li><a href="#_collections">8.3. Collections</a>
+<ul class="sectlevel3">
+<li><a href="#_operation">8.3.1. Operation</a></li>
+<li><a href="#_response">8.3.2. Response</a></li>
+<li><a href="#_error_situations">8.3.3. Error situations</a></li>
+</ul>
+</li>
+<li><a href="#_collection_information">8.4. Collection Information</a>
+<ul class="sectlevel3">
+<li><a href="#_operation_2">8.4.1. Operation</a></li>
+<li><a href="#_response_2">8.4.2. Response</a></li>
+<li><a href="#_error_situations_2">8.4.3. Error situations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#clause-core-movingfeature">9. Requirements Class "MovingFeature"</a>
+<ul class="sectlevel2">
+<li><a href="#_overview_3">9.1. Overview</a></li>
+<li><a href="#_features">9.2. Features</a>
+<ul class="sectlevel3">
+<li><a href="#_operation_3">9.2.1. Operation</a></li>
+<li><a href="#_response_3">9.2.2. Response</a></li>
+<li><a href="#_error_situations_3">9.2.3. Error situations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#clause-core-temporalGeometry">10. Requirements Class "TemporalGeometry"</a>
+<ul class="sectlevel2">
+<li><a href="#_overview_4">10.1. Overview</a>
+<ul class="sectlevel3">
+<li><a href="#_operation_4">10.1.1. Operation</a></li>
+<li><a href="#_response_4">10.1.2. Response</a></li>
+<li><a href="#_parameters">10.1.3. Parameters</a></li>
+<li><a href="#_error_situations_4">10.1.4. Error situations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#clause-core-temporalProperty">11. Requirements Class "TemporalProperties"</a>
+<ul class="sectlevel2">
+<li><a href="#_overview_5">11.1. Overview</a>
+<ul class="sectlevel3">
+<li><a href="#_operation_5">11.1.1. Operation</a></li>
+<li><a href="#_response_5">11.1.2. Response</a></li>
+<li><a href="#_parameters_2">11.1.3. Parameters</a></li>
+<li><a href="#_error_situations_5">11.1.4. Error situations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_query_and_information_resources">12. Query and Information Resources</a></li>
+<li><a href="#_general_requirements">13. General Requirements</a></li>
 <li><a href="#_requirements_detail">Annex A: Requirements Detail</a>
 <ul class="sectlevel2">
 <li><a href="#_conformance_class_a">A.1. Conformance Class A</a>
@@ -993,190 +1035,42 @@ reference system (ISO 19111), also called a local frame or a local Euclidean coo
 <div class="sect2">
 <h3 id="_general"><a class="anchor" href="#_general"></a>7.1. General</h3>
 <div class="paragraph">
-<p>The <a href="https://ogcapi.ogc.org/">OGC API</a> standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, etc.). <a href="https://ogcapi.ogc.org/common/">OGC API-Common</a> defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API-Common with features specific to a resource type. This OGC API-MovingFeatures standard defines an API with two goals:</p>
+<p>The <a href="https://ogcapi.ogc.org/">OGC API</a> standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, etc.) <a href="https://ogcapi.ogc.org/common/">OGC API-Common</a> defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API-Common with features specific to a resource type. This OGC API-MovingFeatures standard defines an API with two goals:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Provide access to <strong><em>Moving Features</em></strong> conformant to the <a href="#mf-json-encoding-schema-overview">OGC Moving Features JSON encoding standard</a>.</p>
+<p>Provide access to <strong><em>Moving Features</em></strong> conformance to the <a href="#mf-json-encoding-schema-overview">OGC Moving Features JSON encoding standard</a>.</p>
 </li>
 <li>
 <p>Provide functionality comparable to that of the <a href="#mf-access-overview">OGC Moving Features Access standard</a>.</p>
 </li>
 </ol>
 </div>
-</div>
-<div class="sect2">
-<h3 id="mf-json-encoding-schema-overview"><a class="anchor" href="#mf-json-encoding-schema-overview"></a>7.2. Moving Features JSON Encoding Schema</h3>
-<div id="mf-prism-uml" class="imageblock text-center">
-<div class="content">
-<img src="./images/mf-geojson-prism.png" alt="mf-prism-uml" width="95%">
-</div>
-<div class="title">Figure 1. Class diagram for MF-JSON Prism</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="movingFeatures-definition"><a class="anchor" href="#movingFeatures-definition"></a>7.3. Moving Features Schema</h3>
 <div class="paragraph">
-<p>The following table lists the properties that may be included in a moving feature.</p>
+<p>Resources exposed through an OGC API may be accessed through a Universal Resource Identifier (URI). URIs are composed of three sections:</p>
 </div>
-<table id="moving-feature-properties" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Table of the properties related to the moving feature</caption>
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 71.4286%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An identifier for the resource assigned by an external entity.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A feature type of GeoJSON (i.e., one of 'Feature' or 'FeatureCollection').</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geometry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A projective geometry of the moving feature.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A set of property of GeoJSON.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">temporalGeometry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#temporalGeometry-definition">TemporalGeometry</a> object.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">temporalProperties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A set of <a href="#temporalProperty-definition">TemporalProperty</a> object.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bbox</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A bounding box information for the moving feature.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A life span information for the moving feature.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">crs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A coordinate reference system used for spatial-temporal values.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A temporal coordinate reference system used for spatial-temporal values.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="temporalGeometry-definition"><a class="anchor" href="#temporalGeometry-definition"></a>7.4. Temporal Geometry Schema</h3>
-
-</div>
-<div class="sect2">
-<h3 id="temporalProperty-definition"><a class="anchor" href="#temporalProperty-definition"></a>7.5. Temporal Property Schema</h3>
-
-</div>
-<div class="sect2">
-<h3 id="movingFeaturesCollection-definition"><a class="anchor" href="#movingFeaturesCollection-definition"></a>7.6. Moving Feature Collection Schema</h3>
-<div class="paragraph">
-<p>A moving feature collection is an object that groups and describes a set of related <a href="#movingFeatures-definition">Moving Feature</a>.  The collection object is the primary access point from which a deployed set of moving features can be accessed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dataset distribution API: The endpoint corresponding to a dataset distribution, where the landing page resource as defined in OGC API-Common-Part 1: Core is available (subsequently referred to as Base URI or <code>{root}</code>)</p>
+</li>
+<li>
+<p>Access Paths: Unique paths to Resources</p>
+</li>
+<li>
+<p>Query Parameters: Parameters to adjust the representation of a Resource or Resources like encoding format or subsetting</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Depending on the deployment pattern, the collection may provide a link to each individual moving feature of the collection or a link to a search access point for retrieving sub-sets of moving features.</p>
+<p>Access Paths are used to build resource identifiers. It is recommended, but not required. Most resources are also accessible through links on previously accessed resources. Unique relation types are used for each resource.</p>
 </div>
 <div class="paragraph">
-<p><a href="#moving-feature-collection-properties">Table 2</a> list the <em>core</em> set of properties that may be used to describe a moving feature collection.</p>
-</div>
-<table id="moving-feature-collection-properties" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Additional collection information properties</caption>
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>id</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier for the collection</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>title</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A human-readable name given to the collection.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>description</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A description of the members of the collection.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>attribution</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An attribution for the collection.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>links</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A list of references to other documents include one link per record that is part of this collection.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>extent</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The spatio-temporal coverage of the resources aggregated by this collection.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>itemType</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An indicator about the type of the items in the collection.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>crs</strong></em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A list of coordinate reference system used for spatial-temporal values.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">updateFrequency</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A time interval of sampling location.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A list of keywords or tag associated with the collection.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The properties in bold are inherited from OGC API Common and OGC API Features.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>It is anticipated that this set of properties will be extended to enrich the information content of the collection metadata to suit specific needs.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="mf-access-overview"><a class="anchor" href="#mf-access-overview"></a>7.7. Moving Features Access Schema</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_resource_paths"><a class="anchor" href="#_resource_paths"></a>7.8. Resource Paths</h3>
-<div class="paragraph">
-<p><a href="#mf-api-paths">Table 3</a> summarizes the access paths and relation types defined in this standard.</p>
+<p><a href="#mf-api-paths">Table 1</a> summarizes the access paths and relation types defined in this standard.</p>
 </div>
 <table id="mf-api-paths" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 3. Moving Features API Paths</caption>
+<caption class="title">Table 1. Moving Features API Paths</caption>
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 14.2857%;">
@@ -1214,43 +1108,43 @@ The properties in bold are inherited from OGC API Common and OGC API Features.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#collections">{root}/collections</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>data</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata describing the <a href="#movingFeaturesCollection-definition">MovingFeatureCollection</a> of data available from this API.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata describing the <a href="#movingFeatureCollection-definition">MovingFeatureCollection</a> of data available from this API.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#collections">{root}/collections/{collectionId}</a></p></td>
 <td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata describing the <a href="#movingFeaturesCollection-definition">MovingFeatureCollection</a> of data which has the unique identifier <code>{collectionId}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata describing the <a href="#movingFeatureCollection-definition">MovingFeatureCollection</a> of data which has the unique identifier <code>{collectionId}</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" colspan="3"><p class="tableblock"><strong>Moving Features</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/mfeatures</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/items</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>items</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve metadata about available items</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/mfeatures/{mFeatureId}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/items/{mFeatureId}</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalGeometry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/items/{mFeatureId}/temporalGeometry</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>items</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalGeometry/{tGeometryId}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/items/{mFeatureId}/temporalGeometry/{tGeometryId}</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalProperties</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/items/{mFeatureId}/temporalProperties</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>items</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/mfeatures/{mFeatureId}/temporalProperties/{tPropertyName}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#moving-features">{root}/collections/{collectionId}/items/{mFeatureId}/temporalProperties/{tPropertyName}</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -1268,10 +1162,10 @@ The properties in bold are inherited from OGC API Common and OGC API Features.
 <p><code>{root}</code>          = Base URI for the API server</p>
 </li>
 <li>
-<p><code>{collectionId}</code>  = an identifier for a specific <a href="#movingFeaturesCollection-definition">MovingFeatureCollection</a> of data</p>
+<p><code>{collectionId}</code>  = an identifier for a specific <a href="#movingFeatureCollection-definition">MovingFeatureCollection</a> of data</p>
 </li>
 <li>
-<p><code>{mFeatureId}</code>    = an identifier for a specific <a href="#movingFeatures-definition">MovingFeatures</a> of a specific <a href="#movingFeaturesCollection-definition">MovingFeatureCollection</a> of data</p>
+<p><code>{mFeatureId}</code>    = an identifier for a specific <a href="#movingFeatures-definition">MovingFeatures</a> of a specific <a href="#movingFeatureCollection-definition">MovingFeatureCollection</a> of data</p>
 </li>
 <li>
 <p><code>{tGeometryId}</code>   = an identifier for a specific <a href="#temporalGeometry-definition">TemporalGeometry</a> of a specific <a href="#movingFeatures-definition">MovingFeatures</a> of data</p>
@@ -1281,12 +1175,15 @@ The properties in bold are inherited from OGC API Common and OGC API Features.
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="api-behavior-model-overview"><a class="anchor" href="#api-behavior-model-overview"></a>7.8.1. API Behavior Model</h4>
-
 </div>
-<div class="sect3">
-<h4 id="_search"><a class="anchor" href="#_search"></a>7.8.2. Search</h4>
+<div class="sect2">
+<h3 id="api-behavior-model-overview"><a class="anchor" href="#api-behavior-model-overview"></a>7.2. API Behavior Model</h3>
+<div class="paragraph">
+<p>T.B.D</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_search"><a class="anchor" href="#_search"></a>7.3. Search</h3>
 <div class="paragraph">
 <p>The core search capability is based on <a href="https://ogcapi.ogc.org/common/">OGC API-Common</a> and thus supports:</p>
 </div>
@@ -1314,42 +1211,729 @@ The properties in bold are inherited from OGC API Common and OGC API Features.
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="dependencies-overview"><a class="anchor" href="#dependencies-overview"></a>7.4. Dependencies</h3>
+<div class="paragraph">
+<p>The OGC API-MovingFeatures (shortly, API-MF) standard is an extension of the OGC API-Common and the OGC API-Features standards. Therefore, an implementation of API-MF shall first satisfy the appropriate Requirements Classes from API-Common and API-Features. <a href="#req-mappings">Table 2</a>, identifies the OGC API - Common and OGC API - Features Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.</p>
+</div>
+<table id="req-mappings" class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 2. Required OGC API - Common and OGC API - Features Requirements Classes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>API - Record Section</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>OGC API - Common, OGC API - Features Requirements Class</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#landing-page">API Landing Page</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#api-definition">API Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#conformance-classes">Declaration of Conformance Classes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#movingFeatureCollection-access">MovingFeatureCollection</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#movingFeatures-access">MovingFeatures</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#temporalGeometry-access">TemporalGeometry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#temporalProperties-access">TemporalProperties</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#requirements-class-openapi_3_0-clause">OpenAPI 3.0</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#requirements-class-json-clause">JSON</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="clause-core-collection"><a class="anchor" href="#clause-core-collection"></a>8. Requirements Class "Collection Catalog"</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview_2"><a class="anchor" href="#_overview_2"></a>8.1. Overview</h3>
+<table id="rc_movingfeature_collection" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Requirements Class</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeature-collection" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeature-collection</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web API</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <code>Collection Catalog</code> requirements class defines the requirements for a collection.
+A collection is an object that provides information about and access to a set of related <a href="#clause-core-movingfeature">MovingFeature</a>.</p>
+</div>
+<div class="paragraph">
+<p>The schema for the collection object presented in this clause is an extension of the collection schema defined in <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description">OGC API-Common</a> and <a href="http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection\_">OGC API-Features</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="collection-schema"><a class="anchor" href="#collection-schema"></a>8.2. Schema of a collection metadata</h3>
+<div class="paragraph">
+<p><a href="#collection-properties-table">Table 3</a> defines the set of properties that may be used to describe a collection.</p>
+</div>
+<table id="collection-properties-table" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Table of collection properties</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 5%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Requirement</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>id</strong></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier to the collection.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>title</strong></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A human-readable name given to the collection.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>description</strong></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A free-text description of the collection.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>links</strong></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>extent</strong></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatio-temporal coverage of the collection.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>itemType</strong></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed to the value "movingfeature".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>crs</strong></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of coordinate reference system used for spatial-temporal values.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updateFrequency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A time interval of sampling location.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The properties <em>id</em>, <em>title</em>, <em>description</em>, <em>links</em>, <em>extent</em>, <em>itemsType</em> and <em>crs</em> were inherited from <a href="http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection\_">OGC API-Common</a> and <a href="http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection\_">OGC API-Features</a>.
+</td>
+</tr>
+</table>
+</div>
+<table id="req_core_mandatory-queryables-collection" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>/req/core/mandatory-collection</strong></p>
+</div>
+<div class="paragraph">
+<p>A collection object SHALL contain all the mandatory properties listed in <a href="#collection-properties-table">Table 3</a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="sect3">
-<h4 id="dependencies-overview"><a class="anchor" href="#dependencies-overview"></a>7.8.3. Dependencies</h4>
-
+<h4 id="_update_frequency"><a class="anchor" href="#_update_frequency"></a>8.2.1. Update Frequency</h4>
+<div class="paragraph">
+<p>An update frequency is one of the most important properties of moving feature collection. It is determined by a data source. It can use to determine the continuous of the moving feature&#8217;s trajectory.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_collections"><a class="anchor" href="#_collections"></a>8.3. Collections</h3>
+<div class="paragraph">
+<p>The <code>Collections</code> operation returns a set of metadata which describes the collections available from this API.
+The catalog of collections returned to the response can be limited using the <a href="#bbox-section">bbox</a>, <a href="#datatime-section">datetime</a>, and <a href="#limit-section">limit</a> parameters.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 4. Dependencies</caption>
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_operation"><a class="anchor" href="#_operation"></a>8.3.1. Operation</h4>
+<div class="paragraph">
+<p>This operation is defined in the <code>Collections</code> conformance class of API-Common. No modifications are needed to support <code>MovingFeature</code> resources.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Issue a <code>GET</code> request on <code>{root}/collections</code> path</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Support for GET on the <code>{root}/collections</code> path is required by API-Common.</p>
+</div>
+<table id="req_core_mfc-op" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>/req/core/mfc-op</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A MovingFeatures API implementation SHALL comply with the API - Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#_operation_3"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections</code></a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>For API - MovingFeatures, the API - Common <a href="https://docs.ogc.org/DRAFTS/20-024.html#_operation_3"><code>/rec/collections/rc-md-item-type</code></a> recommendation SHALL apply to collections where the value of the <code>itemType</code> property is specified as <code>movingfeature</code>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_response"><a class="anchor" href="#_response"></a>8.3.2. Response</h4>
+<div class="paragraph">
+<p>A successful response to the <code>Collections</code> Operation is a document that contains summary metadata for each collection accessible though the API.
+In a typical API deployment, the <code>Collections</code> Response will list collections of all offered resource types.
+The collections where the value of the <code>itemType</code> property is <code>movingfeature</code> is collections of moving features.</p>
+</div>
+<div id="collections-schema" class="listingblock">
+<div class="title">Collections Response Schema</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="yaml">type: object
+required:
+  - collections
+  - links
+properties:
+  collections:
+    type: array
+    items:
+      $ref: collectionInfo.yaml
+  links:
+    type: array
+    items:
+      $ref: link.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following JSON payload is an example of a response to an OGC API-MovingFeatures Collections operation.</p>
+</div>
+<div id="collection-info-example" class="listingblock">
+<div class="title">Collections Example</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json">{
+  "collections": [
+    {
+      "id": "Miraikan",
+      "itemType": "movingfeature",
+      "extent": {
+        "spatial": {
+          "bbox": [
+            -180, -90, 190, 90
+          ],
+          "crs": [
+            "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+          ]
+        },
+        "temporal": {
+          "interval": [
+            "2011-11-11T12:22:11Z","2012-11-24T12:32:43Z"
+          ],
+          "trs": [
+            "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          ]
+        }
+      },
+      "links": [
+        {
+          "href": "https://pntml.io/mf/collections/Miraikan",
+          "rel": "self"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "href": "https://pntml.io/mf/collections",
+      "rel": "self"
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_situations"><a class="anchor" href="#_error_situations"></a>8.3.3. Error situations</h4>
+<div class="paragraph">
+<p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">[http-response]</a>. General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">[http-status-codes]</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_collection_information"><a class="anchor" href="#_collection_information"></a>8.4. Collection Information</h3>
+<div class="paragraph">
+<p>Collection Information is the set of metadata that describes a single collection.
+An abbreviated copy of this information is returned for each Collection in the <code>/collections</code> response.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 5. Dependencies</caption>
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_operation_2"><a class="anchor" href="#_operation_2"></a>8.4.1. Operation</h4>
+<div class="paragraph">
+<p>This operation is defined in the <code>Collection</code> conformance class of API-Common. No modifications are required to support <code>MovingFeature</code> resources.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Issue a <code>GET</code> request on the <code>{root}/collections/{collectionId}</code> path</p>
+</li>
+</ol>
+</div>
+<div id="collection-identifier" class="paragraph">
+<p>The {collectionId} parameter is the unique identifier for a single collection offered by the API.
+The list of valid values for <code>{collectionId}</code> is provided in the <a href="#collections-metadata"><code>/collections</code></a> response.</p>
+</div>
+<div class="paragraph">
+<p>Support for the <code>/collections/{collectionId}</code> path is required by OGC API-Common.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_response_2"><a class="anchor" href="#_response_2"></a>8.4.2. Response</h4>
+<div class="paragraph">
+<p>A successful response to the Collection operation is a set of metadata that describes the collection identified by the <a href="#collection-identifier"><code>{collectionId}</code></a> parameter.</p>
+</div>
+<table id="req_core_mfc-response" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 3</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>/req/core/mfc-response</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A successful execution of the operation SHALL be reported as a response with an HTTP status code <code>200</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The response SHALL only include moving features selected by the request.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Each moving feature in the response SHALL include the mandatory properties listed in <a href="#collection-properties-table">Table 3</a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div id="collection-schema" class="listingblock">
+<div class="title">Collection Information Response Schema</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="yaml">type: object
+required:
+  - id
+  - links
+  - itemType
+properties:
+  id:
+    description: identifier of the collection used, for example, in URIs
+    type: string
+  title:
+    description: human readable title of the collection
+    type: string
+    example: address
+  description:
+    description: a description of the features in the collection
+    type: string
+    example: An address.
+  links:
+    type: array
+    items:
+      $ref: link.yaml
+  extent:
+    $ref: extent.yaml
+  itemType:
+    description: indicator about the type of the items in the collection.
+    type: string
+    enum:
+      - feature
+      - movingfeature</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following JSON payload is an example of a response to an OGC API-MovingFeatures Collection Information operation.</p>
+</div>
+<div id="collection-info-example" class="listingblock">
+<div class="title">Collection Information Example</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json">{
+  "id": "Miraikan",
+  "itemType": "movingfeature",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        -180, -90, 190, 90
+      ],
+      "crs": [
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ]
+    },
+    "temporal": {
+      "interval": [
+        "2011-11-11T12:22:11Z","2012-11-24T12:32:43Z"
+      ],
+      "trs": [
+        "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+      ]
+    }
+  },
+  "links": [
+    {
+      "href": "https://pntml.io/mf/collections/Miraikan",
+      "rel": "self"
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_situations_2"><a class="anchor" href="#_error_situations_2"></a>8.4.3. Error situations</h4>
+<div class="paragraph">
+<p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">[http-response]</a>. General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">[http-status-codes]</a>.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requirements_classes_for_moving_features"><a class="anchor" href="#_requirements_classes_for_moving_features"></a>8. Requirements Classes for Moving Features</h2>
+<h2 id="clause-core-movingfeature"><a class="anchor" href="#clause-core-movingfeature"></a>9. Requirements Class "MovingFeature"</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_requirements_class_movingfeaturecollection"><a class="anchor" href="#_requirements_class_movingfeaturecollection"></a>8.1. Requirements Class "MovingFeatureCollection"</h3>
-
+<h3 id="_overview_3"><a class="anchor" href="#_overview_3"></a>9.1. Overview</h3>
+<table id="rc_movingfeature" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Requirements Class</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeature" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web API</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <code>MovingFeature</code> requirements class defines the requirements for a moving feature.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 6. Dependencies</caption>
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-op" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-op</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-definition" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-definition</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-default-minimum-maximum" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-default-minimum-maximum</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-response-1" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-response-1</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-bbox-definition" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-bbox-definition</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-bbox-response" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-bbox-response</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-time-definition" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-time-definition</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-time-response" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-time-response</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-timeStamp" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-timeStamp</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-numberMatched" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-numberMatched</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-numberReturned" class="bare">http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-numberReturned</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
-<h3 id="_requirements_class_movingfeatures"><a class="anchor" href="#_requirements_class_movingfeatures"></a>8.2. Requirements Class "MovingFeatures"</h3>
-
+<h3 id="_features"><a class="anchor" href="#_features"></a>9.2. Features</h3>
+<div class="paragraph">
+<p>The MF-API Items query is an OGC API-Features endpoint that may be used to catalog pre-existing moving features.
+The <code>Features</code> operation returns a set of features which describes the moving feature available from this API.
+If a <code>mFeatureID</code> is not specified, the query will return a list of the available mFeatureID’s. This behavior is specified in OGC API-Features. all other parameters for use with the Items query are defined by OGC API-Features.
+The list of features returned to the response can be limited using the <a href="#bbox-section">bbox</a>, <a href="#datatime-section">datetime</a>, and <a href="#limit-section">limit</a> parameters.</p>
 </div>
-<div class="sect2">
-<h3 id="_requirements_class_temporalgeometry"><a class="anchor" href="#_requirements_class_temporalgeometry"></a>8.3. Requirements Class "TemporalGeometry"</h3>
-
+<div class="sect3">
+<h4 id="_operation_3"><a class="anchor" href="#_operation_3"></a>9.2.1. Operation</h4>
+<div class="paragraph">
+<p>This operation is defined in the <code>Features</code> conformance class of API-Features. No modifications are needed to support <code>MovingFeature</code> resources.</p>
 </div>
-<div class="sect2">
-<h3 id="_requirements_class_temporalproperties"><a class="anchor" href="#_requirements_class_temporalproperties"></a>8.4. Requirements Class "TemporalProperties"</h3>
-
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Issue a <code>GET</code> request on <code>{root}/collections/{collledctionID}/items</code> path</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Support for GET on the <code>{root}/collections/{collledctionID}/items</code> path is required by API-Features.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_response_3"><a class="anchor" href="#_response_3"></a>9.2.2. Response</h4>
+<div class="paragraph">
+<p>A successful response to the <code>Features</code> Operation is a document that contains the static data of moving features.
+In a typical API deployment, the <code>Features</code> Response will list features of all offered resource types.</p>
+</div>
+<div id="collections-schema" class="listingblock">
+<div class="title">Features Response Schema</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="yaml">type: object
+required:
+  - type
+  - features
+properties:
+  type:
+    type: string
+    enum:
+      - FeatureCollection
+  features:
+    type: array
+    items:
+      $ref: featureGeoJSON.yaml
+  links:
+    type: array
+    items:
+      $ref: link.yaml
+  timeStamp:
+    type: string
+    format: date-time
+  numberMatched:
+    type: integer
+    minimum: 0
+  numberReturned:
+    type: integer
+    minimum: 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following JSON payload is an example of a response to an OGC API-MovingFeatures Features operation.</p>
+</div>
+<div id="collection-info-example" class="listingblock">
+<div class="title">Features Example</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json">{
+  "type": "FeatureCollection",
+  "features":[
+    {
+      "type": "Feature",
+      "id": "feature-000001",
+      "bbox":[
+        -122.59750209, 37.48803556, -122.2880486, 37.613537207
+      ],
+      "time":[
+        "2011-07-14T22:01:01Z",
+        "2011-07-15T01:11:22Z"
+      ],
+      "geometry":{
+        "type": "Polygon",
+        "coordinates":[
+          [-122.308150179, 37.488035566],
+          [-122.597502109, 37.538869539],
+          [-122.576687533, 37.613537207],
+          [-122.2880486, 37.562818007],
+          [-122.308150179, 37.488035566]
+        ]
+      },
+      "properties":{
+        "label": "car"
+      }
+    }
+  ],
+  "links":[
+    {
+      "href": "https://pntml.io/mf/collections/Mirakan/mfeatures",
+      "rel": "self"
+    },
+    {
+      "href": "https://pntml.io/mf/collections/Mirakan/mfeatures?resourceKey=06f11bfa-9fa9-452d-b9a8-249d6aee9d4f",
+      "rel": "next"
+    }
+  ],
+  "timeStamp": "2020-01-01T12:00:00Z",
+  "numberMatched": 1,
+  "numberReturned": 1
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_situations_3"><a class="anchor" href="#_error_situations_3"></a>9.2.3. Error situations</h4>
+<div class="paragraph">
+<p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">[http-response]</a>. General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">[http-status-codes]</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_query_and_information_resources"><a class="anchor" href="#_query_and_information_resources"></a>9. Query and Information Resources</h2>
+<h2 id="clause-core-temporalGeometry"><a class="anchor" href="#clause-core-temporalGeometry"></a>10. Requirements Class "TemporalGeometry"</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview_4"><a class="anchor" href="#_overview_4"></a>10.1. Overview</h3>
+<div class="sect3">
+<h4 id="_operation_4"><a class="anchor" href="#_operation_4"></a>10.1.1. Operation</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_response_4"><a class="anchor" href="#_response_4"></a>10.1.2. Response</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_parameters"><a class="anchor" href="#_parameters"></a>10.1.3. Parameters</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_error_situations_4"><a class="anchor" href="#_error_situations_4"></a>10.1.4. Error situations</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="clause-core-temporalProperty"><a class="anchor" href="#clause-core-temporalProperty"></a>11. Requirements Class "TemporalProperties"</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview_5"><a class="anchor" href="#_overview_5"></a>11.1. Overview</h3>
+<div class="sect3">
+<h4 id="_operation_5"><a class="anchor" href="#_operation_5"></a>11.1.1. Operation</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_response_5"><a class="anchor" href="#_response_5"></a>11.1.2. Response</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_parameters_2"><a class="anchor" href="#_parameters_2"></a>11.1.3. Parameters</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_error_situations_5"><a class="anchor" href="#_error_situations_5"></a>11.1.4. Error situations</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_query_and_information_resources"><a class="anchor" href="#_query_and_information_resources"></a>12. Query and Information Resources</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_general_requirements"><a class="anchor" href="#_general_requirements"></a>10. General Requirements</h2>
+<h2 id="_general_requirements"><a class="anchor" href="#_general_requirements"></a>13. General Requirements</h2>
 <div class="sectionbody">
 <div style="page-break-after: always;"></div>
 </div>
@@ -1482,7 +2066,7 @@ All operations assume static objects, without time-varying coordinates or attrib
 <div class="content">
 <img src="images/GM_Object.png" alt="UML of GM_Object" width="75%">
 </div>
-<div class="title">Figure 2. GM_Object from ISO 19107:2003 figure 6</div>
+<div class="title">Figure 1. GM_Object from ISO 19107:2003 figure 6</div>
 </div>
 <div class="paragraph">
 <p><strong>TODO:</strong> above discussion is based on ISO 19107:2003. It needs to be updated for latest revisions.</p>
@@ -1533,7 +2117,7 @@ All properties are static, without time-varying values.</p>
 <div class="content">
 <img src="images/FeatureType.png" alt="UML of feature model" width="100%">
 </div>
-<div class="title">Figure 3. General Feature Model from ISO 19109:2009 figure 5</div>
+<div class="title">Figure 2. General Feature Model from ISO 19109:2009 figure 5</div>
 </div>
 <div class="paragraph">
 <p><strong>TODO:</strong> provide a simplified version of this UML.</p>
@@ -1562,7 +2146,7 @@ The UML below shows the objects used for querying a subset based on spatial oper
 <div class="content">
 <img src="images/Filter.png" alt="UML of spatial operators" width="75%">
 </div>
-<div class="title">Figure 4. Spatial operators from ISO 19143 figure 6</div>
+<div class="title">Figure 3. Spatial operators from ISO 19143 figure 6</div>
 </div>
 </div>
 <div class="sect3">
@@ -1597,7 +2181,7 @@ The UML below shows how the <code>MF_Trajectory</code> type extends the “stati
 <div class="content">
 <img src="images/Trajectory.png" alt="UML of trajectory" width="50%">
 </div>
-<div class="title">Figure 5. Trajectory type from ISO 19141 figure 3</div>
+<div class="title">Figure 4. Trajectory type from ISO 19141 figure 3</div>
 </div>
 <div class="paragraph">
 <p>Trajectory inherits some operations shown below.
@@ -1608,7 +2192,7 @@ For example the <code>distance(…)</code> operation from ISO 19107 is now compl
 <div class="content">
 <img src="images/TemporalGeometry.png" alt="UML of temporal geometry" width="50%">
 </div>
-<div class="title">Figure 6. Temporal geometry from ISO 19141 figure 6</div>
+<div class="title">Figure 5. Temporal geometry from ISO 19141 figure 6</div>
 </div>
 </div>
 <div class="sect3">
@@ -1623,7 +2207,7 @@ This extension to above <em>General Feature Model</em> is shown below:</p>
 <div class="content">
 <img src="images/DynamicAttribute.png" alt="UML of dynamic attribute" width="50%">
 </div>
-<div class="title">Figure 7. Dynamic attribute from OGC 18-075 figure 3</div>
+<div class="title">Figure 6. Dynamic attribute from OGC 18-075 figure 3</div>
 </div>
 </div>
 <div class="sect3">
