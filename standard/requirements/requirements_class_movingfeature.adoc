@@ -1,0 +1,7 @@
+[[rc_movingfeature]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeature
+|Target type |Web API
+|===

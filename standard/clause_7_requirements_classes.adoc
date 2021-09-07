@@ -1,0 +1,274 @@
+//== Requirements Classes for Moving Features
+
+[[clause-core-collection]]
+== Requirements Class "Collection Catalog"
+=== Overview
+include::requirements/requirements_class_movingfeature_collection.adoc[]
+
+The `Collection Catalog` requirements class defines the requirements for a collection.
+A collection is an object that provides information about and access to a set of related <<clause-core-movingfeature,MovingFeature>>.
+
+The schema for the collection object presented in this clause is an extension of the collection schema defined in http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
+
+[[collection-schema]]
+=== Schema of a collection metadata
+
+<<collection-properties-table>> defines the set of properties that may be used to describe a collection.
+
+[#collection-properties-table,reftext='{table-caption} {counter:table-num}']
+.Table of collection properties
+[cols="30,5,65",options="header"]
+|===
+|Property           |Requirement |Description
+|_**id**_           |M |A unique identifier to the collection.
+|_**title**_        |M |A human-readable name given to the collection.
+|_**description**_  |O |A free-text description of the collection.
+|_**links**_        |M |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)
+|_**extent**_       |O |The spatio-temporal coverage of the collection.
+|_**itemType**_     |M |Fixed to the value "movingfeature".
+|_**crs**_          |O |A list of coordinate reference system used for spatial-temporal values.
+|updateFrequency    |M |A time interval of sampling location.
+|===
+
+NOTE: The properties _id_, _title_, _description_, _links_, _extent_, _itemsType_ and _crs_ were inherited from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
+
+include::requirements/REQ_mandatory-collection.adoc[]
+
+==== Update Frequency
+
+An update frequency is one of the most important properties of moving feature collection. It is determined by a data source. It can use to determine the continuous of the moving feature's trajectory.
+
+=== Collections
+
+The `Collections` operation returns a set of metadata which describes the collections available from this API.
+The catalog of collections returned to the response can be limited using the <<bbox-section,bbox>>, <<datatime-section,datetime>>, and <<limit-section,limit>> parameters.
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections
+|====
+
+==== Operation
+
+This operation is defined in the `Collections` conformance class of API-Common. No modifications are needed to support `MovingFeature` resources.
+
+. Issue a `GET` request on `{root}/collections` path
+
+Support for GET on the `{root}/collections` path is required by API-Common.
+
+include::requirements/REQ_operation-collection.adoc[]
+
+==== Response
+
+A successful response to the `Collections` Operation is a document that contains summary metadata for each collection accessible though the API.
+In a typical API deployment, the `Collections` Response will list collections of all offered resource types.
+The collections where the value of the `itemType` property is `movingfeature` is collections of moving features.
+
+[#collections-schema,reftext='Collections Response Schema']
+.Collections Response Schema
+[source,yaml]
+----
+include::schema/collections.yaml[]
+----
+
+The following JSON payload is an example of a response to an OGC API-MovingFeatures Collections operation.
+[#collection-info-example,reftext=`Collections Example`]
+.Collections Example
+[source,json]
+----
+include::examples/collections.json[]
+----
+
+==== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+=== Resource Collection
+
+Resource Collection is the set of metadata that describes a single collection.
+An abbreviated copy of this information is returned for each Collection in the `/collections` response.
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi_common-1/1.0/req/collections
+|====
+
+==== Operation
+
+This operation is defined in the `Collection` conformance class of API-Common. No modifications are required to support `MovingFeature` resources.
+
+. Issue a `GET` request on the `{root}/collections/{collectionId}` path
+
+[[collection-identifier]]
+The {collectionId} parameter is the unique identifier for a single collection offered by the API.
+The list of valid values for `{collectionId}` is provided in the <<collections-metadata,`/collections`>> response.
+
+Support for the `/collections/{collectionId}` path is required by OGC API-Common.
+
+==== Response
+
+A successful response to the Collection operation is a set of metadata that describes the collection identified by the <<collection-identifier,`{collectionId}`>> parameter.
+
+include::requirements/REQ_response-collection.adoc[]
+
+[#collection-schema,reftext='Collection Information Response Schema']
+.Collection Information Response Schema
+[source,yaml]
+----
+include::schema/collectionInfo.yaml[]
+----
+
+The following JSON payload is an example of a response to an OGC API-MovingFeatures Collection Information operation.
+[#collection-info-example,reftext=`Collection Information Example`]
+.Collection Information Example
+[source,json]
+----
+include::examples/collection.json[]
+----
+
+==== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[clause-core-movingfeature]]
+== Requirements Class "MovingFeature"
+=== Overview
+include::requirements/requirements_class_movingfeature.adoc[]
+
+The `MovingFeature` requirements class defines the requirements for a moving feature.
+
+//[[moving-feature-properties-table]]
+//[reftext='{table-caption} {counter:table-num}']
+//.Table of the properties related to the moving feature
+//[cols="30,5,65",options="header"]
+//|===
+//|Property           |Requirement    |Description
+//|id                 |M |A unique record identifier assigned by the server.
+//|type               |M |A feature type of GeoJSON (i.e., one of 'Feature' or 'FeatureCollection').
+//|geometry           |O |A projective geometry of the moving feature.
+//|properties         |O |A set of property of GeoJSON.
+//|temporalGeometry   |M |A <<temporalGeometry-definition,TemporalGeometry>> object.
+//|temporalProperties |O |A set of <<temporalProperty-definition,TemporalProperty>> object.
+//|bbox               |O |A bounding box information for the moving feature.
+//|time               |O |A life span information for the moving feature.
+//|crs                |O |A coordinate reference system used for spatial-temporal values.
+//|trs                |O |A temporal coordinate reference system used for spatial-temporal values.
+//|===
+
+.Dependencies
+[width="90%"]
+|====
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-op
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-definition
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-default-minimum-maximum
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-limit-response-1
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-bbox-definition
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-bbox-response
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-time-definition
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-time-response
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-timeStamp
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-numberMatched
+|http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-numberReturned
+|====
+
+=== Features
+
+The MF-API Items query is an OGC API-Features endpoint that may be used to catalog pre-existing moving features.
+The `Features` operation returns a set of features which describes the moving feature available from this API.
+If a `mFeatureID` is not specified, the query will return a list of the available mFeatureID’s. This behavior is specified in OGC API-Features. all other parameters for use with the Items query are defined by OGC API-Features.
+The list of features returned to the response can be limited using the <<bbox-section,bbox>>, <<datatime-section,datetime>>, and <<limit-section,limit>> parameters.
+
+==== Operation
+
+This operation is defined in the `Features` conformance class of API-Features. No modifications are needed to support `MovingFeature` resources.
+
+. Issue a `GET` request on `{root}/collections/{collledctionID}/items` path
+
+Support for GET on the `{root}/collections/{collledctionID}/items` path is required by API-Features.
+
+==== Response
+
+A successful response to the `Features` Operation is a document that contains the static data of moving features.
+In a typical API deployment, the `Features` Response will list features of all offered resource types.
+
+[#collections-schema,reftext='Features Response Schema']
+.Features Response Schema
+[source,yaml]
+----
+include::schema/featureCollection.yaml[]
+----
+
+The following JSON payload is an example of a response to an OGC API-MovingFeatures Features operation.
+[#collection-info-example,reftext=`Features Example`]
+.Features Example
+[source,json]
+----
+include::examples/features.json[]
+----
+
+==== Error situations
+
+The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+=== Feature
+==== Operation
+==== Response
+==== Error situations
+
+[[clause-core-temporalGeometry]]
+== Requirements Class "TemporalGeometry"
+=== Overview
+//[[temporalGeometry-properties-table]]
+//[reftext='{table-caption} {counter:table-num}']
+//.Table of the properties related to the temporal geometry
+//[cols="30,5,65",options="header"]
+//|===
+//|Property           |Requirement    |Description
+//|tGeometryId        |M |An identifier for the resource assigned by an external entity.
+//|type               |M |A primitive geometry type of MF-JSON (i.e., one of 'MovingPoint', 'MovingLineString', 'MovingPolygon', 'MovingPointCloud', or 'MovingGeometryCollection').
+//|datetimes          |M |A sequence of monotonic increasing instants.
+//|coordinates        |M |A sequence of leaf geometries of a temporal geometry, having the same number of elements as "datetimes".
+//|interpolation      |O |A predefined type of motion curve (i.e., one of 'Discrete', 'Step', 'Linear', 'Quadratic' or 'Cubic').
+//|base.type          |O |A type of 3D file format, such as STL, OBJ, PLY, and glTF.
+//|base.href          |O |A URL to address a 3D model data which represents a base geometry of a 3D shape.
+//|orientations.scales|O |An array value of numbers along the x, y, and z axis in order as three scale factors.
+//|orientations.angles|O |An array value of numbers along the x, y, and z axis in order as Euler angles in degree.
+//|crs                |O |A coordinate reference system used for spatial-temporal values.
+//|trs                |O |A temporal coordinate reference system used for spatial-temporal values.
+//|===
+
+==== Operation
+
+==== Response
+
+==== Parameters
+
+==== Error situations
+
+[[clause-core-temporalProperty]]
+== Requirements Class "TemporalProperties"
+=== Overview
+//[[temporalProperty-properties-table]]
+//[reftext='{table-caption} {counter:table-num}']
+//.Table of the properties related to the temporal properties
+//[cols="30,5,65",options="header"]
+//|===
+//|Property           |Requirement    |Description
+//|tPropertyName      |M |An identifier for the resource assigned by an external entity.
+//|type               |M |A temporal property type of MF-JSON (i.e., one of 'Measure', 'Text', or 'Image').
+//|datetimes          |M |A sequence of monotonic increasing instants.
+//|values             |M |A sequence of temporal property value, having the same number of elements as "datetimes".
+//|interpolation      |O |A predefined type for a parametric value (i.e., one of 'Discrete', 'Step', 'Linear', or 'Regression').
+//|form               |O |A unit of measure for 'Measure' type.
+//|description        |O |A short description.
+//|===
+
+==== Operation
+
+==== Response
+
+==== Parameters
+
+==== Error situations

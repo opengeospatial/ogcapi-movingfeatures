@@ -30,6 +30,8 @@ The following organizations submitted this Document to the Open Geospatial Conso
 
 * Université libre de Bruxelles
 
+* Geomatys
+
 [big]*v.     Submitters*
 
 All questions regarding this submission should be directed to the editor or the submitters:
@@ -37,8 +39,9 @@ All questions regarding this submission should be directed to the editor or the 
 {set:cellbgcolor!}
 [width="99%", cols="3,7"]
 |===========================================================
-|*Name*             |*Organization*
-|Kyoung-Sook KIM    |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
-|Taehoon KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
-|Mahmoud SAKR        |Université libre de Bruxelles
+|*Name*                 |*Organization*
+|Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
+|Taehoon KIM            |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
+|Mahmoud SAKR           |Université libre de Bruxelles
+|Martin Desruisseaux    |Geomatys
 |===========================================================
