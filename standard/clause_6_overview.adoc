@@ -28,8 +28,8 @@ Access Paths are used to build resource identifiers. It is recommended, but not 
 |<<conformance-classes,{root}/conformance>>|`conformance`|Conformance Classes
 
 3+^|**Collections**
-|<<collections,{root}/collections>>|`data`|Metadata describing the <<movingFeatureCollection-definition,MovingFeatureCollection>> of data available from this API.
-|<<collections,{root}/collections/{collectionId}>>| |Metadata describing the <<movingFeatureCollection-definition,MovingFeatureCollection>> of data which has the unique identifier `{collectionId}`
+|<<collections,{root}/collections>>|`data`|Metadata describing the <<movingFeatureCollection-definition,Collection Catalog>> of data available from this API.
+|<<collections,{root}/collections/{collectionId}>>| |Metadata describing the <<movingFeatureCollection-definition,Collection Catalog>> of data which has the unique identifier `{collectionId}`
 
 3+^|**Moving Features**
 |<<moving-features,{root}/collections/{collectionId}/items>>|`items`|Retrieve metadata about available items
@@ -45,7 +45,7 @@ Access Paths are used to build resource identifiers. It is recommended, but not 
 Where:
 
 * `{root}`          = Base URI for the API server
-* `{collectionId}`  = an identifier for a specific <<movingFeatureCollection-definition,MovingFeatureCollection>> of data
+* `{collectionId}`  = an identifier for a specific <<movingFeatureCollection-definition,Collection catalog>> of data
 * `{mFeatureId}`    = an identifier for a specific <<movingFeatures-definition,MovingFeatures>> of a specific <<movingFeatureCollection-definition,MovingFeatureCollection>> of data
 * `{tGeometryId}`   = an identifier for a specific <<temporalGeometry-definition,TemporalGeometry>> of a specific <<movingFeatures-definition,MovingFeatures>> of data
 * `{tPropertyName}` = an identifier for a specific <<temporalProperty-definition,TemporalProperty>> of a specific <<movingFeatures-definition,MovingFeatures>> of data

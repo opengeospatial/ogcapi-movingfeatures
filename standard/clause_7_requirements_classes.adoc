@@ -84,9 +84,9 @@ include::examples/collections.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
-=== Collection Information
+=== Resource Collection
 
-Collection Information is the set of metadata that describes a single collection.
+Resource Collection is the set of metadata that describes a single collection.
 An abbreviated copy of this information is returned for each Collection in the `/collections` response.
 
 .Dependencies
@@ -212,6 +212,10 @@ include::examples/features.json[]
 
 The requirements for handling unsuccessful requests are provided in <<http-response>>. General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
 
+=== Feature
+==== Operation
+==== Response
+==== Error situations
 
 [[clause-core-temporalGeometry]]
 == Requirements Class "TemporalGeometry"

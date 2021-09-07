@@ -22,7 +22,7 @@
 |Internal reference number of this OGC(R) document:    YY-nnnrx
 |Version: 0.01
 |Category: OGC(R) Implementation Specification
-|Editor:    Kyoung-Sook Kim, Taehoon Kim, Mahmoud SAKR
+|Editor:    Kyoung-Sook Kim, Taehoon Kim, Mahmoud SAKR, Martin Desruisseaux
 |===
 
 [cols = "^", frame = "none"]
