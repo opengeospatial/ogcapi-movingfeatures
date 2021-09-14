@@ -1,16 +1,17 @@
 == Overview
 === General
 
-The https://ogcapi.ogc.org/[OGC API] standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, etc.) https://ogcapi.ogc.org/common/[OGC API-Common] defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API-Common with features specific to a resource type. This OGC API-MovingFeatures standard defines an API with two goals:
+<<OGC-API-Features,OGC API>> standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, etc.)
+<<OGC-API-Common,OGC API-Common>> defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API-Common with features specific to a resource type. This OGC API-MovingFeatures standard defines an API with two goals:
 
-. Provide access to *_Moving Features_* conformance to the <<mf-json-encoding-schema-overview,OGC Moving Features JSON encoding standard>>.
-. Provide functionality comparable to that of the <<mf-access-overview,OGC Moving Features Access standard>>.
+. Provide access to *_Moving Features_* conformance to the <<OGC-MF-JSON,OGC Moving Features JSON encoding standard>>.
+. Provide functionality comparable to that of the <<OGC-MF-Access,OGC Moving Features Access standard>>.
 
 Resources exposed through an OGC API may be accessed through a Universal Resource Identifier (URI). URIs are composed of three sections:
 
 * Dataset distribution API: The endpoint corresponding to a dataset distribution, where the landing page resource as defined in OGC API-Common-Part 1: Core is available (subsequently referred to as Base URI or `{root}`)
 * Access Paths: Unique paths to Resources
-* Query Parameters: Parameters to adjust the representation of a Resource or Resources like encoding format or subsetting
+* Query Parameters: Parameters to adjust the representation of a Resource or Resources like encoding format or sub-setting
 
 Access Paths are used to build resource identifiers. It is recommended, but not required. Most resources are also accessible through links on previously accessed resources. Unique relation types are used for each resource.
 
@@ -23,32 +24,39 @@ Access Paths are used to build resource identifiers. It is recommended, but not 
 ^|**Path Template** ^|**Relation** ^|**Resource**
 
 3+^|**Common**
-|<<landing-page,{root}/>>|none|Landing page for this dataset distribution
-|<<api-definition,{root}/api>>|`service-desc or service-doc`|API Description (optional)
-|<<conformance-classes,{root}/conformance>>|`conformance`|Conformance Classes
+|{root}/|none|Landing page for this dataset distribution
+|{root}/api|`service-desc or service-doc`|API Description
+|{root}/conformance|`conformance`|Conformance Classes
 
 3+^|**Collections**
-|<<collections,{root}/collections>>|`data`|Metadata describing the <<movingFeatureCollection-definition,Collection Catalog>> of data available from this API.
-|<<collections,{root}/collections/{collectionId}>>| |Metadata describing the <<movingFeatureCollection-definition,Collection Catalog>> of data which has the unique identifier `{collectionId}`
+|<<resource-collections-section,{root}/collections>>|`data`|Metadata describing the <<collection-schema,Collection Catalog>> of data available from this API.
+|<<resource-collection-section,{root}/collections/{collectionId}>>| |Metadata describing the <<collection-schema,Collection Catalog>> of data which has the unique identifier `{collectionId}`
 
 3+^|**Moving Features**
-|<<moving-features,{root}/collections/{collectionId}/items>>|`items`|Retrieve metadata about available items
-|<<moving-features,{root}/collections/{collectionId}/items/{mFeatureId}>>|`item`|
-|<<moving-features,{root}/collections/{collectionId}/items/{mFeatureId}/temporalGeometry>>|`items`|
-|<<moving-features,{root}/collections/{collectionId}/items/{mFeatureId}/temporalGeometry/{tGeometryId}>>|`item`|
-|<<moving-features,{root}/collections/{collectionId}/items/{mFeatureId}/temporalProperties>>|`items`|
-|<<moving-features,{root}/collections/{collectionId}/items/{mFeatureId}/temporalProperties/{tPropertyName}>>|`item`|
+|<<resource-features-section,{root}/collections/{collectionId}/items>>|`items`|Retrieve static inforamtion of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
+|<<resource-movingfeature-section,{root}/collections/{collectionId}/items/{mFeatureId}>>|`item`| Static information describing the <<movingfeature-schema, MovingFeature>> of data which has the unique identifier `{mFeatureId}`
+|<<resource-temporalGeometries-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries>>|`items`|Retrieve temporal object information of <<resource-temporalGeometry-section, TemporalGeometry>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+|<<resource-temporalGeometry-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}>>|`item`|Temporal object describing the <<resource-temporalGeometry-section, TemporalGeometry>> of data which has the unique identifier `{tGeometryId}`
+|<<resource-temporalProperties-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties>>|`items`|Retrieve temporal object information of <<resource-temporalProperty-section, TemporalProperty>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+|<<resource-temporalProperty-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}>>|`item`|Temporal object describing the <<resource-temporalProperty-section, TemporalProperty>> of data which has the unique identifier `{tPropertyName}`
 
 3+^|**Processes**
+3+^|T.B.D
 |===
 
 Where:
 
 * `{root}`          = Base URI for the API server
-* `{collectionId}`  = an identifier for a specific <<movingFeatureCollection-definition,Collection catalog>> of data
-* `{mFeatureId}`    = an identifier for a specific <<movingFeatures-definition,MovingFeatures>> of a specific <<movingFeatureCollection-definition,MovingFeatureCollection>> of data
-* `{tGeometryId}`   = an identifier for a specific <<temporalGeometry-definition,TemporalGeometry>> of a specific <<movingFeatures-definition,MovingFeatures>> of data
-* `{tPropertyName}` = an identifier for a specific <<temporalProperty-definition,TemporalProperty>> of a specific <<movingFeatures-definition,MovingFeatures>> of data
+* `{collectionId}`  = An identifier for a specific <<resource-collection-section,Collection>> of data
+* `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,MovingFeatures>> of a specific <<resource-collection-section,Collection>> of data
+* `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
+* `{tPropertyName}` = An identifier for a specific <<resource-temporalProperty-section,TemporalProperty>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
+
+<<mf-api-class-diagram>> shows a UML class diagram for MF-API which represents the basic resources of this standard, such as `Collection`, `MovingFeature`, `TemporalGeometry`, `TemporalProperty`, and so on.
+
+[#mf-api-class-diagram,reftext='{figure-caption} {counter:figure-num}']
+.Class diagram for MF-API
+image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, width=95%, align="center"]
 
 //[[mf-json-encoding-schema-overview]]
 //=== Moving Features Implementation Schema
@@ -201,14 +209,16 @@ The OGC API-MovingFeatures (shortly, API-MF) standard is an extension of the OGC
 .Required OGC API - Common and OGC API - Features Requirements Classes
 [width="90%",cols="2,6"]
 |====
-^|*API - Record Section* ^|*OGC API - Common, OGC API - Features Requirements Class*
-|<<landing-page,API Landing Page>>| http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|<<api-definition,API Definition>>  | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|<<conformance-classes,Declaration of Conformance Classes>>| http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|<<movingFeatureCollection-access,MovingFeatureCollection>>| http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|<<movingFeatures-access,MovingFeatures>> |http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|<<temporalGeometry-access,TemporalGeometry>>   |http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|<<temporalProperties-access,TemporalProperties>>   |http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|<<requirements-class-openapi_3_0-clause,OpenAPI 3.0>>| http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
-|<<requirements-class-json-clause,JSON>>| http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+^|*API - Record Section*           ^| *OGC API - Common, OGC API - Features Requirements Class*
+|API Landing Page                   | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|API Definition                      | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|Declaration of Conformance Classes | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|Collections                        | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
+|Collection                         | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
+|Features                           | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|MovingFeature                      | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|TemporalGeometry                   | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|TemporalProperties                 | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|OpenAPI 3.0                        | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
+|GeoJSON                            | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
 |====

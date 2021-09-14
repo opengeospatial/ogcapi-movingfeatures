@@ -1,0 +1,7 @@
+name: snapshot
+in: query
+required: false
+schema:
+  type: boolean
+style: form
+explode: false

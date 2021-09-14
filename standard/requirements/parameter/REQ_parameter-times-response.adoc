@@ -1,0 +1,7 @@
+[[req_mf_times-parameter-response]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/param-times-response*
+^|A | If the `times` parameter is provided by the client and supported by the server, then only resources that have a temporal geometry(i.e., ``datetimes` property) that intersects the temporal information in the `times` parameter SHALL be part of the result set.
+^|B | The `times` parameter SHALL match all resources in the moving feature that are not associated with a temporal geometry.
+|===

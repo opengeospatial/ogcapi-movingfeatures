@@ -19,6 +19,17 @@ Springer LNCS is widely used in technical and computer science journals and othe
 [n] Web: Author Surname, A.: Title, http://Website-Url
 ===============================================
 ////
-((( Example )))
-[[OGC2015]]
-[1] OGC: OGC Testbed 12 Annex B: Architecture. (2015).
+//((( Example )))
+
+[[OGC-MF-JSON]]
+[1] OGC: OGC Moving Features Encoding Extension - JSON. (2020).
+[[OGC-MF-Access]]
+[2] OGC: OGC Moving Features Access. (2017).
+[[OGC-API-Features-1]]
+[3] OGC: OGC API - Features - Part 1: Core. (2019).
+[[OGC-API-Features-2]]
+[4] OGC: OGC API - Features - Part 2: Coordinate Reference Systems by Reference. (2020).
+[[OGC-API-Features]]
+[5] OGC: OGC API - Features, https://ogcapi.ogc.org/features/.
+[[OGC-API-Common]]
+[6] OGC: OGC API - Common, https://ogcapi.ogc.org/common/

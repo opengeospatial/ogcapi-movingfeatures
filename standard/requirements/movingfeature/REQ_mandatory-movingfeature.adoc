@@ -1,0 +1,6 @@
+[[req_mf_mandatory-movingfeature]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/mandatory-mf*
+^|A |A moving feature object SHALL contain all the mandatory properties listed in <<moving-feature-properties-table>>.
+|===

@@ -1,0 +1,79 @@
+type: object
+required:
+  - id
+  - type
+  - coordinates
+  - datetimes
+  - interpolation
+properties:
+  id:
+    type: string
+  type:
+    type: string
+    enum:
+      - MovingPoint
+      - MovingLineString
+      - MovingPolygon
+      - MovingPointCloud
+  coordinates:
+    type: array
+    minItems: 2
+    items:
+      oneOf:
+        - $ref: pointCoordinates.yaml
+        - $ref: lineStringCoordinates.yaml
+        - $ref: polygonCoordinates.yaml
+        - $ref: multiPointCoordinates.yaml
+  datetimes:
+    type: array
+    uniqueItems: true,
+    minItems: 2
+    items:
+      type: string
+      format: date-time
+  interpolation:
+    type: string
+    enum:
+      - Discrete
+      - Step
+      - Linear
+      - Quadratic
+      - Cube
+  base:
+    type: object
+    required:
+      - href
+      - type
+    properties:
+      href:
+        type: string
+        format: uri
+      type:
+        type: string
+  orientations:
+    type: array
+    minItems: 2
+    items:
+      type: object
+      required:
+        - scales
+        - angles
+      properties:
+        scales:
+          type: array
+          oneOf:
+            - minItems: 2
+              maxItems: 2
+            - minItems: 3
+              maxItems: 3
+          items:
+            type: number
+        angles:
+          type: array
+          oneOf:
+            - minItems: 2
+              maxItems: 2
+            - minItems: 3
+              maxItems: 3
+          items:
+            type: number

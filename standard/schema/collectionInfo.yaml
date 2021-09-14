@@ -3,6 +3,7 @@ required:
   - id
   - links
   - itemType
+  - updateFrequency
 properties:
   id:
     description: identifier of the collection used, for example, in URIs
@@ -22,8 +23,11 @@ properties:
   extent:
     $ref: extent.yaml
   itemType:
-    description: indicator about the type of the items in the collection.
+    description: indicator about the type of the items in the collection
     type: string
     enum:
       - feature
       - movingfeature
+  updateFrequency:
+    description: a time interval of sampling location
+    type: number

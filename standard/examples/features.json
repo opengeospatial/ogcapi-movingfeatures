@@ -7,7 +7,7 @@
       "bbox":[
         -122.59750209, 37.48803556, -122.2880486, 37.613537207
       ],
-      "time":[
+      "interval":[
         "2011-07-14T22:01:01Z",
         "2011-07-15T01:11:22Z"
       ],
@@ -28,15 +28,17 @@
   ],
   "links":[
     {
-      "href": "https://pntml.io/mf/collections/Mirakan/mfeatures",
-      "rel": "self"
+      "href": "https://pntml.io/mf/collections/Mirakan/items",
+      "rel": "self",
+      "type": "application/geo+json"
     },
     {
-      "href": "https://pntml.io/mf/collections/Mirakan/mfeatures?resourceKey=06f11bfa-9fa9-452d-b9a8-249d6aee9d4f",
-      "rel": "next"
+      "href": "https://pntml.io/mf/collections/Mirakan/items&offset=10&limiy=1",
+      "rel": "next",
+      "type": "application/geo+json"
     }
   ],
   "timeStamp": "2020-01-01T12:00:00Z",
-  "numberMatched": 1,
+  "numberMatched": 100,
   "numberReturned": 1
 }

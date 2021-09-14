@@ -1,8 +1,0 @@
-[[req_core_mfc-response]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/mfc-response*
-^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The response SHALL only include moving features selected by the request.
-^|C |Each moving feature in the response SHALL include the mandatory properties listed in <<collection-properties-table>>.
-|===

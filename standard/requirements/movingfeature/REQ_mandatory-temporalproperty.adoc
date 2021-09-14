@@ -1,0 +1,6 @@
+[[req_mf_mandatory-temporalproperty]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/mandatory-tproperty*
+^|A |A temporal property object SHALL contain all the mandatory properties listed in <<temporalProperty-properties-table>>.
+|===

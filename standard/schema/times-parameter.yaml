@@ -1,0 +1,12 @@
+name: times
+in: query
+required: true
+schema:
+  type: array
+  uniqueItems: true,
+  minItems: 1
+  items:
+    type: string
+    format: date-time
+style: form
+explode: false
