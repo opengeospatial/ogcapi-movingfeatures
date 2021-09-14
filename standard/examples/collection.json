@@ -1,6 +1,7 @@
 {
   "id": "Miraikan",
   "itemType": "movingfeature",
+  "updateFrequency": 1,
   "extent": {
     "spatial": {
       "bbox": [
@@ -22,7 +23,8 @@
   "links": [
     {
       "href": "https://pntml.io/mf/collections/Miraikan",
-      "rel": "self"
+      "rel": "self",
+      "type": "application/json"
     }
   ]
 }

@@ -1,4 +1,4 @@
-:Title: OGC (add title text)
+:Title: OGC API - Moving Features
 :titletext: OGC API - Moving Features Standard
 :doctype: book
 :encoding: utf-8
@@ -9,6 +9,7 @@
 :numbered:
 :sectanchors:
 :source-highlighter: pygments
+//coderay
 
 <<<
 [cols = ">",frame = "none",grid = "none"]
@@ -22,7 +23,7 @@
 |Internal reference number of this OGC(R) document:    YY-nnnrx
 |Version: 0.01
 |Category: OGC(R) Implementation Specification
-|Editor:    Kyoung-Sook Kim, Taehoon Kim, Mahmoud SAKR, Martin Desruisseaux
+|Editor:    Taehoon Kim, Kyoung-Sook Kim, Mahmoud SAKR, Martin Desruisseaux
 |===
 
 [cols = "^", frame = "none"]
@@ -33,7 +34,7 @@
 [cols = "^", frame = "none", grid = "none"]
 |===
 |*Copyright notice*
-|Copyright (C) <year> Open Geospatial Consortium
+|Copyright (C) 2021 Open Geospatial Consortium
 |To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
 |===
 
@@ -92,9 +93,9 @@ include::clause_6_overview.adoc[]
 
 include::clause_7_requirements_classes.adoc[]
 
-include::clause_8_query.adoc[]
+include::clause_8_processes.adoc[]
 
-include::clause_9_requirements.adoc[]
+include::clause_9_general_requirements.adoc[]
 
 <<<
 ////

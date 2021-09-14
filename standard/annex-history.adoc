@@ -5,5 +5,5 @@
 [width="90%",options="header"]
 |===
 |Date |Release |Editor | Primary clauses modified |Description
-|2021-07-06 |0.01 |Taehoon Kim |all |initial version (dummy)
+|2021-09-14 |0.02 |Taehoon Kim, Kyoung-Sook Kim, and Martin Desruisseaux |all |first draft version
 |===

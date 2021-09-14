@@ -1,0 +1,16 @@
+{
+  "name": "length",
+  "type": "Measure",
+  "datetimes":[
+    "2011-07-14T22:01:01.450Z",
+    "2011-07-14T23:01:01.450Z",
+    "2011-07-15T00:01:01.450Z"
+  ],
+  "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length",
+  "values":[
+    1.0,
+    2.4,
+    1.0
+  ],
+  "interpolation": "Linear"
+}

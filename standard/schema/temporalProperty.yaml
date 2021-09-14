@@ -1,0 +1,44 @@
+type: object
+required:
+  - name
+  - type
+  - datetimes
+  - values
+  - interpolation
+properties:
+  name:
+    type: string
+  type:
+    type: string
+    enum:
+      - Measure
+      - Text
+      - Image
+  datetimes:
+    type: array
+    uniqueItems: true,
+    minItems: 2
+    items:
+      type: string
+      format: date-time
+  values:
+    oneOf:
+      - type: number
+      - type: string
+      - type: boolean
+  interpolation:
+    type: string
+    enum:
+      - Discrete
+      - Step
+      - Linear
+      - Regression
+  form:
+    oneOf:
+      - type: string
+        format: uri
+      - type: string
+        minLength: 3
+        maxLength: 3
+  description:
+    type: string

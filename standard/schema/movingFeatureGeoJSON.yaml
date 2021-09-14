@@ -1,0 +1,45 @@
+type: object
+required:
+  - id
+  - type
+  - geometry
+  - properties
+properties:
+  id:
+    type: string
+  type:
+    type: string
+    enum:
+      - Feature
+  geometry:
+    $ref: geometryGeoJSON.yaml
+  properties:
+    type: object
+    nullable: true
+  bbox:
+    type: array
+    minItems: 1
+    items:
+      type: array
+      oneOf:
+        - minItems: 4
+          maxItems: 4
+        - minItems: 6
+          maxItems: 6
+      items:
+        type: number
+  interval:
+    type: array
+    minItems: 1
+    items:
+      type: array
+      minItems: 2
+      maxItems: 2
+      items:
+        type: string
+        format: date-time
+        nullable: true
+  links:
+    type: array
+    items:
+      $ref: link.yaml
