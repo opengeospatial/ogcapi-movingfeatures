@@ -36,12 +36,12 @@
   ],
   "links": [
     {
-      "href": "https://pntml.io/mf/collections/{collectionId}/items/{mFeatureId}/temporalGeometry",
+      "href": "https://pntml.io/mf/collections/{collectionId}/items/{mFeatureId}/tgeometries",
       "rel": "self",
       "type": "application/json"
     },
     {
-      "href": "https://pntml.io/mf/collections/{collectionId}/items/{mFeatureId}/temporalGeometry&offset=10&limit=1",
+      "href": "https://pntml.io/mf/collections/{collectionId}/items/{mFeatureId}/tgeometries&offset=10&limit=1",
       "rel": "next",
       "type": "application/json"
     }

@@ -1,11 +1,11 @@
 type: object
 required:
-  - temporalProperties
+  - parametricValues
 properties:
-  temporalProperties:
+  parametricValues:
     type: array
     items:
-      $ref: temporalProperty.yaml
+      $ref: parametricValue.yaml
   links:
     type: array
     items:

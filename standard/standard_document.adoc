@@ -10,6 +10,7 @@
 :sectanchors:
 :source-highlighter: pygments
 //coderay
+//pygments
 
 <<<
 [cols = ">",frame = "none",grid = "none"]

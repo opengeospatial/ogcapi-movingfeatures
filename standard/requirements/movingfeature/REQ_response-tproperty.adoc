@@ -1,7 +1,0 @@
-[[req_mf-tproperty-response]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/temporal-property-response*
-^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The content of that response SHALL include the temporal geometry that defined in the <<tproperty-schema, response schema>>.
-|===

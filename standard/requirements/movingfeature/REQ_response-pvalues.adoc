@@ -1,0 +1,7 @@
+[[req_mf-pvalues-response]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/pvalues-response*
+^|A |The API implementation SHALL comply with the API - Features - Part 1:Core `Features` response requirement http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-response`].
+^|B |Each parametric value in the response SHALL include the mandatory properties listed in <<parametricValue-properties-table>>.
+|===
