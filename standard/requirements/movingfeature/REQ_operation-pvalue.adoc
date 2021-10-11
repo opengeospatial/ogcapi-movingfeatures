@@ -1,0 +1,7 @@
+[[req_mf_pvalue-op]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/pvalue-op*
+^|A | For every parametric value in a moving feature (path `{root}/collections/{collectionId}/items/{mFeatureId}/pvalues`), the server SHALL support the HTTP GET operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}/pvalues/{pValueName}`
+^|B | The path parameter `collectionId` is each `id` property in the <<resource-collection-section, `Collection`>> response where the value of the `itemType` property is specified as `movingfeature`. The path parameter `mFeatureId` is each `id` property in the <<resource-features-section, `Features`>> response. `pValueName` is a local identifier of the parametric value.
+|===

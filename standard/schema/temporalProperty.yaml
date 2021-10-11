@@ -1,19 +1,9 @@
 type: object
 required:
-  - name
-  - type
   - datetimes
   - values
   - interpolation
 properties:
-  name:
-    type: string
-  type:
-    type: string
-    enum:
-      - Measure
-      - Text
-      - Image
   datetimes:
     type: array
     uniqueItems: true,
@@ -33,12 +23,3 @@ properties:
       - Step
       - Linear
       - Regression
-  form:
-    oneOf:
-      - type: string
-        format: uri
-      - type: string
-        minLength: 3
-        maxLength: 3
-  description:
-    type: string

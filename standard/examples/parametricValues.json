@@ -1,0 +1,39 @@
+{
+  "parametricValues": [
+    {
+      "name": "length",
+      "type": "TFloat",
+      "temporalProperties": [
+        {
+          "datetimes":[
+            "2011-07-14T22:01:01.450Z",
+            "2011-07-14T23:01:01.450Z",
+            "2011-07-15T00:01:01.450Z"
+          ],
+          "values":[
+            1.0,
+            2.4,
+            1.0
+          ],
+          "interpolation": "Discrete"
+        }
+      ],
+      "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://pntml.io/mf/collections/{collectionId}/items/{mFeatureId}/tproperties",
+      "rel": "self",
+      "type": "application/json"
+    },
+    {
+      "href": "https://pntml.io/mf/collections/{collectionId}/items/{mFeatureId}/tproperties&offset=10&limit=1",
+      "rel": "next",
+      "type": "application/json"
+    }
+  ],
+  "timeStamp": "2021-09-01T12:00:00Z",
+  "numberMatched": 10,
+  "numberReturned": 1
+}

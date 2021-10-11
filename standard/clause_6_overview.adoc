@@ -33,12 +33,12 @@ Access Paths are used to build resource identifiers. It is recommended, but not 
 |<<resource-collection-section,{root}/collections/{collectionId}>>| |Metadata describing the <<collection-schema,Collection Catalog>> of data which has the unique identifier `{collectionId}`
 
 3+^|**Moving Features**
-|<<resource-features-section,{root}/collections/{collectionId}/items>>|`items`|Retrieve static inforamtion of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
+|<<resource-features-section,{root}/collections/{collectionId}/items>>|`items`|Retrieve static information of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
 |<<resource-movingfeature-section,{root}/collections/{collectionId}/items/{mFeatureId}>>|`item`| Static information describing the <<movingfeature-schema, MovingFeature>> of data which has the unique identifier `{mFeatureId}`
-|<<resource-temporalGeometries-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries>>|`items`|Retrieve temporal object information of <<resource-temporalGeometry-section, TemporalGeometry>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-temporalGeometry-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}>>|`item`|Temporal object describing the <<resource-temporalGeometry-section, TemporalGeometry>> of data which has the unique identifier `{tGeometryId}`
-|<<resource-temporalProperties-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties>>|`items`|Retrieve temporal object information of <<resource-temporalProperty-section, TemporalProperty>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-temporalProperty-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}>>|`item`|Temporal object describing the <<resource-temporalProperty-section, TemporalProperty>> of data which has the unique identifier `{tPropertyName}`
+|<<resource-temporalGeometries-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries>>|`items`|Retrieve temporal object information of <<resource-temporalGeometries-section, TemporalGeometries>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+//|<<resource-temporalGeometry-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}>>|`item`|Temporal object describing the <<resource-temporalGeometry-section, TemporalGeometry>> of data which has the unique identifier `{tGeometryId}`
+|<<resource-parametricValues-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties>>|`items`|Retrieve temporal object information of <<resource-parametricValue-section, ParametricValue>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+|<<resource-parametricValue-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{pValueName}>>|`item`|Temporal object describing the <<resource-parametricValue-section, ParametricValue>> of data which has the unique identifier `{pValueName}`
 
 3+^|**Processes**
 3+^|T.B.D
@@ -48,11 +48,13 @@ Where:
 
 * `{root}`          = Base URI for the API server
 * `{collectionId}`  = An identifier for a specific <<resource-collection-section,Collection>> of data
-* `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,MovingFeatures>> of a specific <<resource-collection-section,Collection>> of data
-* `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
-* `{tPropertyName}` = An identifier for a specific <<resource-temporalProperty-section,TemporalProperty>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
+* `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,MovingFeature>> of a specific <<resource-collection-section,Collection>> of data
+//* `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
+* `{pValueName}` = An identifier for a specific <<resource-parametricValue-section,ParametricValue>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
 
-<<mf-api-class-diagram>> shows a UML class diagram for MF-API which represents the basic resources of this standard, such as `Collection`, `MovingFeature`, `TemporalGeometry`, `TemporalProperty`, and so on.
+<<mf-api-class-diagram>> shows a UML class diagram for MF-API which represents the basic resources of this standard, such as `Collections`, `Collection`, `MovingFeature`, `TemporalGeometries`, `ParametricValues`, and `ParametricValues`.
+In this standard, a single moving feature can have temporal geometries, such as a set of trajectories.
+Also, the moving feature can have temporal properties, such as a set of parametric values.
 
 [#mf-api-class-diagram,reftext='{figure-caption} {counter:figure-num}']
 .Class diagram for MF-API
@@ -74,109 +76,6 @@ image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%,
 //.Class diagram for MF-JSON Prism
 //image::./images/mf-geojson-prism.png[mf-prism-uml, pdfwidth=100%, width=95%, align="center"]
 //
-//
-//[[movingFeatures-definition]]
-//=== Moving Feature Schema
-//
-//A moving feature represent a moving feature that is spatially and temporally bounded and its position (continuously) changes over time. The detail description and information is presented in the https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[MovingFeature of MF-JSON Prism].
-//<<moving-feature-properties>> lists the properties that may be included in a moving feature.
-//
-//[[moving-feature-properties]]
-//[reftext='{table-caption} {counter:table-num}']
-//.Table of the properties related to the moving feature
-//[cols="2,5",options="header"]
-//|===
-//|Property           |Description
-//|mFeatureId         |An identifier for the resource assigned by an external entity.
-//|type               |A feature type of GeoJSON (i.e., one of 'Feature' or 'FeatureCollection').
-//|geometry           |A projective geometry of the moving feature.
-//|properties         |A set of property of GeoJSON.
-//|temporalGeometry   |A <<temporalGeometry-definition,TemporalGeometry>> object.
-//|temporalProperties |A set of <<temporalProperty-definition,TemporalProperty>> object.
-//|bbox               |A bounding box information for the moving feature.
-//|time               |A life span information for the moving feature.
-//|crs                |A coordinate reference system used for spatial-temporal values.
-//|trs                |A temporal coordinate reference system used for spatial-temporal values.
-//|===
-//
-//[[temporalGeometry-definition]]
-//=== Temporal Geometry Schema
-//
-//A temporal geometry object represents the movement of a moving feature with various types of moving geometry, i.e., `MovingPoint`, `MovingLineString`, `MovingPolygon`, and `MovingPointCloud`. It can also represent the movement of a 3D object with its orientation.
-//
-//<<temporalGeometry-properties>> lists the properties that may be included in a temporal geometry.
-//
-//[[temporalGeometry-properties]]
-//[reftext='{table-caption} {counter:table-num}']
-//.Table of the properties related to the temporal geometry
-//[cols="2,5",options="header"]
-//|===
-//|Property           |Description
-//|tGeometryId        |An identifier for the resource assigned by an external entity.
-//|type               |A primitive geometry type of MF-JSON (i.e., one of 'MovingPoint', 'MovingLineString', 'MovingPolygon', 'MovingPointCloud', or 'MovingGeometryCollection').
-//|datetimes          |A sequence of monotonic increasing instants.
-//|coordinates        |A sequence of leaf geometries of a temporal geometry, having the same number of elements as "datetimes".
-//|interpolation      |A predefined type of motion curve (i.e., one of 'Discrete', 'Step', 'Linear', 'Quadratic' or 'Cubic').
-//|base.type          |A type of 3D file format, such as STL, OBJ, PLY, and glTF.
-//|base.href          |A URL to address a 3D model data which represents a base geometry of a 3D shape.
-//|orientations.scales|An array value of numbers along the x, y, and z axis in order as three scale factors.
-//|orientations.angles|An array value of numbers along the x, y, and z axis in order as Euler angles in degree.
-//|crs                |A coordinate reference system used for spatial-temporal values.
-//|trs                |A temporal coordinate reference system used for spatial-temporal values.
-//|===
-//
-//[[temporalProperty-definition]]
-//=== Temporal Property Schema
-//
-//A temporal property is a collection of dynamic non-spatial attributes and their parametric values with time.
-//
-//<<temporalProperty-properties>> lists the properties that may be included in a temporal property.
-//
-//[[temporalProperty-properties]]
-//[reftext='{table-caption} {counter:table-num}']
-//.Table of the properties related to the temporal properties
-//[cols="2,5",options="header"]
-//|===
-//|Property           |Description
-//|tPropertyName      |An identifier for the resource assigned by an external entity.
-//|type               |A temporal property type of MF-JSON (i.e., one of 'Measure', 'Text', or 'Image').
-//|datetimes          |A sequence of monotonic increasing instants.
-//|values             |A sequence of temporal property value, having the same number of elements as "datetimes".
-//|interpolation      |A predefined type for a parametric value (i.e., one of 'Discrete', 'Step', 'Linear', or 'Regression').
-//|form               |A unit of measure for 'Measure' type.
-//|description        |A short description.
-//|===
-//
-//[[movingFeatureCollection-definition]]
-//=== Moving Feature Collection Schema
-//
-//A moving feature collection is an object that groups and describes a set of related <<movingFeatures-definition,Moving Feature>>. The collection object is the primary access point from which a deployed set of moving features can be accessed.
-//
-//Depending on the deployment pattern, the collection may provide a link to each individual moving feature of the collection or a link to a search access point for retrieving sub-sets of moving features.
-//
-//<<moving-feature-collection-properties>> list the _core_ set of properties that may be used to describe a moving feature collection.
-//
-//[[moving-feature-collection-properties]]
-//[reftext='{table-caption} {counter:table-num}']
-//.Additional collection information properties
-//[cols="30,70",options="header"]
-//|===
-//|Property           |Description
-//|_**id**_           |A unique identifier for the collection
-//|_**title**_        |A human-readable name given to the collection.
-//|_**description**_  |A description of the members of the collection.
-//|_**attribution**_  |An attribution for the collection.
-//|_**links**_        |A list of references to other documents include one link per record that is part of this collection.
-//|_**extent**_       |The spatio-temporal coverage of the resources aggregated by this collection.
-//|_**itemType**_     |An indicator about the type of the items in the collection.
-//|_**crs**_          |A list of coordinate reference system used for spatial-temporal values.
-//|updateFrequency    |A time interval of sampling location.
-//|keywords           |A list of keywords or tag associated with the collection.
-//|===
-//
-//NOTE: The properties in bold are inherited from OGC API Common and OGC API Features.
-//
-//It is anticipated that this set of properties will be extended to enrich the information content of the collection metadata to suit specific needs.
 //
 //[[mf-access-overview]]
 //=== Moving Features Access Schema
@@ -217,8 +116,9 @@ The OGC API-MovingFeatures (shortly, API-MF) standard is an extension of the OGC
 |Collection                         | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
 |Features                           | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 |MovingFeature                      | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|TemporalGeometry                   | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|TemporalProperties                 | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|TemporalGeometries                 | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|ParametricValues                   | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|ParametricValue                    | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 |OpenAPI 3.0                        | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
 |GeoJSON                            | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
 |====
