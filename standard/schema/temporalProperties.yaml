@@ -1,0 +1,31 @@
+type: object
+required:
+  - name
+  - type
+  - dvalues
+properties:
+  name:
+    type: string
+  type:
+    type: string
+    enum:
+      - TBool
+      - TText
+      - TInt
+      - TFloat
+      - TImage
+  dvalues:
+    type: array
+    uniqueItems: true,
+    minItems: 1
+    items:
+      $ref: dynamicValue.yaml
+  form:
+    oneOf:
+      - type: string
+        format: uri
+      - type: string
+        minLength: 3
+        maxLength: 3
+  description:
+    type: string

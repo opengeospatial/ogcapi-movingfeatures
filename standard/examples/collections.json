@@ -1,7 +1,7 @@
 {
   "collections": [
     {
-      "id": "Miraikan",
+      "id": "mfc-A",
       "itemType": "movingfeature",
       "extent": {
         "spatial": {
@@ -23,7 +23,7 @@
       },
       "links": [
         {
-          "href": "https://pntml.io/mf/collections/Miraikan",
+          "href": "https://pntml.io/mf/collections/mfc-A",
           "rel": "self",
           "type": "application/json"
         }

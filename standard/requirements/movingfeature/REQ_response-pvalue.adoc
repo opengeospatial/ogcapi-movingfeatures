@@ -1,8 +1,0 @@
-[[req_mf-pvalue-response]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/pvalue-response*
-^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The response SHALL only include temporal properties selected by the request with `limit`, `times`, and `snapshot` parameters.
-^|C |The content of that response SHALL include the parametric value that defined in the <<pvalue-schema, response schema>>.
-|===

@@ -1,7 +1,0 @@
-[[req_mf_mf-op]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/mf-op*
-^|A | For every moving feature in a moving feature collection (path `{root}/collections/{collectionId}`), the server SHALL support the HTTP GET operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}`
-^|B | The path parameter `collectionId` is each `id` property in the `Collection` response where the value of the `itemType` property is specified as `movingfeature`. The path parameter `mFeatureId` is an `id` property of the moving feature.
-|===

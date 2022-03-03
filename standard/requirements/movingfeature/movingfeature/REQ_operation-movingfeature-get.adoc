@@ -1,0 +1,8 @@
+[[req_mf_mf-op-get]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/mf-op/get*
+^|A |The API implementation SHALL comply with the API - Features - Part 1:Core `Feature` operation requirement http://docs.ogc.org/is/17-069r3/17-069r3.html#_feature_[`http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/f-op`].
+^|B |For every moving feature in a moving feature collection (path `{root}/collections/{collectionId}`), the server SHALL support the HTTP GET operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}`
+^|C |The path parameter `collectionId` is each `id` property in the `Collection` GET operation response where the value of the `itemType` property is specified as `movingfeature`. The path parameter `mFeatureId` is an `id` property of the moving feature.
+|===

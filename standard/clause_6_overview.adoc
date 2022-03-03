@@ -2,7 +2,9 @@
 === General
 
 <<OGC-API-Features,OGC API>> standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, etc.)
-<<OGC-API-Common,OGC API-Common>> defines a set of features which are applicable to all OGC APIs. Other OGC standards extend API-Common with features specific to a resource type. This OGC API-MovingFeatures standard defines an API with two goals:
+<<OGC-API-Common,OGC API-Common>> defines a set of features which are applicable to all OGC APIs.
+Other OGC standards extend API-Common with features specific to a resource type.
+This OGC API-MovingFeatures standard defines an API with two goals:
 
 . Provide access to *_Moving Features_* conformance to the <<OGC-MF-JSON,OGC Moving Features JSON encoding standard>>.
 . Provide functionality comparable to that of the <<OGC-MF-Access,OGC Moving Features Access standard>>.
@@ -13,7 +15,10 @@ Resources exposed through an OGC API may be accessed through a Universal Resourc
 * Access Paths: Unique paths to Resources
 * Query Parameters: Parameters to adjust the representation of a Resource or Resources like encoding format or sub-setting
 
-Access Paths are used to build resource identifiers. It is recommended, but not required. Most resources are also accessible through links on previously accessed resources. Unique relation types are used for each resource.
+Access Paths are used to build resource identifiers.
+It is recommended, but not required.
+Most resources are also accessible through links on previously accessed resources.
+Unique relation types are used for each resource.
 
 <<mf-api-paths>> summarizes the access paths and relation types defined in this standard.
 
@@ -29,19 +34,22 @@ Access Paths are used to build resource identifiers. It is recommended, but not 
 |{root}/conformance|`conformance`|Conformance Classes
 
 3+^|**Collections**
-|<<resource-collections-section,{root}/collections>>|`data`|Metadata describing the <<collection-schema,Collection Catalog>> of data available from this API.
-|<<resource-collection-section,{root}/collections/{collectionId}>>| |Metadata describing the <<collection-schema,Collection Catalog>> of data which has the unique identifier `{collectionId}`
+|<<resource-collections-section,{root}/collections>>|`data`
+|Metadata describing the <<collection-schema,Collection Catalog>> of data available from this API.
+|<<resource-collection-section,{root}/collections/{collectionId}>>|
+|Metadata describing the <<collection-schema,Collection Catalog>> of data which has the unique identifier `{collectionId}`
 
 3+^|**Moving Features**
-|<<resource-features-section,{root}/collections/{collectionId}/items>>|`items`|Retrieve static information of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
-|<<resource-movingfeature-section,{root}/collections/{collectionId}/items/{mFeatureId}>>|`item`| Static information describing the <<movingfeature-schema, MovingFeature>> of data which has the unique identifier `{mFeatureId}`
-|<<resource-temporalGeometries-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries>>|`items`|Retrieve temporal object information of <<resource-temporalGeometries-section, TemporalGeometries>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-//|<<resource-temporalGeometry-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}>>|`item`|Temporal object describing the <<resource-temporalGeometry-section, TemporalGeometry>> of data which has the unique identifier `{tGeometryId}`
-|<<resource-parametricValues-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties>>|`items`|Retrieve temporal object information of <<resource-parametricValue-section, ParametricValue>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-parametricValue-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{pValueName}>>|`item`|Temporal object describing the <<resource-parametricValue-section, ParametricValue>> of data which has the unique identifier `{pValueName}`
-
-3+^|**Processes**
-3+^|T.B.D
+|<<resource-mfeatures-section,{root}/collections/{collectionId}/items>>|`items`
+|Static information of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
+|<<resource-movingfeature-section,{root}/collections/{collectionId}/items/{mFeatureId}>>|`item`
+|Static information describing the <<movingfeature-schema, MovingFeature>> of data which has the unique identifier `{mFeatureId}`
+|<<resource-temporalGeometries-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries>>|`items`
+|Temporal object information of <<resource-temporalGeometries-section, TemporalGeometries>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+|<<resource-tproperties-collection-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties>>|`items`
+|Temporal object information of <<resource-temporalProperties-section, TemporalProperties>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+|<<resource-temporalProperties-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertiesName}>>|`item`
+|Temporal object describing the <<resource-temporalProperties-section, TemporalProperties>> of data which has the unique identifier `{tPropertiesName}`
 |===
 
 Where:
@@ -49,10 +57,9 @@ Where:
 * `{root}`          = Base URI for the API server
 * `{collectionId}`  = An identifier for a specific <<resource-collection-section,Collection>> of data
 * `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,MovingFeature>> of a specific <<resource-collection-section,Collection>> of data
-//* `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
-* `{pValueName}` = An identifier for a specific <<resource-parametricValue-section,ParametricValue>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
+* `{tPropertiesName}` = An identifier for a specific <<resource-temporalProperties-section,TemporalProperties>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
 
-<<mf-api-class-diagram>> shows a UML class diagram for MF-API which represents the basic resources of this standard, such as `Collections`, `Collection`, `MovingFeature`, `TemporalGeometries`, `ParametricValues`, and `ParametricValues`.
+<<mf-api-class-diagram>> shows a UML class diagram for MF-API which represents the basic resources of this standard, such as `Collections`, `Collection`, `MovingFeature`, `TemporalGeometries`, `TemporalPropertiesCollection`, and `TemporalProperties`.
 In this standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have temporal properties, such as a set of parametric values.
 
@@ -102,7 +109,10 @@ OGC API-MovingFeatures extends these core search capabilities to include:
 [[dependencies-overview]]
 === Dependencies
 
-The OGC API-MovingFeatures (shortly, API-MF) standard is an extension of the OGC API-Common and the OGC API-Features standards. Therefore, an implementation of API-MF shall first satisfy the appropriate Requirements Classes from API-Common and API-Features. <<req-mappings>>, identifies the OGC API - Common and OGC API - Features Requirements Classes which are applicable to each section of this Standard. Instructions on when and how to apply these Requirements Classes are provided in each section.
+The OGC API-MovingFeatures (shortly, API-MF) standard is an extension of the OGC API-Common and the OGC API-Features standards.
+Therefore, an implementation of API-MF shall first satisfy the appropriate Requirements Classes from API-Common and API-Features.
+<<req-mappings>>, identifies the OGC API - Common and OGC API - Features Requirements Classes which are applicable to each section of this Standard.
+Instructions on when and how to apply these Requirements Classes are provided in each section.
 
 [#req-mappings,reftext='{table-caption} {counter:table-num}']
 .Required OGC API - Common and OGC API - Features Requirements Classes
@@ -117,8 +127,8 @@ The OGC API-MovingFeatures (shortly, API-MF) standard is an extension of the OGC
 |Features                           | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 |MovingFeature                      | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 |TemporalGeometries                 | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|ParametricValues                   | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|ParametricValue                    | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|TemporalPropertiesCollection       | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+|TemporalProperties                 | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 |OpenAPI 3.0                        | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
 |GeoJSON                            | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
 |====
