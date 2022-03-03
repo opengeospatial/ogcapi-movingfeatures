@@ -1,0 +1,8 @@
+[[req_mf_mf-op-delete]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/mf-op/delete*
+^|A |The API implementation SHALL comply with the API - Feature `DELETE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete/delete/delete-op`].
+^|B |For every moving feature in a moving feature collection (path `{root}/collections/{collectionId}`), the server SHALL support the HTTP DELETE operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}`
+^|C |The path parameter `collectionId` is each `id` property in the `Collection` GET operation response where the value of the `itemType` property is specified as `movingfeature`. The path parameter `mFeatureId` is an `id` property of the moving feature.
+|===

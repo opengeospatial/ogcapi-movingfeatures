@@ -3,7 +3,7 @@
   "features":[
     {
       "type": "Feature",
-      "id": "feature-000001",
+      "id": "fc-1",
       "bbox":[
         -122.59750209, 37.48803556, -122.2880486, 37.613537207
       ],
@@ -28,7 +28,7 @@
   ],
   "links":[
     {
-      "href": "https://pntml.io/mf/collections/Mirakan/items",
+      "href": "https://pntml.io/mf/collections/mfc-A/items",
       "rel": "self",
       "type": "application/geo+json"
     },

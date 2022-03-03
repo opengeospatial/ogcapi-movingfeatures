@@ -2,7 +2,7 @@
 [[clause-core-collection]]
 == Requirements Class "Collection Catalog"
 === Overview
-include::requirements/collection/requirements_class_movingfeature_collection.adoc[]
+include::requirements/collection_catalog/requirements_class_collection.adoc[]
 
 The `Collection Catalog` requirements class defines the requirements for a collection.
 A collection is an object that provides information about and access to a set of related <<clause-core-movingfeature,MovingFeature>>.
@@ -15,19 +15,34 @@ The two resources defined in this Requirements Class are summarized in <<collect
 [width="90%",cols="10,10,5,20",options="header"]
 |===
 ^|Resource ^|URI ^|HTTP Method ^|Description
-|<<resource-collections-section,Collections>> |`{root}/collections` ^|GET |Information which describes the set of available Collections
-|<<resource-collection-section,Collection>> |`{root}/collections/{collectionId}` ^|GET |Information about a specific collection of geospatial data with links to distribution
+.2+|<<resource-collections-section,Collections>>
+.2+|`{root}/collections`
+^|GET |Get information which describes the set of available Collections
+^|POST|Add a new resource (<<resource-collection-section,Collection>>) instance to a Collections
+
+.3+|<<resource-collection-section,Collection>>
+.3+|`{root}/collections/
+{collectionId}`
+^|GET   |Get information about a specific Collection ({collectinoId}) of geospatial data with links to distribution
+^|PUT   |Update information about a specific Collection ({collectinoId})
+^|DELETE|Delete a specific Collection ({collectinoId})
 |===
 
 
 [[resource-collections-section]]
 === Resource Collections
-The `Collections` operation returns a set of metadata which describes the collections available from this API.
-The catalog of collections returned to the response can be limited using the <<bbox-section,bbox>>, <<datetime-section,datetime>>, and <<limit-section,limit>> parameters.
+The `Collections` resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
+
+. Retrieving operation returns a set of metadata which describes the collections available from this API. The catalog of collections returned to the response can be limited using the <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, and <<datetime-section,`datetime`>> parameters.
+. Creating operation post a new <<resource-collection-section,Collection>> resource instance to the collections with this API.
 
 ==== Parameters
 The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API - Common.
 All requirements and recommendations in API - Common regarding these parameters also apply for API - MovingFeatures.
+
+[[limit-section]]
+===== Parameter limit
+include::requirements/parameter/REQ_parameter-limit.adoc[]
 
 [[bbox-section]]
 ===== Parameter bbox
@@ -37,41 +52,68 @@ include::requirements/parameter/REQ_parameter-bbox.adoc[]
 ===== Parameter datetime
 include::requirements/parameter/REQ_parameter-datetime.adoc[]
 
-[[limit-section]]
-===== Parameter limit
-include::requirements/parameter/REQ_parameter-limit.adoc[]
-
-==== Operation
-This operation is defined in the `Collections` conformance class of API-Common.
+==== Operations
+===== Retrieve
+This operation is defined in the `https://docs.ogc.org/DRAFTS/20-024.html#rc-collections-section[Collections]` conformance class of API-Common.
 No modifications are needed to support `MovingFeature` resources.
 
 . Issue a `GET` request on `{root}/collections` path
 
-Support for GET on the `{root}/collections` path is required by API-Common.
+Support for HTTP GET method on the `{root}/collections` path is required by API-Common.
 
-include::requirements/collection/REQ_operation-collections.adoc[]
+include::requirements/collection_catalog/collections/REQ_operation-collections-get.adoc[]
+
+====== Create
+This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+This operation targeted <<resource-collection-section,Collection>> resource.
+
+. Issue a `POST` request on `{root}/collections` path
+
+Support for HTTP POST method is required by API-Features.
+
+include::requirements/collection_catalog/collections/REQ_operation-collections-post.adoc[]
+
+[#collection-requestbody-schema,reftext='Collection Request Body Schema']
+.Collection Request Body Schema
+[source,yaml]
+----
+include::schema/requestBody/collection.yaml[]
+----
+
+The following example adds a new feature (collection information) to the feature collections.
+The feature is represented as JSON.
+A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+[#collections-post-example,reftext='Create a New Collection Example']
+.Create a New Collection Example
+include::examples/collection-post.adoc[]
 
 ==== Response
-A successful response to the `Collections` operation is a document that contains summary metadata for each collection accessible through the API.
-In a typical API deployment, the `Collections` Response will list collections of all offered resource types.
+===== Retrieve
+A successful response to the `Collections` GET operation is a document that contains summary metadata for each collection accessible through the API.
+In a typical API deployment, the `Collections` GET response will list collections of all offered resource types.
 The collections where the value of the `itemType` property is `movingfeature` are collections of moving features.
 
-include::requirements/collection/REQ_response-collections.adoc[]
+include::requirements/collection_catalog/collections/REQ_response-collections-get.adoc[]
 
-[#collections-schema,reftext='Collections Response Schema']
-.Collections Response Schema
+[#collections-schema,reftext='Collections GET Response Schema']
+.Collections GET Response Schema
 [source,yaml]
 ----
 include::schema/collections.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API-MovingFeatures `Collections` operation.
+The following JSON payload is an example of a response to an OGC API-MovingFeatures `Collections` GET operation.
 [#collections-example,reftext=`Collections Example`]
 .Collections Example
 [source,json]
 ----
 include::examples/collections.json[]
 ----
+
+====== Create
+A successful response to the `Collections` POST operation is an HTTP status code.
+
+include::requirements/collection_catalog/collections/REQ_response-collections-post.adoc[]
 
 ==== Error situations
 The requirements for handling unsuccessful requests are provided in <<http-response>>.
@@ -81,7 +123,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 [[resource-collection-section]]
 === Resource Collection
 A Collection information object is the set of metadata that describes a single collection.
-An abbreviated copy of this information is returned for each `Collection` in the `{root}/collections` response.
+An abbreviated copy of this information is returned for each `Collection` in the `{root}/collections` GET response.
 
 [[collection-schema]]
 The schema for the collection information object presented in this clause is an extension of the collection schema defined in http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
@@ -107,10 +149,11 @@ NOTE: The properties _id_, _title_, _description_, _links_, _extent_, and _items
 NOTE: An update frequency is one of the most important properties of moving feature collection.
 It is determined by a data source. It can use to determine the continuity of the moving feature's trajectory.
 
-include::requirements/collection/REQ_mandatory-collection.adoc[]
+include::requirements/collection_catalog/collection/REQ_mandatory-collection.adoc[]
 
 ==== Operation
-This operation is defined in the `Collection` conformance class of API-Common.
+===== Retrieve
+This operation is defined in the `https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection]` conformance class of API-Common.
 No modifications are required to support `MovingFeature` resources.
 
 . Issue a `GET` request on the `{root}/collections/{collectionId}` path
@@ -121,27 +164,72 @@ The list of valid values for `{collectionId}` is provided in the <<resource-coll
 
 Support for the `{root}/collections/{collectionId}` path is required by OGC API-Common.
 
-include::requirements/collection/REQ_operation-collection.adoc[]
+include::requirements/collection_catalog/collection/REQ_operation-collection-get.adoc[]
+
+===== Replace
+This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#replace[REPLACE]` conformance class of API-Features.
+This operation targeted <<resource-collection-section,Collection>> resource.
+
+. Issue a `PUT` request on `{root}/collections/{collectionId}` path
+
+Support for HTTP PUT method is required by API-Features.
+
+include::requirements/collection_catalog/collection/REQ_operation-collection-put.adoc[]
+
+NOTE: The update frequency cannot be changed once set.
+
+The following example replaces the feature created by the <<collections-post-example, Create Example>> with a new feature (collection information without an update frequency).
+Once again, the replacement feature is represented as JSON.
+A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+[#collections-put-example,reftext='Replace an Existing Collection Example']
+.Replace an Existing Collection Example
+include::examples/collection-put.adoc[]
+
+===== Delete
+This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API-Features.
+
+. Issue a `DELETE` request on `{root}/collections/{collectionId}` path
+
+Support for HTTP DELETE method is required by API-Features.
+
+include::requirements/collection_catalog/collection/REQ_operation-collection-delete.adoc[]
+
+The following example deletes the feature created by the <<collections-post-example, Create Example>> and replaced with a new feature in the <<collections-put-example, Replace Example>>.
+A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+[#collections-delete-example,reftext='Delete an Existing Collection Example']
+.Delete an Existing Collection Example
+include::examples/collection-delete.adoc[]
 
 ==== Response
-A successful response to the `Collection` operation is a set of metadata that describes the collection identified by the <<collection-identifier,`{collectionId}`>> parameter.
+===== Retrieve
+A successful response to the `Collection` GET operation is a set of metadata that describes the collection identified by the <<collection-identifier,`{collectionId}`>> parameter.
 
-include::requirements/collection/REQ_response-collection.adoc[]
+include::requirements/collection_catalog/collection/REQ_response-collection-get.adoc[]
 
-[#collection-info-schema,reftext='Collection Response Schema']
-.Collection Response Schema
+[#collection-info-schema,reftext='Collection GET Response Schema']
+.Collection GET Response Schema
 [source,yaml]
 ----
 include::schema/collectionInfo.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API-MovingFeatures `Collection` operation.
+The following JSON payload is an example of a response to an OGC API-MovingFeatures `Collection` GET operation.
 [#collection-info-example,reftext=`Collection Information Example`]
 .Collection Information Example
 [source,json]
 ----
 include::examples/collection.json[]
 ----
+
+===== Replace
+A successful response to the `Collection` PUT operation is an HTTP status code.
+
+include::requirements/collection_catalog/collection/REQ_response-collection-put.adoc[]
+
+===== Delete
+A successful response to the `Collection` DELETE operation is an HTTP status code.
+
+include::requirements/collection_catalog/collection/REQ_response-collection-delete.adoc[]
 
 ==== Error situations
 The requirements for handling unsuccessful requests are provided in <<http-response>>.

@@ -1,0 +1,9 @@
+[[req_mf-tproperties-op-post]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperties-op/post*
+^|A |The API implementation SHALL comply with the API - Feature `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
+^|B |The API implementation SHALL comply with the API - Feature `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
+^|C |The content of the request body SHALL be based upon the <<dvalue-schema,DynamicValue>> schema.
+^|D |The latest date-time instance in the dynamic value object in <<resource-temporalProperties-section,TemporalProperties>>, determined by `tPropertyName`, SHALL be faster than the beginning date-time instance in the dynamic value object in the request body.
+|===

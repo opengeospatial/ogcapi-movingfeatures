@@ -1,4 +1,4 @@
-name: times
+name: leaf
 in: query
 required: true
 schema:

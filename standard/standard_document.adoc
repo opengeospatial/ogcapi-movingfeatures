@@ -8,7 +8,7 @@
 :toclevels: 3
 :numbered:
 :sectanchors:
-:source-highlighter: pygments
+:source-highlighter: coderay
 //coderay
 //pygments
 
@@ -35,7 +35,7 @@
 [cols = "^", frame = "none", grid = "none"]
 |===
 |*Copyright notice*
-|Copyright (C) 2021 Open Geospatial Consortium
+|Copyright (C) 2022 Open Geospatial Consortium
 |To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
 |===
 
@@ -94,7 +94,7 @@ include::clause_6_overview.adoc[]
 
 include::clause_7_requirements_classes.adoc[]
 
-include::clause_8_processes.adoc[]
+//include::clause_8_processes.adoc[]
 
 include::clause_9_general_requirements.adoc[]
 
