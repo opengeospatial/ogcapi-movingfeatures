@@ -5,14 +5,14 @@
      | Content-Type: application/json                                    |
      |                                                                   |
      | {                                                                 |
-     |   "title": "MovingFeatureCollection_A",                           |
-     |   "updateFrequency": 10,                                          |
+     |   "title": "MovingFeatureCollection_1",                           |
+     |   "updateFrequency": 1000,                                        |
      |   "description": "a collection of moving features to manage data  |
      |                   in a distinct (physical or logical) space"      |
      | }                                                                 |
      |------------------------------------------------------------------>|
      |                                                                   |
      | HTTP/1.1 201 Created                                              |
-     | Location: /collections/mfc_A                                      |
+     | Location: /collections/mfc_1                                      |
      |<------------------------------------------------------------------|
 ....

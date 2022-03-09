@@ -1,0 +1,4 @@
+
+include::clause_8_requirements_classes_common.adoc[]
+include::clause_8_requirements_classes_collection.adoc[]
+include::clause_8_requirements_classes_movingfeatures.adoc[]

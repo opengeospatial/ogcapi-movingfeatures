@@ -1,3 +1,0 @@
-//== Requirements Classes for Moving Features
-include::clause_7_requirements_classes_collection.adoc[]
-include::clause_7_requirements_classes_movingfeatures.adoc[]

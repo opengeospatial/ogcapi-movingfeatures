@@ -1,0 +1,6 @@
+name: tGeometryId
+in: path
+description: local identifier of a temporal geometry
+required: true
+schema:
+  type: string

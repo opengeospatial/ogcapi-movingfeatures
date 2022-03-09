@@ -1,0 +1,6 @@
+name: mFeatureId
+in: path
+description: local identifier of a moving feature
+required: true
+schema:
+  type: string

@@ -1,0 +1,6 @@
+name: tPropertiesName
+in: path
+description: local identifier of a temporal properties
+required: true
+schema:
+  type: string

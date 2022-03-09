@@ -1,0 +1,29 @@
+{
+  "temporalProperties": [
+    {
+      "name": "length",
+      "type": "TFloat",
+      "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length"
+    },
+    {
+      "name": "speed",
+      "type": "TFloat",
+      "form": "KHM"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://data.example.org/collections/mfc-1/items/mf-1/tproperties",
+      "rel": "self",
+      "type": "application/json"
+    },
+    {
+      "href": "https://data.example.org/collections/mfc-1/items/mf-1/tproperties&offset=2&limit=2",
+      "rel": "next",
+      "type": "application/json"
+    }
+  ],
+  "timeStamp": "2021-09-01T12:00:00Z",
+  "numberMatched": 10,
+  "numberReturned": 2
+}

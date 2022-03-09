@@ -21,7 +21,7 @@
 |Approval Date:   <yyyy-mm-dd>
 |Publication Date:   <yyyy-mm-dd>
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
-|Internal reference number of this OGC(R) document:    YY-nnnrx
+|Internal reference number of this OGC(R) document:    22-003
 |Version: 0.01
 |Category: OGC(R) Implementation Specification
 |Editor:    Taehoon Kim, Kyoung-Sook Kim, Mahmoud SAKR, Martin Desruisseaux
@@ -78,23 +78,21 @@ toc::[]
 ////
 Make sure to complete each included document
 ////
-include::clause_0_front_material.adoc[]
+include::clause_1_front_material.adoc[]
 
-include::clause_1_scope.adoc[]
+include::clause_2_scope.adoc[]
 
-include::clause_2_conformance.adoc[]
+include::clause_3_conformance.adoc[]
 
-include::clause_3_references.adoc[]
+include::clause_4_references.adoc[]
 
-include::clause_4_terms_and_definitions.adoc[]
+include::clause_5_terms_and_definitions.adoc[]
 
-include::clause_5_conventions.adoc[]
+include::clause_6_conventions.adoc[]
 
-include::clause_6_overview.adoc[]
+include::clause_7_overview.adoc[]
 
-include::clause_7_requirements_classes.adoc[]
-
-//include::clause_8_processes.adoc[]
+include::clause_8_requirements_classes.adoc[]
 
 include::clause_9_general_requirements.adoc[]
 

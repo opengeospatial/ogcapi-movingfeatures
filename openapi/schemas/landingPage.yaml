@@ -1,0 +1,14 @@
+type: object
+required:
+  - links
+properties:
+  title:
+    type: string
+    example: Movingfeatures data server
+  description:
+    type: string
+    example: Access to data about moving features
+  links:
+    type: array
+    items:
+      $ref: ogcapi-features-core/link.yaml
