@@ -1,0 +1,27 @@
+{
+  "id": "mf-1",
+  "type": "Feature",
+  "geometry":{
+    "type": "LineString",
+    "coordinates": [
+      [139.757083, 35.627701, 0.5],
+      [139.757399, 35.627701, 2.0],
+      [139.757555, 35.627688, 4.0],
+      [139.757651, 35.627596, 4.0],
+      [139.757716, 35.627483, 4.0]
+    ]
+  },
+  "properties":{
+    "name": "car1",
+    "state": "test1",
+    "video": "http://www.opengis.net/spec/movingfeatures/json/1.0/prism/example/video.mpeg"
+  },
+  "bbox":[
+    139.757083, 35.627483, 0.0,
+    139.757716, 35.627701, 4.5
+  ],
+  "interval":[
+    "2011-07-14T22:01:01Z",
+    "2011-07-15T01:11:22Z"
+  ]
+}

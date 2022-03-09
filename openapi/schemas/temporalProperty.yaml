@@ -1,0 +1,24 @@
+type: object
+required:
+  - name
+  - type
+properties:
+  name:
+    type: string
+  type:
+    type: string
+    enum:
+      - TBool
+      - TText
+      - TInt
+      - TFloat
+      - TImage
+  form:
+    oneOf:
+      - type: string
+        format: uri
+      - type: string
+        minLength: 3
+        maxLength: 3
+  description:
+    type: string

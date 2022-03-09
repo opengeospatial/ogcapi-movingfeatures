@@ -1,0 +1,62 @@
+[[resource-tproperties-collection-section]]
+=== Resource TemporalPropertyCollection
+A `TemporalPropertyCollection` object consists of the set of <<resource-temporalProperty-section,TemporalProperty>> which is included in the <<resource-movingfeature-section,`MovingFeature`>> that specified by <<movingfeature-identifier,{mFeatureId}>>.
+The `TemporalPropertyCollection` resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
+
+. Retrieving operation returns a list of the available abbreviated copy of <<resource-temporalProperty-section,TemporalProperty>> object in the specified moving feature.
+. Creating operation post a new <<resource-temporalProperty-section,TemporalProperty>> object to the <<resource-movingfeature-section,`MovingFeature`>> that specified by <<movingfeature-identifier,{mFeatureId}>>.
+
+//If a `tPropertyName` is not specified, the query will return a list of the available parametric values in the specified moving feature.
+
+==== Operation
+===== Retrieve
+. Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` path
+
+include::requirements/movingfeature/tproperties-collection/REQ_operation-tproperties-collection-get.adoc[]
+
+====== Create
+This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+This operation targeted <<resource-temporalProperty-section,TemporalProperty>> resource.
+
+. Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` path
+
+Support for HTTP POST method is required by API-Features.
+
+include::requirements/movingfeature/tproperties-collection/REQ_operation-tproperties-collection-post.adoc[]
+
+The following example adds a new feature (<<resource-temporalProperty-section, TemporalProperty>> resource) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
+The feature is represented as JSON.
+A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+[#tproperties-post-example,reftext='Create a New TemporalProperty Object Example']
+.Create a New TemporalProperty Object Example
+include::examples/temporalProperty-post.adoc[]
+
+==== Response
+===== Retrieve
+A successful response to the `TemporalPropertyCollection` GET is a document that contains the set of <<resource-temporalProperty-section, TemporalProperty>> of the moving feature identified by the <<movingfeature-identifier,`{mFeatureId}`>> parameter.
+
+include::requirements/movingfeature/tproperties-collection/REQ_response-tproperties-collection-get.adoc[]
+
+[#pvalues-schema,reftext='TemporalPropertyCollection GET Response Schema']
+.TemporalPropertyCollection GET Response Schema
+[source,yaml]
+----
+include::../openapi/schemas/temporalPropertyCollection.yaml[]
+----
+
+The following JSON payload is an example of a response to an OGC API-Moving Features `TemporalPropertyCollection` GET operation.
+[#pvalues-example,reftext=`TemporalPropertyCollection GET Example`]
+.TemporalPropertyCollection GET Example
+[source,json]
+----
+include::../openapi/examples/temporalPropertyCollection.json[]
+----
+
+====== Create
+A successful response to the `TemporalPropertyCollection` POST operation is an HTTP status code.
+
+include::requirements/movingfeature/tproperties-collection/REQ_response-tproperties-collection-post.adoc[]
+
+==== Error situations
+The requirements for handling unsuccessful requests are provided in <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
