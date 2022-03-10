@@ -1,5 +1,5 @@
 :Title: OGC API - Moving Features
-:titletext: OGC API - Moving Features Standard
+:titletext: OGC API - Moving Features - Part 1: Features extension
 :doctype: book
 :encoding: utf-8
 :lang: en
