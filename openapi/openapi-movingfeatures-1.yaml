@@ -9,7 +9,13 @@ info:
     email: kim.taehoon@aist.go.jp
   license:
     name: OGC License
-    url: 'https://www.ogc.org/ogc/Document'
+    url: "https://www.ogc.org/ogc/Document"
+  x-logo:
+    url: "https://www.ogc.org/pub/www/files/OGC_Logo_2D_Blue_x_0_0.png"
+    backgroundColor: "#FFFFFF"
+    altText: "OGC logo"
+    href: "https://www.ogc.org/contacts"
+
 tags:
   - name: Capabilities
     description: Essential characteristics of the information available from the API.
