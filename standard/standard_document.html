@@ -464,13 +464,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Publication Date:   &lt;yyyy-mm-dd&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">External identifier of this OGC&#174; document: <a href="http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}" class="bare">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</a></p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">External identifier of this OGC&#174; document: <a href="http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/0.2.1.draft" class="bare">http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/0.2.1.draft</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Internal reference number of this OGC&#174; document:    22-003</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 0.01</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 0.2.1.draft</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Category: OGC&#174; Implementation Specification</p></td>
@@ -486,7 +486,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">OGC API - Moving Features Standard</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">OGC API - Moving Features - Part 1: Features extension</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -1042,7 +1042,7 @@ reference system (ISO 19111), also called a local frame or a local Euclidean coo
 <p>The normative provisions in this Standard are denoted by the URI</p>
 </div>
 <div class="paragraph">
-<p><a href="http://www.opengis.net/spec/{standard}/{m.n}" class="bare">http://www.opengis.net/spec/{standard}/{m.n}</a></p>
+<p><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/{m.n}" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/{m.n}</a></p>
 </div>
 <div class="paragraph">
 <p>All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.</p>
@@ -4068,7 +4068,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Each temporal properties object in the response SHALL include the mandatory properties listed in <a href="#temporalProperties-properties-table">[temporalProperties-properties-table]</a>.</p>
+<p>Each temporal properties object in the response SHALL include the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 8</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4298,7 +4298,7 @@ The detailed information and requirements for each property are described in the
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A parametric value object SHALL contain all the mandatory properties listed in <a href="#temporalProperties-properties-table">[temporalProperties-properties-table]</a> and <a href="#temporalProperty-properties-table">Table 8</a>.</p>
+<p>A parametric value object SHALL contain all the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 8</a> and <a href="#temporalValue-properties-table">Table 9</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4388,13 +4388,13 @@ This operation targeted <a href="#temporalValue-properties-table">TemporalValue<
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="#dvalue-schema">DynamicValue</a> schema.</p>
+<p>The content of the request body SHALL be based upon the <a href="#tvalue-schema">TemporalValue</a> schema.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The latest date-time instance in the dynamic value object in <a href="#resource-temporalProperties-section">TemporalProperties</a>, determined by <code>tPropertyName</code>, SHALL be faster than the beginning date-time instance in the dynamic value object in the request body.</p>
+<p>The latest date-time instance in the temporal value object in <a href="#resource-temporalProperty-section">TemporalProperty</a>, determined by <code>tPropertyName</code>, SHALL be faster than the beginning date-time instance in the temporal value object in the request body.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4501,7 +4501,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span></code></pre>
 </div>
 </div>
-<div id="dvalue-schema" class="listingblock">
+<div id="tvalue-schema" class="listingblock">
 <div class="title">TemporalValue Schema (temporalValue.yaml)</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
@@ -5104,7 +5104,7 @@ The specification provides various UML diagrams summarizing ISO 19141.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-10 00:32:13 +0900
+Last updated 2022-03-10 17:41:50 +0900
 </div>
 </div>
 </body>

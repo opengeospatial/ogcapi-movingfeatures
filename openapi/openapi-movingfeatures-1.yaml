@@ -9,7 +9,13 @@ info:
     email: kim.taehoon@aist.go.jp
   license:
     name: OGC License
-    url: 'https://www.ogc.org/ogc/Document'
+    url: "https://www.ogc.org/ogc/Document"
+  x-logo:
+    url: "https://www.ogc.org/pub/www/files/OGC_Logo_2D_Blue_x_0_0.png"
+    backgroundColor: "#FFFFFF"
+    altText: "OGC logo"
+    href: "https://www.ogc.org/contacts"
+
 tags:
   - name: Capabilities
     description: Essential characteristics of the information available from the API.
@@ -111,7 +117,7 @@ paths:
   /collections/{collectionId}:
     get:
       operationId: accessMetadata
-      summary: Accesse metadata about the collection
+      summary: Access metadata about the collection
       description: |
         A user can access metadata with id `collectionId`.
       tags:
@@ -186,7 +192,7 @@ paths:
           $ref: "responses/ServerError.yaml"
     post:
       operationId: insertMovingFeatures
-      summary: Inserts moving features
+      summary: Insert moving features
       description: |
         A user SHOULD insert a set of moving features or a moving feature into a collection with id `collectionId`.
         
@@ -224,10 +230,9 @@ paths:
   /collections/{collectionId}/items/{mFeatureId}:
     get:
       operationId: accessMovingFeature
-      summary: >- 
-        Accesses the static data of the moving feature
+      summary: Access the static data of the moving feature
       description: |
-        A user accesses a static data of a moving feature with id `mFeatureId`.
+        A user can access a static data of a moving feature with id `mFeatureId`.
         
         The static data of a moving feature is not included temporal geometries and temporal properties.
       tags:
@@ -264,7 +269,7 @@ paths:
         '500':
           $ref: "responses/ServerError.yaml"
 
-  /collections/{collectionId}/items/{mFeatureId}/tGeometries:
+  /collections/{collectionId}/items/{mFeatureId}/tgeometries:
     get:
       operationId: retrieveTemporalGeometries
       summary: Retrieve the movement data of the single moving feature
@@ -286,7 +291,7 @@ paths:
           $ref: "responses/ServerError.yaml"
     post:
       operationId: insertTemporalGeometry
-      summary: Adds movement data into the moving feature
+      summary: Add movement data into the moving feature
       description: |
         A user SHOULD add more movement data into a moving feature with id `mFeatureId`.
         
@@ -321,7 +326,7 @@ paths:
         '500':
           $ref: "responses/ServerError.yaml"
 
-  /collections/{collectionId}/items/{mFeatureId}/tGeometries/{tGeometryId}:
+  /collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}:
     delete:
       operationId: deleteTemporalGeometry
       summary: Delete a singe temporal geometry
@@ -344,12 +349,12 @@ paths:
         '500':
           $ref: "responses/ServerError.yaml"
 
-  /collections/{collectionId}/items/{mFeatureId}/tProperties:
+  /collections/{collectionId}/items/{mFeatureId}/tproperties:
     get:
       operationId: retrieveTemporalPropertyCollection
       summary: Retrieve the static information of the temporal properties data
       description: |
-        A user can retrieve only the static information of the temporal properties data that included a single moving feature with id `mFeatureId`.
+        A user can retrieve only the static information of the temporal property data that included a single moving feature with id `mFeatureId`.
         
         The static data of a temporal property is not included temporal values (property `values`).
       tags:
@@ -401,7 +406,7 @@ paths:
         '500':
           $ref: "responses/ServerError.yaml"
 
-  /collections/{collectionId}/items/{mFeatureId}/tProperties/{tPropertyName}:
+  /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}:
     get:
       operationId: retrieveTemporalProperty
       summary: Retrieve a temporal property

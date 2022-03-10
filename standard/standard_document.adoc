@@ -1,5 +1,5 @@
 :Title: OGC API - Moving Features
-:titletext: OGC API - Moving Features Standard
+:titletext: OGC API - Moving Features - Part 1: Features extension
 :doctype: book
 :encoding: utf-8
 :lang: en
@@ -11,6 +11,9 @@
 :source-highlighter: coderay
 //coderay
 //pygments
+:doc-type: IS
+:standard: ogcapi-movingfeatures-1
+:version: 0.2.1.draft
 
 <<<
 [cols = ">",frame = "none",grid = "none"]
@@ -20,9 +23,9 @@
 |Submission Date: <yyyy-mm-dd>
 |Approval Date:   <yyyy-mm-dd>
 |Publication Date:   <yyyy-mm-dd>
-|External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+|External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{version}
 |Internal reference number of this OGC(R) document:    22-003
-|Version: 0.01
+|Version: {version}
 |Category: OGC(R) Implementation Specification
 |Editor:    Taehoon Kim, Kyoung-Sook Kim, Mahmoud SAKR, Martin Desruisseaux
 |===
