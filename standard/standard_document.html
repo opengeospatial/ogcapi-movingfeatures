@@ -4068,7 +4068,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Each temporal properties object in the response SHALL include the mandatory properties listed in <a href="#temporalProperties-properties-table">[temporalProperties-properties-table]</a>.</p>
+<p>Each temporal properties object in the response SHALL include the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 8</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4298,7 +4298,7 @@ The detailed information and requirements for each property are described in the
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A parametric value object SHALL contain all the mandatory properties listed in <a href="#temporalProperties-properties-table">[temporalProperties-properties-table]</a> and <a href="#temporalProperty-properties-table">Table 8</a>.</p>
+<p>A parametric value object SHALL contain all the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 8</a> and <a href="#temporalValue-properties-table">Table 9</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4388,13 +4388,13 @@ This operation targeted <a href="#temporalValue-properties-table">TemporalValue<
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="#dvalue-schema">DynamicValue</a> schema.</p>
+<p>The content of the request body SHALL be based upon the <a href="#tvalue-schema">TemporalValue</a> schema.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The latest date-time instance in the dynamic value object in <a href="#resource-temporalProperties-section">TemporalProperties</a>, determined by <code>tPropertyName</code>, SHALL be faster than the beginning date-time instance in the dynamic value object in the request body.</p>
+<p>The latest date-time instance in the temporal value object in <a href="#resource-temporalProperty-section">TemporalProperty</a>, determined by <code>tPropertyName</code>, SHALL be faster than the beginning date-time instance in the temporal value object in the request body.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4501,7 +4501,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span></code></pre>
 </div>
 </div>
-<div id="dvalue-schema" class="listingblock">
+<div id="tvalue-schema" class="listingblock">
 <div class="title">TemporalValue Schema (temporalValue.yaml)</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>

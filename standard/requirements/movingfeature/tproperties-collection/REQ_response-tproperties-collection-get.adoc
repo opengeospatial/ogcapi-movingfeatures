@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperties-collection-response/get*
 ^|A |The API implementation SHALL comply with the API - Features - Part 1:Core `Features` response requirement http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-response`].
-^|B |Each temporal properties object in the response SHALL include the mandatory properties listed in <<temporalProperties-properties-table>>.
+^|B |Each temporal properties object in the response SHALL include the mandatory properties listed in <<temporalProperty-properties-table>>.
 |===

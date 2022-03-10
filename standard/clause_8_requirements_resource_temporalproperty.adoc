@@ -81,7 +81,7 @@ include::requirements/movingfeature/tproperties/REQ_response-tproperties-get.ado
 include::../openapi/schemas/temporalProperty.yaml[]
 ----
 
-[#dvalue-schema,reftext='TemporalValue Schema']
+[#tvalue-schema,reftext='TemporalValue Schema']
 .TemporalValue Schema (temporalValue.yaml)
 [source,yaml]
 ----
