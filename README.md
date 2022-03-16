@@ -3,12 +3,12 @@
 This GitHub repository contains the OGC API - Moving Features for providing query and access to geospatial data and services, especially movement data.
 
 The [OGC API - Moving Features](https://ogcapi.ogc.org/movingfeatures/) standard is part of the OGC API suite of standards.
-[OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way. 
+[OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way.
 [OpenAPI](http://openapis.org) is used to define the reusable API building blocks.
 
 ## Overview of OGC API - MovingFeatures - Part 1: Features extension
 
-### Catalog of Moving Feature Collection 
+### Catalog of Moving Feature Collection
 
 ```
 GET /collections
@@ -58,7 +58,7 @@ Insert a set of moving features or a moving feature into a collection with id `c
 GET /collections/{collectionId}/items/{mFeatureId}
 ```
 
-Access the static data of the moving feature with id `mFeatureId`. 
+Access the static data of the moving feature with id `mFeatureId`.
 The static data of a moving feature is not included temporal geometries and temporal properties.
 
 ```
@@ -134,7 +134,7 @@ against different versions of the evolving draft:
 
 The contributor understands that any contributions, if accepted by the OGC Membership, shall be incorporated into OGC API - Moving Features standards documents and that all copyright and intellectual property shall be vested to the OGC.
 
-The OGC API - Moving Features Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
+The OGC's Moving Features Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
 
 * [Moving Features Standards Working Group Charter](https://www.ogc.org/projects/groups/movfeatswg)
 * [Open issues](https://github.com/opengeospatial/ogcapi-movingfeatures/issues)
