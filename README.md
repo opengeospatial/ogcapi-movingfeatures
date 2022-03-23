@@ -1,4 +1,4 @@
-# OGC API - MovingFeatures
+# OGC API - Moving Features
 
 This GitHub repository contains the OGC API - Moving Features for providing query and access to geospatial data and services, especially movement data.
 
@@ -6,7 +6,7 @@ The [OGC API - Moving Features](https://ogcapi.ogc.org/movingfeatures/) standard
 [OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way.
 [OpenAPI](http://openapis.org) is used to define the reusable API building blocks.
 
-## Overview of OGC API - MovingFeatures - Part 1: Features extension
+## Overview of OGC API - Moving Features - Part 1: Features extension
 
 ### Catalog of Moving Feature Collection
 
