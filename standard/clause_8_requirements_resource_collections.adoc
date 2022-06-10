@@ -5,22 +5,6 @@ The `Collections` resource supports retrieving and creating operations via GET a
 . Retrieving operation returns a set of metadata which describes the collections available from this API. The catalog of collections returned to the response can be limited using the <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, and <<datetime-section,`datetime`>> parameters.
 . Creating operation post a new <<resource-collection-section,Collection>> resource instance to the collections with this API.
 
-==== Parameters
-The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API - Common.
-All requirements and recommendations in API - Common regarding these parameters also apply for API - Moving Features.
-
-[[limit-section]]
-===== Parameter limit
-include::requirements/parameter/REQ_parameter-limit.adoc[]
-
-[[bbox-section]]
-===== Parameter bbox
-include::requirements/parameter/REQ_parameter-bbox.adoc[]
-
-[[datetime-section]]
-===== Parameter datetime
-include::requirements/parameter/REQ_parameter-datetime.adoc[]
-
 ==== Operations
 ===== Retrieve
 This operation is defined in the `https://docs.ogc.org/DRAFTS/20-024.html#rc-collections-section[Collections]` conformance class of API-Common.

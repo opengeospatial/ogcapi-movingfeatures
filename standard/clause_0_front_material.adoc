@@ -1,0 +1,64 @@
+//== Introduction
+[big]*i.     Abstract*
+
+// TODO
+
+[#common-paths,reftext='{table-caption} {counter:table-num}']
+.Overview of Resources
+[width="90%",cols="2,2,^1,4",options="header"]
+|====
+| Resource | Path | HTTP Method | Document Reference
+| Landing page                  | ``/``                           | GET | <<common-landingpage-section, 7.2 API Landing Page>>
+| API definition                 | ``/api``                        | GET | <<common-api-section, 7.3 API Definition>>
+| Conformance classes           | ``/conformance``                | GET | <<common-conformance-section, 7.4 Declaration of Conformance Classes>>
+| Collections metadata          | ``/collections``                | GET, POST | <<resource-collections-section, 8.3 Resource Collections>>
+| Collection instance metadata  | ``/collections/{collectionId}`` | GET, DELETE, PUT | <<resource-collection-section, 8.4 Resource Collection>>
+| Moving Features               | ``/collections/{collectionId}/items`` | GET, POST | <<resource-mfeatures-section, 9.3 Resource MovingFeatures>>
+| Moving Feature instance       | ``/collections/{collectionId}/items /{mFeatureId}`` | GET, DELETE | <<resource-movingfeature-section, 9.4 Resource MovingFeature>>
+| Temporal Geometry Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries`` | GET, POST | <<resource-tgeometries-section, 9.5 Resource TemporalGeometryCollection>>
+| Temporal Geometry instance    | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}`` | DELETE | <<resource-temporalGeometry-section, 9.6 Resource TemporalGeometry>>
+| Temporal Property Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tproperties`` | GET, POST | <<resource-tproperties-collection-section, 9.7 Resource TemporalPropertyCollection>>
+| Temporal Property instance    | ``/collections/{collectionId}/items /{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section, 9.8 Resource TemporalProperty>>
+|====
+
+
+[big]*ii.    Keywords*
+
+The following are keywords to be used by search engines and document catalogues.
+
+ogcdoc, OGC document, OGC MovingFeature, MovingFeatures JSON, MovingFeature Access, API, OpenAPI, REST, trajectory
+
+[big]*iii.   Preface*
+
+*OGC Declaration*
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights.
+The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims
+or other intellectual property rights of which they may be aware that might be infringed by any implementation of
+the standard set forth in this document, and to provide supporting documentation.
+
+[big]*iv.    Submitting organizations*
+
+The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
+
+* Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
+
+* Université libre de Bruxelles
+
+* Geomatys
+
+[big]*v.     Submitters*
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+{set:cellbgcolor!}
+[width="99%", cols="3,7"]
+|===========================================================
+|*Name*                 |*Organization*
+|Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
+|Taehoon KIM            |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
+|Mahmoud SAKR           |Université libre de Bruxelles
+|Martin Desruisseaux    |Geomatys
+|===========================================================

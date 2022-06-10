@@ -1,0 +1,14 @@
+{
+  "title": "Movingfeatures data server",
+  "description": "Access to data about moving features",
+  "links": [
+    {
+      "href": "http://data.example.com/movingfeatures/mf-123",
+      "rel": "alternate",
+      "type": "application/geo+json",
+      "hreflang": "en",
+      "title": "moving features",
+      "length": 0
+    }
+  ]
+}

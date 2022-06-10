@@ -1,13 +1,13 @@
 == Overview
 === General
 
-<<OGC-API-Features,OGC API>> standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, etc.)
+<<OGC-API-Features,OGC API>> standards enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, DELETE, etc.)
 <<OGC-API-Common,OGC API-Common>> defines a set of features which are applicable to all OGC APIs.
 Other OGC standards extend API-Common with features specific to a resource type.
-This OGC API-Moving Features standard defines an API with two goals:
 
-. Provide access to *_Moving Features_* conformance to the <<OGC-MF-JSON,OGC Moving Features JSON encoding standard>>.
-. Provide functionality comparable to that of the <<OGC-MF-Access,OGC Moving Features Access standard>>.
+This OGC API-Moving Features-Part1:Feature Extension standard defines an API with a goal:
+
+* Provide interface for create, retrieve, update, and delete to *_Moving Features_*, which conformance to the <<OGC-MF-JSON,OGC Moving Features JSON encoding standard>>
 
 Resources exposed through an OGC API may be accessed through a Universal Resource Identifier (URI). URIs are composed of three sections:
 
@@ -29,9 +29,9 @@ Unique relation types are used for each resource.
 ^|**Path Template** ^|**Relation** ^|**Resource**
 
 3+^|**Common**
-|{root}/|none|Landing page for this dataset distribution
-|{root}/api|`service-desc or service-doc`|API Description
-|{root}/conformance|`conformance`|Conformance Classes
+|<<common-landingpage-section,{root}/>>|none|Landing page for this dataset distribution
+|<<common-api-section,{root}/api>>|`service-desc or service-doc`|API Description
+|<<common-conformance-section,{root}/conformance>>|`conformance`|Conformance Classes
 
 3+^|**Collections**
 |<<resource-collections-section,{root}/collections>>|`data`
@@ -62,12 +62,12 @@ Where:
 * `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
 * `{tPropertyName}` = An identifier for a specific <<resource-temporalProperty-section,TemporalProperty>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
 
-<<mf-api-class-diagram>> shows a UML class diagram for MF-API which represents the basic resources of this standard, such as `Collections`, `Collection`, `MovingFeature`, `TemporalGeometry`, `TemporalGeometryCollection`, `TemporalPropertyCollection`, and `TemporalProperty`.
+<<mf-api-class-diagram>> shows a UML class diagram for OGC API-MF which represents the basic resources of this standard, such as `Collections`, `Collection`, `MovingFeature`, `TemporalGeometry`, `TemporalGeometryCollection`, `TemporalPropertyCollection`, and `TemporalProperty`.
 In this standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have temporal properties, such as a set of parametric values.
 
 [#mf-api-class-diagram,reftext='{figure-caption} {counter:figure-num}']
-.Class diagram for MF-API
+.Class diagram for OGC API-MF
 image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, width=95%, align="center"]
 
 //[[mf-json-encoding-schema-overview]]
@@ -98,32 +98,30 @@ The core search capability is based on https://ogcapi.ogc.org/common/[OGC API-Co
 
 OGC API-Moving Features extends these core search capabilities to include:
 
-* find snapshot value with time instant
+* find leaf value with time instant
 
 [[dependencies-overview]]
 === Dependencies
 
-The OGC API-Moving Features (shortly, API-MF) standard is an extension of the OGC API-Common and the OGC API-Features standards.
-Therefore, an implementation of API-MF shall first satisfy the appropriate Requirements Classes from API-Common and API-Features.
+The OGC API-Moving Features (shortly, OGC API-MF) standard is an extension of the OGC API-Common and the OGC API-Features standards.
+Therefore, an implementation of OGC API-MF shall first satisfy the appropriate Requirements Classes from API-Common and API-Features.
+Also, OGC API-MF standard is based on the OGC Moving Features Encoding Extension for JSON (shortly, OGC MF-JSON) standards.
+Therefore, an implementation of OGC API-MF shall satisfy the appropriate Requirements Classes from OGC MF-JSON.
 <<req-mappings>>, identifies the OGC API - Common and OGC API - Features Requirements Classes which are applicable to each section of this Standard.
 Instructions on when and how to apply these Requirements Classes are provided in each section.
 
 [#req-mappings,reftext='{table-caption} {counter:table-num}']
-.Required OGC API - Common and OGC API - Features Requirements Classes
-[width="90%",cols="2,6"]
+.Mapping OGC API-MF Sections to OGC API - Common, OGC API - Features, and OGC MF-JSON Requirements Classes
+[width="90%",cols="2,4,4"]
 |====
-^|*API - Record Section*           ^| *OGC API - Common, OGC API - Features Requirements Class*
-|API Landing Page                   | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
-|API Definition                      | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
-|Declaration of Conformance Classes | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
-|Collections                        | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
-|Collection                         | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
-|MovingFeatures                     | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|MovingFeature                      | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|TemporalGeometryCollection         | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|TemporalGeometry                   | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|TemporalPropertyCollection         | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|TemporalProperty                   | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
-|OpenAPI 3.0                        | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
-|GeoJSON                            | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+^|*API-MF Section*           ^| *API-MF Requirements Class*           |*API - Common, API - Features, MF-JSON Requirements Class*
+|<<common-landingpage-section,API Landing Page>>                   | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|<<common-api-section,API Definition>>                      | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|<<common-conformance-section,Declaration of Conformance Classes>> | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|<<clause-core-collection,Collections>>                        | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
+|<<clause-core-movingfeature,MovingFeatures>>                     | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete, http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory,
+http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
+|OpenAPI 3.0                        | | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
+|GeoJSON                            | | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+|OGC Moving Features JSON           | | http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism, http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 |====

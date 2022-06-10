@@ -5,7 +5,7 @@ The `MovingFeatures` resource supports retrieving and creating operations via GE
 . Retrieving operation returns a set of features which describes the moving feature available from this API.
 . Creating operation post a new <<resource-movingfeature-section,MovingFeature>> resource instance to a specific <<resource-collection-section,Collection>> (specified by {collectinoId} with this API.
 
-The MF-API `Items` query is an OGC API-Features endpoint that may be used to catalog pre-existing moving features.
+The OGC API-MF `Items` query is an OGC API-Features endpoint that may be used to catalog pre-existing moving features.
 If a `mFeatureID` is not specified, the query will return a list of the available moving features.
 The list of moving features returned to the response can be limited using the <<bbox-section,bbox>>, <<datetime-section,datetime>>, and <<limit-section,limit>> parameters.
 This behavior is specified in OGC API-Features.

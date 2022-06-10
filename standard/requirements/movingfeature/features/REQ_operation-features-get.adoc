@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/features-op/get*
-^|A |The API implementation SHALL comply with the API - Features - Part 1:Core `Features` operation requirement http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_operation_6[`http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-op`].
+^|A |The API implementation SHALL comply with the API-Features `Features` operation requirement http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_operation_6[`http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core/fc-op`].
 |===

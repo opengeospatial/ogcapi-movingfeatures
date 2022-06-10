@@ -53,9 +53,9 @@ The five resources defined in this Requirements Class are summarized in <<mf-res
 ^|GET, POST
 |===
 
-include::clause_8_requirements_resource_movingfeatures.adoc[]
-include::clause_8_requirements_resource_movingfeature.adoc[]
-include::clause_8_requirements_resource_temporalgeometrycollection.adoc[]
-include::clause_8_requirements_resource_temporalgeometry.adoc[]
-include::clause_8_requirements_resource_temporalpropertycollection.adoc[]
-include::clause_8_requirements_resource_temporalproperty.adoc[]
+include::clause_9_requirements_resource_movingfeatures.adoc[]
+include::clause_9_requirements_resource_movingfeature.adoc[]
+include::clause_9_requirements_resource_temporalgeometrycollection.adoc[]
+include::clause_9_requirements_resource_temporalgeometry.adoc[]
+include::clause_9_requirements_resource_temporalpropertycollection.adoc[]
+include::clause_9_requirements_resource_temporalproperty.adoc[]
