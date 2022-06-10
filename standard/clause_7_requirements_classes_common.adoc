@@ -1,0 +1,146 @@
+// Landing page, API definition, Conformance parts
+
+[[clause-core-common]]
+== Requirements Class "Common"
+=== Overview
+
+// TODO
+
+[[common-landingpage-section]]
+=== API landing page
+The landing page provides links to start exploration of the resources offered by an API.
+OGC API - Common already requires some common links, sufficient for this standard, that are stated in the following Requirements Class of OGC API-Common:
+
+.Dependencies
+
+* Core, <<OGC-API-Common,http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core>>
+* Landing Page, <<OGC-API-Common,http://www.opengis.net/spec/ogcapi-common/1.0/req/landing-page>>
+
+==== Operation
+The `Landing Page` operation is defined in the `Landing Page` conformance class of OGC API—Common.
+No modifications are required.
+The `Landing Page` conformance class specifies only one way of performing this operation:
+
+. Issue a `GET` request on the `{root}/` path
+
+Support for `GET` on the `{root}/` path is required by OGC API—Common.
+
+
+==== Response
+A successful response to the `Landing Page` operation is defined in OGC API-Common.
+No modifications are required.
+The schema for this resource is provided in <<landingPage-schema>>.
+
+[#landingPage-schema,reftext='Landing Page Response Schema']
+.Landing Page Response Schema
+[source,yaml]
+----
+include::../openapi/schemas/landingPage.yaml[]
+----
+
+The following JSON fragment is an example of a response to an OGC API-MF `Landing Page` operation
+
+[#landingPage-example,reftext=`Landing Page Example`]
+.Landing Page Example
+[source,json]
+----
+include::../openapi/examples/landingPage.json[]
+----
+
+==== Error situations
+The requirements for handling unsuccessful requests are provided in <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[common-api-section]]
+=== API definition
+Every API is required to provide a definition document that describes the capabilities of that API.
+This definition document can be used by developers to understand the API, by software clients to connect to the server, or by development tools to support the implementation of servers and clients.
+
+Support for an API definition is specified in the following Requirements Class of OGC API - Common:
+
+.Dependencies
+
+* Core, <<OGC-API-Common,http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core>>
+* Landing Page, <<OGC-API-Common,http://www.opengis.net/spec/ogcapi-common/1.0/req/landing-page>>
+
+==== Operation
+This operation is defined in the `Landing Page` conformance class of OGC API—Common.
+No modifications are required.
+The `Landing Page` conformance class describes two ways of performing this operation:
+
+. Issue a `GET` request on the `{root}/api` path
+. Follow the `service-desc` or `service-doc` link on the landing page
+
+Only the link is required by OGC API—Common.
+
+==== Response
+A successful response to the API Definition request is a resource which documents the design of the API.
+OGC API—Common leaves the selection of format for the API Definition response to the API implementor.
+However, the options are limited to those which have been defined in the OGC API-Common standard.
+At this time OpenAPI 3.0 is the only option provided.
+
+==== Error situations
+The requirements for handling unsuccessful requests are provided in <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+[[common-conformance-section]]
+=== Declaration of conformance classes
+To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API server, the API has to declare the conformance classes it claims to have implemented.
+
+Support for the declaration of conformance classes is specified in the following Requirements Class of OGC API - Common:
+
+.Dependencies
+
+* Core, <<OGC-API-Common,http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core>>
+* Landing Page, <<OGC-API-Common,http://www.opengis.net/spec/ogcapi-common/1.0/req/landing-page>>
+
+==== Operation
+This operation is defined in the `Landing Page` conformance class of OGC API—Common.
+No modifications are required.
+The `Landing Page` conformance class describes two ways of performing this operation:
+
+. Issue a `GET` request on the `{root}/conformance` path
+. Follow the `conformance` link on the landing page
+
+Both techniques are required by OGC API—Common.
+
+==== Response
+A successful response to the `Conformance` operation is defined in OGC API-Common.
+No modifications are required.
+The schema for this resource is provided in <<conformance-schema>>.
+
+[#conformance-schema,reftext='Conformance Response Schema']
+.Conformance Response Schema
+[source,yaml]
+----
+include::../openapi/schemas/confClasses.yaml[]
+----
+
+The following JSON fragment is an example of a response to an OGC API-MF `Conformance` operation
+
+[#landingPage-example,reftext=`Conformance Example`]
+.Conformance Example
+[source,json]
+----
+include::../openapi/examples/conformance.json[]
+----
+
+==== Error situations
+The requirements for handling unsuccessful requests are provided in <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
+
+=== Parameters
+The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API - Common.
+All requirements and recommendations in API - Common regarding these parameters also apply for API - Moving Features.
+
+[[limit-section]]
+==== Parameter limit
+include::requirements/parameter/REQ_parameter-limit.adoc[]
+
+[[bbox-section]]
+==== Parameter bbox
+include::requirements/parameter/REQ_parameter-bbox.adoc[]
+
+[[datetime-section]]
+==== Parameter datetime
+include::requirements/parameter/REQ_parameter-datetime.adoc[]

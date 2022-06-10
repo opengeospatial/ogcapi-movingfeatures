@@ -81,23 +81,27 @@ toc::[]
 ////
 Make sure to complete each included document
 ////
-include::clause_1_front_material.adoc[]
+include::clause_0_front_material.adoc[]
 
-include::clause_2_scope.adoc[]
+include::clause_1_scope.adoc[]
 
-include::clause_3_conformance.adoc[]
+include::clause_2_conformance.adoc[]
 
-include::clause_4_references.adoc[]
+include::clause_3_references.adoc[]
 
-include::clause_5_terms_and_definitions.adoc[]
+include::clause_4_terms_and_definitions.adoc[]
 
-include::clause_6_conventions.adoc[]
+include::clause_5_conventions.adoc[]
 
-include::clause_7_overview.adoc[]
+include::clause_6_overview.adoc[]
 
-include::clause_8_requirements_classes.adoc[]
+include::clause_7_requirements_classes_common.adoc[]
 
-include::clause_9_general_requirements.adoc[]
+include::clause_8_requirements_classes_collection.adoc[]
+
+include::clause_9_requirements_classes_movingfeatures.adoc[]
+
+include::clause_10_general_requirements.adoc[]
 
 <<<
 ////

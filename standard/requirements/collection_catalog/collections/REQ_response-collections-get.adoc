@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collections-response/get*
-^|A |The API implementation SHALL comply with the API - Common `Collections` response requirement https://docs.ogc.org/DRAFTS/20-024.html#_response[`http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections`].
+^|A |The API implementation SHALL comply with the API-Common `Collections` response requirement https://docs.ogc.org/DRAFTS/20-024.html#_response[`http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections`].
 ^|B |The content of that response SHALL be based upon the <<collections-schema, `Collections` response schema>>.
 |===

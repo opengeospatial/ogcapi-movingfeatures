@@ -2,8 +2,8 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/tgeometries-op/post*
-^|A |The API implementation SHALL comply with the API - Feature `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
-^|B |The API implementation SHALL comply with the API - Feature `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
+^|A |The API implementation SHALL comply with the API-Feature `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
+^|B |The API implementation SHALL comply with the API-Feature `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
 ^|C |The content of the request body SHALL be based upon the https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[TemporalGeometry object] in <<OGC-MF-JSON,OGC Moving Features JSON encoding standard>> schema.
 ^|D |The latest date-time instance in the temporal geometry object in <<resource-movingfeature-section,MovingFeature>>, determined by `mFeatureId`, SHALL be faster than the beginning date-time instance in the temporal geometry object in the request body.
 // TODO: how to determine continuity of trajectory
