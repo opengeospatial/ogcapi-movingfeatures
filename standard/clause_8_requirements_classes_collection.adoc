@@ -23,9 +23,9 @@ The two resources defined in this Requirements Class are summarized in <<collect
 .3+|<<resource-collection-section,Collection>>
 .3+|`{root}/collections/
 {collectionId}`
-^|GET   |Get information about a specific Collection ({collectinoId}) of geospatial data with links to distribution
-^|PUT   |Update information about a specific Collection ({collectinoId})
-^|DELETE|Delete a specific Collection ({collectinoId})
+^|GET   |Get information about a specific Collection ({collectionId}) of geospatial data with links to distribution
+^|PUT   |Update information about a specific Collection ({collectionId})
+^|DELETE|Delete a specific Collection ({collectionId})
 |===
 
 include::clause_8_requirements_resource_collections.adoc[]
