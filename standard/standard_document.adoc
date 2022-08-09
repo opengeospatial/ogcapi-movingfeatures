@@ -14,6 +14,7 @@
 :doc-type: IS
 :standard: ogcapi-movingfeatures-1
 :version: 0.2.1.draft
+:page-background-image: image:images/watermark.png[opacity=50%]
 
 <<<
 [cols = ">",frame = "none",grid = "none"]
