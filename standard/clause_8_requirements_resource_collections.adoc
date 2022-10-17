@@ -7,7 +7,7 @@ The `Collections` resource supports retrieving and creating operations via GET a
 
 ==== Operations
 ===== Retrieve
-This operation is defined in the `https://docs.ogc.org/DRAFTS/20-024.html#rc-collections-section[Collections]` conformance class of API-Common.
+This operation is defined in the `link:https://docs.ogc.org/DRAFTS/20-024.html#rc-collections-section[Collections]` conformance class of API-Common.
 No modifications are needed to support `MovingFeature` resources.
 
 . Issue a `GET` request on `{root}/collections` path
@@ -17,7 +17,7 @@ Support for HTTP GET method on the `{root}/collections` path is required by API-
 include::requirements/collection_catalog/collections/REQ_operation-collections-get.adoc[]
 
 ====== Create
-This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
 This operation targeted <<resource-collection-section,Collection>> resource.
 
 . Issue a `POST` request on `{root}/collections` path

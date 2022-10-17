@@ -44,7 +44,7 @@ Support for GET on the `{root}/collections/{collledctionID}/items/{mFeatureId}` 
 include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-get.adoc[]
 
 ===== Delete
-This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API-Features.
+This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API-Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}` path
 

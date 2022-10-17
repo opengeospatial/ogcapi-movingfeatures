@@ -4,7 +4,7 @@
 [[temporal-geometry-object]]
 A temporal geometry object represents the movement of a moving feature with various types of moving geometry, i.e., `MovingPoint`, `MovingLineString`, `MovingPolygon`, and `MovingPointCloud`. It can also represent the movement of a 3D object with its orientation.
 
-The schema for the temporal geometry object presented in this clause is an extension of the `TemporalGeometry Object` defined in https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[MF-JSON standard].
+The schema for the temporal geometry object presented in this clause is an extension of the `TemporalGeometry Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[MF-JSON standard].
 <<temporalGeometry-properties-table>> defines the set of properties that may be used to describe a temporal geometry.
 
 [[temporalGeometry-properties-table]]
@@ -18,7 +18,7 @@ The schema for the temporal geometry object presented in this clause is an exten
 |datetimes          |M |A sequence of monotonic increasing instants.
 |coordinates        |M |A sequence of leaf geometries of a temporal geometry, having the same number of elements as "datetimes".
 |interpolation      |M |A predefined type of motion curve (i.e., one of 'Discrete', 'Step', 'Linear', 'Quadratic' or 'Cubic').
-|base.type          |O |A type of 3D file format, such as STL, OBJ, PLY, and glTF.
+|base.type          |O |A type of 3D file format, such as 'STL', 'OBJ', 'PLY', and 'glTF'.
 |base.href          |O |A URL to address a 3D model data which represents a base geometry of a 3D shape.
 |orientations.scales|O |An array value of numbers along the x, y, and z axis in order as three scale factors.
 |orientations.angles|O |An array value of numbers along the x, y, and z axis in order as Euler angles in degree.
@@ -30,7 +30,7 @@ include::requirements/movingfeature/tgeometries/REQ_mandatory-temporalgeometry.a
 
 ==== Operation
 ===== Delete
-This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API-Features.
+This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API-Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}` path
 

@@ -464,13 +464,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Publication Date:   &lt;yyyy-mm-dd&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">External identifier of this OGC&#174; document: <a href="http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/0.2.1.draft" class="bare">http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/0.2.1.draft</a></p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">External identifier of this OGC&#174; document: <a href="http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/0.3.draft" class="bare">http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/0.3.draft</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Internal reference number of this OGC&#174; document:    22-003</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 0.2.1.draft</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 0.3.draft</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Category: OGC&#174; Implementation Specification</p></td>
@@ -667,19 +667,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_error_situations_9">9.6.3. Error situations</a></li>
 </ul>
 </li>
-<li><a href="#resource-tproperties-collection-section">9.7. Resource TemporalPropertyCollection</a>
+<li><a href="#resource-temporalGeometryQuery-section">9.7. TemporalGeometry Query Resources</a>
 <ul class="sectlevel3">
-<li><a href="#_operation_9">9.7.1. Operation</a></li>
-<li><a href="#_response_10">9.7.2. Response</a></li>
-<li><a href="#_error_situations_10">9.7.3. Error situations</a></li>
+<li><a href="#_shared_query_parameters">9.7.1. Shared query parameters</a></li>
+<li><a href="#_distance_query">9.7.2. Distance Query</a></li>
+<li><a href="#_velocity_query">9.7.3. Velocity Query</a></li>
+<li><a href="#_acceleration_query">9.7.4. Acceleration Query</a></li>
+<li><a href="#_operation_requirements">9.7.5. Operation Requirements</a></li>
+<li><a href="#_response_requirements">9.7.6. Response Requirements</a></li>
 </ul>
 </li>
-<li><a href="#resource-temporalProperty-section">9.8. Resource TemporalProperty</a>
+<li><a href="#resource-tproperties-collection-section">9.8. Resource TemporalPropertyCollection</a>
 <ul class="sectlevel3">
-<li><a href="#_overview_6">9.8.1. Overview</a></li>
-<li><a href="#_operation_10">9.8.2. Operation</a></li>
-<li><a href="#_response_11">9.8.3. Response</a></li>
-<li><a href="#_error_situations_11">9.8.4. Error situations</a></li>
+<li><a href="#_operation_9">9.8.1. Operation</a></li>
+<li><a href="#_response_10">9.8.2. Response</a></li>
+<li><a href="#_error_situations_10">9.8.3. Error situations</a></li>
+</ul>
+</li>
+<li><a href="#resource-temporalProperty-section">9.9. Resource TemporalProperty</a>
+<ul class="sectlevel3">
+<li><a href="#_overview_6">9.9.1. Overview</a></li>
+<li><a href="#_operation_10">9.9.2. Operation</a></li>
+<li><a href="#_response_11">9.9.3. Response</a></li>
+<li><a href="#_error_situations_11">9.9.4. Error situations</a></li>
 </ul>
 </li>
 </ul>
@@ -804,16 +814,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalGeometry-section">9.6 Resource TemporalGeometry</a></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">TemporalGeometry Queries</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>{root}/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}/{queryType}</code></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalGeometryQuery-section">9.7 TemporalGeometry Query Resources</a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Temporal Property Collection</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/items /{mFeatureId}/tproperties</code></p></td>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GET, POST</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-tproperties-collection-section">9.7 Resource TemporalPropertyCollection</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-tproperties-collection-section">9.8 Resource TemporalPropertyCollection</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Temporal Property instance</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/items /{mFeatureId}/tproperties/{tPropertyId}</code></p></td>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GET, POST</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalProperty-section">9.8 Resource TemporalProperty</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalProperty-section">9.9 Resource TemporalProperty</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1137,12 +1153,12 @@ Unique relation types are used for each resource.</p>
 <div class="paragraph">
 <p><a href="#mf-api-paths">Table 2</a> summarizes the access paths and relation types defined in this standard.</p>
 </div>
-<table id="mf-api-paths" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="mf-api-paths" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Moving Features API Paths</caption>
 <colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 14.2857%;">
-<col style="width: 57.1429%;">
+<col style="width: 37.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -1187,32 +1203,37 @@ Unique relation types are used for each resource.</p>
 <td class="tableblock halign-center valign-top" colspan="3"><p class="tableblock"><strong>Moving Features</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-mfeatures-section">{root}/collections/{collectionId}/items</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-mfeatures-section">{root}/collections/{collectionId} /items</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>items</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Static information of <a href="#resource-movingfeature-section">MovingFeature</a> about available items in the specified <a href="#resource-collection-section">Collection</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-movingfeature-section">{root}/collections/{collectionId}/items/{mFeatureId}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-movingfeature-section">{root}/collections/{collectionId} /items/{mFeatureId}</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Static information describing the <a href="#movingfeature-schema">MovingFeature</a> of data which has the unique identifier <code>{mFeatureId}</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-tgeometries-section">{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-tgeometries-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>items</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal object information of <a href="#resource-tgeometries-section">TemporalGeometryCollection</a> about available items in the specified <a href="#resource-movingfeature-section">MovingFeature</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometry-section">{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometry-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal object describing the <a href="#resource-tgeometries-section">TemporalGeometryCollection</a> of data which has the unique identifier <code>{tGeometryId}</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-tproperties-collection-section">{root}/collections/{collectionId}/items/{mFeatureId}/tproperties</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometryQuery-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}</a></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifies an Information Resource of type <code>{queryType}</code> associated with the <a href="#resource-temporalGeometry-section">TemporalGeometry</a> instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-tproperties-collection-section">{root}/collections/{collectionId} /items/{mFeatureId}/tproperties</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>items</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal object information of <a href="#resource-temporalProperty-section">TemporalPropertyCollection</a> about available items in the specified <a href="#resource-movingfeature-section">MovingFeature</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalProperty-section">{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalProperty-section">{root}/collections/{collectionId} /items/{mFeatureId}/tproperties /{tPropertyName}</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal object describing the <a href="#resource-temporalProperty-section">TemporalPropertyCollection</a> of data which has the unique identifier <code>{tPropertyName}</code></p></td>
 </tr>
@@ -1276,7 +1297,10 @@ Also, the moving feature can have temporal properties, such as a set of parametr
 <div class="ulist">
 <ul>
 <li>
-<p>find leaf value with time instant</p>
+<p>find <a href="#leaf-section">leaf</a> value with time instant,</p>
+</li>
+<li>
+<p><a href="#resource-temporalGeometryQuery-section">spatio-temporal queries</a> for accessing <a href="#resource-temporalGeometry-section">TemporalGeometry resources</a>.</p>
 </li>
 </ul>
 </div>
@@ -2686,6 +2710,14 @@ A moving feature is an object that provide information about and access to a <a 
 <td class="tableblock halign-center valign-top"><p class="tableblock">DELETE</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometryQuery-section">TemporalGeometry Query</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/
+{collectionId}/items/
+{mFeatureId}/tgeometries/
+{tGeometryId}/{queryType}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">GET</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-tproperties-collection-section">TemporalPropertyCollection</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/
 {collectionId}/items/
@@ -4033,7 +4065,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">base.type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A type of 3D file format, such as STL, OBJ, PLY, and glTF.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A type of 3D file format, such as 'STL', 'OBJ', 'PLY', and 'glTF'.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">base.href</p></td>
@@ -4113,7 +4145,7 @@ The list of valid values for <code>{tGeometryId}</code> is provided in the <a hr
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Requirement 31</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mf-op/delete</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-op/delete</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -4155,7 +4187,7 @@ The path parameter <code>mFeatureId</code> is an <code>id</code> property of the
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Requirement 32</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mf-response/delete</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-response/delete</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -4184,7 +4216,229 @@ General guidance on HTTP status codes and how they should be handled is provided
 </div>
 </div>
 <div class="sect2">
-<h3 id="resource-tproperties-collection-section"><a class="anchor" href="#resource-tproperties-collection-section"></a>9.7. Resource TemporalPropertyCollection</h3>
+<h3 id="resource-temporalGeometryQuery-section"><a class="anchor" href="#resource-temporalGeometryQuery-section"></a>9.7. TemporalGeometry Query Resources</h3>
+<div class="paragraph">
+<p>TemporalGeometry Query resources are spatio-temporal queries which support operation of the API for the access <a href="#resource-temporalGeometry-section">TemporalGeometry resources</a>.
+The OGC API-MF standard has identified an initial set of common query types to implement, described in this clause.
+This list may change as the standard is used and experience is gained.</p>
+</div>
+<div class="paragraph">
+<p>Query resources related to the <a href="#resource-temporalGeometry-section">TemporalGeometry resource</a> can be exposed using the path templates:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}/{queryType}</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>{root}</code>          = Base URI for the API server</p>
+</li>
+<li>
+<p><code>{collectionId}</code>  = An identifier for a specific <a href="#resource-collection-section">Collection</a> of data</p>
+</li>
+<li>
+<p><code>{mFeatureId}</code>    = An identifier for a specific <a href="#resource-movingfeature-section">MovingFeature</a> of a specific <a href="#resource-collection-section">Collection</a> of data</p>
+</li>
+<li>
+<p><code>{tGeometryId}</code>   = An identifier for a specific <a href="#resource-temporalGeometry-section">TemporalGeometry</a> of a specific <a href="#resource-movingfeature-section">MovingFeatures</a> of data</p>
+</li>
+<li>
+<p><code>{quertyType}</code>    = An identifier for the query pattern performed by the API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#temporalGeometry-query-table">Table 9</a> provides a mapping of the initial query types proposed for the OGC API-MF.</p>
+</div>
+<table id="temporalGeometry-query-table" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Table of the query resources</caption>
+<colgroup>
+<col style="width: 44.4444%;">
+<col style="width: 11.1111%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path Template</th>
+<th class="tableblock halign-left valign-top">Query Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometries/{tGeometryId}/distance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return a graph of the time to distance function as a form of the <a href="#temporalProperty-properties-table">TemporalProperty</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometries/{tGeometryId}/velocity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Velocity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return a graph of the time to velocity function as a form of the <a href="#temporalProperty-properties-table">TemporalProperty</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometries/{tGeometryId}/acceleration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acceleration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return a graph of the time to acceleration function as a form of the <a href="#temporalProperty-properties-table">TemporalProperty</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_shared_query_parameters"><a class="anchor" href="#_shared_query_parameters"></a>9.7.1. Shared query parameters</h4>
+<div class="paragraph">
+<p>Query parameters are used in URLs to define the resources which are returned on a GET request.
+The following are defined as standard shared parameters for use.</p>
+</div>
+<div class="sect4">
+<h5 id="_parameter_datetime"><a class="anchor" href="#_parameter_datetime"></a>Parameter datetime</h5>
+<div class="paragraph">
+<p>For datetime parameter, see <a href="#datetime-section">Clause 7.5.3</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_distance_query"><a class="anchor" href="#_distance_query"></a>9.7.2. Distance Query</h4>
+<div class="paragraph">
+<p>The Distance query returns a time to distance curve of the <a href="#temporal-geometry-object">TemporalGeometry object</a> as a form of the <a href="#temporalProperty-properties-table">TemporalProperty</a>.
+<a href="#time-to-distance-curve">Figure 3</a> shows an example of time to distance curve.</p>
+</div>
+<div id="time-to-distance-curve" class="imageblock text-center">
+<div class="content">
+<img src="./images/time-to-distance.png" alt="time-to-distance-curve" width="50%">
+</div>
+<div class="title">Figure 3. Example of time to distance curve [OGC 16-120r3, OGC Moving Features Access]</div>
+</div>
+<div class="paragraph">
+<p>The filter constraints are defined by the following query parameter:</p>
+</div>
+<div class="sect4">
+<h5 id="_parameter_datetime_2"><a class="anchor" href="#_parameter_datetime_2"></a>Parameter datetime</h5>
+<div class="paragraph">
+<p>Define the specified datetime to return the distance value from the time to distance graph.
+When 'datetime' is not specified, the API MUST return data from all available times of the specified <a href="#resource-temporalGeometry-section">TemporalGeometry resource</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_velocity_query"><a class="anchor" href="#_velocity_query"></a>9.7.3. Velocity Query</h4>
+<div class="paragraph">
+<p>The Velocity query returns a time to velocity curve of the <a href="#temporal-geometry-object">TemporalGeometry object</a> as a form of the <a href="#temporalProperty-properties-table">TemporalProperty</a>.</p>
+</div>
+<div class="paragraph">
+<p>The filter constraints are defined by the following query parameter:</p>
+</div>
+<div class="sect4">
+<h5 id="_parameter_datetime_3"><a class="anchor" href="#_parameter_datetime_3"></a>Parameter datetime</h5>
+<div class="paragraph">
+<p>Define the specified datetime to return the velocity value from the time to velocity graph.
+When 'datetime' is not specified, the API MUST return data from all available times of the specified <a href="#resource-temporalGeometry-section">TemporalGeometry resource</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_acceleration_query"><a class="anchor" href="#_acceleration_query"></a>9.7.4. Acceleration Query</h4>
+<div class="paragraph">
+<p>The Acceleration query returns a time to acceleration curve of the <a href="#temporal-geometry-object">TemporalGeometry object</a> as a form of the <a href="#temporalProperty-properties-table">TemporalProperty</a>.</p>
+</div>
+<div class="paragraph">
+<p>The filter constraints are defined by the following query parameter:</p>
+</div>
+<div class="sect4">
+<h5 id="_parameter_datetime_4"><a class="anchor" href="#_parameter_datetime_4"></a>Parameter datetime</h5>
+<div class="paragraph">
+<p>Define the specified datetime to return the acceleration value from the time to acceleration graph.
+When 'datetime' is not specified, the API MUST return data from all available times of the specified <a href="#resource-temporalGeometry-section">TemporalGeometry resource</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_operation_requirements"><a class="anchor" href="#_operation_requirements"></a>9.7.5. Operation Requirements</h4>
+<table id="req_mf-tgeometry-query-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>Requirement 33</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry/query-op/get</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>For every temporal geometry identified in the <a href="#resource-tgeometries-section">TemporalGeometryCollection</a> GET response (path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries</code>), the server SHALL support the HTTP GET operation at the path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}/{queryType}</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The path parameter <code>collectionId</code> is each <code>id</code> property in the <code>Collection</code> GET operation response where the value of the <code>itemType</code> property is specified as <code>movingfeature</code>.
+The path parameter <code>mFeatureId</code> is an <code>id</code> property of the moving feature.
+The path parameter <code>tGeometryId</code> is an <code>id</code> property of the temporal geometry.
+The path parameter <code>queryType</code> is a predefined query type; <strong>distance, velocity</strong>, and <strong>acceleration</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A distance query GET operation MAY include a <code>datetime</code> query parameter.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A velocity query GET operation MAY include a <code>datetime</code> query parameter.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An acceleration query GET operation MAY include a <code>datetime</code> query parameter.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_response_requirements"><a class="anchor" href="#_response_requirements"></a>9.7.6. Response Requirements</h4>
+<table id="req_mf-tgeometry-query-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>Requirement 34</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry/query-response/get</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A successful execution of the operation SHALL be reported as a response with an HTTP status code <code>200</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The content of that response SHALL include the parametric value that defined in the <a href="#tproperties-schema">response schema</a>. The <code>type</code> property SHALL be <strong>TFloat</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="resource-tproperties-collection-section"><a class="anchor" href="#resource-tproperties-collection-section"></a>9.8. Resource TemporalPropertyCollection</h3>
 <div class="paragraph">
 <p>A <code>TemporalPropertyCollection</code> object consists of the set of <a href="#resource-temporalProperty-section">TemporalProperty</a> which is included in the <a href="#resource-movingfeature-section"><code>MovingFeature</code></a> that specified by <a href="#movingfeature-identifier">{mFeatureId}</a>.
 The <code>TemporalPropertyCollection</code> resource supports retrieving and creating operations via GET and POST HTTP methods respectively.</p>
@@ -4200,7 +4454,7 @@ The <code>TemporalPropertyCollection</code> resource supports retrieving and cre
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_operation_9"><a class="anchor" href="#_operation_9"></a>9.7.1. Operation</h4>
+<h4 id="_operation_9"><a class="anchor" href="#_operation_9"></a>9.8.1. Operation</h4>
 <div class="sect4">
 <h5 id="_retrieve_11"><a class="anchor" href="#_retrieve_11"></a>Retrieve</h5>
 <div class="olist arabic">
@@ -4217,7 +4471,7 @@ The <code>TemporalPropertyCollection</code> resource supports retrieving and cre
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 33</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 35</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-op/get</strong></th>
 </tr>
 </thead>
@@ -4259,7 +4513,7 @@ This operation targeted <a href="#resource-temporalProperty-section">TemporalPro
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 34</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 36</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-op/post</strong></th>
 </tr>
 </thead>
@@ -4321,7 +4575,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_10"><a class="anchor" href="#_response_10"></a>9.7.2. Response</h4>
+<h4 id="_response_10"><a class="anchor" href="#_response_10"></a>9.8.2. Response</h4>
 <div class="sect4">
 <h5 id="_retrieve_12"><a class="anchor" href="#_retrieve_12"></a>Retrieve</h5>
 <div class="paragraph">
@@ -4334,7 +4588,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 35</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 37</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-response/get</strong></th>
 </tr>
 </thead>
@@ -4348,7 +4602,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Each temporal properties object in the response SHALL include the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 9</a>.</p>
+<p>Each temporal properties object in the response SHALL include the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 10</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4428,7 +4682,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 36</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 38</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-response/post</strong></th>
 </tr>
 </thead>
@@ -4445,7 +4699,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_error_situations_10"><a class="anchor" href="#_error_situations_10"></a>9.7.3. Error situations</h4>
+<h4 id="_error_situations_10"><a class="anchor" href="#_error_situations_10"></a>9.8.3. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
@@ -4453,9 +4707,9 @@ General guidance on HTTP status codes and how they should be handled is provided
 </div>
 </div>
 <div class="sect2">
-<h3 id="resource-temporalProperty-section"><a class="anchor" href="#resource-temporalProperty-section"></a>9.8. Resource TemporalProperty</h3>
+<h3 id="resource-temporalProperty-section"><a class="anchor" href="#resource-temporalProperty-section"></a>9.9. Resource TemporalProperty</h3>
 <div class="sect3">
-<h4 id="_overview_6"><a class="anchor" href="#_overview_6"></a>9.8.1. Overview</h4>
+<h4 id="_overview_6"><a class="anchor" href="#_overview_6"></a>9.9.1. Overview</h4>
 <div class="paragraph">
 <p>The <code>TemporalProperty</code> resource supports retrieving and creating operations via GET and POST HTTP methods respectively.</p>
 </div>
@@ -4475,10 +4729,10 @@ An abbreviated copy of this information is returned for each <code>TemporalPrope
 </div>
 <div class="paragraph">
 <p>The schema for the temporal property object presented in this clause is an extension of the <code>TemporalProperty Object</code> defined in <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties">MF-JSON standard</a>.
-<a href="#temporalProperty-properties-table">Table 9</a> defines the set of property that may be used to describe a temporal property.</p>
+<a href="#temporalProperty-properties-table">Table 10</a> defines the set of property that may be used to describe a temporal property.</p>
 </div>
 <table id="temporalProperty-properties-table" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Table of the properties related to the temporal property</caption>
+<caption class="title">Table 10. Table of the properties related to the temporal property</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 5%;">
@@ -4520,7 +4774,7 @@ An abbreviated copy of this information is returned for each <code>TemporalPrope
 </tbody>
 </table>
 <table id="temporalValue-properties-table" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Table of the properties related to the temporal value</caption>
+<caption class="title">Table 11. Table of the properties related to the temporal value</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 5%;">
@@ -4570,7 +4824,7 @@ The detailed information and requirements for each property are described in the
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 37</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 39</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mandatory-tproperties</strong></th>
 </tr>
 </thead>
@@ -4578,14 +4832,14 @@ The detailed information and requirements for each property are described in the
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A parametric value object SHALL contain all the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 9</a> and <a href="#temporalValue-properties-table">Table 10</a>.</p>
+<p>A parametric value object SHALL contain all the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 10</a> and <a href="#temporalValue-properties-table">Table 11</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_operation_10"><a class="anchor" href="#_operation_10"></a>9.8.2. Operation</h4>
+<h4 id="_operation_10"><a class="anchor" href="#_operation_10"></a>9.9.2. Operation</h4>
 <div class="sect4">
 <h5 id="_retrieve_13"><a class="anchor" href="#_retrieve_13"></a>Retrieve</h5>
 <div class="olist arabic">
@@ -4596,7 +4850,7 @@ The detailed information and requirements for each property are described in the
 </ol>
 </div>
 <div id="tproperties-identifier" class="paragraph">
-<p>The {tPropertyName} parameter is the unique identifier for a single temporal property value offered by the API.
+<p>The <code>{tPropertyName}</code> parameter is the unique identifier for a single temporal property value offered by the API.
 The list of valid values for <code>{tPropertyName}</code> is provided in the <a href="#resource-tproperties-collection-section"><code>{root}/collections/{collectionId}/items/{mFeatureId}/tproperties</code></a> GET response.</p>
 </div>
 <table id="req_mf-tproperties-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
@@ -4606,7 +4860,7 @@ The list of valid values for <code>{tPropertyName}</code> is provided in the <a 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 38</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 40</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-op/get</strong></th>
 </tr>
 </thead>
@@ -4648,7 +4902,7 @@ This operation targeted <a href="#temporalValue-properties-table">TemporalValue<
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 39</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 41</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-op/post</strong></th>
 </tr>
 </thead>
@@ -4714,7 +4968,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_11"><a class="anchor" href="#_response_11"></a>9.8.3. Response</h4>
+<h4 id="_response_11"><a class="anchor" href="#_response_11"></a>9.9.3. Response</h4>
 <div class="sect4">
 <h5 id="_retrieve_14"><a class="anchor" href="#_retrieve_14"></a>Retrieve</h5>
 <div class="paragraph">
@@ -4727,7 +4981,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 40</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 42</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-response/get.</strong></th>
 </tr>
 </thead>
@@ -4862,7 +5116,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 41</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 43</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-response/post</strong></th>
 </tr>
 </thead>
@@ -4879,7 +5133,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_error_situations_11"><a class="anchor" href="#_error_situations_11"></a>9.8.4. Error situations</h4>
+<h4 id="_error_situations_11"><a class="anchor" href="#_error_situations_11"></a>9.9.4. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
@@ -4903,7 +5157,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 42</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 44</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/general/http-response</strong></th>
 </tr>
 </thead>
@@ -4950,10 +5204,10 @@ General guidance on HTTP status codes and how they should be handled is provided
 <div class="sect2">
 <h3 id="http-status-codes"><a class="anchor" href="#http-status-codes"></a>10.2. HTTP Status Codes</h3>
 <div class="paragraph">
-<p><a href="#status-codes">Table 11</a> lists the main HTTP status codes that clients should be prepared to receive. This includes support for specific security schemes or URI redirection. In addition, other error situations may occur in the transport layer outside of the server.</p>
+<p><a href="#status-codes">Table 12</a> lists the main HTTP status codes that clients should be prepared to receive. This includes support for specific security schemes or URI redirection. In addition, other error situations may occur in the transport layer outside of the server.</p>
 </div>
 <table id="status-codes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. Typical HTTP status codes</caption>
+<caption class="title">Table 12. Typical HTTP status codes</caption>
 <colgroup>
 <col style="width: 15%;">
 <col style="width: 85%;">
@@ -5155,7 +5409,7 @@ All operations assume static objects, without time-varying coordinates or attrib
 <div class="content">
 <img src="images/GM_Object.png" alt="UML of GM_Object" width="75%">
 </div>
-<div class="title">Figure 3. GM_Object from ISO 19107:2003 figure 6</div>
+<div class="title">Figure 4. GM_Object from ISO 19107:2003 figure 6</div>
 </div>
 <div class="paragraph">
 <p><strong>TODO:</strong> above discussion is based on ISO 19107:2003. It needs to be updated for latest revisions.</p>
@@ -5206,7 +5460,7 @@ All properties are static, without time-varying values.</p>
 <div class="content">
 <img src="images/FeatureType.png" alt="UML of feature model" width="100%">
 </div>
-<div class="title">Figure 4. General Feature Model from ISO 19109:2009 figure 5</div>
+<div class="title">Figure 5. General Feature Model from ISO 19109:2009 figure 5</div>
 </div>
 <div class="paragraph">
 <p><strong>TODO:</strong> provide a simplified version of this UML.</p>
@@ -5235,7 +5489,7 @@ The UML below shows the objects used for querying a subset based on spatial oper
 <div class="content">
 <img src="images/Filter.png" alt="UML of spatial operators" width="75%">
 </div>
-<div class="title">Figure 5. Spatial operators from ISO 19143 figure 6</div>
+<div class="title">Figure 6. Spatial operators from ISO 19143 figure 6</div>
 </div>
 </div>
 <div class="sect3">
@@ -5270,7 +5524,7 @@ The UML below shows how the <code>MF_Trajectory</code> type extends the “stati
 <div class="content">
 <img src="images/Trajectory.png" alt="UML of trajectory" width="50%">
 </div>
-<div class="title">Figure 6. Trajectory type from ISO 19141 figure 3</div>
+<div class="title">Figure 7. Trajectory type from ISO 19141 figure 3</div>
 </div>
 <div class="paragraph">
 <p>Trajectory inherits some operations shown below.
@@ -5281,7 +5535,7 @@ For example the <code>distance(…)</code> operation from ISO 19107 is now compl
 <div class="content">
 <img src="images/TemporalGeometry.png" alt="UML of temporal geometry" width="50%">
 </div>
-<div class="title">Figure 7. Temporal geometry from ISO 19141 figure 6</div>
+<div class="title">Figure 8. Temporal geometry from ISO 19141 figure 6</div>
 </div>
 </div>
 <div class="sect3">
@@ -5296,7 +5550,7 @@ This extension to above <em>General Feature Model</em> is shown below:</p>
 <div class="content">
 <img src="images/DynamicAttribute.png" alt="UML of dynamic attribute" width="50%">
 </div>
-<div class="title">Figure 8. Dynamic attribute from OGC 18-075 figure 3</div>
+<div class="title">Figure 9. Dynamic attribute from OGC 18-075 figure 3</div>
 </div>
 </div>
 <div class="sect3">
@@ -5353,6 +5607,13 @@ The specification provides various UML diagrams summarizing ISO 19141.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">revised sections related to resources to add CRUD operations</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-10-09</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taehoon Kim, Kyoung-Sook Kim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">added TemporalGeometry Query resources</p></td>
+</tr>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
@@ -5384,7 +5645,7 @@ The specification provides various UML diagrams summarizing ISO 19141.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-09 14:25:29 +0900
+Last updated 2022-10-17 19:37:13 +0900
 </div>
 </div>
 </body>

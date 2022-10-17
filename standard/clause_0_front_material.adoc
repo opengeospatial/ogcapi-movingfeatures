@@ -17,8 +17,9 @@
 | Moving Feature instance       | ``/collections/{collectionId}/items /{mFeatureId}`` | GET, DELETE | <<resource-movingfeature-section, 9.4 Resource MovingFeature>>
 | Temporal Geometry Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries`` | GET, POST | <<resource-tgeometries-section, 9.5 Resource TemporalGeometryCollection>>
 | Temporal Geometry instance    | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}`` | DELETE | <<resource-temporalGeometry-section, 9.6 Resource TemporalGeometry>>
-| Temporal Property Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tproperties`` | GET, POST | <<resource-tproperties-collection-section, 9.7 Resource TemporalPropertyCollection>>
-| Temporal Property instance    | ``/collections/{collectionId}/items /{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section, 9.8 Resource TemporalProperty>>
+| TemporalGeometry Queries      | ``{root}/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}/{queryType}`` | GET | <<resource-temporalGeometryQuery-section, 9.7 TemporalGeometry Query Resources>>
+| Temporal Property Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tproperties`` | GET, POST | <<resource-tproperties-collection-section, 9.8 Resource TemporalPropertyCollection>>
+| Temporal Property instance    | ``/collections/{collectionId}/items /{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section, 9.9 Resource TemporalProperty>>
 |====
 
 

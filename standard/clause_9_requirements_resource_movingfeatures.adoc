@@ -23,7 +23,7 @@ Support for GET on the `{root}/collections/{collledctionID}/items` path is requi
 include::requirements/movingfeature/features/REQ_operation-features-get.adoc[]
 
 ====== Create
-This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
 This operation targeted <<resource-movingfeature-section,MovingFeature>> resource.
 
 . Issue a `POST` request on `{root}/collections/{collledctionID}/items` path

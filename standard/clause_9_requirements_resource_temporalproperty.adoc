@@ -10,7 +10,7 @@ The `TemporalProperty` resource supports retrieving and creating operations via 
 A temporal property object is a collection of dynamic non-spatial attributes and their temporal values with time.
 An abbreviated copy of this information is returned for each `TemporalProperty` in the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` response.
 
-The schema for the temporal property object presented in this clause is an extension of the `TemporalProperty Object` defined in https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[MF-JSON standard].
+The schema for the temporal property object presented in this clause is an extension of the `TemporalProperty Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[MF-JSON standard].
 <<temporalProperty-properties-table>> defines the set of property that may be used to describe a temporal property.
 
 [[temporalProperty-properties-table]]
@@ -46,13 +46,13 @@ include::requirements/movingfeature/tproperties/REQ_mandatory-tproperties.adoc[]
 . Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
 [[tproperties-identifier]]
-The {tPropertyName} parameter is the unique identifier for a single temporal property value offered by the API.
+The `{tPropertyName}` parameter is the unique identifier for a single temporal property value offered by the API.
 The list of valid values for `{tPropertyName}` is provided in the <<resource-tproperties-collection-section,`{root}/collections/{collectionId}/items/{mFeatureId}/tproperties`>> GET response.
 
 include::requirements/movingfeature/tproperties/REQ_operation-tproperties-get.adoc[]
 
 ====== Create
-This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
 This operation targeted <<temporalValue-properties-table,TemporalValue>> object.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path

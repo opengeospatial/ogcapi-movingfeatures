@@ -24,7 +24,7 @@ Unique relation types are used for each resource.
 
 [#mf-api-paths,reftext='{table-caption} {counter:table-num}']
 .Moving Features API Paths
-[width="90%",cols="2,^1,4",options="header"]
+[width="100%",cols="3,^1,4",options="header"]
 |===
 ^|**Path Template** ^|**Relation** ^|**Resource**
 
@@ -40,17 +40,19 @@ Unique relation types are used for each resource.
 |Metadata describing the <<collection-schema,Collection Catalog>> of data which has the unique identifier `{collectionId}`
 
 3+^|**Moving Features**
-|<<resource-mfeatures-section,{root}/collections/{collectionId}/items>>|`items`
+|<<resource-mfeatures-section,{root}/collections/{collectionId} /items>>|`items`
 |Static information of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
-|<<resource-movingfeature-section,{root}/collections/{collectionId}/items/{mFeatureId}>>|`item`
+|<<resource-movingfeature-section,{root}/collections/{collectionId} /items/{mFeatureId}>>|`item`
 |Static information describing the <<movingfeature-schema, MovingFeature>> of data which has the unique identifier `{mFeatureId}`
-|<<resource-tgeometries-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries>>|`items`
+|<<resource-tgeometries-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries>>|`items`
 |Temporal object information of <<resource-tgeometries-section, TemporalGeometryCollection>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-temporalGeometry-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}>>|`item`
+|<<resource-temporalGeometry-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}>>|`item`
 |Temporal object describing the <<resource-tgeometries-section, TemporalGeometryCollection>> of data which has the unique identifier `{tGeometryId}`
-|<<resource-tproperties-collection-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties>>|`items`
+|<<resource-temporalGeometryQuery-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}>>|
+|Identifies an Information Resource of type `{queryType}` associated with the <<resource-temporalGeometry-section, TemporalGeometry>> instance
+|<<resource-tproperties-collection-section,{root}/collections/{collectionId} /items/{mFeatureId}/tproperties>>|`items`
 |Temporal object information of <<resource-temporalProperty-section, TemporalPropertyCollection>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-temporalProperty-section,{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}>>|`item`
+|<<resource-temporalProperty-section,{root}/collections/{collectionId} /items/{mFeatureId}/tproperties /{tPropertyName}>>|`item`
 |Temporal object describing the <<resource-temporalProperty-section, TemporalPropertyCollection>> of data which has the unique identifier `{tPropertyName}`
 |===
 
@@ -98,7 +100,8 @@ The core search capability is based on https://ogcapi.ogc.org/common/[OGC API-Co
 
 OGC API-Moving Features extends these core search capabilities to include:
 
-* find leaf value with time instant
+* find <<leaf-section, leaf>> value with time instant,
+* <<resource-temporalGeometryQuery-section,spatio-temporal queries>> for accessing <<resource-temporalGeometry-section, TemporalGeometry resources>>.
 
 [[dependencies-overview]]
 === Dependencies
@@ -115,11 +118,16 @@ Instructions on when and how to apply these Requirements Classes are provided in
 [width="90%",cols="2,4,4"]
 |====
 ^|*API-MF Section*           ^| *API-MF Requirements Class*           |*API - Common, API - Features, MF-JSON Requirements Class*
-|<<common-landingpage-section,API Landing Page>>                   | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
-|<<common-api-section,API Definition>>                      | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
-|<<common-conformance-section,Declaration of Conformance Classes>> | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
-|<<clause-core-collection,Collections>>                        | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
-|<<clause-core-movingfeature,MovingFeatures>>                     | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete, http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory,
+|<<common-landingpage-section,API Landing Page>>
+| http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|<<common-api-section,API Definition>>
+| http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|<<common-conformance-section,Declaration of Conformance Classes>>
+| http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
+|<<clause-core-collection,Collections>>
+| http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
+|<<clause-core-movingfeature,MovingFeatures>>
+| http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete, http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory,
 http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 |OpenAPI 3.0                        | | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
 |GeoJSON                            | | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
