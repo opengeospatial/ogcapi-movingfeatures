@@ -10,7 +10,7 @@ The schema for the temporal geometry object presented in this clause is an exten
 [[temporalGeometry-properties-table]]
 [reftext='{table-caption} {counter:table-num}']
 .Table of the properties related to the temporal geometry
-[cols="30,5,65",options="header"]
+[cols="20,15,65",options="header"]
 |===
 |Property           |Requirement    |Description
 |id                 |O |An identifier for the resource assigned by an external entity.

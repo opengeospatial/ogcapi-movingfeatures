@@ -16,11 +16,11 @@ The schema for the temporal property object presented in this clause is an exten
 [[temporalProperty-properties-table]]
 [reftext='{table-caption} {counter:table-num}']
 .Table of the properties related to the temporal property
-[cols="30,5,65",options="header"]
+[cols="20,15,65",options="header"]
 |===
 |Property           |Requirement    |Description
 |name               |M |An identifier for the resource assigned by an external entity.
-|type               |M |A temporal property type (i.e., one of 'TBool', 'TText', 'TInt', or 'TFloat').
+|type               |M |A predefined temporal property type (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage').
 |values             |O |A sequence of <<temporalValue-properties-table, temporal value>>
 |form               |O |A unit of measure.
 |description        |O |A short description.
@@ -29,7 +29,7 @@ The schema for the temporal property object presented in this clause is an exten
 [[temporalValue-properties-table]]
 [reftext='{table-caption} {counter:table-num}']
 .Table of the properties related to the temporal value
-[cols="30,5,65",options="header"]
+[cols="20,15,65",options="header"]
 |===
 |Property           |Requirement    |Description
 |datetimes          |M |A sequence of monotonic increasing instants.
