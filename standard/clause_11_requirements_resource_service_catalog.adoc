@@ -1,0 +1,78 @@
+[[resource-service-catalog]]
+== Resource serviceCatalog
+The catalog is a hierarchy that demonstrates how resources and operations are related to one another in the services portion of the MF-API.
+
+.Resources available through the service catalog
+* DataServices
+** Input/output functions 
+*** from/to MF-JSON, WKT, WKB
+** Constructor functions
+*** from/to array
+* SpatiotemporalProcessing
+** Accessor functions
+*** Temporal_duration: Return the duration of a temporal value
+*** Temporal_end_instant: Return the end instant of a temporal value.
+*** Temporal_end_segment: Return the end segment of a temporal value that consists of multiple segments.
+*** Temporal_end_timestamp: Return the end timestamp of a temporal value. 
+*** Temporal_end_value: Return the end base value of a temporal value. 
+*** Temporal_instant_n: Return the n-th instant of a temporal value. 
+*** Temporal_instants: Return the distinct instants of a temporal value as an array. 
+*** Temporal_interpolation: Return the string representation of the interpolation of a temporal value. 
+*** Temporal_max_instant: Return a pointer to the instant with maximum base value of the temporal property. 
+*** Temporal_max_value: Return the maximum base value of a temporal property. 
+*** Temporal_min_instant: Return a pointer to the instant with the minimum base value of the temporal property. 
+*** Temporal_min_value: Return the minimum base value of a temporal value. 
+*** Temporal_num_instants: Return the number of distinct instants of a temporal value. 
+*** Temporal_num_segments: Return the number of sequences of a temporal value that consists of multiple segments.
+*** Temporal_num_timestamps: Return the number of distinct timestamps of a temporal value. 
+*** Temporal_segments: Return the segments of a temporal value that consists of multiple segments as an array. 
+*** Temporal_sequence_n: Return the n-th sequence of a  temporal value that consists of multiple segments 
+*** Temporal_sequences: Return the sequences of a  temporal value that consists of multiple segments as an array. 
+*** Temporal_start_instant: Return the start instant of a temporal value. 
+*** Temporal_start_sequence: Return the start sequence of a  temporal value that consists of multiple segments. 
+*** Temporal_start_timestamp: Return the start timestamp of a temporal value. 
+*** Temporal_start_value: Return the start base value of a temporal value. 
+*** Temporal_subtype: Return the string representation of the subtype of a temporal value. 
+*** Temporal_time: Return the time on which a temporal value is defined as a period set. 
+*** Temporal_timespan: Return the timespan of a temporal value. 
+*** Temporal_timestamp_n: Return the n-th distinct timestamp of a temporal value. 
+*** Temporal_timestamps: Return the distinct timestamps of a temporal value as an array. 
+*** Temporal_value_at_timestamp: Return the base value of a temporal value at the timestamp. 
+*** Temporal_values: Return the base values of a temporal value as an array. 
+*** Tfloat_spans: Return the base values of a temporal float as an array of spans. 
+*** Tinstant_get_value: Return the base value of a temporal instant. 
+** Transformation functions
+** Restriction functions	
+** Boolean functions	
+** Mathematical functions
+** Text functions
+* SpatiotemporalComparisons
+** Bounding box functions
+** Distance functions
+** Ever/always functions
+** Comparison functions
+* AggregationServices
+** Spatial functions
+** Time functions
+** Local aggregate
+* SpatiotemporalAnalytics
+** Similarity functions
+
+==== Temporal_duration
+===== Methods
+. Issue a `GET` request on the `{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration` path
+
+===== Description
+
+Return a time interval - without gaps - starting with the smallest timestamp till the largest time stamp during which the moving feature was defined.
+
+===== Request parameters
+
+* TemporalGeometry or TemporalProperty: given as literal in the request, as file, or as a query
+
+Example:
+`{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration?{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}`
+
+=====  Error situations
+The requirements for handling unsuccessful requests are provided in <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
