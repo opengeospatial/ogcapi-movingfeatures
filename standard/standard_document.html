@@ -658,8 +658,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#resource-service-catalog">10. Resource serviceCatalog</a>
+<ul class="sectlevel2">
+<li><a href="#_duration">10.1. duration</a>
 <ul class="sectlevel3">
-<li><a href="#_temporal_duration">10.1. Temporal_duration</a></li>
+<li><a href="#_methods">10.1.1. Methods</a></li>
+<li><a href="#_description">10.1.2. Description</a></li>
+<li><a href="#_request_parameters">10.1.3. Request parameters</a></li>
+<li><a href="#_error_situations_9">10.1.4. Error situations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_requirements_detail">Annex A: Requirements Detail</a>
@@ -4652,7 +4659,10 @@ properties:
 <div class="ulist">
 <ul>
 <li>
-<p>from/to MF-JSON, WKT, WKB</p>
+<p>(P1) from/to MF-JSON</p>
+</li>
+<li>
+<p>(P2) from/to WKT, WKB</p>
 </li>
 </ul>
 </div>
@@ -4662,7 +4672,7 @@ properties:
 <div class="ulist">
 <ul>
 <li>
-<p>from/to array</p>
+<p>(P1) from/to array</p>
 </li>
 </ul>
 </div>
@@ -4675,190 +4685,331 @@ properties:
 <div class="ulist">
 <ul>
 <li>
-<p>Accessor functions</p>
+<p>(P1) Accessor functions</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Temporal_duration: Return the duration of a temporal value</p>
+<p>getInterpolation: Get the interpolation</p>
 </li>
 <li>
-<p>Temporal_end_instant: Return the end instant of a temporal value.</p>
+<p>getValues: Get the values</p>
 </li>
 <li>
-<p>Temporal_end_segment: Return the end segment of a temporal value that consists of multiple segments.</p>
+<p>startValue: Get the start value</p>
 </li>
 <li>
-<p>Temporal_end_timestamp: Return the end timestamp of a temporal value.</p>
+<p>endValue: Get the end value</p>
 </li>
 <li>
-<p>Temporal_end_value: Return the end base value of a temporal value.</p>
+<p>valueRange: Get the value range</p>
 </li>
 <li>
-<p>Temporal_instant_n: Return the n-th instant of a temporal value.</p>
+<p>valueAtTimestamp: Get the value at a timestamp</p>
 </li>
 <li>
-<p>Temporal_instants: Return the distinct instants of a temporal value as an array.</p>
+<p>getTime: Get the time</p>
 </li>
 <li>
-<p>Temporal_interpolation: Return the string representation of the interpolation of a temporal value.</p>
+<p>duration: Get the duration</p>
 </li>
 <li>
-<p>Temporal_max_instant: Return a pointer to the instant with maximum base value of the temporal property.</p>
+<p>timespan: Get the timespan ignoring the potential time gaps</p>
 </li>
 <li>
-<p>Temporal_max_value: Return the maximum base value of a temporal property.</p>
+<p>numInstants: Get the number of different instants</p>
 </li>
 <li>
-<p>Temporal_min_instant: Return a pointer to the instant with the minimum base value of the temporal property.</p>
+<p>startInstant: Get the start instant</p>
 </li>
 <li>
-<p>Temporal_min_value: Return the minimum base value of a temporal value.</p>
+<p>endInstant: Get the end instant</p>
 </li>
 <li>
-<p>Temporal_num_instants: Return the number of distinct instants of a temporal value.</p>
+<p>instantN: Get the n-th different instant</p>
 </li>
 <li>
-<p>Temporal_num_segments: Return the number of sequences of a temporal value that consists of multiple segments.</p>
+<p>instants: Get the different instants</p>
 </li>
 <li>
-<p>Temporal_num_timestamps: Return the number of distinct timestamps of a temporal value.</p>
+<p>startTimestamp: Get the start timestamp</p>
 </li>
 <li>
-<p>Temporal_segments: Return the segments of a temporal value that consists of multiple segments as an array.</p>
+<p>endTimestamp: Get the end timestamp</p>
 </li>
 <li>
-<p>Temporal_sequence_n: Return the n-th sequence of a  temporal value that consists of multiple segments</p>
+<p>timestampN: Get the n-th different timestamp</p>
 </li>
 <li>
-<p>Temporal_sequences: Return the sequences of a  temporal value that consists of multiple segments as an array.</p>
+<p>timestamps: Get the different timestamps</p>
 </li>
 <li>
-<p>Temporal_start_instant: Return the start instant of a temporal value.</p>
+<p>numSequences: Get the number of sequences</p>
 </li>
 <li>
-<p>Temporal_start_sequence: Return the start sequence of a  temporal value that consists of multiple segments.</p>
+<p>segments: Get the segments</p>
 </li>
 <li>
-<p>Temporal_start_timestamp: Return the start timestamp of a temporal value.</p>
+<p>(P2) intersectsTimestamp: Does the temporal value intersect the timestamp?</p>
 </li>
 <li>
-<p>Temporal_start_value: Return the start base value of a temporal value.</p>
-</li>
-<li>
-<p>Temporal_subtype: Return the string representation of the subtype of a temporal value.</p>
-</li>
-<li>
-<p>Temporal_time: Return the time on which a temporal value is defined as a period set.</p>
-</li>
-<li>
-<p>Temporal_timespan: Return the timespan of a temporal value.</p>
-</li>
-<li>
-<p>Temporal_timestamp_n: Return the n-th distinct timestamp of a temporal value.</p>
-</li>
-<li>
-<p>Temporal_timestamps: Return the distinct timestamps of a temporal value as an array.</p>
-</li>
-<li>
-<p>Temporal_value_at_timestamp: Return the base value of a temporal value at the timestamp.</p>
-</li>
-<li>
-<p>Temporal_values: Return the base values of a temporal value as an array.</p>
-</li>
-<li>
-<p>Tfloat_spans: Return the base values of a temporal float as an array of spans.</p>
-</li>
-<li>
-<p>Tinstant_get_value: Return the base value of a temporal instant.</p>
+<p>(P2) intersectsTimestampSet: Does the temporal value intersect the timestamp set?</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Transformation functions</p>
-</li>
-<li>
-<p>Restriction functions</p>
-</li>
-<li>
-<p>Boolean functions</p>
-</li>
-<li>
-<p>Mathematical functions</p>
-</li>
-<li>
-<p>Text functions</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>SpatiotemporalComparisons</p>
+<p>(P1) Restriction functions</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Bounding box functions</p>
+<p>atValue: Restrict to a value</p>
 </li>
 <li>
-<p>Distance functions</p>
+<p>atValues: Restrict to an array of values</p>
 </li>
 <li>
-<p>Ever/always functions</p>
+<p>atRange: Restrict to a range</p>
 </li>
 <li>
-<p>Comparison functions</p>
+<p>atRanges: Restrict to an array of ranges</p>
+</li>
+<li>
+<p>atMin: Restrict to the minimum value</p>
+</li>
+<li>
+<p>atMax: Restrict to the maximum value</p>
+</li>
+<li>
+<p>atGeometry: Restrict to a geometry</p>
+</li>
+<li>
+<p>atTimestamp: Restrict to a timestamp</p>
+</li>
+<li>
+<p>atTimestampSet: Restrict to a timestamp set</p>
+</li>
+<li>
+<p>atPeriod: Restrict to a period</p>
+</li>
+<li>
+<p>atPeriodSet: Restrict to a period set</p>
+</li>
+<li>
+<p>atbox: Restrict to a tbox</p>
+</li>
+<li>
+<p>minusValue: Difference with a value</p>
+</li>
+<li>
+<p>minusValues: Difference with an array of values</p>
+</li>
+<li>
+<p>minusRange: Difference with a range</p>
+</li>
+<li>
+<p>minusRanges: Difference with an array of ranges</p>
+</li>
+<li>
+<p>minusMin: Difference with the minimum value</p>
+</li>
+<li>
+<p>minusMax: Difference with the maximum value</p>
+</li>
+<li>
+<p>minusGeometry: Difference with a geometry</p>
+</li>
+<li>
+<p>minusTimestamp: Difference with a timestamp</p>
+</li>
+<li>
+<p>minusTimestampSet: Difference with a timestamp set</p>
+</li>
+<li>
+<p>minusPeriod: Difference with period</p>
+</li>
+<li>
+<p>minusPeriodSet: Difference with a period set</p>
+</li>
+<li>
+<p>minusBox: Difference with a tbox</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>AggregationServices</p>
+<p>(P1) Spatial Functions and Operators</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Spatial functions</p>
+<p>getCRS: Get the spatial reference identifier</p>
 </li>
 <li>
-<p>Time functions</p>
+<p>setCRS: Set the spatial reference identifier</p>
 </li>
 <li>
-<p>Local aggregate</p>
+<p>transform: Transform to a different spatial reference</p>
+</li>
+<li>
+<p>cumulativeLength: Get the cumulative length traversed by the temporal point</p>
+</li>
+<li>
+<p>speed: Get the speed of the temporal point in units per second</p>
+</li>
+<li>
+<p>azimuth: Get the temporal azimuth</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>SpatiotemporalAnalytics</p>
+<p>(P2) Topological relationships</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Similarity functions</p>
+<p>Lifted  topological relationships</p>
+<div class="ulist">
+<ul>
+<li>
+<p>tcontains: Temporal contains</p>
+</li>
+<li>
+<p>tdisjoint: Temporal disjoint</p>
+</li>
+<li>
+<p>tdwithin: Temporal distance within</p>
+</li>
+<li>
+<p>tintersects: Temporal intersects</p>
+</li>
+<li>
+<p>ttouches: Temporal touches</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Simple topological relationships</p>
+<div class="ulist">
+<ul>
+<li>
+<p>contains: Always contain</p>
+</li>
+<li>
+<p>disjoint: Always disjoint</p>
+</li>
+<li>
+<p>dwithin: Ever at distance within</p>
+</li>
+<li>
+<p>intersects: Ever intersect</p>
+</li>
+<li>
+<p>touches: Ever touch</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>(P1) Distance functions</p>
+<div class="ulist">
+<ul>
+<li>
+<p>nearestApproachDistance: Get the smallest distance ever</p>
+</li>
+<li>
+<p>nearestApproachInstant: Get the instant of the first temporal point at which the two arguments are at the nearest distance</p>
+</li>
+<li>
+<p>shortestLine: Get the line connecting the nearest approach point</p>
+</li>
+<li>
+<p>distance: Get the temporal distance</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Aggregate Functions</p>
+<div class="ulist">
+<ul>
+<li>
+<p>(P3) Temporal aggregates</p>
+<div class="ulist">
+<ul>
+<li>
+<p>tcount: Temporal count</p>
+</li>
+<li>
+<p>tand: Temporal and</p>
+</li>
+<li>
+<p>tor: Temporal or</p>
+</li>
+<li>
+<p>tmin: Temporal minimum</p>
+</li>
+<li>
+<p>tmax: Temporal maximum</p>
+</li>
+<li>
+<p>tsum: Temporal sum</p>
+</li>
+<li>
+<p>tavg: Temporal average</p>
+</li>
+<li>
+<p>tcentroid: Temporal centroid</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Static aggregates</p>
+<div class="ulist">
+<ul>
+<li>
+<p>(P1) length: Get the length traversed by the temporal point</p>
+</li>
+<li>
+<p>(P1) extent: Bounding box extent</p>
+</li>
+<li>
+<p>(P3) twAvg: Get the time-weighted average</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_duration"><a class="anchor" href="#_duration"></a>10.1. duration</h3>
 <div class="sect3">
-<h4 id="_temporal_duration"><a class="anchor" href="#_temporal_duration"></a>10.1. Temporal_duration</h4>
-<div class="sect4">
-<h5 id="_methods"><a class="anchor" href="#_methods"></a>Methods</h5>
+<h4 id="_methods"><a class="anchor" href="#_methods"></a>10.1.1. Methods</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Issue a <code>GET</code> request on the <code>{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration</code> path</p>
+<p>Issue a <code>GET</code> request on the <code>{root}/services/SpatiotemporalProcessing/Accessor/duration</code> path</p>
 </li>
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_description"><a class="anchor" href="#_description"></a>Description</h5>
+<div class="sect3">
+<h4 id="_description"><a class="anchor" href="#_description"></a>10.1.2. Description</h4>
 <div class="paragraph">
 <p>Return a time interval - without gaps - starting with the smallest timestamp till the largest time stamp during which the moving feature was defined.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request parameters</h5>
+<div class="sect3">
+<h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>10.1.3. Request parameters</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -4871,8 +5022,8 @@ properties:
 <code>{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration?{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}</code></p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_error_situations_9"><a class="anchor" href="#_error_situations_9"></a>Error situations</h5>
+<div class="sect3">
+<h4 id="_error_situations_9"><a class="anchor" href="#_error_situations_9"></a>10.1.4. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
