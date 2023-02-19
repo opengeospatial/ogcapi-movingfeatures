@@ -4647,6 +4647,24 @@ properties:
 <div class="paragraph">
 <p>The catalog is a hierarchy that demonstrates how resources and operations are related to one another in the services portion of the MF-API.</p>
 </div>
+<div class="paragraph">
+<p>In this concept, the operations are split into three groups P1, P2, P3. The rational is to split the development of the standard into three incremental phases corresponding to these groups.</p>
+</div>
+<div class="paragraph">
+<div class="title">P1: Retrieval of features and their attribute</div>
+<p>These operations retrieve positions, trajectories, and velocities of a moving feature such as a car, a person, a vessel, an aircraft, and a hurricane. Mainly P1 covers the operations in MF-Access, and their temporal counterparts.</p>
+</div>
+<div class="paragraph">
+<div class="title">P2: Topological operations/predicates between pairs of features, where atleast one is a moving feature.</div>
+<p>These operations perform, for instance, an “intersection” between a geometry object like an administrative boundary and a trajectory of a moving feature like a car, a person, a vessel, an aircraft, and a hurricane. Also this category includes the operations of WKT and WKB, which require as a pre-requisit to develop these representation standards.</p>
+</div>
+<div class="paragraph">
+<div class="title">P3: Advanced aggregation and analytical operations</div>
+<p>An example of these operations is to calculate a distance of the nearest approach of a
+trajectory to another trajectory. Case studies include calculating the distance between
+a criminal agent and a police agent for predicting crime patterns or the distance
+between soccer players for making proper tactics.</p>
+</div>
 <div class="ulist">
 <div class="title">Resources available through the service catalog</div>
 <ul>
@@ -4695,64 +4713,16 @@ properties:
 <p>getValues: Get the values</p>
 </li>
 <li>
-<p>startValue: Get the start value</p>
-</li>
-<li>
-<p>endValue: Get the end value</p>
-</li>
-<li>
-<p>valueRange: Get the value range</p>
-</li>
-<li>
-<p>valueAtTimestamp: Get the value at a timestamp</p>
+<p>valueAtTime: Get the value at a timestamp, period, or a set of these</p>
 </li>
 <li>
 <p>getTime: Get the time</p>
 </li>
 <li>
-<p>duration: Get the duration</p>
+<p>segments: Get the segments, in the case where one temporal geometry/property is composed of multiple segments with temporal gaps inbetween</p>
 </li>
 <li>
-<p>timespan: Get the timespan ignoring the potential time gaps</p>
-</li>
-<li>
-<p>numInstants: Get the number of different instants</p>
-</li>
-<li>
-<p>startInstant: Get the start instant</p>
-</li>
-<li>
-<p>endInstant: Get the end instant</p>
-</li>
-<li>
-<p>instantN: Get the n-th different instant</p>
-</li>
-<li>
-<p>instants: Get the different instants</p>
-</li>
-<li>
-<p>startTimestamp: Get the start timestamp</p>
-</li>
-<li>
-<p>endTimestamp: Get the end timestamp</p>
-</li>
-<li>
-<p>timestampN: Get the n-th different timestamp</p>
-</li>
-<li>
-<p>timestamps: Get the different timestamps</p>
-</li>
-<li>
-<p>numSequences: Get the number of sequences</p>
-</li>
-<li>
-<p>segments: Get the segments</p>
-</li>
-<li>
-<p>(P2) intersectsTimestamp: Does the temporal value intersect the timestamp?</p>
-</li>
-<li>
-<p>(P2) intersectsTimestampSet: Does the temporal value intersect the timestamp set?</p>
+<p>(P2) intersectsTime: Does the temporal value intersect the timestamp, period, or a set of these?</p>
 </li>
 </ul>
 </div>
@@ -4762,16 +4732,7 @@ properties:
 <div class="ulist">
 <ul>
 <li>
-<p>atValue: Restrict to a value</p>
-</li>
-<li>
-<p>atValues: Restrict to an array of values</p>
-</li>
-<li>
-<p>atRange: Restrict to a range</p>
-</li>
-<li>
-<p>atRanges: Restrict to an array of ranges</p>
+<p>atValues: Restrict to a value, a range of values, or a set of these</p>
 </li>
 <li>
 <p>atMin: Restrict to the minimum value</p>
@@ -4783,31 +4744,10 @@ properties:
 <p>atGeometry: Restrict to a geometry</p>
 </li>
 <li>
-<p>atTimestamp: Restrict to a timestamp</p>
+<p>atTime: Restrict to a timestamp, period, or a set of these</p>
 </li>
 <li>
-<p>atTimestampSet: Restrict to a timestamp set</p>
-</li>
-<li>
-<p>atPeriod: Restrict to a period</p>
-</li>
-<li>
-<p>atPeriodSet: Restrict to a period set</p>
-</li>
-<li>
-<p>atbox: Restrict to a tbox</p>
-</li>
-<li>
-<p>minusValue: Difference with a value</p>
-</li>
-<li>
-<p>minusValues: Difference with an array of values</p>
-</li>
-<li>
-<p>minusRange: Difference with a range</p>
-</li>
-<li>
-<p>minusRanges: Difference with an array of ranges</p>
+<p>minusValues: Difference with a value, a range of values, or a set of these</p>
 </li>
 <li>
 <p>minusMin: Difference with the minimum value</p>
@@ -4819,19 +4759,7 @@ properties:
 <p>minusGeometry: Difference with a geometry</p>
 </li>
 <li>
-<p>minusTimestamp: Difference with a timestamp</p>
-</li>
-<li>
-<p>minusTimestampSet: Difference with a timestamp set</p>
-</li>
-<li>
-<p>minusPeriod: Difference with period</p>
-</li>
-<li>
-<p>minusPeriodSet: Difference with a period set</p>
-</li>
-<li>
-<p>minusBox: Difference with a tbox</p>
+<p>minusTime: Difference with a timestamp, period, or a set of these</p>
 </li>
 </ul>
 </div>
