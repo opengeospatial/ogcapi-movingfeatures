@@ -1,0 +1,103 @@
+[[resource-service-catalog]]
+== Resource serviceCatalog
+The catalog is a hierarchy that demonstrates how resources and operations are related to one another in the services portion of the MF-API.
+
+In this concept, the operations are split into three groups P1, P2, P3. The rational is to split the development of the standard into three incremental phases corresponding to these groups. 
+
+.P1: Retrieval of features and their attribute
+These operations retrieve positions, trajectories, and velocities of a moving feature such as a car, a person, a vessel, an aircraft, and a hurricane. Mainly P1 covers the operations in MF-Access, and their temporal counterparts.   
+
+.P2: Topological operations/predicates between pairs of features, where atleast one is a moving feature. 
+These operations perform, for instance, an “intersection” between a geometry object like an administrative boundary and a trajectory of a moving feature like a car, a person, a vessel, an aircraft, and a hurricane. Also this category includes the operations of WKT and WKB, which require as a pre-requisit to develop these representation standards.  
+
+.P3: Advanced aggregation and analytical operations
+An example of these operations is to calculate a distance of the nearest approach of a
+trajectory to another trajectory. Case studies include calculating the distance between
+a criminal agent and a police agent for predicting crime patterns or the distance
+between soccer players for making proper tactics.
+
+.Resources available through the service catalog
+* DataServices
+** Input/output functions 
+*** (P1) from/to MF-JSON
+*** (P2) from/to WKT, WKB
+** Constructor functions
+*** (P1) from/to array
+* SpatiotemporalProcessing
+** (P1) Accessor functions
+*** getInterpolation: Get the interpolation
+*** getValues: Get the values
+*** valueAtTime: Get the value at a timestamp, period, or a set of these
+*** getTime: Get the time
+*** segments: Get the segments, in the case where one temporal geometry/property is composed of multiple segments with temporal gaps inbetween
+*** (P2) intersectsTime: Does the temporal value intersect the timestamp, period, or a set of these?
+** (P1) Restriction functions	
+*** atValues: Restrict to a value, a range of values, or a set of these
+*** atMin: Restrict to the minimum value
+*** atMax: Restrict to the maximum value
+*** atGeometry: Restrict to a geometry
+*** atTime: Restrict to a timestamp, period, or a set of these
+*** minusValues: Difference with a value, a range of values, or a set of these
+*** minusMin: Difference with the minimum value
+*** minusMax: Difference with the maximum value
+*** minusGeometry: Difference with a geometry
+*** minusTime: Difference with a timestamp, period, or a set of these
+* (P1) Spatial Functions and Operators
+*** getCRS: Get the spatial reference identifier
+*** setCRS: Set the spatial reference identifier
+*** transform: Transform to a different spatial reference
+*** cumulativeLength: Get the cumulative length traversed by the temporal point
+*** speed: Get the speed of the temporal point in units per second
+*** azimuth: Get the temporal azimuth
+* (P2) Topological relationships
+** Lifted  topological relationships 
+*** tcontains: Temporal contains
+*** tdisjoint: Temporal disjoint
+*** tdwithin: Temporal distance within
+*** tintersects: Temporal intersects
+*** ttouches: Temporal touches
+** Simple topological relationships
+*** contains: Always contain
+*** disjoint: Always disjoint
+*** dwithin: Ever at distance within
+*** intersects: Ever intersect
+*** touches: Ever touch
+* (P1) Distance functions
+*** nearestApproachDistance: Get the smallest distance ever
+*** nearestApproachInstant: Get the instant of the first temporal point at which the two arguments are at the nearest distance
+*** shortestLine: Get the line connecting the nearest approach point
+*** distance: Get the temporal distance
+* Aggregate Functions
+** (P3) Temporal aggregates
+*** tcount: Temporal count
+*** tand: Temporal and
+*** tor: Temporal or
+*** tmin: Temporal minimum
+*** tmax: Temporal maximum
+*** tsum: Temporal sum
+*** tavg: Temporal average
+*** tcentroid: Temporal centroid
+** Static aggregates
+*** (P1) length: Get the length traversed by the temporal point
+*** (P1) extent: Bounding box extent
+*** (P3) twAvg: Get the time-weighted average
+
+
+=== duration
+==== Methods
+. Issue a `GET` request on the `{root}/services/SpatiotemporalProcessing/Accessor/duration` path
+
+==== Description
+
+Return a time interval - without gaps - starting with the smallest timestamp till the largest time stamp during which the moving feature was defined.
+
+==== Request parameters
+
+* TemporalGeometry or TemporalProperty: given as literal in the request, as file, or as a query
+
+Example:
+`{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration?{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}`
+
+====  Error situations
+The requirements for handling unsuccessful requests are provided in <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
