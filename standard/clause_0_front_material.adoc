@@ -68,5 +68,6 @@ All questions regarding this submission should be directed to the editor or the 
 |Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
 |Taehoon KIM            |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
 |Mahmoud SAKR           |Université libre de Bruxelles
+|Esteban Zimanyi        |Université libre de Bruxelles
 |Martin Desruisseaux    |Geomatys
 |===========================================================

@@ -8,5 +8,5 @@
 |2021-09-14 |0.1 |Taehoon Kim, Kyoung-Sook Kim, and Martin Desruisseaux |all |first draft version
 |2022-03-01 |0.2 |Taehoon Kim, Kyoung-Sook Kim|all |revised sections related to resources to add CRUD operations
 |2022-10-09 |0.3 |Taehoon Kim, Kyoung-Sook Kim|all |added TemporalGeometry Query resources
-|2023-02-21 |0.9 |Taehoon Kim, Kyoung-Sook Kim, and Mahmoud |all |final draft version
+|2023-02-21 |0.9 |Taehoon Kim, Kyoung-Sook Kim, Mahmoud, and Esteban |all |finalize draft version
 |===
