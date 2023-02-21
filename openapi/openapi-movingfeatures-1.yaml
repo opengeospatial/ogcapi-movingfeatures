@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.1.0
 info:
   title: "Building Blocks specified in OGC API - MovingFeatures - Part 1: Features Extension"
   version: 0.0.1
@@ -111,6 +111,17 @@ paths:
               schema:
                 type: string
                 example: "https://data.example.org/collections/mfc1"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                properties:
+                  id:
+                    type: string
+                    description: "Newly added resource ID"
+                example: { "id": "mfc-1" }
         '500':
           $ref: "responses/ServerError.yaml"
 
@@ -210,7 +221,7 @@ paths:
                 - $ref: "schemas/requestBody/MF-JSON_Prism.schema.json#/definitions/movingFeature"
                 - $ref: "schemas/requestBody/MF-JSON_Prism.schema.json#/definitions/movingFeatureCollection"
               example:
-                - $ref: "examples/movingFeatures_MF_JSON.json"
+                $ref: "examples/movingFeatures_MF_JSON.json"
       responses:
         '201':
           description: |

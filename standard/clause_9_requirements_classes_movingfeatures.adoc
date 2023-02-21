@@ -39,6 +39,13 @@ The five resources defined in this Requirements Class are summarized in <<mf-res
 {tGeometryId}`
 ^|DELETE
 
+|<<resource-temporalGeometryQuery-section,TemporalGeometry Query>>
+|`{root}/collections/
+{collectionId}/items/
+{mFeatureId}/tgeometries/
+{tGeometryId}/{queryType}`
+^|GET
+
 |<<resource-tproperties-collection-section,TemporalPropertyCollection>>
 |`{root}/collections/
 {collectionId}/items/
@@ -57,5 +64,6 @@ include::clause_9_requirements_resource_movingfeatures.adoc[]
 include::clause_9_requirements_resource_movingfeature.adoc[]
 include::clause_9_requirements_resource_temporalgeometrycollection.adoc[]
 include::clause_9_requirements_resource_temporalgeometry.adoc[]
+include::clause_9_requirements_resource_temporalgeometry_query.adoc[]
 include::clause_9_requirements_resource_temporalpropertycollection.adoc[]
 include::clause_9_requirements_resource_temporalproperty.adoc[]

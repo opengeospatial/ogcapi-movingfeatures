@@ -15,7 +15,7 @@ The `TemporalPropertyCollection` resource supports retrieving and creating opera
 include::requirements/movingfeature/tproperties-collection/REQ_operation-tproperties-collection-get.adoc[]
 
 ====== Create
-This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
 This operation targeted <<resource-temporalProperty-section,TemporalProperty>> resource.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` path

@@ -26,7 +26,7 @@ The array does not allow the same element.
 (X) "2018-02-12T23:20:50Z", "2018-02-12T22:20:50Z"
 =================
 
-If `leaf` parameter is provided by the client, the endpoint returns only geometry coordinate (or temporal property value) with the leaf query at each time included in the `leaf` parameter, similar to _**pointAtTime**_ operation in the https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access standard]. And `interpolation` property in the response SHALL be 'Discrete'.
+If `leaf` parameter is provided by the client, the endpoint returns only geometry coordinate (or temporal property value) with the leaf query at each time included in the `leaf` parameter, similar to _**pointAtTime**_ operation in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access standard]. And `interpolation` property in the response SHALL be 'Discrete'.
 
 [#leaf-example,reftext='{figure-caption} {counter:figure-num}']
 .Example of response result with `leaf` parameter
@@ -43,7 +43,7 @@ include::requirements/parameter/REQ_parameter-leaf-response.adoc[]
 include::requirements/movingfeature/tgeometries/REQ_operation-tgeometries-get.adoc[]
 
 ====== Create
-This operation is defined in the `http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
 This operation targeted <<resource-temporalGeometry-section,TemporalGeometry>> resource.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries` path
@@ -52,7 +52,7 @@ Support for HTTP POST method is required by API-Features.
 
 include::requirements/movingfeature/tgeometries/REQ_operation-tgeometries-post.adoc[]
 
-The following example adds a new feature (https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[TemporalGeometry object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
+The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[TemporalGeometry object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
 The feature is represented as <OGC-MF-JSON,MF-JSON>>, which is a kind of extension of the https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
 //And it added to the current temporal geometry object as continuously one, because the time difference between these two temporal geometry objects is less than (or equal to) the update frequency of the created Collection feature by the <<collections-post-example,Create a New Collection Example>>.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.

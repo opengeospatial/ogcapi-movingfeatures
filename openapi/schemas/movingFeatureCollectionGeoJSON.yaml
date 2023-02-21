@@ -11,6 +11,10 @@ properties:
     type: array
     items:
       $ref: movingFeatureGeoJSON.yaml
+  crs:
+    $ref: crs.yaml
+  trs:
+    $ref: trs.yaml
   links:
     type: array
     items:

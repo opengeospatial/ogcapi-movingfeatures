@@ -1,11 +1,19 @@
 type: object
 required:
-  - temporalGeometries
+  - type
+  - prisms
 properties:
-  temporalGeometries:
+  type:
+    type: string
+    default: MovingGeometryCollection
+  prisms:
     type: array
     items:
       $ref: temporalGeometry.yaml
+  crs:
+    $ref: crs.yaml
+  trs:
+    $ref: trs.yaml
   links:
     type: array
     items:

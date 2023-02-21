@@ -20,12 +20,28 @@
       "bbox":[
         -122.59750209, 37.48803556, -122.2880486, 37.613537207
       ],
-      "interval":[
+      "time":[
         "2011-07-14T22:01:01Z",
         "2011-07-15T01:11:22Z"
-      ]
+      ],
+      "crs": {
+        "type": "Name",
+        "properties": "urn:ogc:def:crs:OGC:1.3:CRS84"
+      },
+      "trs": {
+        "type": "Name",
+        "properties": "urn:ogc:data:time:iso8601"
+      }
     }
   ],
+  "crs": {
+    "type": "Name",
+    "properties": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  },
+  "trs": {
+    "type": "Name",
+    "properties": "urn:ogc:data:time:iso8601"
+  },
   "links":[
     {
       "href": "https://data.example.org/collections/mfc-1/items",

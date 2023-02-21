@@ -28,7 +28,7 @@ properties:
           maxItems: 6
       items:
         type: number
-  interval:
+  time:
     type: array
     minItems: 1
     items:
@@ -39,6 +39,10 @@ properties:
         type: string
         format: date-time
         nullable: true
+  crs:
+    $ref: crs.yaml
+  trs:
+    $ref: trs.yaml
   links:
     type: array
     items:

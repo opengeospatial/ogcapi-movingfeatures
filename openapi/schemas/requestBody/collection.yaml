@@ -1,6 +1,4 @@
 type: object
-required:
-  - updateFrequency
 properties:
   title:
     description: human readable title of the collection

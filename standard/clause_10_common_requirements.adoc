@@ -1,4 +1,21 @@
-== General Requirements
+[[clause-common-req]]
+== Common Requirements
+
+=== Parameters
+The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API-Common.
+All requirements and recommendations in API-Common regarding these parameters also apply for API-Moving Features.
+
+[[limit-section]]
+==== Parameter limit
+include::requirements/parameter/REQ_parameter-limit.adoc[]
+
+[[bbox-section]]
+==== Parameter bbox
+include::requirements/parameter/REQ_parameter-bbox.adoc[]
+
+[[datetime-section]]
+==== Parameter datetime
+include::requirements/parameter/REQ_parameter-datetime.adoc[]
 
 [[http-response]]
 === HTTP Response

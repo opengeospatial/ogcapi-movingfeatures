@@ -1,24 +1,32 @@
 //== Introduction
 [big]*i.     Abstract*
 
-// TODO
+Moving feature data can represent various phenomena, including vehicles, people, animals, weather patterns, etc. The OGC API Moving Features (OGC API-MF) is a specification developed by the Open Geospatial Consortium (OGC) that defines a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
+The OGC API-MF provides a standard way to manage this data, which can be helpful for applications such as transportation management, disaster response, and environmental monitoring.
+It also includes operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties.
 
+The OGC API-MF-Part 1: Feature extension specifies a set of RESTful web service interfaces and data formats for querying and updating moving feature data over the web.
+<<OGC-API, OGC API standards>> define modular API building blocks to spatially enable Web APIs in a consistent way.
+<<OPENAPI, OpenAPI>> is used to define the reusable API building blocks with responses in JSON and HTML.
+
+The OGC API family of standards is organized by resource type.
 [#common-paths,reftext='{table-caption} {counter:table-num}']
 .Overview of Resources
-[width="90%",cols="2,2,^1,4",options="header"]
+[width="99%",cols="2,4,^1,2",options="header"]
 |====
 | Resource | Path | HTTP Method | Document Reference
-| Landing page                  | ``/``                           | GET | <<common-landingpage-section, 7.2 API Landing Page>>
-| API definition                 | ``/api``                        | GET | <<common-api-section, 7.3 API Definition>>
-| Conformance classes           | ``/conformance``                | GET | <<common-conformance-section, 7.4 Declaration of Conformance Classes>>
-| Collections metadata          | ``/collections``                | GET, POST | <<resource-collections-section, 8.3 Resource Collections>>
-| Collection instance metadata  | ``/collections/{collectionId}`` | GET, DELETE, PUT | <<resource-collection-section, 8.4 Resource Collection>>
-| Moving Features               | ``/collections/{collectionId}/items`` | GET, POST | <<resource-mfeatures-section, 9.3 Resource MovingFeatures>>
-| Moving Feature instance       | ``/collections/{collectionId}/items /{mFeatureId}`` | GET, DELETE | <<resource-movingfeature-section, 9.4 Resource MovingFeature>>
-| Temporal Geometry Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries`` | GET, POST | <<resource-tgeometries-section, 9.5 Resource TemporalGeometryCollection>>
-| Temporal Geometry instance    | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}`` | DELETE | <<resource-temporalGeometry-section, 9.6 Resource TemporalGeometry>>
-| Temporal Property Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tproperties`` | GET, POST | <<resource-tproperties-collection-section, 9.7 Resource TemporalPropertyCollection>>
-| Temporal Property instance    | ``/collections/{collectionId}/items /{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section, 9.8 Resource TemporalProperty>>
+// | Landing page                  | ``/``                           | GET | <<common-landingpage-section, 7.2 API Landing Page>>
+// | API definition                 | ``/api``                        | GET | <<common-api-section, 7.3 API Definition>>
+// | Conformance classes           | ``/conformance``                | GET | <<common-conformance-section, 7.4 Declaration of Conformance Classes>>
+| Collections metadata          | ``/collections``                | GET, POST | <<resource-collections-section, Resource Collections>>
+| Collection instance metadata  | ``/collections/{collectionId}`` | GET, DELETE, PUT | <<resource-collection-section, Resource Collection>>
+| Moving Features               | ``/collections/{collectionId}/items`` | GET, POST | <<resource-mfeatures-section, Resource MovingFeatures>>
+| Moving Feature instance       | ``/collections/{collectionId}/items /{mFeatureId}`` | GET, DELETE | <<resource-movingfeature-section, Resource MovingFeature>>
+| Temporal Geometry Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries`` | GET, POST | <<resource-tgeometries-section, Resource TemporalGeometryCollection>>
+| Temporal Geometry instance    | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}`` | DELETE | <<resource-temporalGeometry-section, Resource TemporalGeometry>>
+| TemporalGeometry Queries      | ``{root}/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}/{queryType}`` | GET | <<resource-temporalGeometryQuery-section, TemporalGeometry Query Resources>>
+| Temporal Property Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tproperties`` | GET, POST | <<resource-tproperties-collection-section, Resource TemporalPropertyCollection>>
+| Temporal Property instance    | ``/collections/{collectionId}/items /{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section, Resource TemporalProperty>>
 |====
 
 
