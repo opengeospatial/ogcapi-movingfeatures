@@ -14,6 +14,7 @@
 :doc-type: IS
 :standard: ogcapi-movingfeatures-1
 :version: 0.3.draft
+:page-background-image: image:images/watermark.png[opacity=50%]
 
 <<<
 [cols = ">",frame = "none",grid = "none"]
@@ -95,13 +96,15 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_overview.adoc[]
 
-include::clause_7_requirements_classes_common.adoc[]
+//include::clause_7_requirements_classes_common.adoc[]
 
 include::clause_8_requirements_classes_collection.adoc[]
 
 include::clause_9_requirements_classes_movingfeatures.adoc[]
 
 include::clause_10_general_requirements.adoc[]
+
+include::clause_11_requirements_resource_service_catalog.adoc[]
 
 <<<
 ////
