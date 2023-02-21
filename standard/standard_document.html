@@ -584,25 +584,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_overview_2">7.1. Overview</a></li>
 <li><a href="#_information_resources">7.2. Information Resources</a></li>
-<li><a href="#_parameters">7.3. Parameters</a>
+<li><a href="#resource-collections-section">7.3. Resource Collections</a>
 <ul class="sectlevel3">
-<li><a href="#limit-section">7.3.1. Parameter limit</a></li>
-<li><a href="#bbox-section">7.3.2. Parameter bbox</a></li>
-<li><a href="#datetime-section">7.3.3. Parameter datetime</a></li>
+<li><a href="#_operations">7.3.1. Operations</a></li>
+<li><a href="#_response">7.3.2. Response</a></li>
+<li><a href="#_error_situations">7.3.3. Error situations</a></li>
 </ul>
 </li>
-<li><a href="#resource-collections-section">7.4. Resource Collections</a>
+<li><a href="#resource-collection-section">7.4. Resource Collection</a>
 <ul class="sectlevel3">
-<li><a href="#_operations">7.4.1. Operations</a></li>
-<li><a href="#_response">7.4.2. Response</a></li>
-<li><a href="#_error_situations">7.4.3. Error situations</a></li>
-</ul>
-</li>
-<li><a href="#resource-collection-section">7.5. Resource Collection</a>
-<ul class="sectlevel3">
-<li><a href="#_operation">7.5.1. Operation</a></li>
-<li><a href="#_response_2">7.5.2. Response</a></li>
-<li><a href="#_error_situations_2">7.5.3. Error situations</a></li>
+<li><a href="#_operation">7.4.1. Operation</a></li>
+<li><a href="#_response_2">7.4.2. Response</a></li>
+<li><a href="#_error_situations_2">7.4.3. Error situations</a></li>
 </ul>
 </li>
 </ul>
@@ -628,7 +621,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#resource-tgeometries-section">8.5. Resource TemporalGeometryCollection</a>
 <ul class="sectlevel3">
-<li><a href="#_parameters_2">8.5.1. Parameters</a></li>
+<li><a href="#_parameters">8.5.1. Parameters</a></li>
 <li><a href="#_operation_4">8.5.2. Operation</a></li>
 <li><a href="#_response_5">8.5.3. Response</a></li>
 <li><a href="#_error_situations_5">8.5.4. Error situations</a></li>
@@ -668,22 +661,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_general_requirements">9. General Requirements</a>
+<li><a href="#resource-service-catalog">9. Requirement Class "Service Catalog"</a>
 <ul class="sectlevel2">
-<li><a href="#http-response">9.1. HTTP Response</a></li>
-<li><a href="#http-status-codes">9.2. HTTP Status Codes</a></li>
-</ul>
-</li>
-<li><a href="#resource-service-catalog">10. Resource serviceCatalog</a>
-<ul class="sectlevel2">
-<li><a href="#_duration">10.1. duration</a>
+<li><a href="#_resource_duration">9.1. Resource Duration</a>
 <ul class="sectlevel3">
-<li><a href="#_methods">10.1.1. Methods</a></li>
-<li><a href="#_description">10.1.2. Description</a></li>
-<li><a href="#_request_parameters">10.1.3. Request parameters</a></li>
-<li><a href="#_error_situations_9">10.1.4. Error situations</a></li>
+<li><a href="#_methods">9.1.1. Methods</a></li>
+<li><a href="#_description">9.1.2. Description</a></li>
+<li><a href="#_request_parameters">9.1.3. Request parameters</a></li>
+<li><a href="#_error_situations_9">9.1.4. Error situations</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#clause-common-req">10. Common Requirements</a>
+<ul class="sectlevel2">
+<li><a href="#_parameters_2">10.1. Parameters</a>
+<ul class="sectlevel3">
+<li><a href="#limit-section">10.1.1. Parameter limit</a></li>
+<li><a href="#bbox-section">10.1.2. Parameter bbox</a></li>
+<li><a href="#datetime-section">10.1.3. Parameter datetime</a></li>
+</ul>
+</li>
+<li><a href="#http-response">10.2. HTTP Response</a></li>
+<li><a href="#http-status-codes">10.3. HTTP Status Codes</a></li>
 </ul>
 </li>
 <li><a href="#_requirements_detail">Annex A: Requirements Detail</a>
@@ -934,10 +934,13 @@ The standardization target is "Web APIs".</p>
 <p><strong>Time</strong></p>
 </li>
 <li>
-<p><a href="#clause-core-collection">Collection Catalog</a>.</p>
+<p><a href="#clause-core-collection">Collection Catalog</a></p>
 </li>
 <li>
 <p><a href="#clause-core-movingfeature">Moving Features</a></p>
+</li>
+<li>
+<p><a href="#clause-common-req">Common Requirements</a></p>
 </li>
 </ul>
 </div>
@@ -977,6 +980,10 @@ This includes support for querying and retrieving information about moving featu
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moving Features</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Common Requirement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1523,119 +1530,7 @@ A collection is an object that provides information about and access to a set of
 </table>
 </div>
 <div class="sect2">
-<h3 id="_parameters"><a class="anchor" href="#_parameters"></a>7.3. Parameters</h3>
-<div class="paragraph">
-<p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>bbox</code></a>, <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a> and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from API-Common.
-All requirements and recommendations in API-Common regarding these parameters also apply for API-Moving Features.</p>
-</div>
-<div class="sect3">
-<h4 id="limit-section"><a class="anchor" href="#limit-section"></a>7.3.1. Parameter limit</h4>
-<table id="req_core_param-limit" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>/req/common/param-limit</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A OGC API-MF SHALL support the Limit parameter for the operation.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Requests which include the Limit parameter SHALL comply with API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-definition</code></a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Responses to Limit requests SHALL comply with API-Common requirements <a href="https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-response</code></a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="bbox-section"><a class="anchor" href="#bbox-section"></a>7.3.2. Parameter bbox</h4>
-<table id="req_core_param-bbox" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>/req/common/param-bbox</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A OGC API-MF SHALL support the Bounding Box (<code>bbox</code>) parameter for the operation.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Requests which include the Bounding Box parameter SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-definition</code></a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Responses to Bounding Box requests SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-response</code></a>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="datetime-section"><a class="anchor" href="#datetime-section"></a>7.3.3. Parameter datetime</h4>
-<table id="req_core_param-datetime" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 3</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>/req/common/param-datetime</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A OGC API-MF SHALL support the DateTime (<code>datetime</code>) parameter for the operation.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Requests which include the DateTime parameter SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-definition</code></a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Responses to DateTime requests SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-response</code></a>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="resource-collections-section"><a class="anchor" href="#resource-collections-section"></a>7.4. Resource Collections</h3>
+<h3 id="resource-collections-section"><a class="anchor" href="#resource-collections-section"></a>7.3. Resource Collections</h3>
 <div class="paragraph">
 <p>The <code>Collections</code> resource supports retrieving and creating operations via GET and POST HTTP methods respectively.</p>
 </div>
@@ -1650,7 +1545,7 @@ All requirements and recommendations in API-Common regarding these parameters al
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_operations"><a class="anchor" href="#_operations"></a>7.4.1. Operations</h4>
+<h4 id="_operations"><a class="anchor" href="#_operations"></a>7.3.1. Operations</h4>
 <div class="sect4">
 <h5 id="_retrieve"><a class="anchor" href="#_retrieve"></a>Retrieve</h5>
 <div class="paragraph">
@@ -1674,7 +1569,7 @@ No modifications are needed to support <code>MovingFeature</code> resources.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 4</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 1</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collections-op/get</strong></th>
 </tr>
 </thead>
@@ -1716,7 +1611,7 @@ This operation targeted <a href="#resource-collection-section">Collection</a> re
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 5</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 2</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collections-op/post</strong></th>
 </tr>
 </thead>
@@ -1787,7 +1682,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response"><a class="anchor" href="#_response"></a>7.4.2. Response</h4>
+<h4 id="_response"><a class="anchor" href="#_response"></a>7.3.2. Response</h4>
 <div class="sect4">
 <h5 id="_retrieve_2"><a class="anchor" href="#_retrieve_2"></a>Retrieve</h5>
 <div class="paragraph">
@@ -1802,7 +1697,7 @@ The collections where the value of the <code>itemType</code> property is <code>m
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 6</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 3</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collections-response/get</strong></th>
 </tr>
 </thead>
@@ -1897,7 +1792,7 @@ The collections where the value of the <code>itemType</code> property is <code>m
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 7</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 4</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collections-response/post</strong></th>
 </tr>
 </thead>
@@ -1914,7 +1809,7 @@ The collections where the value of the <code>itemType</code> property is <code>m
 </div>
 </div>
 <div class="sect3">
-<h4 id="_error_situations"><a class="anchor" href="#_error_situations"></a>7.4.3. Error situations</h4>
+<h4 id="_error_situations"><a class="anchor" href="#_error_situations"></a>7.3.3. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
@@ -1922,7 +1817,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 </div>
 </div>
 <div class="sect2">
-<h3 id="resource-collection-section"><a class="anchor" href="#resource-collection-section"></a>7.5. Resource Collection</h3>
+<h3 id="resource-collection-section"><a class="anchor" href="#resource-collection-section"></a>7.4. Resource Collection</h3>
 <div class="paragraph">
 <p>A Collection information object is the set of metadata that describes a single collection.
 An abbreviated copy of this information is returned for each <code>Collection</code> in the <code>{root}/collections</code> GET response.</p>
@@ -2017,7 +1912,7 @@ It is determined by a data source. It can be used to determine the continuity of
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 8</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 5</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/mandatory-collection</strong></th>
 </tr>
 </thead>
@@ -2031,7 +1926,7 @@ It is determined by a data source. It can be used to determine the continuity of
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_operation"><a class="anchor" href="#_operation"></a>7.5.1. Operation</h4>
+<h4 id="_operation"><a class="anchor" href="#_operation"></a>7.4.1. Operation</h4>
 <div class="sect4">
 <h5 id="_retrieve_3"><a class="anchor" href="#_retrieve_3"></a>Retrieve</h5>
 <div class="paragraph">
@@ -2059,7 +1954,7 @@ The list of valid values for <code>{collectionId}</code> is provided in the <a h
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 9</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 6</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collection-op/get</strong></th>
 </tr>
 </thead>
@@ -2102,7 +1997,7 @@ This operation targeted <a href="#resource-collection-section">Collection</a> re
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 10</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 7</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collection-op/put</strong></th>
 </tr>
 </thead>
@@ -2185,7 +2080,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 11</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 8</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collection-op/delete</strong></th>
 </tr>
 </thead>
@@ -2217,7 +2112,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_2"><a class="anchor" href="#_response_2"></a>7.5.2. Response</h4>
+<h4 id="_response_2"><a class="anchor" href="#_response_2"></a>7.4.2. Response</h4>
 <div class="sect4">
 <h5 id="_retrieve_4"><a class="anchor" href="#_retrieve_4"></a>Retrieve</h5>
 <div class="paragraph">
@@ -2230,7 +2125,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 12</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 9</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collection-response/get</strong></th>
 </tr>
 </thead>
@@ -2359,7 +2254,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 13</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 10</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collection-response/put</strong></th>
 </tr>
 </thead>
@@ -2391,7 +2286,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 14</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 11</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/mf-collection/collection-response/delete</strong></th>
 </tr>
 </thead>
@@ -2413,7 +2308,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_error_situations_2"><a class="anchor" href="#_error_situations_2"></a>7.5.3. Error situations</h4>
+<h4 id="_error_situations_2"><a class="anchor" href="#_error_situations_2"></a>7.4.3. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
@@ -2588,7 +2483,7 @@ No modifications are needed to support <a href="#resource-movingfeature-section"
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 15</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 12</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/features-op/get</strong></th>
 </tr>
 </thead>
@@ -2624,7 +2519,7 @@ This operation targeted <a href="#resource-movingfeature-section">MovingFeature<
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 16</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 13</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/features-op/post</strong></th>
 </tr>
 </thead>
@@ -2779,7 +2674,7 @@ In a typical API deployment, the <code>MovingFeatures</code> GET response will l
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 17</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 14</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/features-response/get</strong></th>
 </tr>
 </thead>
@@ -2919,7 +2814,7 @@ In a typical API deployment, the <code>MovingFeatures</code> GET response will l
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 18</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 15</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/features-response/post</strong></th>
 </tr>
 </thead>
@@ -3031,7 +2926,7 @@ The properties <em>id</em>, <em>type</em>, <em>geometry</em>, <em>properties</em
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 19</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 16</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mandatory-mf</strong></th>
 </tr>
 </thead>
@@ -3074,7 +2969,7 @@ The list of valid values for <code>{mFeatureId}</code> is provided in the <a hre
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 20</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 17</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mf-op/get</strong></th>
 </tr>
 </thead>
@@ -3122,7 +3017,7 @@ The list of valid values for <code>{mFeatureId}</code> is provided in the <a hre
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 21</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 18</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mf-op/delete</strong></th>
 </tr>
 </thead>
@@ -3165,7 +3060,7 @@ The temporal object information may be accessed using  <a href="#resource-tgeome
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 22</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 19</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mf-response/get</strong></th>
 </tr>
 </thead>
@@ -3297,7 +3192,7 @@ The temporal object information may be accessed using  <a href="#resource-tgeome
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 23</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 20</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mf-response/delete</strong></th>
 </tr>
 </thead>
@@ -3342,7 +3237,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_parameters_2"><a class="anchor" href="#_parameters_2"></a>8.5.1. Parameters</h4>
+<h4 id="_parameters"><a class="anchor" href="#_parameters"></a>8.5.1. Parameters</h4>
 <div class="sect4">
 <h5 id="leaf-section"><a class="anchor" href="#leaf-section"></a>Parameter leaf</h5>
 <div class="paragraph">
@@ -3386,7 +3281,7 @@ The array does not allow the same element.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 24</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 21</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/param-leaf-definition</strong></th>
 </tr>
 </thead>
@@ -3434,7 +3329,7 @@ The array does not allow the same element.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 25</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 22</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/param-leaf-response</strong></th>
 </tr>
 </thead>
@@ -3485,7 +3380,7 @@ The array does not allow the same element.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 26</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 23</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometries-op/get</strong></th>
 </tr>
 </thead>
@@ -3527,7 +3422,7 @@ This operation targeted <a href="#resource-temporalGeometry-section">TemporalGeo
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 27</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 24</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometries-op/post</strong></th>
 </tr>
 </thead>
@@ -3619,7 +3514,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 28</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 25</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometries-response/get</strong></th>
 </tr>
 </thead>
@@ -3843,7 +3738,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 29</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 26</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometries-response/post</strong></th>
 </tr>
 </thead>
@@ -3957,7 +3852,7 @@ The detailed information and requirements for each property are described in the
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 30</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 27</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mandatory-tgeometry</strong></th>
 </tr>
 </thead>
@@ -3998,7 +3893,7 @@ The list of valid values for <code>{tGeometryId}</code> is provided in the <a hr
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 31</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 28</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-op/delete</strong></th>
 </tr>
 </thead>
@@ -4040,7 +3935,7 @@ The path parameter <code>mFeatureId</code> is an <code>id</code> property of the
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 32</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 29</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-response/delete</strong></th>
 </tr>
 </thead>
@@ -4220,7 +4115,7 @@ When 'datetime' is not specified, the API MUST return data from all available ti
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 33</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 30</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry/query-op/get</strong></th>
 </tr>
 </thead>
@@ -4270,7 +4165,7 @@ The path parameter <code>queryType</code> is a predefined query type; <strong>di
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 34</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 31</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry/query-response/get</strong></th>
 </tr>
 </thead>
@@ -4325,7 +4220,7 @@ The <code>TemporalPropertyCollection</code> resource supports retrieving and cre
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 35</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 32</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-op/get</strong></th>
 </tr>
 </thead>
@@ -4367,7 +4262,7 @@ This operation targeted <a href="#resource-temporalProperty-section">TemporalPro
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 36</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 33</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-op/post</strong></th>
 </tr>
 </thead>
@@ -4442,7 +4337,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 37</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 34</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-response/get</strong></th>
 </tr>
 </thead>
@@ -4536,7 +4431,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 38</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 35</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-collection-response/post</strong></th>
 </tr>
 </thead>
@@ -4678,7 +4573,7 @@ The detailed information and requirements for each property are described in the
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 39</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 36</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/mandatory-tproperties</strong></th>
 </tr>
 </thead>
@@ -4714,7 +4609,7 @@ The list of valid values for <code>{tPropertyName}</code> is provided in the <a 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 40</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 37</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-op/get</strong></th>
 </tr>
 </thead>
@@ -4756,7 +4651,7 @@ This operation targeted <a href="#temporalValue-properties-table">TemporalValue<
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 41</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 38</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-op/post</strong></th>
 </tr>
 </thead>
@@ -4835,7 +4730,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 42</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 39</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-response/get.</strong></th>
 </tr>
 </thead>
@@ -4970,7 +4865,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 43</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 40</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-response/post</strong></th>
 </tr>
 </thead>
@@ -4997,145 +4892,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 </div>
 </div>
 <div class="sect1">
-<h2 id="_general_requirements"><a class="anchor" href="#_general_requirements"></a>9. General Requirements</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="http-response"><a class="anchor" href="#http-response"></a>9.1. HTTP Response</h3>
-<div class="paragraph">
-<p>Each HTTP request shall result in a response that meets the following requirement.</p>
-</div>
-<table id="req_general_http-responsse" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 44</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/general/http-response</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>An HTTP operation SHALL return a response which includes a <code>status code</code> and an optional <code>description</code> elements.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the <code>status code</code> is not equal to 200, then the <code>description</code> element SHALL be populated.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The YAML schema for these results is provided in <a href="#http-response-schema">HTTP Response Schema</a>.</p>
-</div>
-<div id="http-response-schema" class="listingblock">
-<div class="title">HTTP Response Schema</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">title</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Exception Schema</span></span>
-<span style="color:#606">description</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">JSON schema for exceptions based on RFC 7807</span></span>
-<span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
-<span style="color:#606">required</span>:
-  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">type</span></span>
-<span style="color:#606">properties</span>:
-  <span style="color:#606">type</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-  <span style="color:#606">title</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-  <span style="color:#606">status</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">integer</span></span>
-  <span style="color:#606">detail</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-  <span style="color:#606">instance</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="http-status-codes"><a class="anchor" href="#http-status-codes"></a>9.2. HTTP Status Codes</h3>
-<div class="paragraph">
-<p><a href="#status-codes">Table 13</a> lists the main HTTP status codes that clients should be prepared to receive. This includes support for specific security schemes or URI redirection. In addition, other error situations may occur in the transport layer outside of the server.</p>
-</div>
-<table id="status-codes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. Typical HTTP status codes</caption>
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Status code</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>200</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A successful request.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>201</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The server has been fulfilled the operation and a new resource has been created.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>202</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A successful request, but the response is still being generated. The response will include a  <code>Retry-After</code> header field giving a recommendation in seconds for the client to retry.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>204</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>304</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An entity tag was provided in the request and the resource has not been changed since the previous request.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>308</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The server cannot process the data through a synchronous request.  The response includes a <code>Location</code> header field which contains the URI of the location the result will be available at once the query is complete Asynchronous queries.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>400</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>401</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The request requires user authentication. The response includes a <code>WWW-Authenticate</code> header field containing a challenge applicable to the requested resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>403</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The server understood the request, but is refusing to fulfill it. While status code <code>401</code> indicates missing or bad authentication, status code <code>403</code> indicates that authentication is not the issue, but the client is not authorised to perform the requested operation on the resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>404</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The requested resource does not exist on the server. For example, a path parameter had an incorrect value.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>405</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>406</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Content negotiation failed. For example, the <code>Accept</code> header submitted in the request did not support any of the media types supported by the server for the requested resource.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>413</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Request entity too large. For example the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>500</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An internal error occurred in the server.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="resource-service-catalog"><a class="anchor" href="#resource-service-catalog"></a>10. Resource serviceCatalog</h2>
+<h2 id="resource-service-catalog"><a class="anchor" href="#resource-service-catalog"></a>9. Requirement Class "Service Catalog"</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The catalog is a hierarchy that demonstrates how resources and operations are related to one another in the services portion of the MF-API.</p>
@@ -5412,9 +5169,9 @@ between soccer players for making proper tactics.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_duration"><a class="anchor" href="#_duration"></a>10.1. duration</h3>
+<h3 id="_resource_duration"><a class="anchor" href="#_resource_duration"></a>9.1. Resource Duration</h3>
 <div class="sect3">
-<h4 id="_methods"><a class="anchor" href="#_methods"></a>10.1.1. Methods</h4>
+<h4 id="_methods"><a class="anchor" href="#_methods"></a>9.1.1. Methods</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5424,13 +5181,13 @@ between soccer players for making proper tactics.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_description"><a class="anchor" href="#_description"></a>10.1.2. Description</h4>
+<h4 id="_description"><a class="anchor" href="#_description"></a>9.1.2. Description</h4>
 <div class="paragraph">
 <p>Return a time interval - without gaps - starting with the smallest timestamp till the largest time stamp during which the moving feature was defined.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>10.1.3. Request parameters</h4>
+<h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>9.1.3. Request parameters</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -5444,13 +5201,263 @@ between soccer players for making proper tactics.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_error_situations_9"><a class="anchor" href="#_error_situations_9"></a>10.1.4. Error situations</h4>
+<h4 id="_error_situations_9"><a class="anchor" href="#_error_situations_9"></a>9.1.4. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
 </div>
-<div style="page-break-after: always;"></div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="clause-common-req"><a class="anchor" href="#clause-common-req"></a>10. Common Requirements</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_parameters_2"><a class="anchor" href="#_parameters_2"></a>10.1. Parameters</h3>
+<div class="paragraph">
+<p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>bbox</code></a>, <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a> and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from API-Common.
+All requirements and recommendations in API-Common regarding these parameters also apply for API-Moving Features.</p>
+</div>
+<div class="sect3">
+<h4 id="limit-section"><a class="anchor" href="#limit-section"></a>10.1.1. Parameter limit</h4>
+<table id="req_core_param-limit" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 41</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>/req/common/param-limit</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A OGC API-MF SHALL support the Limit parameter for the operation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests which include the Limit parameter SHALL comply with API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-definition</code></a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Responses to Limit requests SHALL comply with API-Common requirements <a href="https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-limit-response</code></a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="bbox-section"><a class="anchor" href="#bbox-section"></a>10.1.2. Parameter bbox</h4>
+<table id="req_core_param-bbox" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 42</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>/req/common/param-bbox</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A OGC API-MF SHALL support the Bounding Box (<code>bbox</code>) parameter for the operation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests which include the Bounding Box parameter SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-definition</code></a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Responses to Bounding Box requests SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-bbox-response</code></a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="datetime-section"><a class="anchor" href="#datetime-section"></a>10.1.3. Parameter datetime</h4>
+<table id="req_core_param-datetime" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Requirement 43</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>/req/common/param-datetime</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A OGC API-MF SHALL support the DateTime (<code>datetime</code>) parameter for the operation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests which include the DateTime parameter SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-definition</code></a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Responses to DateTime requests SHALL comply with OGC API-Common requirement <a href="https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>http://www.opengis.net/spec/ogcapi_common-2/1.0/req/collections/rc-time-response</code></a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="http-response"><a class="anchor" href="#http-response"></a>10.2. HTTP Response</h3>
+<div class="paragraph">
+<p>Each HTTP request shall result in a response that meets the following requirement.</p>
+</div>
+<table id="req_general_http-responsse" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>Requirement 44</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/common/http-response</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An HTTP operation SHALL return a response which includes a <code>status code</code> and an optional <code>description</code> elements.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If the <code>status code</code> is not equal to 200, then the <code>description</code> element SHALL be populated.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The YAML schema for these results is provided in <a href="#http-response-schema">HTTP Response Schema</a>.</p>
+</div>
+<div id="http-response-schema" class="listingblock">
+<div class="title">HTTP Response Schema</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">title</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Exception Schema</span></span>
+<span style="color:#606">description</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">JSON schema for exceptions based on RFC 7807</span></span>
+<span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
+<span style="color:#606">required</span>:
+  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">type</span></span>
+<span style="color:#606">properties</span>:
+  <span style="color:#606">type</span>:
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
+  <span style="color:#606">title</span>:
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
+  <span style="color:#606">status</span>:
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">integer</span></span>
+  <span style="color:#606">detail</span>:
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
+  <span style="color:#606">instance</span>:
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="http-status-codes"><a class="anchor" href="#http-status-codes"></a>10.3. HTTP Status Codes</h3>
+<div class="paragraph">
+<p><a href="#status-codes">Table 13</a> lists the main HTTP status codes that clients should be prepared to receive. This includes support for specific security schemes or URI redirection. In addition, other error situations may occur in the transport layer outside of the server.</p>
+</div>
+<table id="status-codes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 13. Typical HTTP status codes</caption>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Status code</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>200</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A successful request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>201</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The server has been fulfilled the operation and a new resource has been created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>202</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A successful request, but the response is still being generated. The response will include a  <code>Retry-After</code> header field giving a recommendation in seconds for the client to retry.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>204</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>304</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An entity tag was provided in the request and the resource has not been changed since the previous request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>308</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The server cannot process the data through a synchronous request.  The response includes a <code>Location</code> header field which contains the URI of the location the result will be available at once the query is complete Asynchronous queries.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>400</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>401</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request requires user authentication. The response includes a <code>WWW-Authenticate</code> header field containing a challenge applicable to the requested resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>403</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The server understood the request, but is refusing to fulfill it. While status code <code>401</code> indicates missing or bad authentication, status code <code>403</code> indicates that authentication is not the issue, but the client is not authorised to perform the requested operation on the resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>404</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The requested resource does not exist on the server. For example, a path parameter had an incorrect value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>405</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>406</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content negotiation failed. For example, the <code>Accept</code> header submitted in the request did not support any of the media types supported by the server for the requested resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>413</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request entity too large. For example the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>500</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An internal error occurred in the server.</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -5834,7 +5841,7 @@ The specification provides various UML diagrams summarizing ISO 19141.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-02-21 04:29:13 +0100
+Last updated 2023-02-21 09:16:50 +0100
 </div>
 </div>
 </body>

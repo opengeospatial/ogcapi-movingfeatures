@@ -28,21 +28,5 @@ The two resources defined in this Requirements Class are summarized in <<collect
 ^|DELETE|Delete a specific Collection ({collectionId})
 |===
 
-=== Parameters
-The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from API-Common.
-All requirements and recommendations in API-Common regarding these parameters also apply for API-Moving Features.
-
-[[limit-section]]
-==== Parameter limit
-include::requirements/parameter/REQ_parameter-limit.adoc[]
-
-[[bbox-section]]
-==== Parameter bbox
-include::requirements/parameter/REQ_parameter-bbox.adoc[]
-
-[[datetime-section]]
-==== Parameter datetime
-include::requirements/parameter/REQ_parameter-datetime.adoc[]
-
 include::clause_8_requirements_resource_collections.adoc[]
 include::clause_8_requirements_resource_collection.adoc[]

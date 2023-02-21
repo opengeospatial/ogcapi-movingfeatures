@@ -8,8 +8,9 @@ The conformance classes for OGC API-MF are:
 * *Core*
 * *Transaction*
 * *Time*
-*  <<clause-core-collection, Collection Catalog>>.
-*  <<clause-core-movingfeature, Moving Features>>
+* <<clause-core-collection, Collection Catalog>>
+* <<clause-core-movingfeature, Moving Features>>
+* <<clause-common-req, Common Requirements>>
 
 The *Core* conformance class defines the minimum requirements for an API to be compliant with the OGC API-MF standard.
 This includes support for querying and retrieving information about moving features using HTTP GET requests.
@@ -26,9 +27,10 @@ The URIs of the associated conformance classes are:
 .Conformance class URIs
 [cols="25,75",options="header"]
 |===
-|Conformance class |URI
+|Conformance class  |URI
 |Collection Catalog |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection
-|Moving Features |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures
+|Moving Features    |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures
+|Common Requirement |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common
 |===
 
 Conformance with this Standard shall be checked using all the relevant tests specified in <<clause-core-common, Annex A>> of this document.

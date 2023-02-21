@@ -1,5 +1,5 @@
 [[resource-service-catalog]]
-== Resource serviceCatalog
+== Requirement Class "Service Catalog"
 The catalog is a hierarchy that demonstrates how resources and operations are related to one another in the services portion of the MF-API.
 
 In this concept, the operations are split into three groups P1, P2, P3. The rational is to split the development of the standard into three incremental phases corresponding to these groups. 
@@ -83,7 +83,7 @@ between soccer players for making proper tactics.
 *** (P3) twAvg: Get the time-weighted average
 
 
-=== duration
+=== Resource Duration
 ==== Methods
 . Issue a `GET` request on the `{root}/services/SpatiotemporalProcessing/Accessor/duration` path
 
