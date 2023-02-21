@@ -889,6 +889,10 @@ the standard set forth in this document, and to provide supporting documentation
 <td class="tableblock halign-left valign-top"><p class="tableblock">Université libre de Bruxelles</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Esteban Zimanyi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Université libre de Bruxelles</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Martin Desruisseaux</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geomatys</p></td>
 </tr>
@@ -920,39 +924,18 @@ These requirements / conformance classes help to ensure interoperability between
 The standardization target is "Web APIs".</p>
 </div>
 <div class="paragraph">
-<p>The conformance classes for OGC API-MF are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Core</strong></p>
-</li>
-<li>
-<p><strong>Transaction</strong></p>
-</li>
-<li>
-<p><strong>Time</strong></p>
-</li>
-<li>
-<p><a href="#clause-core-collection">Collection Catalog</a></p>
-</li>
-<li>
-<p><a href="#clause-core-movingfeature">Moving Features</a></p>
-</li>
-<li>
-<p><a href="#clause-common-req">Common Requirements</a></p>
-</li>
-</ul>
+<p>The conformance classes for OGC API-MF are:
+* <a href="#clause-core-collection">Collection Catalog</a>
+* <a href="#clause-core-movingfeature">Moving Features</a>
+* <a href="#clause-common-req">Common Requirements</a>
+* <a href="#clause-mf-json-req">MF-JSON encoding</a>
+* <a href="#clause-openapi-req">OpenAPI Specification 3.0</a></p>
 </div>
 <div class="paragraph">
-<p>The <strong>Core</strong> conformance class defines the minimum requirements for an API to be compliant with the OGC API-MF standard.
-This includes support for querying and retrieving information about moving features using HTTP GET requests.</p>
-</div>
-<div class="paragraph">
-<p>The <strong>Transactions</strong> conformance class enables clients to add, modify, or delete features from the server using HTTP POST, PUT, and DELETE requests.</p>
-</div>
-<div class="paragraph">
-<p>The <strong>Time</strong> conformance class adds support for querying and retrieving features based on their temporal characteristics, such as their position at a specific time or their velocity over a given time interval.</p>
+<p>The conformance class defines the minimum requirements for an API to be compliant with the OGC API-MF standard.
+This includes support for querying and retrieving information about moving features using HTTP GET requests.
+Also, the conformance class enables clients to add, modify, or delete features from the server using HTTP POST, PUT, and DELETE requests.
+Lastly, the conformance class adds support for querying and retrieving features based on their temporal characteristics, such as their position at a specific time or their velocity over a given time interval.</p>
 </div>
 <div class="paragraph">
 <p>Implementers of the OGC API-MF can choose which conformance classes they want to support based on the specific needs of their use case and the capabilities of their software. However, to be considered compliant with the standard, an implementation must support at least the Core conformance class.</p>
@@ -975,15 +958,23 @@ This includes support for querying and retrieving information about moving featu
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Collection Catalog</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-collection" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-collection</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moving Features</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/movingfeatures" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/movingfeatures</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Common Requirement</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Common Requirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/common" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/common</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MF-JSON encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-json" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-json</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenAPI Specification 3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/oas31" class="bare">http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/oas31</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -5797,9 +5788,9 @@ The specification provides various UML diagrams summarizing ISO 19141.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2023-02-21</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Taehoon Kim, Kyoung-Sook Kim, and Mahmoud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taehoon Kim, Kyoung-Sook Kim, Mahmoud, and Esteban</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">final draft version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">finalize draft version</p></td>
 </tr>
 </tbody>
 </table>
