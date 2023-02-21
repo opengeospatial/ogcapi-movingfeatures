@@ -10,7 +10,7 @@ The schema for the collection information object presented in this clause is an 
 
 [#collection-properties-table,reftext='{table-caption} {counter:table-num}']
 .Table of collection properties
-[cols="30,5,65",options="header"]
+[cols="25,10,65",options="header"]
 |===
 |Property           |Requirement |Description
 |_**id**_           |M |A unique identifier to the collection.
@@ -22,7 +22,7 @@ The schema for the collection information object presented in this clause is an 
 |updateFrequency    |M |A time interval of sampling location. The time unit of this property is second.
 |===
 
-NOTE: The properties _id_, _title_, _description_, _links_, _extent_, and _itemsType_ were inherited from link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
+NOTE: The _id_, _title_, _description_, _links_, _extent_, and _itemsType_ properties were inherited from link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
 
 NOTE: An update frequency is one of the most important properties of moving feature collection.
 It is determined by a data source. It can be used to determine the continuity of the moving feature's trajectory.

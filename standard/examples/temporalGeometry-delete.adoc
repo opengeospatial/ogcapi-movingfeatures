@@ -1,7 +1,7 @@
 ....
    Client                                                              Server
      |                                                                   |
-     | DELETE /collections/mfc-1/items/mf-1/tgeometries/tg-1   HTTP/1.1  |
+     | DELETE /collections/mfc_1/items/mf_1/tgeometries/tg_1   HTTP/1.1  |
      |------------------------------------------------------------------>|
      |                                                                   |
      | HTTP/1.1 204 OK                                                   |

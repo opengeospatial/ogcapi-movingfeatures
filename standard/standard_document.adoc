@@ -13,7 +13,7 @@
 //pygments
 :doc-type: IS
 :standard: ogcapi-movingfeatures-1
-:version: 0.3.draft
+:version: 0.9.draft
 :page-background-image: image:images/watermark.png[opacity=50%]
 
 <<<

@@ -29,7 +29,13 @@ Springer LNCS is widely used in technical and computer science journals and othe
 [3] OGC: OGC API - Features - Part 1: Core. (2019).
 [[OGC-API-Features-2]]
 [4] OGC: OGC API - Features - Part 2: Coordinate Reference Systems by Reference. (2020).
+[[OGC-API-Features-4]]
+[5] OGC: OGC API - Features - Part 4: Create, Replace, Update and Delete. (2020).
 [[OGC-API-Features]]
-[5] OGC: OGC API - Features, https://ogcapi.ogc.org/features/.
+[6] OGC: OGC API - Features, https://ogcapi.ogc.org/features/
 [[OGC-API-Common]]
-[6] OGC: OGC API - Common, https://ogcapi.ogc.org/common/
+[7] OGC: OGC API - Common, https://ogcapi.ogc.org/common/
+[[OGC-API]]
+[8] OGC: OGC API, https://ogcapi.ogc.org/
+[[OPENAPI]]
+[9] OpenAPI, https://www.openapis.org/

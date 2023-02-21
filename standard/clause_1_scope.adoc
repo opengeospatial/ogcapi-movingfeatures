@@ -1,5 +1,8 @@
 == Scope
-[NOTE]
-====
-Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.
-====
+The scope of OGC API-Moving Features-Part 1: Feature extension is to provide a uniform way to access and manage data about moving features across different applications, data providers, and data consumers.
+It includes a set of RESTful web APIs that allow clients to discover, retrieve, and update information about moving features, as well as a data model for describing moving features and their trajectories.
+
+The OGC API-MF-Part 1: Feature Extension standard defines an API with two goals.
+First, to provide access to representations of Moving Features that conform to the <<OGC-MF-JSON, OGC Moving Features JSON encoding standard>>.
+Second, to provide functionality comparable to that of the <<OGC-MF-Access, OGC Moving Features Access standard>>.
+The OGC API-Moving Features standard is an extension of the <<OGC-API-Common, OGC API-Common>> and the <<OGC-API-Features, OGC API-Features standards>>.
