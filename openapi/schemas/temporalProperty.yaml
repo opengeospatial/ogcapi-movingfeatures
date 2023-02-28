@@ -8,10 +8,10 @@ properties:
   type:
     type: string
     enum:
-      - TBool
+      - TBoolean
       - TText
-      - TInt
-      - TFloat
+      - TInteger
+      - TReal
       - TImage
   form:
     oneOf:
