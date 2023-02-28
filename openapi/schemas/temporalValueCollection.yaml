@@ -1,8 +1,8 @@
 type: object
 required:
-  - values
+  - temporalProperties
 properties:
-  values:
+  temporalProperties:
     type: array
     items:
       $ref: temporalValue.yaml

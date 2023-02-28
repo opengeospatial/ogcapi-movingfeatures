@@ -2,12 +2,12 @@
   "temporalProperties": [
     {
       "name": "length",
-      "type": "TFloat",
+      "type": "TReal",
       "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length"
     },
     {
       "name": "speed",
-      "type": "TFloat",
+      "type": "TReal",
       "form": "KHM"
     }
   ],
