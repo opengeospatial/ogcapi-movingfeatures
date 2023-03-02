@@ -79,10 +79,6 @@ paths:
         A user can retrieve catalogs to access collections by simple filtering and a limit.
       tags:
         - Capabilities
-      parameters:
-        - $ref: "parameters/bbox.yaml"
-        - $ref: "parameters/datetime.yaml"
-        - $ref: "parameters/limit.yaml"
       responses:
         '200':
           $ref: "responses/Collections.yaml"
