@@ -18,7 +18,7 @@ The schema for the moving feature object presented in this clause is an extensio
 |_**geometry**_     |M |A projective geometry of the moving feature.
 |_**properties**_   |M |A set of property of GeoJSON.
 |_**bbox**_         |O |A bounding box information for the moving feature.
-|interval           |O |A life span information for the moving feature.
+|time               |O |A life span information for the moving feature.
 |<<resource-tgeometries-section, temporalGeometries>> |O |A set of <<tgeometry-schema, temporal geometry>> of the moving feature.
 |<<resource-tproperties-collection-section, temporalPropertiesCollection>> |O |A set of <<resource-temporalProperty-section, temporalProperty>> of the moving feature.
 |===
