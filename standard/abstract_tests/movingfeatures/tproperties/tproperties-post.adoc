@@ -1,0 +1,26 @@
+[[conf_mf_tproperty_post]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tproperties-post*
+|Requirement    |
+<<req_mf_mandatory-tproperties, /req/movingfeatures/tproperties-mandatory>> +
+<<req_mf-tproperties-op-post, /req/movingfeatures/tproperties-post>> +
+<<req_mf-tproperties-response-post, /req/movingfeatures/tproperties-post-success>>
+|Test purpose   | Validate that the TemporalValue can be created to the expected location.
+|Test method    |
+1. Validate that the server comply with OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[POST operation requirements] +
+2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <<tproperty-requestbody-schema>> and <<temporalValue-properties-table>> +
+3. Validate that the request body complies OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[POST request body requirements] +
+4. Issue an HTTP POST request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` +
+5. Validate the contents of the response using test <<conf_mf_tproperty_post_success, `/conf/movingfeatures/tproperties-post-success`>>
+|===
+
+[[tproperty-requestbody-schema]]
+[reftext='{table-caption} {counter:table-num}']
+.Schema and Tests for Request Body of `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` POST
+[width="90%",cols="3",options="header"]
+|===
+|Format  |Schema Document |Test ID
+|HTML |<<tvalue-schema, tvalue_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
+|JSON |<<tvalue-schema, tvalue_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
+|===

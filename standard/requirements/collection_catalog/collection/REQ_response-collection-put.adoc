@@ -1,7 +1,7 @@
-[[req_mfc-collection-reponse-put]]
+[[req_mfc-collection-response-put]]
 [width="90%",cols="2,6a",options="header"]
 |===
-^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-response/put*
-^|A |The API implementation SHALL comply with the API-Feature `PUT` response requirement http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete/update-put-response`].
-^|B |The API implementation SHALL comply with the API-Feature `PUT` exception requirement http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete/update-put-rid-exception`].
+^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-put-success*
+^|A |The API implementation SHALL comply with the API-Feature `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
+^|B |The API implementation SHALL comply with the API-Feature `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
 |===

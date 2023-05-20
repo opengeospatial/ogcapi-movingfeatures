@@ -10,7 +10,7 @@ properties:
   features:
     type: array
     items:
-      $ref: movingFeatureGeoJSON.yaml
+      $ref: movingFeature.yaml
   crs:
     $ref: crs.yaml
   trs:
@@ -18,7 +18,7 @@ properties:
   links:
     type: array
     items:
-      $ref: ogcapi-features-core/link.yaml
+      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
   timeStamp:
     type: string
     format: date-time

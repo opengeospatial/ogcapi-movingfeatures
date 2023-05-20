@@ -1,4 +1,6 @@
 type: object
+required:
+  - itemType
 properties:
   title:
     description: human readable title of the collection
@@ -9,3 +11,7 @@ properties:
   description:
     description: any description
     type: string
+  itemType:
+    description:
+    type: string
+    default: "movingfeature"

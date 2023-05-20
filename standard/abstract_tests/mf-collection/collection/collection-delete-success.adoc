@@ -1,0 +1,10 @@
+[[conf_mfc_collection_delete_success]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:conf-id}* |*/conf/mf-collection/collections-delete-success*
+|Requirement    | <<req_mfc-collection-response-delete, /req/mf-collection/collection-delete-success>>
+|Test purpose   | Validate that the response of `{root}/collections/{collectionId}` DELETE request complies with the required structure and contents.
+|Test method    |
+1. Validate that a document was returned with a status code `200`, `202`, or `204` +
+2. Validate that all response documents complies with OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE response requirements]
+|===

@@ -19,6 +19,8 @@ The schema for the moving feature object presented in this clause is an extensio
 |_**properties**_   |M |A set of property of GeoJSON.
 |_**bbox**_         |O |A bounding box information for the moving feature.
 |time               |O |A life span information for the moving feature.
+|crs                |O |A coordinate reference system information for the moving feature.
+|trs                |O |A temporal reference system information for the moving feature.
 |<<resource-tgeometries-section, temporalGeometries>> |O |A set of <<tgeometry-schema, temporal geometry>> of the moving feature.
 |<<resource-tproperties-collection-section, temporalPropertiesCollection>> |O |A set of <<resource-temporalProperty-section, temporalProperty>> of the moving feature.
 |===
@@ -61,10 +63,10 @@ The temporal object information may be accessed using  <<resource-tgeometries-se
 include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-get.adoc[]
 
 [#movingfeature-schema,reftext='MovingFeature GET Response Schema']
-.MovingFeature GET Response Schema
+.MovingFeature GET Response Schema (movingFeature.yaml)
 [source,yaml]
 ----
-include::../openapi/schemas/movingFeatureGeoJSON.yaml[]
+include::../openapi/schemas/movingFeature.yaml[]
 ----
 
 The `interval` property of the `MovingFeature` response represents a particular period of moving feature existence.

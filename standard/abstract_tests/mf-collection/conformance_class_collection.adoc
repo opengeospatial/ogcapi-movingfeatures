@@ -1,0 +1,13 @@
+[[rc_movingfeature_collection]]
+[cols="1,4",width="90%",options="header"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-collection
+|Target type        |Web API
+|Requirements Class |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection
+|Dependency         |http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/html
+|Dependency         |http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json
+|Dependency         |http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections
+|Dependency         |http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+|Dependency         |http://www.opengis.net/spec/ogcapi-features-4/1.0/conf/create-replace-delete
+|===

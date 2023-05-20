@@ -6,7 +6,7 @@
      |                                                                          |
      | {                                                                        |
      |   "type": "Feature",                                                     |
-     |   "id": "mf_1",                                                     |
+     |   "id": "mf_1",                                                          |
      |   "properties": {                                                        |
      |      "name": "car1",                                                     |
      |      "state": "test1",                                                   |

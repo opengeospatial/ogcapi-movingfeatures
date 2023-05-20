@@ -32,10 +32,10 @@ Support for HTTP POST method is required by API-Features.
 
 include::requirements/movingfeature/features/REQ_operation-features-post.adoc[]
 
-The following example adds a new feature (https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[MovingFeature object] in <<OGC-MF-JSON,MF-JSON>>) to the specific <<resource-collection-section,Collection>>.
-The feature is represented as <OGC-MF-JSON,MF-JSON>>, which is a kind of extension of the https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
+The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[MovingFeature object] in <<OGC-MF-JSON, MF-JSON>>) to the specific <<resource-collection-section,Collection>>.
+The feature is represented as MovingFeature object (or MovingFeatureCollection object) in <<OGC-MF-JSON, MF-JSON>>, which is a kind of extension of the link:https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#movingfeature-post-example,reftext='Create a New MovingFeature Object Example']
+[#movingfeature-post-example, reftext='Create a New MovingFeature Object Example']
 .Create a New MovingFeature Object Example
 include::examples/features-post.adoc[]
 
@@ -47,10 +47,20 @@ In a typical API deployment, the `MovingFeatures` GET response will list feature
 include::requirements/movingfeature/features/REQ_response-features-get.adoc[]
 
 [#features-schema,reftext='MovingFeatures GET Response Schema']
-.Features GET Response Schema
+.MovingFeatures GET Response Schema (movingFeatureCollection.yaml)
 [source,yaml]
 ----
-include::../openapi/schemas/movingFeatureCollectionGeoJSON.yaml[]
+include::../openapi/schemas/movingFeatureCollection.yaml[]
+----
+.crs.yaml
+[source,yaml]
+----
+include::../openapi/schemas/crs.yaml[]
+----
+.trs.yaml
+[source,yaml]
+----
+include::../openapi/schemas/trs.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API-Moving Features `MovingFeatures` GET operation.

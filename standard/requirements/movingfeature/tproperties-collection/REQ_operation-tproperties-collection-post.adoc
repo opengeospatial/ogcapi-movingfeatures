@@ -1,8 +1,8 @@
 [[req_mf-tproperties-collection-op-post]]
 [width="90%",cols="2,6a",options="header"]
 |===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperties-collection-op/post*
-^|A |The API implementation SHALL comply with the API-Feature `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
-^|B |The API implementation SHALL comply with the API-Feature `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete`].
-^|C |The content of the request body SHALL be based upon the <<tproperties-schema, TemporalProperties>> schema.
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperties-collection-post*
+^|A |The API implementation SHALL comply with the API-Feature `CREATE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/insert-post-op`].
+^|B |The API implementation SHALL comply with the API-Feature `CREATE` request body requirements link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
+^|C |The content of the request body SHALL be based upon the <<tproperties-schema, TemporalProperties>> or link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[ParametricValues object] schema.
 |===

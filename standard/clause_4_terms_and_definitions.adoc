@@ -11,8 +11,7 @@ The definitions of terms such as standard, specification, requirement, and confo
 For the purposes of this document, the following additional terms and definitions apply.
 
 application programming interface (API)::
-a formally defined set of types and methods which establish a contract between client code which uses the API
-and implementation code which provides the API
+a formally defined set of types and methods which establish a contract between client code which uses the API and implementation code which provides the API
 
 coordinate::
 one of a sequence of numbers designating the position of a point +
@@ -63,6 +62,11 @@ representation of real world phenomenon associated with a location relative to t
 geometric object::
 spatial object representing a geometric set +
  [source: ISO 19107:2003]
+
+leaf::
+<one parameter set of geometries> +
+geometry at a particular value of the parameter +
+ [source: ISO 19141]
 
 moving feature::
 feature whose location changes over time +

@@ -2,7 +2,8 @@
   "collections": [
     {
       "id": "mfc-1",
-      "title": "moving_feature_collection_sample",
+      "title": "MovingFeatureCollection_1",
+      "description": "a collection of moving features to manage data in a distinct (physical or logical) space",
       "itemType": "movingfeature",
       "updateFrequency": 1000,
       "extent": {

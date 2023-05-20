@@ -49,11 +49,12 @@ The collections where the value of the `itemType` property is `movingfeature` ar
 include::requirements/collection_catalog/collections/REQ_response-collections-get.adoc[]
 
 [#collections-schema,reftext='Collections GET Response Schema']
-.Collections GET Response Schema
+.Collections GET Response Schema (collections.yaml)
 [source,yaml]
 ----
-include::../openapi/schemas/ogcapi-features-core/collections.yaml[]
+include::../openapi/schemas/collections.yaml[]
 ----
+
 
 The following JSON payload is an example of a response to an OGC API-Moving Features `Collections` GET operation.
 [#collections-example,reftext=`Collections Example`]

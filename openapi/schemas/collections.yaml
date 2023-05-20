@@ -10,4 +10,13 @@ properties:
   links:
     type: array
     items:
-      $ref: ogcapi-features-core/link.yaml
+      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
+  timeStamp:
+    type: string
+    format: date-time
+  numberMatched:
+    type: integer
+    min: 0
+  numberReturned:
+    type: integer
+    min: 0
