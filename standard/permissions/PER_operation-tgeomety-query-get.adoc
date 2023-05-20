@@ -1,0 +1,8 @@
+[[per_mf-tgeometry-query-op-get]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Permission {counter:per-id}* |*/per/movingfeatures/tgeometry-query*
+^|A |A distance query GET operation MAY include a `datetime` query parameter.
+^|B |A velocity query GET operation MAY include a `datetime` query parameter.
+^|C |An acceleration query GET operation MAY include a `datetime` query parameter.
+|===

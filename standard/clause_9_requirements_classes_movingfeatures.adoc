@@ -1,10 +1,10 @@
 
 [[clause-core-movingfeature]]
-== Requirements Class "Moving Features"
+== Requirements Class "MovingFeatures"
 === Overview
 include::requirements/movingfeature/requirements_class_movingfeature.adoc[]
 
-The `Moving Features` requirements class defines the requirements for a moving feature.
+The `MovingFeatures` requirements class defines the requirements for a moving feature.
 A moving feature is an object that provide information about and access to a <<resource-tgeometries-section, TemporalGeometryCollection>> and <<resource-tproperties-collection-section, TemporalPropertyCollection>>.
 
 === Information Resources
@@ -39,7 +39,7 @@ The five resources defined in this Requirements Class are summarized in <<mf-res
 {tGeometryId}`
 ^|DELETE
 
-|<<resource-temporalGeometryQuery-section,TemporalGeometry Query>>
+|<<resource-temporalGeometryQuery-section,TemporalGeometryQuery>>
 |`{root}/collections/
 {collectionId}/items/
 {mFeatureId}/tgeometries/

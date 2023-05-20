@@ -1,0 +1,15 @@
+[[conf_mfc_collection_put]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:conf-id}* |*/conf/mf-collection/collection-put*
+|Requirement    |
+<<req_mfc-collection-op-put, /req/mf-collection/collection-put>> +
+<<req_mfc-collection-response-put, /req/mf-collection/collection-put-success>>
+|Test purpose   | Validate that the MovingFeature Collection can be replaced to the expected location.
+|Test method    |
+1. Validate that the server comply with OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_2[PUT operation requirements] +
+2. Validate that a body of a PUT request using for all supported media types using the resources and tests identified in <<collections-requestbody-schema>> +
+3. Validate that the request body complies OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[PUT request body requirements] +
+4. Issue an HTTP PUT request to the URL `{root}/collections/{collectionId}` +
+5. Validate the contents of the response using test <<conf_mfc_collection_put_success, `/conf/mf-collection/collections-put-success`>>
+|===

@@ -19,7 +19,7 @@ properties:
   links:
     type: array
     items:
-      $ref: ogcapi-features-core/link.yaml
+      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
     example:
       - href: https://data.example.com/buildings
         rel: item
@@ -27,7 +27,7 @@ properties:
         rel: describedby
         type: text/html
   extent:
-    $ref: ogcapi-features-core/extent.yaml
+    $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml
   itemType:
     description: indicator about the type of the items in the collection
     type: string

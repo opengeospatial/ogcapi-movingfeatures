@@ -1,7 +1,7 @@
 [[req_mf-response-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/mf-response/get*
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/mf-get-success*
 ^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
 ^|B |The content of that response SHALL include the set of moving feature's metadata that defined in the <<movingfeature-schema, response schema>>.
 |===

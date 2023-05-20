@@ -1,4 +1,106 @@
 [appendix]
 :appendix-caption: Annex
-== Abstract Test Suite (Normative)
+[[clause-ATS]]
+== Conformance Class Abstract Test Suite (Normative)
+=== Introduction
+The Abstract Test Suite (ATS) is a compendium of test assertions applicable to implementations of the OGC API-MF. An ATS provides a basis for developing an Executable Test Suite to verify that the implementation under test conforms to all the relevant functional specifications.
 
+The abstract test cases (assertions) are organized into test groups that correspond to distinct conformance test classes defined in the OGC API-MF specification.
+
+OGC APIs are not Web Services in the traditional sense. Rather, they define the behavior and content of a set of Resources exposed through a Web Application Programming Interface (Web API). Therefore, an API may expose resources in addition to those defined by the standard. A test engine must be able to traverse the API, identify and validate test points, and ignore resource paths which are not to be tested.
+
+The Conformance Classes addressed by this Abstract Test Suite are the:
+
+* <<clause-conf-collection, MovingFeature Collection Catalog Conformance Class>>
+* <<clause-conf-movingfeature, MovingFeature Conformance Class>>
+
+[[clause-conf-collection]]
+=== Conformance Class MovingFeature Collection Catalog
+include::abstract_tests/mf-collection/conformance_class_collection.adoc[]
+
+==== MovingFeature Collections
+===== HTTP GET Operation
+include::abstract_tests/mf-collection/collections/collections-get.adoc[]
+include::abstract_tests/mf-collection/collections/collections-get-success.adoc[]
+
+===== HTTP POST Operation
+include::abstract_tests/mf-collection/collections/collections-post.adoc[]
+include::abstract_tests/mf-collection/collections/collections-post-success.adoc[]
+
+==== MovingFeature Collection
+===== HTTP GET Operation
+include::abstract_tests/mf-collection/collection/collection-get.adoc[]
+include::abstract_tests/mf-collection/collection/collection-get-success.adoc[]
+
+===== HTTP PUT Operation
+include::abstract_tests/mf-collection/collection/collection-put.adoc[]
+include::abstract_tests/mf-collection/collection/collection-put-success.adoc[]
+
+===== HTTP DELETE Operation
+include::abstract_tests/mf-collection/collection/collection-delete.adoc[]
+include::abstract_tests/mf-collection/collection/collection-delete-success.adoc[]
+
+
+[[clause-conf-movingfeature]]
+=== Conformance Class MovingFeatures
+include::abstract_tests/movingfeatures/conformance_class_movingfeatures.adoc[]
+
+==== MovingFeatures
+===== HTTP GET Operation
+include::abstract_tests/movingfeatures/features/features-get.adoc[]
+include::abstract_tests/movingfeatures/features/features-get-success.adoc[]
+
+===== HTTP POST Operation
+include::abstract_tests/movingfeatures/features/features-post.adoc[]
+include::abstract_tests/movingfeatures/features/features-post-success.adoc[]
+
+==== MovingFeature
+===== HTTP GET Operation
+include::abstract_tests/movingfeatures/feature/mf-get.adoc[]
+include::abstract_tests/movingfeatures/feature/mf-get-success.adoc[]
+
+===== HTTP DELETE Operation
+include::abstract_tests/movingfeatures/feature/mf-delete.adoc[]
+include::abstract_tests/movingfeatures/feature/mf-delete-success.adoc[]
+
+==== Parameter Leaf
+include::abstract_tests/movingfeatures/parameter/leaf_definition.adoc[]
+include::abstract_tests/movingfeatures/parameter/leaf_response.adoc[]
+
+==== TemporalGeometryCollection
+===== HTTP GET Operation
+include::abstract_tests/movingfeatures/tgeometries/tgeometries-get.adoc[]
+include::abstract_tests/movingfeatures/tgeometries/tgeometries-get-success.adoc[]
+
+===== HTTP POST Operation
+include::abstract_tests/movingfeatures/tgeometries/tgeometries-post.adoc[]
+include::abstract_tests/movingfeatures/tgeometries/tgeometries-post-success.adoc[]
+
+==== TemporalGeometry
+===== HTTP DELETE Operation
+include::abstract_tests/movingfeatures/tgeometry/tgeometry-delete.adoc[]
+include::abstract_tests/movingfeatures/tgeometry/tgeometry-delete-success.adoc[]
+
+==== TemporalGeometryQuery
+===== HTTP GET Operation
+include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-distance.adoc[]
+include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-velocity.adoc[]
+include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-acceleration.adoc[]
+
+==== TemporalPropertyCollection
+===== HTTP GET Operation
+include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-get.adoc[]
+include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-get-success.adoc[]
+
+===== HTTP POST Operation
+include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-post.adoc[]
+include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-post-success.adoc[]
+
+==== TemporalProperty
+===== HTTP GET Operation
+include::abstract_tests/movingfeatures/tproperties/tproperties-get.adoc[]
+include::abstract_tests/movingfeatures/tproperties/tproperties-get-success.adoc[]
+
+===== HTTP POST Operation
+include::abstract_tests/movingfeatures/tproperties/tproperties-post.adoc[]
+include::abstract_tests/movingfeatures/tproperties/tproperties-post-success.adoc[]

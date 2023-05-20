@@ -27,19 +27,18 @@ Unique relation types are used for each resource.
 [width="100%",cols="3,^1,4",options="header"]
 |===
 ^|**Path Template** ^|**Relation** ^|**Resource**
-
-3+^|**Common**
-|<<common-landingpage-section,{root}/>>|none|Landing page for this dataset distribution
-|<<common-api-section,{root}/api>>|`service-desc or service-doc`|API Description
-|<<common-conformance-section,{root}/conformance>>|`conformance`|Conformance Classes
+// 3+^|**Common**
+// |<<common-landingpage-section,{root}/>>|none|Landing page for this dataset distribution
+// |<<common-api-section,{root}/api>>|`service-desc or service-doc`|API Description
+// |<<common-conformance-section,{root}/conformance>>|`conformance`|Conformance Classes
 
 3+^|**Collections**
 |<<resource-collections-section,{root}/collections>>|`data`
-|Metadata describing the <<collection-schema,Collection Catalog>> of data available from this API.
+|Metadata describing the <<resource-collections-section,Collection Catalog>> of data available from this API.
 |<<resource-collection-section,{root}/collections/{collectionId}>>|
-|Metadata describing the <<collection-schema,Collection Catalog>> of data which has the unique identifier `{collectionId}`
+|Metadata describing the <<resource-collections-section,Collection Catalog>> of data which has the unique identifier `{collectionId}`
 
-3+^|**Moving Features**
+3+^|**MovingFeatures**
 |<<resource-mfeatures-section,{root}/collections/{collectionId} /items>>|`items`
 |Static information of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
 |<<resource-movingfeature-section,{root}/collections/{collectionId} /items/{mFeatureId}>>|`item`
@@ -100,7 +99,7 @@ The core search capability is based on https://ogcapi.ogc.org/common/[OGC API-Co
 
 OGC API-Moving Features extends these core search capabilities to include:
 
-* find <<leaf-section, leaf>> value with time instant,
+// * find <<leaf-section, leaf>> value with time instant,
 * <<resource-temporalGeometryQuery-section,spatio-temporal queries>> for accessing <<resource-temporalGeometry-section, TemporalGeometry resources>>.
 
 [[dependencies-overview]]
@@ -125,11 +124,25 @@ Instructions on when and how to apply these Requirements Classes are provided in
 // |<<common-conformance-section,Declaration of Conformance Classes>>
 // | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
 |<<clause-core-collection,Collections>>
-| http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection | http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
+| <<rc_movingfeature_collection, /req/mf-collection>>
+| http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
 |<<clause-core-movingfeature,MovingFeatures>>
-| http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures | http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete, http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory,
+| <<rc_movingfeature, /req/movingfeatures>>
+| http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete, http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory,
 http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
-|OpenAPI 3.0                        | | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
-|GeoJSON                            | | http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
-|OGC Moving Features JSON           | | http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism, http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
+|HTML
+| *inherit all requirement (no modification)*
+| http://www.opengis.net/spec/ogcapi-common-1/1.0/req/html
+|JSON
+| *inherit all requirement (no modification)*
+| http://www.opengis.net/spec/ogcapi-common-1/1.0/req/json
+|GeoJSON
+| *inherit all requirement (no modification)*
+| http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+|OpenAPI 3.0
+| *inherit all requirement (no modification)*
+| http://www.opengis.net/spec/ogcapi-common-1/1.0/req/oas30
+// |OGC Moving Features JSON (MF-JSON)
+// |
+// | http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajecotry, http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 |====

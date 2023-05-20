@@ -3,7 +3,6 @@
 A Collection information object is the set of metadata that describes a single collection.
 An abbreviated copy of this information is returned for each `Collection` in the `{root}/collections` GET response.
 
-[[collection-schema]]
 The schema for the collection information object presented in this clause is an extension of the collection schema defined in link:http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
 
 <<collection-properties-table>> defines the set of properties that may be used to describe a collection.
@@ -19,10 +18,10 @@ The schema for the collection information object presented in this clause is an 
 |_**links**_        |M |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)
 |_**extent**_       |O |The spatio-temporal coverage of the collection.
 |_**itemType**_     |M |Fixed to the value "movingfeature".
-|updateFrequency    |M |A time interval of sampling location. The time unit of this property is second.
+|updateFrequency    |O |A time interval of sampling location. The time unit of this property is millisecond.
 |===
 
-NOTE: The _id_, _title_, _description_, _links_, _extent_, and _itemsType_ properties were inherited from link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
+NOTE: The _id_, _title_, _description_, _links_, _extent_, and _itemsType_ properties were inherited from link:http://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[OGC API-Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API-Features].
 
 NOTE: An update frequency is one of the most important properties of moving feature collection.
 It is determined by a data source. It can be used to determine the continuity of the moving feature's trajectory.
@@ -84,15 +83,15 @@ A successful response to the `Collection` GET operation is a set of metadata tha
 
 include::requirements/collection_catalog/collection/REQ_response-collection-get.adoc[]
 
-[#collection-info-schema,reftext='Collection GET Response Schema']
-.Collection GET Response Schema
+[#collection-schema,reftext='Collection GET Response Schema']
+.Collection GET Response Schema (collection.yaml)
 [source,yaml]
 ----
 include::../openapi/schemas/collection.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API-Moving Features `Collection` GET operation.
-[#collection-info-example,reftext=`Collection Information Example`]
+[#collection-example,reftext=`Collection Information Example`]
 .Collection Information Example
 [source,json]
 ----

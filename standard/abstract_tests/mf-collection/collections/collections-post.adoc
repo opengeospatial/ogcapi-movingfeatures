@@ -1,0 +1,26 @@
+[[conf_mfc_collections_post]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:conf-id}* |*/conf/mf-collection/collections-post*
+|Requirement    |
+<<req_mfc-collections-op-post, /req/mf-collection/collections-post>> +
+<<req_mfc-collections-response-post, /req/mf-collection/collections-post-success>>
+|Test purpose   | Validate that the MovingFeature Collections can be created to the expected location.
+|Test method    |
+1. Validate that the server comply with OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[POST operation requirements] +
+2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <<collections-requestbody-schema>> +
+3. Validate that the request body complies OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[POST request body requirements] +
+4. Issue an HTTP POST request to the URL `{root}/collections` +
+5. Validate the contents of the response using test <<conf_mfc_collections_post_success, `/conf/mf-collection/collections-post-success`>>
+|===
+
+[[collections-requestbody-schema]]
+[reftext='{table-caption} {counter:table-num}']
+.Schema and Tests for Request Body of `{root}/collections` POST
+[width="90%",cols="3",options="header"]
+|===
+|Format |Schema Document |Test ID
+|HTML |<<collection-requestbody-schema, collection_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
+|JSON |<<collection-requestbody-schema, collection_requestbody.yaml>>|<<conf_json_content
+,/conf/json/content>>
+|===

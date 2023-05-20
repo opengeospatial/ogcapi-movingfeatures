@@ -13,7 +13,7 @@
 //pygments
 :doc-type: IS
 :standard: ogcapi-movingfeatures-1
-:version: 0.9.draft
+:version: 0.9.9.draft
 :page-background-image: image:images/watermark.png[opacity=50%]
 
 <<<
@@ -21,7 +21,7 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
-|Submission Date: <yyyy-mm-dd>
+|Submission Date: <2023-05-19>
 |Approval Date:   <yyyy-mm-dd>
 |Publication Date:   <yyyy-mm-dd>
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{version}
@@ -39,7 +39,7 @@
 [cols = "^", frame = "none", grid = "none"]
 |===
 |*Copyright notice*
-|Copyright (C) 2022 Open Geospatial Consortium
+|Copyright (C) 2023 Open Geospatial Consortium
 |To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
 |===
 
@@ -102,29 +102,31 @@ include::clause_8_requirements_classes_collection.adoc[]
 
 include::clause_9_requirements_classes_movingfeatures.adoc[]
 
-include::clause_11_requirements_resource_service_catalog.adoc[]
+// include::clause_11_requirements_resource_service_catalog.adoc[]
 
 include::clause_10_common_requirements.adoc[]
 
-<<<
+
 ////
 add or remove annexes after "A" as necessary
 ////
-include::annex-a.adoc[]
+// <<<
+// include::annex-a.adoc[]
 
 <<<
 include::annex-b.adoc[]
 
-<<<
-include::annex-c.adoc[]
+// <<<
+// include::annex-c.adoc[]
 
 <<<
 include::annex-d.adoc[]
-<<<
+
 ////
 Revision History should be the last annex before the Bibliography
 Bibliography should be the last annex
 ////
+<<<
 include::annex-history.adoc[]
 
 <<<

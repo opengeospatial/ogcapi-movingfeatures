@@ -1,6 +1,6 @@
 [[req_mfc-collection-op-delete]]
 [width="90%",cols="2,6a",options="header"]
 |===
-^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-op/delete*
-^|A |The API implementation SHALL comply with the API-Feature `DELETE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete/delete/delete-op`].
+^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-delete*
+^|A |The API implementation SHALL comply with the API-Feature `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
 |===

@@ -12,7 +12,7 @@ properties:
     enum:
       - Feature
   geometry:
-    $ref: ogcapi-features-core/geometryGeoJSON.yaml
+    $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
   properties:
     type: object
     nullable: true
@@ -46,4 +46,4 @@ properties:
   links:
     type: array
     items:
-      $ref: ogcapi-features-core/link.yaml
+      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml

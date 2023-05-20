@@ -1,0 +1,8 @@
+[[conf_mf_feature_param_leaf_definition]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/param-leaf-definition*
+|Requirement    | <<req_mf_leaf-parameter-definition, /req/movingfeatures/param-leaf-definition>>
+|Test purpose   | Validate that the `leaf` query parameter is constructed correctly.
+|Test method    | Verify that the `leaf` query parameter complies with the <<req_mf_leaf-parameter-definition, definition>> (using an OpenAPI Specification 3.0 fragment)
+|===

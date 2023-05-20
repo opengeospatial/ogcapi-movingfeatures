@@ -1,8 +1,9 @@
 [[req_mfc-collection-op-put]]
 [width="90%",cols="2,6a",options="header"]
 |===
-^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-op/put*
-^|A |The API implementation SHALL comply with the API-Feature `PUT` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_2[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete/update-put-put-op`].
-^|B |The API implementation SHALL comply with the API-Feature `PUT` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[`http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete/update-put-*`].
-^|C |The content of the request body SHALL be based upon the <<collection-requestbody-schema, `Collection` request body schema>>, except `updateFrequency`. If the `updateFrequency` is included in the request body, the server SHALL ignore it.
+^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-put*
+^|A |The API implementation SHALL comply with the API-Feature `PUT` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_2[`/req/create-replace-delete/update-put-op`].
+^|B |The API implementation SHALL comply with the API-Feature `PUT` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[`/req/create-replace-delete/update-put-body` and `/req/create-replace-delete/update-put-content-type`].
+^|C |The content of the request body SHALL be based upon the <<collection-requestbody-schema, `Collection` request body schema>>, except `updateFrequency`. +
+If the `updateFrequency` is included in the request body, the server SHALL ignore it.
 |===

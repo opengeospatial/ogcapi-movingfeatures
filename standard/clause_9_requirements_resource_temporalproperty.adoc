@@ -61,6 +61,13 @@ Support for HTTP POST method is required by API-Features.
 
 include::requirements/movingfeature/tproperties/REQ_operation-tproperties-post.adoc[]
 
+[#tvalue-schema,reftext='TemporalValue Schema']
+.TemporalProperty Request Body Schema (temporalValue.yaml)
+[source,yaml]
+----
+include::../openapi/schemas/temporalValue.yaml[]
+----
+
 The following example adds a new feature (<<temporalValue-properties-table, TemporalValue>> object) to the feature created by the <<tproperties-post-example,Creation a New TemporalProperty Object Example>>.
 The feature is represented as JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
@@ -74,26 +81,12 @@ A successful response to the `TemporalProperty` GET operation is a temporal prop
 
 include::requirements/movingfeature/tproperties/REQ_response-tproperties-get.adoc[]
 
-[#tproperties-schema,reftext='TemporalProperty Schema']
-.TemporalProperty Schema (temporalProperty.yaml)
-[source,yaml]
-----
-include::../openapi/schemas/temporalProperty.yaml[]
-----
-
-[#tvalue-schema,reftext='TemporalValue Schema']
-.TemporalValue Schema (temporalValue.yaml)
-[source,yaml]
-----
-include::../openapi/schemas/temporalValue.yaml[]
-----
-
 The following JSON payload is an example of a response to an OGC API-Moving Features `TemporalProperty` GET operation.
 [#tproperties-example,reftext=`TemporalProperty GET Example`]
 .TemporalProperty GET Example
 [source,json]
 ----
-include::../openapi/examples/temporalProperty_MF_JSON.json[]
+include::../openapi/examples/temporalValueCollection.json[]
 ----
 
 ====== Create

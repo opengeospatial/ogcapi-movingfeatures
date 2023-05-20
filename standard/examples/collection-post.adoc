@@ -8,7 +8,8 @@
      |   "title": "MovingFeatureCollection_1",                           |
      |   "updateFrequency": 1000,                                        |
      |   "description": "a collection of moving features to manage data  |
-     |                   in a distinct (physical or logical) space"      |
+     |                   in a distinct (physical or logical) space",     |
+     |   "itemType": "movingfeature"                                     |
      | }                                                                 |
      |------------------------------------------------------------------>|
      |                                                                   |

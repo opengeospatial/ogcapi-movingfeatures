@@ -5,7 +5,7 @@ Moving feature data can represent various phenomena, including vehicles, people,
 The OGC API-MF provides a standard way to manage this data, which can be helpful for applications such as transportation management, disaster response, and environmental monitoring.
 It also includes operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties.
 
-The OGC API-MF-Part 1: Feature extension specifies a set of RESTful web service interfaces and data formats for querying and updating moving feature data over the web.
+The OGC API-MF Part 1: Feature extension specifies a set of RESTful web service interfaces and data formats for querying and updating moving feature data over the web.
 <<OGC-API, OGC API standards>> define modular API building blocks to spatially enable Web APIs in a consistent way.
 <<OPENAPI, OpenAPI>> is used to define the reusable API building blocks with responses in JSON and HTML.
 

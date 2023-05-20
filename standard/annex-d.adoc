@@ -5,17 +5,12 @@
 This specification is built upon the following OGC/ISO standards.
 The geometry concept is presented first, followed by the feature concept.
 Note that a feature is _not_ a geometry, but a feature often contains a geometry as one of its attributes.
-However it is legal to build features without geometry attribute, or with more than one geometry attributes.
-
-
+However, it is legal to build features without geometry attribute, or with more than one geometry attributes.
 
 
 === Static geometries, features and accesses
 
 The following standards define static objects, without time-varying properties.
-
-
-
 
 ==== Geometry (ISO 19107)
 
@@ -57,14 +52,12 @@ All operations assume static objects, without time-varying coordinates or attrib
 image::images/GM_Object.png[alt=UML of GM_Object,align="center",width=75%]
 
 
-**TODO:** above discussion is based on ISO 19107:2003. It needs to be updated for latest revisions.
+// **TODO:** above discussion is based on ISO 19107:2003. It needs to be updated for latest revisions.
 
-**TODO:** provide a simplified version of this UML.
+// **TODO:** provide a simplified version of this UML.
 
 Geometry, topology and temporal-objects (`GM_Object`, `TP_Object`, `TM_Object`) are not abstractions of real-world phenomena.
 These types can provide types for feature properties as described in the next section, but cannot be specialized to features.
-
-
 
 
 ==== Features (ISO 19109)
@@ -95,10 +88,7 @@ All properties are static, without time-varying values.
 .General Feature Model from ISO 19109:2009 figure 5
 image::images/FeatureType.png[alt=UML of feature model,align="center",width=100%]
 
-**TODO:** provide a simplified version of this UML.
-
-
-
+// **TODO:** provide a simplified version of this UML.
 
 ==== Simple Features SQL
 
@@ -107,8 +97,6 @@ describes a feature access implementation in SQL based on a profile of ISO 19107
 This standard defines _feature table_ as a table where the columns represent feature attributes,
 and the rows represent feature instances.
 The geometry of a feature is one of its feature attributes.
-
-
 
 
 ==== Filter Encoding (ISO 19143)
@@ -187,8 +175,8 @@ The specification provides various UML diagrams summarizing ISO 19141.
 
 
 
-==== Moving Feature Access
-
-The link:http://docs.opengeospatial.org/is/16-120r3/16-120r3.html[OGC 16-120, _Moving Features Access_] standard
-(TODO)
+// ==== Moving Feature Access
+//
+// The link:http://docs.opengeospatial.org/is/16-120r3/16-120r3.html[OGC 16-120, _Moving Features Access_] standard
+// (TODO)
 
