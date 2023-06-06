@@ -1,4 +1,4 @@
-[[rc_movingfeature_collection]]
+[[conf_movingfeature_collection]]
 [cols="1,4",width="90%",options="header"]
 |===
 2+|*Conformance Class*

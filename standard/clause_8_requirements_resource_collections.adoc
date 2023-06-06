@@ -2,7 +2,8 @@
 === Resource Collections
 The `Collections` resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
 
-. Retrieving operation returns a set of metadata which describes the collections available from this API. The catalog of collections returned to the response can be limited using the <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, and <<datetime-section,`datetime`>> parameters.
+. Retrieving operation returns a set of metadata which describes the collections available from this API.
+// The catalog of collections returned to the response can be limited using the <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, and <<datetime-section,`datetime`>> parameters.
 . Creating operation posts a new <<resource-collection-section,Collection>> resource instance to the collections with this API.
 
 ==== Operations
