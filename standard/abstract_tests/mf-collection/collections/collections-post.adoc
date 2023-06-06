@@ -21,6 +21,5 @@
 |===
 |Format |Schema Document |Test ID
 |HTML |<<collection-requestbody-schema, collection_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
-|JSON |<<collection-requestbody-schema, collection_requestbody.yaml>>|<<conf_json_content
-,/conf/json/content>>
+|JSON |<<collection-requestbody-schema, collection_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
 |===

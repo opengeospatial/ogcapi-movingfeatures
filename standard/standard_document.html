@@ -1507,7 +1507,7 @@ A moving feature collection is an object that provides information about and acc
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Retrieving operation returns a set of metadata which describes the collections available from this API. The catalog of collections returned to the response can be limited using the <a href="#limit-section"><code>limit</code></a>, <a href="#bbox-section"><code>bbox</code></a>, and <a href="#datetime-section"><code>datetime</code></a> parameters.</p>
+<p>Retrieving operation returns a set of metadata which describes the collections available from this API.</p>
 </li>
 <li>
 <p>Creating operation posts a new <a href="#resource-collection-section">Collection</a> resource instance to the collections with this API.</p>
@@ -2823,20 +2823,23 @@ In a typical API deployment, the <code>MovingFeatures</code> GET response will l
       <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mf-1</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Feature</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>geometry</span><span style="color:#404">&quot;</span></span>:{
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Polygon</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>coordinates</span><span style="color:#404">&quot;</span></span>:[
-          [<span style="color:#60E">-122.308150179</span>, <span style="color:#60E">37.488035566</span>],
-          [<span style="color:#60E">-122.597502109</span>, <span style="color:#60E">37.538869539</span>],
-          [<span style="color:#60E">-122.576687533</span>, <span style="color:#60E">37.613537207</span>],
-          [<span style="color:#60E">-122.2880486</span>, <span style="color:#60E">37.562818007</span>],
-          [<span style="color:#60E">-122.308150179</span>, <span style="color:#60E">37.488035566</span>]
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LineString</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>coordinates</span><span style="color:#404">&quot;</span></span>: [
+          [<span style="color:#60E">139.757083</span>, <span style="color:#60E">35.627701</span>, <span style="color:#60E">0.5</span>],
+          [<span style="color:#60E">139.757399</span>, <span style="color:#60E">35.627701</span>, <span style="color:#60E">2.0</span>],
+          [<span style="color:#60E">139.757555</span>, <span style="color:#60E">35.627688</span>, <span style="color:#60E">4.0</span>],
+          [<span style="color:#60E">139.757651</span>, <span style="color:#60E">35.627596</span>, <span style="color:#60E">4.0</span>],
+          [<span style="color:#60E">139.757716</span>, <span style="color:#60E">35.627483</span>, <span style="color:#60E">4.0</span>]
         ]
       },
       <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>:{
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">car</span><span style="color:#710">&quot;</span></span>
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">car</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test1</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>video</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://www.opengis.net/spec/movingfeatures/json/1.0/prism/example/video.mpeg</span><span style="color:#710">&quot;</span></span>
       },
       <span style="color:#606"><span style="color:#404">&quot;</span><span>bbox</span><span style="color:#404">&quot;</span></span>:[
-        <span style="color:#60E">-122.59750209</span>, <span style="color:#60E">37.48803556</span>, <span style="color:#60E">-122.2880486</span>, <span style="color:#60E">37.613537207</span>
+        <span style="color:#60E">139.757083</span>, <span style="color:#60E">35.627483</span>, <span style="color:#60E">0.0</span>,
+        <span style="color:#60E">139.757716</span>, <span style="color:#60E">35.627701</span>, <span style="color:#60E">4.5</span>
       ],
       <span style="color:#606"><span style="color:#404">&quot;</span><span>time</span><span style="color:#404">&quot;</span></span>:[
         <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2011-07-14T22:01:01Z</span><span style="color:#710">&quot;</span></span>,
@@ -3796,12 +3799,12 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
   },
   <span style="color:#606"><span style="color:#404">&quot;</span><span>links</span><span style="color:#404">&quot;</span></span>: [
     {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/fc-1/tgeometries</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/mf-1/tgeometries</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>rel</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">self</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/json</span><span style="color:#710">&quot;</span></span>
     },
     {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/fc-1/tgeometries&amp;offset=10&amp;limit=1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/mf-1/tgeometries&amp;offset=10&amp;limit=1</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>rel</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">next</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/json</span><span style="color:#710">&quot;</span></span>
     }
@@ -5323,7 +5326,7 @@ No modifications are required.</p>
 </div>
 <div class="sect2">
 <h3 id="clause-conf-collection"><a class="anchor" href="#clause-conf-collection"></a>A.2. Conformance Class MovingFeature Collection Catalog</h3>
-<table id="rc_movingfeature_collection" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="conf_movingfeature_collection" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -5509,8 +5512,7 @@ No modifications are required.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#collection-requestbody-schema">collection_requestbody.yaml</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#conf_json_content
-">/conf/json/content</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/19-072/19-072.html#ats_json_content">/conf/json/content</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -5742,7 +5744,7 @@ No modifications are required.</p>
 </div>
 <div class="sect2">
 <h3 id="clause-conf-movingfeature"><a class="anchor" href="#clause-conf-movingfeature"></a>A.3. Conformance Class MovingFeatures</h3>
-<table id="rc_movingfeature_collection" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="conf_movingfeature" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -7183,7 +7185,7 @@ The specification provides various UML diagrams summarizing ISO 19141.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-20 09:06:44 +0900
+Last updated 2023-05-19 19:06:44 -0500
 </div>
 </div>
 </body>

@@ -3594,12 +3594,12 @@
                                                                                               ],
                                                                                               "links": [
                                                                                                 {
-                                                                                                  "href": "https://pntml.io/mf/collections/mfc-A/items/fc-1/tgeometries",
+                                                                                                  "href": "https://pntml.io/mf/collections/mfc-1/items/mf-1/tgeometries",
                                                                                                   "rel": "self",
                                                                                                   "type": "application/json"
                                                                                                 },
                                                                                                 {
-                                                                                                  "href": "https://pntml.io/mf/collections/mfc-A/items/fc-1/tgeometries&offset=10&limit=1",
+                                                                                                  "href": "https://pntml.io/mf/collections/mfc-1/items/mf-1/tgeometries&offset=10&limit=1",
                                                                                                   "rel": "next",
                                                                                                   "type": "application/json"
                                                                                                 }
@@ -6883,12 +6883,12 @@
                                                                               ],
                                                                               "links": [
                                                                                 {
-                                                                                  "href": "https://data.example.org/collections/mfc-1/items/fc-1/tgeometries",
+                                                                                  "href": "https://data.example.org/collections/mfc-1/items/mf-1/tgeometries",
                                                                                   "rel": "self",
                                                                                   "type": "application/json"
                                                                                 },
                                                                                 {
-                                                                                  "href": "https://data.example.org/collections/mfc-1/items/fc-1/tgeometries&offset=10&limit=1",
+                                                                                  "href": "https://data.example.org/collections/mfc-1/items/mf-1/tgeometries&offset=10&limit=1",
                                                                                   "rel": "next",
                                                                                   "type": "application/json"
                                                                                 }

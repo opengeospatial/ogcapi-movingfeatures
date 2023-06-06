@@ -8,7 +8,7 @@ In this concept, the operations are split into three groups P1, P2, P3. The rati
 These operations retrieve positions, trajectories, and velocities of a moving feature such as a car, a person, a vessel, an aircraft, and a hurricane. Mainly P1 covers the operations in MF-Access, and their temporal counterparts.   
 
 .P2: Topological operations/predicates between pairs of features, where at least one is a moving feature.
-These operations perform, for instance, an “intersection” between a geometry object like an administrative boundary and a trajectory of a moving feature like a car, a person, a vessel, an aircraft, and a hurricane. Also this category includes the operations of WKT and WKB, which require as a pre-requisite to develop these representation standards.
+These operations perform, for instance, an “intersection” between a geometry object like an administrative boundary and a trajectory of a moving feature like a car, a person, a vessel, an aircraft, and a hurricane. Also, this category includes the operations of WKT and WKB, which require as a pre-requisite to develop these representation standards.
 
 .P3: Advanced aggregation and analytical operations
 An example of these operations is to calculate a distance of the nearest approach of a
