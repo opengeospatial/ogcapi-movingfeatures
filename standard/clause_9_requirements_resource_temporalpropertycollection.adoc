@@ -56,7 +56,7 @@ include::requirements/movingfeature/tproperties-collection/REQ_response-tpropert
 include::../openapi/schemas/temporalPropertyCollection.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API-Moving Features `TemporalPropertyCollection` GET operation.
+The following JSON payload is an example of a response to an OGC API Moving Features `TemporalPropertyCollection` GET operation.
 [#pvalues-example,reftext=`TemporalPropertyCollection GET Example`]
 .TemporalPropertyCollection GET Example
 [source,json]

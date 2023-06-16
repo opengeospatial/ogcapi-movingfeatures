@@ -81,7 +81,7 @@ A successful response to the `TemporalProperty` GET operation is a temporal prop
 
 include::requirements/movingfeature/tproperties/REQ_response-tproperties-get.adoc[]
 
-The following JSON payload is an example of a response to an OGC API-Moving Features `TemporalProperty` GET operation.
+The following JSON payload is an example of a response to an OGC API Moving Features `TemporalProperty` GET operation.
 [#tproperties-example,reftext=`TemporalProperty GET Example`]
 .TemporalProperty GET Example
 [source,json]

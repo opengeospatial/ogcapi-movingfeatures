@@ -4,7 +4,7 @@ required:
 properties:
   title:
     type: string
-    example: Movingfeatures data server
+    example: Moving features data server
   description:
     type: string
     example: Access to data about moving features

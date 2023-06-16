@@ -57,6 +57,10 @@ The following organizations submitted this Document to the Open Geospatial Conso
 
 * Geomatys
 
+* Central Research Laboratory, Hitachi Ltd.
+
+* Feng Chia University
+
 [big]*v.     Submitters*
 
 All questions regarding this submission should be directed to the editor or the submitters:
@@ -70,4 +74,6 @@ All questions regarding this submission should be directed to the editor or the 
 |Mahmoud SAKR           |Université libre de Bruxelles
 |Esteban Zimanyi        |Université libre de Bruxelles
 |Martin Desruisseaux    |Geomatys
+|Akinori Asahara        |Central Research Laboratory, Hitachi Ltd.
+|Chen-Yu Hao            |Feng Chia University
 |===========================================================

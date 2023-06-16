@@ -80,7 +80,7 @@ include::../openapi/schemas/temporalGeometryCollection.yaml[]
 include::../openapi/schemas/temporalGeometry.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API-Moving Features `TemporalGeometryCollection` GET operation.
+The following JSON payload is an example of a response to an OGC API Moving Features `TemporalGeometryCollection` GET operation.
 [#tgeometries-example,reftext=`TemporalGeometries Example`]
 .TemporalGeometryCollection GET Example
 [source,json]

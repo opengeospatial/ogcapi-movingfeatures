@@ -63,7 +63,7 @@ include::../openapi/schemas/crs.yaml[]
 include::../openapi/schemas/trs.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API-Moving Features `MovingFeatures` GET operation.
+The following JSON payload is an example of a response to an OGC API Moving Features `MovingFeatures` GET operation.
 [#features-example,reftext=`MovingFeatures Example`]
 .MovingFeatures GET Example
 [source,json]

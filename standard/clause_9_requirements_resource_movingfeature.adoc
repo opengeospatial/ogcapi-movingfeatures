@@ -71,7 +71,7 @@ include::../openapi/schemas/movingFeature.yaml[]
 
 The `interval` property of the `MovingFeature` response represents a particular period of moving feature existence.
 
-The following JSON payload is an example of a response to an OGC API-MovingFeatures `MovingFeature` operation.
+The following JSON payload is an example of a response to an OGC API MovingFeatures `MovingFeature` operation.
 [#movingfeature-example,reftext=`MovingFeature Example`]
 .MovingFeature Example
 [source,json]

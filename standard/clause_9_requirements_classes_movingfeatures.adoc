@@ -11,7 +11,7 @@ A moving feature is an object that provide information about and access to a <<r
 The five resources defined in this Requirements Class are summarized in <<mf-resources>>.
 
 [#mf-resources,reftext='{table-caption} {counter:table-num}']
-.Moving Features Resources
+.MovingFeatures Resources
 [width="90%",cols="10,10,10",options="header"]
 |===
 ^|Resource ^|URI ^|HTTP Method

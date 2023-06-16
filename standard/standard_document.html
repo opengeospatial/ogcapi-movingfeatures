@@ -853,6 +853,12 @@ the standard set forth in this document, and to provide supporting documentation
 <li>
 <p>Geomatys</p>
 </li>
+<li>
+<p>Central Research Laboratory, Hitachi Ltd.</p>
+</li>
+<li>
+<p>Feng Chia University</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -894,6 +900,14 @@ the standard set forth in this document, and to provide supporting documentation
 <td class="tableblock halign-left valign-top"><p class="tableblock">Martin Desruisseaux</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geomatys</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Akinori Asahara</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Central Research Laboratory, Hitachi Ltd.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chen-Yu Hao</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feng Chia University</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -909,7 +923,7 @@ It includes a set of RESTful web APIs that allow clients to discover, retrieve, 
 <p>The OGC API-Moving Features-Part 1: Feature Extension standard defines an API with two goals.
 First, to provide access to representations of Moving Features that conform to the <a href="#OGC-MF-JSON">OGC Moving Features JSON encoding standard</a>.
 Second, to provide functionality comparable to that of the <a href="#OGC-MF-Access">OGC Moving Features Access standard</a>.
-The OGC API-Moving Features standard is an extension of the <a href="#OGC-API-Common">OGC API-Common</a> and the <a href="#OGC-API-Features">OGC API-Features standards</a>.</p>
+The OGC API Moving Features standard is an extension of the <a href="#OGC-API-Common">OGC API-Common</a> and the <a href="#OGC-API-Features">OGC API-Features standards</a>.</p>
 </div>
 </div>
 </div>
@@ -922,7 +936,7 @@ These requirements / conformance classes help to ensure interoperability between
 The standardization target is "Web APIs".</p>
 </div>
 <div class="paragraph">
-<p>The conformance classes for OGC API MovingFeatures are:</p>
+<p>The conformance classes for OGC API Moving Features are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -935,7 +949,7 @@ The standardization target is "Web APIs".</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The conformance class defines the minimum requirements for an API to be compliant with the OGC API MovingFeatures standard.
+<p>The conformance class defines the minimum requirements for an API to be compliant with the OGC API Moving Features standard.
 This includes support for querying and retrieving information about moving features using HTTP GET requests.
 Also, the conformance class enables clients to add, modify, or delete features from the server using HTTP POST, PUT, and DELETE requests.
 Lastly, the conformance class adds support for querying and retrieving features based on their temporal characteristics, such as their position at a specific time or their velocity over a given time interval.</p>
@@ -1313,7 +1327,7 @@ Unique relation types are used for each resource.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#mf-api-class-diagram">Figure 1</a> shows a UML class diagram for OGC API-MF which represents the basic resources of this standard, such as <code>Collections</code>, <code>Collection</code>, <code>MovingFeatureCollection</code>, <code>MovingFeature</code>, <code>TemporalGeometryCollection</code>, <code>TemporalGeometry</code>, <code>TemporalPropertyCollection</code>, and <code>TemporalProperty</code>.
+<p><a href="#mf-api-class-diagram">Figure 1</a> shows a UML class diagram for OGC API Moving Features (shortly API-MF) which represents the basic resources of this standard, such as <code>Collections</code>, <code>Collection</code>, <code>MovingFeatureCollection</code>, <code>MovingFeature</code>, <code>TemporalGeometryCollection</code>, <code>TemporalGeometry</code>, <code>TemporalPropertyCollection</code>, and <code>TemporalProperty</code>.
 In this standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.</p>
 </div>
@@ -1321,7 +1335,7 @@ Also, the moving feature can have multiple temporal properties, and each propert
 <div class="content">
 <img src="./images/MF-API-resource-diagram.png" alt="mf-api-class-diagram" width="95%">
 </div>
-<div class="title">Figure 1. Class diagram for OGC API-MF</div>
+<div class="title">Figure 1. Class diagram for OGC API Moving Features</div>
 </div>
 </div>
 <div class="sect2">
@@ -1343,7 +1357,7 @@ Also, the moving feature can have multiple temporal properties, and each propert
 </ul>
 </div>
 <div class="paragraph">
-<p>OGC API-Moving Features extends these core search capabilities to include:</p>
+<p>OGC API Moving Features extends these core search capabilities to include:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1356,7 +1370,7 @@ Also, the moving feature can have multiple temporal properties, and each propert
 <div class="sect2">
 <h3 id="dependencies-overview"><a class="anchor" href="#dependencies-overview"></a>6.3. Dependencies</h3>
 <div class="paragraph">
-<p>The OGC API-Moving Features (shortly, OGC API-MF) standard is an extension of the OGC API-Common and the OGC API-Features standards.
+<p>The OGC API Moving Features standard is an extension of the OGC API-Common and the OGC API-Features standards.
 Therefore, an implementation of OGC API-MF shall first satisfy the appropriate Requirements Classes from API-Common and API-Features.
 Also, OGC API-MF standard is based on the OGC Moving Features Encoding Extension for JSON (shortly, OGC MF-JSON) standards.
 Therefore, an implementation of OGC API-MF shall satisfy the appropriate Requirements Classes from OGC MF-JSON.
@@ -1733,7 +1747,7 @@ The usage of the <code>itemType</code> property is referred from the API-Common 
 </div>
 </div>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API-Moving Features <code>Collections</code> GET operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API Moving Features <code>Collections</code> GET operation.</p>
 </div>
 <div id="collections-example" class="listingblock">
 <div class="title">Collections Example</div>
@@ -2203,7 +2217,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API-Moving Features <code>Collection</code> GET operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API Moving Features <code>Collection</code> GET operation.</p>
 </div>
 <div id="collection-example" class="listingblock">
 <div class="title">Collection Information Example</div>
@@ -2369,7 +2383,7 @@ A moving feature is an object that provide information about and access to a <a 
 <p>The five resources defined in this Requirements Class are summarized in <a href="#mf-resources">Table 7</a>.</p>
 </div>
 <table id="mf-resources" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 7. Moving Features Resources</caption>
+<caption class="title">Table 7. MovingFeatures Resources</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2811,7 +2825,7 @@ In a typical API deployment, the <code>MovingFeatures</code> GET response will l
 </div>
 </div>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API-Moving Features <code>MovingFeatures</code> GET operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API Moving Features <code>MovingFeatures</code> GET operation.</p>
 </div>
 <div id="features-example" class="listingblock">
 <div class="title">MovingFeatures GET Example</div>
@@ -3226,7 +3240,7 @@ The temporal object information may be accessed using  <a href="#resource-tgeome
 <p>The <code>interval</code> property of the <code>MovingFeature</code> response represents a particular period of moving feature existence.</p>
 </div>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API-MovingFeatures <code>MovingFeature</code> operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API MovingFeatures <code>MovingFeature</code> operation.</p>
 </div>
 <div id="movingfeature-example" class="listingblock">
 <div class="title">MovingFeature Example</div>
@@ -3747,7 +3761,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API-Moving Features <code>TemporalGeometryCollection</code> GET operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API Moving Features <code>TemporalGeometryCollection</code> GET operation.</p>
 </div>
 <div id="tgeometries-example" class="listingblock">
 <div class="title">TemporalGeometryCollection GET Example</div>
@@ -4549,7 +4563,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API-Moving Features <code>TemporalPropertyCollection</code> GET operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API Moving Features <code>TemporalPropertyCollection</code> GET operation.</p>
 </div>
 <div id="pvalues-example" class="listingblock">
 <div class="title">TemporalPropertyCollection GET Example</div>
@@ -4954,7 +4968,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </tbody>
 </table>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API-Moving Features <code>TemporalProperty</code> GET operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API Moving Features <code>TemporalProperty</code> GET operation.</p>
 </div>
 <div id="tproperties-example" class="listingblock">
 <div class="title">TemporalProperty GET Example</div>
@@ -5051,7 +5065,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 <h3 id="_parameters_2"><a class="anchor" href="#_parameters_2"></a>9.1. Parameters</h3>
 <div class="paragraph">
 <p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>bbox</code></a>, <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a> and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from API-Common.
-All requirements and recommendations in API-Common regarding these parameters also apply for API-Moving Features.
+All requirements and recommendations in API-Common regarding these parameters also apply for API-MF.
 No modifications are required.</p>
 </div>
 <div class="sect3">
@@ -7185,7 +7199,7 @@ The specification provides various UML diagrams summarizing ISO 19141.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-19 19:06:44 -0500
+Last updated 2023-06-16 13:43:11 +0900
 </div>
 </div>
 </body>

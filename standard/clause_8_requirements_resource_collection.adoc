@@ -90,7 +90,7 @@ include::requirements/collection_catalog/collection/REQ_response-collection-get.
 include::../openapi/schemas/collection.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API-Moving Features `Collection` GET operation.
+The following JSON payload is an example of a response to an OGC API Moving Features `Collection` GET operation.
 [#collection-example,reftext=`Collection Information Example`]
 .Collection Information Example
 [source,json]

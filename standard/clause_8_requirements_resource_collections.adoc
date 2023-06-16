@@ -57,7 +57,7 @@ include::../openapi/schemas/collections.yaml[]
 ----
 
 
-The following JSON payload is an example of a response to an OGC API-Moving Features `Collections` GET operation.
+The following JSON payload is an example of a response to an OGC API Moving Features `Collections` GET operation.
 [#collections-example,reftext=`Collections Example`]
 .Collections Example
 [source,json]
