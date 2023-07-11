@@ -16,14 +16,14 @@ The two resources defined in this Requirements Class are summarized in <<collect
 ^|Resource ^|URI ^|HTTP Method ^|Description
 .2+|<<resource-collections-section,Collections>>
 .2+|`{root}/collections`
-^|GET |Get information which describes the set of available Collections
-^|POST|Add a new resource (<<resource-collection-section,Collection>>) instance to a Collections
+^|GET |Get information which describes the set of available `Collections` resource
+^|POST|Add a new resource (<<resource-collection-section,Collection>>) instance to a `Collections` resource
 
 .3+|<<resource-collection-section,Collection>>
 .3+|`{root}/collections/{collectionId}`
-^|GET   |Get information about a specific Collection ({collectionId}) of geospatial data with links to distribution
-^|PUT   |Update information about a specific Collection ({collectionId})
-^|DELETE|Delete a specific Collection ({collectionId})
+^|GET   |Get information about a specific `Collection` resource ({collectionId}) of geospatial data
+^|PUT   |Update information about a specific `Collection` resource ({collectionId})
+^|DELETE|Delete a specific `Collection` resource ({collectionId})
 |===
 
 include::clause_8_requirements_resource_collections.adoc[]

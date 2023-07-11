@@ -5,16 +5,16 @@
 |Requirement    |
 <<req_mf-tgeometry-query-op-get, /req/movingfeatures/tgeometry-query>> +
 <<req_mf-tgeometry-query-response-get, /req/movingfeatures/tgeometry-query-success>>
-|Test purpose   | Validate that resources can be identified and extracted from a TemporalGeometry with a `Velocity` query using query parameters.
+|Test purpose   | Validate that resources can be identified and extracted from a *TemporalGeometry* with a `Velocity` query using query parameters.
 |Test method    |
-IF a query parameter `datatime` is not empty, validate that the query parameter `datatime` with the following parameter tests that defined in the OGC API-Common: +
+IF a query parameter `datetime` is not empty, validate that the query parameter `datetime` with the following parameter tests that defined in the OGC API — Common: +
 - *Date-Time*: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
 
 1. Issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometries/{tGeometryId}/velocity` +
 2. Validate that a document was returned with a status code `200` +
 3. Verify the `type` is `"TFloat"` +
 
-IF a query parameter `datatime` is not empty: Execute requests with `datatime` query parameter and verify the correctly calculated value is returned.
+IF a query parameter `datetime` is not empty: Execute requests with `datetime` query parameter and verify the correctly calculated value is returned.
 
-IF a query parameter `datatime` is empty: Verify that a time-to-velocity curve is correctly returned according to the specified TemporalGeometry resource by {tgeometryId}.
+IF a query parameter `datetime` is empty: Verify that a time-to-velocity curve is correctly returned according to the specified TemporalGeometry resource by {tgeometryId}.
 |===

@@ -6,11 +6,11 @@
 <<req_mf_mandatory-temporalgeometry, /req/movingfeatures/tgeometries-mandatory>> +
 <<req_mf-tgeometries-op-post, /req/movingfeatures/tgeometries-post>> +
 <<req_mf-tgeometries-response-post, /req/movingfeatures/tgeometries-post-success>>
-|Test purpose   | Validate that the TemporalGeometry can be created to the expected location.
+|Test purpose   | Validate that the *TemporalGeometry* can be created at the expected location.
 |Test method    |
-1. Validate that the server comply with OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[POST operation requirements] +
+1. Validate that the server complies with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[POST operation requirements] +
 2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <<tgeometries-requestbody-schema>> and <<temporalGeometry-properties-table>> +
-3. Validate that the request body complies OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[POST request body requirements] +
+3. Validate that the request body complies OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[POST request body requirements] +
 4. Issue an HTTP POST request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries` +
 5. Validate the contents of the response using test <<conf_mf_tgeometries_post_success, `/conf/movingfeatures/tgeometries-post-success`>>
 |===

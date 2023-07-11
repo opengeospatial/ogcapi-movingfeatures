@@ -5,10 +5,10 @@
 |Requirement    |
 <<req_mfc-collection-op-get, /req/mf-collection/collection-get>> +
 <<req_mfc-collection-response-get, /req/mf-collection/collection-get-success>>
-|Test purpose   | Validate that the MovingFeature Collection can be retrieved from the expected location.
+|Test purpose   | Validate that the *MovingFeature Collection* can be retrieved from the expected location.
 |Test method    |
-For every Collection described in the Collections content, issue an HTTP GET request to the URL `{root}/collections/{collectionId}` where `{collectionId}` is the id property for the collection
+For every *Collection* described in the *Collections* content, issue an HTTP GET request to the URL `{root}/collections/{collectionId}` where `{collectionId}` is the id property for the collection
 
-1. Validate that a Collection was returned with a status code `200` +
+1. Validate that a *Collection* was returned with a status code `200` +
 2. Validate the contents of the returned document using test <<conf_mfc_collection_get_success, `/conf/mf-collection/collection-get-success`>>
 |===

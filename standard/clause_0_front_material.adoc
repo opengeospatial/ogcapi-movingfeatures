@@ -1,12 +1,13 @@
 //== Introduction
 [big]*i.     Abstract*
 
-Moving feature data can represent various phenomena, including vehicles, people, animals, weather patterns, etc. The OGC API Moving Features (OGC API-MF) is a specification developed by the Open Geospatial Consortium (OGC) that defines a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
-The OGC API-MF provides a standard way to manage this data, which can be helpful for applications such as transportation management, disaster response, and environmental monitoring.
-It also includes operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties.
+Moving feature data can represent various phenomena, including vehicles, people, animals, weather patterns, etc.
+The OGC API — Moving Features (OGC API — MF) is a Draft Standard defines a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
+The OGC API — MF provides a standard way to manage these data, which can be helpful for applications such as transportation management, disaster response, and environmental monitoring.
+OGC API — MF also includes operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties.
 
-The OGC API-MF Part 1: Feature extension specifies a set of RESTful web service interfaces and data formats for querying and updating moving feature data over the web.
-<<OGC-API, OGC API standards>> define modular API building blocks to spatially enable Web APIs in a consistent way.
+The OGC API — Moving Features — Part 1: Core specifies a set of RESTful web service interfaces and data formats for querying and updating moving feature data over the web.
+<<OGC-API, OGC API Standards>> define modular API building blocks to spatially enable Web APIs in a consistent way.
 <<OPENAPI, OpenAPI>> is used to define the reusable API building blocks with responses in JSON and HTML.
 
 The OGC API family of standards is organized by resource type.
@@ -34,7 +35,7 @@ The OGC API family of standards is organized by resource type.
 
 The following are keywords to be used by search engines and document catalogues.
 
-ogcdoc, OGC document, OGC MovingFeature, MovingFeatures JSON, MovingFeature Access, API, OpenAPI, REST, trajectory
+ogcdoc, OGC document, OGC MovingFeature, OGC Moving Features JSON, Moving Features Access, API, OpenAPI, REST, trajectory
 
 [big]*iii.   Preface*
 
@@ -47,7 +48,14 @@ Recipients of this document are requested to submit, with their comments, notifi
 or other intellectual property rights of which they may be aware that might be infringed by any implementation of
 the standard set forth in this document, and to provide supporting documentation.
 
-[big]*iv.    Submitting organizations*
+[big]*iv.   Security Considerations*
+
+The OGC API — Moving Features — Part 1: Core Draft Standard does not mandate any specific security controls.
+However, it was constructed to add security controls without impacting conformance, the same as the link:https://docs.ogc.org/is/19-072/19-072.html#_91afaabd-dc29-41eb-805d-15e1afd18825[OGC API — Common — Part 1: Core].
+
+This document applied the Requirement link:https://docs.ogc.org/is/19-072/19-072.html#rc_oas30-security[/req/oas30/security] for OpenAPI 3.0 Security support.
+
+[big]*v.    Submitting organizations*
 
 The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
 
@@ -61,7 +69,7 @@ The following organizations submitted this Document to the Open Geospatial Conso
 
 * Feng Chia University
 
-[big]*v.     Submitters*
+[big]*vi.     Submitters*
 
 All questions regarding this submission should be directed to the editor or the submitters:
 

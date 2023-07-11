@@ -1,5 +1,5 @@
-:Title: OGC API - Moving Features
-:titletext: OGC API - Moving Features - Part 1: Features extension
+:Title: OGC API — Moving Features
+:titletext: OGC API — Moving Features — Part 1: Core
 :doctype: book
 :encoding: utf-8
 :lang: en
@@ -13,7 +13,7 @@
 //pygments
 :doc-type: IS
 :standard: ogcapi-movingfeatures-1
-:version: 0.9.9.draft
+:version: 1.0.draft
 :page-background-image: image:images/watermark.png[opacity=50%]
 
 <<<

@@ -10,29 +10,30 @@ The schema for the moving feature object presented in this clause is an extensio
 [[moving-feature-properties-table]]
 [reftext='{table-caption} {counter:table-num}']
 .Table of the properties related to the moving feature
-[cols="30,5,65",options="header"]
+[cols="25,10,65",options="header"]
 |===
 |Property           |Requirement    |Description
-|_**id**_           |M |A unique record identifier assigned by the server.
-|_**type**_         |M |A feature type of GeoJSON (i.e., one of 'Feature' or 'FeatureCollection').
-|_**geometry**_     |M |A projective geometry of the moving feature.
+|_**id**_           |M |A unique identifier to the moving feature.
+|_**type**_         |M |The GeoJSON feature type (i.e., one of 'Feature' or 'FeatureCollection').
+|_**geometry**_     |M |Projective geometry of the moving feature.
 |_**properties**_   |M |A set of property of GeoJSON.
-|_**bbox**_         |O |A bounding box information for the moving feature.
-|time               |O |A life span information for the moving feature.
-|crs                |O |A coordinate reference system information for the moving feature.
-|trs                |O |A temporal reference system information for the moving feature.
-|<<resource-tgeometries-section, temporalGeometries>> |O |A set of <<tgeometry-schema, temporal geometry>> of the moving feature.
-|<<resource-tproperties-collection-section, temporalPropertiesCollection>> |O |A set of <<resource-temporalProperty-section, temporalProperty>> of the moving feature.
+|_**bbox**_         |O |Bounding box information for the moving feature.
+|time               |O |Life span information for the moving feature.
+|crs                |O |Coordinate reference system (CRS) information for the moving feature.
+|trs                |O |Temporal reference system information for the moving feature.
+|<<resource-tgeometries-section, temporalGeometry>> |O |A set of <<tgeometry-schema, temporal geometry>> for a moving feature.
+|<<resource-tproperties-collection-section, temporalProperties>> |O |A set of <<resource-temporalProperty-section, temporal properties>> of the moving feature.
 |===
 
 NOTE: The properties _id_, _type_, _geometry_, _properties_, and _bbox_ were inherited from https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
+
 
 include::requirements/movingfeature/movingfeature/REQ_mandatory-movingfeature.adoc[]
 
 ==== Operation
 //TODO: Why Replace operation is not supported
 ===== Retrieve
-This operation is defined in the `Feature` conformance class of API-Features.
+The retrieve operation is defined in the `Feature` conformance class of OGC API — Features.
 No modifications are needed to support <<resource-movingfeature-section,MovingFeature>> resources.
 
 . Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}` path
@@ -41,16 +42,16 @@ No modifications are needed to support <<resource-movingfeature-section,MovingFe
 The {mFeatureId} parameter is the unique identifier for a single moving feature offered by the API.
 The list of valid values for `{mFeatureId}` is provided in the <<resource-mfeatures-section,`{root}/collections/{collectionId}/items`>> GET response.
 
-Support for GET on the `{root}/collections/{collledctionID}/items/{mFeatureId}` path is required by API-Features.
+Support for GET on the `{root}/collections/{collledctionID}/items/{mFeatureId}` path is required by OGC API — Features.
 
 include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-get.adoc[]
 
 ===== Delete
-This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API-Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}` path
 
-Support for HTTP DELETE method is required by API-Features.
+Support for the HTTP DELETE method is required by OGC API — Features.
 
 include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-delete.adoc[]
 
@@ -63,7 +64,7 @@ The temporal object information may be accessed using  <<resource-tgeometries-se
 include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-get.adoc[]
 
 [#movingfeature-schema,reftext='MovingFeature GET Response Schema']
-.MovingFeature GET Response Schema (movingFeature.yaml)
+.MovingFeature GET Response Schema (movingFeature.yaml):
 [source,yaml]
 ----
 include::../openapi/schemas/movingFeature.yaml[]
@@ -71,9 +72,9 @@ include::../openapi/schemas/movingFeature.yaml[]
 
 The `interval` property of the `MovingFeature` response represents a particular period of moving feature existence.
 
-The following JSON payload is an example of a response to an OGC API MovingFeatures `MovingFeature` operation.
+The following JSON payload is an example of a response to an OGC API — MovingFeatures `MovingFeature` operation.
 [#movingfeature-example,reftext=`MovingFeature Example`]
-.MovingFeature Example
+.An Example of a MovingFeature JSON Payload:
 [source,json]
 ----
 include::../openapi/examples/movingFeature.json[]
@@ -85,5 +86,5 @@ A successful response to the `Collection` DELETE operation is an HTTP status cod
 include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-delete.adoc[]
 
 ==== Error situations
-The requirements for handling unsuccessful requests are provided in <<http-response>>.
+The requirements for handling unsuccessful requests are provided in the <<http-response>>.
 General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

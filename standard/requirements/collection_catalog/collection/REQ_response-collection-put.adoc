@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-put-success*
-^|A |The API implementation SHALL comply with the API-Feature `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
-^|B |The API implementation SHALL comply with the API-Feature `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
+^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
+^|B |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
 |===

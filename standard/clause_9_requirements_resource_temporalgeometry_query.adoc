@@ -1,8 +1,10 @@
 [[resource-temporalGeometryQuery-section]]
 === TemporalGeometry Query Resources
-TemporalGeometry Query resources are spatio-temporal queries which support operation of the API for the access <<resource-temporalGeometry-section, TemporalGeometry resources>>.
-The OGC API-MF has identified an initial set of common query types to implement, described in this clause.
-This list may change as the standard is used and experience is gained.
+==== Overview
+TemporalGeometry Query resources are spatiotemporal queries that support operations for the accessing  <<resource-temporalGeometry-section, TemporalGeometry resources>>.
+The OGC API — MF Standard identifies an initial set of common query types to implement.
+These are described in this clause.
+This list may change as the Standard is used and experience is gained.
 
 Query resources related to the <<resource-temporalGeometry-section, TemporalGeometry resource>> can be exposed using the path templates:
 
@@ -14,9 +16,9 @@ Where:
 * `{collectionId}`  = An identifier for a specific <<resource-collection-section,Collection>> of data
 * `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,MovingFeature>> of a specific <<resource-collection-section,Collection>> of data
 * `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
-* `{quertyType}`    = An identifier for the query pattern performed by the API.
+* `{quertyType}`    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
 
-<<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API-MF.
+<<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API — MF.
 
 [[temporalGeometry-query-table]]
 [reftext='{table-caption} {counter:table-num}']
@@ -50,8 +52,8 @@ image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, width
 The filter constraints are defined by the following query parameter:
 
 ===== Parameter datetime
-Define the specified datetime to return the distance value from the time to distance graph.
-When 'datetime' is not specified, the API MUST return data from all available times of the specified <<resource-temporalGeometry-section, TemporalGeometry resource>>.
+The datetime parameter defines the specified date and time to return the distance value from the time to distance graph.
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <<resource-temporalGeometry-section, TemporalGeometry resource>>.
 
 ==== Velocity Query
 The Velocity query returns a time to velocity curve of the <<temporal-geometry-object, TemporalGeometry object>> as a form of the <<temporalProperty-properties-table, TemporalProperty>>.
@@ -59,8 +61,8 @@ The Velocity query returns a time to velocity curve of the <<temporal-geometry-o
 The filter constraints are defined by the following query parameter:
 
 ===== Parameter datetime
-Define the specified datetime to return the velocity value from the time to velocity graph.
-When 'datetime' is not specified, the API MUST return data from all available times of the specified <<resource-temporalGeometry-section, TemporalGeometry resource>>.
+The datetime parameter defines the specified date and time to return the velocity value from the time to velocity graph.
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <<resource-temporalGeometry-section, TemporalGeometry resource>>.
 
 ==== Acceleration Query
 The Acceleration query returns a time to acceleration curve of the <<temporal-geometry-object, TemporalGeometry object>> as a form of the <<temporalProperty-properties-table, TemporalProperty>>.
@@ -68,8 +70,8 @@ The Acceleration query returns a time to acceleration curve of the <<temporal-ge
 The filter constraints are defined by the following query parameter:
 
 ===== Parameter datetime
-Define the specified datetime to return the acceleration value from the time to acceleration graph.
-When 'datetime' is not specified, the API MUST return data from all available times of the specified <<resource-temporalGeometry-section, TemporalGeometry resource>>.
+The datetime parameter defines the specified date and time to return the acceleration value from the time to acceleration graph.
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <<resource-temporalGeometry-section, TemporalGeometry resource>>.
 
 ==== Operation Requirements
 

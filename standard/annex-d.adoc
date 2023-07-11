@@ -1,11 +1,12 @@
 [appendix]
 :appendix-caption: Annex
-== Relationship with other OGC/ISO standards (Informative)
+== Relationship with other OGC/ISO Standards (Informative)
 
 This specification is built upon the following OGC/ISO standards.
 The geometry concept is presented first, followed by the feature concept.
-Note that a feature is _not_ a geometry, but a feature often contains a geometry as one of its attributes.
-However, it is legal to build features without geometry attribute, or with more than one geometry attributes.
+Note that a feature is _not_ a geometry.
+However, a feature often contains a geometry as one of its attributes.
+However, it is legal to build features without a geometry attribute, or with more than one geometry attributes.
 
 
 === Static geometries, features and accesses
@@ -57,7 +58,7 @@ image::images/GM_Object.png[alt=UML of GM_Object,align="center",width=75%]
 // **TODO:** provide a simplified version of this UML.
 
 Geometry, topology and temporal-objects (`GM_Object`, `TP_Object`, `TM_Object`) are not abstractions of real-world phenomena.
-These types can provide types for feature properties as described in the next section, but cannot be specialized to features.
+These types can provide types for feature properties as described in the next section but cannot be specialized to features.
 
 
 ==== Features (ISO 19109)
@@ -92,7 +93,7 @@ image::images/FeatureType.png[alt=UML of feature model,align="center",width=100%
 
 ==== Simple Features SQL
 
-The link:https://portal.ogc.org/files/?artifact_id=25354[Simple Feature Access — Part 2: SQL Option] standard
+The link:https://portal.ogc.org/files/?artifact_id=25354[Simple Feature Access — Part 2: SQL Option] Standard
 describes a feature access implementation in SQL based on a profile of ISO 19107.
 This standard defines _feature table_ as a table where the columns represent feature attributes,
 and the rows represent feature instances.
@@ -102,9 +103,9 @@ The geometry of a feature is one of its feature attributes.
 ==== Filter Encoding (ISO 19143)
 
 The ISO 19143, _Geographic information — Filter encoding_ standard
-(also link:https://portal.ogc.org/files/?artifact_id=39968[OGC standard]) provides types for constructing queries.
+(also link:https://portal.ogc.org/files/?artifact_id=39968[OGC Standard]) provides types for constructing queries.
 These objects can be transformed into a SQL “SELECT … FROM … WHERE … ORDER BY …” statement to fetch data stored in a SQL-based relational database.
-Similarly, the same objects can be transformed into an XQuery expression in order to retrieve data from XML document.
+Similarly, the same objects can be transformed into a XQuery expression in order to retrieve data from XML document.
 The UML below shows the objects used for querying a subset based on spatial operations such as “contains” or “intersects”.
 
 .Spatial operators from ISO 19143 figure 6
@@ -115,23 +116,22 @@ image::images/Filter.png[alt=UML of spatial operators,align="center",width=75%]
 
 ==== Features web API
 
-The link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC 17-069, _Features — Part 1: Core_] standard
-specifies the fundamental building blocks for interacting with features using Web API.
-This base standards allow to get all features available on a server,
-or to get feature instances by their identifier.
+The link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC 17-069, _Features — Part 1: Core_] Standard
+specifies the fundamental building blocks for interacting with features using a Web API pattern.
+This Draft Standards defines how to get all features available on a server, or to get feature instances by their identifier.
 
 
 
 ==== Features Filtering web API
 
-The link:https://portal.ogc.org/files/96288[OGC TBD, _Features — Part 3: Filtering and the Common Query Language (CQL)_] standard
+The draft link:https://portal.ogc.org/files/96288[OGC TBD, _Features — Part 3: Filtering and the Common Query Language (CQL)_] standard
 extends the Feature web API with capabilities to encode more sophisticated queries.
 The conceptual model is close to ISO 19143.
 
 
 
 
-=== Temporal geometries and moving Features
+=== Temporal Geometries and Moving Features
 
 ==== Moving Features (ISO 19141)
 
@@ -143,7 +143,7 @@ The UML below shows how the `MF_Trajectory` type extends the “static” types 
 .Trajectory type from ISO 19141 figure 3
 image::images/Trajectory.png[alt=UML of trajectory,align="center",width=50%]
 
-Trajectory inherits some operations shown below.
+Trajectory inherits operations shown below.
 Those operations are in addition to the operations inherited from `GM_Object`.
 For example the `distance(…)` operation from ISO 19107 is now completed by a `nearestApproach(…)` operation.
 
@@ -156,9 +156,9 @@ image::images/TemporalGeometry.png[alt=UML of temporal geometry,align="center",w
 ==== Moving Features XML encoding (OGC 18-075)
 
 The link:http://docs.opengeospatial.org/is/18-075/18-075.html[OGC 18-075 _Moving Features Encoding Part I: XML Core_]
-standard takes a subset of ISO 19141 specification and encodes it in XML format.
-But that standard also completes ISO 19141 by allowing to specify attributes whose value change over time.
-This extension to above _General Feature Model_ is shown below:
+Standard takes a subset of the ISO 19141 Standard and defines an XML encoding.
+That standard also completes ISO 19141 by allowing to specify attributes whose value change over time.
+This extension to the above _General Feature Model_ is shown below:
 
 .Dynamic attribute from OGC 18-075 figure 3
 image::images/DynamicAttribute.png[alt=UML of dynamic attribute,align="center",width=50%]
@@ -169,10 +169,8 @@ image::images/DynamicAttribute.png[alt=UML of dynamic attribute,align="center",w
 ==== Moving Features JSON encoding (OGC 19-045)
 
 The link:http://docs.opengeospatial.org/is/19-045r3/19-045r3.html[OGC 19-045 _Moving Features Encoding Extension — JSON_]
-standard takes a subset of ISO 19141 specification and encodes it in JSON format.
-The specification provides various UML diagrams summarizing ISO 19141.
-
-
+Standard takes a subset of the ISO 19141 Standard and defines a JSON encoding.
+The Standard provides various UML diagrams summarizing ISO 19141.
 
 
 // ==== Moving Feature Access

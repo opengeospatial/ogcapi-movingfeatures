@@ -1,9 +1,9 @@
 == Conformance
-This standard defines five requirements / conformance classes that describe different levels of compliance with the standard.
-These requirements / conformance classes help to ensure interoperability between other implementations of the standard and allow data providers to specify which parts of the standard they support.
+This Standard defines two requirements / conformance classes that describe different levels of compliance with the Standard.
+These requirements / conformance classes help to ensure interoperability between other implementations of the Standard and allow data providers to specify which parts of the Standard they support.
 The standardization target is "Web APIs".
 
-The conformance classes for OGC API Moving Features are:
+The conformance classes for OGC API — Moving Features are:
 
 * <<clause-core-collection, Collection Catalog>>
 * <<clause-core-movingfeature, Moving Features>>
@@ -11,12 +11,12 @@ The conformance classes for OGC API Moving Features are:
 // * <<clause-mf-json-req, MF-JSON encoding>>
 // * <<clause-openapi-req, OpenAPI Specification 3.0>>
 
-The conformance class defines the minimum requirements for an API to be compliant with the OGC API Moving Features standard.
+The conformance class defines the minimum requirements for an API to be compliant with the OGC API — Moving Features Draft Standard.
 This includes support for querying and retrieving information about moving features using HTTP GET requests.
 Also, the conformance class enables clients to add, modify, or delete features from the server using HTTP POST, PUT, and DELETE requests.
 Lastly, the conformance class adds support for querying and retrieving features based on their temporal characteristics, such as their position at a specific time or their velocity over a given time interval.
 
-Implementers of the OGC API-MF can choose which conformance classes they want to support based on the specific needs of their use case and the capabilities of their software. However, to be considered compliant with the standard, an implementation must support at least the Core conformance class.
+Implementers of the OGC API — MF can choose which conformance classes they want to support based on the specific needs of their use case and the capabilities of their software. However, to be considered compliant with the Standard, an implementation shall support at least the Core conformance class.
 
 The URIs of the associated conformance classes are:
 

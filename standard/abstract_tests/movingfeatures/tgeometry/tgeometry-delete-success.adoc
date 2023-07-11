@@ -6,5 +6,5 @@
 |Test purpose   | Validate that the response of `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tgeometryId}` DELETE request complies with the required structure and contents.
 |Test method    |
 1. Validate that a document was returned with a status code `200`, `202`, or `204` +
-2. Validate that all response documents complies with OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE response requirements]
+2. Validate that all response documents comply with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE response requirements]
 |===

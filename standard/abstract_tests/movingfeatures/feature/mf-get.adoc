@@ -5,9 +5,9 @@
 |Requirement    |
 <<req_mf_mf-op-get, /req/movingfeatures/mf-get>> +
 <<req_mf-response-get, /ref/movingfeatures/mf-get-success>>
-|Test purpose   | Validate that the MovingFeature can be retrieved from the expected location.
+|Test purpose   | Validate that the *MovingFeature* can be retrieved from the expected location.
 |Test method    |
-For every MovingFeature identified in MovingFeature Collection, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeaturesId}` where `{collectionId}` is the id property for a MovingFeature Collection described in the MovingFeature Collections content and `{mFeatureId}` is the id property for the MovingFeature
+For every MovingFeature identified in *MovingFeature Collection*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeaturesId}` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collections* content and `{mFeatureId}` is the id property for the *MovingFeature*
 
 1. Validate that a document was returned with a status code `200` +
 2. Validate the contents of the returned document using test <<conf_mf_feature_get_success, `/conf/movingfeatures/features-get-success`>>
