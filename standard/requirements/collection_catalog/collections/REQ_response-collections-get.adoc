@@ -2,10 +2,10 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collections-get-success*
-^|A |The API implementation SHALL comply with the API-Common `Collections` response requirement https://docs.ogc.org/DRAFTS/20-024.html#_response[`/req/collections/rc-md-success`].
+^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Common `Collections` response requirement https://docs.ogc.org/DRAFTS/20-024.html#_response[`/req/collections/rc-md-success`].
 ^|B |The content of that response SHALL be based upon the <<collections-schema, `Collections` response schema>>.
 ^|C |The `itemType` property of the response schema SHALL be `movingfeature`.
 // The API-Common https://docs.ogc.org/DRAFTS/20-024.html#rec_collections_rc-md-item-type[`rec/collections/rc-md-item-type`] recommendation SHALL apply as collection's `itemType` property is specified as `movingfeature`.
 |===
 [NOTE]
-The usage of the `itemType` property is referred from the API-Common http://docs.ogc.org/DRAFTS/20-024.html#collection-item-type-section[item Type section].
+The usage of the `itemType` property is referred from the OGC API — Common http://docs.ogc.org/DRAFTS/20-024.html#collection-item-type-section[item Type section].

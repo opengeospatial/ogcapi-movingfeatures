@@ -10,14 +10,16 @@ the latest edition of the normative document referred to applies.
 * OGC 19-045r3: OGC Moving Features Encoding Extension - JSON (2020). https://docs.ogc.org/is/19-045r3/19-045r3.html
 * OGC 17-069r4: OGC API — Features — Part 1: Core (2022). https://docs.opengeospatial.org/is/17-069r4/17-069r4.html
 * OGC 20-002: OGC API — Features — Part 4: Create, Replace, Update and Delete (Draft). http://docs.ogc.org/DRAFTS/20-002.html
-* OGC 19-072: OGC API — Common — Part 1: Core (Draft). http://docs.ogc.org/DRAFTS/19-072.html
+* OGC 19-072: OGC API — Common — Part 1: Core (2023). https://docs.ogc.org/is/19-072/19-072.html
 * OGC 20-024: OGC API — Common — Part 2: Geospatial Data (Draft). http://docs.ogc.org/DRAFTS/20-024.html
-* IETF RFC 2616: Hypertext Transfer Protocol - HTTP/1.1. http://tools.ietf.org/html/rfc2616
-* IETF RFC 2387: The MIME Multipart/Related Content-type. http://tools.ietf.org/html/rfc2387
-* IETF RFC 2818: HTTP Over TLS. http://tools.ietf.org/html/rfc2818
-* IETF RFC 3986: Uniform Resource Identifier (URI): Generic Syntax. https://tools.ietf.org/html/rfc3986
-* IETF RFC 7946: The GeoJSON Format, https://tools.ietf.org/rfc/rfc7946.txt
-* IETF RFC 8288: Web Linking https://tools.ietf.org/html/rfc8288
-* IETF RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format. Available from: https://tools.ietf.org/html/rfc8259
-* Open API Initiative: OpenAPI Specification, Version 3.0. The latest patch version at the time of publication of this standard was 3.1.0, available from https://spec.openapis.org/oas/v3.1.0.
+// * IETF RFC 2616: Hypertext Transfer Protocol - HTTP/1.1. https://datatracker.ietf.org/doc/html/rfc2616
+* [[rfc2387]]IETF RFC 2387: The MIME Multipart/Related Content-type. https://datatracker.ietf.org/doc/html/rfc2387
+* [[rfc2818]]IETF RFC 2818: HTTP Over TLS. https://datatracker.ietf.org/doc/html/rfc2818
+* [[rdc3339]]IETF RFC 3339: Date and Time on the Internet: Timestamps. https://datatracker.ietf.org/doc/html/rfc3339
+* [[rfc3986]]IETF RFC 3986: Uniform Resource Identifier (URI): Generic Syntax. https://datatracker.ietf.org/doc/html/rfc3986
+* [[rfc723x]]IETF RFC 7230 to TFC 7235: Hypertext Transfer Protocol (HTTP/1.1). https://datatracker.ietf.org/doc/html/rfc7230, https://datatracker.ietf.org/doc/html/rfc7231, https://datatracker.ietf.org/doc/html/rfc7232, https://datatracker.ietf.org/doc/html/rfc7233, https://datatracker.ietf.org/doc/html/rfc7234, and https://datatracker.ietf.org/doc/html/rfc7235
+* [[rfc7946]]IETF RFC 7946: The GeoJSON Format. https://datatracker.ietf.org/doc/html/rfc7946
+* [[rfc8288]]IETF RFC 8288: Web Linking. https://datatracker.ietf.org/doc/html/rfc8288
+* [[rfc8259]]IETF RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format. https://datatracker.ietf.org/doc/html/rfc8259
+* [[openapi3]]Open API Initiative: OpenAPI Specification, Version 3.0. The latest patch version at the time of publication of this standard was 3.1.0. https://spec.openapis.org/oas/v3.1.0.
 ====

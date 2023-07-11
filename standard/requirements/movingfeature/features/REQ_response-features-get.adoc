@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/features-get-success*
-^|A |The API implementation SHALL comply with the API-Features `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
+^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Features `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
 ^|B |The response SHALL only include moving features selected by the request with parameters.
 ^|C |Each moving feature in the response SHALL include the mandatory properties listed in <<moving-feature-properties-table>>.
 |===

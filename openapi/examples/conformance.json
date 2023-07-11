@@ -1,6 +1,5 @@
 {
   "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/common",
     "http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-collection",
     "http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/movingfeatures"
   ]

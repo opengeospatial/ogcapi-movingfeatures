@@ -1,34 +1,35 @@
 [[resource-mfeatures-section]]
 === Resource MovingFeatures
+==== Overview
 The `MovingFeatures` resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
 
-. Retrieving operation returns a set of features which describes the moving feature available from this API.
-. Creating operation post a new <<resource-movingfeature-section,MovingFeature>> resource instance to a specific <<resource-collection-section,Collection>> (specified by {collectinoId} with this API.
+. A retrieve operation returns a set of features which describes the moving feature available from this API.
+. A create operation post a new <<resource-movingfeature-section,MovingFeature>> resource instance to a specific <<resource-collection-section,Collection>> (specified by {collectinoId} with this API.
 
-The OGC API-MF `Items` query is an OGC API-Features endpoint that may be used to catalog pre-existing moving features.
+The OGC API — MF `Items` query is an OGC API — Features endpoint that may be used to catalog pre-existing moving features.
 If a `mFeatureID` is not specified, the query will return a list of the available moving features.
 The list of moving features returned to the response can be limited using the <<bbox-section,bbox>>, <<datetime-section,datetime>>, and <<limit-section,limit>> parameters.
-This behavior is specified in OGC API-Features.
-All parameters for use with the `Items` query are defined by OGC API-Features.
+This behavior is specified in OGC API — Features.
+All parameters for use with the `Items` query are defined by OGC API — Features.
 
 ==== Operation
 ===== Retrieve
-This operation is defined in the `MovingFeatures` conformance class of API-Features.
+The retrieve operation is defined in the `MovingFeatures` conformance class of OGC API — Features.
 No modifications are needed to support <<resource-movingfeature-section,MovingFeature>> resources.
 
 . Issue a `GET` request on `{root}/collections/{collledctionID}/items` path
 
-Support for GET on the `{root}/collections/{collledctionID}/items` path is required by API-Features.
+Support for GET on the `{root}/collections/{collledctionID}/items` path is required by OGC API — Features.
 
 include::requirements/movingfeature/features/REQ_operation-features-get.adoc[]
 
 ====== Create
-This operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of API-Features.
+The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
 This operation targeted <<resource-movingfeature-section,MovingFeature>> resource.
 
 . Issue a `POST` request on `{root}/collections/{collledctionID}/items` path
 
-Support for HTTP POST method is required by API-Features.
+Support for the HTTP POST method is specified as a requirement in OGC API — Features.
 
 include::requirements/movingfeature/features/REQ_operation-features-post.adoc[]
 
@@ -36,18 +37,18 @@ The following example adds a new feature (link:https://docs.opengeospatial.org/i
 The feature is represented as MovingFeature object (or MovingFeatureCollection object) in <<OGC-MF-JSON, MF-JSON>>, which is a kind of extension of the link:https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 [#movingfeature-post-example, reftext='Create a New MovingFeature Object Example']
-.Create a New MovingFeature Object Example
+.An Example of Creating a New MovingFeature Object:
 include::examples/features-post.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the `MovingFeatures` GET operation is a document that contains the static data of moving features.
-In a typical API deployment, the `MovingFeatures` GET response will list features of all offered resource types.
+A successful response to the `MovingFeatures` GET operation is a document that contains the static data for a set of moving features.
+In a typical deployment of the OGF API — MF, the `MovingFeatures` GET response will list features of all offered resource types.
 
 include::requirements/movingfeature/features/REQ_response-features-get.adoc[]
 
 [#features-schema,reftext='MovingFeatures GET Response Schema']
-.MovingFeatures GET Response Schema (movingFeatureCollection.yaml)
+.MovingFeatures GET Response Schema (movingFeatureCollection.yaml):
 [source,yaml]
 ----
 include::../openapi/schemas/movingFeatureCollection.yaml[]
@@ -63,9 +64,9 @@ include::../openapi/schemas/crs.yaml[]
 include::../openapi/schemas/trs.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API-Moving Features `MovingFeatures` GET operation.
+The following JSON payload is an example of a response to an OGC API — Moving Features `MovingFeatures` GET operation.
 [#features-example,reftext=`MovingFeatures Example`]
-.MovingFeatures GET Example
+.An Example of a MovingFeatures GET Operation:
 [source,json]
 ----
 include::../openapi/examples/movingFeatureCollection.json[]
@@ -77,5 +78,5 @@ A successful response to the `MovingFeatures` POST operation is an HTTP status c
 include::requirements/movingfeature/features/REQ_response-features-post.adoc[]
 
 ==== Error situations
-The requirements for handling unsuccessful requests are provided in <<http-response>>.
+The requirements for handling unsuccessful requests are provided in the <<http-response>>.
 General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

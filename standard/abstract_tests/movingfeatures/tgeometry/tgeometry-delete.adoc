@@ -5,9 +5,9 @@
 |Requirement    |
 <<req_mf-tgeometry-op-delete, /req/movingfeatures/tgeometry-delete>> +
 <<req_mf-tgeometry-response-delete, /req/movingfeatures/tgeometry-delete-success>>
-|Test purpose   | Validate that the MovingFeature Collection can be deleted to the expected location.
+|Test purpose   | Validate that the *TemporalGeometry* can be deleted at the expected location.
 |Test method    |
-1. Validate that the server comply with OGC API-Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE operation requirements] +
+1. Validate that the server complies with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE operation requirements] +
 2. Issue an HTTP DELETE request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tgeometryId}` +
 3. Validate the contents of the response using test <<conf_mf_tgeometry_delete_success, `/conf/mf-collection/collections-put-success`>>
 |===
