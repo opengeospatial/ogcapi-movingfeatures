@@ -59,7 +59,7 @@ include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-de
 ===== Retrieve
 A successful response to the `MovingFeature` GET operation is a set of metadata that describes the moving feature identified by the <<movingfeature-identifier,`{mFeatureId}`>> parameter.
 This response does not include a set of temporal object information.
-The temporal object information may be accessed using  <<resource-tgeometries-section, TemporalGeometries>> and <<resource-tproperties-collection-section, TemporalPropertiesCollection>> operations.
+The temporal object information may be accessed using  <<resource-tgeometries-section, TemporalGeometryCollection>> and <<resource-tproperties-collection-section, TemporalPropertyCollection>> operations.
 
 include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-get.adoc[]
 
@@ -70,7 +70,8 @@ include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-get
 include::../openapi/schemas/movingFeature.yaml[]
 ----
 
-The `interval` property of the `MovingFeature` response represents a particular period of moving feature existence.
+The `time` property of the `MovingFeature` response represents a particular period of moving feature existence.
+// TODO: Add note using MF-JSON MovingFeature object
 
 The following JSON payload is an example of a response to an OGC API — MovingFeatures `MovingFeature` operation.
 [#movingfeature-example,reftext=`MovingFeature Example`]

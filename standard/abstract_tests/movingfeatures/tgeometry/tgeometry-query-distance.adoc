@@ -12,7 +12,7 @@ IF a query parameter `datetime` is not empty, validate that the query parameter 
 
 1. Issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometries/{tGeometryId}/distance` +
 2. Validate that a document was returned with a status code `200` +
-3. Verify the `type` is `"TFloat"` +
+3. Verify the `type` is `"TReal"` +
 
 IF a query parameter `datetime` is not empty: Execute requests with `datetime` query parameter and verify the correctly calculated value is returned.
 

@@ -6,7 +6,7 @@ required:
 properties:
   datetimes:
     type: array
-    uniqueItems: true,
+    uniqueItems: true
     minItems: 2
     items:
       type: string

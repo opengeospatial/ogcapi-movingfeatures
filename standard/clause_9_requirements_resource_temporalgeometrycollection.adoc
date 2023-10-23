@@ -69,8 +69,9 @@ A successful response to the `TemporalGeometryCollection` GET operation is a doc
 
 include::requirements/movingfeature/tgeometries/REQ_response-tgeometries-get.adoc[]
 
-[#tgeometries-schema,reftext='TemporalGeometries GET Response Schema']
-.TemporalGeometries GET Response Schema (temporalGeometryCollection.yaml):
+// TODO: Fix for including not only MovingGeometryCollection, also MovingGeometryPrimitive
+[#tgeometries-schema,reftext='TemporalGeometryCollection GET Response Schema']
+.TemporalGeometryCollection GET Response Schema (temporalGeometryCollection.yaml):
 [source,yaml]
 ----
 include::../openapi/schemas/temporalGeometryCollection.yaml[]
