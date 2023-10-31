@@ -3,9 +3,9 @@
 |===
 |*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tproperties-get*
 |Requirement    |
-<<req_mf-tproperties-op-get, /req/movingfeatures/tproperties-get>> +
-<<req_mf-tproperties-response-get, /req/movingfeatures/tproperties-get-success>>
-|Test purpose   | Validate that the *TemporalProperty* can be identified and extracted from a *TemporalPropertyCollection* using query parameters.
+<<req_mf-tproperty-op-get, /req/movingfeatures/tproperties-get>> +
+<<req_mf-tproperty-response-get, /req/movingfeatures/tproperties-get-success>>
+|Test purpose   | Validate that the *TemporalProperty* can be identified and extracted from a *TemporalProperties* using query parameters.
 |Test method    |
 For every *TemporalProperty* identified in *MovingFeature*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tpropertyName}` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collections* content, `{mFeatureId}` is the id property for the *MovingFeature*, `{tpropertyName}` is the name property for the *TemporalProperty*
 

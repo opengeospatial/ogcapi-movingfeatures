@@ -1,6 +1,0 @@
-[[req_mf_mandatory-temporalgeometry]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/tgeometry-mandatory*
-^|A |A temporal geometry object SHALL contain all the mandatory properties listed in <<temporalGeometry-properties-table>>.
-|===

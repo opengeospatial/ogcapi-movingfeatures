@@ -3,12 +3,12 @@
 ==== Overview
 The `TemporalProperty` resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
-. A retrieve operation returns a `TemporalProperty` resource which is included in the <<resource-tproperties-collection-section,`TemporalPropertyCollection`>> that specified by <<tproperties-identifier,{tPropertyName}>>. The `TemporalProperty` resource returned to the response can be limited using the <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
-. A create operation posts a new temporal value object to the <<resource-tproperties-collection-section,`TemporalPropertyCollection`>> that specified by <<tproperties-identifier,{tPropertyName}>>.
+. A retrieve operation returns a `TemporalProperty` resource which is included in the <<resource-temporalProperties-section,`TemporalProperties`>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.The `TemporalProperty` resource returned to the response can be limited using the <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
+. A create operation posts a new temporal value object to the <<resource-temporalProperties-section,`TemporalProperties`>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.
 
 [[temporal-properties-object]]
 A temporal property object is a collection of dynamic non-spatial attributes and their temporal values with time.
-An abbreviated copy of this information is returned for each `TemporalProperty` in the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` response.
+An abbreviated copy of this information is returned for each `TemporalProperty` in the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties` response.
 
 The schema for the temporal property object presented in this clause is an extension of the `TemporalProperty Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[MF-JSON standard].
 <<temporalProperty-properties-table>> defines the set of property that may be used to describe a temporal property.
@@ -33,33 +33,33 @@ The schema for the temporal property object presented in this clause is an exten
 |===
 |Property           |Requirement    |Description
 |*_datetimes_*          |M |A sequence of monotonic increasing instants.
-|*_values_*             |M |A sequence of dynamic value, having the same number of elements as "datetimes".
+|*_values_*             |M |A sequence of dynamic values having the same number of elements as "datetimes".
 |*_interpolation_*      |M |A predefined type for a dynamic value (i.e., one of 'Discrete', 'Step', 'Linear', or 'Regression').
 |===
 
-NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON, OGC Moving Feature JSON Encoding Standard>>.
+NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON,OGC Moving Feature JSON Encoding Standard>>.
 
-include::requirements/movingfeature/tproperties/REQ_mandatory-tproperties.adoc[]
+include::requirements/movingfeature/tproperty/REQ_mandatory-tproperty.adoc[]
 
 ==== Operation
 ===== Retrieve
-. Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
+. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties/+{tPropertyName}+` path
 
 [[tproperties-identifier]]
-The `{tPropertyName}` parameter is the unique identifier for a single temporal property value offered by an implementation instance (endpoint) of the OGC API — MF.
-The list of valid values for `{tPropertyName}` is provided in the <<resource-tproperties-collection-section,`{root}/collections/{collectionId}/items/{mFeatureId}/tproperties`>> GET response.
+The `+{tPropertyName}+` parameter is the unique identifier for a single temporal property value offered by an implementation instance (endpoint) of the OGC API — MF.
+The list of valid values for `+{tPropertyName}+` is provided in the <<resource-temporalProperties-section,`+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties`>> GET response.
 
-include::requirements/movingfeature/tproperties/REQ_operation-tproperties-get.adoc[]
+include::requirements/movingfeature/tproperty/REQ_operation-tproperty-get.adoc[]
 
 ====== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
 This operation targeted the new temporal values object defined in <<temporalValue-properties-table>>.
 
-. Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
+. Issue a `POST` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties/+{tPropertyName}+` path
 
 Support for the HTTP POST method is specified as a requirement in OGC API — Features.
 
-include::requirements/movingfeature/tproperties/REQ_operation-tproperties-post.adoc[]
+include::requirements/movingfeature/tproperty/REQ_operation-tproperty-post.adoc[]
 
 [#tvalue-schema,reftext='TemporalValue Schema']
 .TemporalProperty Request Body Schema (temporalValue.yaml):
@@ -68,7 +68,7 @@ include::requirements/movingfeature/tproperties/REQ_operation-tproperties-post.a
 include::../openapi/schemas/temporalValue.yaml[]
 ----
 
-The following example adds a new feature (<<temporalValue-properties-table, TemporalValue>> object) to the feature created by the <<tproperties-post-example,Creation a New TemporalProperty Object Example>>.
+The following example adds a new feature (<<temporalValue-properties-table,TemporalValue>> object) to the feature created by <<tproperties-post-example,Creating a New TemporalProperty Object Example>>.
 The feature is represented as a JSON payload.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 [#temporalvalue-post-example,reftext='Create a New TemporalValue Object Example']
@@ -77,9 +77,9 @@ include::examples/temporalValue-post.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the `TemporalProperty` GET operation is a temporal property identified by the <<tproperties-identifier,`{tPropertyName}`>> parameter.
+A successful response to the `TemporalProperty` GET operation is a temporal property identified by the <<tproperties-identifier,`+{tPropertyName}+`>> parameter.
 
-include::requirements/movingfeature/tproperties/REQ_response-tproperties-get.adoc[]
+include::requirements/movingfeature/tproperty/REQ_response-tproperty-get.adoc[]
 
 The following JSON payload is an example of a response to an OGC API — Moving Features `TemporalProperty` GET operation.
 [#tproperties-example,reftext=`TemporalProperty GET Example`]
@@ -92,7 +92,7 @@ include::../openapi/examples/temporalValueCollection.json[]
 ====== Create
 A successful response to the `TemporalProperty` POST operation is an HTTP status code.
 
-include::requirements/movingfeature/tproperties/REQ_response-tproperties-post.adoc[]
+include::requirements/movingfeature/tproperty/REQ_response-tproperty-post.adoc[]
 
 ==== Error situations
 The requirements for handling unsuccessful requests are provided in the <<http-response>>.

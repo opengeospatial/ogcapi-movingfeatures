@@ -1,7 +1,0 @@
-[[req_mf-tgeometry-response-delete]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/tgeometry-delete-success*
-^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `DELETE` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_3[`/req/create-replace-delete/delete/response`].
-^|B |If no resource with the identifier exists in the collection, the server SHALL respond with a not-found exception (`404`).
-|===

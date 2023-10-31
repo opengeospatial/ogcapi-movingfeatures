@@ -44,16 +44,16 @@ Unique relation types are used for each resource.
 |Static information of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
 |<<resource-movingfeature-section,{root}/collections/{collectionId} /items/{mFeatureId}>>|`item`
 |Static information describing the <<movingfeature-schema, MovingFeature>> of data which has the unique identifier `{mFeatureId}`
-|<<resource-tgeometries-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries>>|`items`
-|Temporal object information of <<resource-tgeometries-section, TemporalGeometryCollection>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-temporalGeometry-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}>>|`item`
-|Temporal object describing the <<resource-tgeometries-section, TemporalGeometryCollection>> of data which has the unique identifier `{tGeometryId}`
-|<<resource-temporalGeometryQuery-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}>>|
-|Identifies an Information Resource of type `{queryType}` associated with the <<resource-temporalGeometry-section, TemporalGeometry>> instance
-|<<resource-tproperties-collection-section,{root}/collections/{collectionId} /items/{mFeatureId}/tproperties>>|`items`
-|Temporal object information of <<resource-temporalProperty-section, TemporalPropertyCollection>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+|<<resource-temporalGeometry-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry>>|`items`
+|Temporal object information of <<resource-temporalGeometry-section, TemporalGeometry>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
+|<<resource-temporalPrimitiveGeometry-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry /{tGeometryId}>>|`item`
+|Temporal object describing the <<resource-temporalGeometry-section, TemporalGeometry>> of data which has the unique identifier `{tGeometryId}`
+|<<resource-temporalGeometryQuery-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry /{tGeometryId}/{queryType}>>|
+|Identifies an Information Resource of type `{queryType}` associated with the <<resource-temporalPrimitiveGeometry-section, TemporalGeometry>> instance
+|<<resource-temporalProperties-section,{root}/collections/{collectionId} /items/{mFeatureId}/tproperties>>|`items`
+|Temporal object information of <<resource-temporalProperties-section, TemporalProperties>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
 |<<resource-temporalProperty-section,{root}/collections/{collectionId} /items/{mFeatureId}/tproperties /{tPropertyName}>>|`item`
-|Temporal object describing the <<resource-temporalProperty-section, TemporalPropertyCollection>> of data which has the unique identifier `{tPropertyName}`
+|Temporal object describing the <<resource-temporalProperties-section, TemporalProperties>> of data which has the unique identifier `{tPropertyName}`
 |===
 
 Where:
@@ -61,10 +61,10 @@ Where:
 * `{root}`          = Base URI for the API server
 * `{collectionId}`  = An identifier for a specific <<resource-collection-section,Collection>> of data
 * `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,MovingFeature>> of a specific <<resource-collection-section,Collection>> of data
-* `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
+* `{tGeometryId}`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
 * `{tPropertyName}` = An identifier for a specific <<resource-temporalProperty-section,TemporalProperty>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
 
-<<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as `Collections`, `Collection`, `MovingFeatureCollection`, `MovingFeature`, `TemporalGeometryCollection`, `TemporalGeometry`, `TemporalPropertyCollection`, and `TemporalProperty`.
+<<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as `Collections`, `Collection`, `MovingFeatureCollection`, `MovingFeature`, `TemporalGeometry`, `TemporalGeometry`, `TemporalProperties`, and `TemporalProperty`.
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.
 
@@ -101,7 +101,7 @@ The core search capability is based on https://ogcapi.ogc.org/common/[OGC API �
 OGC API — Moving Features extends these core search capabilities to include:
 
 // * find <<leaf-section, leaf>> value with time instant,
-* <<resource-temporalGeometryQuery-section,spatiotemporal queries>> for accessing <<resource-temporalGeometry-section, TemporalGeometry resources>>.
+* <<resource-temporalGeometryQuery-section,spatiotemporal queries>> for accessing <<resource-temporalPrimitiveGeometry-section, TemporalGeometry resources>>.
 
 [[dependencies-overview]]
 === Dependencies

@@ -1,0 +1,55 @@
+[[resource-temporalPrimitiveGeometry-section]]
+=== Resource TemporalPrimitiveGeometry
+==== Overview
+[[temporalPrimitiveGeometry-object]]
+A TemporalPrimitiveGeometry object represents the movement of a moving feature with various types of moving geometry, i.e., `MovingPoint`, `MovingLineString`, `MovingPolygon`, and `MovingPointCloud`. It can also represent the movement of a 3D object with its orientation.
+
+The schema for the TemporalPrimitiveGeometry presented in this clause is an extension of the `TemporalPrimitiveGeometry Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tprimitive[MF-JSON standard].
+<<temporalPrimitiveGeometry-properties-table>> defines the set of properties that may be used to describe a TemporalPrimitiveGeometry.
+
+[[temporalPrimitiveGeometry-properties-table]]
+[reftext='{table-caption} {counter:table-num}']
+.Table of the properties related to the TemporalPrimitiveGeometry
+[cols="20,15,65",options="header"]
+|===
+|Property       |Requirement    |Description
+|*_id_*                 |M  |A unique identifier to the temporal geometry.
+|*_type_*               |M  |A primitive geometry type of MF-JSON (i.e., one of 'MovingPoint', 'MovingLineString', 'MovingPolygon', or 'MovingPointCloud').
+|*_datetimes_*          |M  |A sequence of monotonically increasing instants.
+|*_coordinates_*        |M  |A sequence of leaf geometries of a temporal geometry, having the same number of elements as "datetimes".
+|*_interpolation_*      |M  |A predefined type of motion curve (i.e., one of 'Discrete', 'Step', 'Linear', 'Quadratic' or 'Cubic').
+.2+.^|*_base_*
+.2+.^|O  |*_type_*: A type of 3D file format, such as 'STL', 'OBJ', 'PLY', and 'glTF'.
+         |*_href_*: A URL to address a 3D model data which represents a base geometry of a 3D shape.
+.2+.^|*_orientations_*
+.2+.^|O  |*_scales_*: An array value of numbers along the x, y, and z axis in order as three scale factors.
+         |*_angles_*: An array value of numbers along the x, y, and z axis in order as Euler angles in degree.
+|===
+
+NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON,OGC Moving Feature JSON encoding standard>>.
+
+include::requirements/movingfeature/tpgeometry/REQ_mandatory-tpgeometry.adoc[]
+
+==== Operation
+===== Delete
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
+
+. Issue a `DELETE` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry/+{tGeometryId}+` path
+
+[[tgeometry-identifier]]
+The +{tGeometryId}+ parameter is the unique identifier for a TemporalPrimitiveGeometry object offered by the API.
+The list of valid values for `+{tGeometryId}+` is provided in the <<resource-temporalGeometry-section,`+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry`>> GET response.
+
+Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.
+
+include::requirements/movingfeature/tpgeometry/REQ_operation-tpgeometry-delete.adoc[]
+
+==== Response
+===== Delete
+A successful response to the `TemporalPrimitiveGeometry` DELETE operation is an HTTP status code.
+
+include::requirements/movingfeature/tpgeometry/REQ_response-tpgeometry-delete.adoc[]
+
+==== Error situations
+The requirements for handling unsuccessful requests are provided in the <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

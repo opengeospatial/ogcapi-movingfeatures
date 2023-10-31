@@ -2,27 +2,27 @@
 [cols=">20h,<80d",width="100%"]
 |===
 |*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tgeometries-get-success*
-|Requirement    | <<req_mf-tgeometries-response-get, /req/movingfeatures/tgeometries-get-success>>
-|Test purpose   | Validate that the *TemporalGeometryCollection* complies with the required structure and contents.
+|Requirement    | <<req_mf-tgeometry-response-get, /req/movingfeatures/tgeometries-get-success>>
+|Test purpose   | Validate that the *TemporalGeometry* complies with the required structure and contents.
 |Test method    |
 1. Validate that the `type` property is present and has a value of `MovingGeometryCollection` +
 2. Validate the `prism` property is present and that it is populated with an array of *TemporalGeometry* items +
-3. Validate that only `temporalGeometries` which match the selection criteria are included in the *MovingFeature* +
+3. Validate that only `temporalGeometry` which match the selection criteria are included in the *MovingFeature* +
 4. If the `links` property is present, validate that all entries comply with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links[/conf/core/fc-links] +
 5. If the `timeStamp` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp[/conf/core/fc-timeStamp] +
 6. If the `numberMatched` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched[/conf/core/fc-numberMatched] +
 7. If the `numberReturned` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberReturned[/conf/core/fc-numberReturned] +
-8. Validate the TemporalGeometryCollection resource for all supported media types using the resources and tests identified in <<temporalgeometries-schema>>
+8. Validate the TemporalGeometry resource for all supported media types using the resources and tests identified in <<temporalgeometry-schema>>
 |===
 
-The *TemporalGeometryCollection* content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.
+The *TemporalGeometry* content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.
 
-[[temporalgeometries-schema]]
+[[temporalgeometry-schema]]
 [reftext='{table-caption} {counter:table-num}']
-.Schema and Tests for TemporalGeometryCollection content
+.Schema and Tests for TemporalGeometry content
 [width="90%",cols="3",options="header"]
 |===
 |Format |Schema Document |Test ID
-|HTML |<<tgeometries-schema, temporalGeometryCollection.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
-|JSON |<<tgeometries-schema, temporalGeometryCollection.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
+|HTML |<<tgeometry-schema, temporalGeometryCollection.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
+|JSON |<<tgeometry-schema, temporalGeometryCollection.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
 |===

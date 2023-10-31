@@ -9,11 +9,13 @@
 2. Validate the Collections resource for all supported media types using the resources and tests identified in <<movingfeatures-schema>>
 |===
 
-The *MovingFeatures* content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.
+The *MovingFeatures* content may be retrieved in a number of different formats.
+The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema.
+All supported formats should be exercised.
 
 [[movingfeatures-schema]]
 [reftext='{table-caption} {counter:table-num}']
-.Schema and Tests for MovingFeatures content
+.Schema and Tests for *MovingFeatures* content
 [width="90%",cols="3",options="header"]
 |===
 |Format |Schema Document |Test ID

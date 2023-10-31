@@ -1,0 +1,7 @@
+[[req_mf_tgeometry-op]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/temporal-geometry-op*
+^|A | For every temporal primitive geometry in a moving feature (path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry`), the server SHALL support the HTTP GET operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tGeometryId}`
+^|B | The path parameter `collectionId` is each `id` property in the <<resource-collection-section, `Collection`>> response where the value of the `itemType` property is specified as `movingfeature`. The path parameter `mFeatureId` is each `id` property in the <<resource-mfeatures-section, `MovingFeatures`>> response. `tGeometryId` is an `id` property of the temporal geometry.
+|===

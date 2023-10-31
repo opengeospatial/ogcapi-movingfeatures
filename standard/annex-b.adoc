@@ -67,7 +67,7 @@ include::abstract_tests/movingfeatures/feature/mf-delete-success.adoc[]
 include::abstract_tests/movingfeatures/parameter/leaf_definition.adoc[]
 include::abstract_tests/movingfeatures/parameter/leaf_response.adoc[]
 
-==== TemporalGeometryCollection
+==== TemporalGeometry
 ===== HTTP GET Operation
 include::abstract_tests/movingfeatures/tgeometries/tgeometries-get.adoc[]
 include::abstract_tests/movingfeatures/tgeometries/tgeometries-get-success.adoc[]
@@ -76,7 +76,7 @@ include::abstract_tests/movingfeatures/tgeometries/tgeometries-get-success.adoc[
 include::abstract_tests/movingfeatures/tgeometries/tgeometries-post.adoc[]
 include::abstract_tests/movingfeatures/tgeometries/tgeometries-post-success.adoc[]
 
-==== TemporalGeometry
+==== TemporalPrimitiveGeometry
 ===== HTTP DELETE Operation
 include::abstract_tests/movingfeatures/tgeometry/tgeometry-delete.adoc[]
 include::abstract_tests/movingfeatures/tgeometry/tgeometry-delete-success.adoc[]
@@ -87,7 +87,7 @@ include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-distance.adoc[]
 include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-velocity.adoc[]
 include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-acceleration.adoc[]
 
-==== TemporalPropertyCollection
+==== TemporalProperties
 ===== HTTP GET Operation
 include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-get.adoc[]
 include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-get-success.adoc[]

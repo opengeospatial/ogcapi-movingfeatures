@@ -1,54 +1,104 @@
 [[resource-temporalGeometry-section]]
 === Resource TemporalGeometry
 ==== Overview
-[[temporal-geometry-object]]
-A temporal geometry object represents the movement of a moving feature with various types of moving geometry, i.e., `MovingPoint`, `MovingLineString`, `MovingPolygon`, and `MovingPointCloud`. It can also represent the movement of a 3D object with its orientation.
+The `TemporalGeometry` resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
 
-The schema for the temporal geometry object presented in this clause is an extension of the `TemporalGeometry Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[MF-JSON standard].
-<<temporalGeometry-properties-table>> defines the set of properties that may be used to describe a temporal geometry.
+. A retrieve operation returns a set of <<resource-temporalPrimitiveGeometry-section,`TemporalPrimitiveGeometry`>> object which is included in the <<resource-movingfeature-section,`MovingFeature`>> that specified by <<movingfeature-identifier,+{mFeatureId}+>>.
+The set of <<resource-temporalPrimitiveGeometry-section,`TemporalPrimitiveGeometry`>>  object returned to the response can be limited using the <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
 
-[[temporalGeometry-properties-table]]
-[reftext='{table-caption} {counter:table-num}']
-.Table of the properties related to the temporal geometry
-[cols="20,15,65",options="header"]
-|===
-|Property       |Requirement    |Description
-|*_id_*                 |M  |A unique identifier to the temporal geometry.
-|*_type_*               |M  |A primitive geometry type of MF-JSON (i.e., one of 'MovingPoint', 'MovingLineString', 'MovingPolygon', 'MovingPointCloud', or 'MovingGeometryCollection').
-|*_datetimes_*          |M  |A sequence of monotonically increasing instants.
-|*_coordinates_*        |M  |A sequence of leaf geometries of a temporal geometry, having the same number of elements as "datetimes".
-|*_interpolation_*      |M  |A predefined type of motion curve (i.e., one of 'Discrete', 'Step', 'Linear', 'Quadratic' or 'Cubic').
-.2+.^|*_base_*
-.2+.^|O  |*_type_*: A type of 3D file format, such as 'STL', 'OBJ', 'PLY', and 'glTF'.
-         |*_href_*: A URL to address a 3D model data which represents a base geometry of a 3D shape.
-.2+.^|*_orientations_*
-.2+.^|O  |*_scales_*: An array value of numbers along the x, y, and z axis in order as three scale factors.
-         |*_angles_*: An array value of numbers along the x, y, and z axis in order as Euler angles in degree.
-|===
+. A create operation posts a new <<resource-temporalPrimitiveGeometry-section,TemporalPrimitiveGeometry>> resource to the <<resource-movingfeature-section,`MovingFeature`>> that specified by <<movingfeature-identifier,+{mFeatureId}+>>.
 
-NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON, OGC Moving Feature JSON encoding standard>>.
+==== Parameters
+[[leaf-section]]
+===== Parameter leaf
+The `leaf` parameter is a sequence of monotonic increasing instants represented by date-time strings (ex. "2018-02-12T23:20:50Z") whose content structure adheres to link:https://datatracker.ietf.org/doc/html/rfc3339[IETF RFC3339].
+// The `leaf` parameter consists of a list of the date-time format strings, different from <<datetime-section, `datetime`>> parameter.
+// The list does not allow the same element value (i.e., date-time strings).
+//A sequence of monotonic increasing instants only temporal geometries that intersects the value of time is selected.
+<<leaf-text-example, Example 1>> shows valid expression examples of the `leaf` parameter.
 
-include::requirements/movingfeature/tgeometries/REQ_mandatory-temporalgeometry.adoc[]
+[[leaf-text-example]]
+.Leaf valid (and invalid) Examples
+=================
+(O) "2018-02-12T23:20:50Z"
+
+(O) "2018-02-12T23:20:50Z", "2018-02-12T23:30:50Z"
+
+(O) "2018-02-12T23:20:50Z", "2018-02-12T23:30:50Z", "2018-02-12T23:40:50Z"
+
+(X) "2018-02-12T23:20:50Z", "2018-02-12T23:20:50Z"
+
+(X) "2018-02-12T23:20:50Z", "2018-02-12T22:40:50Z"
+=================
+
+If the `leaf` parameter is provided by the client, the endpoint returns only geometry coordinate (or temporal property value) with the leaf query at each time included in the `leaf` parameter, similar to _**pointAtTime**_ operation in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access standard].
+And `interpolation` property in the response shall be 'Discrete'.
+
+[#leaf-example,reftext='{figure-caption} {counter:figure-num}']
+.Example of a response result with `leaf` parameter
+image::./images/Leaf-example.png[leaf-example, pdfwidth=100%, width=95%, align="center"]
+
+include::requirements/parameter/REQ_parameter-leaf-definition.adoc[]
+
+include::requirements/parameter/REQ_parameter-leaf-response.adoc[]
 
 ==== Operation
-===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
+===== Retrieve
+. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry` path
 
-. Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}` path
+include::requirements/movingfeature/tgeometry/REQ_operation-tgeometry-get.adoc[]
 
-[[tgeometry-identifier]]
-The {tGeometryId} parameter is the unique identifier for a single temporal geometry offered by the API.
-The list of valid values for `{tGeometryId}` is provided in the <<resource-tgeometries-section,`{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries`>> GET response.
+====== Create
+The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
+This operation targeted <<resource-temporalPrimitiveGeometry-section,TemporalPrimitiveGeometry>> resource.
 
-Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.
+. Issue a `POST` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry` path
 
-include::requirements/movingfeature/tgeometry/REQ_operation-tgeometry-delete.adoc[]
+Support for the HTTP POST method is specified as a requirement in OGC API — Features.
+
+include::requirements/movingfeature/tgeometry/REQ_operation-tgeometry-post.adoc[]
+
+The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[TemporalGeometry object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
+The feature is represented as TemporalGeometry object in <<OGC-MF-JSON,MF-JSON>>, which is an extension of the JSON.
+//And it added to the current temporal geometry object as continuously one, because the time difference between these two temporal geometry objects is less than (or equal to) the update frequency of the created Collection feature by the <<collections-post.adoc-example,Create a New Collection Example>>.
+A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+[#tgeometry-post-example,reftext='Create a New TemporalGeometry Object Example']
+.An Example of Creating a New TemporalGeometry Object:
+include::examples/temporalGeometry-post.adoc[]
 
 ==== Response
-===== Delete
-A successful response to the `TemporalGeometry` DELETE operation is an HTTP status code.
+===== Retrieve
+A successful response to the `TemporalGeometry` GET operation is a document that contains the set of temporal geometry of the moving feature identified by the <<movingfeature-identifier,`+{mFeatureId}+`>> parameter.
 
-include::requirements/movingfeature/tgeometry/REQ_response-tgeometry-delete.adoc[]
+include::requirements/movingfeature/tgeometry/REQ_response-tgeometry-get.adoc[]
+
+// TODO: Fix for including not only MovingGeometryCollection, also MovingGeometryPrimitive
+[#tgeometry-schema,reftext='TemporalGeometry GET Response Schema']
+.TemporalGeometry GET Response Schema (temporalGeometry.yaml):
+[source,yaml]
+----
+include::../openapi/schemas/temporalGeometryCollection.yaml[]
+----
+
+[#tp-geometry-schema,reftext='TemporalPrimitiveGeometry Schema']
+.TemporalPrimitiveGeometry Schema (temporalPrimitiveGeometry.yaml):
+[source,yaml]
+----
+include::../openapi/schemas/temporalGeometry.yaml[]
+----
+
+The following JSON payload is an example of a response to an OGC API — Moving Features `TemporalGeometry` GET operation.
+[#tgeometry-example,reftext=`TemporalGeometry GET Example`]
+.An Example of a TemporalGeometry GET operation:
+[source,json]
+----
+include::../openapi/examples/temporalGeometryCollection.json[]
+----
+
+====== Create
+A successful response to the `TemporalGeometry` POST operation is an HTTP status code.
+
+include::requirements/movingfeature/tgeometry/REQ_response-tgeometry-post.adoc[]
 
 ==== Error situations
 The requirements for handling unsuccessful requests are provided in the <<http-response>>.
