@@ -1,10 +1,10 @@
 [[resource-collection-section]]
 === Resource Collection
 ==== Overview
-A Collection information object is the set of metadata that describes a single collection.
-An abbreviated copy of this information is returned for each `Collection` in the `{root}/collections` GET response.
+A *Collection* information object is the set of metadata that describes a single collection.
+An abbreviated copy of this information is returned for each *Collection* in the `+{root}+/collections` GET response.
 
-The schema for the collection information object presented in this clause is an extension of the collection schema defined in link:http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description[OGC API — Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API — Features].
+The schema for the collection information object presented in this clause is an extension of the collection schema defined in link:http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description[OGC API — Common] and link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API — Features].
 
 <<collection-properties-table>> defines the set of properties that may be used to describe a collection.
 
@@ -13,16 +13,16 @@ The schema for the collection information object presented in this clause is an 
 [cols="25,10,65",options="header"]
 |===
 |Property           |Requirement |Description
-|_**id**_           |M |A unique identifier to the collection.
-|_**title**_        |O |A human-readable name given to the collection.
-|_**description**_  |O |A free-text description of the collection.
-|_**links**_        |M |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)
-|_**extent**_       |O |The spatiotemporal coverage of the collection.
-|_**itemType**_     |M |Fixed to the value "movingfeature".
-|updateFrequency    |O |A time interval of sampling location. The time unit of this property is millisecond.
+|_id_               |M |A unique identifier to the collection.
+|_title_            |O |A human-readable name given to the collection.
+|_description_      |O |A free-text description of the collection.
+|_links_            |M |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)
+|_extent_           |O |The spatiotemporal coverage of the collection.
+|*_itemType_*       |M |Fixed to the value "movingfeature".
+|*_updateFrequency_*  |O |A time interval of sampling location. The time unit of this property is millisecond.
 |===
 
-NOTE: The _id_, _title_, _description_, _links_, _extent_, and _itemsType_ properties were inherited from link:http://docs.ogc.org/DRAFTS/20-024.html#collections-metadata[OGC API — Common] and http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API — Features].
+NOTE: The _id_, _title_, _description_, _links_, _extent_, and _itemsType_ properties were inherited from link:https://docs.ogc.org/DRAFTS/20-024.html#collection-description[OGC API — Common] and link:https://docs.ogc.org/is/17-069r3/17-069r3.html#_collections_[OGC API — Features].
 
 NOTE: An update frequency is one of the most important properties of moving feature collection.
 The update frequency can be used to handle the continuity of the moving feature's trajectory.
@@ -32,23 +32,23 @@ include::requirements/collection_catalog/collection/REQ_mandatory-collection.ado
 ==== Operation
 ===== Retrieve
 The retrieve operation is defined in the OGC API — Common `https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection]` conformance class.
-No modifications are required to support `MovingFeature` resources.
+No modifications are required to support *MovingFeature* resources.
 
-. Issue a `GET` request on the `{root}/collections/{collectionId}` path
+. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+` path
 
 [[collection-identifier]]
-The {collectionId} parameter is the unique identifier for a single collection offered by an API implementation instance.
-The list of valid values for `{collectionId}` is provided in the <<resource-collections-section,`/collections`>> response.
+The `+{collectionId}+` path parameter is the unique identifier for a single collection offered by an API implementation instance.
+The list of valid values for `+{collectionId}+` is provided in the <<resource-collections-section,`/collections`>> response.
 
-Support for the `{root}/collections/{collectionId}` path is required by OGC API — Common.
+Support for the `+{root}+/collections/+{collectionId}+` path is required by OGC API — Common.
 
 include::requirements/collection_catalog/collection/REQ_operation-collection-get.adoc[]
 
 ===== Replace
 The replace operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#replace[REPLACE]` conformance class of OGC API — Features.
-This operation targeted <<resource-collection-section,Collection>> resource.
+This operation targeted <<resource-collection-section,*Collection*>> resource.
 
-. Issue a `PUT` request on `{root}/collections/{collectionId}` path
+. Issue a `PUT` request on `+{root}+/collections/+{collectionId}+` path
 
 Support for the HTTP PUT method is specified as a requirement in OGC API — Features.
 
@@ -56,7 +56,7 @@ include::requirements/collection_catalog/collection/REQ_operation-collection-put
 
 NOTE: Once set, the update frequency cannot be changed.
 
-The following example replaces the feature created by the <<collections-post-example, Create Example>> with a new feature (collection information without an update frequency).
+The following example replaces the feature created by the <<collections-post-example,Create Example>> with a new feature (collection metadata without an update frequency).
 Once again, the replacement feature is represented as a JSON payload.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 [#collections-put-example,reftext='Replace an Existing Collection Example']
@@ -66,13 +66,13 @@ include::examples/collection-put.adoc[]
 ===== Delete
 The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
 
-. Issue a `DELETE` request on `{root}/collections/{collectionId}` path
+. Issue a `DELETE` request on `+{root}+/collections/+{collectionId}+` path
 
 Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.
 
 include::requirements/collection_catalog/collection/REQ_operation-collection-delete.adoc[]
 
-The following example deletes the feature created by the <<collections-post-example, Create Example>> and replaced with a new feature in the <<collections-put-example, Replace Example>>.
+The following example deletes the feature created by the <<collections-post-example,Create Example>> and replaced with a new feature in the <<collections-put-example,Replace Example>>.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 [#collections-delete-example,reftext='Delete an Existing Collection Example']
 .An Example of Deleting an Existing Collection:
@@ -80,7 +80,7 @@ include::examples/collection-delete.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the `Collection` GET operation is a set of metadata that describes the collection identified by the <<collection-identifier,`{collectionId}`>> parameter.
+A successful response to the *Collection* GET operation is a set of metadata that describes the collection identified by the <<collection-identifier,`+{collectionId}+`>> parameter.
 
 include::requirements/collection_catalog/collection/REQ_response-collection-get.adoc[]
 
@@ -91,7 +91,7 @@ include::requirements/collection_catalog/collection/REQ_response-collection-get.
 include::../openapi/schemas/collection.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API — Moving Features `Collection` GET operation.
+The following JSON payload is an example of a response to an OGC API — Moving Features *Collection* GET operation.
 [#collection-example,reftext=`Collection Information Example`]
 .An Example of Collection GET Operation:
 [source,json]
@@ -100,12 +100,12 @@ include::../openapi/examples/collection.json[]
 ----
 
 ===== Replace
-A successful response to the `Collection` PUT operation is an HTTP status code.
+A successful response to the *Collection* PUT operation is an HTTP status code.
 
 include::requirements/collection_catalog/collection/REQ_response-collection-put.adoc[]
 
 ===== Delete
-A successful response to the `Collection` DELETE operation is an HTTP status code.
+A successful response to the *Collection* DELETE operation is an HTTP status code.
 
 include::requirements/collection_catalog/collection/REQ_response-collection-delete.adoc[]
 

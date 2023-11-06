@@ -1,13 +1,13 @@
-[[conf_mf_tgeometries_get_success]]
+[[conf_mf_tgeometry_get_success]]
 [cols=">20h,<80d",width="100%"]
 |===
-|*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tgeometries-get-success*
-|Requirement    | <<req_mf-tgeometry-response-get, /req/movingfeatures/tgeometries-get-success>>
+|*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tgeometry-get-success*
+|Requirement    | <<req_mf-tgeometry-response-get, /req/movingfeatures/tgeometry-get-success>>
 |Test purpose   | Validate that the *TemporalGeometry* complies with the required structure and contents.
 |Test method    |
 1. Validate that the `type` property is present and has a value of `MovingGeometryCollection` +
 2. Validate the `prism` property is present and that it is populated with an array of *TemporalGeometry* items +
-3. Validate that only `temporalGeometry` which match the selection criteria are included in the *MovingFeature* +
+3. Validate that only *TemporalGeometry* which match the selection criteria are included in the *MovingFeature* +
 4. If the `links` property is present, validate that all entries comply with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links[/conf/core/fc-links] +
 5. If the `timeStamp` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp[/conf/core/fc-timeStamp] +
 6. If the `numberMatched` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched[/conf/core/fc-numberMatched] +
@@ -23,6 +23,6 @@ The *TemporalGeometry* content may be retrieved in a number of different formats
 [width="90%",cols="3",options="header"]
 |===
 |Format |Schema Document |Test ID
-|HTML |<<tgeometry-schema, temporalGeometryCollection.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
-|JSON |<<tgeometry-schema, temporalGeometryCollection.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
+|HTML |<<tgeometry-schema, temporalGeometry.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
+|JSON |<<tgeometry-schema, temporalGeometry.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
 |===

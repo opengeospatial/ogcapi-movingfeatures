@@ -1,29 +1,29 @@
 [[clause-core-collection]]
-== Requirements Class "MovingFeature Collection Catalog"
+== Requirements Class "Moving Feature Collection Catalog"
 === Overview
 include::requirements/collection_catalog/requirements_class_collection.adoc[]
 
-The `MovingFeature Collection Catalog` requirements class defines the requirements for a moving feature collection.
-A moving feature collection is an object that provides information about and access to a set of related <<clause-core-movingfeature,MovingFeature>>.
+The `Moving Feature Collection Catalog` requirements class defines the requirements for a moving feature collection.
+A moving feature collection is an object that provides information about and access to a set of related <<clause-core-movingfeature,Moving Features>>.
 
 === Information Resources
-The two resources defined in this Requirements Class are summarized in <<collection-resources>>.
+The two resources defined in this Requirement Class are summarized in <<collection-resources>>.
 
 [#collection-resources,reftext='{table-caption} {counter:table-num}']
-.MovingFeature Collection Catalog Resources
+.Moving Feature Collection Catalog Resources
 [width="90%",cols="10,10,5,20",options="header"]
 |===
 ^|Resource ^|URI ^|HTTP Method ^|Description
-.2+|<<resource-collections-section,Collections>>
-.2+|`{root}/collections`
-^|GET |Get information which describes the set of available `Collections` resource
-^|POST|Add a new resource (<<resource-collection-section,Collection>>) instance to a `Collections` resource
+.2+|<<resource-collections-section,*Collections*>>
+.2+|`+{root}+/collections`
+^|GET |Get information which describes the set of available *Collections* resource
+^|POST|Add a new resource (<<resource-collection-section,Collection>>) instance to a *Collections* resource
 
-.3+|<<resource-collection-section,Collection>>
-.3+|`{root}/collections/{collectionId}`
-^|GET   |Get information about a specific `Collection` resource ({collectionId}) of geospatial data
-^|PUT   |Update information about a specific `Collection` resource ({collectionId})
-^|DELETE|Delete a specific `Collection` resource ({collectionId})
+.3+|<<resource-collection-section,*Collection*>>
+.3+|`+{root}+/collections/+{collectionId}+`
+^|GET   |Get information about a specific *Collection* resource (+{collectionId}+) of geospatial data
+^|PUT   |Update information about a specific *Collection* resource (+{collectionId}+)
+^|DELETE|Delete a specific *Collection* resource (+{collectionId}+)
 |===
 
 include::clause_8_requirements_resource_collections.adoc[]

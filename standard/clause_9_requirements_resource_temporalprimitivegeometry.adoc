@@ -46,7 +46,7 @@ include::requirements/movingfeature/tpgeometry/REQ_operation-tpgeometry-delete.a
 
 ==== Response
 ===== Delete
-A successful response to the `TemporalPrimitiveGeometry` DELETE operation is an HTTP status code.
+A successful response to the *TemporalPrimitiveGeometry* DELETE operation is an HTTP status code.
 
 include::requirements/movingfeature/tpgeometry/REQ_response-tpgeometry-delete.adoc[]
 

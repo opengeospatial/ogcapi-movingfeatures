@@ -1,0 +1,11 @@
+[[req_mf_subtrajectory-parameter-response]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/param-subtrajectory-response*
+^|A | Only a subset of <<resource-temporalGeometry-section,*TemporalGeometry*>> that intersects the time interval in the `subTrajectory` parameter SHALL be part of the result set, if the `subTrajectory` parameter is provided.
+^|B | If the `subTrajectory` parameter is provided, the endpoint SHALL return only a subset of the trajectory derived from temporal primitive geometry by the *_subTrajectory_* query at time  (new start time and new end time) included in the `subTrajectory` parameter, using interpolated trajectory according to the `interpolation` property in <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>.
+^|C | If the `subTrajectory` parameter is provided, the `interpolation` property in the response SHALL be the same as the temporal primitive geometry's `interpolation` property value.
+^|D | Apply `subTrajectory` only to moving features that intersect a `bbox` or (and) a `datetime` parameter, if the `subTrajectory` parameter is provided with a `bbox` or (and) a `datetime` parameter.
+^|E | The `subTrajectory` parameter SHALL match all temporal geometry objects in the moving feature object in the selected collection, i.e., <<resource-movingfeatures-section,*MovingFeatures*>> resource.
+// TODO: Out of range(life span) case
+|===

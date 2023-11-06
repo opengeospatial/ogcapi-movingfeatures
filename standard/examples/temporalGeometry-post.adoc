@@ -1,7 +1,7 @@
 ....
    Client                                                                     Server
      |                                                                          |
-     | POST /collections/mfc_1/items/mf_1/tgeometries   HTTP/1.1                |
+     | POST /collections/mfc_1/items/mf_1/tgeometry   HTTP/1.1                  |
      | Content-Type: application/json                                           |
      |                                                                          |
      | {                                                                        |
@@ -31,6 +31,6 @@
      |------------------------------------------------------------------------->|
      |                                                                          |
      | HTTP/1.1 201 Created                                                     |
-     | Location: /collections/mfc_1/items/mf_1/tgeometries/tg_1                 |
+     | Location: /collections/mfc_1/items/mf_1/tgeometry/tg_1                   |
      |<-------------------------------------------------------------------------|
 ....

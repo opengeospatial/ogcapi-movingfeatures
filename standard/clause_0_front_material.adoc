@@ -21,7 +21,7 @@ The OGC API family of standards is organized by resource type.
 // | Conformance classes           | ``/conformance``                | GET | <<common-conformance-section, 7.4 Declaration of Conformance Classes>>
 | Collections metadata          | ``/collections``                | GET, POST | <<resource-collections-section,Resource Collections>>
 | Collection instance metadata  | ``/collections/+{collectionId}+`` | GET, DELETE, PUT | <<resource-collection-section,Resource Collection>>
-| MovingFeatures                | ``/collections/+{collectionId}+/items`` | GET, POST | <<resource-mfeatures-section,Resource MovingFeatures>>
+| MovingFeatures                | ``/collections/+{collectionId}+/items`` | GET, POST | <<resource-movingfeatures-section,Resource MovingFeatures>>
 | MovingFeature instance        | ``/collections/+{collectionId}+/items /+{mFeatureId}+`` | GET, DELETE | <<resource-movingfeature-section,Resource MovingFeature>>
 | TemporalGeometry instance     | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tgeometry`` | GET, POST | <<resource-temporalGeometry-section,Resource TemporalGeometry>>
 | TemporalPrimitiveGeometry instance    | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tgeometry/+{tGeometryId}+`` | DELETE | <<resource-temporalPrimitiveGeometry-section,Resource TemporalPrimitiveGeometry>>

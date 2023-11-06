@@ -4,8 +4,8 @@
 === Overview
 include::requirements/movingfeature/requirements_class_movingfeature.adoc[]
 
-The `MovingFeatures` requirements class defines the requirements for a moving feature.
-A moving feature is an object that provides information about and access to <<resource-temporalGeometry-section,TemporalGeometry>> and <<resource-temporalProperties-section,TemporalProperties>>.
+The *MovingFeatures* requirements class defines the requirements for a moving feature.
+A moving feature is an object that provides information about and access to <<resource-temporalGeometry-section,*TemporalGeometry*>> and <<resource-temporalProperties-section,*TemporalProperties*>>.
 
 === Information Resources
 The seven resources defined in this Requirement Class are summarized in <<mf-resources>>.
@@ -15,44 +15,44 @@ The seven resources defined in this Requirement Class are summarized in <<mf-res
 [width="90%",cols="10,10,10",options="header"]
 |===
 ^|Resource ^|URI ^|HTTP Method
-|<<resource-mfeatures-section,MovingFeatures>>
+|<<resource-movingfeatures-section,*MovingFeatures*>>
 |`+{root}+/collections/+{collectionId}+/items`
 ^|GET, POST
 //|Add a new resource (<<resource-movingfeature-section,MovingFeature>>) feature to a specific <<resource-collection-section,Collection>> (specified by {collectionId})
 
-|<<resource-movingfeature-section,MovingFeature>>
+|<<resource-movingfeature-section,*MovingFeature*>>
 |`+{root}+/collections/
 +{collectionId}+/items/
 +{mfeatureId}+`
 ^|GET, DELETE
 
-|<<resource-temporalGeometry-section,TemporalGeometry>>
+|<<resource-temporalGeometry-section,*TemporalGeometry*>>
 |`+{root}+/collections/
 +{collectionId}+/items/
 +{mFeatureId}+/tgeometry`
 ^|GET, POST
 
-|<<resource-temporalPrimitiveGeometry-section,TemporalPrimitiveGeometry>>
+|<<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>
 |`+{root}+/collections/
 +{collectionId}+/items/
 +{mFeatureId}+/tgeometry/
 +{tGeometryId}+`
 ^|DELETE
 
-|<<resource-temporalGeometryQuery-section,TemporalGeometryQuery>>
+|<<resource-temporalGeometryQuery-section,*TemporalGeometry Query*>>
 |`+{root}+/collections/
 +{collectionId}+/items/
 +{mFeatureId}+/tgeometry/
 +{tGeometryId}+/+{queryType}+`
 ^|GET
 
-|<<resource-temporalProperties-section,TemporalProperties>>
+|<<resource-temporalProperties-section,*TemporalProperties*>>
 |`+{root}+/collections/
 +{collectionId}+/items/
 +{mFeatureId}+/tproperties`
 ^|GET, POST
 
-|<<resource-temporalProperty-section,TemporalProperty>>
+|<<resource-temporalProperty-section,*TemporalProperty*>>
 |`+{root}+/collections/
 +{collectionId}+/items/
 +{mFeatureId}+/tproperties/

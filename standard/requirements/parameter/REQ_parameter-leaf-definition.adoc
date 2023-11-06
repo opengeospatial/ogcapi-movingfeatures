@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/param-leaf-definition*
-^|A |The operation SHALL support a parameter `leaf` with the following characteristics (using an OpenAPI Specification 3.0 fragment): +
+^|A |The operation SHALL support a query parameter `leaf` with the following characteristics (using an OpenAPI Specification 3.0 fragment): +
 [source,yaml]
 ----
 include::../../../openapi/parameters/leaf.yaml[]

@@ -1,28 +1,27 @@
 [[resource-collections-section]]
 === Resource Collections
 ==== Overview
-The `Collections` resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
+The *Collections* resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
 
 . A retrieve operation returns a set of metadata which describes the collections available from this API.
-// The catalog of collections returned to the response can be limited using the <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, and <<datetime-section,`datetime`>> parameters.
-. A create operation posts a new <<resource-collection-section,Collection>> resource instance to the collections with this API.
+. A create operation posts a new <<resource-collection-section,*Collection*>> resource instance to the collections with this API.
 
 ==== Operation
 ===== Retrieve
 The retrieve operation is defined in the `link:https://docs.ogc.org/DRAFTS/20-024.html#rc-collections-section[Collections]` conformance class of OGC API — Common.
-No modifications are needed to support `MovingFeature` resources.
+No modifications are needed to support *MovingFeature* resources.
 
-. Issue a `GET` request on `{root}/collections` path
+. Issue a `GET` request on `+{root}+/collections` path
 
-Support for the HTTP GET method on the `{root}/collections` path is specified as a requirement in OGC API — Common.
+Support for the HTTP GET method on the `+{root}+/collections` path is specified as a requirement in OGC API — Common.
 
 include::requirements/collection_catalog/collections/REQ_operation-collections-get.adoc[]
 
 ====== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
-This operation targeted <<resource-collection-section,Collection>> resource.
+This operation targeted <<resource-collection-section,*Collection*>> resource.
 
-. Issue a `POST` request on `{root}/collections` path
+. Issue a `POST` request on `+{root}+/collections` path
 
 Support for the HTTP POST method is specified as a requirement in OGC API — Features.
 
@@ -35,7 +34,7 @@ include::requirements/collection_catalog/collections/REQ_operation-collections-p
 include::../openapi/schemas/requestBody/collection.yaml[]
 ----
 
-The following example adds a new feature (collection information) to the feature collections.
+The following example adds a new feature (collection information object) to the feature collections.
 The feature is encoded as JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 [#collections-post-example,reftext='Create a New Collection Example']
@@ -44,9 +43,9 @@ include::examples/collection-post.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the `Collections` GET operation is a document that contains summary metadata for each collection accessible through an instance of an API implementation.
-In a typical deployment of the OGF API — MF, the `Collections` GET response will list collections of all offered resource types.
-The collections where the value of the `itemType` property is `movingfeature` are collections of moving features.
+A successful response to the *Collections* GET operation is a document that contains summary metadata for each collection accessible through an instance of an API implementation.
+In a typical deployment of the OGF API — MF, the *Collections* GET response will list collections of all offered resource types.
+The collections where the value of the `itemType` property is *MovingFeature* are collections of moving features.
 
 include::requirements/collection_catalog/collections/REQ_response-collections-get.adoc[]
 
@@ -57,7 +56,7 @@ include::requirements/collection_catalog/collections/REQ_response-collections-ge
 include::../openapi/schemas/collections.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API — Moving Features `Collections` GET operation.
+The following JSON payload is an example of a response to an OGC API — Moving Features *Collections* GET operation.
 [#collections-example,reftext=`Collections Example`]
 .An Example of Collections JSON Payload:
 [source,json]
@@ -66,7 +65,7 @@ include::../openapi/examples/collections.json[]
 ----
 
 ====== Create
-A successful response to the `Collections` POST operation is an HTTP status code.
+A successful response to the *Collections* POST operation is an HTTP status code.
 
 include::requirements/collection_catalog/collections/REQ_response-collections-post.adoc[]
 

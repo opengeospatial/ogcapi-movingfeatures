@@ -4,6 +4,6 @@
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-put*
 ^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `PUT` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_2[`/req/create-replace-delete/update-put-op`].
 ^|B |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `PUT` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[`/req/create-replace-delete/update-put-body` and `/req/create-replace-delete/update-put-content-type`].
-^|C |The content of the request body SHALL be based upon the <<collection-requestbody-schema, `Collection` request body schema>>, except `updateFrequency`. +
+^|C |The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>, except `updateFrequency`. +
 If the `updateFrequency` is included in the request body, the server SHALL ignore it.
 |===

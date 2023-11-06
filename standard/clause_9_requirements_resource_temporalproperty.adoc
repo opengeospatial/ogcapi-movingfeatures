@@ -1,16 +1,16 @@
 [[resource-temporalProperty-section]]
 === Resource TemporalProperty
 ==== Overview
-The `TemporalProperty` resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
+The *TemporalProperty* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
-. A retrieve operation returns a `TemporalProperty` resource which is included in the <<resource-temporalProperties-section,`TemporalProperties`>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.The `TemporalProperty` resource returned to the response can be limited using the <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
-. A create operation posts a new temporal value object to the <<resource-temporalProperties-section,`TemporalProperties`>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.
+. A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.The *TemporalProperty* resource returned to the response can be limited using the <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
+. A create operation posts a new temporal value object to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.
 
 [[temporal-properties-object]]
 A temporal property object is a collection of dynamic non-spatial attributes and their temporal values with time.
-An abbreviated copy of this information is returned for each `TemporalProperty` in the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties` response.
+An abbreviated copy of this information is returned for each *TemporalProperty* in the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties` response.
 
-The schema for the temporal property object presented in this clause is an extension of the `TemporalProperty Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[MF-JSON standard].
+The schema for the temporal property object presented in this clause is an extension of the `ParametricValues Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[MF-JSON standard].
 <<temporalProperty-properties-table>> defines the set of property that may be used to describe a temporal property.
 
 [[temporalProperty-properties-table]]
@@ -77,11 +77,11 @@ include::examples/temporalValue-post.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the `TemporalProperty` GET operation is a temporal property identified by the <<tproperties-identifier,`+{tPropertyName}+`>> parameter.
+A successful response to the *TemporalProperty* GET operation is a temporal property identified by the <<tproperties-identifier,`+{tPropertyName}+`>> parameter.
 
 include::requirements/movingfeature/tproperty/REQ_response-tproperty-get.adoc[]
 
-The following JSON payload is an example of a response to an OGC API — Moving Features `TemporalProperty` GET operation.
+The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalProperty* GET operation.
 [#tproperties-example,reftext=`TemporalProperty GET Example`]
 .An Example of TemporalProperty GET Operation:
 [source,json]
@@ -90,7 +90,7 @@ include::../openapi/examples/temporalValueCollection.json[]
 ----
 
 ====== Create
-A successful response to the `TemporalProperty` POST operation is an HTTP status code.
+A successful response to the *TemporalProperty* POST operation is an HTTP status code.
 
 include::requirements/movingfeature/tproperty/REQ_response-tproperty-post.adoc[]
 
