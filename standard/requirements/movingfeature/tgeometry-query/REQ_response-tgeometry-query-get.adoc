@@ -1,8 +1,0 @@
-[[req_mf-tgeometry-query-response-get]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/tgeometry-query-success*
-^|A |A successful execution of the distance, velocity, and acceleration query GET operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The content of that response SHALL include the parametric value that defined in the <<tproperties-schema, response schema>>.
-^|C |The `type` property SHALL be *TFloat*
-|===

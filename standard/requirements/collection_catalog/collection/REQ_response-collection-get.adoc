@@ -2,8 +2,8 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-get-success*
-^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Common `Collection` response requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_response_2[`/req/collections`].
+^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Common *Collection* response requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_response_2[`/req/collections`].
 ^|B |The response SHALL only include collection metadata selected by the request.
-^|C |The content of that response SHALL be based upon the <<collection-schema, `Collection` response schema>>.
+^|C |The content of that response SHALL be based upon the <<collection-schema, *Collection* response schema>>.
 ^|D |The `itemType` property of the response schema SHALL be 'movingfeature'.
 |===

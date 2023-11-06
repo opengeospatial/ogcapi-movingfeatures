@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/temporal-geometry-response*
 ^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The content of that response SHALL include the temporal geometry that defined in the <<tgeometry-schema, response schema>>.
+^|B |The content of that response SHALL include the temporal primitive geometry that defined in the <<tp-geometry-schema,response schema>>.
 |===

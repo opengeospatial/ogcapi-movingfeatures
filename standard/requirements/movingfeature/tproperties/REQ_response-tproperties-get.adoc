@@ -2,7 +2,6 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperties-get-success*
-^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The response SHALL only include temporal properties selected by the request with `limit`, `datetime`, and `leaf` parameters.
-^|C |The content of that response SHALL include the parametric value that defined in the <<tproperties-schema, response schema>>.
+^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
+^|B |Each temporal property object in the response SHALL include the mandatory properties listed in <<temporalProperty-properties-table>>.
 |===

@@ -1,16 +1,16 @@
-[[conf_mf_tgeometries_get]]
+[[conf_mf_tgeometry_get]]
 [cols=">20h,<80d",width="100%"]
 |===
-|*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tgeometries-get*
+|*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tgeometry-get*
 |Requirement    |
-<<req_mf-tgeometries-op-get, /req/movingfeatures/tgeometries-get>> +
-<<req_mf-tgeometries-response-get, /req/movingfeatures/tgeometries-get-success>>
-|Test purpose   | Validate that the *TemporalGeometryCollection* can be identified and extracted from a *MovingFeature* object using query parameters.
+<<req_mf-tgeometry-op-get, /req/movingfeatures/tgeometry-get>> +
+<<req_mf-tgeometry-response-get, /req/movingfeatures/tgeometry-get-success>>
+|Test purpose   | Validate that the *TemporalGeometry* can be identified and extracted from a *MovingFeature* object using query parameters.
 |Test method    |
-For every *TemporalGeometry* identified in *MovingFeature*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometries` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collections* content and `{mFeatureId}` is the id property for the *MovingFeature*
+For every *TemporalGeometry* identified in *MovingFeature*, issue an HTTP GET request to the URL `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry` where `+{collectionId}+` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collections* content and `+{mFeatureId}+` is the id property for the *MovingFeature*
 
 1. Validate that a document was returned with a status code `200` +
-2. Validate the contents of the returned document using test <<conf_mf_tgeometries_get_success, `/conf/movingfeatures/tgeometries-get-success`>>
+2. Validate the contents of the returned document using test <<conf_mf_tgeometry_get_success,`/conf/movingfeatures/tgeometry-get-success`>>
 
 Repeat these tests using the following parameter tests that defined in the OGC API — Common and OGC API — MF: +
 - Bounding Box: link:http://docs.ogc.org/DRAFTS/20-024.html#_bounding_box_tests[Bounding Box Tests] +

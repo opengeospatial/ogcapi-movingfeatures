@@ -4,66 +4,66 @@
 === Overview
 include::requirements/movingfeature/requirements_class_movingfeature.adoc[]
 
-The `MovingFeatures` requirements class defines the requirements for a moving feature.
-A moving feature is an object that provide information about and access to a <<resource-tgeometries-section, TemporalGeometryCollection>> and <<resource-tproperties-collection-section, TemporalPropertyCollection>>.
+The *MovingFeatures* requirements class defines the requirements for a moving feature.
+A moving feature is an object that provides information about and access to <<resource-temporalGeometry-section,*TemporalGeometry*>> and <<resource-temporalProperties-section,*TemporalProperties*>>.
 
 === Information Resources
-The seven resources defined in this Requirements Class are summarized in <<mf-resources>>.
+The seven resources defined in this Requirement Class are summarized in <<mf-resources>>.
 
 [#mf-resources,reftext='{table-caption} {counter:table-num}']
 .MovingFeatures Resources
 [width="90%",cols="10,10,10",options="header"]
 |===
 ^|Resource ^|URI ^|HTTP Method
-|<<resource-mfeatures-section,MovingFeatures>>
-|`{root}/collections/{collectionId}/items`
+|<<resource-movingfeatures-section,*MovingFeatures*>>
+|`+{root}+/collections/+{collectionId}+/items`
 ^|GET, POST
 //|Add a new resource (<<resource-movingfeature-section,MovingFeature>>) feature to a specific <<resource-collection-section,Collection>> (specified by {collectionId})
 
-|<<resource-movingfeature-section,MovingFeature>>
-|`{root}/collections/
-{collectionId}/items/
-{mfeatureId}`
+|<<resource-movingfeature-section,*MovingFeature*>>
+|`+{root}+/collections/
++{collectionId}+/items/
++{mfeatureId}+`
 ^|GET, DELETE
 
-|<<resource-tgeometries-section,TemporalGeometryCollection>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tgeometries`
+|<<resource-temporalGeometry-section,*TemporalGeometry*>>
+|`+{root}+/collections/
++{collectionId}+/items/
++{mFeatureId}+/tgeometry`
 ^|GET, POST
 
-|<<resource-temporalGeometry-section,TemporalGeometry>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tgeometries/
-{tGeometryId}`
+|<<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>
+|`+{root}+/collections/
++{collectionId}+/items/
++{mFeatureId}+/tgeometry/
++{tGeometryId}+`
 ^|DELETE
 
-|<<resource-temporalGeometryQuery-section,TemporalGeometryQuery>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tgeometries/
-{tGeometryId}/{queryType}`
+|<<resource-temporalGeometryQuery-section,*TemporalGeometry Query*>>
+|`+{root}+/collections/
++{collectionId}+/items/
++{mFeatureId}+/tgeometry/
++{tGeometryId}+/+{queryType}+`
 ^|GET
 
-|<<resource-tproperties-collection-section,TemporalPropertyCollection>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tproperties`
+|<<resource-temporalProperties-section,*TemporalProperties*>>
+|`+{root}+/collections/
++{collectionId}+/items/
++{mFeatureId}+/tproperties`
 ^|GET, POST
 
-|<<resource-temporalProperty-section,TemporalProperty>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tproperties/
-{tPropertiesName}`
+|<<resource-temporalProperty-section,*TemporalProperty*>>
+|`+{root}+/collections/
++{collectionId}+/items/
++{mFeatureId}+/tproperties/
++{tPropertiesName}+`
 ^|GET, POST
 |===
 
 include::clause_9_requirements_resource_movingfeatures.adoc[]
 include::clause_9_requirements_resource_movingfeature.adoc[]
-include::clause_9_requirements_resource_temporalgeometrycollection.adoc[]
 include::clause_9_requirements_resource_temporalgeometry.adoc[]
+include::clause_9_requirements_resource_temporalprimitivegeometry.adoc[]
 include::clause_9_requirements_resource_temporalgeometry_query.adoc[]
-include::clause_9_requirements_resource_temporalpropertycollection.adoc[]
+include::clause_9_requirements_resource_temporalproperties.adoc[]
 include::clause_9_requirements_resource_temporalproperty.adoc[]

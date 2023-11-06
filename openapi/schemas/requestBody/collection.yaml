@@ -12,6 +12,6 @@ properties:
     description: any description
     type: string
   itemType:
-    description:
+    description: indicator about the type of the items in the moving features collection (the default value is 'movingfeature').
     type: string
     default: "movingfeature"

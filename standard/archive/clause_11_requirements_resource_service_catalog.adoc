@@ -96,7 +96,7 @@ Return a time interval - without gaps - starting with the smallest timestamp til
 * TemporalGeometry or TemporalProperty: given as literal in the request, as file, or as a query
 
 Example:
-`{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration?{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}`
+`{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration?{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry /{tGeometryId}/{queryType}`
 
 ====  Error situations
 The requirements for handling unsuccessful requests are provided in <<http-response>>.

@@ -1,0 +1,77 @@
+[[resource-temporalProperties-section]]
+=== Resource TemporalProperties
+==== Overview
+A *TemporalProperties* object consists of the set of <<resource-temporalProperty-section,*TemporalProperty*>> which is included in the <<resource-movingfeature-section,*MovingFeature*>> that is specified by <<movingfeature-identifier,++{mFeatureId}++>>.
+The *TemporalProperties* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
+
+. A retrieve operation returns a list of the available abbreviated copy of <<resource-temporalProperty-section,*TemporalProperty*>> object in the specified moving feature.
+. A create operation posts a new <<resource-temporalProperty-section,*TemporalProperty*>> object to the <<resource-movingfeature-section,*MovingFeature*>> that is specified by <<movingfeature-identifier,++{mFeatureId}++>>.
+
+//If a `tPropertyName` is not specified, the query will return a list of the available parametric values in the specified moving feature.
+
+==== Operation
+===== Retrieve
+. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties` path
+
+include::requirements/movingfeature/tproperties/REQ_operation-tproperties-get.adoc[]
+
+====== Create
+The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
+This operation targeted <<resource-temporalProperty-section,*TemporalProperty*>> resource.
+
+. Issue a `POST` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties` path
+
+Support for the HTTP POST method is specified as a requirement in OGC API — Features.
+
+include::requirements/movingfeature/tproperties/REQ_operation-tproperties-post.adoc[]
+
+[#tproperties-schema,reftext='TemporalProperty Schema']
+.TemporalProperties Request Body Schema (temporalProperty.yaml):
+[source,yaml]
+----
+include::../openapi/schemas/temporalProperty.yaml[]
+----
+
+// TODO: Add new TemporalProperties request body schema example
+
+The following example adds a new feature (<<temporal-properties-object,*TemporalProperty* Object>> and link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[*_ParametricValues_* object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
+The feature is represented as a JSON payload.
+A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+
+[#tproperties-post-example,reftext='Create a New TemporalProperty Object Example']
+.An Example of Creating a New TemporalProperty Object:
+include::examples/temporalProperty-post.adoc[]
+
+[#tproperties-post-example2,reftext='Create a New TemporalProperty Object Example']
+.An Example of Creating a New TemporalProperty Object with *_ParametricValues_* as a MF-JSON Encoding:
+include::examples/temporalProperty-post-mfjson.adoc[]
+
+==== Response
+===== Retrieve
+A successful response to the *TemporalProperties* GET operation is a document that contains the set of <<resource-temporalProperty-section,*TemporalProperty*>> of the moving feature identified by the <<movingfeature-identifier,`++{mFeatureId}++`>> parameter.
+
+include::requirements/movingfeature/tproperties/REQ_response-tproperties-get.adoc[]
+
+[#pvalues-schema,reftext='TemporalProperties GET Response Schema']
+.TemporalProperties GET Response Schema (TemporalProperties.yaml):
+[source,yaml]
+----
+include::../openapi/schemas/temporalProperties.yaml[]
+----
+
+The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalProperties* GET operation.
+[#pvalues-example,reftext=`TemporalProperties GET Example`]
+.An Example of a TemporalProperties GET Operation:
+[source,json]
+----
+include::../openapi/examples/temporalPropertyCollection.json[]
+----
+
+====== Create
+A successful response to the *TemporalProperties* POST operation is an HTTP status code.
+
+include::requirements/movingfeature/tproperties/REQ_response-tproperties-post.adoc[]
+
+==== Error situations
+The requirements for handling unsuccessful requests are provided in the <<http-response>>.
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

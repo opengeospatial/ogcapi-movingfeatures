@@ -7,8 +7,8 @@ The OGC API — MF provides a standard way to manage these data, which can be he
 OGC API — MF also includes operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties.
 
 The OGC API — Moving Features — Part 1: Core specifies a set of RESTful web service interfaces and data formats for querying and updating moving feature data over the web.
-<<OGC-API, OGC API Standards>> define modular API building blocks to spatially enable Web APIs in a consistent way.
-<<OPENAPI, OpenAPI>> is used to define the reusable API building blocks with responses in JSON and HTML.
+<<OGC-API,OGC API Standards>> define modular API building blocks to spatially enable Web APIs in a consistent way.
+<<OPENAPI,OpenAPI>> is used to define the reusable API building blocks with responses in JSON and HTML.
 
 The OGC API family of standards is organized by resource type.
 [#common-paths,reftext='{table-caption} {counter:table-num}']
@@ -19,23 +19,23 @@ The OGC API family of standards is organized by resource type.
 // | Landing page                  | ``/``                           | GET | <<common-landingpage-section, 7.2 API Landing Page>>
 // | API definition                 | ``/api``                        | GET | <<common-api-section, 7.3 API Definition>>
 // | Conformance classes           | ``/conformance``                | GET | <<common-conformance-section, 7.4 Declaration of Conformance Classes>>
-| Collections metadata          | ``/collections``                | GET, POST | <<resource-collections-section, Resource Collections>>
-| Collection instance metadata  | ``/collections/{collectionId}`` | GET, DELETE, PUT | <<resource-collection-section, Resource Collection>>
-| Moving Features               | ``/collections/{collectionId}/items`` | GET, POST | <<resource-mfeatures-section, Resource MovingFeatures>>
-| Moving Feature instance       | ``/collections/{collectionId}/items /{mFeatureId}`` | GET, DELETE | <<resource-movingfeature-section, Resource MovingFeature>>
-| Temporal Geometry Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries`` | GET, POST | <<resource-tgeometries-section, Resource TemporalGeometryCollection>>
-| Temporal Geometry instance    | ``/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}`` | DELETE | <<resource-temporalGeometry-section, Resource TemporalGeometry>>
-| TemporalGeometry Queries      | ``{root}/collections/{collectionId}/items /{mFeatureId}/tgeometries/{tGeometryId}/{queryType}`` | GET | <<resource-temporalGeometryQuery-section, TemporalGeometry Query Resources>>
-| Temporal Property Collection  | ``/collections/{collectionId}/items /{mFeatureId}/tproperties`` | GET, POST | <<resource-tproperties-collection-section, Resource TemporalPropertyCollection>>
-| Temporal Property instance    | ``/collections/{collectionId}/items /{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section, Resource TemporalProperty>>
+| Collections metadata          | ``/collections``                | GET, POST | <<resource-collections-section,Resource Collections>>
+| Collection instance metadata  | ``/collections/+{collectionId}+`` | GET, DELETE, PUT | <<resource-collection-section,Resource Collection>>
+| MovingFeatures                | ``/collections/+{collectionId}+/items`` | GET, POST | <<resource-movingfeatures-section,Resource MovingFeatures>>
+| MovingFeature instance        | ``/collections/+{collectionId}+/items /+{mFeatureId}+`` | GET, DELETE | <<resource-movingfeature-section,Resource MovingFeature>>
+| TemporalGeometry instance     | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tgeometry`` | GET, POST | <<resource-temporalGeometry-section,Resource TemporalGeometry>>
+| TemporalPrimitiveGeometry instance    | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tgeometry/+{tGeometryId}+`` | DELETE | <<resource-temporalPrimitiveGeometry-section,Resource TemporalPrimitiveGeometry>>
+| Queries for TemporalGeometry  | ``collections/+{collectionId}+/items /+{mFeatureId}+/tgeometry/+{tGeometryId}+/+{queryType}+`` | GET | <<resource-temporalGeometryQuery-section,TemporalGeometry Query Resources>>
+| TemporalProperties instance   | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tproperties`` | GET, POST | <<resource-temporalProperties-section,Resource TemporalProperties>>
+| TemporalProperty instance     | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tproperties/+{tPropertyId}+`` | GET, POST | <<resource-temporalProperty-section,Resource TemporalProperty>>
 |====
 
 
-[big]*ii.    Keywords*
+[big]*ii.Keywords*
 
 The following are keywords to be used by search engines and document catalogues.
 
-ogcdoc, OGC document, OGC MovingFeature, OGC Moving Features JSON, Moving Features Access, API, OpenAPI, REST, trajectory
+ogcdoc, OGC document, OGC Moving Features, OGC Moving Features JSON, Moving Features Access, API, OpenAPI, REST, trajectory
 
 [big]*iii.   Preface*
 

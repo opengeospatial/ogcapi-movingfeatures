@@ -3,9 +3,9 @@
 |===
 |*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tproperties-collection-post*
 |Requirement    |
-<<req_mf_mandatory-tproperties, /req/movingfeatures/tproperties-mandatory>> +
-<<req_mf-tproperties-collection-op-post, /req/movingfeatures/tproperties-collection-post>> +
-<<req_mf-tproperties-collection-response-post, /req/movingfeatures/tproperties-collection-post-success>>
+<<req_mf_mandatory-tproperty, /req/movingfeatures/tproperties-mandatory>> +
+<<req_mf-tproperties-op-post, /req/movingfeatures/tproperties-collection-post>> +
+<<req_mf-tproperties-response-post, /req/movingfeatures/tproperties-collection-post-success>>
 |Test purpose   | Validate that the *TemporalProperty* can be created at the expected location.
 |Test method    |
 1. Validate that the server complies with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[POST operation requirements] +

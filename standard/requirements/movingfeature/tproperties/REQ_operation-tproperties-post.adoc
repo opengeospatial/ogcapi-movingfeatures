@@ -4,6 +4,5 @@
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperties-post*
 ^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/insert-post-op`].
 ^|B |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` request body requirements link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
-^|C |The content of the request body SHALL be based upon the <<tvalue-schema,TemporalValue>> schema.
-^|D |The ending date-time instance (*_t_end_*) in the temporal value object in <<resource-temporalProperty-section,TemporalProperty>>, determined by `tPropertyName`, SHALL be earlier than the beginning date-time instance (*_t_new_*) in the temporal value object in the request body, i.e., *_t_end < t_new_*.
+^|C |The content of the request body SHALL be based upon the <<tproperties-schema,TemporalProperties>> or link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[ParametricValues object] schema.
 |===

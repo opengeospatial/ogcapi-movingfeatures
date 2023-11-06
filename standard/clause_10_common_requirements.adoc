@@ -2,7 +2,7 @@
 == Common Requirements
 
 === Parameters
-The query parameters http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
+The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 All requirements and recommendations in API — Common regarding these parameters also apply to OGC API — MF.
 No modifications are required.
 
@@ -37,7 +37,9 @@ include::../openapi/schemas/exceptionJSON.yaml[]
 [[http-status-codes]]
 === HTTP Status Codes
 
-<<status-codes>> lists the main HTTP status codes that clients should be prepared to receive. This includes support for specific security schemes or URI redirection. In addition, other error situations may occur in the transport layer outside of the server.
+<<status-codes>> lists the main HTTP status codes that clients should be prepared to receive.
+This includes support for specific security schemes or URI redirection.
+In addition, other error situations may occur in the transport layer outside of the server.
 
 [#status-codes,reftext='{table-caption} {counter:table-num}']
 .Typical HTTP status codes

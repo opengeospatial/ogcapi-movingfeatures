@@ -12,7 +12,7 @@ This OGC API — Moving Features — Part1: Core Draft Standard defines an API w
 Resources exposed through an OGC API may be accessed via a Universal Resource Identifier (URI).
 The URI representation in this Draft Standard is composed of three sections:
 
-* Dataset distribution API: The endpoint corresponding to a dataset distribution, where the landing page resource as defined in OGC API — Common — Part 1: Core is available (subsequently referred to as Base URI or `{root}`).
+* Dataset distribution API: The endpoint corresponding to a dataset distribution, where the landing page resource as defined in OGC API — Common — Part 1: Core is available (subsequently referred to as Base URI or `+{root}+`).
 * Access Paths: Unique paths to Resources.
 * Query Parameters: Parameters to adjust the representation of a Resource or Resources like encoding format or sub-setting.
 
@@ -34,37 +34,37 @@ Unique relation types are used for each resource.
 // |<<common-conformance-section,{root}/conformance>>|`conformance`|Conformance Classes
 
 3+^|**Collections**
-|<<resource-collections-section,{root}/collections>>|`data`
+|<<resource-collections-section,+{root}+/collections>>|`data`
 |Metadata describing the <<resource-collections-section,Collection Catalog>> of data available from this API.
-|<<resource-collection-section,{root}/collections/{collectionId}>>|
-|Metadata describing the <<resource-collections-section,Collection Catalog>> of data which has the unique identifier `{collectionId}`
+|<<resource-collection-section,+{root}+/collections/+{collectionId}+>>|
+|Metadata describing the <<resource-collections-section,Collection Catalog>> of data which has the unique identifier `+{collectionId}+`
 
 3+^|**MovingFeatures**
-|<<resource-mfeatures-section,{root}/collections/{collectionId} /items>>|`items`
-|Static information of <<resource-movingfeature-section, MovingFeature>> about available items in the specified <<resource-collection-section, Collection>>
-|<<resource-movingfeature-section,{root}/collections/{collectionId} /items/{mFeatureId}>>|`item`
-|Static information describing the <<movingfeature-schema, MovingFeature>> of data which has the unique identifier `{mFeatureId}`
-|<<resource-tgeometries-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries>>|`items`
-|Temporal object information of <<resource-tgeometries-section, TemporalGeometryCollection>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-temporalGeometry-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}>>|`item`
-|Temporal object describing the <<resource-tgeometries-section, TemporalGeometryCollection>> of data which has the unique identifier `{tGeometryId}`
-|<<resource-temporalGeometryQuery-section,{root}/collections/{collectionId} /items/{mFeatureId}/tgeometries /{tGeometryId}/{queryType}>>|
-|Identifies an Information Resource of type `{queryType}` associated with the <<resource-temporalGeometry-section, TemporalGeometry>> instance
-|<<resource-tproperties-collection-section,{root}/collections/{collectionId} /items/{mFeatureId}/tproperties>>|`items`
-|Temporal object information of <<resource-temporalProperty-section, TemporalPropertyCollection>> about available items in the specified <<resource-movingfeature-section, MovingFeature>>
-|<<resource-temporalProperty-section,{root}/collections/{collectionId} /items/{mFeatureId}/tproperties /{tPropertyName}>>|`item`
-|Temporal object describing the <<resource-temporalProperty-section, TemporalPropertyCollection>> of data which has the unique identifier `{tPropertyName}`
+|<<resource-movingfeatures-section,+{root}+/collections/+{collectionId}+ /items>>|`items`
+|Static information of <<resource-movingfeature-section,MovingFeature>> about available items in the specified <<resource-collection-section,*Collection*>>
+|<<resource-movingfeature-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+>>|`item`
+|Static information describing the <<movingfeature-schema,*MovingFeature*>> of data which has the unique identifier `+{mFeatureId}+`
+|<<resource-temporalGeometry-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgeometry>>|`items`
+|Temporal object information of <<resource-temporalGeometry-section,*TemporalGeometry*>> about available items in the specified <<resource-movingfeature-section,*MovingFeature*>>
+|<<resource-temporalPrimitiveGeometry-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgeometry /+{tGeometryId}+>>|`item`
+|Temporal object describing the <<resource-temporalGeometry-section,*TemporalPrimitiveGeometry*>> of data which has the unique identifier `+{tGeometryId}+`
+|<<resource-temporalGeometryQuery-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgeometry /+{tGeometryId}+/+{queryType}+>>|
+|Identifies an Information Resource of type `+{queryType}+` associated with the <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> instance
+|<<resource-temporalProperties-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tproperties>>|`items`
+|Temporal object information of <<resource-temporalProperties-section,*TemporalProperties*>> about available items in the specified <<resource-movingfeature-section,*MovingFeature*>>
+|<<resource-temporalProperty-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tproperties /+{tPropertyName}+>>|`item`
+|Temporal object describing the <<resource-temporalProperty-section,*TemporalProperty*>> of data which has the unique identifier `+{tPropertyName}+`
 |===
 
 Where:
 
-* `{root}`          = Base URI for the API server
-* `{collectionId}`  = An identifier for a specific <<resource-collection-section,Collection>> of data
-* `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,MovingFeature>> of a specific <<resource-collection-section,Collection>> of data
-* `{tGeometryId}`   = An identifier for a specific <<resource-temporalGeometry-section,TemporalGeometry>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
-* `{tPropertyName}` = An identifier for a specific <<resource-temporalProperty-section,TemporalProperty>> of a specific <<resource-movingfeature-section,MovingFeatures>> of data
+* `+{root}+`          = Base URI for the API server
+* `+{collectionId}+`  = An identifier for a specific <<resource-collection-section,*Collection*>> of data
+* `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,*MovingFeature*>> of a specific <<resource-collection-section,*Collection*>> of data
+* `+{tGeometryId}+`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
+* `+{tPropertyName}+` = An identifier for a specific <<resource-temporalProperty-section,*TemporalProperty*>> of a specific <<resource-movingfeature-section,*MovingFeatures*>> of data
 
-<<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as `Collections`, `Collection`, `MovingFeatureCollection`, `MovingFeature`, `TemporalGeometryCollection`, `TemporalGeometry`, `TemporalPropertyCollection`, and `TemporalProperty`.
+<<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as *Collections*, *Collection*, *MovingFeatures*, *MovingFeature*, *TemporalGeometry*, *TemporalPrimitiveGeometry*, *TemporalProperties*, and *TemporalProperty*.
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.
 
@@ -82,7 +82,7 @@ image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%,
 //
 //The MF-JSON Prism can cover all contents of the MF-JSON Trajectory. This standard focus on the resources type in MF-JSON Prism.
 //
-//<<mf-prism-uml>> shows a UML class diagram for MF-JSON Prism which represents the basic resources of this standard, such as `MovingFeature`, `MovingFeatureCollection`, `TemporalGeometry`, and `TemporalProperties`.
+//<<mf-prism-uml>> shows a UML class diagram for MF-JSON Prism which represents the basic resources of this standard, such as *MovingFeature*, *MovingFeatures*, *TemporalGeometry*, and *TemporalProperties*.
 //
 //[#mf-prism-uml,reftext='{figure-caption} {counter:figure-num}']
 //.Class diagram for MF-JSON Prism
@@ -95,23 +95,22 @@ image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%,
 The core search capability is based on https://ogcapi.ogc.org/common/[OGC API — Common] and thus supports:
 
 * bounding box searches,
-* time instant or time period searches,
-* and equality predicates (i.e. _property_=_value_).
+* time instant or time period searches, and
+* equality predicates (i.e. _property_=_value_).
 
 OGC API — Moving Features extends these core search capabilities to include:
 
 // * find <<leaf-section, leaf>> value with time instant,
-* <<resource-temporalGeometryQuery-section,spatiotemporal queries>> for accessing <<resource-temporalGeometry-section, TemporalGeometry resources>>.
+* <<resource-temporalGeometryQuery-section,spatiotemporal queries>> for accessing <<resource-temporalPrimitiveGeometry-section,*TemporalGeometry*>> resources.
 
 [[dependencies-overview]]
 === Dependencies
-
 The OGC API — Moving Features (OGC API — MF) Draft Standard is an extension of the OGC API — Common and the OGC API — Features Standards.
 Therefore, an implementation of OGC API — MF shall first satisfy the appropriate Requirements Classes from OGC API — Common and OGC API — Features.
 Also, the OGC API — MF Standard is based on the OGC Moving Features Encoding Extension for JSON (OGC MF-JSON) Standards.
 Therefore, an implementation of OGC API — MF shall satisfy the appropriate Requirements Classes from OGC MF-JSON.
-<<req-mappings>>, identifies the OGC API — Common and OGC API — Features Requirements Classes which are applicable to each section of this Standard.
-Instructions on when and how to apply these Requirements Classes are provided in each section.
+<<req-mappings>>, Identifies the OGC API — Common and OGC API — Features Requirements Classes which are applicable to each section of this Standard.
+Instructions on when and how to apply these Requirement Classes are provided in each section.
 
 [#req-mappings,reftext='{table-caption} {counter:table-num}']
 .Mapping OGC API — MF Sections to OGC API — Common, OGC API — Features, and OGC MF-JSON Requirements Classes
@@ -125,12 +124,15 @@ Instructions on when and how to apply these Requirements Classes are provided in
 // |<<common-conformance-section,Declaration of Conformance Classes>>
 // | http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/landing-page
 |<<clause-core-collection,Collections>>
-| <<rc_movingfeature_collection, /req/mf-collection>>
-| http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
+| <<rc_movingfeature_collection,/req/mf-collection>>
+| http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections, +
+  http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
 |<<clause-core-movingfeature,MovingFeatures>>
-| <<rc_movingfeature, /req/movingfeatures>>
-| http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core, http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete, http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory,
-http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
+| <<rc_movingfeature,/req/movingfeatures>>
+| http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core, +
+  http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete, +
+  http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory, +
+  http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 |HTML
 | *inherit all requirement (no modification)*
 | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/html
@@ -144,6 +146,7 @@ http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 | *inherit all requirement (no modification)*
 | http://www.opengis.net/spec/ogcapi-common-1/1.0/req/oas30
 // |OGC Moving Features JSON (MF-JSON)
-// |
-// | http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajecotry, http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
+// | *inherit all requirement (no modification)*
+// | http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajecotry, +
+//   http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 |====
