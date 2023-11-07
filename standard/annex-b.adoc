@@ -67,36 +67,27 @@ include::abstract_tests/movingfeatures/feature/mf-delete-success.adoc[]
 include::abstract_tests/movingfeatures/parameter/leaf_definition.adoc[]
 include::abstract_tests/movingfeatures/parameter/leaf_response.adoc[]
 
-==== TemporalGeometry
+==== TemporalGeometrySequence
 ===== HTTP GET Operation
-include::abstract_tests/movingfeatures/tgeometries/tgeometries-get.adoc[]
-include::abstract_tests/movingfeatures/tgeometries/tgeometries-get-success.adoc[]
+include::abstract_tests/movingfeatures/tgsequence/tgsequence-get.adoc[]
+include::abstract_tests/movingfeatures/tgsequence/tgsequence-get-success.adoc[]
 
 ===== HTTP POST Operation
-include::abstract_tests/movingfeatures/tgeometries/tgeometries-post.adoc[]
-include::abstract_tests/movingfeatures/tgeometries/tgeometries-post-success.adoc[]
+include::abstract_tests/movingfeatures/tgsequence/tgsequence-post.adoc[]
+include::abstract_tests/movingfeatures/tgsequence/tgsequence-post-success.adoc[]
 
 ==== TemporalPrimitiveGeometry
 ===== HTTP DELETE Operation
-include::abstract_tests/movingfeatures/tgeometry/tgeometry-delete.adoc[]
-include::abstract_tests/movingfeatures/tgeometry/tgeometry-delete-success.adoc[]
+include::abstract_tests/movingfeatures/tpgeometry/tpgeometry-delete.adoc[]
+include::abstract_tests/movingfeatures/tpgeometry/tpgeometry-delete-success.adoc[]
 
-==== TemporalGeometryQuery
+==== TemporalGeometry Query
 ===== HTTP GET Operation
-include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-distance.adoc[]
-include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-velocity.adoc[]
-include::abstract_tests/movingfeatures/tgeometry/tgeometry-query-acceleration.adoc[]
+include::abstract_tests/movingfeatures/tpgeometry/tpgeometry-query-distance.adoc[]
+include::abstract_tests/movingfeatures/tpgeometry/tpgeometry-query-velocity.adoc[]
+include::abstract_tests/movingfeatures/tpgeometry/tpgeometry-query-acceleration.adoc[]
 
 ==== TemporalProperties
-===== HTTP GET Operation
-include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-get.adoc[]
-include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-get-success.adoc[]
-
-===== HTTP POST Operation
-include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-post.adoc[]
-include::abstract_tests/movingfeatures/tproperties-collection/tproperties-collection-post-success.adoc[]
-
-==== TemporalProperty
 ===== HTTP GET Operation
 include::abstract_tests/movingfeatures/tproperties/tproperties-get.adoc[]
 include::abstract_tests/movingfeatures/tproperties/tproperties-get-success.adoc[]
@@ -104,3 +95,12 @@ include::abstract_tests/movingfeatures/tproperties/tproperties-get-success.adoc[
 ===== HTTP POST Operation
 include::abstract_tests/movingfeatures/tproperties/tproperties-post.adoc[]
 include::abstract_tests/movingfeatures/tproperties/tproperties-post-success.adoc[]
+
+==== TemporalProperty
+===== HTTP GET Operation
+include::abstract_tests/movingfeatures/tproperty/tproperty-get.adoc[]
+include::abstract_tests/movingfeatures/tproperty/tproperty-get-success.adoc[]
+
+===== HTTP POST Operation
+include::abstract_tests/movingfeatures/tproperty/tproperty-post.adoc[]
+include::abstract_tests/movingfeatures/tproperty/tproperty-post-success.adoc[]

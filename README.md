@@ -70,19 +70,19 @@ Delete a single moving feature with id `mFeatureId`.
 ### TemporalGeometry
 
 ```
-GET /collections/{collectionId}/items/{mFeatureId}/tgeometry
+GET /collections/{collectionId}/items/{mFeatureId}/tgsequence
 ```
 
 Retrieve the movement data of the single moving feature with id `mFeatureId`.
 
 ```
-POST /collections/{collectionId}/items/{mFeatureId}/tgeometry
+POST /collections/{collectionId}/items/{mFeatureId}/tgsequence
 ```
 
 Add movement data into the moving feature with id `mFeatureId`.
 
 ```
-DELETE /collections/{collectionId}/items/{mFeatureId}/tgeometry/{tGeometryId}
+DELETE /collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}
 ```
 
 Delete a single temporal geometry with id `tGeometryId`.

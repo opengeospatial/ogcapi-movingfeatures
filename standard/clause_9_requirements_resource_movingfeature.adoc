@@ -21,7 +21,7 @@ The schema for the moving feature object presented in this clause is an extensio
 |*time*         |O |Life span information for the moving feature.
 |*crs*          |O |Coordinate reference system (CRS) information for the moving feature.
 |*trs*          |O |Temporal reference system information for the moving feature.
-|<<resource-temporalGeometry-section,*temporalGeometry*>> |O |A sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> for the moving feature.
+|<<resource-temporalGeometrySequence-section,*temporalGeometry*>> |O |A sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> for the moving feature.
 |<<resource-temporalProperties-section,*temporalProperties*>> |O |A set of <<resource-temporalProperty-section,*TemporalProperty*>> of the moving feature.
 |===
 
@@ -60,7 +60,7 @@ include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-de
 ===== Retrieve
 A successful response to the *MovingFeature* GET operation is a set of metadata that describes the moving feature identified by the <<movingfeature-identifier,`+{mFeatureId}+`>> parameter.
 This response does not include a set of temporal object information.
-The temporal object information may be accessed using  <<resource-temporalGeometry-section,*TemporalGeometry*>> and <<resource-temporalProperties-section,*TemporalProperties*>> operations.
+The temporal object information may be accessed using  <<resource-temporalGeometrySequence-section,*TemporalGeometry*>> and <<resource-temporalProperties-section,*TemporalProperties*>> operations.
 
 include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-get.adoc[]
 

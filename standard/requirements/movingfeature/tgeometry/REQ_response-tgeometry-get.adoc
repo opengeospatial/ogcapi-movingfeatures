@@ -1,8 +1,0 @@
-[[req_mf-tgeometry-response-get]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/tgeometry-get-success*
-^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
-^|B |The response SHALL be based upon the link:https://docs.ogc.org/is/19-045r3/19-045r3.html#tcomplex[TemporalComplexGeometry object] that only includes temporal primitive geometry selected by request with `limit`, `bbox`, `datetime`, and `leaf` parameters.
-^|C |Each temporal primitive geometry in the response SHALL include the mandatory properties listed in <<temporalPrimitiveGeometry-properties-table>>.
-|===

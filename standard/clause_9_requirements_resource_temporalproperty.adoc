@@ -4,7 +4,7 @@
 The *TemporalProperty* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
 . A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.The *TemporalProperty* resource returned to the response can be limited using the <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
-. A create operation posts a new temporal value object to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.
+. A create operation posts a new temporal primitive value object to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.
 
 [[temporal-properties-object]]
 A temporal property object is a collection of dynamic non-spatial attributes and their temporal values with time.
@@ -21,14 +21,14 @@ The schema for the temporal property object presented in this clause is an exten
 |Property           |Requirement    |Description
 |*_name_*               |M |An identifier for the resource assigned by an external entity.
 |*_type_*               |M |A predefined temporal property type (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage').
-|*_values_*             |M |A sequence of <<temporalValue-properties-table, temporal value>>
+|*_valueSequence_*      |M |A sequence of <<temporalValue-properties-table, temporal primitive value>>
 |*_form_*               |O |A unit of measure.
 |*_description_*        |O |A short description.
 |===
 
 [[temporalValue-properties-table]]
 [reftext='{table-caption} {counter:table-num}']
-.Table of the properties related to the temporal value
+.Table of the properties related to the temporal primitive value
 [cols="20,15,65",options="header"]
 |===
 |Property           |Requirement    |Description
@@ -53,7 +53,7 @@ include::requirements/movingfeature/tproperty/REQ_operation-tproperty-get.adoc[]
 
 ====== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
-This operation targeted the new temporal values object defined in <<temporalValue-properties-table>>.
+This operation targeted the new temporal primitive value object defined in <<temporalValue-properties-table>>.
 
 . Issue a `POST` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties/+{tPropertyName}+` path
 
@@ -61,18 +61,18 @@ Support for the HTTP POST method is specified as a requirement in OGC API — Fe
 
 include::requirements/movingfeature/tproperty/REQ_operation-tproperty-post.adoc[]
 
-[#tvalue-schema,reftext='TemporalValue Schema']
-.TemporalProperty Request Body Schema (temporalValue.yaml):
+[#tvalue-schema,reftext='TemporalPrimitiveValue Schema']
+.TemporalProperty Request Body Schema (TemporalPrimitiveValue.yaml):
 [source,yaml]
 ----
-include::../openapi/schemas/temporalValue.yaml[]
+include::../openapi/schemas/temporalPrimitiveValue.yaml[]
 ----
 
-The following example adds a new feature (<<temporalValue-properties-table,TemporalValue>> object) to the feature created by <<tproperties-post-example,Creating a New TemporalProperty Object Example>>.
+The following example adds a new feature (<<temporalValue-properties-table,TemporalPrimitiveValue>> object) to the feature created by <<tproperties-post-example,Creating a New TemporalPrimitiveValue Object Example>>.
 The feature is represented as a JSON payload.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#temporalvalue-post-example,reftext='Create a New TemporalValue Object Example']
-.An Example of Creating a New TemporalValue Object:
+[#temporalvalue-post-example,reftext='Create a New TemporalPrimitiveValue Object Example']
+.An Example of Creating a New TemporalPrimitiveValue Object:
 include::examples/temporalValue-post.adoc[]
 
 ==== Response
@@ -83,10 +83,10 @@ include::requirements/movingfeature/tproperty/REQ_response-tproperty-get.adoc[]
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalProperty* GET operation.
 [#tproperties-example,reftext=`TemporalProperty GET Example`]
-.An Example of TemporalProperty GET Operation:
+.An Example of *TemporalProperty* GET Operation:
 [source,json]
 ----
-include::../openapi/examples/temporalValueCollection.json[]
+include::../openapi/examples/temporalPrimitiveValueSequence.json[]
 ----
 
 ====== Create

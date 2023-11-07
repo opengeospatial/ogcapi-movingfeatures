@@ -1,7 +1,7 @@
-[[resource-temporalGeometry-section]]
-=== Resource TemporalGeometry
+[[resource-temporalGeometrySequence-section]]
+=== Resource TemporalGeometrySequence
 ==== Overview
-The *TemporalGeometry* resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
+The *TemporalGeometrySequence* resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
 
 . A retrieve operation returns a set of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> object which is included in the <<resource-movingfeature-section,*MovingFeature*>> that specified by <<movingfeature-identifier,`+{mFeatureId}+`>>.
 The set of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>  object returned to the response can be limited using the <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
@@ -42,61 +42,61 @@ image::./images/Leaf-example.png[leaf-example, pdfwidth=100%, width=95%, align="
 
 ==== Operation
 ===== Retrieve
-. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry` path
+. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence` path
 
-include::requirements/movingfeature/tgeometry/REQ_operation-tgeometry-get.adoc[]
+include::requirements/movingfeature/tgsequence/REQ_operation-tgsequence-get.adoc[]
 
 ====== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
 This operation targeted <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource.
 
-. Issue a `POST` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry` path
+. Issue a `POST` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence` path
 
 Support for the HTTP POST method is specified as a requirement in OGC API — Features.
 
-include::requirements/movingfeature/tgeometry/REQ_operation-tgeometry-post.adoc[]
+include::requirements/movingfeature/tgsequence/REQ_operation-tgsequence-post.adoc[]
 
-The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry[*_TemporalGeometry_* object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
-The feature is represented as *_TemporalGeometry_* object in <<OGC-MF-JSON,MF-JSON>>, which is an extension of the JSON.
+The following example adds a new feature (link:https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive[*_TemporalPrimitiveGeometry_* object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
+The feature is represented as *_TemporalPrimitiveGeometry_* object in <<OGC-MF-JSON,MF-JSON>>, which is an extension of the JSON.
 //And it added to the current temporal geometry object as continuously one, because the time difference between these two temporal geometry objects is less than (or equal to) the update frequency of the created Collection feature by the <<collections-post.adoc-example,Create a New Collection Example>>.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#tgeometry-post-example,reftext='Create a New TemporalGeometry Object Example']
-.An Example of Creating a New TemporalGeometry Object:
+[#tpgeometry-post-example,reftext='Create a New TemporalPrimitiveGeometry Object Example']
+.An Example of Creating a New TemporalPrimitiveGeometry Object:
 include::examples/temporalGeometry-post.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the *TemporalGeometry* GET operation is a document that contains the set of temporal geometry of the moving feature identified by the <<movingfeature-identifier,`+{mFeatureId}+`>> parameter.
+A successful response to the *TemporalGeometrySequence* GET operation is a document that contains the set of temporal geometry of the moving feature identified by the <<movingfeature-identifier,`+{mFeatureId}+`>> parameter.
 
-include::requirements/movingfeature/tgeometry/REQ_response-tgeometry-get.adoc[]
+include::requirements/movingfeature/tgsequence/REQ_response-tgsequence-get.adoc[]
 
 // TODO: Fix for including not only MovingGeometryCollection, also MovingGeometryPrimitive
-[#tgeometry-schema,reftext='TemporalGeometry GET Response Schema']
-.TemporalGeometry GET Response Schema (temporalGeometry.yaml):
+[#tgsequence-schema,reftext='TemporalGeometrySequence GET Response Schema']
+.TemporalGeometrySequence GET Response Schema (temporalGeometrySequence.yaml):
 [source,yaml]
 ----
-include::../openapi/schemas/temporalGeometryCollection.yaml[]
+include::../openapi/schemas/temporalGeometrySequence.yaml[]
 ----
 
-[#tp-geometry-schema,reftext='TemporalPrimitiveGeometry Schema']
+[#tpgeometry-schema,reftext='TemporalPrimitiveGeometry Schema']
 .TemporalPrimitiveGeometry Schema (temporalPrimitiveGeometry.yaml):
 [source,yaml]
 ----
 include::../openapi/schemas/temporalGeometry.yaml[]
 ----
 
-The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalGeometry* GET operation.
-[#tgeometry-example,reftext=`TemporalGeometry GET Example`]
-.An Example of a TemporalGeometry GET operation:
+The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalGeometrySequence* GET operation.
+[#tgsequence-example,reftext=`TemporalGeometrySequence GET Example`]
+.An Example of a TemporalGeometrySequence GET operation:
 [source,json]
 ----
-include::../openapi/examples/temporalGeometryCollection.json[]
+include::../openapi/examples/temporalComplexGeometry.json[]
 ----
 
 ====== Create
-A successful response to the *TemporalGeometry* POST operation is an HTTP status code.
+A successful response to the *TemporalGeometrySequence* POST operation is an HTTP status code.
 
-include::requirements/movingfeature/tgeometry/REQ_response-tgeometry-post.adoc[]
+include::requirements/movingfeature/tgsequence/REQ_response-tgsequence-post.adoc[]
 
 ==== Error situations
 The requirements for handling unsuccessful requests are provided in the <<http-response>>.

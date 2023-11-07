@@ -2,22 +2,24 @@
 [cols=">20h,<80d",width="100%"]
 |===
 |*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tproperties-get-success*
-|Requirement    | <<req_mf-tproperty-response-get, /req/movingfeatures/tproperties-get-success>>
-|Test purpose   | Validate that the *TemporalProperty* complies with the required structure and contents.
+|Requirement    | <<req_mf-tproperties-response-get, /req/movingfeatures/tproperties-get-success>>
+|Test purpose   | Validate that the *TemporalProperties* complies with the required structure and contents.
 |Test method    |
-1. Validate the *TemporalProperties* property is present and that it is populated with an array of <<tvalue-schema, TemporalValue>> items +
-2. If the `links` property is present, validate that all entries comply with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links[/conf/core/fc-links] +
-3. If the `timeStamp` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp[/conf/core/fc-timeStamp] +
-4. If the `numberMatched` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched[/conf/core/fc-numberMatched] +
-5. If the `numberReturned` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberReturned[/conf/core/fc-numberReturned] +
-6. Validate the *TemporalProperty* resource for all supported media types using the resources and tests identified in <<temporalproperty-schema>>
+1. Validate the *TemporalProperties* property is present and that it is populated with an array of <<tproperties-schema, TemporalProperty>> items +
+2. Validate that the `name` and `type` property is present +
+3. Validate the `type` property is present and its value is one of the predefined values (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage') +
+4. If the `links` property is present, validate that all entries comply with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links[/conf/core/fc-links] +
+5. If the `timeStamp` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp[/conf/core/fc-timeStamp] +
+6. If the `numberMatched` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched[/conf/core/fc-numberMatched] +
+7. If the `numberReturned` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberReturned[/conf/core/fc-numberReturned] +
+8. Validate the *TemporalProperties* resource for all supported media types using the resources and tests identified in <<temporalproperties-schema>>
 |===
 
-The *TemporalProperty* content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.
+The *TemporalProperties* content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.
 
-[[temporalproperty-schema]]
+[[temporalproperties-schema]]
 [reftext='{table-caption} {counter:table-num}']
-.Schema and Tests for TemporalProperty content
+.Schema and Tests for *TemporalProperties* content
 [width="90%",cols="3",options="header"]
 |===
 |Format |Schema Document |Test ID

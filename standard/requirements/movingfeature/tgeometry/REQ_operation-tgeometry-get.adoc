@@ -1,7 +1,0 @@
-[[req_mf-tgeometry-op-get]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/tgeometry-get*
-^|A |For every moving feature identified in the <<resource-movingfeatures-section,*MovingFeatures*>> GET response (path `+{root}+/collections/+{collectionId}+/items`), the server SHALL support the HTTP GET operation at the path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry`
-^|B |The path parameter `collectionId` is each `id` property in the <<resource-collection-section,*Collection*>> GET response where the value of the `itemType` property is specified as *MovingFeature*. The path parameter `mFeatureId` is each `id` property in the <<resource-movingfeatures-section,*MovingFeatures*>> GET response.
-|===
