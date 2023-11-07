@@ -1,7 +1,7 @@
 [[req_mf-tproperty-op-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
-^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperties-get*
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperty-get*
 ^|A | For every temporal property in a moving feature (path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties`), the server SHALL support the HTTP GET operation at the path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties/+{tPropertiesName}+`
 ^|B | The path parameter `collectionId` is each `id` property in the <<resource-collection-section,*Collection*>> GET response where the value of the `itemType` property is specified as *MovingFeature*. +
 The path parameter `mFeatureId` is each `id` property in the <<resource-movingfeatures-section,*MovingFeatures*>> GET response. +

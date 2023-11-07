@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/tpgeometry-query*
-^|A |For every TemporalPrimitiveGeometry identified in the <<resource-temporalGeometry-section,*TemporalGeometry*>> GET response (path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry`), the server SHALL support the HTTP GET operation at the path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgeometry/+{tGeometryId}+/+{queryType}+`
+^|A |For every TemporalPrimitiveGeometry identified in the <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> GET response (path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence`), the server SHALL support the HTTP GET operation at the path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence/+{tGeometryId}+/+{queryType}+`
 ^|B |The path parameter `collectionId` is each `id` property in the *Collection* GET operation response where the value of the `itemType` property is specified as *MovingFeature*. +
 The path parameter `mFeatureId` is an `id` property of the moving feature. +
 The path parameter `tGeometryId` is an `id` property of the temporal geometry. +

@@ -732,7 +732,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_error_situations_4">8.4.4. Error situations</a></li>
 </ul>
 </li>
-<li><a href="#resource-temporalGeometry-section">8.5. Resource TemporalGeometry</a>
+<li><a href="#resource-temporalGeometrySequence-section">8.5. Resource TemporalGeometrySequence</a>
 <ul class="sectlevel3">
 <li><a href="#_overview_8">8.5.1. Overview</a></li>
 <li><a href="#_query_parameters">8.5.2. Query Parameters</a></li>
@@ -749,7 +749,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_error_situations_6">8.6.4. Error situations</a></li>
 </ul>
 </li>
-<li><a href="#resource-temporalGeometryQuery-section">8.7. TemporalGeometry Query Resources</a>
+<li><a href="#resource-tgsequenceQuery-section">8.7. TemporalGeometry Query Resources</a>
 <ul class="sectlevel3">
 <li><a href="#_overview_10">8.7.1. Overview</a></li>
 <li><a href="#_shared_query_parameters">8.7.2. Shared query parameters</a></li>
@@ -805,9 +805,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_movingfeatures">A.3.1. MovingFeatures</a></li>
 <li><a href="#_movingfeature">A.3.2. MovingFeature</a></li>
 <li><a href="#_parameter_leaf">A.3.3. Parameter Leaf</a></li>
-<li><a href="#_temporalgeometry">A.3.4. TemporalGeometry</a></li>
+<li><a href="#_temporalgeometrysequence">A.3.4. TemporalGeometrySequence</a></li>
 <li><a href="#_temporalprimitivegeometry">A.3.5. TemporalPrimitiveGeometry</a></li>
-<li><a href="#_temporalgeometryquery">A.3.6. TemporalGeometryQuery</a></li>
+<li><a href="#_temporalgeometry_query">A.3.6. TemporalGeometry Query</a></li>
 <li><a href="#_temporalproperties">A.3.7. TemporalProperties</a></li>
 <li><a href="#_temporalproperty">A.3.8. TemporalProperty</a></li>
 </ul>
@@ -899,22 +899,22 @@ OGC API — MF also includes operations for filtering, sorting, and aggregating 
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-movingfeature-section">Resource MovingFeature</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">TemporalGeometry instance</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/items /{mFeatureId}/tgeometry</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">TemporalGeometrySequence</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/items /{mFeatureId}/tgsequence</code></p></td>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GET, POST</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalGeometry-section">Resource TemporalGeometry</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalGeometrySequence-section">Resource TemporalGeometrySequence</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">TemporalPrimitiveGeometry instance</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/items /{mFeatureId}/tgeometry/{tGeometryId}</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/items /{mFeatureId}/tgsequence/{tGeometryId}</code></p></td>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">DELETE</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalPrimitiveGeometry-section">Resource TemporalPrimitiveGeometry</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Queries for TemporalGeometry</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>collections/{collectionId}/items /{mFeatureId}/tgeometry/{tGeometryId}/{queryType}</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Queries for TemporalPrimitiveGeometry</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>collections/{collectionId}/items /{mFeatureId}/tgsequence/{tGeometryId}/{queryType}</code></p></td>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GET</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-temporalGeometryQuery-section">TemporalGeometry Query Resources</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#resource-tgsequenceQuery-section">TemporalGeometry Query Resources</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">TemporalProperties instance</p></td>
@@ -1139,7 +1139,7 @@ the latest edition of the normative document referred to applies.</p>
 <p>OGC 08-131r3:&#8201;&#8212;&#8201;The Specification Model&#8201;&#8212;&#8201;A Standard for Modular Specifications (2009). <a href="https://portal.opengeospatial.org/files/?artifact_id=34762" class="bare">https://portal.opengeospatial.org/files/?artifact_id=34762</a></p>
 </li>
 <li>
-<p>OGC 16-120r3: OGC Moving Features Access (2017). <a href="https://docs.ogc.org/is/16-120r3/16-120r3.html" class="bare">https://docs.ogc.org/is/16-120r3/16-120r3.html</a></p>
+<p><a id="ogc16-120r3"></a>OGC 16-120r3: OGC Moving Features Access (2017). <a href="https://docs.ogc.org/is/16-120r3/16-120r3.html" class="bare">https://docs.ogc.org/is/16-120r3/16-120r3.html</a></p>
 </li>
 <li>
 <p>OGC 19-045r3: OGC Moving Features Encoding Extension - JSON (2020). <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html" class="bare">https://docs.ogc.org/is/19-045r3/19-045r3.html</a></p>
@@ -1443,17 +1443,17 @@ Unique relation types are used for each resource.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Static information describing the <a href="#movingfeature-schema"><strong>MovingFeature</strong></a> of data which has the unique identifier <code>{mFeatureId}</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometry-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometrySequence-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgsequence</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>items</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temporal object information of <a href="#resource-temporalGeometry-section"><strong>TemporalGeometry</strong></a> about available items in the specified <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sequence of <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> about available items in the specified <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalPrimitiveGeometry-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry /{tGeometryId}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalPrimitiveGeometry-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgsequence /{tGeometryId}</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>item</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temporal object describing the <a href="#resource-temporalGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> of data which has the unique identifier <code>{tGeometryId}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temporal object describing the <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> of data which has the unique identifier <code>{tGeometryId}</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometryQuery-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry /{tGeometryId}/{queryType}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-tgsequenceQuery-section">{root}/collections/{collectionId} /items/{mFeatureId}/tgsequence /{tGeometryId}/{queryType}</a></p></td>
 <td class="tableblock halign-center valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies an Information Resource of type <code>{queryType}</code> associated with the <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> instance</p></td>
 </tr>
@@ -1492,7 +1492,7 @@ Unique relation types are used for each resource.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#mf-api-class-diagram">Figure 1</a> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as <strong>Collections</strong>, <strong>Collection</strong>, <strong>MovingFeatures</strong>, <strong>MovingFeature</strong>, <strong>TemporalGeometry</strong>, <strong>TemporalPrimitiveGeometry</strong>, <strong>TemporalProperties</strong>, and <strong>TemporalProperty</strong>.
+<p><a href="#mf-api-class-diagram">Figure 1</a> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as <strong>Collections</strong>, <strong>Collection</strong>, <strong>MovingFeatures</strong>, <strong>MovingFeature</strong>, <strong>TemporalGeometrySequence</strong>, <strong>TemporalPrimitiveGeometry</strong>, <strong>TemporalProperties</strong>, and <strong>TemporalProperty</strong>.
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.</p>
 </div>
@@ -1527,7 +1527,7 @@ Also, the moving feature can have multiple temporal properties, and each propert
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#resource-temporalGeometryQuery-section">spatiotemporal queries</a> for accessing <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalGeometry</strong></a> resources.</p>
+<p><a href="#resource-tgsequenceQuery-section">spatiotemporal queries</a> for accessing <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalGeometry</strong></a> resources.</p>
 </li>
 </ul>
 </div>
@@ -2539,7 +2539,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 </table>
 <div class="paragraph">
 <p>The <strong>MovingFeatures</strong> requirements class defines the requirements for a moving feature.
-A moving feature is an object that provides information about and access to <a href="#resource-temporalGeometry-section"><strong>TemporalGeometry</strong></a> and <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a>.</p>
+A moving feature is an object that provides information about and access to <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometry</strong></a> and <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2575,25 +2575,25 @@ A moving feature is an object that provides information about and access to <a h
 <td class="tableblock halign-center valign-top"><p class="tableblock">GET, DELETE</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometry-section"><strong>TemporalGeometry</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometry</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/
 {collectionId}/items/
-{mFeatureId}/tgeometry</code></p></td>
+{mFeatureId}/tgsequence</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">GET, POST</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/
 {collectionId}/items/
-{mFeatureId}/tgeometry/
+{mFeatureId}/tgsequence/
 {tGeometryId}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">DELETE</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometryQuery-section"><strong>TemporalGeometry Query</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-tgsequenceQuery-section"><strong>TemporalGeometry Query</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/
 {collectionId}/items/
-{mFeatureId}/tgeometry/
+{mFeatureId}/tgsequence/
 {tGeometryId}/{queryType}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">GET</p></td>
 </tr>
@@ -2752,7 +2752,7 @@ Additional support for query parameter <code>subTrajectory</code> is needed to s
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Only a subset of <a href="#resource-temporalGeometry-section"><strong>TemporalGeometry</strong></a> that intersects the time interval in the <code>subTrajectory</code> parameter SHALL be part of the result set, if the <code>subTrajectory</code> parameter is provided.</p>
+<p>Only a subset of <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometry</strong></a> that intersects the time interval in the <code>subTrajectory</code> parameter SHALL be part of the result set, if the <code>subTrajectory</code> parameter is provided.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2782,7 +2782,7 @@ Additional support for query parameter <code>subTrajectory</code> is needed to s
 </tbody>
 </table>
 <div class="paragraph">
-<p>The <code>subTrajectory</code> query parameter is used to select a subset of <a href="#resource-temporalGeometry-section"><strong>TemporalGeometry</strong></a> of each <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> in the <strong>MovingFeatures</strong>, for the specified time interval.
+<p>The <code>subTrajectory</code> query parameter is used to select a subset of <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometrySequence</strong></a> of each <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> in the <strong>MovingFeatures</strong>, for the specified time interval.
 The two date-time strings (new start time and new end time) in the time interval adhere to <a href="https://datatracker.ietf.org/doc/html/rfc3339">IETF RFC3339</a>.
 The new start time(<strong><em>t_s</em></strong>) is earlier than new end time(<strong><em>t_e</em></strong>), i.e., <strong><em>t_s &lt; t_e</em></strong>.
 <a href="#subtrajectory-text-example">Example 1</a> shows valid expression examples of the <code>subTrajectory</code> parameter.</p>
@@ -3238,7 +3238,7 @@ An abbreviated copy of this information is returned for each <strong>MovingFeatu
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal reference system information for the moving feature.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometry-section"><strong>temporalGeometry</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#resource-temporalGeometrySequence-section"><strong>temporalGeometry</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A sequence of <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> for the moving feature.</p></td>
 </tr>
@@ -3394,7 +3394,7 @@ The list of valid values for <code>{mFeatureId}</code> is provided in the <a hre
 <div class="paragraph">
 <p>A successful response to the <strong>MovingFeature</strong> GET operation is a set of metadata that describes the moving feature identified by the <a href="#movingfeature-identifier"><code>{mFeatureId}</code></a> parameter.
 This response does not include a set of temporal object information.
-The temporal object information may be accessed using  <a href="#resource-temporalGeometry-section"><strong>TemporalGeometry</strong></a> and <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> operations.</p>
+The temporal object information may be accessed using  <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometry</strong></a> and <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> operations.</p>
 </div>
 <table id="req_mf-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -3551,11 +3551,11 @@ General guidance on HTTP status codes and how they should be handled is provided
 </div>
 </div>
 <div class="sect2">
-<h3 id="resource-temporalGeometry-section"><a class="anchor" href="#resource-temporalGeometry-section"></a>8.5. Resource TemporalGeometry</h3>
+<h3 id="resource-temporalGeometrySequence-section"><a class="anchor" href="#resource-temporalGeometrySequence-section"></a>8.5. Resource TemporalGeometrySequence</h3>
 <div class="sect3">
 <h4 id="_overview_8"><a class="anchor" href="#_overview_8"></a>8.5.1. Overview</h4>
 <div class="paragraph">
-<p>The <strong>TemporalGeometry</strong> resource supports retrieving and creating operations via GET and POST HTTP methods respectively.</p>
+<p>The <strong>TemporalGeometrySequence</strong> resource supports retrieving and creating operations via GET and POST HTTP methods respectively.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3707,11 +3707,11 @@ And <code>interpolation</code> property in the response shall be 'Discrete'.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Issue a <code>GET</code> request on the <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code> path</p>
+<p>Issue a <code>GET</code> request on the <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code> path</p>
 </li>
 </ol>
 </div>
-<table id="req_mf-tgeometry-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_mf-tgsequence-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3719,14 +3719,14 @@ And <code>interpolation</code> property in the response shall be 'Discrete'.</p>
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Requirement 25</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-get</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgsequence-get</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>For every moving feature identified in the <a href="#resource-movingfeatures-section"><strong>MovingFeatures</strong></a> GET response (path <code>{root}/collections/{collectionId}/items</code>), the server SHALL support the HTTP GET operation at the path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code></p>
+<p>For every moving feature identified in the <a href="#resource-movingfeatures-section"><strong>MovingFeatures</strong></a> GET response (path <code>{root}/collections/{collectionId}/items</code>), the server SHALL support the HTTP GET operation at the path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -3746,14 +3746,14 @@ This operation targeted <a href="#resource-temporalPrimitiveGeometry-section"><s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Issue a <code>POST</code> request on <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code> path</p>
+<p>Issue a <code>POST</code> request on <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code> path</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>Support for the HTTP POST method is specified as a requirement in OGC API — Features.</p>
 </div>
-<table id="req_mf-tgeometry-op-post" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_mf-tgsequence-op-post" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3761,7 +3761,7 @@ This operation targeted <a href="#resource-temporalPrimitiveGeometry-section"><s
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Requirement 26</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-post</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgsequence-post</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -3792,16 +3792,16 @@ This operation targeted <a href="#resource-temporalPrimitiveGeometry-section"><s
 </tbody>
 </table>
 <div class="paragraph">
-<p>The following example adds a new feature (<a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tgeometry"><strong><em>TemporalGeometry</em></strong> object</a> in <a href="#OGC-MF-JSON">MF-JSON</a>) to the feature created by the <a href="#movingfeature-post-example">Creation a MovingFeature Example</a>.
-The feature is represented as <strong><em>TemporalGeometry</em></strong> object in <a href="#OGC-MF-JSON">MF-JSON</a>, which is an extension of the JSON.
+<p>The following example adds a new feature (<a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive"><strong><em>TemporalPrimitiveGeometry</em></strong> object</a> in <a href="#OGC-MF-JSON">MF-JSON</a>) to the feature created by the <a href="#movingfeature-post-example">Creation a MovingFeature Example</a>.
+The feature is represented as <strong><em>TemporalPrimitiveGeometry</em></strong> object in <a href="#OGC-MF-JSON">MF-JSON</a>, which is an extension of the JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.</p>
 </div>
-<div id="tgeometry-post-example" class="literalblock">
-<div class="title">An Example of Creating a New TemporalGeometry Object:</div>
+<div id="tpgeometry-post-example" class="literalblock">
+<div class="title">An Example of Creating a New TemporalPrimitiveGeometry Object:</div>
 <div class="content">
 <pre>   Client                                                                     Server
      |                                                                          |
-     | POST /collections/mfc_1/items/mf_1/tgeometry   HTTP/1.1                  |
+     | POST /collections/mfc_1/items/mf_1/tgsequence  HTTP/1.1                  |
      | Content-Type: application/json                                           |
      |                                                                          |
      | {                                                                        |
@@ -3831,7 +3831,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
      |-------------------------------------------------------------------------&gt;|
      |                                                                          |
      | HTTP/1.1 201 Created                                                     |
-     | Location: /collections/mfc_1/items/mf_1/tgeometry/tg_1                   |
+     | Location: /collections/mfc_1/items/mf_1/tgsequence/tg_1                  |
      |&lt;-------------------------------------------------------------------------|</pre>
 </div>
 </div>
@@ -3843,9 +3843,9 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <div class="sect4">
 <h5 id="_retrieve_10"><a class="anchor" href="#_retrieve_10"></a>Retrieve</h5>
 <div class="paragraph">
-<p>A successful response to the <strong>TemporalGeometry</strong> GET operation is a document that contains the set of temporal geometry of the moving feature identified by the <a href="#movingfeature-identifier"><code>{mFeatureId}</code></a> parameter.</p>
+<p>A successful response to the <strong>TemporalGeometrySequence</strong> GET operation is a document that contains the set of temporal geometry of the moving feature identified by the <a href="#movingfeature-identifier"><code>{mFeatureId}</code></a> parameter.</p>
 </div>
-<table id="req_mf-tgeometry-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_mf-tgsequence-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3853,7 +3853,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Requirement 27</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-get-success</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgsequence-get-success</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -3877,8 +3877,8 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </tr>
 </tbody>
 </table>
-<div id="tgeometry-schema" class="listingblock">
-<div class="title">TemporalGeometry GET Response Schema (temporalGeometry.yaml):</div>
+<div id="tgsequence-schema" class="listingblock">
+<div class="title">TemporalGeometrySequence GET Response Schema (temporalGeometrySequence.yaml):</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
 <span style="color:#606">required</span>:
@@ -3911,7 +3911,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
     <span style="color:#606">minimum</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">0</span></span></code></pre>
 </div>
 </div>
-<div id="tp-geometry-schema" class="listingblock">
+<div id="tpgeometry-schema" class="listingblock">
 <div class="title">TemporalPrimitiveGeometry Schema (temporalPrimitiveGeometry.yaml):</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
@@ -3997,10 +3997,10 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="paragraph">
-<p>The following JSON payload is an example of a response to an OGC API — Moving Features <strong>TemporalGeometry</strong> GET operation.</p>
+<p>The following JSON payload is an example of a response to an OGC API — Moving Features <strong>TemporalGeometrySequence</strong> GET operation.</p>
 </div>
-<div id="tgeometry-example" class="listingblock">
-<div class="title">An Example of a TemporalGeometry GET operation:</div>
+<div id="tgsequence-example" class="listingblock">
+<div class="title">An Example of a TemporalGeometrySequence GET operation:</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
   <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MovingGeometryCollection</span><span style="color:#710">&quot;</span></span>,
@@ -4068,9 +4068,9 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <div class="sect5">
 <h6 id="_create_6"><a class="anchor" href="#_create_6"></a>Create</h6>
 <div class="paragraph">
-<p>A successful response to the <strong>TemporalGeometry</strong> POST operation is an HTTP status code.</p>
+<p>A successful response to the <strong>TemporalGeometrySequence</strong> POST operation is an HTTP status code.</p>
 </div>
-<table id="req_mf-tgeometry-response-post" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_mf-tgsequence-response-post" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4078,7 +4078,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Requirement 28</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgeometry-post-success</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tgsequence-post-success</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -4213,13 +4213,13 @@ The detailed information and requirements for each property are described in the
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Issue a <code>DELETE</code> request on <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tGeometryId}</code> path</p>
+<p>Issue a <code>DELETE</code> request on <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}</code> path</p>
 </li>
 </ol>
 </div>
-<div id="tgeometry-identifier" class="paragraph">
+<div id="tpgeometry-identifier" class="paragraph">
 <p>The {tGeometryId} parameter is the unique identifier for a TemporalPrimitiveGeometry object offered by the API.
-The list of valid values for <code>{tGeometryId}</code> is provided in the <a href="#resource-temporalGeometry-section"><code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code></a> GET response.</p>
+The list of valid values for <code>{tGeometryId}</code> is provided in the <a href="#resource-temporalGeometrySequence-section"><code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code></a> GET response.</p>
 </div>
 <div class="paragraph">
 <p>Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.</p>
@@ -4245,7 +4245,7 @@ The list of valid values for <code>{tGeometryId}</code> is provided in the <a hr
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>For every temporal geometry in a moving feature (path <code>{root}/collections/{collectionId}/items/{mFeatureId}</code>), the server SHALL support the HTTP DELETE operation at the path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tGeometryId}</code></p>
+<p>For every temporal geometry in a moving feature (path <code>{root}/collections/{collectionId}/items/{mFeatureId}</code>), the server SHALL support the HTTP DELETE operation at the path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -4303,7 +4303,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 </div>
 </div>
 <div class="sect2">
-<h3 id="resource-temporalGeometryQuery-section"><a class="anchor" href="#resource-temporalGeometryQuery-section"></a>8.7. TemporalGeometry Query Resources</h3>
+<h3 id="resource-tgsequenceQuery-section"><a class="anchor" href="#resource-tgsequenceQuery-section"></a>8.7. TemporalGeometry Query Resources</h3>
 <div class="sect3">
 <h4 id="_overview_10"><a class="anchor" href="#_overview_10"></a>8.7.1. Overview</h4>
 <div class="paragraph">
@@ -4318,7 +4318,7 @@ This list may change as the Standard is used and experience is gained.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tGeometryId}/{queryType}</code></p>
+<p><code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/{queryType}</code></p>
 </li>
 </ul>
 </div>
@@ -4363,17 +4363,17 @@ This list may change as the Standard is used and experience is gained.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometry/{tGeometryId}/distance</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/distance</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Distance</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return a graph of the time to distance function as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometry/{tGeometryId}/velocity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/velocity</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Velocity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return a graph of the time to velocity function as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometry/{tGeometryId}/acceleration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/acceleration</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Acceleration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return a graph of the time to acceleration function as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p></td>
 </tr>
@@ -4396,7 +4396,7 @@ The following are defined as standard shared parameters for use.</p>
 <div class="sect3">
 <h4 id="_distance_query"><a class="anchor" href="#_distance_query"></a>8.7.3. Distance Query</h4>
 <div class="paragraph">
-<p>The Distance query returns a time to distance curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.
+<p>The Distance query returns a time to distance curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.
 <a href="#time-to-distance-curve">Figure 4</a> shows an example of time to distance curve.</p>
 </div>
 <div id="time-to-distance-curve" class="imageblock text-center">
@@ -4412,14 +4412,14 @@ The following are defined as standard shared parameters for use.</p>
 <h5 id="_parameter_datetime_2"><a class="anchor" href="#_parameter_datetime_2"></a>Parameter datetime</h5>
 <div class="paragraph">
 <p>The datetime parameter defines the specified date and time to return the distance value from the time to distance graph.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalGeometry</strong></a> resource.</p>
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_velocity_query"><a class="anchor" href="#_velocity_query"></a>8.7.4. Velocity Query</h4>
 <div class="paragraph">
-<p>The Velocity query returns a time to velocity curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
+<p>The Velocity query returns a time to velocity curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
 </div>
 <div class="paragraph">
 <p>The filter constraints are defined by the following query parameter:</p>
@@ -4428,14 +4428,14 @@ When 'datetime' is not specified, an implementation instance (endpoint) of the A
 <h5 id="_parameter_datetime_3"><a class="anchor" href="#_parameter_datetime_3"></a>Parameter datetime</h5>
 <div class="paragraph">
 <p>The datetime parameter defines the specified date and time to return the velocity value from the time to velocity graph.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalGeometry</strong></a> resource.</p>
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_acceleration_query"><a class="anchor" href="#_acceleration_query"></a>8.7.5. Acceleration Query</h4>
 <div class="paragraph">
-<p>The Acceleration query returns a time to acceleration curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
+<p>The Acceleration query returns a time to acceleration curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
 </div>
 <div class="paragraph">
 <p>The filter constraints are defined by the following query parameter:</p>
@@ -4444,7 +4444,7 @@ When 'datetime' is not specified, an implementation instance (endpoint) of the A
 <h5 id="_parameter_datetime_4"><a class="anchor" href="#_parameter_datetime_4"></a>Parameter datetime</h5>
 <div class="paragraph">
 <p>The datetime parameter defines the specified date and time to return the acceleration value from the time to acceleration graph.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalGeometry</strong></a> resource.</p>
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
 </div>
 </div>
 </div>
@@ -4465,7 +4465,7 @@ When 'datetime' is not specified, an implementation instance (endpoint) of the A
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>For every TemporalPrimitiveGeometry identified in the <a href="#resource-temporalGeometry-section"><strong>TemporalGeometry</strong></a> GET response (path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code>), the server SHALL support the HTTP GET operation at the path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tGeometryId}/{queryType}</code></p>
+<p>For every TemporalPrimitiveGeometry identified in the <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometrySequence</strong></a> GET response (path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code>), the server SHALL support the HTTP GET operation at the path <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/{queryType}</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -4484,7 +4484,7 @@ The path parameter <code>tGeometryId</code> is an <code>id</code> property of th
 </tr>
 </tbody>
 </table>
-<table id="per_mf-tgeometry-query-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="per_mf-tpgeometry-query-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4492,7 +4492,7 @@ The path parameter <code>tGeometryId</code> is an <code>id</code> property of th
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Permission 1</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/per/movingfeatures/tgeometry-query</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/per/movingfeatures/tpgeometry-query</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -4683,11 +4683,11 @@ This operation targeted <a href="#resource-temporalProperty-section"><strong>Tem
       - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">type: string</span></span>
         <span style="color:#606">minLength</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">3</span></span>
         <span style="color:#606">maxLength</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">3</span></span>
-  <span style="color:#606">values</span>:
+  <span style="color:#606">valueSequence</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
     <span style="color:#606">uniqueItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">true</span></span>
     <span style="color:#606">items</span>:
-      <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'temporalValue.yaml'</span>
+      <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'temporalPrimitiveValue.yaml'</span>
   <span style="color:#606">description</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span></code></pre>
 </div>
@@ -4793,7 +4793,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
     <span style="color:#606">items</span>:
       <span style="color:#606">oneOf</span>:
         - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'temporalProperty.yaml'</span></span>
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'temporalValue.yaml'</span></span>
+        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'temporalPrimitiveValue.yaml'</span></span>
   <span style="color:#606">links</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
     <span style="color:#606">items</span>:
@@ -4895,7 +4895,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 <p>A retrieve operation returns a <strong>TemporalProperty</strong> resource which is included in the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.The <strong>TemporalProperty</strong> resource returned to the response can be limited using the <a href="#limit-section"><code>limit</code></a>, <a href="#datetime-section"><code>datetime</code></a>, and <a href="#leaf-section"><code>leaf</code></a> parameters.</p>
 </li>
 <li>
-<p>A create operation posts a new temporal value object to the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.</p>
+<p>A create operation posts a new temporal primitive value object to the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.</p>
 </li>
 </ol>
 </div>
@@ -4933,9 +4933,9 @@ An abbreviated copy of this information is returned for each <strong>TemporalPro
 <td class="tableblock halign-left valign-top"><p class="tableblock">A predefined temporal property type (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage').</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>values</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>valueSequence</em></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A sequence of <a href="#temporalValue-properties-table">temporal value</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A sequence of <a href="#temporalValue-properties-table">temporal primitive value</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>form</em></strong></p></td>
@@ -4950,7 +4950,7 @@ An abbreviated copy of this information is returned for each <strong>TemporalPro
 </tbody>
 </table>
 <table id="temporalValue-properties-table" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. Table of the properties related to the temporal value</caption>
+<caption class="title">Table 12. Table of the properties related to the temporal primitive value</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 15%;">
@@ -5037,7 +5037,7 @@ The list of valid values for <code>{tPropertyName}</code> is provided in the <a 
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top"><strong>Requirement 39</strong></th>
-<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-get</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperty-get</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -5061,7 +5061,7 @@ The path parameter <code>mFeatureId</code> is each <code>id</code> property in t
 <h6 id="_create_9"><a class="anchor" href="#_create_9"></a>Create</h6>
 <div class="paragraph">
 <p>The create operation is defined in the <code><a href="http://docs.ogc.org/DRAFTS/20-002.html#create">CREATE</a></code> conformance class in the OGC API — Features.
-This operation targeted the new temporal values object defined in <a href="#temporalValue-properties-table">Table 12</a>.</p>
+This operation targeted the new temporal primitive value object defined in <a href="#temporalValue-properties-table">Table 12</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -5100,7 +5100,7 @@ This operation targeted the new temporal values object defined in <a href="#temp
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="#tvalue-schema">TemporalValue</a> schema.</p>
+<p>The content of the request body SHALL be based upon the <a href="#tvalue-schema">TemporalPrimitiveValue</a> schema.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -5112,7 +5112,7 @@ This operation targeted the new temporal values object defined in <a href="#temp
 </tbody>
 </table>
 <div id="tvalue-schema" class="listingblock">
-<div class="title">TemporalProperty Request Body Schema (temporalValue.yaml):</div>
+<div class="title">TemporalProperty Request Body Schema (TemporalPrimitiveValue.yaml):</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
 <span style="color:#606">required</span>:
@@ -5142,12 +5142,12 @@ This operation targeted the new temporal values object defined in <a href="#temp
 </div>
 </div>
 <div class="paragraph">
-<p>The following example adds a new feature (<a href="#temporalValue-properties-table">TemporalValue</a> object) to the feature created by <a href="#tproperties-post-example">Creating a New TemporalProperty Object Example</a>.
+<p>The following example adds a new feature (<a href="#temporalValue-properties-table">TemporalPrimitiveValue</a> object) to the feature created by <a href="#tproperties-post-example">Creating a New TemporalPrimitiveValue Object Example</a>.
 The feature is represented as a JSON payload.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.</p>
 </div>
 <div id="temporalvalue-post-example" class="literalblock">
-<div class="title">An Example of Creating a New TemporalValue Object:</div>
+<div class="title">An Example of Creating a New TemporalPrimitiveValue Object:</div>
 <div class="content">
 <pre>   Client                                                                     Server
      |                                                                          |
@@ -5218,7 +5218,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <p>The following JSON payload is an example of a response to an OGC API — Moving Features <strong>TemporalProperty</strong> GET operation.</p>
 </div>
 <div id="tproperties-example" class="listingblock">
-<div class="title">An Example of TemporalProperty GET Operation:</div>
+<div class="title">An Example of <strong>TemporalProperty</strong> GET Operation:</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
   <span style="color:#606"><span style="color:#404">&quot;</span><span>temporalProperties</span><span style="color:#404">&quot;</span></span>: [
@@ -6432,10 +6432,10 @@ All supported formats should be exercised.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_temporalgeometry"><a class="anchor" href="#_temporalgeometry"></a>A.3.4. TemporalGeometry</h4>
+<h4 id="_temporalgeometrysequence"><a class="anchor" href="#_temporalgeometrysequence"></a>A.3.4. TemporalGeometrySequence</h4>
 <div class="sect4">
 <h5 id="_http_get_operation_5"><a class="anchor" href="#_http_get_operation_5"></a>HTTP GET Operation</h5>
-<table id="conf_mf_tgeometry_get" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tgsequence_get" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6443,22 +6443,22 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 21</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-get</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgsequence-get</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tgeometry-op-get">/req/movingfeatures/tgeometry-get</a><br>
-<a href="#req_mf-tgeometry-response-get">/req/movingfeatures/tgeometry-get-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tgsequence-op-get">/req/movingfeatures/tgsequence-get</a><br>
+<a href="#req_mf-tgsequence-response-get">/req/movingfeatures/tgsequence-get-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalGeometry</strong> can be identified and extracted from a <strong>MovingFeature</strong> object using query parameters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalGeometrySequence</strong> can be identified and extracted from a <strong>MovingFeature</strong> object using query parameters.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For every <strong>TemporalGeometry</strong> identified in <strong>MovingFeature</strong>, issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code> where <code>{collectionId}</code> is the id property for a <strong>MovingFeature Collection</strong> described in the <strong>MovingFeature Collections</strong> content and <code>{mFeatureId}</code> is the id property for the <strong>MovingFeature</strong></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For every <strong>TemporalGeometrySequence</strong> identified in <strong>MovingFeature</strong>, issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code> where <code>{collectionId}</code> is the id property for a <strong>MovingFeature Collection</strong> described in the <strong>MovingFeature Collection</strong> content and <code>{mFeatureId}</code> is the id property for the <strong>MovingFeature</strong></p>
 <p class="tableblock">1. Validate that a document was returned with a status code <code>200</code><br>
-2. Validate the contents of the returned document using test <a href="#conf_mf_tgeometry_get_success"><code>/conf/movingfeatures/tgeometry-get-success</code></a></p>
+2. Validate the contents of the returned document using test <a href="#conf_mf_tgsequence_get_success"><code>/conf/movingfeatures/tgsequence-get-success</code></a></p>
 <p class="tableblock">Repeat these tests using the following parameter tests that defined in the OGC API — Common and OGC API — MF:<br>
 - Bounding Box: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_bounding_box_tests">Bounding Box Tests</a><br>
 - Limit: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests">Limit Tests</a><br>
@@ -6468,7 +6468,7 @@ All supported formats should be exercised.</p>
 </tr>
 </tbody>
 </table>
-<table id="conf_mf_tgeometry_get_success" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tgsequence_get_success" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6476,21 +6476,21 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 22</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-get-success</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgsequence-get-success</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tgeometry-response-get">/req/movingfeatures/tgeometry-get-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tgsequence-response-get">/req/movingfeatures/tgsequence-get-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalGeometry</strong> complies with the required structure and contents.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalGeometrySequence</strong> complies with the required structure and contents.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1. Validate that the <code>type</code> property is present and has a value of <code>MovingGeometryCollection</code><br>
-2. Validate the <code>prism</code> property is present and that it is populated with an array of <strong>TemporalGeometry</strong> items<br>
-3. Validate that only <strong>TemporalGeometry</strong> which match the selection criteria are included in the <strong>MovingFeature</strong><br>
+2. Validate the <code>prism</code> property is present and that it is populated with an array of <strong>TemporalPrimitiveGeometry</strong> items<br>
+3. Validate that only <strong>TemporalPrimitiveGeometry</strong> which match the selection criteria are included in the <strong>MovingFeature</strong><br>
 4. If the <code>links</code> property is present, validate that all entries comply with OGC API — Features <a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links">/conf/core/fc-links</a><br>
 5. If the <code>timeStamp</code> property is present, validate that it complies with OGC API — Features <a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp">/conf/core/fc-timeStamp</a><br>
 6. If the <code>numberMatched</code> property is present, validate that it complies with OGC API — Features <a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched">/conf/core/fc-numberMatched</a><br>
@@ -6500,10 +6500,12 @@ All supported formats should be exercised.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The <strong>TemporalGeometry</strong> content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.</p>
+<p>The <strong>TemporalPrimitiveGeometry</strong> content may be retrieved in a number of different formats.
+The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema.
+All supported formats should be exercised.</p>
 </div>
 <table id="temporalgeometry-schema" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 20. Schema and Tests for TemporalGeometry content</caption>
+<caption class="title">Table 20. Schema and Tests for <strong>TemporalGeometrySequence</strong> content</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -6519,12 +6521,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTML</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tgeometry-schema">temporalGeometry.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tgsequence-schema">temporalGeometrySequence.yaml</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/19-072/19-072.html#ats_html_content">/conf/html/content</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tgeometry-schema">temporalGeometry.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tgsequence-schema">temporalGeometrySequence.yaml</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/19-072/19-072.html#ats_json_content">/conf/json/content</a></p></td>
 </tr>
 </tbody>
@@ -6532,7 +6534,7 @@ All supported formats should be exercised.</p>
 </div>
 <div class="sect4">
 <h5 id="_http_post_operation_3"><a class="anchor" href="#_http_post_operation_3"></a>HTTP POST Operation</h5>
-<table id="conf_mf_tgeometry_post" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tgsequence_post" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6540,30 +6542,30 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 23</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-post</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgsequence-post</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf_mandatory-temporalprimitivegeometry">/req/movingfeatures/tgeometry-mandatory</a><br>
-<a href="#req_mf-tgeometry-op-post">/req/movingfeatures/tgeometry-post</a><br>
-<a href="#req_mf-tgeometry-response-post">/req/movingfeatures/tgeometry-post-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf_mandatory-temporalprimitivegeometry">/req/movingfeatures/tpgeometry-mandatory</a><br>
+<a href="#req_mf-tgsequence-op-post">/req/movingfeatures/tgsequence-post</a><br>
+<a href="#req_mf-tgsequence-response-post">/req/movingfeatures/tgsequence-post-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalGeometry</strong> can be created at the expected location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalPrimitiveGeometry</strong> can be created at the expected location.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1. Validate that the server complies with OGC API — Features <a href="http://docs.ogc.org/DRAFTS/20-002.html#_operation">POST operation requirements</a><br>
-2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <a href="#tgeometry-requestbody-schema">Table 21</a> and <a href="#temporalPrimitiveGeometry-properties-table">Table 9</a><br>
+2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <a href="#tgsequence-requestbody-schema">Table 21</a> and <a href="#temporalPrimitiveGeometry-properties-table">Table 9</a><br>
 3. Validate that the request body complies OGC API — Features <a href="http://docs.ogc.org/DRAFTS/20-002.html#_request_body">POST request body requirements</a><br>
-4. Issue an HTTP POST request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code><br>
-5. Validate the contents of the response using test <a href="#conf_mf_tgeometry_post_success"><code>/conf/movingfeatures/tgeometry-post-success</code></a></p></td>
+4. Issue an HTTP POST request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code><br>
+5. Validate the contents of the response using test <a href="#conf_mf_tgsequence_post_success"><code>/conf/movingfeatures/tgeometry-post-success</code></a></p></td>
 </tr>
 </tbody>
 </table>
-<table id="tgeometry-requestbody-schema" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 21. Schema and Tests for Request Body of <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code> POST</caption>
+<table id="tgsequence-requestbody-schema" class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 21. Schema and Tests for Request Body of <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code> POST</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -6584,7 +6586,7 @@ All supported formats should be exercised.</p>
 </tr>
 </tbody>
 </table>
-<table id="conf_mf_tgeometry_post_success" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tgsequence_post_success" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6592,15 +6594,15 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 24</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-post-success</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgsequence-post-success</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tgeometry-response-post">/req/movingfeatures/tgeometry-post-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tgsequence-response-post">/req/movingfeatures/tgsequence-post-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the response of <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry</code> POST request complies with the required structure and contents.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the response of <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence</code> POST request complies with the required structure and contents.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
@@ -6623,12 +6625,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 25</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-delete</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tpgeometry-delete</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-op-delete">/req/movingfeatures/tgeometry-delete</a><br>
-<a href="#req_mf-tpgeometry-response-delete">/req/movingfeatures/tgeometry-delete-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-op-delete">/req/movingfeatures/tpgeometry-delete</a><br>
+<a href="#req_mf-tpgeometry-response-delete">/req/movingfeatures/tpgeometry-delete-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6637,12 +6639,12 @@ All supported formats should be exercised.</p>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1. Validate that the server complies with OGC API — Features <a href="http://docs.ogc.org/DRAFTS/20-002.html#_operation_3">DELETE operation requirements</a><br>
-2. Issue an HTTP DELETE request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tgeometryId}</code><br>
-3. Validate the contents of the response using test <a href="#conf_mf_tgeometry_delete_success"><code>/conf/mf-collection/collections-put-success</code></a></p></td>
+2. Issue an HTTP DELETE request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tgeometryId}</code><br>
+3. Validate the contents of the response using test <a href="#conf_mf_tpgeometry_delete_success"><code>/conf/mf-collection/collections-put-success</code></a></p></td>
 </tr>
 </tbody>
 </table>
-<table id="conf_mf_tgeometry_delete_success" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tpgeometry_delete_success" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6650,15 +6652,15 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 26</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/mf-collection/collections-delete-success</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/mf-collection/tpgeometry-delete-success</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-response-delete">/req/movingfeatures/tgeometry-delete-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-response-delete">/req/movingfeatures/tpgeometry-delete-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the response of <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tgeometryId}</code> DELETE request complies with the required structure and contents.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the response of <code>{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}</code> DELETE request complies with the required structure and contents.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
@@ -6670,10 +6672,10 @@ All supported formats should be exercised.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_temporalgeometryquery"><a class="anchor" href="#_temporalgeometryquery"></a>A.3.6. TemporalGeometryQuery</h4>
+<h4 id="_temporalgeometry_query"><a class="anchor" href="#_temporalgeometry_query"></a>A.3.6. TemporalGeometry Query</h4>
 <div class="sect4">
 <h5 id="_http_get_operation_6"><a class="anchor" href="#_http_get_operation_6"></a>HTTP GET Operation</h5>
-<table id="conf_mf_tgeometry_query_distance" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tpgeometry_query_distance" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6681,12 +6683,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 27</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-query-distance</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tpgeometry-query-distance</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-query-op-get">/req/movingfeatures/tgeometry-query</a><br>
-<a href="#req_mf-tpgeometry-query-response-get">/req/movingfeatures/tgeometry-query-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-query-op-get">/req/movingfeatures/tpgeometry-query</a><br>
+<a href="#req_mf-tpgeometry-query-response-get">/req/movingfeatures/tpgeometry-query-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6696,15 +6698,15 @@ All supported formats should be exercised.</p>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IF a query parameter <code>datetime</code> is not empty, validate that the query parameter <code>datetime</code> with the following parameter tests that defined in the OGC API — Common:<br>
 - <strong>Date-Time</strong>: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests">Date-Time Tests</a><br></p>
-<p class="tableblock">1. Issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometry/{tGeometryId}/distance</code><br>
+<p class="tableblock">1. Issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/distance</code><br>
 2. Validate that a document was returned with a status code <code>200</code><br>
 3. Verify the <code>type</code> is <code>"TReal"</code><br></p>
 <p class="tableblock">IF a query parameter <code>datetime</code> is not empty: Execute requests with <code>datetime</code> query parameter and verify the correctly calculated value is returned.</p>
-<p class="tableblock">IF a query parameter <code>datetime</code> is empty: Verify that a time-to-distance curve is correctly returned according to the specified TemporalPrimitiveGeometry resource by {tgeometryId}.</p></td>
+<p class="tableblock">IF a query parameter <code>datetime</code> is empty: Verify that a time-to-distance curve is correctly returned according to the specified <strong>TemporalPrimitiveGeometry</strong> resource by {tGeometryId}.</p></td>
 </tr>
 </tbody>
 </table>
-<table id="conf_mf_tgeometry_query_velocity" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tpgeometry_query_velocity" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6712,12 +6714,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 28</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-query-velocity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tpgeometry-query-velocity</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-query-op-get">/req/movingfeatures/tgeometry-query</a><br>
-<a href="#req_mf-tpgeometry-query-response-get">/req/movingfeatures/tgeometry-query-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-query-op-get">/req/movingfeatures/tpgeometry-query</a><br>
+<a href="#req_mf-tpgeometry-query-response-get">/req/movingfeatures/tpgeometry-query-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6727,15 +6729,15 @@ All supported formats should be exercised.</p>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IF a query parameter <code>datetime</code> is not empty, validate that the query parameter <code>datetime</code> with the following parameter tests that defined in the OGC API — Common:<br>
 - <strong>Date-Time</strong>: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests">Date-Time Tests</a><br></p>
-<p class="tableblock">1. Issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometry/{tGeometryId}/velocity</code><br>
+<p class="tableblock">1. Issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/velocity</code><br>
 2. Validate that a document was returned with a status code <code>200</code><br>
 3. Verify the <code>type</code> is <code>"TReal"</code><br></p>
 <p class="tableblock">IF a query parameter <code>datetime</code> is not empty: Execute requests with <code>datetime</code> query parameter and verify the correctly calculated value is returned.</p>
-<p class="tableblock">IF a query parameter <code>datetime</code> is empty: Verify that a time-to-velocity curve is correctly returned according to the specified TemporalPrimitiveGeometry resource by {tgeometryId}.</p></td>
+<p class="tableblock">IF a query parameter <code>datetime</code> is empty: Verify that a time-to-velocity curve is correctly returned according to the specified <strong>TemporalPrimitiveGeometry</strong> resource by {tGeometryId}.</p></td>
 </tr>
 </tbody>
 </table>
-<table id="conf_mf_tgeometry_query_acceleration" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tpgeometry_query_acceleration" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6743,12 +6745,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 29</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tgeometry-query-acceleration</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tpgeometry-query-acceleration</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-query-op-get">/req/movingfeatures/tgeometry-query</a><br>
-<a href="#req_mf-tpgeometry-query-response-get">/req/movingfeatures/tgeometry-query-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tpgeometry-query-op-get">/req/movingfeatures/tpgeometry-query</a><br>
+<a href="#req_mf-tpgeometry-query-response-get">/req/movingfeatures/tpgeometry-query-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6758,11 +6760,11 @@ All supported formats should be exercised.</p>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IF a query parameter <code>datetime</code> is not empty, validate that the query parameter <code>datetime</code> with the following parameter tests that defined in the OGC API — Common:<br>
 - <strong>Date-Time</strong>: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests">Date-Time Tests</a><br></p>
-<p class="tableblock">1. Issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgeometry/{tGeometryId}/acceleration</code><br>
+<p class="tableblock">1. Issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/acceleration</code><br>
 2. Validate that a document was returned with a status code <code>200</code><br>
 3. Verify the <code>type</code> is <code>"TReal"</code><br></p>
 <p class="tableblock">IF a query parameter <code>datetime</code> is not empty: Execute requests with <code>datetime</code> query parameter and verify the correctly calculated value is returned.</p>
-<p class="tableblock">IF a query parameter <code>datetime</code> is empty: Verify that a time-to-acceleration curve is correctly returned according to the specified TemporalPrimitiveGeometry resource by {tgeometryId}.</p></td>
+<p class="tableblock">IF a query parameter <code>datetime</code> is empty: Verify that a time-to-acceleration curve is correctly returned according to the specified <strong>TemporalPrimitiveGeometry</strong> resource by {tGeometryId}.</p></td>
 </tr>
 </tbody>
 </table>
@@ -6772,7 +6774,7 @@ All supported formats should be exercised.</p>
 <h4 id="_temporalproperties"><a class="anchor" href="#_temporalproperties"></a>A.3.7. TemporalProperties</h4>
 <div class="sect4">
 <h5 id="_http_get_operation_7"><a class="anchor" href="#_http_get_operation_7"></a>HTTP GET Operation</h5>
-<table id="conf_mf_tproperties_collection_get" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tproperties_get" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6780,12 +6782,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 30</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-collection-get</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-get</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperties-op-get">/req/movingfeatures/tproperties-collection-get</a><br>
-<a href="#req_mf-tproperties-response-get">/req/movingfeatures/tproperties-collection-get-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperties-op-get">/req/movingfeatures/tproperties-get</a><br>
+<a href="#req_mf-tproperties-response-get">/req/movingfeatures/tproperties-get-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6793,17 +6795,17 @@ All supported formats should be exercised.</p>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For every <strong>TemporalProperty</strong> identified in <strong>MovingFeature</strong>, issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tproperties</code> where <code>{collectionId}</code> is the id property for a <strong>MovingFeature Collection</strong> described in the <strong>MovingFeature Collections</strong> content and <code>{mFeatureId}</code> is the id property for the <strong>MovingFeature</strong></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For every <strong>TemporalProperty</strong> identified in <strong>MovingFeature</strong>, issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tproperties</code> where <code>{collectionId}</code> is the id property for a <strong>MovingFeature Collection</strong> described in the <strong>MovingFeature Collection</strong> content and <code>{mFeatureId}</code> is the id property for the <strong>MovingFeature</strong></p>
 <p class="tableblock">1. Validate that a document was returned with a status code <code>200</code><br>
-2. Validate the contents of the returned document using test <a href="#conf_mf_tproperties_collection_get_success"><code>/conf/movingfeatures/tproperties-collection-get-success</code></a></p>
-<p class="tableblock">Repeat these tests using the following parameter tests that defined in the OGC API — Common:<br>
+2. Validate the contents of the returned document using test <a href="#conf_mf_tproperties_get_success"><code>/conf/movingfeatures/tproperties-get-success</code></a></p>
+<p class="tableblock">Repeat these tests using the following parameter tests that are defined in the OGC API — Common:<br>
 - Limit: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests">Limit Tests</a><br>
 - Date-Time: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests">Date-Time Tests</a></p>
 <p class="tableblock">Execute requests with combinations of the <code>"datetime"</code> query parameters and verify that only features are returned that match both selection criteria.</p></td>
 </tr>
 </tbody>
 </table>
-<table id="conf_mf_tproperties_collection_get_success" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tproperties_get_success" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6811,11 +6813,11 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 31</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-collection-get-success</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-get-success</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperties-response-get">/req/movingfeatures/tproperties-collection-get-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperties-response-get">/req/movingfeatures/tproperties-get-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6838,7 +6840,7 @@ All supported formats should be exercised.</p>
 <p>The <strong>TemporalProperties</strong> content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.</p>
 </div>
 <table id="temporalproperties-schema" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 22. Schema and Tests for TemporalProperties content</caption>
+<caption class="title">Table 22. Schema and Tests for <strong>TemporalProperties</strong> content</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -6875,13 +6877,13 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 32</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-collection-post</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-post</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf_mandatory-tproperty">/req/movingfeatures/tproperties-mandatory</a><br>
-<a href="#req_mf-tproperties-op-post">/req/movingfeatures/tproperties-collection-post</a><br>
-<a href="#req_mf-tproperties-response-post">/req/movingfeatures/tproperties-collection-post-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf_mandatory-tproperty">/req/movingfeatures/tproperty-mandatory</a><br>
+<a href="#req_mf-tproperties-op-post">/req/movingfeatures/tproperties-post</a><br>
+<a href="#req_mf-tproperties-response-post">/req/movingfeatures/tproperties-post-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6893,7 +6895,7 @@ All supported formats should be exercised.</p>
 2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <a href="#tproperties-requestbody-schema">Table 23</a> and <a href="#temporalProperty-properties-table">Table 11</a><br>
 3. Validate that the request body complies OGC API — Features <a href="http://docs.ogc.org/DRAFTS/20-002.html#_request_body">POST request body requirements</a><br>
 4. Issue an HTTP POST request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tproperties</code><br>
-5. Validate the contents of the response using test <a href="#conf_mf_tproperties_post_success"><code>/conf/movingfeatures/tproperties-collection-post-success</code></a></p></td>
+5. Validate the contents of the response using test <a href="#conf_mf_tproperties_post_success"><code>/conf/movingfeatures/tproperties-post-success</code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -6937,11 +6939,11 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 33</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-collection-post-success</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-post-success</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperties-response-post">/req/movingfeatures/tproperties-collection-post-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperties-response-post">/req/movingfeatures/tproperties-post-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6960,7 +6962,7 @@ All supported formats should be exercised.</p>
 <h4 id="_temporalproperty"><a class="anchor" href="#_temporalproperty"></a>A.3.8. TemporalProperty</h4>
 <div class="sect4">
 <h5 id="_http_get_operation_8"><a class="anchor" href="#_http_get_operation_8"></a>HTTP GET Operation</h5>
-<table id="conf_mf_tproperties_get" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tproperty_get" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -6968,12 +6970,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 34</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-get</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperty-get</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperty-op-get">/req/movingfeatures/tproperties-get</a><br>
-<a href="#req_mf-tproperty-response-get">/req/movingfeatures/tproperties-get-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperty-op-get">/req/movingfeatures/tproperty-get</a><br>
+<a href="#req_mf-tproperty-response-get">/req/movingfeatures/tproperty-get-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -6983,7 +6985,7 @@ All supported formats should be exercised.</p>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For every <strong>TemporalProperty</strong> identified in <strong>MovingFeature</strong>, issue an HTTP GET request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tpropertyName}</code> where <code>{collectionId}</code> is the id property for a <strong>MovingFeature Collection</strong> described in the <strong>MovingFeature Collections</strong> content, <code>{mFeatureId}</code> is the id property for the <strong>MovingFeature</strong>, <code>{tpropertyName}</code> is the name property for the <strong>TemporalProperty</strong></p>
 <p class="tableblock">1. Validate that a document was returned with a status code <code>200</code><br>
-2. Validate the contents of the returned document using test <a href="#conf_mf_tproperties_get_success"><code>/conf/movingfeatures/tproperties-get-success</code></a></p>
+2. Validate the contents of the returned document using test <a href="#conf_mf_tproperty_get_success"><code>/conf/movingfeatures/tproperty-get-success</code></a></p>
 <p class="tableblock">Repeat these tests using the following parameter tests that defined in the OGC API — Common and OGC API — MF:<br>
 - Limit: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests">Limit Tests</a><br>
 - Date-Time: <a href="http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests">Date-Time Tests</a><br>
@@ -6992,7 +6994,7 @@ All supported formats should be exercised.</p>
 </tr>
 </tbody>
 </table>
-<table id="conf_mf_tproperties_get_success" class="tableblock frame-all grid-all stretch">
+<table id="conf_mf_tproperty_get_success" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -7000,11 +7002,11 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 35</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-get-success</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperty-get-success</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperty-response-get">/req/movingfeatures/tproperties-get-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperty-response-get">/req/movingfeatures/tproperty-get-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
@@ -7012,7 +7014,7 @@ All supported formats should be exercised.</p>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1. Validate the <strong>TemporalProperties</strong> property is present and that it is populated with an array of <a href="#tvalue-schema">TemporalValue</a> items<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. Validate the <strong>TemporalProperties</strong> property is present and that it is populated with an array of <a href="#tvalue-schema">TemporalPrimitiveValue</a> items<br>
 2. If the <code>links</code> property is present, validate that all entries comply with OGC API — Features <a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links">/conf/core/fc-links</a><br>
 3. If the <code>timeStamp</code> property is present, validate that it complies with OGC API — Features <a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp">/conf/core/fc-timeStamp</a><br>
 4. If the <code>numberMatched</code> property is present, validate that it complies with OGC API — Features <a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched">/conf/core/fc-numberMatched</a><br>
@@ -7025,7 +7027,7 @@ All supported formats should be exercised.</p>
 <p>The <strong>TemporalProperty</strong> content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.</p>
 </div>
 <table id="temporalproperty-schema" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 24. Schema and Tests for TemporalProperty content</caption>
+<caption class="title">Table 24. Schema and Tests for <strong>TemporalProperty</strong> content</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -7041,12 +7043,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTML</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pvalues-schema">temporalPropertyCollection.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pvalues-schema">temporalProperty.yaml</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/19-072/19-072.html#ats_html_content">/conf/html/content</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pvalues-schema">temporalPropertyCollection.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pvalues-schema">temporalProperty.yaml</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/19-072/19-072.html#ats_json_content">/conf/json/content</a></p></td>
 </tr>
 </tbody>
@@ -7062,17 +7064,17 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 36</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-post</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperty-post</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf_mandatory-tproperty">/req/movingfeatures/tproperties-mandatory</a><br>
-<a href="#req_mf-tproperty-op-post">/req/movingfeatures/tproperties-post</a><br>
-<a href="#req_mf-tproperty-response-post">/req/movingfeatures/tproperties-post-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf_mandatory-tproperty">/req/movingfeatures/tproperty-mandatory</a><br>
+<a href="#req_mf-tproperty-op-post">/req/movingfeatures/tproperty-post</a><br>
+<a href="#req_mf-tproperty-response-post">/req/movingfeatures/tproperty-post-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalValue</strong> can be created at the expected location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate that the <strong>TemporalPrimitiveValue</strong> can be created at the expected location.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
@@ -7080,7 +7082,7 @@ All supported formats should be exercised.</p>
 2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <a href="#tproperty-requestbody-schema">Table 25</a> and <a href="#temporalValue-properties-table">Table 12</a><br>
 3. Validate that the request body complies OGC API — Features <a href="http://docs.ogc.org/DRAFTS/20-002.html#_request_body">POST request body requirements</a><br>
 4. Issue an HTTP POST request to the URL <code>{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}</code><br>
-5. Validate the contents of the response using test <a href="#conf_mf_tproperty_post_success"><code>/conf/movingfeatures/tproperties-post-success</code></a></p></td>
+5. Validate the contents of the response using test <a href="#conf_mf_tproperty_post_success"><code>/conf/movingfeatures/tproperty-post-success</code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -7119,11 +7121,11 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock"><strong>Abstract Test 37</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperties-post-success</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/conf/movingfeatures/tproperty-post-success</strong></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Requirement</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperty-response-post">/req/movingfeatures/tproperties-post-success</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#req_mf-tproperty-response-post">/req/movingfeatures/tproperty-post-success</a></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test purpose</p></th>

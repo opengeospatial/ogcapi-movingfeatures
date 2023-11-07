@@ -6,7 +6,7 @@ the latest edition of the normative document referred to applies.
 [NOTE]
 ====
 * OGC 08-131r3: -- The Specification Model -- A Standard for Modular Specifications (2009). https://portal.opengeospatial.org/files/?artifact_id=34762
-* OGC 16-120r3: OGC Moving Features Access (2017). https://docs.ogc.org/is/16-120r3/16-120r3.html
+* [[ogc16-120r3]]OGC 16-120r3: OGC Moving Features Access (2017). https://docs.ogc.org/is/16-120r3/16-120r3.html
 * OGC 19-045r3: OGC Moving Features Encoding Extension - JSON (2020). https://docs.ogc.org/is/19-045r3/19-045r3.html
 * OGC 17-069r4: OGC API — Features — Part 1: Core (2022). https://docs.opengeospatial.org/is/17-069r4/17-069r4.html
 * OGC 20-002: OGC API — Features — Part 4: Create, Replace, Update and Delete (Draft). http://docs.ogc.org/DRAFTS/20-002.html

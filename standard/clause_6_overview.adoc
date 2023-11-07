@@ -44,11 +44,11 @@ Unique relation types are used for each resource.
 |Static information of <<resource-movingfeature-section,MovingFeature>> about available items in the specified <<resource-collection-section,*Collection*>>
 |<<resource-movingfeature-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+>>|`item`
 |Static information describing the <<movingfeature-schema,*MovingFeature*>> of data which has the unique identifier `+{mFeatureId}+`
-|<<resource-temporalGeometry-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgeometry>>|`items`
-|Temporal object information of <<resource-temporalGeometry-section,*TemporalGeometry*>> about available items in the specified <<resource-movingfeature-section,*MovingFeature*>>
-|<<resource-temporalPrimitiveGeometry-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgeometry /+{tGeometryId}+>>|`item`
-|Temporal object describing the <<resource-temporalGeometry-section,*TemporalPrimitiveGeometry*>> of data which has the unique identifier `+{tGeometryId}+`
-|<<resource-temporalGeometryQuery-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgeometry /+{tGeometryId}+/+{queryType}+>>|
+|<<resource-temporalGeometrySequence-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgsequence>>|`items`
+|Sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> about available items in the specified <<resource-movingfeature-section,*MovingFeature*>>
+|<<resource-temporalPrimitiveGeometry-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgsequence /+{tGeometryId}+>>|`item`
+|Temporal object describing the <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> of data which has the unique identifier `+{tGeometryId}+`
+|<<resource-tgsequenceQuery-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tgsequence /+{tGeometryId}+/+{queryType}+>>|
 |Identifies an Information Resource of type `+{queryType}+` associated with the <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> instance
 |<<resource-temporalProperties-section,+{root}+/collections/+{collectionId}+ /items/+{mFeatureId}+/tproperties>>|`items`
 |Temporal object information of <<resource-temporalProperties-section,*TemporalProperties*>> about available items in the specified <<resource-movingfeature-section,*MovingFeature*>>
@@ -64,7 +64,7 @@ Where:
 * `+{tGeometryId}+`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
 * `+{tPropertyName}+` = An identifier for a specific <<resource-temporalProperty-section,*TemporalProperty*>> of a specific <<resource-movingfeature-section,*MovingFeatures*>> of data
 
-<<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as *Collections*, *Collection*, *MovingFeatures*, *MovingFeature*, *TemporalGeometry*, *TemporalPrimitiveGeometry*, *TemporalProperties*, and *TemporalProperty*.
+<<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as *Collections*, *Collection*, *MovingFeatures*, *MovingFeature*, *TemporalGeometrySequence*, *TemporalPrimitiveGeometry*, *TemporalProperties*, and *TemporalProperty*.
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.
 
@@ -101,7 +101,7 @@ The core search capability is based on https://ogcapi.ogc.org/common/[OGC API �
 OGC API — Moving Features extends these core search capabilities to include:
 
 // * find <<leaf-section, leaf>> value with time instant,
-* <<resource-temporalGeometryQuery-section,spatiotemporal queries>> for accessing <<resource-temporalPrimitiveGeometry-section,*TemporalGeometry*>> resources.
+* <<resource-tgsequenceQuery-section,spatiotemporal queries>> for accessing <<resource-temporalPrimitiveGeometry-section,*TemporalGeometry*>> resources.
 
 [[dependencies-overview]]
 === Dependencies

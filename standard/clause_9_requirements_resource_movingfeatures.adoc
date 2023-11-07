@@ -28,7 +28,7 @@ The `subTrajectory` query parameter is defined as follows:
 include::requirements/parameter/REQ_parameter-subtrajectory-definition.adoc[]
 include::requirements/parameter/REQ_parameter-subtrajectory-response.adoc[]
 
-The `subTrajectory` query parameter is used to select a subset of <<resource-temporalGeometry-section,*TemporalGeometry*>> of each <<resource-movingfeature-section,*MovingFeature*>> in the *MovingFeatures*, for the specified time interval.
+The `subTrajectory` query parameter is used to select a subset of <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> of each <<resource-movingfeature-section,*MovingFeature*>> in the *MovingFeatures*, for the specified time interval.
 The two date-time strings (new start time and new end time) in the time interval adhere to link:https://datatracker.ietf.org/doc/html/rfc3339[IETF RFC3339].
 The new start time(*_t_s_*) is earlier than new end time(*_t_e_*), i.e., *_t_s < t_e_*.
 <<subtrajectory-text-example>> shows valid expression examples of the `subTrajectory` parameter.
