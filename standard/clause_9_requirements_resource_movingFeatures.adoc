@@ -11,24 +11,17 @@ If a `+{mFeatureID}+` is not specified, the query will return a list of the avai
 The list of moving features returned to the response can be limited using the <<bbox-section,`bbox`>>, <<datetime-section,`datetime`>>, <<limit-section,`limit`>>, and <<subtrajecotry-section,`subTrajectory`>> query parameters.
 This behavior and query parameters for use with the `Items` query are specified in OGC API — Features and OGC API — Common, except <<subtrajecotry-section,`subTrajectory`>> parameter.
 
-
-==== Operation
-===== Retrieve
-The retrieve operation is defined in the `Features` conformance class of OGC API — Features.
-Additional support for query parameter `subTrajectory` is needed to support <<resource-movingfeatures-section,*MovingFeatures*>> resource.
-
-. Issue a `GET` request on `+{root}+/collections/+{collectionID}+/items` path
-
-Support for GET on the `+{root}+/collections/+{collectionID}+/items` path is required by OGC API — Features.
-include::requirements/movingfeature/features/REQ_operation-features-get.adoc[]
+==== Query Parameters
+The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 
 [[subtrajecotry-section]]
-====== Parameter subTrajectory
+===== Parameter subTrajectory
 The `subTrajectory` query parameter is defined as follows:
 include::requirements/parameter/REQ_parameter-subtrajectory-definition.adoc[]
 include::requirements/parameter/REQ_parameter-subtrajectory-response.adoc[]
 
-The `subTrajectory` query parameter is used to select a subset of <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> of each <<resource-movingfeature-section,*MovingFeature*>> in the *MovingFeatures*, for the specified time interval.
+The `subTrajectory` query parameter is used to select a subsequence of <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> for the specified time interval.
+Each <<resource-movingfeature-section,*MovingFeature*>> in the *MovingFeatures* has *TemporalGeometrySequence*.
 The two date-time strings (new start time and new end time) in the time interval adhere to link:https://datatracker.ietf.org/doc/html/rfc3339[IETF RFC3339].
 The new start time(*_t_s_*) is earlier than new end time(*_t_e_*), i.e., *_t_s < t_e_*.
 <<subtrajectory-text-example>> shows valid expression examples of the `subTrajectory` parameter.
@@ -48,12 +41,22 @@ The new start time(*_t_s_*) is earlier than new end time(*_t_e_*), i.e., *_t_s <
 =================
 
 If the `subTrajectory` parameter is provided by the client, the endpoint SHALL return only a subset of the trajectory derived from temporal primitive geometry by the *_subTrajectory_* operation at time (new start time and new end time) included in the `subTrajectory` parameter, using interpolated trajectory according to the `interpolation` property in <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>.
-Also, the `interpolation` property in the response shall be the same as the original temporal primitive geometry.
+The `interpolation` property in the response shall be the same as the original temporal primitive geometry.
 Note that the *_subTrajectory_* operation is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
 
 [#subtrajectory-example,reftext='{figure-caption} {counter:figure-num}']
 .Example of a response result with `subTrajectory` parameter
 image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, width=95%, align="center"]
+
+==== Operation
+===== Retrieve
+The retrieve operation is defined in the `Features` conformance class of OGC API — Features.
+Additional support for query parameter `subTrajectory` is needed to support <<resource-movingfeatures-section,*MovingFeatures*>> resource.
+
+. Issue a `GET` request on `+{root}+/collections/+{collectionID}+/items` path
+
+Support for GET on the `+{root}+/collections/+{collectionID}+/items` path is required by OGC API — Features.
+include::requirements/movingfeature/features/REQ_operation-features-get.adoc[]
 
 ====== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.

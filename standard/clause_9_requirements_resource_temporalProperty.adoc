@@ -3,7 +3,8 @@
 ==== Overview
 The *TemporalProperty* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
-. A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.The *TemporalProperty* resource returned to the response can be limited using the <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
+. A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.
+The *TemporalProperty* resource returned to the response can be limited using the <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> parameters.
 . A create operation posts a new temporal primitive value object to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,++{tPropertyName}++>>.
 
 [[temporal-properties-object]]

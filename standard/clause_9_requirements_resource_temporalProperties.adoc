@@ -5,9 +5,13 @@ A *TemporalProperties* object consists of the set of <<resource-temporalProperty
 The *TemporalProperties* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
 . A retrieve operation returns a list of the available abbreviated copy of <<resource-temporalProperty-section,*TemporalProperty*>> object in the specified moving feature.
+The *TemporalProperties* resource returned to the response can be limited using the query parameters <<limit-section,`limit`>> and <<datetime-section,`datetime`>>.
 . A create operation posts a new <<resource-temporalProperty-section,*TemporalProperty*>> object to the <<resource-movingfeature-section,*MovingFeature*>> that is specified by <<movingfeature-identifier,++{mFeatureId}++>>.
 
 //If a `tPropertyName` is not specified, the query will return a list of the available parametric values in the specified moving feature.
+
+==== Query Parameters
+The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 
 ==== Operation
 ===== Retrieve
