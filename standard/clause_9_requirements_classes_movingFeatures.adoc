@@ -60,10 +60,10 @@ The seven resources defined in this Requirement Class are summarized in <<mf-res
 ^|GET, POST
 |===
 
-include::clause_9_requirements_resource_movingfeatures.adoc[]
-include::clause_9_requirements_resource_movingfeature.adoc[]
-include::clause_9_requirements_resource_temporalgeometry.adoc[]
-include::clause_9_requirements_resource_temporalprimitivegeometry.adoc[]
-include::clause_9_requirements_resource_temporalgeometry_query.adoc[]
-include::clause_9_requirements_resource_temporalproperties.adoc[]
-include::clause_9_requirements_resource_temporalproperty.adoc[]
+include::clause_9_requirements_resource_movingFeatures.adoc[]
+include::clause_9_requirements_resource_movingFeature.adoc[]
+include::clause_9_requirements_resource_temporalGeometrySequence.adoc[]
+include::clause_9_requirements_resource_temporalPrimitiveGeometry.adoc[]
+include::clause_9_requirements_resource_temporalGeometryQuery.adoc[]
+include::clause_9_requirements_resource_temporalProperties.adoc[]
+include::clause_9_requirements_resource_temporalProperty.adoc[]

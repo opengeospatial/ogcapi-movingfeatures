@@ -2,18 +2,19 @@
 === Resource TemporalPrimitiveGeometry
 ==== Overview
 [[temporalPrimitiveGeometry-object]]
-A TemporalPrimitiveGeometry object represents the movement of a moving feature with various types of moving geometry, i.e., `MovingPoint`, `MovingLineString`, `MovingPolygon`, and `MovingPointCloud`. It can also represent the movement of a 3D object with its orientation.
+A *TemporalPrimitiveGeometry* resource represents the movement of a moving feature with various types of moving geometry, i.e., `MovingPoint`, `MovingLineString`, `MovingPolygon`, and `MovingPointCloud`.
+It can also represent the movement of a 3D object with its orientation.
 
-The schema for the TemporalPrimitiveGeometry presented in this clause is an extension of the `TemporalPrimitiveGeometry Object` defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tprimitive[MF-JSON standard].
-<<temporalPrimitiveGeometry-properties-table>> defines the set of properties that may be used to describe a TemporalPrimitiveGeometry.
+The schema for the *TemporalPrimitiveGeometry* presented in this clause is the same as the *_TemporalPrimitiveGeometry_* object defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tprimitive[MF-JSON standard].
+<<temporalPrimitiveGeometry-properties-table>> defines the set of properties that may be used to describe a *TemporalPrimitiveGeometry*.
 
 [[temporalPrimitiveGeometry-properties-table]]
 [reftext='{table-caption} {counter:table-num}']
-.Table of the properties related to the TemporalPrimitiveGeometry
+.Table of the properties related to the *TemporalPrimitiveGeometry*
 [cols="20,15,65",options="header"]
 |===
 |Property       |Requirement    |Description
-|*_id_*                 |M  |A unique identifier to the temporal geometry.
+|*_id_*                 |M  |A unique identifier to the temporal primitive geometry.
 |*_type_*               |M  |A primitive geometry type of MF-JSON (i.e., one of 'MovingPoint', 'MovingLineString', 'MovingPolygon', or 'MovingPointCloud').
 |*_datetimes_*          |M  |A sequence of monotonically increasing instants.
 |*_coordinates_*        |M  |A sequence of leaf geometries of a temporal geometry, having the same number of elements as "datetimes".
@@ -26,7 +27,7 @@ The schema for the TemporalPrimitiveGeometry presented in this clause is an exte
          |*_angles_*: An array value of numbers along the x, y, and z axis in order as Euler angles in degree.
 |===
 
-NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON,OGC Moving Feature JSON encoding standard>>.
+NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON,OGC Moving Feature JSON encoding Standard>>.
 
 include::requirements/movingfeature/tpgeometry/REQ_mandatory-tpgeometry.adoc[]
 

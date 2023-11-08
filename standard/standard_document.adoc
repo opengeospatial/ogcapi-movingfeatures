@@ -100,7 +100,7 @@ include::clause_6_overview.adoc[]
 
 include::clause_8_requirements_classes_collection.adoc[]
 
-include::clause_9_requirements_classes_movingfeatures.adoc[]
+include::clause_9_requirements_classes_movingFeatures.adoc[]
 
 // include::clause_11_requirements_resource_service_catalog.adoc[]
 
