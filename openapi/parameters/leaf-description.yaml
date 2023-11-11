@@ -1,0 +1,25 @@
+name: leaf
+in: query
+required: false
+description: |-
+  The `leaf` is provided as a sequence of monotonic increasing instants with date-time strings.
+  Only features that have a temporal geometry and property that intersects the given date-time are selected.
+  
+  The `leaf` operation implements *_pointAtTime_* operation which defined in the OGC Moving Feature Access.
+  This operation returns only temporal geometry coordinates (or temporal property values) 
+  at each date-time included in the `leaf` parameter, using interpolated trajectory according to the `interpolation` property.
+  
+  If the `leaf` parameter is provided with a `bbox` or (and) a `datetime` parameter, 
+  it will only apply to resources that intersect with a `bbox` or (and) a `datetime` parameter. 
+
+  The `leaf` parameter shall not be used with the `subTrajectory` and `subTemporalValue` parameter. 
+  Only one of those parameters can be used in the HTTP GET operation.
+schema:
+  type: array
+  uniqueItems: true
+  minItems: 1
+  items:
+    type: string
+    format: date-time
+style: form
+explode: false

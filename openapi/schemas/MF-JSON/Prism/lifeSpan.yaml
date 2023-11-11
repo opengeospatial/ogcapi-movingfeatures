@@ -1,0 +1,13 @@
+description: MF-JSON Prism encoding LifeSpan Object
+title: MF-JSON LifeSpan
+type: array
+minItems: 2
+maxItems: 2
+uniqueItems: true
+items:
+  type: string
+  nullable: true
+#  format:
+#    oneOf:
+#      - date
+#      - date-time

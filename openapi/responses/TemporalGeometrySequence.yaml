@@ -1,0 +1,7 @@
+description: A TemporalGeometrySequence data.
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/temporalGeometrySequence.yaml"
+    example:
+      $ref: "../examples/temporalGeometrySequence.json"

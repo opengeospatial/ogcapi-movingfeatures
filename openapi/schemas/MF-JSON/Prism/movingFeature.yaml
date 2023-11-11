@@ -1,0 +1,33 @@
+description: MF-JSON Prism encoding MovingFeature Object
+title: MF-JSON MovingFeature
+type: object
+required:
+  - type
+  - temporalGeometry
+properties:
+  type:
+    type: string
+    enum:
+      - "Feature"
+  temporalGeometry:
+    $ref: "temporalGeometry.yaml"
+  temporalProperties:
+    $ref: "temporalProperties.yaml"
+  crs:
+    $ref: "crs.yaml"
+  trs:
+    $ref: "trs.yaml"
+  bbox:
+    $ref: "bbox.yaml"
+  time:
+    $ref: "lifeSpan.yaml"
+  geometry:
+    $ref: "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml"
+  properties:
+    type: object
+    nullable: true
+  id:
+    description: "An identifier for the feature"
+    oneOf:
+      - type: string
+      - type: integer

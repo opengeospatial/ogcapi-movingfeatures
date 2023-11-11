@@ -8,11 +8,11 @@ properties:
   type:
     type: string
     enum:
-      - TBoolean
-      - TText
-      - TInteger
-      - TReal
-      - TImage
+      - 'TBoolean'
+      - 'TText'
+      - 'TInteger'
+      - 'TReal'
+      - 'TImage'
   form:
     oneOf:
       - type: string
@@ -20,10 +20,10 @@ properties:
       - type: string
         minLength: 3
         maxLength: 3
-  values:
+  valueSequence:
     type: array
     uniqueItems: true
     items:
-      $ref: temporalValue.yaml
+      $ref: 'temporalPrimitiveValue.yaml'
   description:
     type: string

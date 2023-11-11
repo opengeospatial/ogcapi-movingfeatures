@@ -1,0 +1,7 @@
+description: A temporal property data that represents a time-to-velocity curve of specified temporal primitive geometry.
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/temporalProperty.yaml"
+    example:
+      $ref: "../examples/velocityQuery.json"

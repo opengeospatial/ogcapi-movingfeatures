@@ -1,0 +1,11 @@
+description: MF-JSON Prism encoding predefined interpolation method for ParametricValues
+oneOf:
+  - type: string
+    enum:
+      - "Discrete"
+      - "Step"
+      - "Linear"
+      - "Regression"
+    default: "Linear"
+  - type: string
+    format: "uri"

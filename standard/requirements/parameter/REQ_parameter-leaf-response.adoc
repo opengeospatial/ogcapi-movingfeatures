@@ -3,8 +3,8 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/param-leaf-response*
 ^|A | The `leaf` parameter SHALL match all resources in the moving feature that are associated with temporal information.
-^|B | If the `leaf` parameter is provided by the client, the endpoint SHALL return only temporal geometry coordinate (or temporal property value) with the *_pointAtTime_* query at each time included in the `leaf` parameter, using interpolated trajectory according to the `interpolation` property.
+^|B | If the `leaf` parameter is provided by the client, the endpoint SHALL return only temporal geometry coordinate (or temporal property value) with the *_pointAtTime_* operation at each date-time included in the `leaf` parameter, using interpolated trajectory according to the `interpolation` property.
 ^|C | If the `leaf` parameter is provided by the client, the `interpolation` property in the response SHALL be 'Discrete'.
-^|D | Apply `leaf` only to resources that intersect a `bbox` or (and) a `datetime` parameter, if the `subTrajectory` parameter is provided with a `bbox` or (and) a `datetime` parameter.
+^|D | Apply `leaf` only to resources that intersect a `bbox` or (and) a `datetime` parameter, if the `leaf` parameter is provided with a `bbox` or (and) a `datetime` parameter.
 ^|D | The `leaf` parameter SHALL not be used with the <<subtrajecotry-section,`subTrajectory`>> parameter.
 |===

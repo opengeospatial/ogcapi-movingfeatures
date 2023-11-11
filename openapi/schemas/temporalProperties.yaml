@@ -3,15 +3,15 @@ required:
   - temporalProperties
 properties:
   temporalProperties:
-    type: array
-    items:
-      oneOf:
-        - $ref: temporalProperty.yaml
-        - $ref: temporalValue.yaml
+    oneOf:
+      - $ref: "MF-JSON/Prism/temporalProperties.yaml"
+      - type: array
+        items:
+          $ref: "temporalProperty.yaml"
   links:
     type: array
     items:
-      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'
   timeStamp:
     type: string
     format: date-time

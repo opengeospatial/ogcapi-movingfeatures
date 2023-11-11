@@ -1,0 +1,23 @@
+description: The "trs" member in MovingFeature object
+title: MF-JSON TRS
+oneOf:
+  - $ref: "linkedCRS.yaml"
+  - type: object
+    nullable: true
+    required:
+      - type
+      - properties
+    properties:
+      type:
+        type: string
+        enum:
+          - "Name"
+      properties:
+        type: object
+        additionalProperties: false
+        required:
+          - name
+        properties:
+          name:
+            type: string
+            default: "urn:ogc:data:time:iso8601"

@@ -5,11 +5,11 @@ properties:
   temporalProperties:
     type: array
     items:
-      $ref: temporalValue.yaml
+      $ref: 'temporalPrimitiveValue.yaml'
   links:
     type: array
     items:
-      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'
   timeStamp:
     type: string
     format: date-time

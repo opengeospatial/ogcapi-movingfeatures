@@ -1,0 +1,5 @@
+description: MF-JSON Prism encoding CoordinateReferenceSystem Object
+title: MF-JSON CRS
+oneOf:
+  - $ref: "namedCRS.yaml"
+  - $ref: "linkedCRS.yaml"

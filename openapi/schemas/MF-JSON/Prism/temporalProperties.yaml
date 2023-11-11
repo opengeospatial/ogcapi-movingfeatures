@@ -1,0 +1,6 @@
+description: MF-JSON Prism encoding TemporalProperties Object
+title: MF-JSON TemporalProperties
+type: array
+nullable: true
+items:
+  $ref: "parametricValues.yaml"

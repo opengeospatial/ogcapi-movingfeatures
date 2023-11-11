@@ -1,0 +1,27 @@
+description: MF-JSON Prism encoding MovingFeatureCollection Object
+title: MF-JSON MovingFeatureCollection
+type: object
+required:
+  - type
+  - features
+properties:
+  type:
+    type: string
+    enum:
+      - "FeatureCollection"
+  features:
+    type: array
+    minItems: 1
+    items:
+      $ref: "movingFeature.yaml"
+  crs:
+    $ref: "crs.yaml"
+  trs:
+    $ref: "trs.yaml"
+  bbox:
+    $ref: "bbox.yaml"
+  time:
+    $ref: "lifeSpan.yaml"
+  label:
+    type: string
+    nullable: true

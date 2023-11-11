@@ -1,0 +1,16 @@
+name: date-time
+in: query
+description: |-
+  A date-time. Date and time expressions adhere to RFC 3339. 
+
+  Examples:
+
+  * A date-time: "2018-02-12T23:20:50Z"
+
+  The date-time parameter defines the specified date and time to return the temporal value from the time-to-distance (or time-to-velocity or time-to-acceleration) curve.
+required: false
+schema:
+  type: string
+  format: date-time
+style: form
+explode: false

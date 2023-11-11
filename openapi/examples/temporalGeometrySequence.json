@@ -1,6 +1,6 @@
 {
-  "type": "MovingGeometryCollection",
-  "prisms": [
+  "type": "TemporalGeometrySequence",
+  "geometrySequence": [
     {
       "id": "tg-1",
       "type": "MovingPoint",
@@ -32,17 +32,17 @@
           "scales": [1,1,1],
           "angles": [0,0,300]
         }
-      ]
+      ],
+      "crs": {
+        "type": "Name",
+        "properties": "urn:ogc:def:crs:OGC:1.3:CRS84"
+      },
+      "trs": {
+        "type": "Name",
+        "properties": "urn:ogc:data:time:iso8601"
+      }
     }
   ],
-  "crs": {
-    "type": "Name",
-    "properties": "urn:ogc:def:crs:OGC:1.3:CRS84"
-  },
-  "trs": {
-    "type": "Name",
-    "properties": "urn:ogc:data:time:iso8601"
-  },
   "links": [
     {
       "href": "https://data.example.org/collections/mfc-1/items/mf-1/tgeometries",

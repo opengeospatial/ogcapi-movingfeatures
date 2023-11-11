@@ -1,0 +1,20 @@
+{
+  "name": "velocity",
+  "type": "TReal",
+  "form": "KHM",
+  "values": [
+    {
+      "datetimes": [
+        "2011-07-15T08:00:00Z",
+        "2011-07-15T08:00:01Z",
+        "2011-07-15T08:00:02Z"
+      ],
+      "values": [
+        0.0,
+        10.0,
+        20.0
+      ],
+      "interpolation": "Linear"
+    }
+  ]
+}

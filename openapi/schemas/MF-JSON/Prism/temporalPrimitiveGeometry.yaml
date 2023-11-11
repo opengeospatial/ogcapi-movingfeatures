@@ -1,13 +1,11 @@
+description: MF-JSON Prism encoding TemporalPrimitiveGeometry Object
+title: MF-JSON TemporalPrimitiveGeometry
 type: object
 required:
-  - id
   - type
   - coordinates
   - datetimes
-  - interpolation
 properties:
-  id:
-    type: string
   type:
     type: string
     enum:
@@ -20,25 +18,44 @@ properties:
     minItems: 2
     items:
       oneOf:
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/pointGeoJSON.yaml#coordinates'
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/linestringGeoJSON.yaml#coordinates'
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/polygonGeoJSON.yaml#coordinates'
-        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/multipointGeoJSON.yaml#coordinates'
+        - title: pointGeoJSON coordinates
+          type: array
+          minItems: 2
+          items:
+            type: number
+        - title: linestringGeoJSON coordinates
+          type: array
+          minItems: 2
+          items:
+            type: array
+            minItems: 2
+            items:
+              type: number
+        - title: polygonGeoJSON coordinates
+          type: array
+          items:
+            type: array
+            minItems: 4
+            items:
+              type: array
+              minItems: 2
+              items:
+                type: number
+        - title: multipointGeoJSON coordinates
+          type: array
+          items:
+            type: array
+            minItems: 2
+            items:
+              type: number
   datetimes:
     type: array
     uniqueItems: true
     minItems: 2
     items:
       type: string
-      format: date-time
   interpolation:
-    type: string
-    enum:
-      - 'Discrete'
-      - 'Step'
-      - 'Linear'
-      - 'Quadratic'
-      - 'Cube'
+    $ref: "motionCurve.yaml"
   base:
     type: object
     nullable: true
@@ -48,12 +65,12 @@ properties:
     properties:
       href:
         type: string
-        format: 'uri'
+        format: "uri"
       type:
         type: string
   orientations:
     type: array
-    minItems: 2
+    nullable: true
     items:
       type: object
       required:
@@ -78,3 +95,7 @@ properties:
               maxItems: 3
           items:
             type: number
+    crs:
+      $ref: "crs.yaml"
+    trs:
+      $ref: "trs.yaml"

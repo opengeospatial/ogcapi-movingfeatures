@@ -1,0 +1,26 @@
+name: subTrajectory
+in: query
+required: false
+description: |-
+  The `subTrajectory` is provided as a time interval (new start time(`subTrajectory[0]`) and new end time(`subTrajectory[1]`)).
+  Only features that have a temporal geometry that intersects the given time interval.
+  
+  The `subTrajectory` operation implements *subTrajectory* operation which defined in the OGC Moving Feature Access.
+  This operation returns only subsequence of temporal geometry within a time interval contained in the `subTrajectory` parameter, 
+  using interpolated trajectory according to the `interpolation` property.
+  
+  If the `subTrajectory` parameter is provided with a `bbox` or (and) a `datetime` parameter, 
+  it will only apply to resources that intersect with a `bbox` or (and) a `datetime` parameter. 
+
+  The `subTrajectory` parameter shall not be used with the `leaf` and `subTemporalValue` parameter. 
+  Only one of those parameters can be used in the HTTP GET operation.
+schema:
+  type: array
+  uniqueItems: true
+  minItems: 2
+  maxItems: 2
+  items:
+    type: string
+    format: date-time
+style: form
+explode: false
