@@ -4,11 +4,11 @@ required:
 properties:
   title:
     type: string
-    example: Moving features data server
+    example: 'Moving features data server'
   description:
     type: string
-    example: Access to data about moving features
+    example: 'Access to data about moving features'
   links:
     type: array
     items:
-      $ref: ogcapi-features-core/link.yaml
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'

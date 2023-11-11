@@ -94,7 +94,7 @@ The following JSON payload is an example of a response to an OGC API — Moving 
 .An Example of a TemporalGeometrySequence GET operation:
 [source,json]
 ----
-include::../openapi/examples/temporalComplexGeometry.json[]
+include::../openapi/examples/temporalGeometrySequence.json[]
 ----
 
 ====== Create

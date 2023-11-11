@@ -1,0 +1,35 @@
+type: object
+required:
+  - type
+  - features
+properties:
+  type:
+    type: string
+    enum:
+      - 'FeatureCollection'
+  features:
+    type: array
+    nullable: true
+    items:
+      $ref: 'movingFeature.yaml'
+  crs:
+    $ref: "MF-JSON/Prism/crs.yaml"
+  trs:
+    $ref: "MF-JSON/Prism/trs.yaml"
+  bbox:
+    $ref: "MF-JSON/Prism/bbox.yaml"
+  time:
+    $ref: "MF-JSON/Prism/lifeSpan.yaml"
+  links:
+    type: array
+    items:
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'
+  timeStamp:
+    type: string
+    format: date-time
+  numberMatched:
+    type: integer
+    minimum: 0
+  numberReturned:
+    type: integer
+    minimum: 0

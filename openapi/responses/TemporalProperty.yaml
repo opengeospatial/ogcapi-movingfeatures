@@ -1,0 +1,7 @@
+description: A (subsequence of) the temporal property data.
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/temporalProperty.yaml"
+    example:
+      $ref: "../examples/temporalProperty.json"

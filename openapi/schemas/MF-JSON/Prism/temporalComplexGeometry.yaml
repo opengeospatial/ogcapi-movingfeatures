@@ -1,0 +1,18 @@
+description: MF-JSON Prism encoding TemporalComplexGeometry Object
+title: MF-JSON TemporalComplexGeometry
+type: object
+required:
+  - type
+  - prisms
+properties:
+  type:
+    type: string
+    default: "MovingGeometryCollection"
+  prisms:
+    type: array
+    items:
+      $ref: "temporalPrimitiveGeometry.yaml"
+  crs:
+    $ref: "crs.yaml"
+  trs:
+    $ref: "trs.yaml"

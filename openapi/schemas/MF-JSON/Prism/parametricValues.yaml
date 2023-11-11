@@ -1,0 +1,106 @@
+description: MF-JSON Prism encoding ParametricValues Object
+title: MF-JSON ParametricValues
+type: object
+required:
+  - datetimes
+properties:
+  datetimes:
+    type: array
+    uniqueItems: true
+    minItems: 2
+    items:
+      type: string
+      format: date-time
+patternProperties:
+  "^S_":
+    oneOf:
+      - type: object
+        required:
+          - type
+          - values
+        properties:
+          type:
+            type: string
+            enum:
+              - "Measure"
+          values:
+            type: array
+            nullable: true
+            items:
+              type: number
+          interpolation:
+            oneOf:
+              - type: string
+                enum:
+                  - "Discrete"
+                  - "Step"
+                  - "Linear"
+                  - "Regression"
+                default: "Linear"
+              - type: string
+                format: "uri"
+          description:
+            type: string
+          form:
+            oneOf:
+              - type: string
+                minLength: 3
+                maxLength: 3
+              - type: string
+                format: "uri"
+      - type: object
+        required:
+          - type
+          - values
+        properties:
+          type:
+            type: string
+            enum:
+              - "Text"
+          values:
+            type: array
+            nullable: true
+            items:
+              oneOf:
+                - type: string
+                - type: boolean
+          interpolation:
+            oneOf:
+              - type: string
+                enum:
+                  - "Discrete"
+                  - "Step"
+                  - "Linear"
+                  - "Regression"
+                default: "Linear"
+              - type: string
+                format: "uri"
+          description:
+            type: string
+      - type: object
+        required:
+          - type
+          - values
+        properties:
+          type:
+            type: string
+            enum:
+              - "Image"
+          values:
+            type: array
+            nullable: true
+            items:
+              type: string
+          interpolation:
+            oneOf:
+              - type: string
+                enum:
+                  - "Discrete"
+                  - "Step"
+                  - "Linear"
+                  - "Regression"
+                default: "Linear"
+              - type: string
+                format: "uri"
+          description:
+            type: string

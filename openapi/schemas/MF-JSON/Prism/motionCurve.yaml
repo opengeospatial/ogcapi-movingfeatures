@@ -1,0 +1,13 @@
+description: MF-JSON Prism encoding MotionCurve Object
+title: MF-JSON MotionCurve
+oneOf:
+  - type: string
+    enum:
+      - "Discrete"
+      - "Step"
+      - "Linear"
+      - "Quadratic"
+      - "Cubic"
+    default: "Linear"
+  - type: string
+    format: "uri"

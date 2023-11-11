@@ -1,0 +1,25 @@
+name: subTemporalValue
+in: query
+required: false
+description: |-
+  The `subTemporalValue` is provided as a time interval (new start time(`subTemporalValue[0]`) and new end time(s`ubTemporalValue[1]`)).
+  Only features that have a temporal property that intersects the given time interval.
+  
+  This operation returns only subsequence of temporal property value within a time interval contained in the `subTemporalValue` parameter, 
+  using interpolated time-to-value curve of temporal property according to the `interpolation` property.
+  
+  If the `subTemporalValue` parameter is provided with a `bbox` or (and) a `datetime` parameter, 
+  it will only apply to resources that intersect with a `bbox` or (and) a `datetime` parameter. 
+
+  The `subTemporalValue` parameter shall not be used with the `leaf` and `subTrajectory` parameter. 
+  Only one of those parameters can be used in the HTTP GET operation.
+schema:
+  type: array
+  uniqueItems: true
+  minItems: 2
+  maxItems: 2
+  items:
+    type: string
+    format: date-time
+style: form
+explode: false

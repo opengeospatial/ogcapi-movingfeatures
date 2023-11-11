@@ -1,0 +1,10 @@
+description: A list of static (or temporal) data of TemporalProperty.
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/temporalProperties.yaml"
+    example:
+#      with MF-JSON temporalProperties:
+      $ref: "../examples/temporalProperties.json"
+#      temporal property collection:
+#        $ref: "../examples/temporalPropertyCollection.json"

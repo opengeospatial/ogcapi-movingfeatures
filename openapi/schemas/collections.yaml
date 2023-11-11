@@ -6,17 +6,8 @@ properties:
   collections:
     type: array
     items:
-      $ref: collection.yaml
+      $ref: 'collection.yaml'
   links:
     type: array
     items:
-      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
-  timeStamp:
-    type: string
-    format: date-time
-  numberMatched:
-    type: integer
-    min: 0
-  numberReturned:
-    type: integer
-    min: 0
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'

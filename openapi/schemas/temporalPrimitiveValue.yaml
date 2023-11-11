@@ -19,7 +19,7 @@ properties:
   interpolation:
     type: string
     enum:
-      - Discrete
-      - Step
-      - Linear
-      - Regression
+      - 'Discrete'
+      - 'Step'
+      - 'Linear'
+      - 'Regression'

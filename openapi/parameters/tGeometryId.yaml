@@ -1,6 +1,6 @@
 name: tGeometryId
 in: path
-description: local identifier of a temporal geometry
+description: local identifier of a temporal primitive geometry
 required: true
 schema:
   type: string

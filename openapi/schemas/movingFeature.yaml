@@ -2,48 +2,34 @@ type: object
 required:
   - id
   - type
-  - geometry
-  - properties
 properties:
-  id:
-    type: string
   type:
     type: string
     enum:
-      - Feature
+      - 'Feature'
+  temporalGeometry:
+    $ref: "MF-JSON/Prism/temporalGeometry.yaml"
+  temporalProperties:
+    $ref: "MF-JSON/Prism/temporalProperties.yaml"
+  crs:
+    $ref: "MF-JSON/Prism/crs.yaml"
+  trs:
+    $ref: "MF-JSON/Prism/trs.yaml"
+  bbox:
+    $ref: "MF-JSON/Prism/bbox.yaml"
+  time:
+    $ref: "MF-JSON/Prism/lifeSpan.yaml"
   geometry:
-    $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
+    $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
   properties:
     type: object
     nullable: true
-  bbox:
-    type: array
-    minItems: 1
-    items:
-      type: array
-      oneOf:
-        - minItems: 4
-          maxItems: 4
-        - minItems: 6
-          maxItems: 6
-      items:
-        type: number
-  time:
-    type: array
-    minItems: 1
-    items:
-      type: array
-      minItems: 2
-      maxItems: 2
-      items:
-        type: string
-        format: date-time
-        nullable: true
-  crs:
-    $ref: crs.yaml
-  trs:
-    $ref: trs.yaml
+  id:
+    description: 'An identifier for the feature'
+    oneOf:
+      - type: string
+      - type: integer
   links:
     type: array
     items:
-      $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'

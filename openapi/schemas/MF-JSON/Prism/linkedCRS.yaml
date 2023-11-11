@@ -1,0 +1,23 @@
+description: MF-JSON Prism encoding LinkedCRS Object
+title: MF-JSON LinkedCRS
+type: object
+nullable: true
+required:
+  - type
+  - properties
+properties:
+  type:
+    type: string
+    enum:
+      - "Link"
+  properties:
+    type: object
+    required:
+      - href
+      - type
+    properties:
+      href:
+        type: string
+        format: "uri"
+      type:
+        type: string

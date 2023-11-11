@@ -42,37 +42,37 @@ The following are defined as standard shared parameters for use.
 For datetime parameter, see <<datetime-section, Clause 10.1.3>>.
 
 ==== Distance Query
-The Distance query returns a time to distance curve of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
-<<time-to-distance-curve>> shows an example of time to distance curve.
+The Distance query returns a time-to-distance curve of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
+<<time-to-distance-curve>> shows an example of the time-to-distance curve.
 
 [#time-to-distance-curve,reftext='{figure-caption} {counter:figure-num}']
-.Example of time to distance curve [OGC 16-120r3, OGC Moving Features Access]
+.Example of time-to-distance curve [OGC 16-120r3, OGC Moving Features Access]
 image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, width=50%, align="center"]
 
 The filter constraints are defined by the following query parameter:
 
 ===== Parameter datetime
-The datetime parameter defines the specified date and time to return the distance value from the time to distance graph.
+The datetime parameter defines the specified date and time to return the distance value from the time-to-distance curve.
 When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource.
-
+// TODO: mention a related operation which defined in the OGC MF Access
 ==== Velocity Query
-The Velocity query returns a time to velocity curve of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
+The Velocity query returns a time-to-velocity curve of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
 
 The filter constraints are defined by the following query parameter:
 
 ===== Parameter datetime
-The datetime parameter defines the specified date and time to return the velocity value from the time to velocity graph.
+The datetime parameter defines the specified date and time to return the velocity value from the time-to-velocity graph.
 When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource.
-
+// TODO: mention a related operation which defined in the OGC MF Access
 ==== Acceleration Query
-The Acceleration query returns a time to acceleration curve of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
+The Acceleration query returns a time-to-acceleration curve of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
 
 The filter constraints are defined by the following query parameter:
 
 ===== Parameter datetime
-The datetime parameter defines the specified date and time to return the acceleration value from the time to acceleration graph.
+The datetime parameter defines the specified date and time to return the acceleration value from the time-to-acceleration curve.
 When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource.
-
+// TODO: mention a related operation which defined in the OGC MF Access
 ==== Operation Requirements
 
 include::requirements/movingfeature/tpgeometry-query/REQ_operation-tpgeomety-query-get.adoc[]

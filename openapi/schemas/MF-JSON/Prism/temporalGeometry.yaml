@@ -1,0 +1,5 @@
+description: MF-JSON Prism encoding TemporalGeometry Object
+title: MF-JSON TemporalGeometry
+oneOf:
+  - $ref: "temporalPrimitiveGeometry.yaml"
+  - $ref: "temporalComplexGeometry.yaml"

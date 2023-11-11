@@ -1,0 +1,28 @@
+type: object
+required:
+  - type
+  - geometry
+  - properties
+properties:
+  type:
+    type: string
+    enum:
+      - "Feature"
+  id:
+    oneOf:
+      - type: string
+      - type: integer
+  geometry:
+    $ref: "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/linestringGeoJSON.yaml"
+  properties:
+    type: object
+    required:
+      - datetimes
+    properties:
+      datetimes:
+        type: array
+        uniqueItems: true
+        minItems: 2
+        items:
+          type: string
+          format: date-time

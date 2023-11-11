@@ -1,0 +1,7 @@
+description: MF-JSON Prism encoding BoundingBox Object
+title: MF-JSON BoundingBox
+type: array
+minItems: 4
+nullable: true
+items:
+  type: number

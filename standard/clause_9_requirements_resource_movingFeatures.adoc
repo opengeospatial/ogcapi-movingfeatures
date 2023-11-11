@@ -105,7 +105,7 @@ The following JSON payload is an example of a response to an OGC API — Moving 
 .An Example of a MovingFeatures GET Operation:
 [source,json]
 ----
-include::../openapi/examples/movingFeatureCollection.json[]
+include::../openapi/examples/movingFeatures.json[]
 ----
 
 ====== Create
