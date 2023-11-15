@@ -21,7 +21,7 @@
 [width="90%",cols="3",options="header"]
 |===
 |Format  |Schema Document |Test ID
-|HTML |<<tproperties-schema, tproperty_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
-|JSON |<<tproperties-schema, tproperty_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
+|HTML |<<tproperty-schema, tproperty_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_html_content[/conf/html/content]
+|JSON |<<tproperty-schema, tproperty_requestbody.yaml>>|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
 |JSON |link:https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json[MF-JSON_Prism.schema.json]|link:https://docs.ogc.org/is/19-072/19-072.html#ats_json_content[/conf/json/content]
 |===

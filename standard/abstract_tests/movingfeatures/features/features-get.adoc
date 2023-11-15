@@ -7,7 +7,7 @@
 <<req_mf-features-response-get, /ref/movingfeatures/features-get-success>>
 |Test purpose   | Validate that *MovingFeatures* can be identified and extracted from a *MovingFeature Collection* using query parameters.
 |Test method    |
-For every *MovingFeature Collection* identified in *MovingFeature Collections*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collections* content
+For every *MovingFeature Collection* identified in *MovingFeature Collections*, issue an HTTP GET request to the URL `+{root}+/collections/+{collectionId}+/items` where `+{collectionId}+` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collections* content
 
 1. Validate that a document was returned with a status code `200` +
 2. Validate the contents of the returned document using test <<conf_mf_features_get_success, `/conf/movingfeatures/features-get-success`>>

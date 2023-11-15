@@ -4,7 +4,7 @@
 The *TemporalGeometrySequence* resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
 
 . A retrieve operation returns a sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> object which is included in the <<resource-movingfeature-section,*MovingFeature*>> that specified by <<movingfeature-identifier,`+{mFeatureId}+`>>.
-The sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> object returned to the response can be limited using the query parameters <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, <<datetime-section,`datetime`>>, <<leaf-section,`leaf`>>, and <<subtrajecotry-section,`subTrajectory`>>.
+The sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> object returned to the response can be limited using the query parameters <<limit-section,`limit`>>, <<bbox-section,`bbox`>>, <<datetime-section,`datetime`>>, and <<leaf-section,`leaf`>> (or <<subtrajecotry-section,`subTrajectory`>>).
 . A create operation posts a new <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource to the <<resource-movingfeature-section,*MovingFeature*>> that specified by <<movingfeature-identifier,+{mFeatureId}+>>.
 
 ==== Query Parameters
@@ -83,11 +83,11 @@ include::../openapi/schemas/temporalGeometrySequence.yaml[]
 ----
 
 [#tpgeometry-schema,reftext='TemporalPrimitiveGeometry Schema']
-.TemporalPrimitiveGeometry Schema (temporalPrimitiveGeometry.yaml):
-[source,yaml]
-----
-include::../openapi/schemas/temporalGeometry.yaml[]
-----
+// .TemporalPrimitiveGeometry Schema (MF-JSON/Prism/temporalPrimitiveGeometry.yaml):
+// [source,yaml]
+// ----
+// include::../openapi/schemas/MF-JSON/Prism/temporalPrimitiveGeometry.yaml[]
+// ----
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalGeometrySequence* GET operation.
 [#tgsequence-example,reftext=`TemporalGeometrySequence GET Example`]

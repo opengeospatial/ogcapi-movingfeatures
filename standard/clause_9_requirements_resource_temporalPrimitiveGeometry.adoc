@@ -5,7 +5,7 @@
 A *TemporalPrimitiveGeometry* resource represents the movement of a moving feature with various types of moving geometry, i.e., `MovingPoint`, `MovingLineString`, `MovingPolygon`, and `MovingPointCloud`.
 It can also represent the movement of a 3D object with its orientation.
 
-The schema for the *TemporalPrimitiveGeometry* presented in this clause is the same as the *_TemporalPrimitiveGeometry_* object defined in link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tprimitive[MF-JSON standard].
+The schema for the *TemporalPrimitiveGeometry* presented in this clause is the same as the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tprimitive[*_TemporalPrimitiveGeometry_*] object defined in <<OGC-MF-JSON,MF-JSON>>.
 <<temporalPrimitiveGeometry-properties-table>> defines the set of properties that may be used to describe a *TemporalPrimitiveGeometry*.
 
 [[temporalPrimitiveGeometry-properties-table]]
@@ -27,7 +27,7 @@ The schema for the *TemporalPrimitiveGeometry* presented in this clause is the s
          |*_angles_*: An array value of numbers along the x, y, and z axis in order as Euler angles in degree.
 |===
 
-NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON,OGC Moving Feature JSON encoding Standard>>.
+NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON,OGC Moving Feature JSON Encoding Standard>>.
 
 include::requirements/movingfeature/tpgeometry/REQ_mandatory-tpgeometry.adoc[]
 

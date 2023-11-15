@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/tproperty-get-success*
 ^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The response SHALL only include temporal properties selected by the request with `limit`, `datetime`, and `leaf` parameters.
-^|C |The content of that response SHALL include the parametric value that is defined in the <<tproperties-schema,response schema>>.
+^|B |The response SHALL only include temporal properties selected by the request with `leaf` and `subTemporalValue` parameters.
+^|C |The content of that response SHALL include the parametric value that is defined in the <<tproperty-schema,response schema>>.
 |===

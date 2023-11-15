@@ -2,7 +2,7 @@
 :appendix-caption: Annex
 == Relationship with other OGC/ISO Standards (Informative)
 
-This specification is built upon the following OGC/ISO standards.
+This specification is built upon the following OGC/ISO Standards.
 The geometry concept is presented first, followed by the feature concept.
 Note that a feature is _not_ a geometry.
 However, a feature often contains a geometry as one of its attributes.

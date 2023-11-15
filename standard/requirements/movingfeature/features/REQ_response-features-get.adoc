@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/features-get-success*
 ^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Features `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
-^|B |The response SHALL only include moving features selected by the request with parameters.
+^|B |The response SHALL only include moving features selected by the request with `limit`, `bbox`, `datetime`, and `subTrajectory` parameters.
 ^|C |Each moving feature in the response SHALL include the mandatory properties listed in <<moving-feature-properties-table>>.
 |===
