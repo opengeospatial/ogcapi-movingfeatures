@@ -15,8 +15,8 @@ The schema for the moving feature object presented in this clause is an extensio
 |Property       |Requirement    |Description
 |_id_           |M |A unique identifier to the moving feature.
 |_type_         |M |The GeoJSON feature type (i.e., one of 'Feature' or 'FeatureCollection').
-|_geometry_     |M |Projective geometry of the moving feature.
-|_properties_   |M |A set of properties of GeoJSON.
+|_geometry_     |O |Projective geometry of the moving feature.
+|_properties_   |O |A set of properties of GeoJSON.
 |_bbox_         |O |Bounding box information for the moving feature.
 |*time*         |O |Life span information for the moving feature.
 |*crs*          |O |Coordinate reference system (CRS) information for the moving feature.

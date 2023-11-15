@@ -1,0 +1,13 @@
+[[req_mf_subtemporalvalue-parameter-definition]]
+[width="90%",cols="2,6a",options="header"]
+|===
+^|*Requirement {counter:req-id}* |*/req/movingfeatures/param-subtemporalvalue-definition*
+^|A |The operation SHALL support a query parameter `subTemporalValue` with the following characteristics (using an OpenAPI Specification 3.0 fragment): +
+[source,yaml]
+----
+include::../../../openapi/parameters/subtemporalvalue.yaml[]
+----
+^|B |The `subTemporalValue` parameter SHALL be a time interval (i.e., new start time(*_subTemporalValue[0]_*) and new end time(*_subTemporalValue[1]_*)) with `date-time` strings.
+^|C |The new start time(*_subTemporalValue[0]_*) in the `subTemporalValue` parameter SHALL be earlier than the new end time(*_subTemporalValue[1]_*), i.e., *_subTemporalValue[0]_* < *_subTemporalValue[1]_*.
+^|D |The syntax of `date-time` is specified by link:https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, 5.6].
+|===

@@ -32,14 +32,6 @@
       "href": "https://data.example.org/collections/mfc-1/items/mf-1/tproperties/speed",
       "rel": "self",
       "type": "application/json"
-    },
-    {
-      "href": "https://data.example.org/collections/mfc-1/items/mf-1/tproperties/speed&offset=2&limit=2",
-      "rel": "next",
-      "type": "application/json"
     }
-  ],
-  "timeStamp": "2021-09-01T12:00:00Z",
-  "numberMatched": 20,
-  "numberReturned": 2
+  ]
 }

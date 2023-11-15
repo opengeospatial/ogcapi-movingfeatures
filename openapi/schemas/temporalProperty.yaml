@@ -27,3 +27,7 @@ properties:
       $ref: 'temporalPrimitiveValue.yaml'
   description:
     type: string
+  links:
+    type: array
+    items:
+      $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'

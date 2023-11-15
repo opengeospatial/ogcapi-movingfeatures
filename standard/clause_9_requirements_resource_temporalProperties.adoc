@@ -5,13 +5,22 @@ A *TemporalProperties* object consists of the set of <<resource-temporalProperty
 The *TemporalProperties* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
 . A retrieve operation returns a list of the available abbreviated copy of <<resource-temporalProperty-section,*TemporalProperty*>> object in the specified moving feature.
-The *TemporalProperties* resource returned to the response can be limited using the query parameters <<limit-section,`limit`>> and <<datetime-section,`datetime`>>.
+The *TemporalProperties* resource returned to the response can be limited using the query parameters <<limit-section,`limit`>>, <<datetime-section,`datetime`>>, and <<subTemporalValue-section,`subTemporalValue`>>.
 . A create operation posts a new <<resource-temporalProperty-section,*TemporalProperty*>> object to the <<resource-movingfeature-section,*MovingFeature*>> that is specified by <<movingfeature-identifier,++{mFeatureId}++>>.
 
-//If a `tPropertyName` is not specified, the query will return a list of the available parametric values in the specified moving feature.
-
 ==== Query Parameters
-The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
+The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
+
+[[subTemporalValue-section]]
+===== Parameter subTemporalValue
+The `subTemporalValue` query parameter is defined as follows:
+include::requirements/parameter/REQ_parameter-subtemporalvalue-definition.adoc[]
+include::requirements/parameter/REQ_parameter-subtemporalvalue-response.adoc[]
+
+The `subTemporalValue` query parameter is used to select a subset of <<resource-temporalProperty-section,*TemporalProperty*>> for the specified time interval.
+Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<temporalValue-properties-table,*TemporalPrimitiveValue*>>.
+The `subTemporalValue` parameter behaves functionally the same as the `subTrajectory` parameter.
+However, `subTrajectory` is associated with temporal geometry, while `subTemporalValue` is associated with a temporal property.
 
 ==== Operation
 ===== Retrieve
@@ -29,7 +38,7 @@ Support for the HTTP POST method is specified as a requirement in OGC API — Fe
 
 include::requirements/movingfeature/tproperties/REQ_operation-tproperties-post.adoc[]
 
-[#tproperties-schema,reftext='TemporalProperty Schema']
+[#tproperty-schema,reftext='TemporalProperty Schema']
 .TemporalProperties Request Body Schema (temporalProperty.yaml):
 [source,yaml]
 ----
@@ -47,12 +56,15 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 include::examples/temporalProperty-post.adoc[]
 
 [#tproperties-post-example2,reftext='Create a New TemporalProperty Object Example']
-.An Example of Creating a New TemporalProperty Object with *_ParametricValues_* as a MF-JSON Encoding:
+.An Example of Creating a New TemporalProperty Object with *_ParametricValues_* as a MF-JSON encoding:
 include::examples/temporalProperty-post-mfjson.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the *TemporalProperties* GET operation is a document that contains the set of <<resource-temporalProperty-section,*TemporalProperty*>> of the moving feature identified by the <<movingfeature-identifier,`++{mFeatureId}++`>> parameter.
+A successful response to the *TemporalProperties* GET operation is a document that contains the set of metadata (and static data) of <<resource-temporalProperty-section,*TemporalProperty*>> in the moving feature identified by the <<movingfeature-identifier,`++{mFeatureId}++`>> parameter.
+The response result does not include dynamic (and temporal information).
+
+If the value of the `subTemporalValue` query parameter is provided, the temporal value of the corresponding `temporalProperties` property of the moving feature is calculated using the `subTemporalValue` parameter value and included in the result.
 
 include::requirements/movingfeature/tproperties/REQ_response-tproperties-get.adoc[]
 
@@ -64,11 +76,19 @@ include::../openapi/schemas/temporalProperties.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalProperties* GET operation.
-[#pvalues-example,reftext=`TemporalProperties GET Example`]
+[#tproperties-example,reftext=`TemporalProperties GET Example`]
 .An Example of a TemporalProperties GET Operation:
 [source,json]
 ----
 include::../openapi/examples/temporalPropertyCollection.json[]
+----
+
+The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalProperties* GET operation with query parameter `subTemporalValue`.
+[#tproperties-example-2,reftext=`TemporalProperties GET Example2`]
+.An Example of a TemporalProperties GET Operation with `subTemporalValue`:
+[source,json]
+----
+include::../openapi/examples/temporalProperties.json[]
 ----
 
 ====== Create

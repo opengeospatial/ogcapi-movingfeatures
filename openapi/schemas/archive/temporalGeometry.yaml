@@ -1,0 +1,80 @@
+type: object
+required:
+  - id
+  - type
+  - coordinates
+  - datetimes
+  - interpolation
+properties:
+  id:
+    type: string
+  type:
+    type: string
+    enum:
+      - "MovingPoint"
+      - "MovingLineString"
+      - "MovingPolygon"
+      - "MovingPointCloud"
+  coordinates:
+    type: array
+    minItems: 2
+    items:
+      oneOf:
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/pointGeoJSON.yaml#coordinates'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/linestringGeoJSON.yaml#coordinates'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/polygonGeoJSON.yaml#coordinates'
+        - $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/multipointGeoJSON.yaml#coordinates'
+  datetimes:
+    type: array
+    uniqueItems: true
+    minItems: 2
+    items:
+      type: string
+      format: date-time
+  interpolation:
+    type: string
+    enum:
+      - 'Discrete'
+      - 'Step'
+      - 'Linear'
+      - 'Quadratic'
+      - 'Cube'
+  base:
+    type: object
+    nullable: true
+    required:
+      - href
+      - type
+    properties:
+      href:
+        type: string
+        format: 'uri'
+      type:
+        type: string
+  orientations:
+    type: array
+    minItems: 2
+    items:
+      type: object
+      required:
+        - scales
+        - angles
+      properties:
+        scales:
+          type: array
+          oneOf:
+            - minItems: 2
+              maxItems: 2
+            - minItems: 3
+              maxItems: 3
+          items:
+            type: number
+        angles:
+          type: array
+          oneOf:
+            - minItems: 2
+              maxItems: 2
+            - minItems: 3
+              maxItems: 3
+          items:
+            type: number

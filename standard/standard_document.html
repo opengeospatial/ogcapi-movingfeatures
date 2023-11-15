@@ -755,26 +755,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_overview_10">8.7.1. Overview</a></li>
 <li><a href="#_shared_query_parameters">8.7.2. Shared query parameters</a></li>
 <li><a href="#_distance_query">8.7.3. Distance Query</a></li>
-<li><a href="#_velocity_query">8.7.4. Velocity Query</a></li>
-<li><a href="#_acceleration_query">8.7.5. Acceleration Query</a></li>
-<li><a href="#_operation_requirements">8.7.6. Operation Requirements</a></li>
-<li><a href="#_response_requirements">8.7.7. Response Requirements</a></li>
+<li><a href="#_response_requirements">8.7.4. Response Requirements</a></li>
 </ul>
 </li>
 <li><a href="#resource-temporalProperties-section">8.8. Resource TemporalProperties</a>
 <ul class="sectlevel3">
 <li><a href="#_overview_11">8.8.1. Overview</a></li>
-<li><a href="#_operation_7">8.8.2. Operation</a></li>
-<li><a href="#_response_7">8.8.3. Response</a></li>
-<li><a href="#_error_situations_7">8.8.4. Error situations</a></li>
+<li><a href="#_query_parameters_3">8.8.2. Query Parameters</a></li>
+<li><a href="#_operation_7">8.8.3. Operation</a></li>
+<li><a href="#_response_7">8.8.4. Response</a></li>
+<li><a href="#_error_situations_7">8.8.5. Error situations</a></li>
 </ul>
 </li>
 <li><a href="#resource-temporalProperty-section">8.9. Resource TemporalProperty</a>
 <ul class="sectlevel3">
 <li><a href="#_overview_12">8.9.1. Overview</a></li>
-<li><a href="#_operation_8">8.9.2. Operation</a></li>
-<li><a href="#_response_8">8.9.3. Response</a></li>
-<li><a href="#_error_situations_8">8.9.4. Error situations</a></li>
+<li><a href="#_query_parameters_4">8.9.2. Query Parameters</a></li>
+<li><a href="#_operation_8">8.9.3. Operation</a></li>
+<li><a href="#_response_8">8.9.4. Response</a></li>
+<li><a href="#_error_situations_8">8.9.5. Error situations</a></li>
 </ul>
 </li>
 </ul>
@@ -1364,7 +1363,7 @@ geometry at a particular value of the parameter<br>
 <div class="paragraph">
 <p>The <a href="#OGC-API-Features">OGC API — Features</a> Standard enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, DELETE, etc.)
 The <a href="#OGC-API-Common">OGC API — Common</a> Standard defines a set of features which are applicable to all OGC APIs.
-Other OGC standards extend OGC API — Common with features specific to a resource type.</p>
+Other OGC Standards extend OGC API — Common with features specific to a resource type.</p>
 </div>
 <div class="paragraph">
 <p>This OGC API — Moving Features — Part1: Core Draft Standard defines an API with the goal to:</p>
@@ -2642,6 +2641,9 @@ This behavior and query parameters for use with the <code>Items</code> query are
 </div>
 <div class="sect3">
 <h4 id="_query_parameters"><a class="anchor" href="#_query_parameters"></a>8.3.2. Query Parameters</h4>
+<div class="paragraph">
+<p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>bbox</code></a>, <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a>, and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from OGC API — Common.</p>
+</div>
 <div class="sect4">
 <h5 id="subtrajecotry-section"><a class="anchor" href="#subtrajecotry-section"></a>Parameter subTrajectory</h5>
 <div class="paragraph">
@@ -2717,7 +2719,7 @@ This behavior and query parameters for use with the <code>Items</code> query are
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The endpoint SHALL return only a subsequence of the trajectory derived from temporal primitive geometry by the <strong><em>subTrajectory</em></strong> query at time interval (new start time and new end time) included in the <code>subTrajectory</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property in <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a>, if the <code>subTrajectory</code> parameter is provided.</p>
+<p>The endpoint SHALL return only a subsequence of the trajectory derived from temporal primitive geometry by the <strong><em>subTrajectory</em></strong> operation at a time interval (new start time and new end time) included in the <code>subTrajectory</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property in <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a>, if the <code>subTrajectory</code> parameter is provided.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2867,14 +2869,14 @@ This operation targeted <a href="#resource-movingfeature-section"><strong>Moving
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature"><strong><em>MovingFeature</em></strong> object</a> and <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeaturecollection"><strong><em>MovingFeatureCollection</em></strong> object</a> in <a href="#OGC-MF-JSON">OGC Moving Features JSON encoding standard</a> schema.</p>
+<p>The content of the request body SHALL be based upon the <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature"><strong><em>MovingFeature</em></strong> object</a> and <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeaturecollection"><strong><em>MovingFeatureCollection</em></strong> object</a> in <a href="#OGC-MF-JSON">OGC Moving Features JSON Encoding Standard</a> schema.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The following example adds a new feature (<a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature"><strong><em>MovingFeature</em></strong> object in MF-JSON</a>) to the specific <a href="#resource-collection-section"><strong>Collection</strong></a>.
-The feature is represented as <strong><em>MovingFeature</em></strong> object (or <strong><em>MovingFeatureCollection</em></strong> object) in <a href="#OGC-MF-JSON">MF-JSON</a>.
+<p>The following example adds a new feature (<a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature"><strong><em>MovingFeature</em></strong> object</a> in <a href="#OGC-MF-JSON">MF-JSON</a>) to the specific <a href="#resource-collection-section"><strong>Collection</strong></a>.
+The feature is represented as <strong><em>MovingFeature</em></strong> object (or <strong><em>MovingFeatureCollection</em></strong> object) in MF-JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.</p>
 </div>
 <div id="movingfeature-post-example" class="literalblock">
@@ -2992,9 +2994,13 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <div class="sect4">
 <h5 id="_retrieve_6"><a class="anchor" href="#_retrieve_6"></a>Retrieve</h5>
 <div class="paragraph">
-<p>A successful response to the <strong>MovingFeatures</strong> GET operation is a document that contains the static data for a set of moving features.
-If the value of the <code>subTrajectory</code> query parameter is provided, the value of the corresponding <code>temporalGeometry</code> property of each moving feature is calculated using the <code>subTrajectory</code> parameter value and included in the result, i.e., a <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection"><strong><em>MovingFeatureCollection</em></strong> object of MF-JSON</a>.
-In a typical deployment of the OGF API — MF, the <strong>MovingFeatures</strong> GET response will list <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> resource.</p>
+<p>A successful response to the <strong>MovingFeatures</strong> GET operation is a document that contains the static data for a set of moving features.</p>
+</div>
+<div class="paragraph">
+<p>If the value of the <code>subTrajectory</code> query parameter is provided, the value of the corresponding <code>temporalGeometry</code> property of each moving feature is calculated using the <code>subTrajectory</code> parameter value and included in the result, i.e., a <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection"><strong><em>MovingFeatureCollection</em></strong> object</a> of <a href="#OGC-MF-JSON">MF-JSON</a>.</p>
+</div>
+<div class="paragraph">
+<p>In a typical deployment of the OGF API — MF, the <strong>MovingFeatures</strong> GET response will list <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> resource.</p>
 </div>
 <table id="req_mf-features-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -3017,7 +3023,7 @@ In a typical deployment of the OGF API — MF, the <strong>MovingFeatures</stron
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The response SHALL only include moving features selected by the request with parameters.</p>
+<p>The response SHALL only include moving features selected by the request with <code>limit</code>, <code>bbox</code>, <code>datetime</code>, and <code>subTrajectory</code> parameters.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3046,13 +3052,13 @@ In a typical deployment of the OGF API — MF, the <strong>MovingFeatures</stron
     <span style="color:#606">items</span>:
       <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'movingFeature.yaml'</span>
   <span style="color:#606">crs</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/crs.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/crs.yaml&quot;</span>
   <span style="color:#606">trs</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/trs.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/trs.yaml&quot;</span>
   <span style="color:#606">bbox</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/bbox.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/bbox.yaml&quot;</span>
   <span style="color:#606">time</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/lifeSpan.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/lifeSpan.yaml&quot;</span>
   <span style="color:#606">links</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
     <span style="color:#606">items</span>:
@@ -3214,12 +3220,12 @@ An abbreviated copy of this information is returned for each <strong>MovingFeatu
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>geometry</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Projective geometry of the moving feature.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>properties</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A set of properties of GeoJSON.</p></td>
 </tr>
 <tr>
@@ -3440,17 +3446,17 @@ The temporal object information may be accessed using  <a href="#resource-tempor
     <span style="color:#606">enum</span>:
       - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'Feature'</span></span>
   <span style="color:#606">temporalGeometry</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/temporalGeometry.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/temporalGeometry.yaml&quot;</span>
   <span style="color:#606">temporalProperties</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/temporalProperties.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/temporalProperties.yaml&quot;</span>
   <span style="color:#606">crs</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/crs.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/crs.yaml&quot;</span>
   <span style="color:#606">trs</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/trs.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/trs.yaml&quot;</span>
   <span style="color:#606">bbox</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/bbox.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/bbox.yaml&quot;</span>
   <span style="color:#606">time</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/lifeSpan.yaml'</span>
+    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;MF-JSON/Prism/lifeSpan.yaml&quot;</span>
   <span style="color:#606">geometry</span>:
     <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'</span>
   <span style="color:#606">properties</span>:
@@ -3566,7 +3572,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 <ol class="arabic">
 <li>
 <p>A retrieve operation returns a sequence of <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> object which is included in the <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> that specified by <a href="#movingfeature-identifier"><code>{mFeatureId}</code></a>.
-The set of <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a>  object returned to the response can be limited using the <a href="#limit-section"><code>limit</code></a>, <a href="#bbox-section"><code>bbox</code></a>, <a href="#datetime-section"><code>datetime</code></a>, <a href="#leaf-section"><code>leaf</code></a>, and <a href="#subtrajecotry-section"><code>subTrajectory</code></a> query parameters</p>
+The sequence of <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> object returned to the response can be limited using the query parameters <a href="#limit-section"><code>limit</code></a>, <a href="#bbox-section"><code>bbox</code></a>, <a href="#datetime-section"><code>datetime</code></a>, and <a href="#leaf-section"><code>leaf</code></a> (or <a href="#subtrajecotry-section"><code>subTrajectory</code></a>).</p>
 </li>
 <li>
 <p>A create operation posts a new <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource to the <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> that specified by <a href="#movingfeature-identifier">{mFeatureId}</a>.</p>
@@ -3576,6 +3582,12 @@ The set of <a href="#resource-temporalPrimitiveGeometry-section"><strong>Tempora
 </div>
 <div class="sect3">
 <h4 id="_query_parameters_2"><a class="anchor" href="#_query_parameters_2"></a>8.5.2. Query Parameters</h4>
+<div class="paragraph">
+<p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>bbox</code></a>, <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a>, and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from OGC API — Common.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="#subtrajecotry-section"><code>subTrajectory</code></a> query parameter is defined in the <a href="#resource-movingfeatures-section"><strong>MovingFeatures</strong></a> clause.</p>
+</div>
 <div class="sect4">
 <h5 id="leaf-section"><a class="anchor" href="#leaf-section"></a>Parameter leaf</h5>
 <div class="paragraph">
@@ -3650,7 +3662,7 @@ The set of <a href="#resource-temporalPrimitiveGeometry-section"><strong>Tempora
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the <code>leaf</code> parameter is provided by the client, the endpoint SHALL return only temporal geometry coordinate (or temporal property value) with the <strong><em>pointAtTime</em></strong> query at each time included in the <code>leaf</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property.</p>
+<p>If the <code>leaf</code> parameter is provided by the client, the endpoint SHALL return only temporal geometry coordinate (or temporal property value) with the <strong><em>pointAtTime</em></strong> operation at each date-time included in the <code>leaf</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3662,7 +3674,7 @@ The set of <a href="#resource-temporalPrimitiveGeometry-section"><strong>Tempora
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Apply <code>leaf</code> only to resources that intersect a <code>bbox</code> or (and) a <code>datetime</code> parameter, if the <code>subTrajectory</code> parameter is provided with a <code>bbox</code> or (and) a <code>datetime</code> parameter.</p>
+<p>Apply <code>leaf</code> only to resources that intersect a <code>bbox</code> or (and) a <code>datetime</code> parameter, if the <code>leaf</code> parameter is provided with a <code>bbox</code> or (and) a <code>datetime</code> parameter.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3791,7 +3803,7 @@ This operation targeted <a href="#resource-temporalPrimitiveGeometry-section"><s
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive"><strong><em>TemporalPrimitiveGeometry</em></strong> object</a> in <a href="#OGC-MF-JSON">OGC Moving Features JSON encoding standard</a> schema.</p>
+<p>The content of the request body SHALL be based upon the <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive"><strong><em>TemporalPrimitiveGeometry</em></strong> object</a> in <a href="#OGC-MF-JSON">OGC Moving Features JSON Encoding Standard</a> schema.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3877,7 +3889,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The response SHALL be based upon the <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#tcomplex">TemporalComplexGeometry object</a> that only includes temporal primitive geometry selected by request with <code>limit</code>, <code>bbox</code>, <code>datetime</code>, and <code>leaf</code> parameters.</p>
+<p>The response SHALL only includes temporal primitive geometry selected by request with <code>limit</code>, <code>bbox</code>, <code>datetime</code>, and <code>leaf</code> (or <code>subTrajectory</code>) parameters.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3894,19 +3906,16 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
 <span style="color:#606">required</span>:
   - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">type</span></span>
-  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">prisms</span></span>
+  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">geometrySequence</span></span>
 <span style="color:#606">properties</span>:
   <span style="color:#606">type</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-    <span style="color:#606">default</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'MovingGeometryCollection'</span></span>
-  <span style="color:#606">prisms</span>:
+    <span style="color:#606">enum</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TemporalGeometrySequence</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#606">geometrySequence</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
     <span style="color:#606">items</span>:
-      <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'temporalGeometry.yaml'</span>
-  <span style="color:#606">crs</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">crs.yaml</span>
-  <span style="color:#606">trs</span>:
-    <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">trs.yaml</span>
+      <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'MF-JSON/Prism/temporalPrimitiveGeometry.yaml'</span>
   <span style="color:#606">links</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
     <span style="color:#606">items</span>:
@@ -3922,100 +3931,15 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
     <span style="color:#606">minimum</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">0</span></span></code></pre>
 </div>
 </div>
-<div id="tpgeometry-schema" class="listingblock">
-<div class="title">TemporalPrimitiveGeometry Schema (temporalPrimitiveGeometry.yaml):</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
-<span style="color:#606">required</span>:
-  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">id</span></span>
-  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">type</span></span>
-  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">coordinates</span></span>
-  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">datetimes</span></span>
-  - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">interpolation</span></span>
-<span style="color:#606">properties</span>:
-  <span style="color:#606">id</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-  <span style="color:#606">type</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-    <span style="color:#606">enum</span>:
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MovingPoint</span><span style="color:#710">&quot;</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MovingLineString</span><span style="color:#710">&quot;</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MovingPolygon</span><span style="color:#710">&quot;</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MovingPointCloud</span><span style="color:#710">&quot;</span></span>
-  <span style="color:#606">coordinates</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-    <span style="color:#606">minItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-    <span style="color:#606">items</span>:
-      <span style="color:#606">oneOf</span>:
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/pointGeoJSON.yaml#coordinates'</span></span>
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/linestringGeoJSON.yaml#coordinates'</span></span>
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/polygonGeoJSON.yaml#coordinates'</span></span>
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/multipointGeoJSON.yaml#coordinates'</span></span>
-  <span style="color:#606">datetimes</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-    <span style="color:#606">uniqueItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">true</span></span>
-    <span style="color:#606">minItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-    <span style="color:#606">items</span>:
-      <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-      <span style="color:#606">format</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">date-time</span></span>
-  <span style="color:#606">interpolation</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-    <span style="color:#606">enum</span>:
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'Discrete'</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'Step'</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'Linear'</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'Quadratic'</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'Cube'</span></span>
-  <span style="color:#606">base</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
-    <span style="color:#606">nullable</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">true</span></span>
-    <span style="color:#606">required</span>:
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">href</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">type</span></span>
-    <span style="color:#606">properties</span>:
-      <span style="color:#606">href</span>:
-        <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-        <span style="color:#606">format</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'uri'</span></span>
-      <span style="color:#606">type</span>:
-        <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-  <span style="color:#606">orientations</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-    <span style="color:#606">minItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-    <span style="color:#606">items</span>:
-      <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
-      <span style="color:#606">required</span>:
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">scales</span></span>
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">angles</span></span>
-      <span style="color:#606">properties</span>:
-        <span style="color:#606">scales</span>:
-          <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-          <span style="color:#606">oneOf</span>:
-            - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">minItems: 2</span></span>
-              <span style="color:#606">maxItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-            - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">minItems: 3</span></span>
-              <span style="color:#606">maxItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">3</span></span>
-          <span style="color:#606">items</span>:
-            <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">number</span></span>
-        <span style="color:#606">angles</span>:
-          <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-          <span style="color:#606">oneOf</span>:
-            - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">minItems: 2</span></span>
-              <span style="color:#606">maxItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-            - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">minItems: 3</span></span>
-              <span style="color:#606">maxItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">3</span></span>
-          <span style="color:#606">items</span>:
-            <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">number</span></span></code></pre>
-</div>
-</div>
-<div class="paragraph">
+<div id="tpgeometry-schema" class="paragraph">
 <p>The following JSON payload is an example of a response to an OGC API — Moving Features <strong>TemporalGeometrySequence</strong> GET operation.</p>
 </div>
 <div id="tgsequence-example" class="listingblock">
 <div class="title">An Example of a TemporalGeometrySequence GET operation:</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MovingGeometryCollection</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>prisms</span><span style="color:#404">&quot;</span></span>: [
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TemporalGeometrySequence</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>geometrySequence</span><span style="color:#404">&quot;</span></span>: [
     {
       <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tg-1</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MovingPoint</span><span style="color:#710">&quot;</span></span>,
@@ -4047,17 +3971,17 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
           <span style="color:#606"><span style="color:#404">&quot;</span><span>scales</span><span style="color:#404">&quot;</span></span>: [<span style="color:#00D">1</span>,<span style="color:#00D">1</span>,<span style="color:#00D">1</span>],
           <span style="color:#606"><span style="color:#404">&quot;</span><span>angles</span><span style="color:#404">&quot;</span></span>: [<span style="color:#00D">0</span>,<span style="color:#00D">0</span>,<span style="color:#00D">300</span>]
         }
-      ]
+      ],
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>crs</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Name</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">urn:ogc:def:crs:OGC:1.3:CRS84</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>trs</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Name</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">urn:ogc:data:time:iso8601</span><span style="color:#710">&quot;</span></span>
+      }
     }
   ],
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>crs</span><span style="color:#404">&quot;</span></span>: {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Name</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">urn:ogc:def:crs:OGC:1.3:CRS84</span><span style="color:#710">&quot;</span></span>
-  },
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>trs</span><span style="color:#404">&quot;</span></span>: {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Name</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">urn:ogc:data:time:iso8601</span><span style="color:#710">&quot;</span></span>
-  },
   <span style="color:#606"><span style="color:#404">&quot;</span><span>links</span><span style="color:#404">&quot;</span></span>: [
     {
       <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/mf-1/tgeometries</span><span style="color:#710">&quot;</span></span>,
@@ -4121,7 +4045,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 It can also represent the movement of a 3D object with its orientation.</p>
 </div>
 <div class="paragraph">
-<p>The schema for the <strong>TemporalPrimitiveGeometry</strong> presented in this clause is the same as the <strong><em>TemporalPrimitiveGeometry</em></strong> object defined in <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tprimitive">MF-JSON standard</a>.
+<p>The schema for the <strong>TemporalPrimitiveGeometry</strong> presented in this clause is the same as the <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tprimitive"><strong><em>TemporalPrimitiveGeometry</em></strong></a> object defined in <a href="#OGC-MF-JSON">MF-JSON</a>.
 <a href="#temporalPrimitiveGeometry-properties-table">Table 9</a> defines the set of properties that may be used to describe a <strong>TemporalPrimitiveGeometry</strong>.</p>
 </div>
 <table id="temporalPrimitiveGeometry-properties-table" class="tableblock frame-all grid-all stretch">
@@ -4189,7 +4113,7 @@ It can also represent the movement of a 3D object with its orientation.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-The detailed information and requirements for each property are described in the <a href="#OGC-MF-JSON">OGC Moving Feature JSON encoding Standard</a>.
+The detailed information and requirements for each property are described in the <a href="#OGC-MF-JSON">OGC Moving Feature JSON Encoding Standard</a>.
 </td>
 </tr>
 </table>
@@ -4408,14 +4332,14 @@ The following are defined as standard shared parameters for use.</p>
 <div class="sect3">
 <h4 id="_distance_query"><a class="anchor" href="#_distance_query"></a>8.7.3. Distance Query</h4>
 <div class="paragraph">
-<p>The Distance query returns a time to distance curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.
-<a href="#time-to-distance-curve">Figure 4</a> shows an example of time to distance curve.</p>
+<p>The Distance query returns a time-to-distance curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.
+<a href="#time-to-distance-curve">Figure 4</a> shows an example of the time-to-distance curve.</p>
 </div>
 <div id="time-to-distance-curve" class="imageblock text-center">
 <div class="content">
 <img src="./images/time-to-distance.png" alt="time-to-distance-curve" width="50%">
 </div>
-<div class="title">Figure 4. Example of time to distance curve [OGC 16-120r3, OGC Moving Features Access]</div>
+<div class="title">Figure 4. Example of time-to-distance curve [OGC 16-120r3, OGC Moving Features Access]</div>
 </div>
 <div class="paragraph">
 <p>The filter constraints are defined by the following query parameter:</p>
@@ -4423,45 +4347,34 @@ The following are defined as standard shared parameters for use.</p>
 <div class="sect4">
 <h5 id="_parameter_datetime_2"><a class="anchor" href="#_parameter_datetime_2"></a>Parameter datetime</h5>
 <div class="paragraph">
-<p>The datetime parameter defines the specified date and time to return the distance value from the time to distance graph.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_velocity_query"><a class="anchor" href="#_velocity_query"></a>8.7.4. Velocity Query</h4>
-<div class="paragraph">
-<p>The Velocity query returns a time to velocity curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
+<p>The datetime parameter defines the specified date and time to return the distance value from the time-to-distance curve.
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.
+==== Velocity Query
+The Velocity query returns a time-to-velocity curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
 </div>
 <div class="paragraph">
 <p>The filter constraints are defined by the following query parameter:</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_parameter_datetime_3"><a class="anchor" href="#_parameter_datetime_3"></a>Parameter datetime</h5>
 <div class="paragraph">
-<p>The datetime parameter defines the specified date and time to return the velocity value from the time to velocity graph.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_acceleration_query"><a class="anchor" href="#_acceleration_query"></a>8.7.5. Acceleration Query</h4>
-<div class="paragraph">
-<p>The Acceleration query returns a time to acceleration curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
+<p>The datetime parameter defines the specified date and time to return the velocity value from the time-to-velocity graph.
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.
+==== Acceleration Query
+The Acceleration query returns a time-to-acceleration curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
 </div>
 <div class="paragraph">
 <p>The filter constraints are defined by the following query parameter:</p>
 </div>
+</div>
 <div class="sect4">
 <h5 id="_parameter_datetime_4"><a class="anchor" href="#_parameter_datetime_4"></a>Parameter datetime</h5>
 <div class="paragraph">
-<p>The datetime parameter defines the specified date and time to return the acceleration value from the time to acceleration graph.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
+<p>The datetime parameter defines the specified date and time to return the acceleration value from the time-to-acceleration curve.
+When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.
+==== Operation Requirements</p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_operation_requirements"><a class="anchor" href="#_operation_requirements"></a>8.7.6. Operation Requirements</h4>
 <table id="req_mf-tpgeometry-query-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -4529,8 +4442,9 @@ The path parameter <code>tGeometryId</code> is an <code>id</code> property of th
 </tbody>
 </table>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_response_requirements"><a class="anchor" href="#_response_requirements"></a>8.7.7. Response Requirements</h4>
+<h4 id="_response_requirements"><a class="anchor" href="#_response_requirements"></a>8.7.4. Response Requirements</h4>
 <table id="req_mf-tpgeometry-query-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -4552,7 +4466,7 @@ The path parameter <code>tGeometryId</code> is an <code>id</code> property of th
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of that response SHALL include the parametric value that is defined in the <a href="#tproperties-schema">response schema</a>.</p>
+<p>The content of that response SHALL include the parametric value that is defined in the <a href="#tproperty-schema">response schema</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -4576,7 +4490,8 @@ The <strong>TemporalProperties</strong> resource supports the retrieve and creat
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A retrieve operation returns a list of the available abbreviated copy of <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a> object in the specified moving feature.</p>
+<p>A retrieve operation returns a list of the available abbreviated copy of <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a> object in the specified moving feature.
+The <strong>TemporalProperties</strong> resource returned to the response can be limited using the query parameters <a href="#limit-section"><code>limit</code></a>, <a href="#datetime-section"><code>datetime</code></a>, and <a href="#subTemporalValue-section"><code>subTemporalValue</code></a>.</p>
 </li>
 <li>
 <p>A create operation posts a new <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a> object to the <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> that is specified by <a href="#movingfeature-identifier">{mFeatureId}</a>.</p>
@@ -4585,7 +4500,124 @@ The <strong>TemporalProperties</strong> resource supports the retrieve and creat
 </div>
 </div>
 <div class="sect3">
-<h4 id="_operation_7"><a class="anchor" href="#_operation_7"></a>8.8.2. Operation</h4>
+<h4 id="_query_parameters_3"><a class="anchor" href="#_query_parameters_3"></a>8.8.2. Query Parameters</h4>
+<div class="paragraph">
+<p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a> and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from OGC API — Common.</p>
+</div>
+<div class="sect4">
+<h5 id="subTemporalValue-section"><a class="anchor" href="#subTemporalValue-section"></a>Parameter subTemporalValue</h5>
+<div class="paragraph">
+<p>The <code>subTemporalValue</code> query parameter is defined as follows:</p>
+</div>
+<table id="req_mf_subtemporalvalue-parameter-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>Requirement 34</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/param-subtemporalvalue-definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The operation SHALL support a query parameter <code>subTemporalValue</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">name</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">subTemporalValue</span></span>
+<span style="color:#606">in</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">query</span></span>
+<span style="color:#606">required</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">false</span></span>
+<span style="color:#606">schema</span>:
+  <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
+  <span style="color:#606">uniqueItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">true</span></span>
+  <span style="color:#606">minItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
+  <span style="color:#606">maxItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
+  <span style="color:#606">items</span>:
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
+    <span style="color:#606">format</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">date-time</span></span>
+<span style="color:#606">style</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">form</span></span>
+<span style="color:#606">explode</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">false</span></span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>subTemporalValue</code> parameter SHALL be a time interval (i.e., new start time(<strong><em>subTemporalValue[0]</em></strong>) and new end time(<strong><em>subTemporalValue[1]</em></strong>)) with <code>date-time</code> strings.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The new start time(<strong><em>subTemporalValue[0]</em></strong>) in the <code>subTemporalValue</code> parameter SHALL be earlier than the new end time(<strong><em>subTemporalValue[1]</em></strong>), i.e., <strong><em>subTemporalValue[0]</em></strong> &lt; <strong><em>subTemporalValue[1]</em></strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The syntax of <code>date-time</code> is specified by <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6">RFC 3339, 5.6</a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="req_mf_subtemporalvalue-parameter-response" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>Requirement 35</strong></th>
+<th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/param-subtemporalvalue-response</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The endpoint SHALL return only a subsequence of the temporal primitive values derived from temporal property for specified a time interval (new start time and new end time) included in the <code>subTemporalValue</code> parameter, using interpolated temporal property values according to the <code>interpolation</code> property in <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a>, if the <code>subTemporalValue</code> parameter is provided.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>subTemporalValue</code> parameter SHALL match all temporal property objects in the moving feature.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If the <code>subTemporalValue</code> parameter is provided, the <code>interpolation</code> property in the response SHALL be the same as the temporal property&#8217;s <code>interpolation</code> property value.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Apply <code>subTemporalValue</code> only to resources that intersect a <code>datetime</code> parameter, if the <code>subTemporalValue</code> parameter is provided with a <code>datetime</code> parameter.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">E</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>subTemporalValue</code> parameter SHALL not be used with the <a href="#leaf-section"><code>leaf</code></a> parameter.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <code>subTemporalValue</code> query parameter is used to select a subset of <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a> for the specified time interval.
+Each <a href="#resource-movingfeature-section"><strong>TemporalProperty</strong></a> in the <strong>TemporalProperties</strong> has a sequence of <a href="#temporalValue-properties-table"><strong>TemporalPrimitiveValue</strong></a>.
+The <code>subTemporalValue</code> parameter behaves functionally the same as the <code>subTrajectory</code> parameter.
+However, <code>subTrajectory</code> is associated with temporal geometry, while <code>subTemporalValue</code> is associated with a temporal property.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_operation_7"><a class="anchor" href="#_operation_7"></a>8.8.3. Operation</h4>
 <div class="sect4">
 <h5 id="_retrieve_11"><a class="anchor" href="#_retrieve_11"></a>Retrieve</h5>
 <div class="olist arabic">
@@ -4602,7 +4634,7 @@ The <strong>TemporalProperties</strong> resource supports the retrieve and creat
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 34</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 36</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-get</strong></th>
 </tr>
 </thead>
@@ -4645,7 +4677,7 @@ This operation targeted <a href="#resource-temporalProperty-section"><strong>Tem
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 35</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 37</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-post</strong></th>
 </tr>
 </thead>
@@ -4665,12 +4697,12 @@ This operation targeted <a href="#resource-temporalProperty-section"><strong>Tem
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="#tproperties-schema">TemporalProperties</a> or <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues">ParametricValues object</a> schema.</p>
+<p>The content of the request body SHALL be based upon the <a href="#tproperty-schema">TemporalProperty</a> or <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues">ParametricValues object</a> schema.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<div id="tproperties-schema" class="listingblock">
+<div id="tproperty-schema" class="listingblock">
 <div class="title">TemporalProperties Request Body Schema (temporalProperty.yaml):</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">object</span></span>
@@ -4701,7 +4733,11 @@ This operation targeted <a href="#resource-temporalProperty-section"><strong>Tem
     <span style="color:#606">items</span>:
       <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'temporalPrimitiveValue.yaml'</span>
   <span style="color:#606">description</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span></code></pre>
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
+  <span style="color:#606">links</span>:
+    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
+    <span style="color:#606">items</span>:
+      <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4730,7 +4766,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div id="tproperties-post-example2" class="literalblock">
-<div class="title">An Example of Creating a New TemporalProperty Object with <strong><em>ParametricValues</em></strong> as a MF-JSON Encoding:</div>
+<div class="title">An Example of Creating a New TemporalProperty Object with <strong><em>ParametricValues</em></strong> as a MF-JSON encoding:</div>
 <div class="content">
 <pre>   Client                                                                     Server
      |                                                                          |
@@ -4761,11 +4797,15 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_7"><a class="anchor" href="#_response_7"></a>8.8.3. Response</h4>
+<h4 id="_response_7"><a class="anchor" href="#_response_7"></a>8.8.4. Response</h4>
 <div class="sect4">
 <h5 id="_retrieve_12"><a class="anchor" href="#_retrieve_12"></a>Retrieve</h5>
 <div class="paragraph">
-<p>A successful response to the <strong>TemporalProperties</strong> GET operation is a document that contains the set of <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a> of the moving feature identified by the <a href="#movingfeature-identifier"><code>{mFeatureId}</code></a> parameter.</p>
+<p>A successful response to the <strong>TemporalProperties</strong> GET operation is a document that contains the set of metadata (and static data) of <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a> in the moving feature identified by the <a href="#movingfeature-identifier"><code>{mFeatureId}</code></a> parameter.
+The response result does not include dynamic (and temporal information).</p>
+</div>
+<div class="paragraph">
+<p>If the value of the <code>subTemporalValue</code> query parameter is provided, the temporal value of the corresponding <code>temporalProperties</code> property of the moving feature is calculated using the <code>subTemporalValue</code> parameter value and included in the result.</p>
 </div>
 <table id="req_mf-tproperties-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -4774,7 +4814,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 36</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 38</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-get-success</strong></th>
 </tr>
 </thead>
@@ -4787,6 +4827,12 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The response SHALL only include moving features selected by the request with <code>limit</code>, <code>datetime</code>, and <code>subTemporalValue</code> parameters.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Each temporal property object in the response SHALL include the mandatory properties listed in <a href="#temporalProperty-properties-table">Table 11</a>.</p>
 </div></div></td>
@@ -4801,11 +4847,11 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
   - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">temporalProperties</span></span>
 <span style="color:#606">properties</span>:
   <span style="color:#606">temporalProperties</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-    <span style="color:#606">items</span>:
-      <span style="color:#606">oneOf</span>:
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'temporalProperty.yaml'</span></span>
-        - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: 'temporalPrimitiveValue.yaml'</span></span>
+    <span style="color:#606">oneOf</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">$ref: &quot;MF-JSON/Prism/temporalProperties.yaml&quot;</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">type: array</span></span>
+        <span style="color:#606">items</span>:
+          <span style="color:#F00;background-color:#FAA">$ref</span>: <span style="color:#F00;background-color:#FAA">&quot;temporalProperty.yaml&quot;</span>
   <span style="color:#606">links</span>:
     <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
     <span style="color:#606">items</span>:
@@ -4824,7 +4870,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <div class="paragraph">
 <p>The following JSON payload is an example of a response to an OGC API — Moving Features <strong>TemporalProperties</strong> GET operation.</p>
 </div>
-<div id="pvalues-example" class="listingblock">
+<div id="tproperties-example" class="listingblock">
 <div class="title">An Example of a TemporalProperties GET Operation:</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -4858,6 +4904,61 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>The following JSON payload is an example of a response to an OGC API — Moving Features <strong>TemporalProperties</strong> GET operation with query parameter <code>subTemporalValue</code>.</p>
+</div>
+<div id="tproperties-example-2" class="listingblock">
+<div class="title">An Example of a TemporalProperties GET Operation with <code>subTemporalValue</code>:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>temporalProperties</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>datetimes</span><span style="color:#404">&quot;</span></span>: [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2011-07-14T22:01:01.450Z</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2011-07-14T23:01:01.450Z</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2011-07-15T00:01:01.450Z</span><span style="color:#710">&quot;</span></span>],
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>length</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Measure</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>form</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://www.qudt.org/qudt/owl/1.0.0/quantity/Length</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>values</span><span style="color:#404">&quot;</span></span>: [<span style="color:#60E">1.0</span>, <span style="color:#60E">2.4</span>, <span style="color:#60E">1.0</span>],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>interpolation</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Linear</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>discharge</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Measure</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>form</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MQS</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>values</span><span style="color:#404">&quot;</span></span> : [<span style="color:#60E">3.0</span>, <span style="color:#60E">4.0</span>, <span style="color:#60E">5.0</span>],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>interpolation</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Step</span><span style="color:#710">&quot;</span></span>
+      }
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>datetimes</span><span style="color:#404">&quot;</span></span> : [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2011-07-14T22:01:01.450Z</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2011-07-14T23:01:01.450Z</span><span style="color:#710">&quot;</span></span>],
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>camera</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Image</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>values</span><span style="color:#404">&quot;</span></span> : [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://www.opengis.net/spec/movingfeatures/json/1.0/prism/example/image1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">iVBORw0KGgoAAAANSUhEU......</span><span style="color:#710">&quot;</span></span>],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>interpolation</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Discrete</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>labels</span><span style="color:#404">&quot;</span></span>:{
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Text</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>values</span><span style="color:#404">&quot;</span></span>: [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">car</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">human</span><span style="color:#710">&quot;</span></span>],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>interpolation</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Discrete</span><span style="color:#710">&quot;</span></span>
+      }
+    }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>links</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/mf-1/tproperties</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>rel</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">self</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/json</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/mf-1/tproperties&amp;offset=2&amp;limit=2</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>rel</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">next</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/json</span><span style="color:#710">&quot;</span></span>
+    }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>timeStamp</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2021-09-01T12:00:00Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>numberMatched</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">10</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>numberReturned</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">2</span>
+}</code></pre>
+</div>
+</div>
 <div class="sect5">
 <h6 id="_create_8"><a class="anchor" href="#_create_8"></a>Create</h6>
 <div class="paragraph">
@@ -4870,7 +4971,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 37</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 39</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperties-post-success</strong></th>
 </tr>
 </thead>
@@ -4887,7 +4988,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_error_situations_7"><a class="anchor" href="#_error_situations_7"></a>8.8.4. Error situations</h4>
+<h4 id="_error_situations_7"><a class="anchor" href="#_error_situations_7"></a>8.8.5. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in the <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
@@ -4904,7 +5005,8 @@ General guidance on HTTP status codes and how they should be handled is provided
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A retrieve operation returns a <strong>TemporalProperty</strong> resource which is included in the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.The <strong>TemporalProperty</strong> resource returned to the response can be limited using the <a href="#limit-section"><code>limit</code></a>, <a href="#datetime-section"><code>datetime</code></a>, and <a href="#leaf-section"><code>leaf</code></a> parameters.</p>
+<p>A retrieve operation returns a <strong>TemporalProperty</strong> resource which is included in the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.
+The <strong>TemporalProperty</strong> resource returned to the response can be limited using the parameters <a href="#leaf-section"><code>leaf</code></a> and <a href="#subTemporalValue-section"><code>subTemporalValue</code></a>.</p>
 </li>
 <li>
 <p>A create operation posts a new temporal primitive value object to the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.</p>
@@ -4916,7 +5018,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 An abbreviated copy of this information is returned for each <strong>TemporalProperty</strong> in the <code>{root}/collections/{collectionId}/items/{mFeatureId}/tproperties</code> response.</p>
 </div>
 <div class="paragraph">
-<p>The schema for the temporal property object presented in this clause is an extension of the <code>ParametricValues Object</code> defined in <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties">MF-JSON standard</a>.
+<p>The schema for the temporal property object presented in this clause is an extension of the <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties"><strong><em>ParametricValues</em></strong> Object</a> defined in <a href="#OGC-MF-JSON">MF-JSON</a>.
 <a href="#temporalProperty-properties-table">Table 11</a> defines the set of property that may be used to describe a temporal property.</p>
 </div>
 <table id="temporalProperty-properties-table" class="tableblock frame-all grid-all stretch">
@@ -5012,7 +5114,7 @@ The detailed information and requirements for each property are described in the
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 38</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 40</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperty-mandatory</strong></th>
 </tr>
 </thead>
@@ -5027,7 +5129,16 @@ The detailed information and requirements for each property are described in the
 </table>
 </div>
 <div class="sect3">
-<h4 id="_operation_8"><a class="anchor" href="#_operation_8"></a>8.9.2. Operation</h4>
+<h4 id="_query_parameters_4"><a class="anchor" href="#_query_parameters_4"></a>8.9.2. Query Parameters</h4>
+<div class="paragraph">
+<p>The <a href="#leaf-section"><code>leaf</code></a> query parameter is defined in the <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometrySequence</strong></a> clause.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="#subTemporalValue-section"><code>subTemporalValue</code></a> query parameter is defined in the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> clause.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_operation_8"><a class="anchor" href="#_operation_8"></a>8.9.3. Operation</h4>
 <div class="sect4">
 <h5 id="_retrieve_13"><a class="anchor" href="#_retrieve_13"></a>Retrieve</h5>
 <div class="olist arabic">
@@ -5048,7 +5159,7 @@ The list of valid values for <code>{tPropertyName}</code> is provided in the <a 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 39</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 41</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperty-get</strong></th>
 </tr>
 </thead>
@@ -5092,7 +5203,7 @@ This operation targeted the new temporal primitive value object defined in <a hr
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 40</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 42</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperty-post</strong></th>
 </tr>
 </thead>
@@ -5188,7 +5299,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_8"><a class="anchor" href="#_response_8"></a>8.9.3. Response</h4>
+<h4 id="_response_8"><a class="anchor" href="#_response_8"></a>8.9.4. Response</h4>
 <div class="sect4">
 <h5 id="_retrieve_14"><a class="anchor" href="#_retrieve_14"></a>Retrieve</h5>
 <div class="paragraph">
@@ -5201,7 +5312,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 41</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 43</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperty-get-success</strong></th>
 </tr>
 </thead>
@@ -5215,13 +5326,13 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The response SHALL only include temporal properties selected by the request with <code>limit</code>, <code>datetime</code>, and <code>leaf</code> parameters.</p>
+<p>The response SHALL only include temporal properties selected by the request with <code>leaf</code> and <code>subTemporalValue</code> parameters.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of that response SHALL include the parametric value that is defined in the <a href="#tproperties-schema">response schema</a>.</p>
+<p>The content of that response SHALL include the parametric value that is defined in the <a href="#tproperty-schema">response schema</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -5266,16 +5377,8 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
       <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/mf-1/tproperties/speed</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>rel</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">self</span><span style="color:#710">&quot;</span></span>,
       <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/json</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://data.example.org/collections/mfc-1/items/mf-1/tproperties/speed&amp;offset=2&amp;limit=2</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>rel</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">next</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">application/json</span><span style="color:#710">&quot;</span></span>
     }
-  ],
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>timeStamp</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2021-09-01T12:00:00Z</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>numberMatched</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">20</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>numberReturned</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">2</span>
+  ]
 }</code></pre>
 </div>
 </div>
@@ -5291,7 +5394,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 42</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 44</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/movingfeatures/tproperty-post-success</strong></th>
 </tr>
 </thead>
@@ -5308,7 +5411,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 </div>
 </div>
 <div class="sect3">
-<h4 id="_error_situations_8"><a class="anchor" href="#_error_situations_8"></a>8.9.4. Error situations</h4>
+<h4 id="_error_situations_8"><a class="anchor" href="#_error_situations_8"></a>8.9.5. Error situations</h4>
 <div class="paragraph">
 <p>The requirements for handling unsuccessful requests are provided in the <a href="#http-response">HTTP Response</a>.
 General guidance on HTTP status codes and how they should be handled is provided in <a href="#http-status-codes">HTTP Status Codes</a>.</p>
@@ -5336,7 +5439,7 @@ No modifications are required.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 43</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 45</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/common/param-limit</strong></th>
 </tr>
 </thead>
@@ -5371,7 +5474,7 @@ No modifications are required.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 44</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 46</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/common/param-bbox</strong></th>
 </tr>
 </thead>
@@ -5406,7 +5509,7 @@ No modifications are required.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 45</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 47</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/common/param-datetime</strong></th>
 </tr>
 </thead>
@@ -5445,7 +5548,7 @@ No modifications are required.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Requirement 46</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Requirement 48</strong></th>
 <th class="tableblock halign-left valign-top"><strong>/req/common/http-response</strong></th>
 </tr>
 </thead>
@@ -6837,7 +6940,7 @@ All supported formats should be exercised.</p>
 </tr>
 <tr>
 <th class="tableblock halign-right valign-top"><p class="tableblock">Test method</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1. Validate the <strong>TemporalProperties</strong> property is present and that it is populated with an array of <a href="#tproperties-schema">TemporalProperty</a> items<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. Validate the <strong>TemporalProperties</strong> property is present and that it is populated with an array of <a href="#tproperty-schema">TemporalProperty</a> items<br>
 2. Validate that the <code>name</code> and <code>type</code> property is present<br>
 3. Validate the <code>type</code> property is present and its value is one of the predefined values (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage')<br>
 4. If the <code>links</code> property is present, validate that all entries comply with OGC API — Features <a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links">/conf/core/fc-links</a><br>
@@ -6928,12 +7031,12 @@ All supported formats should be exercised.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTML</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tproperties-schema">tproperty_requestbody.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tproperty-schema">tproperty_requestbody.yaml</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/19-072/19-072.html#ats_html_content">/conf/html/content</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tproperties-schema">tproperty_requestbody.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tproperty-schema">tproperty_requestbody.yaml</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/19-072/19-072.html#ats_json_content">/conf/json/content</a></p></td>
 </tr>
 <tr>
@@ -7160,7 +7263,7 @@ All supported formats should be exercised.</p>
 <h2 id="_relationship_with_other_ogciso_standards_informative"><a class="anchor" href="#_relationship_with_other_ogciso_standards_informative"></a>Annex B: Relationship with other OGC/ISO Standards (Informative)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This specification is built upon the following OGC/ISO standards.
+<p>This specification is built upon the following OGC/ISO Standards.
 The geometry concept is presented first, followed by the feature concept.
 Note that a feature is <em>not</em> a geometry.
 However, a feature often contains a geometry as one of its attributes.
@@ -7471,7 +7574,7 @@ The Standard provides various UML diagrams summarizing ISO 19141.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-08 15:00:01 +0900
+Last updated 2023-11-08 07:00:01 +0100
 </div>
 </div>
 <script>

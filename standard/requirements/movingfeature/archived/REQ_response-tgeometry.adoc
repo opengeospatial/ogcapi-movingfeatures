@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/temporal-geometry-response*
 ^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
-^|B |The content of that response SHALL include the temporal primitive geometry that defined in the <<tpgeometry-schema,response schema>>.
+^|B |The content of that response SHALL include the link:https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive[*_TemporalPrimitiveGeometry_* object] in <<OGC-MF-JSON,OGC Moving Features JSON Encoding Standard>> schema.
 |===
