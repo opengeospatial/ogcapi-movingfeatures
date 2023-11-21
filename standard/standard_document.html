@@ -753,15 +753,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#resource-tgsequenceQuery-section">8.7. TemporalGeometry Query Resources</a>
 <ul class="sectlevel3">
 <li><a href="#_overview_10">8.7.1. Overview</a></li>
-<li><a href="#_shared_query_parameters">8.7.2. Shared query parameters</a></li>
+<li><a href="#_query_parameters_3">8.7.2. Query parameters</a></li>
 <li><a href="#_distance_query">8.7.3. Distance Query</a></li>
-<li><a href="#_response_requirements">8.7.4. Response Requirements</a></li>
+<li><a href="#_velocity_query">8.7.4. Velocity Query</a></li>
+<li><a href="#_acceleration_query">8.7.5. Acceleration Query</a></li>
+<li><a href="#_operation_requirements">8.7.6. Operation Requirements</a></li>
+<li><a href="#_response_requirements">8.7.7. Response Requirements</a></li>
 </ul>
 </li>
 <li><a href="#resource-temporalProperties-section">8.8. Resource TemporalProperties</a>
 <ul class="sectlevel3">
 <li><a href="#_overview_11">8.8.1. Overview</a></li>
-<li><a href="#_query_parameters_3">8.8.2. Query Parameters</a></li>
+<li><a href="#_query_parameters_4">8.8.2. Query Parameters</a></li>
 <li><a href="#_operation_7">8.8.3. Operation</a></li>
 <li><a href="#_response_7">8.8.4. Response</a></li>
 <li><a href="#_error_situations_7">8.8.5. Error situations</a></li>
@@ -770,7 +773,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#resource-temporalProperty-section">8.9. Resource TemporalProperty</a>
 <ul class="sectlevel3">
 <li><a href="#_overview_12">8.9.1. Overview</a></li>
-<li><a href="#_query_parameters_4">8.9.2. Query Parameters</a></li>
+<li><a href="#_query_parameters_5">8.9.2. Query Parameters</a></li>
 <li><a href="#_operation_8">8.9.3. Operation</a></li>
 <li><a href="#_response_8">8.9.4. Response</a></li>
 <li><a href="#_error_situations_8">8.9.5. Error situations</a></li>
@@ -2642,6 +2645,9 @@ This behavior and query parameters for use with the <code>Items</code> query are
 <div class="sect3">
 <h4 id="_query_parameters"><a class="anchor" href="#_query_parameters"></a>8.3.2. Query Parameters</h4>
 <div class="paragraph">
+<p>Query parameters are used in URLs to define the resources which are returned on a GET request.</p>
+</div>
+<div class="paragraph">
 <p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>bbox</code></a>, <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a>, and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from OGC API — Common.</p>
 </div>
 <div class="sect4">
@@ -2664,7 +2670,7 @@ This behavior and query parameters for use with the <code>Items</code> query are
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The operation SHALL support a query parameter <code>subtrajectory</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):<br></p>
+<p>The operation SHALL support a query parameter <code>subTrajectory</code> with the following characteristics (using an OpenAPI Specification 3.0 fragment):<br></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2672,13 +2678,7 @@ This behavior and query parameters for use with the <code>Items</code> query are
 <span style="color:#606">in</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">query</span></span>
 <span style="color:#606">required</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">false</span></span>
 <span style="color:#606">schema</span>:
-  <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-  <span style="color:#606">uniqueItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">true</span></span>
-  <span style="color:#606">minItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-  <span style="color:#606">maxItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-  <span style="color:#606">items</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-    <span style="color:#606">format</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">date-time</span></span>
+  <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">boolean</span></span>
 <span style="color:#606">style</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">form</span></span>
 <span style="color:#606">explode</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">false</span></span></code></pre>
 </div>
@@ -2687,19 +2687,13 @@ This behavior and query parameters for use with the <code>Items</code> query are
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <code>subTrajectory</code> parameter SHALL be a time interval (i.e., new start time(<strong><em>subTrajectory[0]</em></strong>) and new end time(<strong><em>subTrajectory[1]</em></strong>)) with <code>date-time</code> strings.</p>
+<p>The <code>subTrajectory</code> parameter SHALL be used with <code>datetime</code> parameter.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The new start time(<strong><em>subTrajectory[0]</em></strong>) in the <code>subTrajectory</code> parameter SHALL be earlier than the new end time(<strong><em>subTrajectory[1]</em></strong>), i.e., <strong><em>subTrajectory[0]</em></strong> &lt; <strong><em>subTrajectory[1]</em></strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The syntax of <code>date-time</code> is specified by <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6">RFC 3339, 5.6</a>.</p>
+<p>If the <code>subTrajecotry</code> parameter is <strong>"true"</strong>, the <code>datetime</code> parameter SHALL be a bounded interval, not half-bounded intervals or a date-time.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2719,25 +2713,25 @@ This behavior and query parameters for use with the <code>Items</code> query are
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The endpoint SHALL return only a subsequence of the trajectory derived from temporal primitive geometry by the <strong><em>subTrajectory</em></strong> operation at a time interval (new start time and new end time) included in the <code>subTrajectory</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property in <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a>, if the <code>subTrajectory</code> parameter is provided.</p>
+<p>The endpoint SHALL return only a subsequence of the trajectory derived from temporal primitive geometry by the <strong><em>subTrajectory</em></strong> operation at a time interval (new start time and new end time) included in the <code>datetime</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property in <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a>, if the <code>subTrajectory</code> parameter is "true".</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <code>subTrajectory</code> parameter SHALL match all temporal primitive geometry objects in the moving feature.</p>
+<p>If the <code>subTrajectory</code> parameter is "true", the <code>datetime</code> parameter SHALL match all temporal primitive geometry objects in the moving feature or moving feature collection.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the <code>subTrajectory</code> parameter is provided, the <code>interpolation</code> property in the response SHALL be the same as the temporal primitive geometry&#8217;s <code>interpolation</code> property value.</p>
+<p>If the <code>subTrajectory</code> parameter is "true", the <code>interpolation</code> property in the response SHALL be the same as the temporal primitive geometry&#8217;s <code>interpolation</code> property value.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Apply <code>subTrajectory</code> only to resources that intersect a <code>bbox</code> or (and) a <code>datetime</code> parameter, if the <code>subTrajectory</code> parameter is provided with a <code>bbox</code> or (and) a <code>datetime</code> parameter.</p>
+<p>Apply <code>subTrajectory</code> only to resources that intersect a <code>bbox</code> parameter, if the <code>subTrajectory</code> parameter is provided with a <code>bbox</code> parameter.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2751,34 +2745,13 @@ This behavior and query parameters for use with the <code>Items</code> query are
 <div class="paragraph">
 <p>The <code>subTrajectory</code> query parameter is used to select a subsequence of <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometrySequence</strong></a> for the specified time interval.
 Each <a href="#resource-movingfeature-section"><strong>MovingFeature</strong></a> in the <strong>MovingFeatures</strong> has <strong>TemporalGeometrySequence</strong>.
-The two date-time strings (new start time and new end time) in the time interval adhere to <a href="https://datatracker.ietf.org/doc/html/rfc3339">IETF RFC3339</a>.
-The new start time(<strong><em>t_s</em></strong>) is earlier than new end time(<strong><em>t_e</em></strong>), i.e., <strong><em>t_s &lt; t_e</em></strong>.
-<a href="#subtrajectory-text-example">Example 1</a> shows valid expression examples of the <code>subTrajectory</code> parameter.</p>
-</div>
-<div id="subtrajectory-text-example" class="exampleblock">
-<div class="title">Example 1. subTrajectory parameter valid (and invalid) Examples</div>
-<div class="content">
-<div class="paragraph">
-<p>(O) "2018-02-12T23:20:50Z","2018-02-12T23:30:50Z"</p>
+The <code>subTrajectory</code> parameter is used to implement the <strong><em>subTrajectory</em></strong> operation, which is defined in the <a href="https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12">OGC Moving Feature Access Standard</a>.
+This operation required two timestamps (<em>newStartTime</em> and <em>newEndTime</em>) to represent a specified time interval.
+The time interval for the subTrajectory operation is taken from <code>datetime</code> parameter.</p>
 </div>
 <div class="paragraph">
-<p>(X) "2018-02-12T23:20:50Z"</p>
-</div>
-<div class="paragraph">
-<p>(X) "2018-02-12T23:20:50Z","2018-02-12T23:30:50Z","2018-02-12T23:40:50Z"</p>
-</div>
-<div class="paragraph">
-<p>(X) "2018-02-12T23:20:50Z","2018-02-12T23:20:50Z"</p>
-</div>
-<div class="paragraph">
-<p>(X) "2018-02-12T23:20:50Z","2018-02-12T22:40:50Z"</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>If the <code>subTrajectory</code> parameter is provided by the client, the endpoint SHALL return only a subset of the trajectory derived from temporal primitive geometry by the <strong><em>subTrajectory</em></strong> operation at time (new start time and new end time) included in the <code>subTrajectory</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property in <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a>.
-The <code>interpolation</code> property in the response shall be the same as the original temporal primitive geometry.
-Note that the <strong><em>subTrajectory</em></strong> operation is defined in the <a href="https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12">OGC Moving Feature Access Standard</a>.</p>
+<p>If the <code>subTrajectory</code> parameter is provided by the client, the endpoint SHALL return only a subset of the trajectory derived from temporal primitive geometry by the  operation at time (<em>newStartTime</em> and <em>newEndTime</em>) included in the <code>subTrajectory</code> parameter, using interpolated trajectory according to the <code>interpolation</code> property in <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a>.
+The <code>interpolation</code> property in the response shall be the same as the original temporal primitive geometry.</p>
 </div>
 <div id="subtrajectory-example" class="imageblock text-center">
 <div class="content">
@@ -2869,7 +2842,7 @@ This operation targeted <a href="#resource-movingfeature-section"><strong>Moving
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature"><strong><em>MovingFeature</em></strong> object</a> and <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeaturecollection"><strong><em>MovingFeatureCollection</em></strong> object</a> in <a href="#OGC-MF-JSON">OGC Moving Features JSON Encoding Standard</a> schema.</p>
+<p>The content of the request body SHALL be based upon the <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature"><strong><em>MovingFeature</em></strong> object</a> and <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeaturecollection"><strong><em>MovingFeatureCollection</em></strong> object</a> in <a href="#OGC-MF-JSON">OGC Moving Features JSON Encoding Standard</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3190,8 +3163,15 @@ General guidance on HTTP status codes and how they should be handled is provided
 An abbreviated copy of this information is returned for each <strong>MovingFeature</strong> in the <code>{root}/collections/{collectionId}/items</code> GET response.</p>
 </div>
 <div class="paragraph">
-<p>The schema for the moving feature object presented in this clause is an extension of the <code>GeoJSON Feature Object</code> defined in <a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.2">GeoJSON</a>.
-<a href="#moving-feature-properties-table">Table 8</a> defines the set of properties that may be used to describe a moving feature.</p>
+<p><a href="#moving-feature-properties-table">Table 8</a> defines the set of properties that may be used to describe a moving feature.
+The schema for the moving feature object presented in this clause is an extension of the <strong><em>GeoJSON Feature Object</em></strong> defined in <a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.2">GeoJSON</a>.
+By default, the properties defined in <a href="#moving-feature-properties-table">Table 8</a> are the same as the <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeature"><strong><em>MovingFeature Object</em></strong> in OGC MF-JSON</a>.
+The semantics of each property are also the same as those defined in MF-JSON.</p>
+</div>
+<div class="paragraph">
+<p>However, depending on where this schema is used (i.e., depending on which resource produces results with which query parameter), there are differences in requirements from the schema defined in MF-JSON;
+as sometimes it only needs to have static information, and sometimes it also has a <strong>temporalGeometry</strong>.
+For example, in MF-JSON, <code>type</code> and <code>temporalGeometry</code> are mandatory, but in this API, <code>id</code> and <code>type</code> are mandatory. This is why the defined schema is represented in GeoJSON, not MF-JSON.</p>
 </div>
 <table id="moving-feature-properties-table" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 8. Table of the properties related to the moving feature</caption>
@@ -3268,7 +3248,18 @@ An abbreviated copy of this information is returned for each <strong>MovingFeatu
 </td>
 <td class="content">
 The properties <em>id</em>, <em>type</em>, <em>geometry</em>, <em>properties</em>, and <em>bbox</em> were inherited from <a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.2">GeoJSON</a>.
-NOTE: The properties
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The properties <strong>time</strong>, <strong>crs</strong>, <strong>trs</strong>, <strong>temporalGeometry</strong>, and <strong>temporalProperties</strong> were inherited from <a href="https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeature">OGC MF-JSON</a>
 </td>
 </tr>
 </table>
@@ -3583,6 +3574,9 @@ The sequence of <a href="#resource-temporalPrimitiveGeometry-section"><strong>Te
 <div class="sect3">
 <h4 id="_query_parameters_2"><a class="anchor" href="#_query_parameters_2"></a>8.5.2. Query Parameters</h4>
 <div class="paragraph">
+<p>Query parameters are used in URLs to define the resources which are returned on a GET request.</p>
+</div>
+<div class="paragraph">
 <p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements"><code>bbox</code></a>, <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a>, and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from OGC API — Common.</p>
 </div>
 <div class="paragraph">
@@ -3689,10 +3683,10 @@ The sequence of <a href="#resource-temporalPrimitiveGeometry-section"><strong>Te
 <p>The <code>leaf</code> parameter is a sequence of monotonic increasing instants represented by date-time strings (ex. "2018-02-12T23:20:50Z") whose structure adheres to <a href="https://datatracker.ietf.org/doc/html/rfc3339">IETF RFC3339</a>.
 The <code>leaf</code> parameter consists of a list of the date-time format strings, different from <a href="#datetime-section"><code>datetime</code></a> parameter.
 The list does not allow the same element value.
-<a href="#leaf-text-example">Example 2</a> shows valid expression examples of the <code>leaf</code> parameter.</p>
+<a href="#leaf-text-example">Example 1</a> shows valid expression examples of the <code>leaf</code> parameter.</p>
 </div>
 <div id="leaf-text-example" class="exampleblock">
-<div class="title">Example 2. leaf parameter valid (and invalid) Examples</div>
+<div class="title">Example 1. leaf parameter valid (and invalid) Examples</div>
 <div class="content">
 <div class="paragraph">
 <p>(O) "2018-02-12T23:20:50Z"</p>
@@ -3713,7 +3707,7 @@ The list does not allow the same element value.
 </div>
 <div class="paragraph">
 <p>If the <code>leaf</code> parameter is provided by the client, the endpoint returns only temporal geometry coordinate (or temporal property value) with the leaf query at each time included in the <code>leaf</code> parameter, similar to <em><strong>pointAtTime</strong></em> operation in the <a href="https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12">OGC Moving Feature Access Standard</a>.
-The <code>interpolation</code> property in the response shall be 'Discrete'.</p>
+The <code>interpolation</code> property in the response shall be "Discrete".</p>
 </div>
 <div id="leaf-example" class="imageblock text-center">
 <div class="content">
@@ -4317,16 +4311,10 @@ This list may change as the Standard is used and experience is gained.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_shared_query_parameters"><a class="anchor" href="#_shared_query_parameters"></a>8.7.2. Shared query parameters</h4>
+<h4 id="_query_parameters_3"><a class="anchor" href="#_query_parameters_3"></a>8.7.2. Query parameters</h4>
 <div class="paragraph">
 <p>Query parameters are used in URLs to define the resources which are returned on a GET request.
-The following are defined as standard shared parameters for use.</p>
-</div>
-<div class="sect4">
-<h5 id="_parameter_datetime"><a class="anchor" href="#_parameter_datetime"></a>Parameter datetime</h5>
-<div class="paragraph">
-<p>For datetime parameter, see <a href="#datetime-section">Clause 10.1.3</a>.</p>
-</div>
+The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a> is inherited from OGC API — Common.</p>
 </div>
 </div>
 <div class="sect3">
@@ -4345,36 +4333,50 @@ The following are defined as standard shared parameters for use.</p>
 <p>The filter constraints are defined by the following query parameter:</p>
 </div>
 <div class="sect4">
-<h5 id="_parameter_datetime_2"><a class="anchor" href="#_parameter_datetime_2"></a>Parameter datetime</h5>
+<h5 id="_parameter_datetime"><a class="anchor" href="#_parameter_datetime"></a>Parameter datetime</h5>
 <div class="paragraph">
-<p>The datetime parameter defines the specified date and time to return the distance value from the time-to-distance curve.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.
-==== Velocity Query
-The Velocity query returns a time-to-velocity curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
+<p>The <code>datetime</code> parameter defines the specified date and time to return the distance value from the time-to-distance curve.
+If the <code>datetime</code> is provided, the <code>datetime</code> must be a date-time, not a half-bounded interval or bounded interval.
+When the <code>datetime</code> is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_velocity_query"><a class="anchor" href="#_velocity_query"></a>8.7.4. Velocity Query</h4>
+<div class="paragraph">
+<p>The Velocity query returns a time-to-velocity curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
 </div>
 <div class="paragraph">
 <p>The filter constraints are defined by the following query parameter:</p>
 </div>
+<div class="sect4">
+<h5 id="_parameter_datetime_2"><a class="anchor" href="#_parameter_datetime_2"></a>Parameter datetime</h5>
+<div class="paragraph">
+<p>The <code>datetime</code> parameter defines the specified date and time to return the velocity value from the time-to-velocity graph.
+If the <code>datetime</code> is provided, the <code>datetime</code> must be a date-time, not a half-bounded interval or bounded interval.
+When the <code>datetime</code> is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_acceleration_query"><a class="anchor" href="#_acceleration_query"></a>8.7.5. Acceleration Query</h4>
+<div class="paragraph">
+<p>The Acceleration query returns a time-to-acceleration curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
+</div>
+<div class="paragraph">
+<p>The filter constraints are defined by the following query parameter:</p>
 </div>
 <div class="sect4">
 <h5 id="_parameter_datetime_3"><a class="anchor" href="#_parameter_datetime_3"></a>Parameter datetime</h5>
 <div class="paragraph">
-<p>The datetime parameter defines the specified date and time to return the velocity value from the time-to-velocity graph.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.
-==== Acceleration Query
-The Acceleration query returns a time-to-acceleration curve of the <a href="#temporalPrimitiveGeometry-object"><strong>TemporalPrimitiveGeometry</strong></a> object as a form of the <a href="#temporalProperty-properties-table"><strong>TemporalProperty</strong></a>.</p>
-</div>
-<div class="paragraph">
-<p>The filter constraints are defined by the following query parameter:</p>
+<p>The <code>datetime</code> parameter defines the specified date and time to return the acceleration value from the time-to-acceleration curve.
+If the <code>datetime</code> is provided, the <code>datetime</code> must be a date-time, not a half-bounded interval or bounded interval.
+When the <code>datetime</code> is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_parameter_datetime_4"><a class="anchor" href="#_parameter_datetime_4"></a>Parameter datetime</h5>
-<div class="paragraph">
-<p>The datetime parameter defines the specified date and time to return the acceleration value from the time-to-acceleration curve.
-When 'datetime' is not specified, an implementation instance (endpoint) of the API returns data from all available times of the specified <a href="#resource-temporalPrimitiveGeometry-section"><strong>TemporalPrimitiveGeometry</strong></a> resource.
-==== Operation Requirements</p>
 </div>
+<div class="sect3">
+<h4 id="_operation_requirements"><a class="anchor" href="#_operation_requirements"></a>8.7.6. Operation Requirements</h4>
 <table id="req_mf-tpgeometry-query-op-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -4439,12 +4441,17 @@ The path parameter <code>tGeometryId</code> is an <code>id</code> property of th
 <p>An acceleration query GET operation MAY include a <code>datetime</code> query parameter.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If the <code>datetime</code> parameter is provided, the <code>datetime</code> SHALL be a date-time, not a half-bounded interval or bounded interval.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
-</div>
 <div class="sect3">
-<h4 id="_response_requirements"><a class="anchor" href="#_response_requirements"></a>8.7.4. Response Requirements</h4>
+<h4 id="_response_requirements"><a class="anchor" href="#_response_requirements"></a>8.7.7. Response Requirements</h4>
 <table id="req_mf-tpgeometry-query-response-get" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -4472,7 +4479,7 @@ The path parameter <code>tGeometryId</code> is an <code>id</code> property of th
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <code>type</code> property SHALL be <strong>TReal</strong></p>
+<p>The <code>type</code> property SHALL be <strong>"TReal"</strong></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4500,7 +4507,10 @@ The <strong>TemporalProperties</strong> resource returned to the response can be
 </div>
 </div>
 <div class="sect3">
-<h4 id="_query_parameters_3"><a class="anchor" href="#_query_parameters_3"></a>8.8.2. Query Parameters</h4>
+<h4 id="_query_parameters_4"><a class="anchor" href="#_query_parameters_4"></a>8.8.2. Query Parameters</h4>
+<div class="paragraph">
+<p>Query parameters are used in URLs to define the resources which are returned on a GET request.</p>
+</div>
 <div class="paragraph">
 <p>The query parameters <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a> and <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements"><code>limit</code></a> are inherited from OGC API — Common.</p>
 </div>
@@ -4532,13 +4542,7 @@ The <strong>TemporalProperties</strong> resource returned to the response can be
 <span style="color:#606">in</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">query</span></span>
 <span style="color:#606">required</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">false</span></span>
 <span style="color:#606">schema</span>:
-  <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">array</span></span>
-  <span style="color:#606">uniqueItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">true</span></span>
-  <span style="color:#606">minItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-  <span style="color:#606">maxItems</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2</span></span>
-  <span style="color:#606">items</span>:
-    <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">string</span></span>
-    <span style="color:#606">format</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">date-time</span></span>
+  <span style="color:#606">type</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">boolean</span></span>
 <span style="color:#606">style</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">form</span></span>
 <span style="color:#606">explode</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">false</span></span></code></pre>
 </div>
@@ -4547,19 +4551,13 @@ The <strong>TemporalProperties</strong> resource returned to the response can be
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <code>subTemporalValue</code> parameter SHALL be a time interval (i.e., new start time(<strong><em>subTemporalValue[0]</em></strong>) and new end time(<strong><em>subTemporalValue[1]</em></strong>)) with <code>date-time</code> strings.</p>
+<p>The <code>subTemporalValue</code> parameter SHALL be used with <code>datetime</code> parameter.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The new start time(<strong><em>subTemporalValue[0]</em></strong>) in the <code>subTemporalValue</code> parameter SHALL be earlier than the new end time(<strong><em>subTemporalValue[1]</em></strong>), i.e., <strong><em>subTemporalValue[0]</em></strong> &lt; <strong><em>subTemporalValue[1]</em></strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The syntax of <code>date-time</code> is specified by <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6">RFC 3339, 5.6</a>.</p>
+<p>If the <code>subTemporalValue</code> parameter is "true", the <code>datetime</code> parameter SHALL be a bounded interval, not half-bounded intervals or a date-time.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4579,29 +4577,23 @@ The <strong>TemporalProperties</strong> resource returned to the response can be
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The endpoint SHALL return only a subsequence of the temporal primitive values derived from temporal property for specified a time interval (new start time and new end time) included in the <code>subTemporalValue</code> parameter, using interpolated temporal property values according to the <code>interpolation</code> property in <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a>, if the <code>subTemporalValue</code> parameter is provided.</p>
+<p>The endpoint SHALL return only a subsequence of the temporal primitive values derived from temporal property for specified a time interval (new start time and new end time) included in the <code>datetime</code> parameter, using interpolated temporal property values according to the <code>interpolation</code> property in <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a>, if the <code>subTemporalValue</code> parameter is "ture".</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <code>subTemporalValue</code> parameter SHALL match all temporal property objects in the moving feature.</p>
+<p>If the <code>subTemporalValue</code> parameter is "true", the <code>datetime</code> parameter SHALL match all temporal property objects in the moving feature.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the <code>subTemporalValue</code> parameter is provided, the <code>interpolation</code> property in the response SHALL be the same as the temporal property&#8217;s <code>interpolation</code> property value.</p>
+<p>If the <code>subTemporalValue</code> parameter is "true", the <code>interpolation</code> property in the response SHALL be the same as the temporal property&#8217;s <code>interpolation</code> property value.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Apply <code>subTemporalValue</code> only to resources that intersect a <code>datetime</code> parameter, if the <code>subTemporalValue</code> parameter is provided with a <code>datetime</code> parameter.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">E</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The <code>subTemporalValue</code> parameter SHALL not be used with the <a href="#leaf-section"><code>leaf</code></a> parameter.</p>
 </div></div></td>
@@ -4612,7 +4604,7 @@ The <strong>TemporalProperties</strong> resource returned to the response can be
 <p>The <code>subTemporalValue</code> query parameter is used to select a subset of <a href="#resource-temporalProperty-section"><strong>TemporalProperty</strong></a> for the specified time interval.
 Each <a href="#resource-movingfeature-section"><strong>TemporalProperty</strong></a> in the <strong>TemporalProperties</strong> has a sequence of <a href="#temporalValue-properties-table"><strong>TemporalPrimitiveValue</strong></a>.
 The <code>subTemporalValue</code> parameter behaves functionally the same as the <code>subTrajectory</code> parameter.
-However, <code>subTrajectory</code> is associated with temporal geometry, while <code>subTemporalValue</code> is associated with a temporal property.</p>
+The difference is that <code>subTrajectory</code> is associated with temporal geometry, while <code>subTemporalValue</code> is associated with temporal properties.</p>
 </div>
 </div>
 </div>
@@ -4697,7 +4689,7 @@ This operation targeted <a href="#resource-temporalProperty-section"><strong>Tem
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The content of the request body SHALL be based upon the <a href="#tproperty-schema">TemporalProperty</a> or <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues">ParametricValues object</a> schema.</p>
+<p>The content of the request body SHALL be based upon a <a href="#tproperty-schema">TemporalProperty</a> defined in this API or a <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues">ParametricValues object</a> defined in <a href="#OGC-MF-JSON">OGC Moving Features JSON Encoding Standard</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4741,7 +4733,7 @@ This operation targeted <a href="#resource-temporalProperty-section"><strong>Tem
 </div>
 </div>
 <div class="paragraph">
-<p>The following example adds a new feature (<a href="#temporal-properties-object"><strong>TemporalProperty</strong> Object</a> and <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues"><strong><em>ParametricValues</em></strong> object</a> in <a href="#OGC-MF-JSON">MF-JSON</a>) to the feature created by the <a href="#movingfeature-post-example">Creation a MovingFeature Example</a>.
+<p>The following example adds a new feature (<a href="#temporal-properties-object"><strong>TemporalProperty</strong> Object</a> and <a href="https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues"><strong><em>ParametricValues</em></strong> Object</a> in <a href="#OGC-MF-JSON">MF-JSON</a>) to the feature created by the <a href="#movingfeature-post-example">Creation a MovingFeature Example</a>.
 The feature is represented as a JSON payload.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.</p>
 </div>
@@ -5006,7 +4998,7 @@ General guidance on HTTP status codes and how they should be handled is provided
 <ol class="arabic">
 <li>
 <p>A retrieve operation returns a <strong>TemporalProperty</strong> resource which is included in the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.
-The <strong>TemporalProperty</strong> resource returned to the response can be limited using the parameters <a href="#leaf-section"><code>leaf</code></a> and <a href="#subTemporalValue-section"><code>subTemporalValue</code></a>.</p>
+The <strong>TemporalProperty</strong> resource returned to the response can be limited using the parameters <a href="#datetime-section"><code>datetime</code></a>, <a href="#leaf-section"><code>leaf</code></a> and <a href="#subTemporalValue-section"><code>subTemporalValue</code></a>.</p>
 </li>
 <li>
 <p>A create operation posts a new temporal primitive value object to the <a href="#resource-temporalProperties-section"><strong>TemporalProperties</strong></a> that specified by <a href="#tproperties-identifier">{tPropertyName}</a>.</p>
@@ -5129,7 +5121,13 @@ The detailed information and requirements for each property are described in the
 </table>
 </div>
 <div class="sect3">
-<h4 id="_query_parameters_4"><a class="anchor" href="#_query_parameters_4"></a>8.9.2. Query Parameters</h4>
+<h4 id="_query_parameters_5"><a class="anchor" href="#_query_parameters_5"></a>8.9.2. Query Parameters</h4>
+<div class="paragraph">
+<p>Query parameters are used in URLs to define the resources which are returned on a GET request.</p>
+</div>
+<div class="paragraph">
+<p>The query parameter <a href="http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements"><code>datetime</code></a> is inherited from OGC API — Common.</p>
+</div>
 <div class="paragraph">
 <p>The <a href="#leaf-section"><code>leaf</code></a> query parameter is defined in the <a href="#resource-temporalGeometrySequence-section"><strong>TemporalGeometrySequence</strong></a> clause.</p>
 </div>
@@ -7574,7 +7572,7 @@ The Standard provides various UML diagrams summarizing ISO 19141.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-08 07:00:01 +0100
+Last updated 2023-11-08 15:00:01 +0900
 </div>
 </div>
 <script>

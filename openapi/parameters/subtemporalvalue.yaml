@@ -2,12 +2,6 @@ name: subTemporalValue
 in: query
 required: false
 schema:
-  type: array
-  uniqueItems: true
-  minItems: 2
-  maxItems: 2
-  items:
-    type: string
-    format: date-time
+  type: boolean
 style: form
 explode: false

@@ -4,7 +4,7 @@
 The *TemporalProperty* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
 . A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,+{tPropertyName}+>>.
-The *TemporalProperty* resource returned to the response can be limited using the parameters <<leaf-section,`leaf`>> and <<subTemporalValue-section,`subTemporalValue`>>.
+The *TemporalProperty* resource returned to the response can be limited using the parameters <<datetime-section,`datetime`>>, <<leaf-section,`leaf`>> and <<subTemporalValue-section,`subTemporalValue`>>.
 . A create operation posts a new temporal primitive value object to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,+{tPropertyName}+>>.
 
 [[temporal-properties-object]]
@@ -43,6 +43,10 @@ NOTE: The detailed information and requirements for each property are described 
 include::requirements/movingfeature/tproperty/REQ_mandatory-tproperty.adoc[]
 
 ==== Query Parameters
+Query parameters are used in URLs to define the resources which are returned on a GET request.
+
+The query parameter link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] is inherited from OGC API — Common.
+
 The <<leaf-section,`leaf`>> query parameter is defined in the <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> clause.
 
 The <<subTemporalValue-section,`subTemporalValue`>> query parameter is defined in the <<resource-temporalProperties-section,*TemporalProperties*>> clause.

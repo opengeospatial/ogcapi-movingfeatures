@@ -2,10 +2,8 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/param-subtemporalvalue-response*
-^|A | The endpoint SHALL return only a subsequence of the temporal primitive values derived from temporal property for specified a time interval (new start time and new end time) included in the `subTemporalValue` parameter, using interpolated temporal property values according to the `interpolation` property in <<resource-temporalProperty-section,*TemporalProperty*>>, if the `subTemporalValue` parameter is provided.
-^|B | The `subTemporalValue` parameter SHALL match all temporal property objects in the moving feature.
-^|C | If the `subTemporalValue` parameter is provided, the `interpolation` property in the response SHALL be the same as the temporal property's `interpolation` property value.
-^|D | Apply `subTemporalValue` only to resources that intersect a `datetime` parameter, if the `subTemporalValue` parameter is provided with a `datetime` parameter.
-^|E | The `subTemporalValue` parameter SHALL not be used with the <<leaf-section,`leaf`>> parameter.
-// TODO: Out of range(life span) case
+^|A | The endpoint SHALL return only a subsequence of the temporal primitive values derived from temporal property for specified a time interval (new start time and new end time) included in the `datetime` parameter, using interpolated temporal property values according to the `interpolation` property in <<resource-temporalProperty-section,*TemporalProperty*>>, if the `subTemporalValue` parameter is "ture".
+^|B | If the `subTemporalValue` parameter is "true", the `datetime` parameter SHALL match all temporal property objects in the moving feature.
+^|C | If the `subTemporalValue` parameter is "true", the `interpolation` property in the response SHALL be the same as the temporal property's `interpolation` property value.
+^|D | The `subTemporalValue` parameter SHALL not be used with the <<leaf-section,`leaf`>> parameter.
 |===

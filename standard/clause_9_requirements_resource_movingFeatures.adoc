@@ -12,6 +12,8 @@ The list of moving features returned to the response can be limited using the <<
 This behavior and query parameters for use with the `Items` query are specified in OGC API — Features and OGC API — Common, except <<subtrajecotry-section,`subTrajectory`>> parameter.
 
 ==== Query Parameters
+Query parameters are used in URLs to define the resources which are returned on a GET request.
+
 The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 
 [[subtrajecotry-section]]
@@ -22,27 +24,14 @@ include::requirements/parameter/REQ_parameter-subtrajectory-response.adoc[]
 
 The `subTrajectory` query parameter is used to select a subsequence of <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> for the specified time interval.
 Each <<resource-movingfeature-section,*MovingFeature*>> in the *MovingFeatures* has *TemporalGeometrySequence*.
-The two date-time strings (new start time and new end time) in the time interval adhere to link:https://datatracker.ietf.org/doc/html/rfc3339[IETF RFC3339].
-The new start time(*_t_s_*) is earlier than new end time(*_t_e_*), i.e., *_t_s < t_e_*.
-<<subtrajectory-text-example>> shows valid expression examples of the `subTrajectory` parameter.
+The `subTrajectory` parameter is used to implement the *_subTrajectory_* operation, which is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
+This operation required two timestamps (_newStartTime_ and _newEndTime_) to represent a specified time interval.
+The time interval for the subTrajectory operation is taken from `datetime` parameter.
 
-[#subtrajectory-text-example,reftext='{example-caption} {counter:example-num}']
-.subTrajectory parameter valid (and invalid) Examples
-=================
-(O) "2018-02-12T23:20:50Z","2018-02-12T23:30:50Z"
-
-(X) "2018-02-12T23:20:50Z"
-
-(X) "2018-02-12T23:20:50Z","2018-02-12T23:30:50Z","2018-02-12T23:40:50Z"
-
-(X) "2018-02-12T23:20:50Z","2018-02-12T23:20:50Z"
-
-(X) "2018-02-12T23:20:50Z","2018-02-12T22:40:50Z"
-=================
-
-If the `subTrajectory` parameter is provided by the client, the endpoint SHALL return only a subset of the trajectory derived from temporal primitive geometry by the *_subTrajectory_* operation at time (new start time and new end time) included in the `subTrajectory` parameter, using interpolated trajectory according to the `interpolation` property in <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>.
+If the `subTrajectory` parameter is provided by the client, the endpoint SHALL return only a subset of the trajectory derived from temporal primitive geometry by the  operation at time (_newStartTime_ and _newEndTime_) included in the `subTrajectory` parameter, using interpolated trajectory according to the `interpolation` property in <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>.
 The `interpolation` property in the response shall be the same as the original temporal primitive geometry.
-Note that the *_subTrajectory_* operation is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
+
+// Note that the *_subTrajectory_* operation is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
 
 [#subtrajectory-example,reftext='{figure-caption} {counter:figure-num}']
 .Example of a response result with `subTrajectory` parameter

@@ -4,5 +4,5 @@
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/features-post*
 ^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/insert-post-op`].
 ^|B |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
-^|C |The content of the request body SHALL be based upon the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] and https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] in <<OGC-MF-JSON,OGC Moving Features JSON Encoding Standard>> schema.
+^|C |The content of the request body SHALL be based upon the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] and https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] in <<OGC-MF-JSON,OGC Moving Features JSON Encoding Standard>>.
 |===
