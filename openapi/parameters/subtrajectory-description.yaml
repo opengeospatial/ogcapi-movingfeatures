@@ -2,25 +2,21 @@ name: subTrajectory
 in: query
 required: false
 description: |-
-  The `subTrajectory` is provided as a time interval (new start time(`subTrajectory[0]`) and new end time(`subTrajectory[1]`)).
-  Only features that have a temporal geometry that intersects the given time interval.
+  The `subTrajectory` parameter is a boolean value used with the `datetime` parameter.
+  If the `subTrajectory` is "true", 
   
-  The `subTrajectory` operation implements *subTrajectory* operation which defined in the OGC Moving Feature Access.
-  This operation returns only subsequence of temporal geometry within a time interval contained in the `subTrajectory` parameter, 
-  using interpolated trajectory according to the `interpolation` property.
+  * the `datetime` must be a bounded interval, not half-bounded intervals or a date-time. 
+  * the `datetime` represents a specified time interval (new start time and new end time)
+  * only features with a temporal geometry intersecting the given time interval will return.
+    
+  The `subTrajectory` query implements *subTrajectory* operation, which is defined in the [OGC Moving Feature Access](https://docs.ogc.org/is/16-120r3/16-120r3.html).
+  This operation returns only a subsequence of temporal geometry within a time interval contained in the `datetime` parameter, using interpolated trajectory according to the `interpolation` property.
+    
+  If the `subTrajectory` parameter is provided with a `bbox` parameter, it will only apply to resources that intersect with a `bbox` parameter. 
   
-  If the `subTrajectory` parameter is provided with a `bbox` or (and) a `datetime` parameter, 
-  it will only apply to resources that intersect with a `bbox` or (and) a `datetime` parameter. 
-
-  The `subTrajectory` parameter shall not be used with the `leaf` and `subTemporalValue` parameter. 
-  Only one of those parameters can be used in the HTTP GET operation.
+  The `subTrajectory` parameter must not be used with the `leaf` parameter. 
+  Only one of these parameters can be used in the HTTP GET operation.
 schema:
-  type: array
-  uniqueItems: true
-  minItems: 2
-  maxItems: 2
-  items:
-    type: string
-    format: date-time
+  type: boolean
 style: form
 explode: false

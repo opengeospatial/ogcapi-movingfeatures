@@ -10,13 +10,10 @@ description: |-
   * A bounded interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
   * Half-bounded intervals: "2018-02-12T00:00:00Z/.." or "../2018-03-18T12:31:12Z"
 
-  Only features that have a temporal property that intersects the value of
-  `datetime` are selected.
+  Only features that have temporal information that intersects the value of `datetime` are selected.
 
-  If a feature has multiple temporal properties, it is the decision of the
-  server whether only a single temporal property is used to determine
-  the extent or all relevant temporal properties.
-required: false
+  If a feature has multiple temporal properties, it is the decision of the server whether only a single temporal property is used to determine the extent or all relevant temporal properties.
+required: true
 schema:
   type: string
 style: form

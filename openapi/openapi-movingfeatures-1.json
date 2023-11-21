@@ -268,7 +268,7 @@
       "get": {
         "operationId": "retrieveMovingFeatures",
         "summary": "Retrieve moving feature collection",
-        "description": "A user can retrieve moving feature collection to access the static information of the moving feature by simple filtering and a limit.\n",
+        "description": "A user can retrieve moving feature collection to access the static information of the moving feature by simple filtering and a limit.\n\nSpecifically, if the `subTrajectory` parameter is \"true\", it will return the temporal geometry within the time interval specified by `datetime` parameter.\n",
         "tags": [
           "MovingFeatures"
         ],
@@ -301,7 +301,7 @@
       "post": {
         "operationId": "insertMovingFeatures",
         "summary": "Insert moving features",
-        "description": "A user SHOULD insert a set of moving features or a moving feature into a collection with id `collectionId`.\n\nThe request body schema SHALL follows the [MovingFeature object](https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature) in the OGC MF-JSON.\n",
+        "description": "A user SHOULD insert a set of moving features or a moving feature into a collection with id `collectionId`.\n\nThe request body schema SHALL follows the [MovingFeature object](https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature) or \n[MovingFeatureCollection object](https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeaturecollection) in the OGC MF-JSON.\n",
         "tags": [
           "MovingFeatures"
         ],
@@ -314,7 +314,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/movingFeature-2"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/movingFeature-2"
+                  },
+                  {
+                    "$ref": "#/components/schemas/movingFeatureCollection"
+                  }
+                ]
               },
               "example": {
                 "type": "Feature",
@@ -543,15 +550,22 @@
             "description": "Successful create a set of moving features or a moving feature into a specific collection.\n",
             "headers": {
               "Location": {
-                "description": "A URI of the newly added resource",
+                "description": "A list of URI of the newly added resources",
                 "schema": {
-                  "type": "string",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
                   "example": [
-                    "https://data.example.org/collections/mfc-1/items/mf-1"
+                    "https://data.example.org/collections/mfc-1/items/mf-1",
+                    "https://data.example.org/collections/mfc-1/items/109301273"
                   ]
                 }
               }
             }
+          },
+          "401": {
+            "description": "A query parameter was not validly used."
           },
           "404": {
             "description": "A collection with the specified id was not found."
@@ -799,6 +813,9 @@
               }
             }
           },
+          "401": {
+            "description": "A query parameter was not validly used."
+          },
           "404": {
             "description": "- A collection with the specified id was not found.\n- Or a moving feature with the specified id was not found.\n"
           },
@@ -866,6 +883,9 @@
           "200": {
             "$ref": "#/components/responses/DistanceQuery"
           },
+          "401": {
+            "description": "A query parameter was not validly used."
+          },
           "500": {
             "$ref": "#/components/responses/ServerError"
           }
@@ -898,6 +918,9 @@
           "200": {
             "$ref": "#/components/responses/VelocityQuery"
           },
+          "401": {
+            "description": "A query parameter was not validly used."
+          },
           "500": {
             "$ref": "#/components/responses/ServerError"
           }
@@ -929,6 +952,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/AccelerationQuery"
+          },
+          "401": {
+            "description": "A query parameter was not validly used."
           },
           "500": {
             "$ref": "#/components/responses/ServerError"
@@ -964,6 +990,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/TemporalProperties"
+          },
+          "401": {
+            "description": "A query parameter was not validly used."
           },
           "500": {
             "$ref": "#/components/responses/ServerError"
@@ -1094,6 +1123,9 @@
             "$ref": "#/components/parameters/tPropertyName"
           },
           {
+            "$ref": "#/components/parameters/datetime"
+          },
+          {
             "$ref": "#/components/parameters/leaf-description"
           },
           {
@@ -1103,6 +1135,9 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/TemporalProperty"
+          },
+          "401": {
+            "description": "A query parameter was not validly used."
           },
           "500": {
             "$ref": "#/components/responses/ServerError"
@@ -2384,6 +2419,46 @@
           }
         }
       },
+      "movingFeatureCollection": {
+        "description": "MF-JSON Prism encoding MovingFeatureCollection Object",
+        "title": "MF-JSON MovingFeatureCollection",
+        "type": "object",
+        "required": [
+          "type",
+          "features"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "FeatureCollection"
+            ]
+          },
+          "features": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/components/schemas/movingFeature-2"
+            }
+          },
+          "crs": {
+            "$ref": "#/components/schemas/crs"
+          },
+          "trs": {
+            "$ref": "#/components/schemas/trs"
+          },
+          "bbox": {
+            "$ref": "#/components/schemas/bbox"
+          },
+          "time": {
+            "$ref": "#/components/schemas/lifeSpan"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
       "temporalGeometrySequence": {
         "type": "object",
         "required": [
@@ -3197,8 +3272,8 @@
       "datetime": {
         "name": "datetime",
         "in": "query",
-        "description": "Either a date-time or an interval. Date and time expressions adhere to RFC 3339. \nIntervals may be bounded or half-bounded (double-dots at start or end).\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n* A bounded interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Half-bounded intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\nOnly features that have a temporal property that intersects the value of\n`datetime` are selected.\n\nIf a feature has multiple temporal properties, it is the decision of the\nserver whether only a single temporal property is used to determine\nthe extent or all relevant temporal properties.",
-        "required": false,
+        "description": "Either a date-time or an interval. Date and time expressions adhere to RFC 3339. \nIntervals may be bounded or half-bounded (double-dots at start or end).\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n* A bounded interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Half-bounded intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\nOnly features that have temporal information that intersects the value of `datetime` are selected.\n\nIf a feature has multiple temporal properties, it is the decision of the server whether only a single temporal property is used to determine the extent or all relevant temporal properties.",
+        "required": true,
         "schema": {
           "type": "string"
         },
@@ -3223,16 +3298,9 @@
         "name": "subTrajectory",
         "in": "query",
         "required": false,
-        "description": "The `subTrajectory` is provided as a time interval (new start time(`subTrajectory[0]`) and new end time(`subTrajectory[1]`)).\nOnly features that have a temporal geometry that intersects the given time interval.\n\nThe `subTrajectory` operation implements *subTrajectory* operation which defined in the OGC Moving Feature Access.\nThis operation returns only subsequence of temporal geometry within a time interval contained in the `subTrajectory` parameter, \nusing interpolated trajectory according to the `interpolation` property.\n\nIf the `subTrajectory` parameter is provided with a `bbox` or (and) a `datetime` parameter, \nit will only apply to resources that intersect with a `bbox` or (and) a `datetime` parameter. \n\nThe `subTrajectory` parameter shall not be used with the `leaf` and `subTemporalValue` parameter. \nOnly one of those parameters can be used in the HTTP GET operation.",
+        "description": "The `subTrajectory` parameter is a boolean value used with the `datetime` parameter.\nIf the `subTrajectory` is \"true\", \n\n* the `datetime` must be a bounded interval, not half-bounded intervals or a date-time. \n* the `datetime` represents a specified time interval (new start time and new end time)\n* only features with a temporal geometry intersecting the given time interval will return.\n  \nThe `subTrajectory` query implements *subTrajectory* operation, which is defined in the [OGC Moving Feature Access](https://docs.ogc.org/is/16-120r3/16-120r3.html).\nThis operation returns only a subsequence of temporal geometry within a time interval contained in the `datetime` parameter, using interpolated trajectory according to the `interpolation` property.\n  \nIf the `subTrajectory` parameter is provided with a `bbox` parameter, it will only apply to resources that intersect with a `bbox` parameter. \n\nThe `subTrajectory` parameter must not be used with the `leaf` parameter. \nOnly one of these parameters can be used in the HTTP GET operation.",
         "schema": {
-          "type": "array",
-          "uniqueItems": true,
-          "minItems": 2,
-          "maxItems": 2,
-          "items": {
-            "type": "string",
-            "format": "date-time"
-          }
+          "type": "boolean"
         },
         "style": "form",
         "explode": false
@@ -3288,16 +3356,9 @@
         "name": "subTemporalValue",
         "in": "query",
         "required": false,
-        "description": "The `subTemporalValue` is provided as a time interval (new start time(`subTemporalValue[0]`) and new end time(s`ubTemporalValue[1]`)).\nOnly features that have a temporal property that intersects the given time interval.\n\nThis operation returns only subsequence of temporal property value within a time interval contained in the `subTemporalValue` parameter, \nusing interpolated time-to-value curve of temporal property according to the `interpolation` property.\n\nIf the `subTemporalValue` parameter is provided with a `bbox` or (and) a `datetime` parameter, \nit will only apply to resources that intersect with a `bbox` or (and) a `datetime` parameter. \n\nThe `subTemporalValue` parameter shall not be used with the `leaf` and `subTrajectory` parameter. \nOnly one of those parameters can be used in the HTTP GET operation.",
+        "description": "The `subTemporalValue` parameter is a boolean value used with the `datetime` parameter.\nIf the `subTemporalValue` is \"true\", \n\n* the `datetime` must be a bounded interval, not half-bounded intervals or a date-time. \n* the `datetime` represents a specified time interval (new start time and new end time)\n* only features with a temporal property intersecting the given time interval will return.\n* it returns only the subsequence of temporal property value within a time interval contained in the `subTemporalValue` parameter, using an interpolated time-to-value curve of temporal property according to the `interpolation` property.\n\nThe `subTemporalValue` parameter must not be used with the `leaf` parameter. \nOnly one of these parameters can be used in the HTTP GET operation.",
         "schema": {
-          "type": "array",
-          "uniqueItems": true,
-          "minItems": 2,
-          "maxItems": 2,
-          "items": {
-            "type": "string",
-            "format": "date-time"
-          }
+          "type": "boolean"
         },
         "style": "form",
         "explode": false

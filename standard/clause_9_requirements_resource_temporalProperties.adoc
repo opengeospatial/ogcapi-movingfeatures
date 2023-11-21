@@ -9,6 +9,8 @@ The *TemporalProperties* resource returned to the response can be limited using 
 . A create operation posts a new <<resource-temporalProperty-section,*TemporalProperty*>> object to the <<resource-movingfeature-section,*MovingFeature*>> that is specified by <<movingfeature-identifier,++{mFeatureId}++>>.
 
 ==== Query Parameters
+Query parameters are used in URLs to define the resources which are returned on a GET request.
+
 The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 
 [[subTemporalValue-section]]
@@ -20,7 +22,7 @@ include::requirements/parameter/REQ_parameter-subtemporalvalue-response.adoc[]
 The `subTemporalValue` query parameter is used to select a subset of <<resource-temporalProperty-section,*TemporalProperty*>> for the specified time interval.
 Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<temporalValue-properties-table,*TemporalPrimitiveValue*>>.
 The `subTemporalValue` parameter behaves functionally the same as the `subTrajectory` parameter.
-However, `subTrajectory` is associated with temporal geometry, while `subTemporalValue` is associated with a temporal property.
+The difference is that `subTrajectory` is associated with temporal geometry, while `subTemporalValue` is associated with temporal properties.
 
 ==== Operation
 ===== Retrieve
@@ -47,7 +49,7 @@ include::../openapi/schemas/temporalProperty.yaml[]
 
 // TODO: Add new TemporalProperties request body schema example
 
-The following example adds a new feature (<<temporal-properties-object,*TemporalProperty* Object>> and link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[*_ParametricValues_* object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
+The following example adds a new feature (<<temporal-properties-object,*TemporalProperty* Object>> and link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[*_ParametricValues_* Object] in <<OGC-MF-JSON,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
 The feature is represented as a JSON payload.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 

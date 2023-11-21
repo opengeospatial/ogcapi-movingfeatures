@@ -5,4 +5,5 @@
 ^|A |A distance query GET operation MAY include a `datetime` query parameter.
 ^|B |A velocity query GET operation MAY include a `datetime` query parameter.
 ^|C |An acceleration query GET operation MAY include a `datetime` query parameter.
+^|D |If the `datetime` parameter is provided, the `datetime` SHALL be a date-time, not a half-bounded interval or bounded interval.
 |===

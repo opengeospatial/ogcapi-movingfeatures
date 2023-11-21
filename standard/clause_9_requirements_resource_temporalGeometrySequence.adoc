@@ -8,6 +8,8 @@ The sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveG
 . A create operation posts a new <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource to the <<resource-movingfeature-section,*MovingFeature*>> that specified by <<movingfeature-identifier,+{mFeatureId}+>>.
 
 ==== Query Parameters
+Query parameters are used in URLs to define the resources which are returned on a GET request.
+
 The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 
 The <<subtrajecotry-section,`subTrajectory`>> query parameter is defined in the <<resource-movingfeatures-section,*MovingFeatures*>> clause.
@@ -38,7 +40,7 @@ The list does not allow the same element value.
 =================
 
 If the `leaf` parameter is provided by the client, the endpoint returns only temporal geometry coordinate (or temporal property value) with the leaf query at each time included in the `leaf` parameter, similar to _**pointAtTime**_ operation in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
-The `interpolation` property in the response shall be 'Discrete'.
+The `interpolation` property in the response shall be "Discrete".
 
 [#leaf-example,reftext='{figure-caption} {counter:figure-num}']
 .Example of a response result with `leaf` parameter

@@ -4,8 +4,14 @@
 A *MovingFeature* object consists of the set of static information that describes a single moving feature and the set of temporal object, such as temporal geometry and temporal properties.
 An abbreviated copy of this information is returned for each *MovingFeature* in the `+{root}+/collections/+{collectionId}+/items` GET response.
 
-The schema for the moving feature object presented in this clause is an extension of the `GeoJSON Feature Object` defined in https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
 <<moving-feature-properties-table>> defines the set of properties that may be used to describe a moving feature.
+The schema for the moving feature object presented in this clause is an extension of the *_GeoJSON Feature Object_* defined in link:https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
+By default, the properties defined in <<moving-feature-properties-table>> are the same as the link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature Object_* in OGC MF-JSON].
+The semantics of each property are also the same as those defined in MF-JSON.
+
+However, depending on where this schema is used (i.e., depending on which resource produces results with which query parameter), there are differences in requirements from the schema defined in MF-JSON;
+as sometimes it only needs to have static information, and sometimes it also has a *temporalGeometry*.
+For example, in MF-JSON, `type` and `temporalGeometry` are mandatory, but in this API, `id` and `type` are mandatory. This is why the defined schema is represented in GeoJSON, not MF-JSON.
 
 [[moving-feature-properties-table]]
 [reftext='{table-caption} {counter:table-num}']
@@ -25,9 +31,9 @@ The schema for the moving feature object presented in this clause is an extensio
 |<<resource-temporalProperties-section,*temporalProperties*>> |O |A set of <<resource-temporalProperty-section,*TemporalProperty*>> of the moving feature.
 |===
 
-NOTE: The properties _id_, _type_, _geometry_, _properties_, and _bbox_ were inherited from https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
-NOTE: The properties
+NOTE: The properties _id_, _type_, _geometry_, _properties_, and _bbox_ were inherited from link:https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
 
+NOTE: The properties *time*, *crs*, *trs*, *temporalGeometry*, and *temporalProperties* were inherited from link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeature[OGC MF-JSON]
 
 include::requirements/movingfeature/movingfeature/REQ_mandatory-movingfeature.adoc[]
 
