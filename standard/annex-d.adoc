@@ -50,7 +50,7 @@ The UML below shows the `GM_Object` base type with its operations
 All operations assume static objects, without time-varying coordinates or attributes.
 
 .GM_Object from ISO 19107:2003 figure 6
-image::images/GM_Object.png[alt=UML of GM_Object,align="center",width=75%]
+image::images/GM_Object.png[alt=UML of GM_Object,align="center",width=1000]
 
 
 // **TODO:** above discussion is based on ISO 19107:2003. It needs to be updated for latest revisions.
@@ -87,7 +87,7 @@ Geometries are properties like any other, without any special treatment.
 All properties are static, without time-varying values.
 
 .General Feature Model from ISO 19109:2009 figure 5
-image::images/FeatureType.png[alt=UML of feature model,align="center",width=100%]
+image::images/FeatureType.png[alt=UML of feature model,align="center",width=1000]
 
 // **TODO:** provide a simplified version of this UML.
 
@@ -109,7 +109,7 @@ Similarly, the same objects can be transformed into a XQuery expression in order
 The UML below shows the objects used for querying a subset based on spatial operations such as “contains” or “intersects”.
 
 .Spatial operators from ISO 19143 figure 6
-image::images/Filter.png[alt=UML of spatial operators,align="center",width=75%]
+image::images/Filter.png[alt=UML of spatial operators,align="center",width=1000]
 
 
 
@@ -141,14 +141,14 @@ Despite the “Moving Features” name, that standard is more about “Moving ge
 The UML below shows how the `MF_Trajectory` type extends the “static” types from ISO 19107.
 
 .Trajectory type from ISO 19141 figure 3
-image::images/Trajectory.png[alt=UML of trajectory,align="center",width=50%]
+image::images/Trajectory.png[alt=UML of trajectory,align="center",width=1000]
 
 Trajectory inherits operations shown below.
 Those operations are in addition to the operations inherited from `GM_Object`.
 For example the `distance(…)` operation from ISO 19107 is now completed by a `nearestApproach(…)` operation.
 
 .Temporal geometry from ISO 19141 figure 6
-image::images/TemporalGeometry.png[alt=UML of temporal geometry,align="center",width=50%]
+image::images/TemporalGeometry.png[alt=UML of temporal geometry,align="center",width=1000]
 
 
 
@@ -161,7 +161,7 @@ That standard also completes ISO 19141 by allowing to specify attributes whose v
 This extension to the above _General Feature Model_ is shown below:
 
 .Dynamic attribute from OGC 18-075 figure 3
-image::images/DynamicAttribute.png[alt=UML of dynamic attribute,align="center",width=50%]
+image::images/DynamicAttribute.png[alt=UML of dynamic attribute,align="center",width=1000]
 
 
 
