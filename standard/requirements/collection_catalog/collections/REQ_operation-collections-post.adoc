@@ -1,3 +1,4 @@
+////
 [[req_mfc-collections-op-post]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -6,3 +7,14 @@
 ^|B |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` request body requirements link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
 ^|C |The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>.
 |===
+////
+
+[[req_mfc-collections-op-post]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/mf-collection/collections-post
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/insert-post-op`].
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` request body requirements link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
+part:: The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>.
+====
