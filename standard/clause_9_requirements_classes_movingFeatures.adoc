@@ -1,6 +1,6 @@
 
 [[clause-core-movingfeature]]
-== Requirements Class "MovingFeatures"
+== Requirements Class "Moving Features"
 === Overview
 include::requirements/movingfeature/requirements_class_movingfeature.adoc[]
 
@@ -61,9 +61,15 @@ The seven resources defined in this Requirement Class are summarized in <<mf-res
 |===
 
 include::clause_9_requirements_resource_movingFeatures.adoc[]
+
 include::clause_9_requirements_resource_movingFeature.adoc[]
+
 include::clause_9_requirements_resource_temporalGeometrySequence.adoc[]
+
 include::clause_9_requirements_resource_temporalPrimitiveGeometry.adoc[]
+
 include::clause_9_requirements_resource_temporalGeometryQuery.adoc[]
+
 include::clause_9_requirements_resource_temporalProperties.adoc[]
+
 include::clause_9_requirements_resource_temporalProperty.adoc[]
