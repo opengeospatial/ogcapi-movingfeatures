@@ -114,6 +114,16 @@ POST /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}
 
 Add more temporal values data into a temporal property with id `tPropertyName`.
 
+## Building the Standard document
+
+```
+git clone https://github.com/opengeospatial/ogcapi-movingfeatures.git
+
+cd ogcapi-movingfeatures
+
+docker run -v "$(pwd)":/metanorma -v ${HOME}/.fontist/fonts/:/config/fonts  metanorma/metanorma  metanorma compile --agree-to-terms -t ogc -x html standard/document.adoc
+```
+
 ## Using the Standard
 A draft of the **OGC API - Moving Features - Part 1: Core** Standard is available:
 
