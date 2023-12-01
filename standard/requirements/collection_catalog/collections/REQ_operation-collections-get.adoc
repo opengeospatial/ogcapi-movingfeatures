@@ -1,6 +1,16 @@
+////
 [[req_mfc-collections-op-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collections-get*
 ^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Common *Collections* operation requirement https://docs.ogc.org/DRAFTS/20-024.html#_operation[`/req/collections/rc-md-op`].
 |===
+////
+
+[[req_mfc-collections-op-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/mf-collection/collections-get
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Common *Collections* operation requirement https://docs.ogc.org/DRAFTS/20-024.html#_operation[`/req/collections/rc-md-op`].
+====
