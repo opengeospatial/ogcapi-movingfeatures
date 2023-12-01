@@ -1,3 +1,4 @@
+////
 [[req_mfc-collections-response-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -7,5 +8,17 @@
 ^|C |The `itemType` property of the response schema SHALL be *MovingFeature*.
 // The API-Common https://docs.ogc.org/DRAFTS/20-024.html#rec_collections_rc-md-item-type[`rec/collections/rc-md-item-type`] recommendation SHALL apply as collection's `itemType` property is specified as *MovingFeature*.
 |===
+////
+
+[[req_mfc-collections-response-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/mf-collection/collections-get-success
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Common *Collections* response requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_response[`/req/collections/rc-md-success`].
+part:: The content of that response SHALL be based upon the <<collections-schema, *Collections* response schema>>.
+part:: The `itemType` property of the response schema SHALL be *MovingFeature*.
+====
+
 [NOTE]
 The usage of the `itemType` property is referred from the OGC API — Common link:http://docs.ogc.org/DRAFTS/20-024.html#collection-item-type-section[item Type section].
