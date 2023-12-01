@@ -1,3 +1,4 @@
+////
 [[req_core_param-datetime]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -6,3 +7,14 @@
 ^|B |Requests which include the DateTime parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-definition`].
 ^|C |Responses to DateTime requests SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-response`].
 |===
+////
+
+[[req_core_param-datetime]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/common/param-datetime
+part:: An implementation instance of the OGC API — MF SHALL support the DateTime (`datetime`) parameter for the operation.
+part:: Requests which include the DateTime parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-definition`].
+part:: Responses to DateTime requests SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-response`].
+====

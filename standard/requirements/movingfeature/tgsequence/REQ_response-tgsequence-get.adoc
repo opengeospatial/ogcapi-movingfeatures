@@ -1,3 +1,4 @@
+////
 [[req_mf-tgsequence-response-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -6,3 +7,14 @@
 ^|B |The response SHALL only includes temporal primitive geometry selected by request with `limit`, `bbox`, `datetime`, and `leaf` (or `subTrajectory`) parameters.
 ^|C |Each temporal primitive geometry in the response SHALL include the mandatory properties listed in <<temporalPrimitiveGeometry-properties-table>>.
 |===
+////
+
+[[req_mf-tgsequence-response-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/tgsequence-get-success
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
+part:: The response SHALL only includes temporal primitive geometry selected by request with `limit`, `bbox`, `datetime`, and `leaf` (or `subTrajectory`) parameters.
+part:: Each temporal primitive geometry in the response SHALL include the mandatory properties listed in <<temporalPrimitiveGeometry-properties-table>>.
+====

@@ -1,3 +1,4 @@
+////
 [[req_mf_leaf-parameter-definition]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -10,3 +11,30 @@ include::../../../openapi/parameters/leaf.yaml[]
 ^|B |The `leaf` parameter SHALL be a sequence of monotonic increasing instants with `date-time` strings.
 ^|C |The syntax of `date-time` is specified by link:https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, 5.6].
 |===
+////
+
+[[req_mf_leaf-parameter-definition]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/param-leaf-definition
+
+[.component,class=part]
+--
+The operation SHALL support a query parameter `leaf` with the following characteristics (using an OpenAPI Specification 3.0 fragment): +
+[source,yaml]
+----
+include::../../../openapi/parameters/leaf.yaml[]
+----
+--
+
+[.component,class=part]
+--
+The `leaf` parameter SHALL be a sequence of monotonic increasing instants with `date-time` strings.
+--
+
+[.component,class=part]
+--
+The syntax of `date-time` is specified by link:https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, 5.6].
+--
+====

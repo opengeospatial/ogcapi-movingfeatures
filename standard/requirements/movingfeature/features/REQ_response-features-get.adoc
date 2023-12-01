@@ -1,3 +1,4 @@
+////
 [[req_mf-features-response-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -6,3 +7,14 @@
 ^|B |The response SHALL only include moving features selected by the request with `limit`, `bbox`, `datetime`, and `subTrajectory` parameters.
 ^|C |Each moving feature in the response SHALL include the mandatory properties listed in <<moving-feature-properties-table>>.
 |===
+////
+
+[[req_mf-features-response-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/features-get-success
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
+part:: The response SHALL only include moving features selected by the request with `limit`, `bbox`, `datetime`, and `subTrajectory` parameters.
+part:: Each moving feature in the response SHALL include the mandatory properties listed in <<moving-feature-properties-table>>.
+====

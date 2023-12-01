@@ -1,3 +1,4 @@
+////
 [[rc_movingfeature]]
 [cols="1,4",width="90%",options="header"]
 |===
@@ -9,3 +10,17 @@
 |Dependency     |http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory
 |Dependency     |http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 |===
+////
+
+[[rc_movingfeature]]
+[requirements_class]
+.Requirements Class 'Moving Features'
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures
+subject:: Web API
+inherit:: http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+inherit:: http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
+inherit:: http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory
+inherit:: http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
+====

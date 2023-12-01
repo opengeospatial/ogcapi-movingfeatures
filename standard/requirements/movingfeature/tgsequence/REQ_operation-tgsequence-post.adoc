@@ -1,3 +1,4 @@
+////
 [[req_mf-tgsequence-op-post]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -7,3 +8,15 @@
 ^|C |The content of the request body SHALL be based upon the link:https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive[*_TemporalPrimitiveGeometry_* object] in <<OGC-MF-JSON,OGC Moving Features JSON Encoding Standard>> schema.
 ^|D |The ending date-time instance (*_t_end_*) in the temporal geometry object in <<resource-movingfeature-section,*MovingFeature*>>, determined by `mFeatureId`, SHALL be earlier than the beginning date-time instance (*_t_new_*) in the temporal geometry object in the request body, i.e., *_t_end < t_new_*.
 |===
+////
+
+[[req_mf-tgsequence-op-post]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/tgsequence-post
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/insert-post-op`].
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
+part:: The content of the request body SHALL be based upon the link:https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive[*_TemporalPrimitiveGeometry_* object] in <<OGC-MF-JSON,OGC Moving Features JSON Encoding Standard>> schema.
+part:: The ending date-time instance (*_t_end_*) in the temporal geometry object in <<resource-movingfeature-section,*MovingFeature*>>, determined by `mFeatureId`, SHALL be earlier than the beginning date-time instance (*_t_new_*) in the temporal geometry object in the request body, i.e., *_t_end < t_new_*.
+====

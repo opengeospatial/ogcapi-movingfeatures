@@ -1,3 +1,4 @@
+////
 [[req_mf-tproperties-op-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -6,3 +7,14 @@
 ^|B |The path parameter `collectionId` is each `id` property in the <<resource-collection-section,*Collection*>> GET response where the value of the `itemType` property is specified as *MovingFeature*. +
 The path parameter `mFeatureId` is each `id` property in the <<resource-movingfeatures-section,*MovingFeatures*>> GET response.
 |===
+////
+
+[[req_mf-tproperties-op-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/tproperties-get
+part:: For every moving feature identified in the <<resource-movingfeatures-section,*MovingFeatures*>> GET response (path `+{root}+/collections/+{collectionId}+/items`), the server SHALL support the HTTP GET operation at the path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tproperties`
+part:: The path parameter `collectionId` is each `id` property in the <<resource-collection-section,*Collection*>> GET response where the value of the `itemType` property is specified as *MovingFeature*. +
+The path parameter `mFeatureId` is each `id` property in the <<resource-movingfeatures-section,*MovingFeatures*>> GET response.
+====

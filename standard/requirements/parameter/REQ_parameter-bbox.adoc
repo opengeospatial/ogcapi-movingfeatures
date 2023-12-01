@@ -1,3 +1,4 @@
+////
 [[req_core_param-bbox]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -6,3 +7,14 @@
 ^|B |Requests which include the Bounding Box parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements[`/req/collections/rc-bbox-definition`].
 ^|C |Responses to Bounding Box requests SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements[`/req/collections/rc-bbox-response`].
 |===
+////
+
+[[req_core_param-bbox]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/common/param-bbox
+part:: An implementation instance of the OGC API — MF SHALL support the Bounding Box (`bbox`) parameter for the operation.
+part:: Requests which include the Bounding Box parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements[`/req/collections/rc-bbox-definition`].
+part:: Responses to Bounding Box requests SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#bbox-parameter-requirements[`/req/collections/rc-bbox-response`].
+====

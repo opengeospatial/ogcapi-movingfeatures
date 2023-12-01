@@ -1,6 +1,16 @@
+////
 [[req_mf_mandatory-temporalprimitivegeometry]]
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/tpgeometry-mandatory*
 ^|A |A TemporalPrimitiveGeometry object SHALL contain all the mandatory properties listed in <<temporalPrimitiveGeometry-properties-table>>.
 |===
+////
+
+[[req_mf_mandatory-temporalprimitivegeometry]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/tpgeometry-mandatory
+part:: TemporalPrimitiveGeometry object SHALL contain all the mandatory properties listed in <<temporalPrimitiveGeometry-properties-table>>.
+====
