@@ -1,6 +1,7 @@
 [[clause-core-collection]]
 == Requirements Class "Moving Feature Collection Catalog"
 === Overview
+
 include::requirements/collection_catalog/requirements_class_collection.adoc[]
 
 The `Moving Feature Collection Catalog` requirements class defines the requirements for a moving feature collection.
@@ -27,4 +28,5 @@ The two resources defined in this Requirement Class are summarized in <<collecti
 |===
 
 include::clause_8_requirements_resource_collections.adoc[]
+
 include::clause_8_requirements_resource_collection.adoc[]
