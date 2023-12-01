@@ -33,9 +33,9 @@ The `interpolation` property in the response shall be the same as the original t
 
 // Note that the *_subTrajectory_* operation is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
 
-[#subtrajectory-example,reftext='{figure-caption} {counter:figure-num}']
+[[subtrajectory-example]]
 .Example of a response result with `subTrajectory` parameter
-image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, width=95%, align="center"]
+image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, width=1000, align="center"]
 
 ==== Operation
 ===== Retrieve
