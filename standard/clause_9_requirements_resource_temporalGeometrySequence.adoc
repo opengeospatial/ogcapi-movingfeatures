@@ -42,9 +42,9 @@ The list does not allow the same element value.
 If the `leaf` parameter is provided by the client, the endpoint returns only temporal geometry coordinate (or temporal property value) with the leaf query at each time included in the `leaf` parameter, similar to _**pointAtTime**_ operation in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
 The `interpolation` property in the response shall be "Discrete".
 
-[#leaf-example,reftext='{figure-caption} {counter:figure-num}']
+[[leaf-example]]
 .Example of a response result with `leaf` parameter
-image::./images/Leaf-example.png[leaf-example, pdfwidth=100%, width=95%, align="center"]
+image::./images/Leaf-example.png[leaf-example, pdfwidth=100%, width=1000, align="center"]
 
 ==== Operation
 ===== Retrieve
