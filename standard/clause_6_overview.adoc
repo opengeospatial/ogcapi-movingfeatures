@@ -70,7 +70,7 @@ Also, the moving feature can have multiple temporal properties, and each propert
 
 [#mf-api-class-diagram,reftext='{figure-caption} {counter:figure-num}']
 .Class diagram for OGC API — Moving Features
-image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, width=1200, align="center"]
+image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, width=1000, align="center"]
 
 //[[mf-json-encoding-schema-overview]]
 //=== Moving Features Implementation Schema
