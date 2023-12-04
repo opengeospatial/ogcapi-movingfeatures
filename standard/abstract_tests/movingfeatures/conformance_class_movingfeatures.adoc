@@ -1,4 +1,5 @@
 [[conf_movingfeature]]
+////
 [cols="1,4",width="90%",options="header"]
 |===
 2+|*Conformance Class*
@@ -13,3 +14,46 @@
 |Dependency         |http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
 |Dependency         |http://www.opengis.net/spec/ogcapi-features-4/1.0/conf/create-replace-delete
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/movingfeatures
+target:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures
+dependency:: http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/html
+dependency:: http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json
+dependency:: http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections
+dependency:: http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query
+dependency:: http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core
+dependency:: http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+dependency:: http://www.opengis.net/spec/ogcapi-features-4/1.0/conf/create-replace-delete
+classification:: Target Type:Web API
+abstract-test:: /conf/movingfeatures/features-get
+abstract-test:: /conf/movingfeatures/features-get-success
+abstract-test:: /conf/movingfeatures/features-post
+abstract-test:: /conf/movingfeatures/features-post-success
+abstract-test:: /conf/movingfeatures/mf-get
+abstract-test:: /conf/movingfeatures/mf-get-success
+abstract-test:: /conf/movingfeatures/mf-delete
+abstract-test:: /conf/movingfeatures/mf-delete-success
+abstract-test:: /conf/movingfeatures/param-leaf-definition
+abstract-test:: /conf/movingfeatures/param-leaf-response
+abstract-test:: /conf/movingfeatures/tgsequence-get
+abstract-test:: /conf/movingfeatures/tgsequence-get-success
+abstract-test:: /conf/movingfeatures/tgsequence-post
+abstract-test:: /conf/movingfeatures/tgsequence-post-success
+abstract-test:: /conf/movingfeatures/tpgeometry-delete
+abstract-test:: /conf/mf-collection/tpgeometry-delete-success
+abstract-test:: /conf/movingfeatures/tpgeometry-query-distance
+abstract-test:: /conf/movingfeatures/tpgeometry-query-velocity
+abstract-test:: /conf/movingfeatures/tpgeometry-query-acceleration
+abstract-test:: /conf/movingfeatures/tproperties-get
+abstract-test:: /conf/movingfeatures/tproperties-get-success
+abstract-test:: /conf/movingfeatures/tproperties-post
+abstract-test:: /conf/movingfeatures/tproperties-post-success
+abstract-test:: /conf/movingfeatures/tproperty-get
+abstract-test:: /conf/movingfeatures/tproperty-get-success
+abstract-test:: /conf/movingfeatures/tproperty-post
+abstract-test:: /conf/movingfeatures/tproperty-post-success
+====

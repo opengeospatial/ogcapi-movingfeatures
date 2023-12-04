@@ -20,29 +20,36 @@ defines a `GM_Object` base type which is the root of all geometric objects.
 Some examples of `GM_Object` subtypes are `GM_Point`, `GM_Curve`, `GM_Surface` and `GM_Solid`.
 A `GM_Object` instance can be regarded as an infinite set of points in a particular coordinate reference system.
 The standard provides a `GM_CurveInterpolation` code list to identify how those points are computed from a finite set of points.
-Some interpolation methods listed by ISO 19107 are (non-exhaustive list):
+Some interpolation methods listed by ISO 19107 are presented in <<tbl_interpolation_methods>>.
 
-linear::
-Positions on a straight line between each consecutive pair of control points.
+[[tbl_interpolation_methods]]
+.A non-exhaustive list of interpolation methods listed by ISO 19107
+[width="99%", cols="3,7",options="header"]
+|===========================================================
+|*Term*                 |*Definition*
+|linear
+|Positions on a straight line between each consecutive pair of control points.
 
-geodesic::
-Positions on a geodesic curve between each consecutive pair of control points.
-A geodesic curve is a curve of shortest length.
+|geodesic
+|Positions on a geodesic curve between each consecutive pair of control points. +
+A geodesic curve is a curve of shortest length. +
 The geodesic shall be determined in the coordinate reference system of the curve.
 
-circularArc3Points::
-For each set of three consecutive control points,
-a circular arc passing from the first point through the middle point to the third point.
-Note: if the three points are co-linear, the circular arc becomes a straight line.
+|circularArc3Points
+|For each set of three consecutive control points, a circular arc passing from the first point through the middle point to the third point. +
+Note 1: if the three points are co-linear, the circular arc becomes a straight line.
 
-elliptical::
-For each set of four consecutive control points,
-an elliptical arc passing from the first point through the middle points in order to the fourth point.
-Note: if the four points are co-linear, the arc becomes a straight line.
-If the four points are on the same circle, the arc becomes a circular one.
+|elliptical
+|For each set of four consecutive control points, an elliptical arc passing from the first point through the middle points in order to the fourth point. +
+Note 1: If the four points are co-linear, the arc becomes a straight line. +
+Note 2: If the four points are on the same circle, the arc becomes a circular one.
 
-cubicSpline::
-The control points are interpolated using initial tangents and cubic polynomials, a form of degree 3 polynomial spline.
+|cubicSpline
+|The control points are interpolated using initial tangents and cubic polynomials, a form of degree 3 polynomial spline.
+
+|===========================================================
+
+
 
 The UML below shows the `GM_Object` base type with its operations
 (e.g. `distance(…)` for computing the distance between two geometries).
@@ -68,12 +75,12 @@ defines types for the definition of features.
 A feature is an abstraction of a real-world phenomena.
 The terms “feature type” and “feature instance” are used to separate the following concepts of “feature”:
 
-Feature type::
+*Feature type*::
 The whole collection of real-world phenomena classified in a concept.
 For example the “bridge” feature type is the abstraction of the collection of all real-world phenomena
 that is classified into the concept behind the term “bridge”.
 
-Feature instance::
+*Feature instance*::
 A certain occurrence of a feature type.
 For example “Tower Bridge” feature instance is the abstraction of a certain real-world bridge in London.
 

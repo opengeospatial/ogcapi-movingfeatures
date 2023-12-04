@@ -1,4 +1,5 @@
 [[conf_mf_tgeometry_delete]]
+////
 [cols=">20h,<80d",width="100%"]
 |===
 |*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tpgeometry-delete*
@@ -11,3 +12,20 @@
 2. Issue an HTTP DELETE request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tgeometryId}` +
 3. Validate the contents of the response using test <<conf_mf_tpgeometry_delete_success, `/conf/mf-collection/collections-put-success`>>
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/movingfeatures/tpgeometry-delete
+target:: /req/movingfeatures/tpgeometry-delete
+target:: /req/movingfeatures/tpgeometry-delete-success
+test-purpose:: Validate that the *TemporalPrimitiveGeometry* can be deleted at the expected location.
+test-method::
++
+--
+1. Validate that the server complies with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE operation requirements] +
+2. Issue an HTTP DELETE request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tgeometryId}` +
+3. Validate the contents of the response using test <<conf_mf_tpgeometry_delete_success, `/conf/mf-collection/collections-put-success`>>
+--
+====
