@@ -19,4 +19,15 @@ identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-coll
 subject:: Web API
 inherit:: http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
 inherit:: http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
+requirement:: /req/mf-collection/collections-get
+requirement:: /req/mf-collection/collections-post
+requirement:: /req/mf-collection/collections-get-success
+requirement:: /req/mf-collection/collections-post-success
+requirement:: /req/mf-collection/mandatory-collection
+requirement:: /req/mf-collection/collection-get
+requirement:: /req/mf-collection/collection-put
+requirement:: /req/mf-collection/collection-delete
+requirement:: /req/mf-collection/collection-get-success
+requirement:: /req/mf-collection/collection-put-success
+requirement:: /req/mf-collection/collection-delete-success
 ====

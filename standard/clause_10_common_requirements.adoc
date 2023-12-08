@@ -6,6 +6,8 @@ The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox
 All requirements and recommendations in API — Common regarding these parameters also apply to OGC API — MF.
 No modifications are required.
 
+include::requirements/common/requirements_class_common.adoc[]
+
 [[limit-section]]
 ==== Parameter limit
 include::requirements/parameter/REQ_parameter-limit.adoc[]
