@@ -43,7 +43,7 @@ The Distance query returns a time-to-distance curve of the <<temporalPrimitiveGe
 
 [[time-to-distance-curve]]
 .Example of time-to-distance curve [OGC 16-120r3, OGC Moving Features Access]
-image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, width=1000, align="center"]
+image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, width=300, align="center"]
 
 The filter constraints are defined by the following query parameter:
 
