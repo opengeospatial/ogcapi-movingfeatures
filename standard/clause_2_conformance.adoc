@@ -20,7 +20,7 @@ Implementers of the OGC API — MF can choose which conformance classes they wan
 
 The URIs of the associated conformance classes are:
 
-[#conf_class_uris,reftext='{table-caption} {counter:table-num}']
+[[conf_class_uris]]
 .Conformance class URIs
 [cols="25,75",options="header"]
 |===

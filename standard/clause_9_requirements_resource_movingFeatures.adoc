@@ -33,9 +33,9 @@ The `interpolation` property in the response shall be the same as the original t
 
 // Note that the *_subTrajectory_* operation is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
 
-[#subtrajectory-example,reftext='{figure-caption} {counter:figure-num}']
+[[subtrajectory-example]]
 .Example of a response result with `subTrajectory` parameter
-image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, width=95%, align="center"]
+image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, width=1000, align="center"]
 
 ==== Operation
 ===== Retrieve
@@ -60,7 +60,8 @@ include::requirements/movingfeature/features/REQ_operation-features-post.adoc[]
 The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] in <<OGC-MF-JSON,MF-JSON>>) to the specific <<resource-collection-section,*Collection*>>.
 The feature is represented as *_MovingFeature_* object (or *_MovingFeatureCollection_* object) in MF-JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#movingfeature-post-example, reftext='Create a New MovingFeature Object Example']
+
+[[movingfeature-post-example]]
 .An Example of Creating a New MovingFeature Object:
 include::examples/features-post.adoc[]
 
@@ -74,7 +75,7 @@ In a typical deployment of the OGF API — MF, the *MovingFeatures* GET response
 
 include::requirements/movingfeature/features/REQ_response-features-get.adoc[]
 
-[#features-schema,reftext='MovingFeatures GET Response Schema']
+[[features-schema]]
 .MovingFeatures GET Response Schema (movingFeatureCollection.yaml):
 [source,yaml]
 ----
@@ -92,7 +93,7 @@ include::../openapi/schemas/movingFeatures.yaml[]
 // ----
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *MovingFeatures* GET operation.
-[#features-example,reftext=`MovingFeatures Example`]
+[[features-example]]
 .An Example of a MovingFeatures GET Operation:
 [source,json]
 ----

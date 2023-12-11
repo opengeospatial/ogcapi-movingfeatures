@@ -8,7 +8,7 @@ The schema for the collection information object presented in this clause is an 
 
 <<collection-properties-table>> defines the set of properties that may be used to describe a collection.
 
-[#collection-properties-table,reftext='{table-caption} {counter:table-num}']
+[[collection-properties-table]]
 .Table of collection properties
 [cols="25,10,65",options="header"]
 |===
@@ -59,7 +59,8 @@ NOTE: Once set, the update frequency cannot be changed.
 The following example replaces the feature created by the <<collections-post-example,Create Example>> with a new feature (collection metadata without an update frequency).
 Once again, the replacement feature is represented as a JSON payload.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#collections-put-example,reftext='Replace an Existing Collection Example']
+
+[[collections-put-example]]
 .An Example of Replacing an Existing Collection:
 include::examples/collection-put.adoc[]
 
@@ -74,7 +75,8 @@ include::requirements/collection_catalog/collection/REQ_operation-collection-del
 
 The following example deletes the feature created by the <<collections-post-example,Create Example>> and replaced with a new feature in the <<collections-put-example,Replace Example>>.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#collections-delete-example,reftext='Delete an Existing Collection Example']
+
+[[collections-delete-example]]
 .An Example of Deleting an Existing Collection:
 include::examples/collection-delete.adoc[]
 
@@ -84,7 +86,7 @@ A successful response to the *Collection* GET operation is a set of metadata tha
 
 include::requirements/collection_catalog/collection/REQ_response-collection-get.adoc[]
 
-[#collection-schema,reftext='Collection GET Response Schema']
+[[collection-schema]]
 .Collection GET Response Schema (collection.yaml)
 [source,yaml]
 ----
@@ -92,7 +94,8 @@ include::../openapi/schemas/collection.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *Collection* GET operation.
-[#collection-example,reftext=`Collection Information Example`]
+
+[[collection-example]]
 .An Example of Collection GET Operation:
 [source,json]
 ----

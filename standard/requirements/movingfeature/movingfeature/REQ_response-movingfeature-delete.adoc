@@ -1,3 +1,4 @@
+////
 [[req_mf-response-delete]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -5,3 +6,13 @@
 ^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Features `DELETE` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_3[`/req/create-replace-delete/delete/response`].
 ^|B |If no resource with the identifier exists in the collection, the server SHALL respond with a not-found exception (`404`).
 |===
+////
+
+[[req_mf-response-delete]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/mf-delete-success
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `DELETE` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_3[`/req/create-replace-delete/delete/response`].
+part:: If no resource with the identifier exists in the collection, the server SHALL respond with a not-found exception (`404`).
+====

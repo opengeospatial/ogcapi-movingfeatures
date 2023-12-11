@@ -1,3 +1,4 @@
+////
 [[req_mf-response-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -5,3 +6,13 @@
 ^|A |A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
 ^|B |The content of that response SHALL include the set of moving feature's metadata that defined in the <<movingfeature-schema, response schema>>.
 |===
+////
+
+[[req_mf-response-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/mf-get-success
+part:: A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
+part:: The content of that response SHALL include the set of moving feature's metadata that defined in the <<movingfeature-schema, response schema>>.
+====

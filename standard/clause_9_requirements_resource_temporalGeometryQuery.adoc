@@ -21,7 +21,6 @@ Where:
 <<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API — MF.
 
 [[temporalGeometry-query-table]]
-[reftext='{table-caption} {counter:table-num}']
 .Table of the query resources
 [cols="40,10,40",options="header"]
 |===
@@ -42,9 +41,9 @@ The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#date
 The Distance query returns a time-to-distance curve of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
 <<time-to-distance-curve>> shows an example of the time-to-distance curve.
 
-[#time-to-distance-curve,reftext='{figure-caption} {counter:figure-num}']
+[[time-to-distance-curve]]
 .Example of time-to-distance curve [OGC 16-120r3, OGC Moving Features Access]
-image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, width=50%, align="center"]
+image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, width=1000, align="center"]
 
 The filter constraints are defined by the following query parameter:
 

@@ -1,1 +1,14 @@
 /.idea/
+.DS_Store
+standard/relaton/
+standard/document.doc
+standard/document.pdf
+standard/document.err.html
+standard/document.presentation.xml
+standard/document.xml
+standard/document.xml.abort
+standard_document.html
+standard/iev/cache/version
+iev/cache/version
+relaton/
+document.xml.abort

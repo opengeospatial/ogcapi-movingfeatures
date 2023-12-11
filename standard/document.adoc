@@ -1,0 +1,84 @@
+= OGC API - Moving Features - Part 1: Core
+:doctype: standard
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/1.0.draft
+:docnumber: 22-003
+:received-date: 2023-05-19
+:issued-date: 2029-03-30
+:published-date: 2029-03-30
+:fullname: Taehoon Kim
+:fullname_2: Kyoung-Sook Kim
+:fullname_3: Mahmoud SAKR
+:fullname_4: Martin Desruisseaux
+:docsubtype: Interface
+:keywords: ogcdoc, OGC document, OGC Moving Features, OGC Moving Features JSON, Moving Features Access, API, OpenAPI, REST, trajectory
+:submitting-organizations: Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology; Université libre de Bruxelles; Geomatys; Central Research Laboratory, Hitachi Ltd.; Feng Chia University
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0.draft
+
+////
+Make sure to complete each included document
+////
+include::clause_0_front_material.adoc[]
+
+include::clause_1_scope.adoc[]
+
+include::clause_2_conformance.adoc[]
+
+include::clause_3_references.adoc[]
+
+include::clause_4_terms_and_definitions.adoc[]
+
+include::clause_5_conventions.adoc[]
+
+include::clause_6_overview.adoc[]
+
+//already deactivated
+//include::clause_7_requirements_classes_common.adoc[] 
+
+include::clause_8_requirements_classes_collection.adoc[]
+
+include::clause_9_requirements_classes_movingFeatures.adoc[]
+
+//already deactivated
+//include::clause_11_requirements_resource_service_catalog.adoc[] 
+
+include::clause_10_common_requirements.adoc[]
+
+
+////
+add or remove annexes after "A" as necessary
+////
+// <<<
+//already deactivated
+// include::annex-a.adoc[] 
+
+<<<
+include::annex-b.adoc[]
+
+// <<<
+//already deactivated
+// include::annex-c.adoc[] 
+
+<<<
+include::annex-d.adoc[]
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+<<<
+include::annex-history.adoc[]
+
+<<<
+include::annex-bibliography.adoc[]

@@ -1,3 +1,4 @@
+////
 [[req_general_http-responsse]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -5,3 +6,13 @@
 ^|A |An HTTP operation SHALL return a response which includes a `status code` and an optional `description` element.
 ^|B |If the `status code` is not equal to 200, then the `description` element SHALL be populated.
 |===
+////
+
+[[req_general_http-responsse]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/common/http-response
+part:: An HTTP operation SHALL return a response which includes a `status code` and an optional `description` element.
+part:: If the `status code` is not equal to 200, then the `description` element SHALL be populated.
+====

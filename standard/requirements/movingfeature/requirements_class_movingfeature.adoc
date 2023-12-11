@@ -1,3 +1,4 @@
+////
 [[rc_movingfeature]]
 [cols="1,4",width="90%",options="header"]
 |===
@@ -9,3 +10,50 @@
 |Dependency     |http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory
 |Dependency     |http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
 |===
+////
+
+[[rc_movingfeature]]
+[requirements_class]
+.Requirements Class 'Moving Features'
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures
+subject:: Web API
+inherit:: http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
+inherit:: http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
+inherit:: http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory
+inherit:: http://www.opengis.net/spec/movingfeatures/json/1.0/req/prism
+requirement:: /req/movingfeatures/param-subtrajectory-definition
+requirement:: /req/movingfeatures/param-subtrajectory-response
+requirement:: /req/movingfeatures/features-get
+requirement:: /req/movingfeatures/features-post
+requirement:: /req/movingfeatures/features-get-success
+requirement:: /req/movingfeatures/features-post-success
+requirement:: /req/movingfeatures/mf-mandatory
+requirement:: /req/movingfeatures/mf-get
+requirement:: /req/movingfeatures/mf-delete
+requirement:: /req/movingfeatures/mf-get-success
+requirement:: /req/movingfeatures/mf-delete-success
+requirement:: /req/movingfeatures/param-leaf-definition
+requirement:: /req/movingfeatures/param-leaf-response
+requirement:: /req/movingfeatures/tgsequence-get
+requirement:: /req/movingfeatures/tgsequence-post
+requirement:: /req/movingfeatures/tgsequence-get-success
+requirement:: /req/movingfeatures/tgsequence-post-success
+requirement:: /req/movingfeatures/tpgeometry-mandatory
+requirement:: /req/movingfeatures/tpgeometry-delete
+requirement:: /req/movingfeatures/tpgeometry-delete-success
+requirement:: /req/movingfeatures/tpgeometry-query
+requirement:: /req/movingfeatures/tpgeometry-query-success
+requirement:: /req/movingfeatures/param-subtemporalvalue-definition
+requirement:: /req/movingfeatures/param-subtemporalvalue-response
+requirement:: /req/movingfeatures/tproperties-get
+requirement:: /req/movingfeatures/tproperties-post
+requirement:: /req/movingfeatures/tproperties-get-success
+requirement:: /req/movingfeatures/tproperties-post-success
+requirement:: /req/movingfeatures/tproperty-mandatory
+requirement:: /req/movingfeatures/tproperty-get
+requirement:: /req/movingfeatures/tproperty-post
+requirement:: /req/movingfeatures/tproperty-get-success
+requirement:: /req/movingfeatures/tproperty-post-success
+====

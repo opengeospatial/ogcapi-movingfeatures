@@ -1,4 +1,5 @@
 [[conf_movingfeature_collection]]
+////
 [cols="1,4",width="90%",options="header"]
 |===
 2+|*Conformance Class*
@@ -11,3 +12,27 @@
 |Dependency         |http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
 |Dependency         |http://www.opengis.net/spec/ogcapi-features-4/1.0/conf/create-replace-delete
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-collection
+target:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection
+dependency:: http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/html
+dependency:: http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json
+dependency:: http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections
+dependency:: http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+dependency:: http://www.opengis.net/spec/ogcapi-features-4/1.0/conf/create-replace-delete
+classification:: Target Type:Web API
+abstract-test:: /conf/mf-collection/collections-get
+abstract-test:: /conf/mf-collection/collections-get-success
+abstract-test:: /conf/mf-collection/collections-post
+abstract-test:: /conf/mf-collection/collections-post-success
+abstract-test:: /conf/mf-collection/collection-get
+abstract-test:: /conf/mf-collection/collection-get-success
+abstract-test:: /conf/mf-collection/collection-put
+abstract-test:: /conf/mf-collection/collections-put-success
+abstract-test:: /conf/mf-collection/collection-delete
+abstract-test:: /conf/mf-collection/collections-delete-success
+====

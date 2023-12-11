@@ -1,6 +1,16 @@
+////
 [[req_mf-features-op-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/movingfeatures/features-get*
 ^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Features `Features` operation requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_operation_6[`/req/core/fc-op`].
 |===
+////
+
+[[req_mf-features-op-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/features-get
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `Features` operation requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_operation_6[`/req/core/fc-op`].
+====

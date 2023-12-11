@@ -6,6 +6,8 @@ The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox
 All requirements and recommendations in API — Common regarding these parameters also apply to OGC API — MF.
 No modifications are required.
 
+include::requirements/common/requirements_class_common.adoc[]
+
 [[limit-section]]
 ==== Parameter limit
 include::requirements/parameter/REQ_parameter-limit.adoc[]
@@ -27,7 +29,7 @@ include::requirements/general/REQ_general_http-response.adoc[]
 
 The YAML schema for these results is provided in <<http-response-schema>>.
 
-[#http-response-schema,reftext='HTTP Response Schema']
+[[http-response-schema]]
 .An Example of the HTTP Response Schema:
 [source,yaml]
 ----
@@ -41,7 +43,7 @@ include::../openapi/schemas/exceptionJSON.yaml[]
 This includes support for specific security schemes or URI redirection.
 In addition, other error situations may occur in the transport layer outside of the server.
 
-[#status-codes,reftext='{table-caption} {counter:table-num}']
+[[status-codes]]
 .Typical HTTP status codes
 [cols="15,85",options="header"]
 !===

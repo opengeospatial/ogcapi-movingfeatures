@@ -1,3 +1,4 @@
+////
 [[req_mf-tpgeometry-query-op-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -11,3 +12,16 @@ The path parameter `tGeometryId` is an `id` property of the temporal geometry. +
 // ^|D |A velocity query GET operation MAY include a `datetime` query parameter.
 // ^|E |An acceleration query GET operation MAY include a `datetime` query parameter.
 |===
+////
+
+[[req_mf-tpgeometry-query-op-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/tpgeometry-query
+part:: For every TemporalPrimitiveGeometry identified in the <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> GET response (path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence`), the server SHALL support the HTTP GET operation at the path `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence/+{tGeometryId}+/+{queryType}+`
+part:: The path parameter `collectionId` is each `id` property in the *Collection* GET operation response where the value of the `itemType` property is specified as *MovingFeature*. +
+The path parameter `mFeatureId` is an `id` property of the moving feature. +
+The path parameter `tGeometryId` is an `id` property of the temporal geometry. +
+part:: The path parameter `queryType` SHALL be one of the predefined query type (*distance, velocity*, and *acceleration*)
+====

@@ -1,0 +1,12 @@
+[[rc_mf_common]]
+[requirements_class]
+.Requirements Class 'Moving Features - Common'
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common
+subject:: Web API
+requirement:: /req/common/param-limit
+requirement:: /req/common/param-bbox
+requirement:: /req/common/param-datetime
+requirement:: /req/common/http-response
+====

@@ -9,7 +9,6 @@ The schema for the *TemporalPrimitiveGeometry* presented in this clause is the s
 <<temporalPrimitiveGeometry-properties-table>> defines the set of properties that may be used to describe a *TemporalPrimitiveGeometry*.
 
 [[temporalPrimitiveGeometry-properties-table]]
-[reftext='{table-caption} {counter:table-num}']
 .Table of the properties related to the *TemporalPrimitiveGeometry*
 [cols="20,15,65",options="header"]
 |===

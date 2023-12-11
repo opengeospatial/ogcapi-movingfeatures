@@ -5,9 +5,9 @@ The <<OGC-API-Features,OGC API — Features>> Standard enable access to resource
 The <<OGC-API-Common,OGC API — Common>> Standard defines a set of features which are applicable to all OGC APIs.
 Other OGC Standards extend OGC API — Common with features specific to a resource type.
 
-This OGC API — Moving Features — Part1: Core Draft Standard defines an API with the goal to:
+This OGC API — Moving Features — Part 1: Core Draft Standard defines an API with the goal to:
 
-* Provide a standard interface for creating (HTTP POST), retrieving (HTTP GET), updating (HTTP PUT), and deleting (HTTP DELETE) *_Moving Features_*, with conformance to the <<OGC-MF-JSON,OGC Moving Features JSON Encoding Standard>>
+* Provide a standard interface for creating (HTTP POST), retrieving (HTTP GET), updating (HTTP PUT), and deleting (HTTP DELETE) *_Moving Features_*, with conformance to the OGC Moving Features JSON Encoding Standard (<<OGC_19-045r3>>).
 
 Resources exposed through an OGC API may be accessed via a Universal Resource Identifier (URI).
 The URI representation in this Draft Standard is composed of three sections:
@@ -23,9 +23,9 @@ Unique relation types are used for each resource.
 
 <<mf-api-paths>> summarizes the access paths and relation types defined in this Standard.
 
-[#mf-api-paths,reftext='{table-caption} {counter:table-num}']
+[[mf-api-paths]]
 .Moving Features API Paths
-[width="100%",cols="3,^1,4",options="header"]
+[width="100%",cols=",,",options="header"]
 |===
 ^|**Path Template** ^|**Relation** ^|**Resource**
 // 3+^|**Common**
@@ -68,9 +68,9 @@ Where:
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.
 
-[#mf-api-class-diagram,reftext='{figure-caption} {counter:figure-num}']
+[[mf-api-class-diagram]]
 .Class diagram for OGC API — Moving Features
-image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, width=95%, align="center"]
+image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, width=1000, align="center"]
 
 //[[mf-json-encoding-schema-overview]]
 //=== Moving Features Implementation Schema
@@ -112,9 +112,9 @@ Therefore, an implementation of OGC API — MF shall satisfy the appropriate Req
 <<req-mappings>>, Identifies the OGC API — Common and OGC API — Features Requirements Classes which are applicable to each section of this Standard.
 Instructions on when and how to apply these Requirement Classes are provided in each section.
 
-[#req-mappings,reftext='{table-caption} {counter:table-num}']
+[[req-mappings]]
 .Mapping OGC API — MF Sections to OGC API — Common, OGC API — Features, and OGC MF-JSON Requirements Classes
-[width="90%",cols="2,4,4"]
+[width="90%",cols=",,",options="header"]
 |====
 ^|*API — MF Section*           ^| *API — MF Requirements Class*           |*API — Common, API — Features, MF-JSON Requirements Class*
 // |<<common-landingpage-section,API Landing Page>>

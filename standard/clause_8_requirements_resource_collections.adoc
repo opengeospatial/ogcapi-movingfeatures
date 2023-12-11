@@ -27,7 +27,7 @@ Support for the HTTP POST method is specified as a requirement in OGC API — Fe
 
 include::requirements/collection_catalog/collections/REQ_operation-collections-post.adoc[]
 
-[#collection-requestbody-schema,reftext='Collection Request Body Schema']
+[[collection-requestbody-schema]]
 .Collection Request Body Schema:
 [source,yaml]
 ----
@@ -37,7 +37,8 @@ include::../openapi/schemas/requestBody/collection.yaml[]
 The following example adds a new feature (collection information object) to the feature collections.
 The feature is encoded as JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#collections-post-example,reftext='Create a New Collection Example']
+
+[[collections-post-example]]
 .An Example of Creating a New Collection:
 include::examples/collection-post.adoc[]
 
@@ -49,7 +50,7 @@ The collections where the value of the `itemType` property is *MovingFeature* ar
 
 include::requirements/collection_catalog/collections/REQ_response-collections-get.adoc[]
 
-[#collections-schema,reftext='Collections GET Response Schema']
+[[collections-schema]]
 .Collections GET Response Schema (collections.yaml):
 [source,yaml]
 ----
@@ -57,7 +58,7 @@ include::../openapi/schemas/collections.yaml[]
 ----
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *Collections* GET operation.
-[#collections-example,reftext=`Collections Example`]
+[[collections-example]]
 .An Example of Collections JSON Payload:
 [source,json]
 ----

@@ -1,4 +1,5 @@
 [[conf_mf_tpgeometry_query_acceleration]]
+////
 [cols=">20h,<80d",width="100%"]
 |===
 |*Abstract Test {counter:conf-id}* |*/conf/movingfeatures/tpgeometry-query-acceleration*
@@ -18,3 +19,27 @@ IF a query parameter `datetime` is not empty: Execute requests with `datetime` q
 
 IF a query parameter `datetime` is empty: Verify that a time-to-acceleration curve is correctly returned according to the specified *TemporalPrimitiveGeometry* resource by {tGeometryId}.
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/movingfeatures/tpgeometry-query-acceleration
+target:: /req/movingfeatures/tpgeometry-query
+target:: /req/movingfeatures/tpgeometry-query-success
+test-purpose:: Validate that resources can be identified and extracted from a *TemporalPrimitiveGeometry* with a `Acceleration` query using query parameters.
+test-method::
++
+--
+IF a query parameter `datetime` is not empty, validate that the query parameter `datetime` with the following parameter tests that defined in the OGC API — Common: +
+- *Date-Time*: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
+
+1. Issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/acceleration` +
+2. Validate that a document was returned with a status code `200` +
+3. Verify the `type` is `"TReal"` +
+
+IF a query parameter `datetime` is not empty: Execute requests with `datetime` query parameter and verify the correctly calculated value is returned.
+
+IF a query parameter `datetime` is empty: Verify that a time-to-acceleration curve is correctly returned according to the specified *TemporalPrimitiveGeometry* resource by {tGeometryId}.
+--
+====

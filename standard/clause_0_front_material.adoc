@@ -1,5 +1,15 @@
-//== Introduction
-[big]*i.     Abstract*
+.Preface
+
+////
+*OGC Declaration*
+////
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+[abstract]
+== Abstract
 
 Moving feature data can represent various phenomena, including vehicles, people, animals, weather patterns, etc.
 The OGC API — Moving Features (OGC API — MF) is a Draft Standard defines a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
@@ -11,7 +21,8 @@ The OGC API — Moving Features — Part 1: Core specifies a set of RESTful web 
 <<OPENAPI,OpenAPI>> is used to define the reusable API building blocks with responses in JSON and HTML.
 
 The OGC API family of standards is organized by resource type.
-[#common-paths,reftext='{table-caption} {counter:table-num}']
+
+[[common-paths]]
 .Overview of Resources
 [width="99%",cols="2,4,^1,2",options="header"]
 |====
@@ -31,50 +42,22 @@ The OGC API family of standards is organized by resource type.
 |====
 
 
-[big]*ii.Keywords*
 
-The following are keywords to be used by search engines and document catalogues.
-
-ogcdoc, OGC document, OGC Moving Features, OGC Moving Features JSON, Moving Features Access, API, OpenAPI, REST, trajectory
-
-[big]*iii.   Preface*
-
-*OGC Declaration*
-
-Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights.
-The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
-
-Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims
-or other intellectual property rights of which they may be aware that might be infringed by any implementation of
-the standard set forth in this document, and to provide supporting documentation.
-
-[big]*iv.   Security Considerations*
+== Security considerations
 
 The OGC API — Moving Features — Part 1: Core Draft Standard does not mandate any specific security controls.
 However, it was constructed to add security controls without impacting conformance, the same as the link:https://docs.ogc.org/is/19-072/19-072.html#_91afaabd-dc29-41eb-805d-15e1afd18825[OGC API — Common — Part 1: Core].
 
 This document applied the Requirement link:https://docs.ogc.org/is/19-072/19-072.html#rc_oas30-security[/req/oas30/security] for OpenAPI 3.0 Security support.
 
-[big]*v.    Submitting organizations*
 
-The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
-
-* Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
-
-* Université libre de Bruxelles
-
-* Geomatys
-
-* Central Research Laboratory, Hitachi Ltd.
-
-* Feng Chia University
-
-[big]*vi.     Submitters*
+== Submitters
 
 All questions regarding this submission should be directed to the editor or the submitters:
 
-{set:cellbgcolor!}
-[width="99%", cols="3,7"]
+[[tbl_submitters]]
+.Overview of Resources
+[width="99%", cols="3,7",options="header"]
 |===========================================================
 |*Name*                 |*Organization*
 |Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology

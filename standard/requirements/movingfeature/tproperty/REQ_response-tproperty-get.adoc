@@ -1,3 +1,4 @@
+////
 [[req_mf-tproperty-response-get]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -6,3 +7,14 @@
 ^|B |The response SHALL only include temporal properties selected by the request with `leaf` and `subTemporalValue` parameters.
 ^|C |The content of that response SHALL include the parametric value that is defined in the <<tproperty-schema,response schema>>.
 |===
+////
+
+[[req_mf-tproperty-response-get]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/tproperty-get-success
+part:: A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
+part:: The response SHALL only include temporal properties selected by the request with `leaf` and `subTemporalValue` parameters.
+part:: The content of that response SHALL include the parametric value that is defined in the <<tproperty-schema,response schema>>.
+====

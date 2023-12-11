@@ -1,3 +1,4 @@
+////
 [[req_mf_subtrajectory-parameter-definition]]
 [width="90%",cols="2,6a",options="header"]
 |===
@@ -10,3 +11,31 @@ include::../../../openapi/parameters/subtrajectory.yaml[]
 ^|B |The `subTrajectory` parameter SHALL be used with `datetime` parameter.
 ^|C |If the `subTrajecotry` parameter is *"true"*, the `datetime` parameter SHALL be a bounded interval, not half-bounded intervals or a date-time.
 |===
+////
+
+[[req_mf_subtrajectory-parameter-definition]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/param-subtrajectory-definition
+
+[.component,class=part]
+--
+The operation SHALL support a query parameter `subTrajectory` with the following characteristics (using an OpenAPI Specification 3.0 fragment): +
+[source,yaml]
+----
+include::../../../openapi/parameters/subtrajectory.yaml[]
+----
+--
+
+[.component,class=part]
+--
+The `subTrajectory` parameter SHALL be used with `datetime` parameter.
+--
+
+[.component,class=part]
+--
+If the `subTrajecotry` parameter is *"true"*, the `datetime` parameter SHALL be a bounded interval, not half-bounded intervals or a date-time.
+--
+
+====
