@@ -21,7 +21,6 @@ Where:
 <<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API — MF.
 
 [[temporalGeometry-query-table]]
-[reftext='{table-caption} {counter:table-num}']
 .Table of the query resources
 [cols="40,10,40",options="header"]
 |===

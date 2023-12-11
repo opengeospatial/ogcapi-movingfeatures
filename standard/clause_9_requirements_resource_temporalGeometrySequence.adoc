@@ -25,9 +25,10 @@ The `leaf` parameter consists of a list of the date-time format strings, differe
 The list does not allow the same element value.
 <<leaf-text-example>> shows valid expression examples of the `leaf` parameter.
 
-[#leaf-text-example,reftext='{example-caption} {counter:example-num}']
+[[leaf-text-example]]
 .leaf parameter valid (and invalid) Examples
-=================
+[source]
+----
 (O) "2018-02-12T23:20:50Z"
 
 (O) "2018-02-12T23:20:50Z","2018-02-12T23:30:50Z"
@@ -37,7 +38,7 @@ The list does not allow the same element value.
 (X) "2018-02-12T23:20:50Z","2018-02-12T23:20:50Z"
 
 (X) "2018-02-12T23:20:50Z","2018-02-12T22:40:50Z"
-=================
+----
 
 If the `leaf` parameter is provided by the client, the endpoint returns only temporal geometry coordinate (or temporal property value) with the leaf query at each time included in the `leaf` parameter, similar to _**pointAtTime**_ operation in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
 The `interpolation` property in the response shall be "Discrete".
@@ -66,7 +67,8 @@ The following example adds a new feature (link:https://docs.ogc.org/is/19-045r3/
 The feature is represented as *_TemporalPrimitiveGeometry_* object in <<OGC-MF-JSON,MF-JSON>>, which is an extension of the JSON.
 //And it added to the current temporal geometry object as continuously one, because the time difference between these two temporal geometry objects is less than (or equal to) the update frequency of the created Collection feature by the <<collections-post.adoc-example,Create a New Collection Example>>.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
-[#tpgeometry-post-example,reftext='Create a New TemporalPrimitiveGeometry Object Example']
+
+[[tpgeometry-post-example]]
 .An Example of Creating a New TemporalPrimitiveGeometry Object:
 include::examples/temporalGeometry-post.adoc[]
 
@@ -77,14 +79,14 @@ A successful response to the *TemporalGeometrySequence* GET operation is a docum
 include::requirements/movingfeature/tgsequence/REQ_response-tgsequence-get.adoc[]
 
 // TODO: Fix for including not only MovingGeometryCollection, also MovingGeometryPrimitive
-[#tgsequence-schema,reftext='TemporalGeometrySequence GET Response Schema']
+[[tgsequence-schema]]
 .TemporalGeometrySequence GET Response Schema (temporalGeometrySequence.yaml):
 [source,yaml]
 ----
 include::../openapi/schemas/temporalGeometrySequence.yaml[]
 ----
 
-[#tpgeometry-schema,reftext='TemporalPrimitiveGeometry Schema']
+[[tpgeometry-schema]]
 // .TemporalPrimitiveGeometry Schema (MF-JSON/Prism/temporalPrimitiveGeometry.yaml):
 // [source,yaml]
 // ----
@@ -92,7 +94,7 @@ include::../openapi/schemas/temporalGeometrySequence.yaml[]
 // ----
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *TemporalGeometrySequence* GET operation.
-[#tgsequence-example,reftext=`TemporalGeometrySequence GET Example`]
+[[tgsequence-example]]
 .An Example of a TemporalGeometrySequence GET operation:
 [source,json]
 ----

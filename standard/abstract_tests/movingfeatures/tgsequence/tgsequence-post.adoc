@@ -37,7 +37,6 @@ test-method::
 ====
 
 [[tgsequence-requestbody-schema]]
-[reftext='{table-caption} {counter:table-num}']
 .Schema and Tests for Request Body of `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence` POST
 [width="90%",cols="3",options="header"]
 |===

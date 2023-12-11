@@ -30,7 +30,6 @@ The following table identifies the applicable schema document for each format an
 All supported formats should be exercised.
 
 [[movingfeatures-schema]]
-[reftext='{table-caption} {counter:table-num}']
 .Schema and Tests for *MovingFeatures* content
 [width="90%",cols="3",options="header"]
 |===

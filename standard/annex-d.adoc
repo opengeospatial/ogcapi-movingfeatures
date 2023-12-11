@@ -167,6 +167,7 @@ Standard takes a subset of the ISO 19141 Standard and defines an XML encoding.
 That standard also completes ISO 19141 by allowing to specify attributes whose value change over time.
 This extension to the above _General Feature Model_ is shown below:
 
+[[dynamic_atts_18_075]]
 .Dynamic attribute from OGC 18-075 figure 3
 image::images/DynamicAttribute.png[alt=UML of dynamic attribute,align="center",width=1000]
 

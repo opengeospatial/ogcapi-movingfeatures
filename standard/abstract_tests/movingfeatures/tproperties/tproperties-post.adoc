@@ -37,7 +37,6 @@ test-method::
 ====
 
 [[tproperties-requestbody-schema]]
-[reftext='{table-caption} {counter:table-num}']
 .Schema and Tests for Request Body of `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` POST
 [width="90%",cols="3",options="header"]
 |===

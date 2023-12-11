@@ -68,7 +68,7 @@ Where:
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.
 Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.
 
-[#mf-api-class-diagram,reftext='{figure-caption} {counter:figure-num}']
+[[mf-api-class-diagram]]
 .Class diagram for OGC API — Moving Features
 image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, width=1000, align="center"]
 

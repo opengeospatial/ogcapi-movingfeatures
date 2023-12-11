@@ -14,7 +14,6 @@ as sometimes it only needs to have static information, and sometimes it also has
 For example, in MF-JSON, `type` and `temporalGeometry` are mandatory, but in this API, `id` and `type` are mandatory. This is why the defined schema is represented in GeoJSON, not MF-JSON.
 
 [[moving-feature-properties-table]]
-[reftext='{table-caption} {counter:table-num}']
 .Table of the properties related to the moving feature
 [cols="25,10,65",options="header"]
 |===
@@ -70,7 +69,7 @@ The temporal object information may be accessed using  <<resource-temporalGeomet
 
 include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-get.adoc[]
 
-[#movingfeature-schema,reftext='MovingFeature GET Response Schema']
+[[movingfeature-schema]]
 .MovingFeature GET Response Schema (movingFeature.yaml):
 [source,yaml]
 ----
@@ -81,7 +80,7 @@ The `time` property of the *MovingFeature* response represents a particular peri
 // TODO: Add note using MF-JSON MovingFeature object
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *MovingFeature* operation.
-[#movingfeature-example,reftext=`MovingFeature Example`]
+[[movingfeature-example]]
 .An Example of a MovingFeature JSON Payload:
 [source,json]
 ----

@@ -31,7 +31,6 @@ test-method::
 
 
 [[collection-metadata-schema]]
-[reftext='{table-caption} {counter:table-num}']
 .Schema and Tests for MovingFeature Collection content
 [width="90%",cols="3",options="header"]
 |===

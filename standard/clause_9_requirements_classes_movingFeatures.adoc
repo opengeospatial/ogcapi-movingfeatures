@@ -10,7 +10,7 @@ A moving feature is an object that provides information about and access to <<re
 === Information Resources
 The seven resources defined in this Requirement Class are summarized in <<mf-resources>>.
 
-[#mf-resources,reftext='{table-caption} {counter:table-num}']
+[[mf-resources]]
 .MovingFeatures Resources
 [width="90%",cols="10,10,10",options="header"]
 |===
