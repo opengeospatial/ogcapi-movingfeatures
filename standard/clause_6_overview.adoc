@@ -2,7 +2,7 @@
 === General
 
 The <<OGC-API-Features,OGC API — Features>> Standard enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, DELETE, etc.)
-The <<OGC-API-Common,OGC API — Common>> Standard defines a set of features which are applicable to all OGC APIs.
+The <<OGC-API-Common,OGC API — Common>> Standard defines a set of features which are applicable to all implementations of OGC API Standards.
 Other OGC Standards extend OGC API — Common with features specific to a resource type.
 
 This OGC API — Moving Features — Part 1: Core Draft Standard defines an API with the goal to:
