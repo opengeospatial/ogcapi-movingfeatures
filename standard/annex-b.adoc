@@ -7,7 +7,7 @@ The Abstract Test Suite (ATS) is a compendium of test assertions applicable to i
 
 The abstract test cases (assertions) are organized into test groups that correspond to distinct conformance test classes defined in the OGC API — MF Standard.
 
-OGC APIs are not Web Services in the traditional sense. Rather, they define the behavior and content of a set of Resources exposed through a Web Application Programming Interface (Web API). Therefore, an API may expose resources in addition to those defined by the standard. A test engine shall traverse the API, identify and validate test points, and ignore resource paths which are not to be tested.
+Implementations of OGC API Standards are not Web Services in the traditional sense. Rather, they define the behavior and content of a set of Resources exposed through a Web Application Programming Interface (Web API). Therefore, an API may expose resources in addition to those defined by the standard. A test engine shall traverse the API, identify and validate test points, and ignore resource paths which are not to be tested.
 
 The Conformance Classes addressed by this Abstract Test Suite are the:
 
