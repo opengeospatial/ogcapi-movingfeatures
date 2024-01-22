@@ -11,7 +11,7 @@ The *TemporalProperty* resource returned to the response can be limited using th
 A temporal property object is a collection of dynamic non-spatial attributes and their temporal values with time.
 An abbreviated copy of this information is returned for each *TemporalProperty* in the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` response.
 
-The schema for the temporal property object presented in this clause is an extension of the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[*_ParametricValues_* Object] defined in <<OGC-MF-JSON,MF-JSON>>.
+The schema for the temporal property object presented in this clause is an extension of the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[*_ParametricValues_* Object] defined in <<OGC_19-045r3,MF-JSON>>.
 <<temporalProperty-properties-table>> defines the set of property that may be used to describe a temporal property.
 
 [[temporalProperty-properties-table]]
@@ -36,7 +36,7 @@ The schema for the temporal property object presented in this clause is an exten
 |*_interpolation_*      |M |A predefined type for a dynamic value (i.e., one of 'Discrete', 'Step', 'Linear', or 'Regression').
 |===
 
-NOTE: The detailed information and requirements for each property are described in the <<OGC-MF-JSON,OGC Moving Feature JSON Encoding Standard>>.
+NOTE: The detailed information and requirements for each property are described in the <<OGC_19-045r3,OGC Moving Feature JSON Encoding Standard>>.
 
 include::requirements/movingfeature/tproperty/REQ_mandatory-tproperty.adoc[]
 

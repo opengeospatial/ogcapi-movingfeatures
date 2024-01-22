@@ -9,4 +9,4 @@ http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0
 All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
 
 === Use of HTTPS
-For simplicity, this OGC Standard only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS. This is simply a shorthand notation for “HTTP or HTTPS”. In fact, most servers are expected to use <<rfc2818, HTTPS>> and not <<rfc723x, HTTP>>.
+For simplicity, this OGC Standard only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS. This is simply a shorthand notation for “HTTP or HTTPS”. In fact, most servers are expected to use <<rfc2818, HTTPS>> and not <<rfc7230, HTTP>>.

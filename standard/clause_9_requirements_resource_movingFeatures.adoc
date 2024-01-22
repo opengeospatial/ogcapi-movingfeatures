@@ -57,7 +57,7 @@ Support for the HTTP POST method is specified as a requirement in OGC API — Fe
 
 include::requirements/movingfeature/features/REQ_operation-features-post.adoc[]
 
-The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] in <<OGC-MF-JSON,MF-JSON>>) to the specific <<resource-collection-section,*Collection*>>.
+The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] in <<OGC_19-045r3,MF-JSON>>) to the specific <<resource-collection-section,*Collection*>>.
 The feature is represented as *_MovingFeature_* object (or *_MovingFeatureCollection_* object) in MF-JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 
@@ -69,7 +69,7 @@ include::examples/features-post.adoc[]
 ===== Retrieve
 A successful response to the *MovingFeatures* GET operation is a document that contains the static data for a set of moving features.
 
-If the value of the `subTrajectory` query parameter is provided, the value of the corresponding `temporalGeometry` property of each moving feature is calculated using the `subTrajectory` parameter value and included in the result, i.e., a link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] of <<OGC-MF-JSON,MF-JSON>>.
+If the value of the `subTrajectory` query parameter is provided, the value of the corresponding `temporalGeometry` property of each moving feature is calculated using the `subTrajectory` parameter value and included in the result, i.e., a link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] of <<OGC_19-045r3,MF-JSON>>.
 
 In a typical deployment of the OGF API — MF, the *MovingFeatures* GET response will list <<resource-movingfeature-section,*MovingFeature*>> resource.
 
