@@ -2,7 +2,7 @@
 === Resource MovingFeature
 ==== Overview
 A *MovingFeature* object consists of the set of static information that describes a single moving feature and the set of temporal object, such as temporal geometry and temporal properties.
-An abbreviated copy of this information is returned for each *MovingFeature* in the `+{root}+/collections/+{collectionId}+/items` GET response.
+An abbreviated copy of this information is returned for each *MovingFeature* in the `{root}/collections/{collectionId}/items` GET response.
 
 <<moving-feature-properties-table>> defines the set of properties that may be used to describe a moving feature.
 The schema for the moving feature object presented in this clause is an extension of the *_GeoJSON Feature Object_* defined in link:https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
@@ -42,20 +42,20 @@ include::requirements/movingfeature/movingfeature/REQ_mandatory-movingfeature.ad
 The retrieve operation is defined in the `Feature` conformance class of OGC API — Features.
 No modifications are needed to support <<resource-movingfeature-section,*MovingFeature*>> resources.
 
-. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+` path
+. Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}` path
 
 [[movingfeature-identifier]]
-The `+{mFeatureId}+` path parameter is the unique identifier for a single moving feature offered by the API.
-The list of valid values for `+{mFeatureId}+` is provided in the <<resource-movingfeatures-section,`+{root}+/collections/+{collectionId}+/items`>> GET response.
+The `{mFeatureId}` path parameter is the unique identifier for a single moving feature offered by the API.
+The list of valid values for `{mFeatureId}` is provided in the <<resource-movingfeatures-section,`{root}/collections/{collectionId}/items`>> GET response.
 
-Support for GET on the `+{root}+/collections/+{collectionID}+/items/+{mFeatureId}+` path is required by OGC API — Features.
+Support for GET on the `{root}/collections/{collectionID}/items/{mFeatureId}` path is required by OGC API — Features.
 
 include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-get.adoc[]
 
 ===== Delete
 The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
 
-. Issue a `DELETE` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+` path
+. Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}` path
 
 Support for the HTTP DELETE method is required by OGC API — Features.
 
@@ -63,7 +63,7 @@ include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-de
 
 ==== Response
 ===== Retrieve
-A successful response to the *MovingFeature* GET operation is a set of metadata that describes the moving feature identified by the <<movingfeature-identifier,`+{mFeatureId}+`>> parameter.
+A successful response to the *MovingFeature* GET operation is a set of metadata that describes the moving feature identified by the <<movingfeature-identifier,`{mFeatureId}`>> parameter.
 This response does not include a set of temporal object information.
 The temporal object information may be accessed using  <<resource-temporalGeometrySequence-section,*TemporalGeometry*>> and <<resource-temporalProperties-section,*TemporalProperties*>> operations.
 

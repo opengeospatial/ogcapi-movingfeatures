@@ -8,15 +8,15 @@ This list may change as the Standard is used and experience is gained.
 
 Query resources related to the <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource can be exposed using the path templates:
 
-* `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence/+{tGeometryId}+/+{queryType}+`
+* `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/{queryType}`
 
 Where:
 
-* `+{root}+`          = Base URI for the API server
-* `+{collectionId}+`  = An identifier for a specific <<resource-collection-section,*Collection*>> of data
-* `+{mFeatureId}+`    = An identifier for a specific <<resource-movingfeature-section,*MovingFeature*>> of a specific <<resource-collection-section,*Collection*>> of data
-* `+{tGeometryId}+`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,TemporalPrimitiveGeometry>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
-* `+{quertyType}+`    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
+* `{root}`          = Base URI for the API server
+* `{collectionId}`  = An identifier for a specific <<resource-collection-section,*Collection*>> of data
+* `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,*MovingFeature*>> of a specific <<resource-collection-section,*Collection*>> of data
+* `{tGeometryId}`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,TemporalPrimitiveGeometry>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
+* `{quertyType}`    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
 
 <<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API — MF.
 
@@ -25,11 +25,11 @@ Where:
 [cols="40,10,40",options="header"]
 |===
 |Path Template      |Query Type |Description
-|`+{root}+/collections/+{collectionId}+/items/ +{mFeatureId}+/tgsequence/+{tGeometryId}+/distance`   |Distance
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/distance`   |Distance
 | Return a graph of the time to distance function as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
-|`+{root}+/collections/+{collectionId}+/items/ +{mFeatureId}+/tgsequence/+{tGeometryId}+/velocity`   |Velocity
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/velocity`   |Velocity
 | Return a graph of the time to velocity function as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
-|`+{root}+/collections/+{collectionId}+/items/ +{mFeatureId}+/tgsequence/+{tGeometryId}+/acceleration` |Acceleration
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/acceleration` |Acceleration
 | Return a graph of the time to acceleration function as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
 |===
 

@@ -34,11 +34,11 @@ include::requirements/movingfeature/tpgeometry/REQ_mandatory-tpgeometry.adoc[]
 ===== Delete
 The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
 
-. Issue a `DELETE` request on `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence/+{tGeometryId}+` path
+. Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}` path
 
 [[tpgeometry-identifier]]
-The +{tGeometryId}+ parameter is the unique identifier for a TemporalPrimitiveGeometry object offered by the API.
-The list of valid values for `+{tGeometryId}+` is provided in the <<resource-temporalGeometrySequence-section,`+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence`>> GET response.
+The {tGeometryId} parameter is the unique identifier for a TemporalPrimitiveGeometry object offered by the API.
+The list of valid values for `{tGeometryId}` is provided in the <<resource-temporalGeometrySequence-section,`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence`>> GET response.
 
 Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.
 

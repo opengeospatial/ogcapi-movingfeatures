@@ -33,7 +33,7 @@ test-purpose:: Validate that the *TemporalGeometrySequence* can be identified an
 test-method::
 +
 --
-For every *TemporalGeometrySequence* identified in *MovingFeature*, issue an HTTP GET request to the URL `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence` where `+{collectionId}+` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collection* content and `+{mFeatureId}+` is the id property for the *MovingFeature*
+For every *TemporalGeometrySequence* identified in *MovingFeature*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collection* content and `{mFeatureId}` is the id property for the *MovingFeature*
 
 1. Validate that a document was returned with a status code `200` +
 2. Validate the contents of the returned document using test <<conf_mf_tgsequence_get_success,`/conf/movingfeatures/tgsequence-get-success`>>

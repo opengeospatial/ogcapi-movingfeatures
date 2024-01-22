@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/mf-collection/collections-delete-success
 target:: /req/mf-collection/collection-delete-success
-test-purpose:: Validate that the response of `+{root}+/collections/+{collectionId}+` DELETE request complies with the required structure and contents.
+test-purpose:: Validate that the response of `{root}/collections/{collectionId}` DELETE request complies with the required structure and contents.
 test-method::
 +
 --

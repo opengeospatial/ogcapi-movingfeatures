@@ -2,7 +2,7 @@
 === Resource Collection
 ==== Overview
 A *Collection* information object is the set of metadata that describes a single collection.
-An abbreviated copy of this information is returned for each *Collection* in the `+{root}+/collections` GET response.
+An abbreviated copy of this information is returned for each *Collection* in the `{root}/collections` GET response.
 
 The schema for the collection information object presented in this clause is an extension of the collection schema defined in link:http://docs.opengeospatial.org/DRAFTS/20-024.html#collection-description[OGC API — Common] and link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#\_collection\_[OGC API — Features].
 
@@ -34,13 +34,13 @@ include::requirements/collection_catalog/collection/REQ_mandatory-collection.ado
 The retrieve operation is defined in the OGC API — Common `https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection]` conformance class.
 No modifications are required to support *MovingFeature* resources.
 
-. Issue a `GET` request on the `+{root}+/collections/+{collectionId}+` path
+. Issue a `GET` request on the `{root}/collections/{collectionId}` path
 
 [[collection-identifier]]
-The `+{collectionId}+` path parameter is the unique identifier for a single collection offered by an API implementation instance.
-The list of valid values for `+{collectionId}+` is provided in the <<resource-collections-section,`/collections`>> response.
+The `{collectionId}` path parameter is the unique identifier for a single collection offered by an API implementation instance.
+The list of valid values for `{collectionId}` is provided in the <<resource-collections-section,`/collections`>> response.
 
-Support for the `+{root}+/collections/+{collectionId}+` path is required by OGC API — Common.
+Support for the `{root}/collections/{collectionId}` path is required by OGC API — Common.
 
 include::requirements/collection_catalog/collection/REQ_operation-collection-get.adoc[]
 
@@ -48,7 +48,7 @@ include::requirements/collection_catalog/collection/REQ_operation-collection-get
 The replace operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#replace[REPLACE]` conformance class of OGC API — Features.
 This operation targeted <<resource-collection-section,*Collection*>> resource.
 
-. Issue a `PUT` request on `+{root}+/collections/+{collectionId}+` path
+. Issue a `PUT` request on `{root}/collections/{collectionId}` path
 
 Support for the HTTP PUT method is specified as a requirement in OGC API — Features.
 
@@ -67,7 +67,7 @@ include::examples/collection-put.adoc[]
 ===== Delete
 The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
 
-. Issue a `DELETE` request on `+{root}+/collections/+{collectionId}+` path
+. Issue a `DELETE` request on `{root}/collections/{collectionId}` path
 
 Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.
 
@@ -82,7 +82,7 @@ include::examples/collection-delete.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the *Collection* GET operation is a set of metadata that describes the collection identified by the <<collection-identifier,`+{collectionId}+`>> parameter.
+A successful response to the *Collection* GET operation is a set of metadata that describes the collection identified by the <<collection-identifier,`{collectionId}`>> parameter.
 
 include::requirements/collection_catalog/collection/REQ_response-collection-get.adoc[]
 
