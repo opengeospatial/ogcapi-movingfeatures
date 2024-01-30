@@ -84,6 +84,15 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 .An Example of Creating a New TemporalPrimitiveValue Object:
 include::examples/temporalValue-post.adoc[]
 
+===== Delete
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
+
+. Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
+
+Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.
+
+include::requirements/movingfeature/tproperty/REQ_operation-tproperty-delete.adoc[]
+
 ==== Response
 ===== Retrieve
 A successful response to the *TemporalProperty* GET operation is a temporal property identified by the <<tproperty-identifier,`{tPropertyName}`>> parameter.
@@ -103,6 +112,11 @@ include::../openapi/examples/temporalPrimitiveValueSequence.json[]
 A successful response to the *TemporalProperty* POST operation is an HTTP status code.
 
 include::requirements/movingfeature/tproperty/REQ_response-tproperty-post.adoc[]
+
+===== Delete
+A successful response to the *TemporalProperty* DELETE operation is an HTTP status code.
+
+include::requirements/movingfeature/tproperty/REQ_response-tproperty-delete.adoc[]
 
 ==== Error situations
 The requirements for handling unsuccessful requests are provided in the <<http-response>>.

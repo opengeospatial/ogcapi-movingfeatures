@@ -1,0 +1,16 @@
+[[conf_mf_tproperty_delete]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/movingfeatures/tproperty-delete
+target:: /req/movingfeatures/tproperty-delete
+target:: /req/movingfeatures/tproperty-delete-success
+test-purpose:: Validate that the *TemporalProperty* can be deleted at the expected location.
+test-method::
++
+--
+1. Validate that the server complies with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE operation requirements] +
+2. Issue an HTTP DELETE request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tpropertyName}` +
+3. Validate the contents of the response using <<conf_mf_tproperty_delete_success>>
+--
+====

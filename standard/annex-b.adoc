@@ -104,3 +104,7 @@ include::abstract_tests/movingfeatures/tproperty/tproperty-get-success.adoc[]
 ===== HTTP POST Operation
 include::abstract_tests/movingfeatures/tproperty/tproperty-post.adoc[]
 include::abstract_tests/movingfeatures/tproperty/tproperty-post-success.adoc[]
+
+===== HTTP DELETE Operation
+include::abstract_tests/movingfeatures/tproperty/tproperty-delete.adoc[]
+include::abstract_tests/movingfeatures/tproperty/tproperty-delete-success.adoc[]
