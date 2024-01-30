@@ -42,7 +42,6 @@ The OGC API family of standards is organized by resource type.
 |====
 
 
-
 == Security considerations
 
 The OGC API — Moving Features — Part 1: Core Draft Standard does not mandate any specific security controls.
@@ -60,8 +59,8 @@ All questions regarding this submission should be directed to the editor or the 
 [width="99%", cols="3,7",options="header"]
 |===========================================================
 |*Name*                 |*Organization*
-|Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
 |Taehoon KIM            |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
+|Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
 |Mahmoud SAKR           |Université libre de Bruxelles
 |Esteban Zimanyi        |Université libre de Bruxelles
 |Martin Desruisseaux    |Geomatys

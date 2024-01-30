@@ -27,6 +27,8 @@ Execute requests with combinations of the `"datetime"` query parameters and veri
 identifier:: /conf/movingfeatures/tproperties-get
 target:: /req/movingfeatures/tproperties-get
 target:: /req/movingfeatures/tproperties-get-success
+target:: /req/common/param-limit
+target:: /req/common/param-datetime
 test-purpose:: Validate that the *TemporalProperties* can be identified and extracted from a MovingFeature object using query parameters.
 test-method::
 +
@@ -34,7 +36,7 @@ test-method::
 For every *TemporalProperty* identified in *MovingFeature*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collection* content and `{mFeatureId}` is the id property for the *MovingFeature*
 
 1. Validate that a document was returned with a status code `200` +
-2. Validate the contents of the returned document using test <<conf_mf_tproperties_get_success, `/conf/movingfeatures/tproperties-get-success`>>
+2. Validate the contents of the returned document using <<conf_mf_tproperties_get_success>>
 
 Repeat these tests using the following parameter tests that are defined in the OGC API — Common: +
 - Limit: link:http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests[Limit Tests] +

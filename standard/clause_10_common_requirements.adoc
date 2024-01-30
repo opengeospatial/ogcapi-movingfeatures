@@ -10,15 +10,15 @@ include::requirements/common/requirements_class_common.adoc[]
 
 [[limit-section]]
 ==== Parameter limit
-include::requirements/parameter/REQ_parameter-limit.adoc[]
+include::requirements/common/REQ_parameter-limit.adoc[]
 
 [[bbox-section]]
 ==== Parameter bbox
-include::requirements/parameter/REQ_parameter-bbox.adoc[]
+include::requirements/common/REQ_parameter-bbox.adoc[]
 
 [[datetime-section]]
 ==== Parameter datetime
-include::requirements/parameter/REQ_parameter-datetime.adoc[]
+include::requirements/common/REQ_parameter-datetime.adoc[]
 
 [[http-response]]
 === HTTP Response

@@ -15,7 +15,7 @@
 ====
 [%metadata]
 identifier:: /conf/movingfeatures/features-get-success
-target:: /ref/movingfeatures/features-get-success
+target:: /req/movingfeatures/features-get-success
 test-purpose:: Validate that the *MovingFeatures* complies with the required structure and contents.
 test-method::
 +

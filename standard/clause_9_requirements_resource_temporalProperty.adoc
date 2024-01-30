@@ -3,9 +3,9 @@
 ==== Overview
 The *TemporalProperty* resource supports the retrieve and create operations via the HTTP GET and POST methods respectively.
 
-. A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,{tPropertyName}>>.
+. A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperty-identifier,{tPropertyName}>>.
 The *TemporalProperty* resource returned to the response can be limited using the parameters <<datetime-section,`datetime`>>, <<leaf-section,`leaf`>> and <<subTemporalValue-section,`subTemporalValue`>>.
-. A create operation posts a new temporal primitive value object to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperties-identifier,{tPropertyName}>>.
+. A create operation posts a new temporal primitive value object to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperty-identifier,{tPropertyName}>>.
 
 [[temporal-properties-object]]
 A temporal property object is a collection of dynamic non-spatial attributes and their temporal values with time.
@@ -53,7 +53,7 @@ The <<subTemporalValue-section,`subTemporalValue`>> query parameter is defined i
 ===== Retrieve
 . Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
-[[tproperties-identifier]]
+[[tproperty-identifier]]
 The `{tPropertyName}` parameter is the unique identifier for a single temporal property value offered by an implementation instance (endpoint) of the OGC API — MF.
 The list of valid values for `{tPropertyName}` is provided in the <<resource-temporalProperties-section,`{root}/collections/{collectionId}/items/{mFeatureId}/tproperties`>> GET response.
 
@@ -86,7 +86,7 @@ include::examples/temporalValue-post.adoc[]
 
 ==== Response
 ===== Retrieve
-A successful response to the *TemporalProperty* GET operation is a temporal property identified by the <<tproperties-identifier,`{tPropertyName}`>> parameter.
+A successful response to the *TemporalProperty* GET operation is a temporal property identified by the <<tproperty-identifier,`{tPropertyName}`>> parameter.
 
 include::requirements/movingfeature/tproperty/REQ_response-tproperty-get.adoc[]
 

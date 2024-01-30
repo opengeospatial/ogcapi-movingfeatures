@@ -6,7 +6,7 @@
 * [[[OGC_19-045r3,OGC 19-045r3]]],
 * [[[OGC_17-069r4,OGC 17-069r4]]],
 * [[[OGC_19-072,OGC 19-072]]],
-* [[[OGC20-024,OGC 20-024]]] Charles Heazel: OGC API - Common - Part 2: Geospatial Data (Draft). OGC 20-024, Open Geospatial Consortium, http://docs.ogc.org/DRAFTS/20-024.html[http://docs.ogc.org/DRAFTS/20-024.html]
+* [[[OGC_20-024,OGC 20-024]]] Charles Heazel: OGC API - Common - Part 2: Geospatial Data (Draft). OGC 20-024, Open Geospatial Consortium, http://docs.ogc.org/DRAFTS/20-024.html[http://docs.ogc.org/DRAFTS/20-024.html]
 * [[[OGC_20-002,OGC 20-002]]], Panagiotis A. Vretanos, Clemens Portele: OGC API — Features — Part 4: Create, Replace, Update and Delete (Draft). http://docs.ogc.org/DRAFTS/20-002.html
 * [[[rfc2387,IETF RFC 2387]]],
 * [[[rfc2818,IETF RFC 2818]]],

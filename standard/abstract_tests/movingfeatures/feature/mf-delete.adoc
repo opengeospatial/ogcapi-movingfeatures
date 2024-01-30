@@ -26,6 +26,6 @@ test-method::
 --
 1. Validate that the server complies with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[DELETE operation requirements] +
 2. Issue an HTTP DELETE request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}` +
-3. Validate the contents of the response using test <<conf_mf_feature_delete_success, `/conf/mf-collection/collections-put-success`>>
+3. Validate the contents of the response using <<conf_mf_feature_delete_success>>
 --
 ====

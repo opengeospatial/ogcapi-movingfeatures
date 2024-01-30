@@ -28,6 +28,8 @@ Execute requests with combinations of the `"datetime"` and `"leaf"` query parame
 identifier:: /conf/movingfeatures/tproperty-get
 target:: /req/movingfeatures/tproperty-get
 target:: /req/movingfeatures/tproperty-get-success
+target:: /req/common/param-limit
+target:: /req/common/param-datetime
 test-purpose:: Validate that the *TemporalProperty* can be identified and extracted from a *TemporalProperties* using query parameters.
 test-method::
 +
@@ -35,12 +37,12 @@ test-method::
 For every *TemporalProperty* identified in *MovingFeature*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tpropertyName}` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collections* content, `{mFeatureId}` is the id property for the *MovingFeature*, `{tpropertyName}` is the name property for the *TemporalProperty*
 
 1. Validate that a document was returned with a status code `200` +
-2. Validate the contents of the returned document using test <<conf_mf_tproperty_get_success,`/conf/movingfeatures/tproperty-get-success`>>
+2. Validate the contents of the returned document using <<conf_mf_tproperty_get_success>>
 
 Repeat these tests using the following parameter tests that defined in the OGC API — Common and OGC API — MF: +
 - Limit: link:http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests[Limit Tests] +
 - Date-Time: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
-- Leaf: <<conf_mf_feature_param_leaf_definition,Leaf Definition Test>> and <<conf_mf_feature_param_leaf_response,Leaf Response Test>>
+- Leaf: <<conf_mf_feature_param_leaf_definition>> and <<conf_mf_feature_param_leaf_response>>
 
 Execute requests with combinations of the `"datetime"` and `"leaf"` query parameters and verify that only features are returned that match both selection criteria.
 --

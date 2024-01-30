@@ -32,7 +32,7 @@ test-method::
 2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <<tproperty-requestbody-schema>> and <<temporalValue-properties-table>> +
 3. Validate that the request body complies OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[POST request body requirements] +
 4. Issue an HTTP POST request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` +
-5. Validate the contents of the response using test <<conf_mf_tproperty_post_success, `/conf/movingfeatures/tproperty-post-success`>>
+5. Validate the contents of the response using <<conf_mf_tproperty_post_success>>
 --
 ====
 

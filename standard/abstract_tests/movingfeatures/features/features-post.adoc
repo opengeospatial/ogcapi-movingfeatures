@@ -21,9 +21,9 @@
 ====
 [%metadata]
 identifier:: /conf/movingfeatures/features-post
-target:: /req/movingfeatures/mf-mandatory
 target:: /req/movingfeatures/features-post
 target:: /req/movingfeatures/features-post-success
+target:: /req/movingfeatures/mf-mandatory
 test-purpose:: Validate that the *MovingFeature* can be created at the expected location.
 test-method::
 +
@@ -32,7 +32,7 @@ test-method::
 2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <<movingfeatures-requestbody-schema>> and <<moving-feature-properties-table>> +
 3. Validate that the request body complies OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[POST request body requirements] +
 4. Issue an HTTP POST request to the URL `{root}/collections/{collectionId}/items` +
-5. Validate the contents of the response using test <<conf_mf_features_post_success, `/conf/movingfeatures/features-post-success`>>
+5. Validate the contents of the response using <<conf_mf_features_post_success>>
 --
 ====
 

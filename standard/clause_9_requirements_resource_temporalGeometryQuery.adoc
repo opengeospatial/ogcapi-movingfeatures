@@ -15,7 +15,7 @@ Where:
 * `{root}`          = Base URI for the API server
 * `{collectionId}`  = An identifier for a specific <<resource-collection-section,*Collection*>> of data
 * `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,*MovingFeature*>> of a specific <<resource-collection-section,*Collection*>> of data
-* `{tGeometryId}`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,TemporalPrimitiveGeometry>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
+* `{tGeometryId}`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
 * `{quertyType}`    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
 
 <<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API — MF.

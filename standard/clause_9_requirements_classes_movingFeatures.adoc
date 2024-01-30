@@ -21,42 +21,27 @@ The seven resources defined in this Requirement Class are summarized in <<mf-res
 //|Add a new resource (<<resource-movingfeature-section,MovingFeature>>) feature to a specific <<resource-collection-section,Collection>> (specified by {collectionId})
 
 |<<resource-movingfeature-section,*MovingFeature*>>
-|`{root}/collections/
-{collectionId}/items/
-{mfeatureId}`
+|`{root}/collections/{collectionId}/items/{mfeatureId}`
 ^|GET, DELETE
 
 |<<resource-temporalGeometrySequence-section,*TemporalGeometry*>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tgsequence`
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence`
 ^|GET, POST
 
 |<<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tgsequence/
-{tGeometryId}`
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}`
 ^|DELETE
 
 |<<resource-tgsequenceQuery-section,*TemporalGeometry Query*>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tgsequence/
-{tGeometryId}/{queryType}`
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/{queryType}`
 ^|GET
 
 |<<resource-temporalProperties-section,*TemporalProperties*>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tproperties`
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tproperties`
 ^|GET, POST
 
 |<<resource-temporalProperty-section,*TemporalProperty*>>
-|`{root}/collections/
-{collectionId}/items/
-{mFeatureId}/tproperties/
-{tPropertiesName}`
+|`{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertiesName}`
 ^|GET, POST
 |===
 

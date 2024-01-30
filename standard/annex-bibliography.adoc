@@ -7,7 +7,7 @@
 //[[OGC-API-Features]]
 * [[[OGC-API-Features,OGC API - Features website]]],  OGC: OGC API - Features website, https://ogcapi.ogc.org/features/
 //[[OGC-API-Common]]
-* [[[OGC-API-Common,OGC-API-Common]]],  OGC: OGC API - Common website, https://ogcapi.ogc.org/common/
+* [[[OGC-API-Common,OGC API - Common website]]],  OGC: OGC API - Common website, https://ogcapi.ogc.org/common/
 //[[OGC-API]]
 * [[[OGC-API,OGC-API]]],  OGC: OGC API website, https://ogcapi.ogc.org/
 //[[OPENAPI]]
