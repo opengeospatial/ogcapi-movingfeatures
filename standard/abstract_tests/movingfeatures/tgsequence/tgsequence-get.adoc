@@ -29,20 +29,23 @@ Execute requests with combinations of the `"bbox"`, `"datetime"`, and `"leaf"` q
 identifier:: /conf/movingfeatures/tgsequence-get
 target:: /req/movingfeatures/tgsequence-get
 target:: /req/movingfeatures/tgsequence-get-success
+target:: /req/common/param-limit
+target:: /req/common/param-bbox
+target:: /req/common/param-datetime
 test-purpose:: Validate that the *TemporalGeometrySequence* can be identified and extracted from a *MovingFeature* object using query parameters.
 test-method::
 +
 --
-For every *TemporalGeometrySequence* identified in *MovingFeature*, issue an HTTP GET request to the URL `+{root}+/collections/+{collectionId}+/items/+{mFeatureId}+/tgsequence` where `+{collectionId}+` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collection* content and `+{mFeatureId}+` is the id property for the *MovingFeature*
+For every *TemporalGeometrySequence* identified in *MovingFeature*, issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence` where `{collectionId}` is the id property for a *MovingFeature Collection* described in the *MovingFeature Collection* content and `{mFeatureId}` is the id property for the *MovingFeature*
 
 1. Validate that a document was returned with a status code `200` +
-2. Validate the contents of the returned document using test <<conf_mf_tgsequence_get_success,`/conf/movingfeatures/tgsequence-get-success`>>
+2. Validate the contents of the returned document using <<conf_mf_tgsequence_get_success>>
 
 Repeat these tests using the following parameter tests that defined in the OGC API — Common and OGC API — MF: +
-- Bounding Box: link:http://docs.ogc.org/DRAFTS/20-024.html#_bounding_box_tests[Bounding Box Tests] +
 - Limit: link:http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests[Limit Tests] +
+- Bounding Box: link:http://docs.ogc.org/DRAFTS/20-024.html#_bounding_box_tests[Bounding Box Tests] +
 - Date-Time: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
-- Leaf: <<conf_mf_feature_param_leaf_definition,Leaf Definition Test>> and <<conf_mf_feature_param_leaf_response,Leaf Response Test>>
+- Leaf: <<conf_mf_feature_param_leaf_definition>> and <<conf_mf_feature_param_leaf_response>>
 
 Execute requests with combinations of the `"bbox"`, `"datetime"`, and `"leaf"` query parameters and verify that only features are returned that match both selection criteria.
 --

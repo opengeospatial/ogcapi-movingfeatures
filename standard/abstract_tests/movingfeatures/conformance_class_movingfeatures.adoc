@@ -21,6 +21,7 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/movingfeatures
 target:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures
+target:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common
 dependency:: http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/html
 dependency:: http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json
 dependency:: http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections
@@ -44,7 +45,7 @@ abstract-test:: /conf/movingfeatures/tgsequence-get-success
 abstract-test:: /conf/movingfeatures/tgsequence-post
 abstract-test:: /conf/movingfeatures/tgsequence-post-success
 abstract-test:: /conf/movingfeatures/tpgeometry-delete
-abstract-test:: /conf/mf-collection/tpgeometry-delete-success
+abstract-test:: /conf/movingfeatures/tpgeometry-delete-success
 abstract-test:: /conf/movingfeatures/tpgeometry-query-distance
 abstract-test:: /conf/movingfeatures/tpgeometry-query-velocity
 abstract-test:: /conf/movingfeatures/tpgeometry-query-acceleration
@@ -56,4 +57,6 @@ abstract-test:: /conf/movingfeatures/tproperty-get
 abstract-test:: /conf/movingfeatures/tproperty-get-success
 abstract-test:: /conf/movingfeatures/tproperty-post
 abstract-test:: /conf/movingfeatures/tproperty-post-success
+abstract-test:: /conf/movingfeatures/tproperty-delete
+abstract-test:: /conf/movingfeatures/tproperty-delete-success
 ====

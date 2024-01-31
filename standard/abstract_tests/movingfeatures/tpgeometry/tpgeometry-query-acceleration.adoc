@@ -27,6 +27,7 @@ IF a query parameter `datetime` is empty: Verify that a time-to-acceleration cur
 identifier:: /conf/movingfeatures/tpgeometry-query-acceleration
 target:: /req/movingfeatures/tpgeometry-query
 target:: /req/movingfeatures/tpgeometry-query-success
+target:: /req/common/param-datetime
 test-purpose:: Validate that resources can be identified and extracted from a *TemporalPrimitiveGeometry* with a `Acceleration` query using query parameters.
 test-method::
 +

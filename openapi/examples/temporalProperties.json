@@ -1,31 +1,18 @@
 {
   "temporalProperties": [
     {
-      "datetimes": ["2011-07-14T22:01:01.450Z", "2011-07-14T23:01:01.450Z", "2011-07-15T00:01:01.450Z"],
+      "datetimes": ["2011-07-14T22:01:06.000Z", "2011-07-14T22:01:07.000Z", "2011-07-14T22:01:08.000Z"],
       "length": {
         "type": "Measure",
         "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length",
         "values": [1.0, 2.4, 1.0],
         "interpolation": "Linear"
       },
-      "discharge" : {
+      "speed" : {
         "type" : "Measure",
-        "form" : "MQS",
-        "values" : [3.0, 4.0, 5.0],
-        "interpolation": "Step"
-      }
-    },
-    {
-      "datetimes" : ["2011-07-14T22:01:01.450Z", "2011-07-14T23:01:01.450Z"],
-      "camera" : {
-        "type" : "Image",
-        "values" : ["http://www.opengis.net/spec/movingfeatures/json/1.0/prism/example/image1", "iVBORw0KGgoAAAANSUhEU......"],
-        "interpolation": "Discrete"
-      },
-      "labels":{
-        "type": "Text",
-        "values": ["car", "human"],
-        "interpolation": "Discrete"
+        "form" : "KMH",
+        "values" : [65.0, 70.0, 80.0],
+        "interpolation": "Linear"
       }
     }
   ],

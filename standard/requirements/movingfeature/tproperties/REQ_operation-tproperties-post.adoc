@@ -16,5 +16,5 @@
 identifier:: /req/movingfeatures/tproperties-post
 part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/insert-post-op`].
 part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `CREATE` request body requirements link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
-part:: The content of the request body SHALL be based upon a <<tproperty-schema,TemporalProperty>> defined in this API or a link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[ParametricValues object] defined in <<OGC-MF-JSON,OGC Moving Features JSON Encoding Standard>>.
+part:: The content of the request body SHALL be based upon a <<tproperty-schema,TemporalProperty>> defined in this API or a link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[ParametricValues object] defined in <<OGC_19-045r3,OGC Moving Features JSON Encoding Standard>>.
 ====

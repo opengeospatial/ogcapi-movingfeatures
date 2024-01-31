@@ -30,6 +30,6 @@ test-method::
 2. Validate that a body of a PUT request using for all supported media types using the resources and tests identified in <<collections-requestbody-schema>> +
 3. Validate that the request body complies OGC API — Features - Part 4 link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[PUT request body requirements] +
 4. Issue an HTTP PUT request to the URL `{root}/collections/{collectionId}` +
-5. Validate the contents of the response using test <<conf_mfc_collection_put_success, `/conf/mf-collection/collections-put-success`>>
+5. Validate the contents of the response using <<conf_mfc_collection_put_success>>
 --
 ====

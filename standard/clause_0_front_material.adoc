@@ -31,16 +31,15 @@ The OGC API family of standards is organized by resource type.
 // | API definition                 | ``/api``                        | GET | <<common-api-section, 7.3 API Definition>>
 // | Conformance classes           | ``/conformance``                | GET | <<common-conformance-section, 7.4 Declaration of Conformance Classes>>
 | Collections metadata          | ``/collections``                | GET, POST | <<resource-collections-section,Resource Collections>>
-| Collection instance metadata  | ``/collections/+{collectionId}+`` | GET, DELETE, PUT | <<resource-collection-section,Resource Collection>>
-| MovingFeatures                | ``/collections/+{collectionId}+/items`` | GET, POST | <<resource-movingfeatures-section,Resource MovingFeatures>>
-| MovingFeature instance        | ``/collections/+{collectionId}+/items /+{mFeatureId}+`` | GET, DELETE | <<resource-movingfeature-section,Resource MovingFeature>>
-| TemporalGeometrySequence      | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tgsequence`` | GET, POST | <<resource-temporalGeometrySequence-section,Resource TemporalGeometrySequence>>
-| TemporalPrimitiveGeometry instance     | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tgsequence/+{tGeometryId}+`` | DELETE | <<resource-temporalPrimitiveGeometry-section,Resource TemporalPrimitiveGeometry>>
-| Queries for TemporalPrimitiveGeometry  | ``collections/+{collectionId}+/items /+{mFeatureId}+/tgsequence/+{tGeometryId}+/+{queryType}+`` | GET | <<resource-tgsequenceQuery-section,TemporalGeometry Query Resources>>
-| TemporalProperties instance   | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tproperties`` | GET, POST | <<resource-temporalProperties-section,Resource TemporalProperties>>
-| TemporalProperty instance     | ``/collections/+{collectionId}+/items /+{mFeatureId}+/tproperties/+{tPropertyId}+`` | GET, POST | <<resource-temporalProperty-section,Resource TemporalProperty>>
+| Collection instance metadata  | ``/collections/{collectionId}`` | GET, DELETE, PUT | <<resource-collection-section,Resource Collection>>
+| MovingFeatures                | ``/collections/{collectionId}/items`` | GET, POST | <<resource-movingfeatures-section,Resource MovingFeatures>>
+| MovingFeature instance        | ``/collections/{collectionId}/items/{mFeatureId}`` | GET, DELETE | <<resource-movingfeature-section,Resource MovingFeature>>
+| TemporalGeometrySequence      | ``/collections/{collectionId}/items/{mFeatureId}/tgsequence`` | GET, POST | <<resource-temporalGeometrySequence-section,Resource TemporalGeometrySequence>>
+| TemporalPrimitiveGeometry instance     | ``/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}`` | DELETE | <<resource-temporalPrimitiveGeometry-section,Resource TemporalPrimitiveGeometry>>
+| Queries for TemporalPrimitiveGeometry  | ``collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/{queryType}`` | GET | <<resource-tgsequenceQuery-section,TemporalGeometry Query Resources>>
+| TemporalProperties instance   | ``/collections/{collectionId}/items/{mFeatureId}/tproperties`` | GET, POST | <<resource-temporalProperties-section,Resource TemporalProperties>>
+| TemporalProperty instance     | ``/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section,Resource TemporalProperty>>
 |====
-
 
 
 == Security considerations
@@ -60,8 +59,8 @@ All questions regarding this submission should be directed to the editor or the 
 [width="99%", cols="3,7",options="header"]
 |===========================================================
 |*Name*                 |*Organization*
-|Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
 |Taehoon KIM            |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
+|Kyoung-Sook KIM        |Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology
 |Mahmoud SAKR           |Université libre de Bruxelles
 |Esteban Zimanyi        |Université libre de Bruxelles
 |Martin Desruisseaux    |Geomatys

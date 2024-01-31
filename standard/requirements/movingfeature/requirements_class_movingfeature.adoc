@@ -54,6 +54,8 @@ requirement:: /req/movingfeatures/tproperties-post-success
 requirement:: /req/movingfeatures/tproperty-mandatory
 requirement:: /req/movingfeatures/tproperty-get
 requirement:: /req/movingfeatures/tproperty-post
+requirement:: /req/movingfeatures/tproperty-delete
 requirement:: /req/movingfeatures/tproperty-get-success
 requirement:: /req/movingfeatures/tproperty-post-success
+requirement:: /req/movingfeatures/tproperty-delete-success
 ====

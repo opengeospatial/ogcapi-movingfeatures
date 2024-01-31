@@ -8,13 +8,27 @@ The [OGC API - Moving Features](https://ogcapi.ogc.org/movingfeatures/) Standard
 
 ## Overview of OGC API - Moving Features - Part 1: Core
 
-### Catalog of Moving Feature Collection
+The summary of the OGC API – MovingFeatures – Part 1:Core is described in the below table. 
+
+| URL Path                                                | Supported HTTP(s) Methods |
+|---------------------------------------------------------|---------------------------|
+| /collections/{c_id}                                     | GET,DELETE,PUT            |
+| /collections/{c_id}/items                               | GET,POST                  |
+| /collections/{c_id}/items/{mf_id}                       | GET,DELETE                |
+| /collections/{c_id}/items/{mf_id}/tgsequence            | GET,POST                  |
+| /collections/{c_id}/items/{mf_id}/tgsequence/{tg_id}    | DELETE                    |
+| /collections/{c_id}/items/{mf_id}/tgsequence/{tg_query} | GET                       |
+| /collections/{c_id}/items/{mf_id}/tproperties           | GET,POST                  |
+| /collections/{c_id}/items/{mf_id}/tproperties/{tp_name} | GET,POST,DELETE           |
+
+<details>
+<summary> MovingFeatures Collection Catalog </summary>
 
 ```
-GET /collections
+GET /collections    
 ```
 
-Retrieve catalogs of moving features collection.
+Retrieve catalogs of a moving features collection.
 
 ```
 POST /collections
@@ -26,21 +40,26 @@ Register metadata about a collection of moving features.
 GET /collections/{collectionId}
 ```
 
-Access metadata about the collection with id `collectionId`.
+Access metadata about the collection with id `{collectionId}`.
 
 ```
 DELETE /collections/{collectionId}
 ```
 
-The collection catalog with id `collectionId` and including metadata and moving features SHOULD be deleted.
+The collection catalog with id `{collectionId}` and including metadata and moving features SHOULD be deleted.
 
 ```
 PUT /collections/{collectionId}
 ```
 
-Replace metadata about the collection with id `collectionId`.
+Replace metadata about the collection with id `{collectionId}`.
+</details>
 
-### MovingFeature
+<details>
+<summary> MovingFeatures </summary>
+
+<details>
+<summary> MovingFeature </summary>
 
 ```
 GET /collections/{collectionId}/items
@@ -52,67 +71,80 @@ Retrieve the moving feature collection to access the static information of the m
 POST /collections/{collectionId}/items
 ```
 
-Insert a set of moving features or a moving feature into a collection with id `collectionId`.
+Insert a set of moving features or a moving feature into a collection with id `{collectionId}`.
 
 ```
 GET /collections/{collectionId}/items/{mFeatureId}
 ```
 
-Access the static data of the moving feature with id `mFeatureId`.
+Access the static data of the moving feature with id `{mFeatureId}`.
 The static data of a moving feature is not included temporal geometries and temporal properties.
 
 ```
 DELETE /collections/{collectionId}/items/{mFeatureId}
 ```
 
-Delete a single moving feature with id `mFeatureId`.
+Delete a single moving feature with id `{mFeatureId}`.
+</details>
 
-### TemporalGeometry
+<details>
+<summary> TemporalGeometrySequence </summary>
 
 ```
 GET /collections/{collectionId}/items/{mFeatureId}/tgsequence
 ```
 
-Retrieve the movement data of the single moving feature with id `mFeatureId`.
+Retrieve the movement data of the single moving feature with id `{mFeatureId}`.
 
 ```
 POST /collections/{collectionId}/items/{mFeatureId}/tgsequence
 ```
 
-Add movement data into the moving feature with id `mFeatureId`.
+Add movement data into the moving feature with id `{mFeatureId}`.
 
 ```
 DELETE /collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}
 ```
 
-Delete a single temporal geometry with id `tGeometryId`.
+Delete a single temporal geometry with id `{tGeometryId}`.
+</details>
 
-### TemporalProperty
+<details>
+<summary> TemporalProperties </summary>
 
 ```
 GET /collections/{collectionId}/items/{mFeatureId}/tproperties
 ```
 
-Retrieve the static information of the temporal property data that included a single moving feature with id `mFeatureId`.
+Retrieve the static information of the temporal property data that included a single moving feature with id `{mFeatureId}`.
 The static data of a temporal property is not included temporal values (property `values`).
 
 ```
 POST /collections/{collectionId}/items/{mFeatureId}/tproperties
 ```
 
-Add temporal property data into a moving feature with id `mFeatureId`.
+Add temporal property data into a moving feature with id `{mFeatureId}`.
 
 ```
 GET /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}
 ```
 
-Retrieve temporal values with a specified name `tPropertyName` of temporal property.
+Retrieve temporal values with a specified name `{tPropertyName}` of temporal property.
 
 ```
 POST /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}
 ```
 
-Add more temporal values data into a temporal property with id `tPropertyName`.
+Add more temporal values data into a temporal property with id `{tPropertyName}`.
+
+```
+DELETE /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}
+```
+
+Delete a single temporal property with id `{tPropertyName}`.
+</details>
+
+</details>
 
 ## Building the Standard document
 
@@ -130,14 +162,13 @@ A draft of the **OGC API - Moving Features - Part 1: Core** Standard is availabl
 * [HTML version](https://opengeospatial.github.io/ogcna-auto-review/22-003.html)
 * [PDF version](https://opengeospatial.github.io/ogcna-auto-review/22-003.pdf)
 
-Those who want to just see the endpoints and responses can explore the generic
-OpenAPI definition on Swagger:
+Those who want to just see the endpoints and responses can explore the generic OpenAPI definition on Swagger:
 
-* [OpenAPI (generated by ReDoc)](https://opengeospatial.github.io/ogcapi-movingfeatures/openapi/openapi-movingfeatures-1.html)
+* [OpenAPI (generated by Redocly)](https://opengeospatial.github.io/ogcapi-movingfeatures/openapi/openapi-movingfeatures-1.html)
 
-There have been several implementations of the Draft Standard, though they are
-against different versions of the evolving draft:
+There have been several implementations of the Draft Standard, though they are against different versions of the evolving draft:
 
+* [MF-API Server](https://github.com/aistairc/mf-api)
 * **T.B.D**
 
 ## Contributing

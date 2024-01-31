@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/mf-collection/collections-post-success
 target:: /req/mf-collection/collections-post-success
-test-purpose:: Validate that the response of `+{root}+/collections` POST request complies with the required structure and contents.
+test-purpose:: Validate that the response of `{root}/collections` POST request complies with the required structure and contents.
 test-method::
 +
 --

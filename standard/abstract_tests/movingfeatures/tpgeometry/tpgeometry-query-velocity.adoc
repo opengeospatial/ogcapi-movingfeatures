@@ -27,6 +27,7 @@ IF a query parameter `datetime` is empty: Verify that a time-to-velocity curve i
 identifier:: /conf/movingfeatures/tpgeometry-query-velocity
 target:: /req/movingfeatures/tpgeometry-query
 target:: /req/movingfeatures/tpgeometry-query-success
+target:: /req/common/param-datetime
 test-purpose:: Validate that resources can be identified and extracted from a *TemporalPrimitiveGeometry* with a `Velocity` query using query parameters.
 test-method::
 +

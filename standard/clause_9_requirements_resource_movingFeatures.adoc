@@ -4,10 +4,10 @@
 The *MovingFeatures* resource supports retrieving and creating operations via GET and POST HTTP methods respectively.
 
 . A retrieve operation returns a set of features which describes the moving feature available from this API.
-. A create operation posts a new <<resource-movingfeature-section,*MovingFeature*>> resource instance to a specific <<resource-collection-section,*Collection*>> (specified by `+{collectionId}+` with this API.
+. A create operation posts a new <<resource-movingfeature-section,*MovingFeature*>> resource instance to a specific <<resource-collection-section,*Collection*>> (specified by `{collectionId}` with this API.
 
 The OGC API — MF `Items` query is an OGC API — Features endpoint that may be used to catalog pre-existing moving features.
-If a `+{mFeatureID}+` is not specified, the query will return a list of the available moving features.
+If a `{mFeatureID}` is not specified, the query will return a list of the available moving features.
 The list of moving features returned to the response can be limited using the <<bbox-section,`bbox`>>, <<datetime-section,`datetime`>>, <<limit-section,`limit`>>, and <<subtrajecotry-section,`subTrajectory`>> query parameters.
 This behavior and query parameters for use with the `Items` query are specified in OGC API — Features and OGC API — Common, except <<subtrajecotry-section,`subTrajectory`>> parameter.
 
@@ -42,22 +42,22 @@ image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, 
 The retrieve operation is defined in the `Features` conformance class of OGC API — Features.
 Additional support for query parameter `subTrajectory` is needed to support <<resource-movingfeatures-section,*MovingFeatures*>> resource.
 
-. Issue a `GET` request on `+{root}+/collections/+{collectionID}+/items` path
+. Issue a `GET` request on `{root}/collections/{collectionID}/items` path
 
-Support for GET on the `+{root}+/collections/+{collectionID}+/items` path is required by OGC API — Features.
+Support for GET on the `{root}/collections/{collectionID}/items` path is required by OGC API — Features.
 include::requirements/movingfeature/features/REQ_operation-features-get.adoc[]
 
 ====== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
 This operation targeted <<resource-movingfeature-section,*MovingFeature*>> resource.
 
-. Issue a `POST` request on `+{root}+/collections/+{collectionID}+/items` path
+. Issue a `POST` request on `{root}/collections/{collectionID}/items` path
 
 Support for the HTTP POST method is specified as a requirement in OGC API — Features.
 
 include::requirements/movingfeature/features/REQ_operation-features-post.adoc[]
 
-The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] in <<OGC-MF-JSON,MF-JSON>>) to the specific <<resource-collection-section,*Collection*>>.
+The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] in <<OGC_19-045r3,MF-JSON>>) to the specific <<resource-collection-section,*Collection*>>.
 The feature is represented as *_MovingFeature_* object (or *_MovingFeatureCollection_* object) in MF-JSON.
 A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
 
@@ -69,7 +69,7 @@ include::examples/features-post.adoc[]
 ===== Retrieve
 A successful response to the *MovingFeatures* GET operation is a document that contains the static data for a set of moving features.
 
-If the value of the `subTrajectory` query parameter is provided, the value of the corresponding `temporalGeometry` property of each moving feature is calculated using the `subTrajectory` parameter value and included in the result, i.e., a link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] of <<OGC-MF-JSON,MF-JSON>>.
+If the value of the `subTrajectory` query parameter is provided, the value of the corresponding `temporalGeometry` property of each moving feature is calculated using the `subTrajectory` parameter value and included in the result, i.e., a link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] of <<OGC_19-045r3,MF-JSON>>.
 
 In a typical deployment of the OGF API — MF, the *MovingFeatures* GET response will list <<resource-movingfeature-section,*MovingFeature*>> resource.
 

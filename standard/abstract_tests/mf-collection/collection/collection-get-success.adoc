@@ -17,8 +17,8 @@
 ====
 [%metadata]
 identifier:: /conf/mf-collection/collection-get-success
-target:: /req/mf-collection/collection-get-success
 target:: /req/mf-collection/mandatory-collection
+target:: /req/mf-collection/collection-get-success
 test-purpose:: Validate that the *MovingFeature Collection* complies with the required structure and contents.
 test-method::
 +
