@@ -1,5 +1,5 @@
 ////
-[[req_general_http-responsse]]
+[[req_general_http-response]]
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/common/http-response*
@@ -8,7 +8,7 @@
 |===
 ////
 
-[[req_general_http-responsse]]
+[[req_general_http-response]]
 [requirement]
 ====
 [%metadata]
