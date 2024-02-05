@@ -125,7 +125,7 @@ image::images/Filter.png[alt=UML of spatial operators,align="center",width=1000]
 
 The link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC 17-069, _Features — Part 1: Core_] Standard
 specifies the fundamental building blocks for interacting with features using a Web API pattern.
-This Draft Standards defines how to get all features available on a server, or to get feature instances by their identifier.
+This Standard defines how to get all features available on a server, or to get feature instances by their identifier.
 
 
 
