@@ -1,7 +1,7 @@
 == Terms and definitions
 
 === application programming interface (API)
-an interface that is defined in terms of a set of functions and procedures, and enables a program to gain access to facilities within an application. +
+an interface that is defined in terms of a set of functions and procedures, and enables a program to gain access to facilities within an application +
  [Source: Dictionary of Computer Science - Oxford Quick Reference, 2016]
 
 === coordinate
@@ -94,5 +94,5 @@ API using an architectural style that is founded on the technologies of the Web 
 
 [[web-resource]]
 === web resource
-a resource that is identified by a URI. +
+a resource that is identified by a URI +
  [source: link:https://docs.ogc.org/is/17-069r4/17-069r4.html#web-resource-def[OGC 17-069r4]]

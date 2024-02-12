@@ -108,9 +108,9 @@ OGC API — Moving Features extends these core search capabilities to include:
 === Dependencies
 The OGC API — Moving Features (OGC API — MF) Draft Standard is an extension of the OGC API — Common and the OGC API — Features Standards.
 Therefore, an implementation of OGC API — MF shall first satisfy the appropriate Requirements Classes from OGC API — Common and OGC API — Features.
-Also, the OGC API — MF Standard is based on the OGC Moving Features Encoding Extension for JSON (OGC MF-JSON) Standards.
+Also, the OGC API — MF Standard is based on the OGC Moving Features Encoding Extension for JSON (OGC MF-JSON) Standard.
 Therefore, an implementation of OGC API — MF shall satisfy the appropriate Requirements Classes from OGC MF-JSON.
-<<req-mappings>>, Identifies the OGC API — Common and OGC API — Features Requirements Classes which are applicable to each section of this Standard.
+<<req-mappings>> identifies the OGC API — Common and OGC API — Features Requirements Classes which are applicable to each section of this Standard.
 Instructions on when and how to apply these Requirement Classes are provided in each section.
 
 [[req-mappings]]
