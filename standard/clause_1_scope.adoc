@@ -1,10 +1,10 @@
 == Scope
-The scope of the OGC API — Moving Features — Part 1: Core is to provide a uniform way to access, communicate, and manage data about moving features across different applications, data providers, and data consumers.
+The scope of the OGC API — Moving Features — Part 1: Core is to provide a uniform way to access, communicate, and manage data about moving features across different applications, data providers, and data consumers in contexts where the effects of Einstein's relativity are not significant.
 The OGC API — MF defines a set of API building blocks that enable clients to discover, retrieve, and update information about moving features, as well as a data model for describing moving features and their trajectories.
 
 The OGC API — Moving Features — Part 1: Core Draft Standard defines an API with two goals.
 
-* First, to provide access to representations of Moving Features that conform to the <<OGC_19-045r3, OGC Moving Features JSON Encoding Standard>>.
-* Second, to provide functionality comparable to that of the <<OGC_16-120r3, OGC Moving Features Access Standard>>.
+* First, to provide access to representations of Moving Features that conform to the <<OGC_19-045r3,OGC Moving Features JSON Encoding Standard>>.
+* Second, to provide functionality comparable to that of the <<OGC_16-120r3,OGC Moving Features Access Standard>>.
 
-The OGC API — Moving Features Draft Standard is an extension of the <<OGC-API-Common, OGC API — Common>> and the <<OGC-API-Features, OGC API — Features Standards>>.
+The OGC API — Moving Features Draft Standard is an extension of the <<OGC-API-Common,OGC API — Common>> and the <<OGC-API-Features, OGC API — Features Standards>>.

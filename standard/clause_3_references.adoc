@@ -21,4 +21,4 @@
 * [[[rfc7233,IETF RFC 7233]]],
 * [[[rfc7234,IETF RFC 7234]]],
 * [[[rfc7235,IETF RFC 7235]]],
-* [[[openapi,openapi]]] Open API Initiative: OpenAPI Specification 3.1.0, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md[https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md]
+* [[[openapi,openapi]]] Open API Initiative: OpenAPI Specification 3.0.3, https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md[https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md]
