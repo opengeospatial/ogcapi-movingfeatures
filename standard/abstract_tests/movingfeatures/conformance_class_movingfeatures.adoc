@@ -30,6 +30,8 @@ dependency:: http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core
 dependency:: http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
 dependency:: http://www.opengis.net/spec/ogcapi-features-4/1.0/conf/create-replace-delete
 classification:: Target Type:Web API
+abstract-test:: /conf/movingfeatures/param-subtrajectory-definition
+abstract-test:: /conf/movingfeatures/param-subtrajectory-response
 abstract-test:: /conf/movingfeatures/features-get
 abstract-test:: /conf/movingfeatures/features-get-success
 abstract-test:: /conf/movingfeatures/features-post

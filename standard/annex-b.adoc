@@ -1,7 +1,7 @@
-[appendix]
+[appendix,obligation="normative"]
 :appendix-caption: Annex
 [[clause-ATS]]
-== Conformance Class Abstract Test Suite (Normative)
+== Conformance Class Abstract Test Suite
 === Introduction
 The Abstract Test Suite (ATS) is a compendium of test assertions applicable to implementations of the OGC API — MF. An ATS provides a basis for developing an Executable Test Suite to verify that the implementation under test conforms to all the relevant functional specifications.
 

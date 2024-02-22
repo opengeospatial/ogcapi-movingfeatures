@@ -1,6 +1,6 @@
-[appendix]
+[appendix,obligation="informative"]
 :appendix-caption: Annex
-== Relationship with other OGC/ISO Standards (Informative)
+== Relationship with other OGC/ISO Standards
 
 This specification is built upon the following OGC/ISO Standards.
 The geometry concept is presented first, followed by the feature concept.
