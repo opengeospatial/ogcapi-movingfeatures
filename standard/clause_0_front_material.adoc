@@ -55,7 +55,6 @@ This document applied the Requirement link:https://docs.ogc.org/is/19-072/19-072
 All questions regarding this submission should be directed to the editor or the submitters:
 
 [[tbl_submitters]]
-.Overview of Resources
 [width="99%", cols="3,7",options="header"]
 |===========================================================
 |*Name*                 |*Organization*

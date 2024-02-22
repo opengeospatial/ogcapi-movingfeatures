@@ -93,5 +93,4 @@ A successful response to the *Collection* DELETE operation is an HTTP status cod
 include::requirements/movingfeature/movingfeature/REQ_response-movingfeature-delete.adoc[]
 
 ==== Error situations
-The requirements for handling unsuccessful requests are provided in the <<http-response>>.
 General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

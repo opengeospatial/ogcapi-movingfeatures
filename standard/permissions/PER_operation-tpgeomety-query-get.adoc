@@ -1,9 +1,17 @@
 [[per_mf-tpgeometry-query-op-get]]
-[width="90%",cols="2,6a",options="header"]
-|===
-^|*Permission {counter:per-id}* |*/per/movingfeatures/tpgeometry-query*
-^|A |A distance query GET operation MAY include a `datetime` query parameter.
-^|B |A velocity query GET operation MAY include a `datetime` query parameter.
-^|C |An acceleration query GET operation MAY include a `datetime` query parameter.
-^|D |If the `datetime` parameter is provided, the `datetime` SHALL be a date-time, not a half-bounded interval or bounded interval.
-|===
+// [width="90%",cols="2,6a",options="header"]
+// |===
+// ^|*Permission {counter:per-id}* |*/per/movingfeatures/tpgeometry-query*
+// ^|A |A distance query GET operation MAY include a `datetime` query parameter.
+// ^|B |A velocity query GET operation MAY include a `datetime` query parameter.
+// ^|C |An acceleration query GET operation MAY include a `datetime` query parameter.
+// ^|D |If the `datetime` parameter is provided, the `datetime` SHALL be a date-time, not a half-bounded interval or bounded interval.
+// |===
+[permission]
+====
+[%metadata]
+identifier:: /per/movingfeatures/tpgeometry-query
+part:: A distance query GET operation MAY include a `datetime` query parameter.
+part:: A velocity query GET operation MAY include a `datetime` query parameter.
+part:: An acceleration query GET operation MAY include a `datetime` query parameter.
+====

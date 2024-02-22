@@ -38,8 +38,6 @@ abstract-test:: /conf/movingfeatures/mf-get
 abstract-test:: /conf/movingfeatures/mf-get-success
 abstract-test:: /conf/movingfeatures/mf-delete
 abstract-test:: /conf/movingfeatures/mf-delete-success
-abstract-test:: /conf/movingfeatures/param-leaf-definition
-abstract-test:: /conf/movingfeatures/param-leaf-response
 abstract-test:: /conf/movingfeatures/tgsequence-get
 abstract-test:: /conf/movingfeatures/tgsequence-get-success
 abstract-test:: /conf/movingfeatures/tgsequence-post
@@ -59,4 +57,10 @@ abstract-test:: /conf/movingfeatures/tproperty-post
 abstract-test:: /conf/movingfeatures/tproperty-post-success
 abstract-test:: /conf/movingfeatures/tproperty-delete
 abstract-test:: /conf/movingfeatures/tproperty-delete-success
+abstract-test:: /conf/movingfeatures/param-leaf-definition
+abstract-test:: /conf/movingfeatures/param-leaf-response
+abstract-test:: /conf/movingfeatures/param-subtrajectory-definition
+abstract-test:: /conf/movingfeatures/param-subtrajectory-response
+abstract-test:: /conf/movingfeatures/param-subtemporalvalue-definition
+abstract-test:: /conf/movingfeatures/param-subtemporalvalue-response
 ====

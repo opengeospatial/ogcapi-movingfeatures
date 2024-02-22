@@ -25,6 +25,7 @@ IF a query parameter `datetime` is empty: Verify that a time-to-distance curve i
 ====
 [%metadata]
 identifier:: /conf/movingfeatures/tpgeometry-query-distance
+target:: /per/movingfeatures/tpgeometry-query
 target:: /req/movingfeatures/tpgeometry-query
 target:: /req/movingfeatures/tpgeometry-query-success
 target:: /req/common/param-datetime

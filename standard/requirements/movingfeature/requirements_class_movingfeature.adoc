@@ -19,6 +19,7 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures
 subject:: Web API
+inherit:: http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core
 inherit:: http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 inherit:: http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
 inherit:: http://www.opengis.net/spec/movingfeatures/json/1.0/req/trajectory

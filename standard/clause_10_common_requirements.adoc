@@ -1,12 +1,13 @@
 [[clause-common-req]]
 == Common Requirements
 
+include::requirements/common/requirements_class_common.adoc[]
+The following common requirements apply to all OGC APIs.
+
 === Parameters
 The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 All requirements and recommendations in API — Common regarding these parameters also apply to OGC API — MF.
 No modifications are required.
-
-include::requirements/common/requirements_class_common.adoc[]
 
 [[limit-section]]
 ==== Parameter limit
@@ -20,21 +21,21 @@ include::requirements/common/REQ_parameter-bbox.adoc[]
 ==== Parameter datetime
 include::requirements/common/REQ_parameter-datetime.adoc[]
 
-[[http-response]]
-=== HTTP Response
-
-Each HTTP request shall result in a response that meets the following requirement.
-
-include::requirements/general/REQ_general_http-response.adoc[]
-
-The YAML schema for these results is provided in <<http-response-schema>>.
-
-[[http-response-schema]]
-.An Example of the HTTP Response Schema:
-[source,yaml]
-----
-include::../openapi/schemas/exceptionJSON.yaml[]
-----
+// [[http-response]]
+// === HTTP 1.1
+//
+// Each HTTP request shall result in a response that meets the following requirement.
+//
+// include::requirements/general/REQ_general_http-response.adoc[]
+//
+// The YAML schema for these results is provided in <<http-response-schema>>.
+//
+// [[http-response-schema]]
+// .An Example of the HTTP Response Schema:
+// [source,yaml]
+// ----
+// include::../openapi/schemas/exceptionJSON.yaml[]
+// ----
 
 [[http-status-codes]]
 === HTTP Status Codes
@@ -63,3 +64,9 @@ In addition, other error situations may occur in the transport layer outside of 
 |`413` |Request entity too large. For example the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.
 |`500` |An internal error occurred in the server.
 !===
+
+The status codes described in <<status-codes>> do not cover all possible conditions.
+See <<rfc7231,IETF RFC 7231>> for a complete list of HTTP status codes.
+When a server encounters an error in the processing of a request, the server may wish to include information in addition to the status code in the response.
+Since Web API interactions are often machine-to-machine, a machine-readable report would be preferred.
+<<rfc7807,IETF RFC 7807>> addresses this need by providing “Problem Details” response schemas for both JSON and XML.

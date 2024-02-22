@@ -71,5 +71,4 @@ A successful response to the *Collections* POST operation is an HTTP status code
 include::requirements/collection_catalog/collections/REQ_response-collections-post.adoc[]
 
 ==== Error situations
-The requirements for handling unsuccessful requests are provided in the <<http-response>>.
 General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

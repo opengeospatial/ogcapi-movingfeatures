@@ -1,0 +1,17 @@
+[[conf_mf_feature_param_subtemporalvalue_response]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/movingfeatures/param-subtemporalvalue-response
+target:: /req/movingfeatures/param-subtemporalvalue-definition
+target:: /req/movingfeatures/param-subtemporalvalue-response
+test-purpose:: Validate that the `subTemporalValue` query parameter is processed correctly.
+test-method::
++
+--
+If the `subTemporalValue` parameter is "true", DO FOR each temporal property resource:
+
+1. Calculate a temporal property value with the *_subTrajectory_* query at a time interval (new start time and new end time) included in the `datetime` parameter, using interpolated trajectory according to the `interpolation` property +
+2. Verify that the calculated temporal property value intersects the interpolated trajectory according to the `interpolation` property, using the time interval value defined by the `datetime` parameter
+--
+====

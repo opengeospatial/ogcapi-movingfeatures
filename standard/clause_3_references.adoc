@@ -12,13 +12,14 @@
 * [[[rfc2818,IETF RFC 2818]]],
 * [[[rfc3339,IETF RFC 3339]]],
 * [[[rfc3986,IETF RFC 3986]]],
-* [[[rfc7946,IETF RFC 7946]]],
-* [[[rfc8288,IETF RFC 8288]]],
-* [[[rfc8259,IETF RFC 8259]]],
 * [[[rfc7230,IETF RFC 7230]]],
 * [[[rfc7231,IETF RFC 7231]]],
 * [[[rfc7232,IETF RFC 7232]]],
 * [[[rfc7233,IETF RFC 7233]]],
 * [[[rfc7234,IETF RFC 7234]]],
 * [[[rfc7235,IETF RFC 7235]]],
-* [[[openapi,openapi]]] Open API Initiative: OpenAPI Specification 3.1.0, https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md[https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md]
+* [[[rfc7807,IETF RFC 7807]]],
+* [[[rfc7946,IETF RFC 7946]]],
+* [[[rfc8288,IETF RFC 8288]]],
+* [[[rfc8259,IETF RFC 8259]]],
+* [[[openapi,openapi]]] Open API Initiative: OpenAPI Specification 3.0.3, https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md[https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md]
