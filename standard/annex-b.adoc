@@ -63,10 +63,6 @@ include::abstract_tests/movingfeatures/feature/mf-get-success.adoc[]
 include::abstract_tests/movingfeatures/feature/mf-delete.adoc[]
 include::abstract_tests/movingfeatures/feature/mf-delete-success.adoc[]
 
-==== Parameter Leaf
-include::abstract_tests/movingfeatures/parameter/leaf_definition.adoc[]
-include::abstract_tests/movingfeatures/parameter/leaf_response.adoc[]
-
 ==== TemporalGeometrySequence
 ===== HTTP GET Operation
 include::abstract_tests/movingfeatures/tgsequence/tgsequence-get.adoc[]
@@ -108,3 +104,16 @@ include::abstract_tests/movingfeatures/tproperty/tproperty-post-success.adoc[]
 ===== HTTP DELETE Operation
 include::abstract_tests/movingfeatures/tproperty/tproperty-delete.adoc[]
 include::abstract_tests/movingfeatures/tproperty/tproperty-delete-success.adoc[]
+
+==== Parameters
+===== Parameter Leaf
+include::abstract_tests/movingfeatures/parameter/leaf_definition.adoc[]
+include::abstract_tests/movingfeatures/parameter/leaf_response.adoc[]
+
+===== Parameter SubTrajectory
+include::abstract_tests/movingfeatures/parameter/subtrajectory_definition.adoc[]
+include::abstract_tests/movingfeatures/parameter/subtrajectory_response.adoc[]
+
+===== Parameter SubTemporalValue
+include::abstract_tests/movingfeatures/parameter/subtemporalvalue_definition.adoc[]
+include::abstract_tests/movingfeatures/parameter/subtemporalvalue_response.adoc[]

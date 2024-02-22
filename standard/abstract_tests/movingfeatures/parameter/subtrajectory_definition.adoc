@@ -1,0 +1,16 @@
+[[conf_mf_feature_param_subtrajectory_definition]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/movingfeatures/param-subtrajectory-definition
+target:: /req/movingfeatures/param-subtrajectory-definition
+test-purpose:: Validate that the `subTrajectory` query parameter is constructed correctly.
+test-method::
++
+--
+- Verify that the `subTrajectory` query parameter complies with the <<req_mf_subtrajectory-parameter-definition,definition>> (using an OpenAPI Specification 3.0 fragment)
+- If the `subTrajectory` parameter is "true":
+1. Verify that the `datetime` parameter is a bounded interval with a start time and end time.
+2. Verify that the `leaf` parameter is not used if it can be used.
+--
+====

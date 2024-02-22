@@ -1,0 +1,16 @@
+[[conf_mf_feature_param_subtemporalvalue_definition]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/movingfeatures/param-subtemporalvalue-definition
+target:: /req/movingfeatures/param-subtemporalvalue-definition
+test-purpose:: Validate that the `subTemporalValue` query parameter is constructed correctly.
+test-method::
++
+--
+- Verify that the `subTemporalValue` query parameter complies with the <<req_mf_subtemporalvalue-parameter-definition,definition>> (using an OpenAPI Specification 3.0 fragment)
+- If the `subTemporalValue` parameter is "true":
+1. Verify that the `datetime` parameter is a bounded interval with a start time and end time.
+2. Verify that the `leaf` parameter is not used if it can be used.
+--
+====

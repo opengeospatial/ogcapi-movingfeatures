@@ -18,6 +18,6 @@ test-purpose:: Validate that the `leaf` query parameter is constructed correctly
 test-method::
 +
 --
-Verify that the `leaf` query parameter complies with the <<req_mf_leaf-parameter-definition, definition>> (using an OpenAPI Specification 3.0 fragment)
+Verify that the `leaf` query parameter complies with the <<req_mf_leaf-parameter-definition,definition>> (using an OpenAPI Specification 3.0 fragment)
 --
 ====

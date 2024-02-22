@@ -153,7 +153,7 @@ git clone https://github.com/opengeospatial/ogcapi-movingfeatures.git
 
 cd ogcapi-movingfeatures
 
-docker run -v "$(pwd)":/metanorma -v ${HOME}/.fontist/fonts/:/config/fonts  metanorma/metanorma  metanorma compile --agree-to-terms -t ogc -x html standard/document.adoc
+docker run -v "$(pwd)":/metanorma -v ${HOME}/.fontist/fonts/:/config/fonts  metanorma/metanorma  metanorma compile --agree-to-terms -t ogc -x html,pdf standard/document.adoc
 ```
 
 ## Using the Standard

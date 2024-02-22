@@ -1,0 +1,21 @@
+[[conf_mf_feature_param_subtrajectory_response]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/movingfeatures/param-subtrajectory-response
+target:: /req/movingfeatures/param-subtrajectory-definition
+target:: /req/movingfeatures/param-subtrajectory-response
+test-purpose:: Validate that the `subTrajectory` query parameter is processed correctly.
+test-method::
++
+--
+If the `subTrajectory` parameter is "true", DO FOR each temporal primitive geometry resource:
+
+1. Calculate a temporal geometry coordinate with the *_subTrajectory_* query at a time interval (new start time and new end time) included in the `datetime` parameter, using interpolated trajectory according to the `interpolation` property +
+2. Verify that the calculated temporal geometry coordinate intersects the interpolated trajectory according to the `interpolation` property, using the time interval value defined by the `datetime` parameter
+3. If the `bbox` parameter is not empty, verify that the calculated temporal geometry coordinate intersects the bounding box with the `bbox` parameter
+
+// 1. Calculate a temporal geometry coordinate (or temporal property value) with the *_subTrajectory_* query at a time interval (new start time and new end time) included in the `datetime` parameter, using interpolated trajectory according to the `interpolation` property +
+// 2. Verify that the temporal geometry coordinate (or temporal property value) intersects the interpolated trajectory according to the `interpolation` property, using datetime value defined by the `leaf` parameter
+--
+====
