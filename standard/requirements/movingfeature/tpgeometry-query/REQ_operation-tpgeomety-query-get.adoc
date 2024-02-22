@@ -24,4 +24,5 @@ part:: The path parameter `collectionId` is each `id` property in the *Collectio
 The path parameter `mFeatureId` is an `id` property of the moving feature. +
 The path parameter `tGeometryId` is an `id` property of the temporal geometry. +
 part:: The path parameter `queryType` SHALL be one of the predefined query type (*distance, velocity*, and *acceleration*)
+part:: If the `datetime` parameter is provided, the `datetime` SHALL be a date-time, not a half-bounded interval or bounded interval.
 ====
