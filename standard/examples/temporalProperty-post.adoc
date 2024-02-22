@@ -1,18 +1,18 @@
 [source]
 ----
-   Client                                                                     Server
-     |                                                                          |
-     | POST /collections/mfc_1/items/mf_1/tproperties   HTTP/1.1                |
-     | Content-Type: application/json                                           |
-     |                                                                          |
-     | {                                                                        |
-     |    "name": "speed",                                                      |
-     |    "type": "TReal",                                                      |
-     |    "form": "KMH"                                                         |
-     | }                                                                        |
-     |------------------------------------------------------------------------->|
-     |                                                                          |
-     | HTTP/1.1 201 Created                                                     |
-     | Location: /collections/mfc_1/items/mf_1/tproperties/speed                |
-     |<-------------------------------------------------------------------------|
+ Client                                                                  Server
+ |                                                                          |
+ | POST /collections/mfc_1/items/mf_1/tproperties   HTTP/1.1                |
+ | Content-Type: application/json                                           |
+ |                                                                          |
+ | {                                                                        |
+ |    "name": "speed",                                                      |
+ |    "type": "TReal",                                                      |
+ |    "form": "KMH"                                                         |
+ | }                                                                        |
+ |------------------------------------------------------------------------->|
+ |                                                                          |
+ | HTTP/1.1 201 Created                                                     |
+ | Location: /collections/mfc_1/items/mf_1/tproperties/speed                |
+ |<-------------------------------------------------------------------------|
 ----
