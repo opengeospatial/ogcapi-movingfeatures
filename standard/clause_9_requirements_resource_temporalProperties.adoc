@@ -101,5 +101,4 @@ A successful response to the *TemporalProperties* POST operation is an HTTP stat
 include::requirements/movingfeature/tproperties/REQ_response-tproperties-post.adoc[]
 
 ==== Error situations
-The requirements for handling unsuccessful requests are provided in the <<http-response>>.
 General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

@@ -99,5 +99,4 @@ Example:
 `{root}/services/SpatiotemporalProcessing/Accessor/temporal_duration?{root}/collections/{collectionId} /items/{mFeatureId}/tgeometry /{tGeometryId}/{queryType}`
 
 ====  Error situations
-The requirements for handling unsuccessful requests are provided in <<http-response>>.
 General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.
