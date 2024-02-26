@@ -1,7 +1,7 @@
 {
   "name": "acceleration",
   "type": "TReal",
-  "form": "KHM",
+  "form": "KMH",
   "values": [
     {
       "datetimes": [
