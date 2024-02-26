@@ -45,10 +45,9 @@ Repeat these tests using the following parameter tests that defined in the OGC A
 - Limit: link:http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests[Limit Tests] +
 - Bounding Box: link:http://docs.ogc.org/DRAFTS/20-024.html#_bounding_box_tests[Bounding Box Tests] +
 - Date-Time: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
-- Leaf: <<conf_mf_feature_param_leaf_definition>> and <<conf_mf_feature_param_leaf_response>>
+- Leaf: <<conf_mf_feature_param_leaf_definition,Leaf Definition Test>> and <<conf_mf_feature_param_leaf_response,Leaf Response Test>> +
+- SubTrajectory: <<conf_mf_feature_param_subtrajectory_definition,SubTrajectory Definition Test>> and <<conf_mf_feature_param_subtrajectory_response,SubTrajectory Response Test>>
 
 Execute requests with combinations of the `"bbox"`, `"datetime"`, and `"leaf"` (or `"subTrajectory"`) query parameters and verify that only features are returned that match both selection criteria.
-
-
 --
 ====
