@@ -2,7 +2,7 @@
   "name": "distance",
   "type": "TReal",
   "form": "MTR",
-  "values": [
+  "valueSequence": [
     {
       "datetimes": [
         "2011-07-15T08:00:00Z",
