@@ -1,6 +1,6 @@
 [[rc_mf_common]]
 [requirements_class]
-.Requirements Class 'Moving Features - Common'
+.Moving Features - Common
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common
