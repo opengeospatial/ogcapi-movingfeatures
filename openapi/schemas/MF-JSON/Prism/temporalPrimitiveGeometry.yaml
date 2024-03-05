@@ -95,7 +95,7 @@ properties:
               maxItems: 3
           items:
             type: number
-    crs:
-      $ref: "crs.yaml"
-    trs:
-      $ref: "trs.yaml"
+  crs:
+    $ref: "crs.yaml"
+  trs:
+    $ref: "trs.yaml"

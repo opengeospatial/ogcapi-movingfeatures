@@ -13,13 +13,13 @@ properties:
     items:
       $ref: 'movingFeature.yaml'
   crs:
-    $ref: "MF-JSON/Prism/crs.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/crs"
   trs:
-    $ref: "MF-JSON/Prism/trs.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/trs"
   bbox:
-    $ref: "MF-JSON/Prism/bbox.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/bbox"
   time:
-    $ref: "MF-JSON/Prism/lifeSpan.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/time"
   links:
     type: array
     items:

@@ -4,7 +4,7 @@ required:
 properties:
   temporalProperties:
     oneOf:
-      - $ref: "MF-JSON/Prism/temporalProperties.yaml"
+      - $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/temporalProperties"
       - type: array
         items:
           $ref: "temporalProperty.yaml"
