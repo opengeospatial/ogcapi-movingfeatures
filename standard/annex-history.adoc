@@ -11,5 +11,5 @@
 |2023-02-21 |0.9 |Taehoon Kim, Kyoung-Sook Kim, Mahmoud, and Esteban |all |finalize draft version
 |2023-05-19 |0.9.9 |Taehoon Kim, Kyoung-Sook Kim, Mahmoud, and Esteban |all |finalize draft version
 |2023-07-10 |1.0.draft |Taehoon Kim, Kyoung-Sook Kim|all |finalize draft version
-|2024-02-14 |1.0.1.draft |Taehoon Kim, Kyoung-Sook Kim|all |apply public comments
+|2024-02-14 |1.0.draft |Taehoon Kim, Kyoung-Sook Kim|all |apply public comments
 |===

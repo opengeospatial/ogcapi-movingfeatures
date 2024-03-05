@@ -326,7 +326,7 @@
               "schema": {
                 "oneOf": [
                   {
-                    "$ref": "#/components/schemas/definitions-movingFeature"
+                    "$ref": "#/components/schemas/movingFeature-2"
                   },
                   {
                     "$ref": "#/components/schemas/movingFeatureCollection"
@@ -1524,18 +1524,9 @@
           }
         }
       },
-      "datetimes": {
-        "$id": "#/definitions/datetimes",
-        "type": "array",
-        "uniqueItems": true,
-        "minItems": 1,
-        "items": {
-          "type": "string"
-        }
-      },
-      "geometryInterpolation": {
-        "$id": "#/definitions/geometryInterpolation",
-        "title": "Interpolation method for TemporalPrimitiveGeometry (MotionCurve)",
+      "motionCurve": {
+        "description": "MF-JSON Prism encoding MotionCurve Object",
+        "title": "MF-JSON MotionCurve",
         "oneOf": [
           {
             "type": "string",
@@ -1544,7 +1535,7 @@
               "Step",
               "Linear",
               "Quadratic",
-              "Cube"
+              "Cubic"
             ],
             "default": "Linear"
           },
@@ -1554,35 +1545,11 @@
           }
         ]
       },
-      "orientation": {
-        "$id": "#/definitions/orientation",
-        "type": "object",
-        "required": [
-          "scales",
-          "angles"
-        ],
-        "properties": {
-          "scales": {
-            "type": "array",
-            "minItems": 3,
-            "maxItems": 3,
-            "items": {
-              "type": "number"
-            }
-          },
-          "angles": {
-            "type": "array",
-            "minItems": 3,
-            "maxItems": 3,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
       "namedCRS": {
-        "$id": "#/definitions/namedCRS",
+        "description": "MF-JSON Prism encoding NamedCRS Object",
+        "title": "MF-JSON NamedCRS",
         "type": "object",
+        "nullable": true,
         "required": [
           "type",
           "properties"
@@ -1596,10 +1563,10 @@
           },
           "properties": {
             "type": "object",
+            "additionalProperties": false,
             "required": [
               "name"
             ],
-            "additionalProperties": false,
             "properties": {
               "name": {
                 "type": "string",
@@ -1610,8 +1577,10 @@
         }
       },
       "linkedCRS": {
-        "$id": "#/definitions/linkedCRS",
+        "description": "MF-JSON Prism encoding LinkedCRS Object",
+        "title": "MF-JSON LinkedCRS",
         "type": "object",
+        "nullable": true,
         "required": [
           "type",
           "properties"
@@ -1642,13 +1611,8 @@
         }
       },
       "crs": {
-        "$id": "#/definitions/crs",
-        "title": "Coordinate Reference System",
-        "type": "object",
-        "required": [
-          "type",
-          "properties"
-        ],
+        "description": "MF-JSON Prism encoding CoordinateReferenceSystem Object",
+        "title": "MF-JSON CRS",
         "oneOf": [
           {
             "$ref": "#/components/schemas/namedCRS"
@@ -1658,66 +1622,53 @@
           }
         ]
       },
-      "namedTRS": {
-        "$id": "#/definitions/namedTRS",
-        "type": "object",
-        "required": [
-          "type",
-          "properties"
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "Name"
-            ]
-          },
-          "properties": {
-            "type": "object",
-            "required": [
-              "name"
-            ],
-            "additionalProperties": false,
-            "properties": {
-              "name": {
-                "type": "string",
-                "default": "urn:ogc:data:time:iso8601"
-              }
-            }
-          }
-        }
-      },
       "trs": {
-        "$id": "#/definitions/trs",
-        "title": "Temporal Coordinate Reference System",
-        "type": "object",
-        "required": [
-          "type",
-          "properties"
-        ],
+        "description": "The \"trs\" member in MovingFeature object",
+        "title": "MF-JSON TRS",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/namedTRS"
+            "$ref": "#/components/schemas/linkedCRS"
           },
           {
-            "$ref": "#/components/schemas/linkedCRS"
+            "type": "object",
+            "nullable": true,
+            "required": [
+              "type",
+              "properties"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Name"
+                ]
+              },
+              "properties": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "default": "urn:ogc:data:time:iso8601"
+                  }
+                }
+              }
+            }
           }
         ]
       },
       "temporalPrimitiveGeometry": {
-        "$id": "#/definitions/temporalPrimitiveGeometry",
+        "description": "MF-JSON Prism encoding TemporalPrimitiveGeometry Object",
+        "title": "MF-JSON TemporalPrimitiveGeometry",
         "type": "object",
-        "title": "TemporalPrimitiveGeometry Object",
         "required": [
           "type",
-          "datetimes",
-          "coordinates"
+          "coordinates",
+          "datetimes"
         ],
-        "dependencies": {
-          "orientations": [
-            "base"
-          ]
-        },
         "properties": {
           "type": {
             "type": "string",
@@ -1728,26 +1679,21 @@
               "MovingPointCloud"
             ]
           },
-          "datetimes": {
-            "$ref": "#/components/schemas/datetimes"
-          },
           "coordinates": {
-            "oneOf": [
-              {
-                "type": "array",
-                "minItems": 2,
-                "items": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "oneOf": [
+                {
+                  "title": "pointGeoJSON coordinates",
                   "type": "array",
                   "minItems": 2,
                   "items": {
                     "type": "number"
                   }
-                }
-              },
-              {
-                "type": "array",
-                "minItems": 2,
-                "items": {
+                },
+                {
+                  "title": "linestringGeoJSON coordinates",
                   "type": "array",
                   "minItems": 2,
                   "items": {
@@ -1757,12 +1703,9 @@
                       "type": "number"
                     }
                   }
-                }
-              },
-              {
-                "type": "array",
-                "minItems": 2,
-                "items": {
+                },
+                {
+                  "title": "polygonGeoJSON coordinates",
                   "type": "array",
                   "items": {
                     "type": "array",
@@ -1775,48 +1718,93 @@
                       }
                     }
                   }
+                },
+                {
+                  "title": "multipointGeoJSON coordinates",
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
                 }
-              }
-            ]
+              ]
+            }
+          },
+          "datetimes": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
           },
           "interpolation": {
-            "$ref": "#/components/schemas/geometryInterpolation"
+            "$ref": "#/components/schemas/motionCurve"
           },
           "base": {
-            "oneOf": [
-              {
-                "type": "null"
+            "type": "object",
+            "nullable": true,
+            "required": [
+              "href",
+              "type"
+            ],
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri"
               },
-              {
-                "type": "object",
-                "required": [
-                  "href",
-                  "type"
-                ],
-                "properties": {
-                  "href": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "type": {
-                    "type": "string"
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "orientations": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "object",
+              "required": [
+                "scales",
+                "angles"
+              ],
+              "properties": {
+                "scales": {
+                  "type": "array",
+                  "oneOf": [
+                    {
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    {
+                      "minItems": 3,
+                      "maxItems": 3
+                    }
+                  ],
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "angles": {
+                  "type": "array",
+                  "oneOf": [
+                    {
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    {
+                      "minItems": 3,
+                      "maxItems": 3
+                    }
+                  ],
+                  "items": {
+                    "type": "number"
                   }
                 }
               }
-            ]
-          },
-          "orientations": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/orientation"
-                }
-              }
-            ]
+            }
           },
           "crs": {
             "$ref": "#/components/schemas/crs"
@@ -1827,9 +1815,9 @@
         }
       },
       "temporalComplexGeometry": {
-        "$id": "#/definitions/temporalComplexGeometry",
+        "description": "MF-JSON Prism encoding TemporalComplexGeometry Object",
+        "title": "MF-JSON TemporalComplexGeometry",
         "type": "object",
-        "title": "TemporalComplexGeometry Object",
         "required": [
           "type",
           "prisms"
@@ -1837,9 +1825,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "MovingGeometryCollection"
-            ]
+            "default": "MovingGeometryCollection"
           },
           "prisms": {
             "type": "array",
@@ -1856,8 +1842,8 @@
         }
       },
       "temporalGeometry": {
-        "$id": "#/definitions/temporalGeometry",
-        "title": "TemporalGeometry Object",
+        "description": "MF-JSON Prism encoding TemporalGeometry Object",
+        "title": "MF-JSON TemporalGeometry",
         "oneOf": [
           {
             "$ref": "#/components/schemas/temporalPrimitiveGeometry"
@@ -1868,160 +1854,209 @@
         ]
       },
       "parametricValues": {
-        "$id": "#/definitions/parametricValues",
+        "description": "MF-JSON Prism encoding ParametricValues Object",
+        "title": "MF-JSON ParametricValues",
         "type": "object",
         "required": [
           "datetimes"
         ],
         "properties": {
           "datetimes": {
-            "$ref": "#/components/schemas/datetimes"
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
           }
         },
         "patternProperties": {
           "^S_": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/measureType"
+                "type": "object",
+                "required": [
+                  "type",
+                  "values"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Measure"
+                    ]
+                  },
+                  "values": {
+                    "type": "array",
+                    "nullable": true,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "interpolation": {
+                    "oneOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "Discrete",
+                          "Step",
+                          "Linear",
+                          "Regression"
+                        ],
+                        "default": "Linear"
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "form": {
+                    "oneOf": [
+                      {
+                        "type": "string",
+                        "minLength": 3,
+                        "maxLength": 3
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
+                  }
+                }
               },
               {
-                "$ref": "#/components/schemas/textType"
+                "type": "object",
+                "required": [
+                  "type",
+                  "values"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Text"
+                    ]
+                  },
+                  "values": {
+                    "type": "array",
+                    "nullable": true,
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "boolean"
+                        }
+                      ]
+                    }
+                  },
+                  "interpolation": {
+                    "oneOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "Discrete",
+                          "Step",
+                          "Linear",
+                          "Regression"
+                        ],
+                        "default": "Linear"
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
               },
               {
-                "$ref": "#/components/schemas/imageType"
+                "type": "object",
+                "required": [
+                  "type",
+                  "values"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Image"
+                    ]
+                  },
+                  "values": {
+                    "type": "array",
+                    "nullable": true,
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "interpolation": {
+                    "oneOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "Discrete",
+                          "Step",
+                          "Linear",
+                          "Regression"
+                        ],
+                        "default": "Linear"
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
               }
             ]
           }
         }
-      },
-      "measureType": {
-        "$id": "#/definitions/measureType",
-        "type": "object",
-        "required": ["type", "values"],
-        "properties": {
-          "type": {"type": "string", "enum": ["Measure"]},
-          "values": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {"type": "null"},
-                {"type": "number"}
-              ]
-            }
-          },
-          "interpolation": {"$ref": "#/components/schemas/propertyInterpolation"},
-          "form": {
-            "oneOf": [
-              {"type": "string", "minLength": 3, "maxLength": 3},
-              {"type": "string", "format": "uri"}
-            ]
-          },
-          "description": {"type": "string"}
-        }
-      },
-      "textType": {
-        "$id": "#/definitions/textType",
-        "type": "object",
-        "required": ["type", "values"],
-        "properties": {
-          "type": {"type": "string", "enum": ["Text"]},
-          "values": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {"type": "null"},
-                {"type": "string"},
-                {"type": "boolean"}
-              ]
-            }
-          },
-          "interpolation": {"$ref": "#/components/schemas/propertyInterpolation"},
-          "description": {"type": "string"}
-        }
-      },
-      "imageType": {
-        "$id": "#/definitions/imageType",
-        "type": "object",
-        "required": ["type", "values"],
-        "properties": {
-          "type": {"type": "string", "enum": ["Image"]},
-          "values": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {"type": "null"},
-                {"type": "string"}
-              ]
-            }
-          },
-          "interpolation": {
-            "$ref": "#/components/schemas/propertyInterpolation"
-          },
-          "description": {"type": "string"}
-        }
-      },
-      "propertyInterpolation": {
-        "$id": "#/definitions/propertyInterpolation",
-        "title": "Interpolation method for ParametricValues",
-        "oneOf":[
-          {
-            "type": "string",
-            "enum": ["Discrete", "Step", "Linear", "Regression"],
-            "default": "Discrete"
-          },
-          {"type": "string", "format": "uri"}
-        ]
       },
       "temporalProperties": {
-        "$id": "#/definitions/temporalProperties",
-        "title": "TemporalProperties Objects",
-        "oneOf": [
-          {
-            "type": "null"
-          },
-          {
-            "type": "array",
-            "items": [
-              {
-                "$ref": "#/components/schemas/parametricValues"
-              }
-            ]
-          }
-        ]
+        "description": "MF-JSON Prism encoding TemporalProperties Object",
+        "title": "MF-JSON TemporalProperties",
+        "type": "array",
+        "nullable": true,
+        "items": {
+          "$ref": "#/components/schemas/parametricValues"
+        }
       },
       "bbox": {
-        "$id": "#/definitions/bbox",
-        "title": "BoundingBox Object",
-        "oneOf": [
-          {
-            "type": "null"
-          },
-          {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        ]
+        "description": "MF-JSON Prism encoding BoundingBox Object",
+        "title": "MF-JSON BoundingBox",
+        "type": "array",
+        "minItems": 4,
+        "nullable": true,
+        "items": {
+          "type": "number"
+        }
       },
-      "time": {
-        "$id": "#/definitions/time",
-        "title": "LifeSpan Object",
-        "oneOf": [
-          {
-            "type": "null"
-          },
-          {
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "uniqueItems": true,
-            "items": {
-              "type": "string"
-            }
-          }
-        ]
+      "lifeSpan": {
+        "description": "MF-JSON Prism encoding LifeSpan Object",
+        "title": "MF-JSON LifeSpan",
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "nullable": true
+        }
       },
       "pointGeoJSON": {
         "type": "object",
@@ -2261,7 +2296,7 @@
             "$ref": "#/components/schemas/bbox"
           },
           "time": {
-            "$ref": "#/components/schemas/time"
+            "$ref": "#/components/schemas/lifeSpan"
           },
           "geometry": {
             "$ref": "#/components/schemas/geometryGeoJSON"
@@ -2319,7 +2354,7 @@
             "$ref": "#/components/schemas/bbox"
           },
           "time": {
-            "$ref": "#/components/schemas/time"
+            "$ref": "#/components/schemas/lifeSpan"
           },
           "links": {
             "type": "array",
@@ -2341,497 +2376,9 @@
           }
         }
       },
-      "Geometry": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "$id": "https://geojson.org/schema/Geometry.json",
-        "title": "GeoJSON Geometry",
-        "oneOf": [
-          {
-            "title": "GeoJSON Point",
-            "type": "object",
-            "required": [
-              "type",
-              "coordinates"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "Point"
-                ]
-              },
-              "coordinates": {
-                "type": "array",
-                "minItems": 2,
-                "items": {
-                  "type": "number"
-                }
-              },
-              "bbox": {
-                "type": "array",
-                "minItems": 4,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          },
-          {
-            "title": "GeoJSON LineString",
-            "type": "object",
-            "required": [
-              "type",
-              "coordinates"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "LineString"
-                ]
-              },
-              "coordinates": {
-                "type": "array",
-                "minItems": 2,
-                "items": {
-                  "type": "array",
-                  "minItems": 2,
-                  "items": {
-                    "type": "number"
-                  }
-                }
-              },
-              "bbox": {
-                "type": "array",
-                "minItems": 4,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          },
-          {
-            "title": "GeoJSON Polygon",
-            "type": "object",
-            "required": [
-              "type",
-              "coordinates"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "Polygon"
-                ]
-              },
-              "coordinates": {
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "minItems": 4,
-                  "items": {
-                    "type": "array",
-                    "minItems": 2,
-                    "items": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "bbox": {
-                "type": "array",
-                "minItems": 4,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          },
-          {
-            "title": "GeoJSON MultiPoint",
-            "type": "object",
-            "required": [
-              "type",
-              "coordinates"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "MultiPoint"
-                ]
-              },
-              "coordinates": {
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "minItems": 2,
-                  "items": {
-                    "type": "number"
-                  }
-                }
-              },
-              "bbox": {
-                "type": "array",
-                "minItems": 4,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          },
-          {
-            "title": "GeoJSON MultiLineString",
-            "type": "object",
-            "required": [
-              "type",
-              "coordinates"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "MultiLineString"
-                ]
-              },
-              "coordinates": {
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "minItems": 2,
-                  "items": {
-                    "type": "array",
-                    "minItems": 2,
-                    "items": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "bbox": {
-                "type": "array",
-                "minItems": 4,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          },
-          {
-            "title": "GeoJSON MultiPolygon",
-            "type": "object",
-            "required": [
-              "type",
-              "coordinates"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "MultiPolygon"
-                ]
-              },
-              "coordinates": {
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": "array",
-                    "minItems": 4,
-                    "items": {
-                      "type": "array",
-                      "minItems": 2,
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                }
-              },
-              "bbox": {
-                "type": "array",
-                "minItems": 4,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          }
-        ]
-      },
-      "GeometryCollection": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "$id": "https://geojson.org/schema/GeometryCollection.json",
-        "title": "GeoJSON GeometryCollection",
-        "type": "object",
-        "required": [
-          "type",
-          "geometries"
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "GeometryCollection"
-            ]
-          },
-          "geometries": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "title": "GeoJSON Point",
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "coordinates"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "Point"
-                      ]
-                    },
-                    "coordinates": {
-                      "type": "array",
-                      "minItems": 2,
-                      "items": {
-                        "type": "number"
-                      }
-                    },
-                    "bbox": {
-                      "type": "array",
-                      "minItems": 4,
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                {
-                  "title": "GeoJSON LineString",
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "coordinates"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "LineString"
-                      ]
-                    },
-                    "coordinates": {
-                      "type": "array",
-                      "minItems": 2,
-                      "items": {
-                        "type": "array",
-                        "minItems": 2,
-                        "items": {
-                          "type": "number"
-                        }
-                      }
-                    },
-                    "bbox": {
-                      "type": "array",
-                      "minItems": 4,
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                {
-                  "title": "GeoJSON Polygon",
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "coordinates"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "Polygon"
-                      ]
-                    },
-                    "coordinates": {
-                      "type": "array",
-                      "items": {
-                        "type": "array",
-                        "minItems": 4,
-                        "items": {
-                          "type": "array",
-                          "minItems": 2,
-                          "items": {
-                            "type": "number"
-                          }
-                        }
-                      }
-                    },
-                    "bbox": {
-                      "type": "array",
-                      "minItems": 4,
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                {
-                  "title": "GeoJSON MultiPoint",
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "coordinates"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "MultiPoint"
-                      ]
-                    },
-                    "coordinates": {
-                      "type": "array",
-                      "items": {
-                        "type": "array",
-                        "minItems": 2,
-                        "items": {
-                          "type": "number"
-                        }
-                      }
-                    },
-                    "bbox": {
-                      "type": "array",
-                      "minItems": 4,
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                {
-                  "title": "GeoJSON MultiLineString",
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "coordinates"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "MultiLineString"
-                      ]
-                    },
-                    "coordinates": {
-                      "type": "array",
-                      "items": {
-                        "type": "array",
-                        "minItems": 2,
-                        "items": {
-                          "type": "array",
-                          "minItems": 2,
-                          "items": {
-                            "type": "number"
-                          }
-                        }
-                      }
-                    },
-                    "bbox": {
-                      "type": "array",
-                      "minItems": 4,
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                {
-                  "title": "GeoJSON MultiPolygon",
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "coordinates"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "MultiPolygon"
-                      ]
-                    },
-                    "coordinates": {
-                      "type": "array",
-                      "items": {
-                        "type": "array",
-                        "items": {
-                          "type": "array",
-                          "minItems": 4,
-                          "items": {
-                            "type": "array",
-                            "minItems": 2,
-                            "items": {
-                              "type": "number"
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "bbox": {
-                      "type": "array",
-                      "minItems": 4,
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "geometry": {
-        "$id": "#/definitions/geometry",
-        "title": "GeoJSON Geometry object",
-        "oneOf": [
-          {
-            "type": "null"
-          },
-          {
-            "$ref": "#/components/schemas/Geometry"
-          },
-          {
-            "$ref": "#/components/schemas/GeometryCollection"
-          }
-        ]
-      },
-      "properties": {
-        "$id": "#/definitions/properties",
-        "title": "Properties object",
-        "oneOf": [
-          {
-            "type": "null"
-          },
-          {
-            "type": "object"
-          }
-        ]
-      },
-      "definitions-movingFeature": {
-        "$id": "#/definitions/movingFeature",
-        "title": "MovingFeature object in a MF-JSON Prism",
+      "movingFeature-2": {
+        "description": "MF-JSON Prism encoding MovingFeature Object",
+        "title": "MF-JSON MovingFeature",
         "type": "object",
         "required": [
           "type",
@@ -2847,26 +2394,27 @@
           "temporalGeometry": {
             "$ref": "#/components/schemas/temporalGeometry"
           },
+          "temporalProperties": {
+            "$ref": "#/components/schemas/temporalProperties"
+          },
           "crs": {
             "$ref": "#/components/schemas/crs"
           },
           "trs": {
             "$ref": "#/components/schemas/trs"
           },
-          "temporalProperties": {
-            "$ref": "#/components/schemas/temporalProperties"
-          },
           "bbox": {
             "$ref": "#/components/schemas/bbox"
           },
           "time": {
-            "$ref": "#/components/schemas/time"
+            "$ref": "#/components/schemas/lifeSpan"
           },
           "geometry": {
-            "$ref": "#/components/schemas/geometry"
+            "$ref": "#/components/schemas/geometryGeoJSON"
           },
           "properties": {
-            "$ref": "#/components/schemas/properties"
+            "type": "object",
+            "nullable": true
           },
           "id": {
             "description": "An identifier for the feature",
@@ -2875,15 +2423,15 @@
                 "type": "string"
               },
               {
-                "type": "number"
+                "type": "integer"
               }
             ]
           }
         }
       },
       "movingFeatureCollection": {
-        "$id": "#/definitions/movingFeatureCollection",
-        "title": "MovingFeatureCollection object in a MF-JSON Prism",
+        "description": "MF-JSON Prism encoding MovingFeatureCollection Object",
+        "title": "MF-JSON MovingFeatureCollection",
         "type": "object",
         "required": [
           "type",
@@ -2900,7 +2448,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-              "$ref": "#/components/schemas/definitions-movingFeature"
+              "$ref": "#/components/schemas/movingFeature-2"
             }
           },
           "crs": {
@@ -2913,17 +2461,11 @@
             "$ref": "#/components/schemas/bbox"
           },
           "time": {
-            "$ref": "#/components/schemas/time"
+            "$ref": "#/components/schemas/lifeSpan"
           },
           "label": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "type": "string",
+            "nullable": true
           }
         }
       },
