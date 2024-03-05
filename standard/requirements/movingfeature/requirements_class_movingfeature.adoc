@@ -14,7 +14,7 @@
 
 [[rc_movingfeature]]
 [requirements_class]
-.Requirements Class 'Moving Features'
+.Moving Features
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/movingfeatures

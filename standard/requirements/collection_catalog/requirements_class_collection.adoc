@@ -12,7 +12,7 @@
 
 [[rc_movingfeature_collection]]
 [requirements_class]
-.Requirements Class 'Moving Feature Collection Catalog'
+.Moving Feature Collection Catalog
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection
