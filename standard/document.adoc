@@ -1,8 +1,8 @@
 = OGC API - Moving Features - Part 1: Core
-:doctype: standard
+:doctype: draft-standard
 :encoding: utf-8
 :lang: en
-:status: draft
+:status: tc-vote
 :committee: technical
 :draft: 3.0
 :external-id: http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/1.0.draft
@@ -14,7 +14,7 @@
 :fullname_2: Kyoung-Sook Kim
 :fullname_3: Mahmoud SAKR
 :fullname_4: Martin Desruisseaux
-:docsubtype: Interface
+:docsubtype: implementation
 :keywords: ogcdoc, OGC document, OGC Moving Features, OGC Moving Features JSON, Moving Features Access, API, OpenAPI, REST, trajectory
 :submitting-organizations: Artificial Intelligence Research Center, National Institute of Advanced Industrial Science and Technology; Université libre de Bruxelles; Geomatys; Central Research Laboratory, Hitachi Ltd.; Feng Chia University
 :mn-document-class: ogc
