@@ -7,9 +7,7 @@ The conformance classes for OGC API — Moving Features are:
 
 * <<clause-core-collection, Collection Catalog>>
 * <<clause-core-movingfeature, Moving Features>>
-// * <<clause-common-req, Common Requirements>>
-// * <<clause-mf-json-req, MF-JSON encoding>>
-// * <<clause-openapi-req, OpenAPI Specification 3.0>>
+* <<clause-common-req, Common Requirements>>
 
 The conformance class defines the minimum requirements for an API to be compliant with the OGC API — Moving Features Draft Standard.
 This includes support for querying and retrieving information about moving features using HTTP GET requests.
@@ -27,9 +25,7 @@ The URIs of the associated conformance classes are:
 |Conformance class  |URI
 |MovingFeatures Collection Catalog |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-collection
 |MovingFeatures     |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/movingfeatures
-// |Common Requirements|http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/common
-// |MF-JSON encoding   |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/mf-json
-// |OpenAPI Specification 3.0 |http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/oas31
+|Common Requirements|http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/conf/common
 |===
 
 Conformance with this Standard shall be checked using all the relevant tests specified in <<clause-ATS, Annex A>> of this document.
