@@ -2,7 +2,7 @@
   "name": "velocity",
   "type": "TReal",
   "form": "KMH",
-  "values": [
+  "valueSequence": [
     {
       "datetimes": [
         "2011-07-15T08:00:00Z",

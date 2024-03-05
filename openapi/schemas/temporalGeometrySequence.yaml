@@ -10,7 +10,7 @@ properties:
   geometrySequence:
     type: array
     items:
-      $ref: 'MF-JSON/Prism/temporalPrimitiveGeometry.yaml'
+      $ref: 'https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/temporalPrimitiveGeometry'
   links:
     type: array
     items:

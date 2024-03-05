@@ -8,17 +8,17 @@ properties:
     enum:
       - 'Feature'
   temporalGeometry:
-    $ref: "MF-JSON/Prism/temporalGeometry.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/temporalGeometry"
   temporalProperties:
-    $ref: "MF-JSON/Prism/temporalProperties.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/temporalProperties"
   crs:
-    $ref: "MF-JSON/Prism/crs.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/crs"
   trs:
-    $ref: "MF-JSON/Prism/trs.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/trs"
   bbox:
-    $ref: "MF-JSON/Prism/bbox.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/bbox"
   time:
-    $ref: "MF-JSON/Prism/lifeSpan.yaml"
+    $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/time"
   geometry:
     $ref: 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'
   properties:

@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: "Building Blocks specified in OGC API - Moving Features - Part 1: Features Extension"
+  title: "Building Blocks specified in OGC API - Moving Features - Part 1: Core"
   version: 0.1.0
   description: >-
     This is the OpenAPI definition of Moving Features API specification that conforms to the OGC Moving Features Encoding Extension - JSON.
@@ -225,10 +225,10 @@ paths:
             schema:
 #              $ref: "schemas/MF-JSON/Prism/movingFeature.yaml"
               oneOf:
-                - $ref: "schemas/MF-JSON/Prism/movingFeature.yaml"
-                - $ref: "schemas/MF-JSON/Prism/movingFeatureCollection.yaml"
-#                - $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/movingFeature"
-#                - $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/movingFeatureCollection"
+#                - $ref: "schemas/MF-JSON/Prism/movingFeature.yaml"
+#                - $ref: "schemas/MF-JSON/Prism/movingFeatureCollection.yaml"
+                - $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/movingFeature"
+                - $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/movingFeatureCollection"
             example:
               $ref: "examples/movingFeature_MF_JSON.json"
       responses:
@@ -333,8 +333,8 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "schemas/MF-JSON/Prism/temporalPrimitiveGeometry.yaml"
-#              $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/temporalPrimitiveGeometry"
+#              $ref: "schemas/MF-JSON/Prism/temporalPrimitiveGeometry.yaml"
+              $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/temporalPrimitiveGeometry"
             example:
               $ref: "examples/temporalPrimitiveGeometry.json"
       responses:
@@ -490,7 +490,8 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "schemas/MF-JSON/Prism/temporalProperties.yaml"
+#              $ref: "schemas/MF-JSON/Prism/temporalProperties.yaml"
+              $ref: "https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/temporalProperties"
             example:
               $ref: "examples/temporalProperty_MF_JSON.json"
       responses:

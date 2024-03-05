@@ -1,5 +1,5 @@
 allOf:
-  - $ref: 'MF-JSON/Prism/movingFeatureCollection.yaml'
+  - $ref: 'https://schemas.opengis.net/movingfeatures/1.0/MF-JSON_Prism.schema.json#/definitions/movingFeatureCollection'
   - type: object
     properties:
       links:
