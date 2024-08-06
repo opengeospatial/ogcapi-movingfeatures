@@ -1,4 +1,4 @@
-[[req_mf-tproperty-op-delete]]
+[[req_mf-tpvalue-op-delete]]
 [requirement]
 ====
 [%metadata]

@@ -37,8 +37,9 @@ The OGC API family of standards is organized by resource type.
 | TemporalGeometrySequence      | ``/collections/{collectionId}/items/{mFeatureId}/tgsequence`` | GET, POST | <<resource-temporalGeometrySequence-section,Resource TemporalGeometrySequence>>
 | TemporalPrimitiveGeometry instance     | ``/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}`` | DELETE | <<resource-temporalPrimitiveGeometry-section,Resource TemporalPrimitiveGeometry>>
 | Queries for TemporalPrimitiveGeometry  | ``collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/{queryType}`` | GET | <<resource-tgsequenceQuery-section,TemporalGeometry Query Resources>>
-| TemporalProperties instance   | ``/collections/{collectionId}/items/{mFeatureId}/tproperties`` | GET, POST | <<resource-temporalProperties-section,Resource TemporalProperties>>
-| TemporalProperty instance     | ``/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST | <<resource-temporalProperty-section,Resource TemporalProperty>>
+| TemporalProperties   | ``/collections/{collectionId}/items/{mFeatureId}/tproperties`` | GET, POST | <<resource-temporalProperties-section,Resource TemporalProperties>>
+| TemporalProperty instance     | ``/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}`` | GET, POST, DELETE | <<resource-temporalProperty-section,Resource TemporalProperty>>
+| TemporalPrimitiveValue instance     | ``/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}/{tValueId}`` | DELETE | <<resource-temporalPrimitiveValue-section,Resource TemporalProperty>>
 |====
 
 
