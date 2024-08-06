@@ -66,7 +66,7 @@ Where:
 * <<tpgeometry-identifier,`{tGeometryId}`>>     = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
 * <<tproperty-identifier,`{tPropertyName}`>> = An identifier for a specific <<resource-temporalProperty-section,*TemporalProperty*>> of a specific <<resource-movingfeature-section,*MovingFeatures*>> of data
 * <<tpvalue-identifier,`{tValueId}`>> = An identifier for a specific <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> of a specific <<resource-temporalProperty-section,*TemporalProperty*>> of data
-* `{quertyType}`    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
+* <<temporalGeometry-query-table,`{quertyType}`>>    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
 
 <<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as *Collections*, *Collection*, *MovingFeatures*, *MovingFeature*, *TemporalGeometrySequence*, *TemporalPrimitiveGeometry*, *TemporalProperties*, *TemporalProperty*, and *TemporalPrimitiveValue*.
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.

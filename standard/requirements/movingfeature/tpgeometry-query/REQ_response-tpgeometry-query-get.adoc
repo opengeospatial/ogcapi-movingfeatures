@@ -15,6 +15,6 @@
 [%metadata]
 identifier:: /req/movingfeatures/tpgeometry-query-success
 part:: A successful execution of the distance, velocity, and acceleration query GET operation SHALL be reported as a response with an HTTP status code `200`.
-part:: The content of that response SHALL include the parametric value that is defined in the <<tproperty-schema,response schema>>.
+part:: The content of that response SHALL include the temporal property that is defined in the <<tproperty-schema,response schema>>.
 part:: The `type` property SHALL be *"TReal"*
 ====
