@@ -1,5 +1,6 @@
 {
   "title": "moving_feature_collection_sample",
   "updateFrequency": 1000,
-  "description": "example"
+  "description": "example",
+  "itemType": "movingfeature"
 }

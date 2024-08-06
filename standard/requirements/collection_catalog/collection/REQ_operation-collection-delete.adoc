@@ -3,7 +3,7 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-delete*
-^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
+^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Features `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
 |===
 ////
 
@@ -12,5 +12,5 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-delete
-part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Feature `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
 ====

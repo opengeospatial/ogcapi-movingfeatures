@@ -20,7 +20,7 @@ include::requirements/parameter/REQ_parameter-subtemporalvalue-definition.adoc[]
 include::requirements/parameter/REQ_parameter-subtemporalvalue-response.adoc[]
 
 The `subTemporalValue` query parameter is used to select a subset of <<resource-temporalProperty-section,*TemporalProperty*>> for the specified time interval.
-Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<temporalValue-properties-table,*TemporalPrimitiveValue*>>.
+Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>>.
 The `subTemporalValue` parameter behaves functionally the same as the `subTrajectory` parameter.
 The difference is that `subTrajectory` is associated with temporal geometry, while `subTemporalValue` is associated with temporal properties.
 
@@ -30,7 +30,7 @@ The difference is that `subTrajectory` is associated with temporal geometry, whi
 
 include::requirements/movingfeature/tproperties/REQ_operation-tproperties-get.adoc[]
 
-====== Create
+===== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
 This operation targeted <<resource-temporalProperty-section,*TemporalProperty*>> resource.
 
@@ -95,7 +95,7 @@ The following JSON payload is an example of a response to an OGC API — Moving 
 include::../openapi/examples/temporalProperties.json[]
 ----
 
-====== Create
+===== Create
 A successful response to the *TemporalProperties* POST operation is an HTTP status code.
 
 include::requirements/movingfeature/tproperties/REQ_response-tproperties-post.adoc[]

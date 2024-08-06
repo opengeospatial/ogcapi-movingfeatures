@@ -37,7 +37,6 @@ NOTE: The properties *time*, *crs*, *trs*, *temporalGeometry*, and *temporalProp
 include::requirements/movingfeature/movingfeature/REQ_mandatory-movingfeature.adoc[]
 
 ==== Operation
-//TODO: Why Replace operation is not supported
 ===== Retrieve
 The retrieve operation is defined in the `Feature` conformance class of OGC API — Features.
 No modifications are needed to support <<resource-movingfeature-section,*MovingFeature*>> resources.
