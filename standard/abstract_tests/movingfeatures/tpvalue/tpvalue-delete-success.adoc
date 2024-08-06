@@ -3,8 +3,8 @@
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/movingfeatures/tpgeometry-delete-success
-target:: /req/movingfeatures/tpgeometry-delete-success
+identifier:: /conf/movingfeatures/tpvalue-delete-success
+target:: /req/movingfeatures/tpvalue-delete-success
 test-purpose:: Validate that the response of `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tpropertyName}/{tValueId}` DELETE request complies with the required structure and contents.
 test-method::
 +
