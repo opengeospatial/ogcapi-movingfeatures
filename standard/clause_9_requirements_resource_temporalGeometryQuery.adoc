@@ -50,7 +50,7 @@ An implementation instance (endpoint) of the API returns derived _time-to-distan
 
 [[time-to-distance-curve]]
 .Example of time-to-distance curve [<<OGC_16-120r3, OGC Moving Features Access>>]
-image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, width=300, align="center"]
+image::./images/time-to-distance.png[time-to-distance-curve, pdfwidth=50%, scaledwidth=50%, align="center"]
 
 ==== Velocity Query
 The Velocity query returns a _time-to-velocity curve_ of the <<temporalPrimitiveGeometry-object,*TemporalPrimitiveGeometry*>> object as a form of the <<temporalProperty-properties-table,*TemporalProperty*>>.
