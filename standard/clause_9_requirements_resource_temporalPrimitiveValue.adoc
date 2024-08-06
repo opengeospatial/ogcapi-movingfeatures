@@ -1,0 +1,47 @@
+[[resource-temporalPrimitiveValue-section]]
+=== Resource TemporalPrimitiveValue
+==== Overview
+[[temporal-primitive-value-object]]
+The *TemporalPrimitiveValue* resource represents the dynamic change of a non-spatial attribute's value with time.
+An abbreviated copy of this information is returned for each *TemporalPrimitiveValue* in the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` response.
+
+The schema for the temporal primitive value object presented in this clause is a part of the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[*_ParametricValues_* Object] defined in <<OGC_19-045r3,MF-JSON>>.
+<<temporalPrimitiveValue-properties-table>> defines the set of property that shall be used to describe a temporal primitive value.
+
+[[temporalPrimitiveValue-properties-table]]
+.Table of the properties related to the temporal primitive value
+[cols="20,15,65",options="header"]
+|===
+|Property           |Requirement    |Description
+|*_id_*                 |M  |A unique identifier to the temporal primitive value.
+|*_datetimes_*          |M |A sequence of monotonic increasing instants.
+|*_values_*             |M |A sequence of dynamic values having the same number of elements as "datetimes".
+|*_interpolation_*      |M |A predefined type for a dynamic value (i.e., one of 'Discrete', 'Step', 'Linear', or 'Regression').
+|===
+
+NOTE: The detailed information and requirements for each property are described in the <<OGC_19-045r3,OGC Moving Feature JSON Encoding Standard>>.
+
+include::requirements/movingfeature/tpvalue/REQ_mandatory-tpvalue.adoc[]
+
+==== Operation
+===== Delete
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
+
+. Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}/{tValueId}` path
+
+[[tpvalue-identifier]]
+The {tValueId} parameter is the unique identifier for a single temporal primitive value object offered by the API.
+The list of valid values for `{tValueId}` is provided in the <<resource-temporalProperty-section,`{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}`>> GET response.
+
+Support for the HTTP DELETE method is specified as a requirement in OGC API — Features.
+
+include::requirements/movingfeature/tpvalue/REQ_operation-tpvalue-delete.adoc[]
+
+==== Response
+===== Delete
+A successful response to the *TemporalPrimitiveValue* DELETE operation is an HTTP status code.
+
+include::requirements/movingfeature/tpvalue/REQ_response-tpvalue-delete.adoc[]
+
+==== Error situations
+General guidance on HTTP status codes and how they should be handled is provided in <<http-status-codes>>.

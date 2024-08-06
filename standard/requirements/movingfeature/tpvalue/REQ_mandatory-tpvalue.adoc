@@ -7,10 +7,10 @@
 |===
 ////
 
-[[req_mf_mandatory-temporalprimitivegeometry]]
+[[req_mf_mandatory-temporalprimitivevalue]]
 [requirement]
 ====
 [%metadata]
-identifier:: /req/movingfeatures/tpgeometry-mandatory
-part:: A temporal primitive geometry object SHALL contain all the mandatory properties listed in <<temporalPrimitiveGeometry-properties-table>>.
+identifier:: /req/movingfeatures/tpvalue-mandatory
+part:: A temporal primitive value object SHALL contain all the mandatory properties listed in <<temporalPrimitiveValue-properties-table>>.
 ====

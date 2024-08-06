@@ -1,0 +1,12 @@
+[[req_mf-tproperty-op-delete]]
+[requirement]
+====
+[%metadata]
+identifier:: /req/movingfeatures/tpvalue-delete
+part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
+part:: For every temporal primitive value in a temporal property (path `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}`), the server SHALL support the HTTP DELETE operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}/{tValueId}`
+part:: The path parameter `collectionId` is each `id` property in the *Collection* GET operation response where the value of the `itemType` property is specified as *MovingFeature*. +
+The path parameter `mFeatureId` is an `id` property of the moving feature. +
+The path parameter `tPropertyName` is a local identifier of the temporal property. +
+The path parameter `tValueId` is an `id` property of the temporal primitive value.
+====

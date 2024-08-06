@@ -53,7 +53,7 @@ image::./images/Leaf-example.png[leaf-example, pdfwidth=100%, width=1000, align=
 
 include::requirements/movingfeature/tgsequence/REQ_operation-tgsequence-get.adoc[]
 
-====== Create
+===== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
 This operation targeted <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resource.
 
@@ -101,7 +101,7 @@ The following JSON payload is an example of a response to an OGC API — Moving 
 include::../openapi/examples/temporalGeometrySequence.json[]
 ----
 
-====== Create
+===== Create
 A successful response to the *TemporalGeometrySequence* POST operation is an HTTP status code.
 
 include::requirements/movingfeature/tgsequence/REQ_response-tgsequence-post.adoc[]
