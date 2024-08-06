@@ -33,15 +33,17 @@ test-purpose:: Validate that resources can be identified and extracted from a *T
 test-method::
 +
 --
-IF a query parameter `datetime` is not empty, validate that the query parameter `datetime` with the following parameter tests that defined in the OGC API — Common: +
-- *Date-Time*: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
+IF any of the query parameters are not empty, validate that the query parameters with the following parameter tests are defined in the OGC API — Common and OGC API — MF: +
+- Date-Time: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
+- Leaf: <<conf_mf_feature_param_leaf_definition,Leaf Definition Test>> and <<conf_mf_feature_param_leaf_response,Leaf Response Test>> +
+- SubTemporalValue: <<conf_mf_feature_param_subtemporalvalue_definition,SubTemporalValue Definition Test>> and <<conf_mf_feature_param_subtemporalvalue_response,SubTemporalValue Response Test>>
 
 1. Issue an HTTP GET request to the URL `{root}/collections/{collectionId}/items/ {mFeatureId}/tgsequence/{tGeometryId}/distance` +
 2. Validate that a document was returned with a status code `200` +
 3. Verify the `type` is `"TReal"` +
 
-IF a query parameter `datetime` is not empty: Execute requests with `datetime` query parameter and verify the correctly calculated value is returned.
+IF any of the query parameters are not empty: Execute requests with used query parameter and verify the correctly calculated value is returned.
 
-IF a query parameter `datetime` is empty: Verify that a time-to-distance curve is correctly returned according to the specified *TemporalPrimitiveGeometry* resource by {tGeometryId}.
+IF all query parameters are empty: Verify that a _time-to-distance curve_ is correctly returned according to the specified *TemporalPrimitiveGeometry* resource by {tGeometryId}.
 --
 ====
