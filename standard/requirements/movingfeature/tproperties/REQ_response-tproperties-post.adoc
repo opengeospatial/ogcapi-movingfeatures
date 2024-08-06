@@ -13,4 +13,6 @@
 [%metadata]
 identifier:: /req/movingfeatures/tproperties-post-success
 part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `CREATE` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response[`/req/create-replace-delete/insert-response` and `/req/create-replace-delete/insert-response-rid`].
+part:: If the body of a POST request contains a collection of the resource, a response with HTTP status code `201` SHALL include a `Locations` header with the list of the newly added resources URIs.
+part:: The elements in the `Locations` header SHALL be in the same order and size as the collection of resources contained in the body of the POST request.
 ====
