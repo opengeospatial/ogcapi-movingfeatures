@@ -12,5 +12,5 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/tproperty-mandatory
-part:: A temporal property object SHALL contain all the mandatory properties listed in <<temporalProperty-properties-table>> and <<temporalValue-properties-table>>.
+part:: A temporal property object SHALL contain all the mandatory properties listed in <<temporalProperty-properties-table>>.
 ====

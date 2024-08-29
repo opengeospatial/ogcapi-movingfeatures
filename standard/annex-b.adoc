@@ -105,6 +105,11 @@ include::abstract_tests/movingfeatures/tproperty/tproperty-post-success.adoc[]
 include::abstract_tests/movingfeatures/tproperty/tproperty-delete.adoc[]
 include::abstract_tests/movingfeatures/tproperty/tproperty-delete-success.adoc[]
 
+==== TemporalPrimitiveValue
+===== HTTP DELETE Operation
+include::abstract_tests/movingfeatures/tpvalue/tpvalue-delete.adoc[]
+include::abstract_tests/movingfeatures/tpvalue/tpvalue-delete-success.adoc[]
+
 ==== Parameters
 ===== Parameter Leaf
 include::abstract_tests/movingfeatures/parameter/leaf_definition.adoc[]

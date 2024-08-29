@@ -1,0 +1,6 @@
+name: tValue
+in: path
+description: local identifier of a temporal primitive value
+required: true
+schema:
+  type: string

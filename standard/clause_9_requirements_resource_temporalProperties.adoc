@@ -20,7 +20,7 @@ include::requirements/parameter/REQ_parameter-subtemporalvalue-definition.adoc[]
 include::requirements/parameter/REQ_parameter-subtemporalvalue-response.adoc[]
 
 The `subTemporalValue` query parameter is used to select a subset of <<resource-temporalProperty-section,*TemporalProperty*>> for the specified time interval.
-Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<temporalValue-properties-table,*TemporalPrimitiveValue*>>.
+Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>>.
 The `subTemporalValue` parameter behaves functionally the same as the `subTrajectory` parameter.
 The difference is that `subTrajectory` is associated with temporal geometry, while `subTemporalValue` is associated with temporal properties.
 
@@ -30,9 +30,9 @@ The difference is that `subTrajectory` is associated with temporal geometry, whi
 
 include::requirements/movingfeature/tproperties/REQ_operation-tproperties-get.adoc[]
 
-====== Create
+===== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
-This operation targeted <<resource-temporalProperty-section,*TemporalProperty*>> resource.
+This operation targeted a single or a collection of <<resource-temporalProperty-section,*TemporalProperty*>> resources.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` path
 
@@ -95,8 +95,13 @@ The following JSON payload is an example of a response to an OGC API — Moving 
 include::../openapi/examples/temporalProperties.json[]
 ----
 
-====== Create
+===== Create
 A successful response to the *TemporalProperties* POST operation is an HTTP status code.
+
+A link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[*_ParametricValues_* Object] in <<OGC_19-045r3,MF-JSON>> can be a collection of <<resource-temporalProperty-section,TemporalProperty>> objects.
+Posting a collection of resources is the same as posting a single resource consecutively.
+However, because the result must be returned in a single response, the `Locations` header includes a list of the URIs of the newly added resources.
+In this case, requirement *B* of link:https://docs.ogc.org/DRAFTS/20-002.html#_response[/req/create-replace-delete/post-response] in OGC API — Features is not applicable.
 
 include::requirements/movingfeature/tproperties/REQ_response-tproperties-post.adoc[]
 

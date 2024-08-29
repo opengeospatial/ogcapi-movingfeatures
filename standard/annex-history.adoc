@@ -9,7 +9,8 @@
 |2022-03-01 |0.2 |Taehoon Kim, Kyoung-Sook Kim|all |revised sections related to resources to add CRUD operations
 |2022-10-09 |0.3 |Taehoon Kim, Kyoung-Sook Kim|all |added TemporalGeometry Query resources
 |2023-02-21 |0.9 |Taehoon Kim, Kyoung-Sook Kim, Mahmoud, and Esteban |all |finalize draft version
-|2023-05-19 |0.9.9 |Taehoon Kim, Kyoung-Sook Kim, Mahmoud, and Esteban |all |finalize draft version
-|2023-07-10 |1.0.draft |Taehoon Kim, Kyoung-Sook Kim|all |finalize draft version
-|2024-02-14 |1.0.draft |Taehoon Kim, Kyoung-Sook Kim|all |apply public comments
+|2023-05-19 |0.9.9 |Taehoon Kim, Kyoung-Sook Kim, Mahmoud, and Esteban |all |finalize draft version before OAB
+|2023-07-10 |1.0.draft |Taehoon Kim, Kyoung-Sook Kim|all |finalize a draft version before public comment
+|2024-02-14 |1.0.draft |Taehoon Kim, Kyoung-Sook Kim|all |revised by public comments
+|2024-07-31 |1.0 |Taehoon Kim, Kyoung-Sook Kim|all |final revision before publication
 |===

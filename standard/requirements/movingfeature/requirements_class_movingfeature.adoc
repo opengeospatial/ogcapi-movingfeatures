@@ -59,4 +59,7 @@ requirement:: /req/movingfeatures/tproperty-delete
 requirement:: /req/movingfeatures/tproperty-get-success
 requirement:: /req/movingfeatures/tproperty-post-success
 requirement:: /req/movingfeatures/tproperty-delete-success
+requirement:: /req/movingfeatures/tpvalue-mandatory
+requirement:: /req/movingfeatures/tpvalue-delete
+requirement:: /req/movingfeatures/tpvalue-delete-success
 ====

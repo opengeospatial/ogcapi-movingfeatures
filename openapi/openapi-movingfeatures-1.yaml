@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: "Building Blocks specified in OGC API - Moving Features - Part 1: Core"
-  version: 0.1.0
+  version: 1.0.0
   description: >-
     This is the OpenAPI definition of Moving Features API specification that conforms to the OGC Moving Features Encoding Extension - JSON.
   contact:
@@ -109,17 +109,17 @@ paths:
               schema:
                 type: string
                 example: "https://data.example.org/collections/mfc1"
-          content:
-            application/json:
-              schema:
-                type: object
-                required:
-                  - id
-                properties:
-                  id:
-                    type: string
-                    description: "Newly added resource ID"
-                example: { "id": "mfc-1" }
+#          content:
+#            application/json:
+#              schema:
+#                type: object
+#                required:
+#                  - id
+#                properties:
+#                  id:
+#                    type: string
+#                    description: "Newly added resource ID"
+#                example: { "id": "mfc-1" }
         '500':
           $ref: "responses/ServerError.yaml"
 
@@ -236,7 +236,7 @@ paths:
           description: |
             Successful create a set of moving features or a moving feature into a specific collection.
           headers:
-            Location:
+            Locations:
               description: A list of URI of the newly added resources
               schema:
                 type: array
@@ -300,8 +300,6 @@ paths:
       summary: Retrieve the movement data of the single moving feature
       description: |
         A user can retrieve only the movement data of a moving feature with id `mFeatureId` by simple filtering and a limit.
-
-#        TODO: additional explanation of each parameter / warning for using both leaf and subtrajecotry
       tags:
         - TemporalGeometry
       parameters:
@@ -393,7 +391,9 @@ paths:
         - $ref: "parameters/collectionId.yaml"
         - $ref: "parameters/mFeatureId.yaml"
         - $ref: "parameters/tGeometryId.yaml"
-        - $ref: "parameters/date-time.yaml"
+        - $ref: "parameters/datetime.yaml"
+        - $ref: "parameters/leaf-description.yaml"
+        - $ref: "parameters/subtemporalvalue-description.yaml"
       responses:
         '200':
           $ref: "responses/DistanceQuery.yaml"
@@ -416,7 +416,9 @@ paths:
         - $ref: "parameters/collectionId.yaml"
         - $ref: "parameters/mFeatureId.yaml"
         - $ref: "parameters/tGeometryId.yaml"
-        - $ref: "parameters/date-time.yaml"
+        - $ref: "parameters/datetime.yaml"
+        - $ref: "parameters/leaf-description.yaml"
+        - $ref: "parameters/subtemporalvalue-description.yaml"
       responses:
         '200':
           $ref: "responses/VelocityQuery.yaml"
@@ -439,7 +441,9 @@ paths:
         - $ref: "parameters/collectionId.yaml"
         - $ref: "parameters/mFeatureId.yaml"
         - $ref: "parameters/tGeometryId.yaml"
-        - $ref: "parameters/date-time.yaml"
+        - $ref: "parameters/datetime.yaml"
+        - $ref: "parameters/leaf-description.yaml"
+        - $ref: "parameters/subtemporalvalue-description.yaml"
       responses:
         '200':
           $ref: "responses/AccelerationQuery.yaml"
@@ -530,7 +534,6 @@ paths:
         - $ref: "parameters/mFeatureId.yaml"
         - $ref: "parameters/tPropertyName.yaml"
         - $ref: "parameters/datetime.yaml"
-#        - $ref: "parameters/limit.yaml"
         - $ref: "parameters/leaf-description.yaml"
         - $ref: "parameters/subtemporalvalue-description.yaml"
       responses:
@@ -562,12 +565,12 @@ paths:
         '201':
           description: |
             Successful add more temporal primitive value data into a specified temporal property.
-#          headers:
-#            Location:
-#              description: A URI of the newly added resource
-#              schema:
-#                type: string
-#                example: "https://data.example.org/collections/mfc-1/items/mf-1/tproperties/tp-1/tvalue/tv-1"
+          headers:
+            Location:
+              description: A URI of the newly added resource
+              schema:
+                type: string
+                example: "https://data.example.org/collections/mfc-1/items/mf-1/tproperties/tp-1/tvalue/tv-1"
         '404':
           description: |
             - A collection with the specified id was not found.
@@ -595,5 +598,30 @@ paths:
             - A collection with the specified id was not found.
             - Or a moving feature with the specified id was not found.
             - Or a temporal property with the specified id was not found.
+        '500':
+          $ref: "responses/ServerError.yaml"
+
+  /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}/{tValueId}:
+    delete:
+      operationId: deleteTemporalPrimitiveValue
+      summary: Delete a singe temporal primitive value
+      description: |
+        The temporal primitive value with id `tValueId` SHOULD be deleted.
+      tags:
+        - TemporalProperty
+      parameters:
+        - $ref: "parameters/collectionId.yaml"
+        - $ref: "parameters/mFeatureId.yaml"
+        - $ref: "parameters/tPropertyName.yaml"
+        - $ref: "parameters/tValue.yaml"
+      responses:
+        '204':
+          description: Successfully deleted.
+        '404':
+          description: |
+            - A collection with the specified id was not found.
+            - Or a moving feature with the specified id was not found.
+            - Or a temporal property with the specified id was not found.
+            - Or a temporal primitive primitive with the specified id was not found.
         '500':
           $ref: "responses/ServerError.yaml"
