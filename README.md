@@ -8,18 +8,19 @@ The [OGC API - Moving Features](https://ogcapi.ogc.org/movingfeatures/) Standard
 
 ## Overview of OGC API - Moving Features - Part 1: Core
 
-The summary of the OGC API – MovingFeatures – Part 1:Core is described in the below table. 
+The summary of the OGC API – MovingFeatures – Part 1: Core is described in the below table. 
 
-| URL Path                                                | Supported HTTP(s) Methods |
-|---------------------------------------------------------|---------------------------|
-| /collections/{c_id}                                     | GET,DELETE,PUT            |
-| /collections/{c_id}/items                               | GET,POST                  |
-| /collections/{c_id}/items/{mf_id}                       | GET,DELETE                |
-| /collections/{c_id}/items/{mf_id}/tgsequence            | GET,POST                  |
-| /collections/{c_id}/items/{mf_id}/tgsequence/{tg_id}    | DELETE                    |
-| /collections/{c_id}/items/{mf_id}/tgsequence/{tg_query} | GET                       |
-| /collections/{c_id}/items/{mf_id}/tproperties           | GET,POST                  |
-| /collections/{c_id}/items/{mf_id}/tproperties/{tp_name} | GET,POST,DELETE           |
+| URL Path                                                        | Supported HTTP(s) Methods |
+|-----------------------------------------------------------------|---------------------------|
+| /collections/{c_id}                                             | GET,DELETE,PUT            |
+| /collections/{c_id}/items                                       | GET,POST                  |
+| /collections/{c_id}/items/{mf_id}                               | GET,DELETE                |
+| /collections/{c_id}/items/{mf_id}/tgsequence                    | GET,POST                  |
+| /collections/{c_id}/items/{mf_id}/tgsequence/{tg_id}            | DELETE                    |
+| /collections/{c_id}/items/{mf_id}/tgsequence/{tg_id}/{tg_query} | GET                       |
+| /collections/{c_id}/items/{mf_id}/tproperties                   | GET,POST                  |
+| /collections/{c_id}/items/{mf_id}/tproperties/{tp_name}         | GET,POST,DELETE           |
+| /collections/{c_id}/items/{mf_id}/tproperties/{tp_name}/{tv_id} | DELETE                    |
 
 <details>
 <summary> MovingFeatures Collection Catalog </summary>
@@ -110,6 +111,29 @@ Delete a single temporal geometry with id `{tGeometryId}`.
 </details>
 
 <details>
+<summary> TemporalGeometryQuery </summary>
+
+```
+GET /collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/distance
+```
+
+Get a time-to-distance curve of a temporal primitive geometry with id `{tGeometryId}`.
+
+```
+GET /collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/velocity
+```
+
+Get a time-to-velocity curve of a temporal primitive geometry with id `{tGeometryId}`.
+
+```
+GET /collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/acceleration
+```
+
+Get a time-to-acceleration curve of a temporal primitive geometry with id `{tGeometryId}`.
+
+</details>
+
+<details>
 <summary> TemporalProperties </summary>
 
 ```
@@ -142,6 +166,14 @@ DELETE /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName
 ```
 
 Delete a single temporal property with id `{tPropertyName}`.
+
+```
+DELETE /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}/{tValueId}
+```
+
+Delete a single temporal primitive value with id `{tValueId}`.
+
+
 </details>
 
 </details>
