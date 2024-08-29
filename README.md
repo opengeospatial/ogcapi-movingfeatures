@@ -161,8 +161,8 @@ docker run -v "$(pwd)":/metanorma -v ${HOME}/.fontist/fonts/:/config/fonts  meta
 ## Using the Standard
 An **OGC API - Moving Features - Part 1: Core** Standard is available:
 
-* [HTML version](https://opengeospatial.github.io/ogcna-auto-review/22-003.html)
-* [PDF version](https://opengeospatial.github.io/ogcna-auto-review/22-003.pdf)
+* [HTML version](https://docs.ogc.org/DRAFTS/22-003.html)
+* [PDF version](https://docs.ogc.org/DRAFTS/22-003.pdf)
 
 Those who want to just see the endpoints and responses can explore the generic OpenAPI definition on Swagger:
 
