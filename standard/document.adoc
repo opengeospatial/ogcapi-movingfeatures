@@ -1,11 +1,11 @@
 = OGC API - Moving Features - Part 1: Core
-:doctype: draft-standard
+:doctype: standard
 :encoding: utf-8
 :lang: en
-:status: tc-vote
+:status: approved
 :committee: technical
 :draft: 3.0
-:external-id: http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/1.0.draft
+:external-id: http://www.opengis.net/doc/IS/ogcapi-movingfeatures-1/1.0
 :docnumber: 22-003
 :received-date: 2023-05-19
 :issued-date: 2029-03-30
@@ -24,7 +24,7 @@
 :pdf-uri: ./document.pdf
 :xml-uri: ./document.xml
 :doc-uri: ./document.doc
-:edition: 1.0.draft
+:edition: 1.0
 
 ////
 Make sure to complete each included document

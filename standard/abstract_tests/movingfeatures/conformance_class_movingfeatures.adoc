@@ -57,6 +57,8 @@ abstract-test:: /conf/movingfeatures/tproperty-post
 abstract-test:: /conf/movingfeatures/tproperty-post-success
 abstract-test:: /conf/movingfeatures/tproperty-delete
 abstract-test:: /conf/movingfeatures/tproperty-delete-success
+abstract-test:: /conf/movingfeatures/tpvalue-delete
+abstract-test:: /conf/movingfeatures/tpvalue-delete-success
 abstract-test:: /conf/movingfeatures/param-leaf-definition
 abstract-test:: /conf/movingfeatures/param-leaf-response
 abstract-test:: /conf/movingfeatures/param-subtrajectory-definition

@@ -24,12 +24,13 @@ identifier:: /conf/movingfeatures/tproperty-post
 target:: /req/movingfeatures/tproperty-mandatory
 target:: /req/movingfeatures/tproperty-post
 target:: /req/movingfeatures/tproperty-post-success
+target:: /req/movingfeatures/tpvalue-mandatory
 test-purpose:: Validate that the *TemporalPrimitiveValue* can be created at the expected location.
 test-method::
 +
 --
 1. Validate that the server complies with OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[POST operation requirements] +
-2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <<tproperty-requestbody-schema>> and <<temporalValue-properties-table>> +
+2. Validate that a body of a POST request using for all supported media types using the resources and tests identified in <<tproperty-requestbody-schema>> and <<temporalPrimitiveValue-properties-table>> +
 3. Validate that the request body complies OGC API — Features link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[POST request body requirements] +
 4. Issue an HTTP POST request to the URL `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` +
 5. Validate the contents of the response using <<conf_mf_tproperty_post_success>>

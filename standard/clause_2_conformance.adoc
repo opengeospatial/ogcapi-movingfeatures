@@ -9,7 +9,7 @@ The conformance classes for OGC API — Moving Features are:
 * <<clause-core-movingfeature, Moving Features>>
 * <<clause-common-req, Common Requirements>>
 
-The conformance class defines the minimum requirements for an API to be compliant with the OGC API — Moving Features Draft Standard.
+The conformance class defines the minimum requirements for an API to be compliant with the OGC API — Moving Features Standard.
 This includes support for querying and retrieving information about moving features using HTTP GET requests.
 Also, the conformance class enables clients to add, modify, or delete features from the server using HTTP POST, PUT, and DELETE requests.
 Lastly, the conformance class adds support for querying and retrieving features based on their temporal characteristics, such as their position at a specific time or their velocity over a given time interval.
