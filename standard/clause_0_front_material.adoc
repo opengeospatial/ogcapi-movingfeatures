@@ -12,7 +12,7 @@ Recipients of this document are requested to submit, with their comments, notifi
 == Abstract
 
 Moving feature data can represent various phenomena, including vehicles, people, animals, weather patterns, etc.
-The OGC API — Moving Features (OGC API — MF) is a Draft Standard defining a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
+The OGC API — Moving Features (OGC API — MF) is a Standard defining a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
 The OGC API — MF provides a standard way to manage these data, which can be helpful for applications such as transportation management, disaster response, and environmental monitoring.
 OGC API — MF also includes operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties.
 
@@ -45,7 +45,7 @@ The OGC API family of standards is organized by resource type.
 
 == Security considerations
 
-The OGC API — Moving Features — Part 1: Core Draft Standard does not mandate any specific security controls.
+The OGC API — Moving Features — Part 1: Core Standard does not mandate any specific security controls.
 However, it was constructed to add security controls without impacting conformance, the same as the link:https://docs.ogc.org/is/19-072/19-072.html#_91afaabd-dc29-41eb-805d-15e1afd18825[OGC API — Common — Part 1: Core].
 
 This document applied the Requirement link:https://docs.ogc.org/is/19-072/19-072.html#rc_oas30-security[/req/oas30/security] for OpenAPI 3.0 Security support.
