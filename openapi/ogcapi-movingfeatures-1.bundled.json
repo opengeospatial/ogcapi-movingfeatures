@@ -266,7 +266,7 @@
             "$ref": "#/components/parameters/limit"
           },
           {
-            "$ref": "#/components/parameters/subtrajectory-description"
+            "$ref": "#/components/parameters/subtrajectory"
           }
         ],
         "responses": {
@@ -643,7 +643,7 @@
             "$ref": "#/components/parameters/leaf"
           },
           {
-            "$ref": "#/components/parameters/subtrajectory-description"
+            "$ref": "#/components/parameters/subtrajectory"
           }
         ],
         "responses": {
@@ -3315,7 +3315,7 @@
         "style": "form",
         "explode": false
       },
-      "subtrajectory-description": {
+      "subtrajectory": {
         "name": "subTrajectory",
         "in": "query",
         "required": false,

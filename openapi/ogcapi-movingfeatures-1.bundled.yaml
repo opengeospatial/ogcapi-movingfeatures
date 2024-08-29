@@ -181,7 +181,7 @@ paths:
         - $ref: '#/components/parameters/bbox'
         - $ref: '#/components/parameters/datetime'
         - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/subtrajectory-description'
+        - $ref: '#/components/parameters/subtrajectory'
       responses:
         '200':
           $ref: '#/components/responses/MovingFeatures'
@@ -433,7 +433,7 @@ paths:
         - $ref: '#/components/parameters/datetime'
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/leaf'
-        - $ref: '#/components/parameters/subtrajectory-description'
+        - $ref: '#/components/parameters/subtrajectory'
       responses:
         '200':
           $ref: '#/components/responses/TemporalGeometrySequence'
@@ -2334,7 +2334,7 @@ components:
         default: 10
       style: form
       explode: false
-    subtrajectory-description:
+    subtrajectory:
       name: subTrajectory
       in: query
       required: false
