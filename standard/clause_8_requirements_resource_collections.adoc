@@ -19,7 +19,7 @@ include::requirements/collection_catalog/collections/REQ_operation-collections-g
 
 ===== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
-This operation targeted <<resource-collection-section,*Collection*>> resource.
+This operation targets the <<resource-collection-section,*Collection*>> resource.
 
 . Issue a `POST` request on `{root}/collections` path
 
