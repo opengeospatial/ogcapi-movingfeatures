@@ -32,7 +32,7 @@ include::requirements/movingfeature/tproperties/REQ_operation-tproperties-get.ad
 
 ===== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
-This operation targeted a single or a collection of <<resource-temporalProperty-section,*TemporalProperty*>> resources.
+This operation targets a single or a collection of <<resource-temporalProperty-section,*TemporalProperty*>> resources.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` path
 

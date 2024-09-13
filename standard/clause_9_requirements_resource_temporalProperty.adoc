@@ -52,7 +52,7 @@ include::requirements/movingfeature/tproperty/REQ_operation-tproperty-get.adoc[]
 
 ===== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
-This operation targeted the new <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> object.
+This operation targets the new <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> object.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
@@ -76,7 +76,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 include::examples/temporalValue-post.adoc[]
 
 ===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
