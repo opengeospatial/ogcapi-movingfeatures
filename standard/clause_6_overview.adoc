@@ -1,16 +1,16 @@
 == Overview
 === General
 
-The <<OGC-API-Features,OGC API — Features>> Standard enable access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, DELETE, etc.)
-The <<OGC-API-Common,OGC API — Common>> Standard defines a set of features which are applicable to all implementations of OGC API Standards.
-Other OGC Standards extend OGC API — Common with features specific to a resource type.
+The OGC API - Moving Features Standard extends both the OGC API - Features Standard and the OGC API - Common Standard. The <<OGC-API-Features,OGC API — Features>> Standard enables access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, DELETE, etc.).
+The <<OGC-API-Common,OGC API — Common>> Standard defines a set of capabilities that are applicable to all implementations of OGC API Standards.
+Other OGC Standards extend OGC API - Common with capabilities specific to a resource type.
 
-This OGC API — Moving Features — Part 1: Core Standard defines an API with the goal to:
+The OGC API - Moving Features - Part 1: Core Standard defines an API with the goal to:
 
 * Provide a standard interface for creating (HTTP POST), retrieving (HTTP GET), updating (HTTP PUT), and deleting (HTTP DELETE) *_Moving Features_*, with conformance to the OGC Moving Features JSON Encoding Standard (<<OGC_19-045r3>>).
 
-Resources exposed through an OGC API may be accessed via a Universal Resource Identifier (URI).
-The URI representation in this Draft Standard is composed of three sections:
+Resources exposed through an implementation of an OGC API Standard may be accessed via a Uniform Resource Identifier (URI).
+The URI representation in this Standard is composed of three sections:
 
 * Dataset distribution API: The endpoint corresponding to a dataset distribution, where the landing page resource as defined in OGC API — Common — Part 1: Core is available (subsequently referred to as Base URI or `{root}`).
 * Access Paths: Unique paths to Resources.
@@ -43,7 +43,7 @@ Unique relation types are used for each resource.
 |<<resource-movingfeatures-section,{root}/collections/{collectionId} /items>>|`items`
 |Static information of <<resource-movingfeature-section,*MovingFeature*>> about available items in the specified <<resource-collection-section,*Collection*>>
 |<<resource-movingfeature-section,{root}/collections/{collectionId}/items/{mFeatureId}>>|`item`
-|Static information describing the <<movingfeature-schema,*MovingFeature*>> of data which has the unique identifier `{mFeatureId}`
+|Static information describing the <<movingfeature-schema,*MovingFeature*>> data which has the unique identifier `{mFeatureId}`
 |<<resource-temporalGeometrySequence-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence>>|`items`
 |Sequence of <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> about available items in the specified <<resource-movingfeature-section,*MovingFeature*>>
 |<<resource-temporalPrimitiveGeometry-section,{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}>>|`item`
@@ -66,15 +66,15 @@ Where:
 * <<tpgeometry-identifier,`{tGeometryId}`>>     = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
 * <<tproperty-identifier,`{tPropertyName}`>> = An identifier for a specific <<resource-temporalProperty-section,*TemporalProperty*>> of a specific <<resource-movingfeature-section,*MovingFeatures*>> of data
 * <<tpvalue-identifier,`{tValueId}`>> = An identifier for a specific <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> of a specific <<resource-temporalProperty-section,*TemporalProperty*>> of data
-* <<temporalGeometry-query-table,`{quertyType}`>>    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
+* <<temporalGeometry-query-table,`{quertyType}`>>    = An identifier for the query pattern performed by an implementation instance of the OGC API — Moving Features Standard.
 
 [[mf-api-class-diagram]]
 .Class diagram for OGC API — Moving Features
 image::./images/MF-API-resource-diagram.png[mf-api-class-diagram, pdfwidth=100%, scaledwidth=100%, align="center"]
 
-<<mf-api-class-diagram>> shows a UML class diagram for OGC API — Moving Features (OGC API — MF) which represents the basic resources of this Standard, such as *Collections*, *Collection*, *MovingFeatures*, *MovingFeature*, *TemporalGeometrySequence*, *TemporalPrimitiveGeometry*, *TemporalProperties*, *TemporalProperty*, and *TemporalPrimitiveValue*.
+<<mf-api-class-diagram>> shows a Unified Modeling Language (UML) class diagram for OGC API — Moving Features which represents the basic resources of this Standard, such as *Collections*, *Collection*, *MovingFeatures*, *MovingFeature*, *TemporalGeometrySequence*, *TemporalPrimitiveGeometry*, *TemporalProperties*, *TemporalProperty*, and *TemporalPrimitiveValue*.
 In this Standard, a single moving feature can have temporal geometries, such as a set of trajectories.
-Also, the moving feature can have multiple temporal properties, and each property can have a set of parametric values.
+Also, a moving feature can have multiple temporal properties, and each property can have a set of parametric values.
 
 //[[mf-json-encoding-schema-overview]]
 //=== Moving Features Implementation Schema
@@ -109,10 +109,10 @@ OGC API — Moving Features extends these core search capabilities to include:
 
 [[dependencies-overview]]
 === Dependencies
-The OGC API — Moving Features (OGC API — MF) Draft Standard is an extension of the OGC API — Common and the OGC API — Features Standards.
-Therefore, an implementation of OGC API — MF shall first satisfy the appropriate Requirements Classes from OGC API — Common and OGC API — Features.
-Also, the OGC API — MF Standard is based on the OGC Moving Features Encoding Extension for JSON (OGC MF-JSON) Standard.
-Therefore, an implementation of OGC API — MF shall satisfy the appropriate Requirements Classes from OGC MF-JSON.
+The OGC API — Moving Features Standard is an extension of the OGC API — Common and the OGC API — Features Standards.
+Therefore, an implementation of OGC API — Moving Features shall first satisfy the appropriate Requirements Classes from OGC API — Common and OGC API — Features.
+Also, the OGC API — Moving Features Standard is based on the https://docs.ogc.org/is/19-045r3/19-045r3.html[OGC Moving Features Encoding Extension - JSON Standard] (OGC MF-JSON).
+Therefore, an implementation of OGC API — Moving Features shall satisfy the appropriate Requirements Classes from OGC MF-JSON.
 <<req-mappings>> identifies the OGC API — Common and OGC API — Features Requirements Classes which are applicable to each section of this Standard.
 Instructions on when and how to apply these Requirement Classes are provided in each section.
 

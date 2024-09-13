@@ -12,19 +12,16 @@ Recipients of this document are requested to submit, with their comments, notifi
 == Abstract
 
 Moving feature data can represent various phenomena, including vehicles, people, animals, weather patterns, etc.
-The OGC API — Moving Features (OGC API — MF) is a Standard defining a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
-The OGC API — MF provides a standard way to manage these data, which can be helpful for applications such as transportation management, disaster response, and environmental monitoring.
-OGC API — MF also includes operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties.
-
-The OGC API — Moving Features — Part 1: Core specifies a set of RESTful web service interfaces and data formats for querying and updating moving feature data over the web.
-<<OGC-API,OGC API Standards>> define modular API building blocks to spatially enable Web APIs in a consistent way.
+The OGC API - Moving Features (OGC API — MF) Standard defines a standard interface for querying and accessing geospatial data that changes over time, such as the location and attributes of moving objects like vehicles, vessels, or pedestrians.
+The API specified in this Standard provides a way to manage data representing moving features, which can be helpful for applications in domains such as transportation management, disaster response, and environmental monitoring. This Standard also specifies operations for filtering, sorting, and aggregating moving feature data based on location, time, and other properties. The OGC API - Moving Features - Part 1: Core Standard specifies a set of RESTful interfaces and data formats for querying and updating moving feature data over the web. The Standard is part of the OGC API family of Standards and makes use of the OpenAPI Specification.
+<<OGC-API,OGC API Standards>> define modular API building blocks that spatially enable Web APIs in a consistent way.
 <<OPENAPI,OpenAPI>> is used to define the reusable API building blocks with responses in JSON and HTML.
 
 The OGC API family of standards is organized by resource type.
 
 [[common-paths]]
 .Overview of Resources
-[width="99%",cols="2,4,^1,2",options="header"]
+[width="99%",cols=",,,",options="header"]
 |====
 | Resource | Path | HTTP Method | Document Reference
 // | Landing page                  | ``/``                           | GET | <<common-landingpage-section, 7.2 API Landing Page>>
@@ -45,10 +42,10 @@ The OGC API family of standards is organized by resource type.
 
 == Security considerations
 
-The OGC API — Moving Features — Part 1: Core Standard does not mandate any specific security controls.
-However, it was constructed to add security controls without impacting conformance, the same as the link:https://docs.ogc.org/is/19-072/19-072.html#_91afaabd-dc29-41eb-805d-15e1afd18825[OGC API — Common — Part 1: Core].
+The OGC API - Moving Features - Part 1: Core Standard does not mandate any specific security controls.
+However, it was designed to support addition of security controls without impacting conformance, in a similar way to the link:https://docs.ogc.org/is/19-072/19-072.html#_91afaabd-dc29-41eb-805d-15e1afd18825[OGC API — Common — Part 1: Core Standard].
 
-This document applied the Requirement link:https://docs.ogc.org/is/19-072/19-072.html#rc_oas30-security[/req/oas30/security] for OpenAPI 3.0 Security support.
+This document therefore applies Requirement link:https://docs.ogc.org/is/19-072/19-072.html#rc_oas30-security[/req/oas30/security] of OGC API - Common - Part 1: Core for OpenAPI 3.0 support of security controls.
 
 
 == Submitters
