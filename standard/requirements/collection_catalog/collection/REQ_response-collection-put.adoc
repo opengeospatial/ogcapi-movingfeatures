@@ -13,6 +13,6 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-put-success
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
+part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/put-response`].
+part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/put-rid-exception`].
 ====
