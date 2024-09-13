@@ -13,5 +13,5 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-get
-part:: An implementation of OGC API — MF SHALL comply with the OGC API — Common *Collection* operation requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_operation_2[`http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections/src-md-op`].
+part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Common *Collection* operation requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_operation_2[`http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections/src-md-op`].
 ====

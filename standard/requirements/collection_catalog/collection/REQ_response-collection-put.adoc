@@ -3,8 +3,8 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-put-success*
-^|A |An implementation of the OGC API — MF SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
-^|B |An implementation of the OGC API — MF SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
+^|A |An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
+^|B |An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
 |===
 ////
 
@@ -13,6 +13,6 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-put-success
-part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
-part:: An implementation of the OGC API — MF SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
+part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/update-put-response`].
+part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/update-put-rid-exception`].
 ====
