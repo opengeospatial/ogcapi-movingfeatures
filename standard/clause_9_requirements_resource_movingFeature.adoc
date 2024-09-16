@@ -1,11 +1,11 @@
 [[resource-movingfeature-section]]
 === Resource MovingFeature
 ==== Overview
-A *MovingFeature* object consists of the set of static information that describes a single moving feature and the set of temporal object, such as temporal geometry and temporal properties.
+A *MovingFeature* object consists of the set of static information that describes a single moving feature and the set of temporal objects, such as temporal geometry and temporal properties.
 An abbreviated copy of this information is returned for each *MovingFeature* in the `{root}/collections/{collectionId}/items` GET response.
 
 <<moving-feature-properties-table>> defines the set of properties that may be used to describe a moving feature.
-The schema for the moving feature object presented in this clause is an extension of the *_GeoJSON Feature Object_* defined in link:https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON].
+The schema for the moving feature object presented in this clause is an extension of the *_GeoJSON Feature Object_* defined in the link:https://datatracker.ietf.org/doc/html/rfc7946#section-3.2[GeoJSON] standard.
 By default, the properties defined in <<moving-feature-properties-table>> are the same as the link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature Object_* in OGC MF-JSON].
 The semantics of each property are also the same as those defined in MF-JSON.
 

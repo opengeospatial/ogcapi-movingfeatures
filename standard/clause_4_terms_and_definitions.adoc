@@ -1,8 +1,5 @@
 == Terms and definitions
 
-=== application programming interface (API)
-an interface that is defined in terms of a set of functions and procedures, and enables a program to gain access to facilities within an application +
- [Source: Dictionary of Computer Science - Oxford Quick Reference, 2016]
 
 === coordinate
 one of a sequence of numbers designating the position of a point +
@@ -39,13 +36,13 @@ characteristic of a feature in which its value varies with time +
 abstraction of a real-world phenomena +
 [small]#Note 1 to entry: A feature can occur as a type or an instance.
 Feature type or feature instance should be used when only one is meant.# +
- [source: ISO 19109]
+ [source: ISO 19101-1:2014]
 
 === feature attribute
 characteristic of a feature +
 [small]#Note 1 to entry: A feature attribute can occur as a type or an instance.
 Feature attribute type or feature attribute instance is used when only one is meant.# +
- [source: ISO 19109]
+ [source: ISO 19101‑1:2014]
 
 === feature table
 table where the columns represent feature attributes, and the rows represent features +

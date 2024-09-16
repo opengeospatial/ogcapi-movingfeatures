@@ -16,7 +16,7 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/param-subtrajectory-response
-part:: The endpoint SHALL return only a subsequence of the trajectory derived from temporal primitive geometry by the *_subTrajectory_* operation at a time interval (new start time and new end time) included in the `datetime` parameter, using interpolated trajectory according to the `interpolation` property in *TemporalPrimitiveGeometry*(<<resource-temporalPrimitiveGeometry-section>>), if the `subTrajectory` parameter is "true".
+part:: The endpoint SHALL return only a subset of the trajectory derived from the temporal primitive geometry by the *_subTrajectory_* operation at a time interval (new start time and new end time) included in the `datetime` parameter, using interpolated trajectory according to the `interpolation` property in *TemporalPrimitiveGeometry*(<<resource-temporalPrimitiveGeometry-section>>), if the `subTrajectory` parameter is "true".
 part:: If the `subTrajectory` parameter is "true", the `datetime` parameter SHALL match all temporal primitive geometry objects in the moving feature or moving feature collection.
 part:: If the `subTrajectory` parameter is "true", the `interpolation` property in the response SHALL be the same as the temporal primitive geometry's `interpolation` property value.
 part:: Apply `subTrajectory` only to resources that intersect a `bbox` parameter, if the `subTrajectory` parameter is provided with a `bbox` parameter.

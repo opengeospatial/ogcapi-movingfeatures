@@ -6,7 +6,7 @@ The *MovingFeatures* resource supports retrieving and creating operations via GE
 . A retrieve operation returns a set of features which describes the moving feature available from this API.
 . A create operation posts a new <<resource-movingfeature-section,*MovingFeature*>> resource instance to a specific <<resource-collection-section,*Collection*>> (specified by `{collectionId}` with this API.
 
-The OGC API — MF `Items` query is an OGC API — Features endpoint that may be used to catalog pre-existing collection resource, such as moving features.
+The OGC API — Moving Features `Items` query is an OGC API — Features endpoint that may be used to catalog a pre-existing collection resource, such as one representing moving features.
 If a `{mFeatureID}` is not specified, the query will return a list of the available moving features.
 The list of moving features returned to the response can be limited using the <<bbox-section,`bbox`>>, <<datetime-section,`datetime`>>, <<limit-section,`limit`>>, and <<subtrajecotry-section,`subTrajectory`>> query parameters.
 This behavior and query parameters for use with the `Items` query are specified in OGC API — Features and OGC API — Common, except <<subtrajecotry-section,`subTrajectory`>> parameter.
@@ -19,16 +19,18 @@ The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox
 [[subtrajecotry-section]]
 ===== Parameter subTrajectory
 The `subTrajectory` query parameter is defined as follows:
+
 include::requirements/parameter/REQ_parameter-subtrajectory-definition.adoc[]
+
 include::requirements/parameter/REQ_parameter-subtrajectory-response.adoc[]
 
-The `subTrajectory` query parameter is used to select a subsequence of <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> for the specified time interval.
+The `subTrajectory` query parameter is used to select a subset of <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> for the specified time interval.
 Each <<resource-movingfeature-section,*MovingFeature*>> in the *MovingFeatures* has *TemporalGeometrySequence*.
 The `subTrajectory` parameter is used to implement the *_subTrajectory_* operation, which is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
 This operation required two timestamps (_newStartTime_ and _newEndTime_) to represent a specified time interval.
-The time interval for the subTrajectory operation is taken from `datetime` parameter.
+The time interval for the subTrajectory operation is taken from the `datetime` parameter.
 
-If the `subTrajectory` parameter is provided by the client, the endpoint SHALL return only a subset of the trajectory derived from temporal primitive geometry by the  operation at time (_newStartTime_ and _newEndTime_) included in the `subTrajectory` parameter, using interpolated trajectory according to the `interpolation` property in <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>.
+If the `subTrajectory` parameter is provided by the client, the endpoint SHALL return only a subset of the trajectory derived from the temporal primitive geometry by the  operation at time (_newStartTime_ and _newEndTime_) included in the `subTrajectory` parameter, using interpolated trajectory according to the `interpolation` property in <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>>.
 The `interpolation` property in the response shall be the same as the original temporal primitive geometry.
 
 // Note that the *_subTrajectory_* operation is defined in the link:https://docs.opengeospatial.org/is/16-120r3/16-120r3.html#12[OGC Moving Feature Access Standard].
@@ -40,7 +42,7 @@ image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, 
 ==== Operation
 ===== Retrieve
 The retrieve operation is defined in the `Features` conformance class of OGC API — Features.
-Additional support for query parameter `subTrajectory` is needed to support <<resource-movingfeatures-section,*MovingFeatures*>> resource.
+Additional support for query parameter `subTrajectory` is needed to support the <<resource-movingfeatures-section,*MovingFeatures*>> resource.
 
 . Issue a `GET` request on `{root}/collections/{collectionID}/items` path
 
@@ -49,7 +51,7 @@ include::requirements/movingfeature/features/REQ_operation-features-get.adoc[]
 
 ===== Create
 The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
-This operation targeted a single or a collection of <<resource-movingfeature-section,*MovingFeature*>> resources.
+This operation targets a single or collection of <<resource-movingfeature-section,*MovingFeature*>> resources.
 
 . Issue a `POST` request on `{root}/collections/{collectionID}/items` path
 
@@ -71,7 +73,7 @@ A successful response to the *MovingFeatures* GET operation is a document that c
 
 If the value of the `subTrajectory` query parameter is provided, the value of the corresponding `temporalGeometry` property of each moving feature is calculated using the `subTrajectory` parameter value and included in the result, i.e., a link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] of <<OGC_19-045r3,MF-JSON>>.
 
-In a typical deployment of the OGF API — MF, the *MovingFeatures* GET response will list <<resource-movingfeature-section,*MovingFeature*>> resource.
+In a typical deployment of the OGC API - Moving Features, the *MovingFeatures* GET response will list <<resource-movingfeature-section,*MovingFeature*>> resource.
 
 include::requirements/movingfeature/features/REQ_response-features-get.adoc[]
 

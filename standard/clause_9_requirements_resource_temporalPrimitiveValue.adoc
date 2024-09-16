@@ -6,7 +6,7 @@ The *TemporalPrimitiveValue* resource represents the dynamic change of a non-spa
 An abbreviated copy of this information is returned for each *TemporalPrimitiveValue* in the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` response.
 
 The schema for the temporal primitive value object presented in this clause is a part of the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[*_ParametricValues_* Object] defined in <<OGC_19-045r3,MF-JSON>>.
-<<temporalPrimitiveValue-properties-table>> defines the set of property that shall be used to describe a temporal primitive value.
+<<temporalPrimitiveValue-properties-table>> defines the set of properties that shall be used to describe a temporal primitive value.
 
 [[temporalPrimitiveValue-properties-table]]
 .Table of the properties related to the temporal primitive value
@@ -19,13 +19,13 @@ The schema for the temporal primitive value object presented in this clause is a
 |*_interpolation_*      |M |A predefined type for a dynamic value (i.e., one of 'Discrete', 'Step', 'Linear', or 'Regression').
 |===
 
-NOTE: The detailed information and requirements for each property are described in the <<OGC_19-045r3,OGC Moving Feature JSON Encoding Standard>>.
+NOTE: The detailed information and requirements for each property are described in the <<OGC_19-045r3,OGC Moving Features Encoding Extension - JSON Standard (OGC 19-045r3)>>.
 
 include::requirements/movingfeature/tpvalue/REQ_mandatory-tpvalue.adoc[]
 
 ==== Operation
 ===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}/{tValueId}` path
 

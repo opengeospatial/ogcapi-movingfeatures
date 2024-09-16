@@ -3,20 +3,20 @@
 ==== Overview
 The *TemporalProperty* resource supports the retrieve, create, and delete operations via the HTTP GET, POST, and DELETE methods respectively.
 
-. A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperty-identifier,{tPropertyName}>>.
+. A retrieve operation returns a *TemporalProperty* resource which is included in the <<resource-temporalProperties-section,*TemporalProperties*>> that is specified by <<tproperty-identifier,{tPropertyName}>>.
 The *TemporalProperty* resource returned to the response can be limited using the parameters <<datetime-section,`datetime`>>, <<leaf-section,`leaf`>> and <<subTemporalValue-section,`subTemporalValue`>>.
-. A create operation posts a new <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> resource to the <<resource-temporalProperties-section,*TemporalProperties*>> that specified by <<tproperty-identifier,{tPropertyName}>>.
-. A delete operation deletes an exist *TemporalProperty* resource that specified by <<tproperty-identifier,{tPropertyName}>>.
+. A create operation posts a new <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> resource to the <<resource-temporalProperties-section,*TemporalProperties*>> that is specified by <<tproperty-identifier,{tPropertyName}>>.
+. A delete operation deletes an existing *TemporalProperty* resource that is specified by <<tproperty-identifier,{tPropertyName}>>.
 
 [[temporal-properties-object]]
 A temporal property object is a collection of dynamic non-spatial attributes and their temporal values with time.
 An abbreviated copy of this information is returned for each *TemporalProperty* in the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` response.
 
 The schema for the temporal property object presented in this clause is an extension of the link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#tproperties[*_ParametricValues_* Object] defined in <<OGC_19-045r3,MF-JSON>>.
-<<temporalProperty-properties-table>> defines the set of property that may be used to describe a temporal property.
+<<temporalProperty-properties-table>> defines the set of properties that may be used to describe a temporal property object.
 
 [[temporalProperty-properties-table]]
-.Table of the properties related to the temporal property
+.Table of the properties related to a temporal property
 [cols="20,15,65",options="header"]
 |===
 |Property           |Requirement    |Description
@@ -27,14 +27,14 @@ The schema for the temporal property object presented in this clause is an exten
 |*_description_*        |O |A short description.
 |===
 
-NOTE: The detailed information and requirements for each property are described in the <<OGC_19-045r3,OGC Moving Feature JSON Encoding Standard>>.
+NOTE: The detailed information and requirements for each property are described in the <<OGC_19-045r3,OGC Moving Features Encoding Extension - JSON Standard (OGC 19-045r3)>>.
 
 include::requirements/movingfeature/tproperty/REQ_mandatory-tproperty.adoc[]
 
 ==== Query Parameters
 Query parameters are used in URLs to define the resources which are returned on a GET request.
 
-The query parameter link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] is inherited from OGC API — Common.
+The link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] query parameter is inherited from OGC API — Common.
 
 The <<leaf-section,`leaf`>> query parameter is defined in the <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> clause.
 
@@ -45,14 +45,14 @@ The <<subTemporalValue-section,`subTemporalValue`>> query parameter is defined i
 . Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
 [[tproperty-identifier]]
-The `{tPropertyName}` parameter is the unique identifier for a single temporal property value offered by an implementation instance (endpoint) of the OGC API — MF.
+The `{tPropertyName}` parameter is the unique identifier for a single temporal property value offered by an implementation instance (endpoint) of the OGC API - Moving Features.
 The list of valid values for `{tPropertyName}` is provided in the <<resource-temporalProperties-section,`{root}/collections/{collectionId}/items/{mFeatureId}/tproperties`>> GET response.
 
 include::requirements/movingfeature/tproperty/REQ_operation-tproperty-get.adoc[]
 
 ===== Create
-The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
-This operation targeted the new <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> object.
+The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features Standard.
+This operation targets the new <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> object.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
@@ -76,7 +76,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 include::examples/temporalValue-post.adoc[]
 
 ===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of API — Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 

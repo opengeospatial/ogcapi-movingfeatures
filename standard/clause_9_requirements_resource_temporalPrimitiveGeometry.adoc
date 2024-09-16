@@ -20,7 +20,7 @@ The schema for the *TemporalPrimitiveGeometry* presented in this clause is the s
 |*_interpolation_*      |M  |A predefined type of motion curve (i.e., one of 'Discrete', 'Step', 'Linear', 'Quadratic' or 'Cubic').
 .2+.^|*_base_*
 .2+.^|O  |*_type_*: A type of 3D file format, such as 'STL', 'OBJ', 'PLY', and 'glTF'.
-         |*_href_*: A URL to address a 3D model data which represents a base geometry of a 3D shape.
+         |*_href_*: A URL to address 3D model data which represents a base geometry of a 3D shape.
 .2+.^|*_orientations_*
 .2+.^|O  |*_scales_*: An array value of numbers along the x, y, and z axis in order as three scale factors.
          |*_angles_*: An array value of numbers along the x, y, and z axis in order as Euler angles in degree.

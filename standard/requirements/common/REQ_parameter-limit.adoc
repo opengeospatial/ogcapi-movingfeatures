@@ -3,7 +3,7 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/common/param-limit*
-^|A |An implementation instance of the OGC API — MF SHALL support the Limit parameter for the operation.
+^|A |An implementation instance of the OGC API — Moving Features Standard SHALL support the Limit parameter for the operation.
 ^|B |Requests which include the Limit parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-definition`].
 ^|C |Responses to Limit requests SHALL comply with OGC API — Common requirements link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-response`]
 |===
@@ -14,7 +14,7 @@
 ====
 [%metadata]
 identifier:: /req/common/param-limit
-part:: An implementation instance of the OGC API — MF SHALL support the Limit parameter for the operation.
+part:: An implementation instance of the OGC API — Moving Features Standard SHALL support the Limit (`limit`) parameter for the operation.
 part:: Requests which include the Limit parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-definition`].
 part:: Responses to Limit requests SHALL comply with OGC API — Common requirements link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-response`]
 ====

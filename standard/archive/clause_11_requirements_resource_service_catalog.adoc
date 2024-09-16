@@ -1,6 +1,6 @@
 [[resource-service-catalog]]
 == Requirement Class "Service Catalog"
-The catalog is a hierarchy that demonstrates how resources and operations are related to one another in the services portion of the OGC API — MF.
+The catalog is a hierarchy that demonstrates how resources and operations are related to one another in the services portion of the OGC API — Moving Features.
 
 In this concept, the operations are split into three groups P1, P2, P3. The rational is to split the development of the standard into three incremental phases corresponding to these groups. 
 

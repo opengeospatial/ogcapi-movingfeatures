@@ -17,7 +17,7 @@
 [%metadata]
 identifier:: /req/movingfeatures/param-leaf-response
 part:: The `leaf` parameter SHALL match all resources in the moving feature that are associated with temporal information.
-part:: If the `leaf` parameter is provided by the client, the endpoint SHALL return only temporal geometry coordinate (or temporal property value) with the *_pointAtTime_* operation at each date-time included in the `leaf` parameter, using interpolated trajectory according to the `interpolation` property.
+part:: If the `leaf` parameter is provided by the client, the endpoint SHALL return only temporal geometry coordinates (or temporal property values) with the *_pointAtTime_* operation at each date-time included in the `leaf` parameter, using interpolated trajectory according to the `interpolation` property.
 part:: If the `leaf` parameter is provided by the client, the `interpolation` property in the response SHALL be 'Discrete'.
 part:: Apply `leaf` only to resources that intersect a `bbox` or (and) a `datetime` parameter, if the `leaf` parameter is provided with a `bbox` or (and) a `datetime` parameter.
 part:: The `leaf` parameter SHALL not be used with the `subTrajectory`(<<subtrajecotry-section>>) parameter.

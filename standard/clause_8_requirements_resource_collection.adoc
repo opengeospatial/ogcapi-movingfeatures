@@ -13,7 +13,7 @@ The schema for the collection information object presented in this clause is an 
 [cols="25,10,65",options="header"]
 |===
 |Property           |Requirement |Description
-|_id_               |M |A unique identifier to the collection.
+|_id_               |M |A unique identifier of the collection.
 |_title_            |O |A human-readable name given to the collection.
 |_description_      |O |A free-text description of the collection.
 |_links_            |M |A list of links for navigating the API (e.g. link to previous or next pages; links to alternative representations, etc.)
@@ -46,7 +46,7 @@ include::requirements/collection_catalog/collection/REQ_operation-collection-get
 
 ===== Replace
 The replace operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#replace[REPLACE]` conformance class of OGC API — Features.
-This operation targeted <<resource-collection-section,*Collection*>> resource.
+This operation targets the <<resource-collection-section,*Collection*>> resource.
 
 . Issue a `PUT` request on `{root}/collections/{collectionId}` path
 

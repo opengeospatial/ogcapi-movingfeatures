@@ -2,7 +2,7 @@
 === TemporalGeometry Query Resources
 ==== Overview
 *TemporalGeometry Query* resources are spatiotemporal queries that support operations for accessing  <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> resources.
-The OGC API — MF Standard identifies an initial set of common query types to implement.
+The OGC API — Moving Features Standard identifies an initial set of common query types to implement.
 These are described in this clause.
 This list may change as the Standard is used and experience is gained.
 
@@ -16,9 +16,9 @@ Where:
 * `{collectionId}`  = An identifier for a specific <<resource-collection-section,*Collection*>> of data
 * `{mFeatureId}`    = An identifier for a specific <<resource-movingfeature-section,*MovingFeature*>> of a specific <<resource-collection-section,*Collection*>> of data
 * `{tGeometryId}`   = An identifier for a specific <<resource-temporalPrimitiveGeometry-section,*TemporalPrimitiveGeometry*>> of a specific <<resource-movingfeature-section,*MovingFeature*>> of data
-* `{quertyType}`    = An identifier for the query pattern performed by an implementation instance of the OGC API — MF.
+* `{quertyType}`    = An identifier for the query pattern performed by an implementation instance of the OGC API — Moving Features.
 
-<<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API — MF.
+<<temporalGeometry-query-table>> provides a mapping of the initial query types proposed for the OGC API — Moving Features.
 
 [[temporalGeometry-query-table]]
 .Table of the query resources
@@ -36,7 +36,7 @@ Where:
 ==== Query parameters
 Query parameters are used in URLs to define the resources which are returned on a GET request.
 
-The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] is inherited from OGC API — Common.
+The link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`] query parameter is inherited from OGC API — Common.
 
 The <<leaf-section,`leaf`>> query parameter is defined in the <<resource-temporalGeometrySequence-section,*TemporalGeometrySequence*>> clause.
 

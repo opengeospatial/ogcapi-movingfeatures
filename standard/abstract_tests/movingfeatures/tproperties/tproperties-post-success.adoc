@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/movingfeatures/tproperties-post-success
 target:: /req/movingfeatures/tproperties-post-success
-test-purpose:: Validate that the response of `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` POST request complies with the required structure and contents.
+test-purpose:: Validate that the response of the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` POST request complies with the required structure and contents.
 test-method::
 +
 --

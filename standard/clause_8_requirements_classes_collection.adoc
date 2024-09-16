@@ -8,7 +8,7 @@ The `Moving Feature Collection Catalog` requirements class defines the requireme
 A moving feature collection is an object that provides information about and access to a set of related <<clause-core-movingfeature,Moving Features>>.
 
 === Information Resources
-The two resources defined in this Requirement Class are summarized in <<collection-resources>>.
+The two resources defined in this Requirements Class are summarized in <<collection-resources>>.
 
 [[collection-resources]]
 .Moving Feature Collection Catalog Resources
@@ -17,7 +17,7 @@ The two resources defined in this Requirement Class are summarized in <<collecti
 ^|Resource ^|URI ^|HTTP Method ^|Description
 .2+|<<resource-collections-section,*Collections*>>
 .2+|`{root}/collections`
-^|GET |Get information which describes the set of available *Collections* resource
+^|GET |Get information which describes the set of available collections from the *Collections* resource
 ^|POST|Add a new resource (<<resource-collection-section,Collection>>) instance to a *Collections* resource
 
 .3+|<<resource-collection-section,*Collection*>>
