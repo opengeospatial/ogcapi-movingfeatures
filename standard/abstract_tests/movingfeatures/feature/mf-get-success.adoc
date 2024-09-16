@@ -25,7 +25,7 @@ test-method::
 --
 ====
 
-The *MovingFeature* content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate the against that schema. All supported formats should be exercised.
+The *MovingFeature* content may be retrieved in a number of different formats. The following table identifies the applicable schema document for each format and the test to be used to validate against that schema. All supported formats should be exercised.
 
 [[movingfeature-test-schema]]
 .Schema and Tests for MovingFeature content
