@@ -16,7 +16,7 @@ The path parameter `mFeatureId` is each `id` property in the <<resource-movingfe
 [%metadata]
 identifier:: /req/movingfeatures/tproperty-get
 part:: For every temporal property in a moving feature (path `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties`), the server SHALL support the HTTP GET operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}`
-part:: The path parameter `collectionId` is each `id` property in the *Collection*(<<resource-collection-section>>) GET response where the value of the `itemType` property is specified as *MovingFeature*. +
+part:: The path parameter `collectionId` is each `id` property in the *Collection*(<<resource-collection-section>>) GET response where the value of the `itemType` property is specified as a *MovingFeature* object. +
 The path parameter `mFeatureId` is each `id` property in the *MovingFeatures*(<<resource-movingfeatures-section>>) GET response. +
 `tPropertyName` is a local identifier of the temporal property.
 ====

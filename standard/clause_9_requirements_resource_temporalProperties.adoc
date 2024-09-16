@@ -20,7 +20,7 @@ include::requirements/parameter/REQ_parameter-subtemporalvalue-definition.adoc[]
 include::requirements/parameter/REQ_parameter-subtemporalvalue-response.adoc[]
 
 The `subTemporalValue` query parameter is used to select a subset of <<resource-temporalProperty-section,*TemporalProperty*>> for the specified time interval.
-Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>>.
+Each <<resource-movingfeature-section,*TemporalProperty*>> in the *TemporalProperties* has a sequence of <<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> objects.
 The `subTemporalValue` parameter behaves functionally the same as the `subTrajectory` parameter.
 The difference is that `subTrajectory` is associated with temporal geometry, while `subTemporalValue` is associated with temporal properties.
 
@@ -31,7 +31,7 @@ The difference is that `subTrajectory` is associated with temporal geometry, whi
 include::requirements/movingfeature/tproperties/REQ_operation-tproperties-get.adoc[]
 
 ===== Create
-The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features.
+The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class in the OGC API — Features Standard.
 This operation targets a single or a collection of <<resource-temporalProperty-section,*TemporalProperty*>> resources.
 
 . Issue a `POST` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties` path
