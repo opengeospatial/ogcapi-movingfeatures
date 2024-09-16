@@ -14,7 +14,7 @@
 ====
 [%metadata]
 identifier:: /req/common/param-limit
-part:: An implementation instance of the OGC API — Moving Features Standard SHALL support the Limit parameter for the operation.
+part:: An implementation instance of the OGC API — Moving Features Standard SHALL support the Limit (`limit`) parameter for the operation.
 part:: Requests which include the Limit parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-definition`].
 part:: Responses to Limit requests SHALL comply with OGC API — Common requirements link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-response`]
 ====
