@@ -51,7 +51,7 @@ Note 2: If the four points are on the same circle, the arc becomes a circular on
 
 
 
-The UML below shows the `GM_Object` base type with its operations
+The UML class diagram below shows the `GM_Object` base type with its operations
 (e.g. `distance(…)` for computing the distance between two geometries).
 `GM_Curve` (not shown in this UML) is a subtype of `GM_Primitive`.
 All operations assume static objects, without time-varying coordinates or attributes.
@@ -77,16 +77,16 @@ The terms “feature type” and “feature instance” are used to separate the
 
 *Feature type*::
 The whole collection of real-world phenomena classified in a concept.
-For example the “bridge” feature type is the abstraction of the collection of all real-world phenomena
+For example, the “bridge” feature type is the abstraction of the collection of all real-world phenomena
 that is classified into the concept behind the term “bridge”.
 
 *Feature instance*::
 A certain occurrence of a feature type.
-For example “Tower Bridge” feature instance is the abstraction of a certain real-world bridge in London.
+For example, “Tower Bridge” feature instance is the abstraction of a certain real-world bridge in London.
 
 In object-oriented modelling, feature types are equivalent to classes and feature instances are equivalent to objects,
 
-The UML below shows the General Feature Model.
+The UML class diagram below shows the General Feature Model.
 `FeatureType` is a metaclass that is instantiated as classes that represent individual feature types.
 A `FeatureType` instance contains the list of properties (attributes, associations and operations)
 that feature instances of that type can contain.
@@ -102,7 +102,7 @@ image::images/FeatureType.png[alt=UML of feature model,align="center",scaledwidt
 
 The link:https://portal.ogc.org/files/?artifact_id=25354[Simple Feature Access — Part 2: SQL Option] Standard
 describes a feature access implementation in SQL based on a profile of ISO 19107.
-This standard defines _feature table_ as a table where the columns represent feature attributes,
+This Standard defines _feature table_ as a table where the columns represent feature attributes,
 and the rows represent feature instances.
 The geometry of a feature is one of its feature attributes.
 
@@ -113,7 +113,7 @@ The ISO 19143, _Geographic information — Filter encoding_ standard
 (also link:https://portal.ogc.org/files/?artifact_id=39968[OGC Standard]) provides types for constructing queries.
 These objects can be transformed into a SQL “SELECT … FROM … WHERE … ORDER BY …” statement to fetch data stored in a SQL-based relational database.
 Similarly, the same objects can be transformed into a XQuery expression in order to retrieve data from XML document.
-The UML below shows the objects used for querying a subset based on spatial operations such as “contains” or “intersects”.
+The UML class diagram below shows the objects used for querying a subset based on spatial operations such as “contains” or “intersects”.
 
 .Spatial operators from ISO 19143 figure 6
 image::images/Filter.png[alt=UML of spatial operators,align="center",scaledwidth=100%]
@@ -121,7 +121,7 @@ image::images/Filter.png[alt=UML of spatial operators,align="center",scaledwidth
 
 
 
-==== Features web API
+==== OGC API - Features - Part 1: Core
 
 The link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC 17-069, _Features — Part 1: Core_] Standard
 specifies the fundamental building blocks for interacting with features using a Web API pattern.
@@ -129,7 +129,7 @@ This Standard defines how to get all features available on a server, or to get f
 
 
 
-==== Features Filtering web API
+==== OGC API - Features - Part 3: Filtering
 
 The draft link:https://portal.ogc.org/files/96288[OGC TBD, _Features — Part 3: Filtering and the Common Query Language (CQL)_] standard
 extends the Feature web API with capabilities to encode more sophisticated queries.
@@ -145,14 +145,14 @@ The conceptual model is close to ISO 19143.
 The ISO 19141, _Geographic information — Schema for moving features_ standard
 extends the ISO 19107 spatial schema for addressing features whose locations change over time.
 Despite the “Moving Features” name, that standard is more about “Moving geometries”.
-The UML below shows how the `MF_Trajectory` type extends the “static” types from ISO 19107.
+The UML class diagram below shows how the `MF_Trajectory` type extends the “static” types from ISO 19107.
 
 .Trajectory type from ISO 19141 figure 3
 image::images/Trajectory.png[alt=UML of trajectory,align="center",scaledwidth=100%]
 
 Trajectory inherits operations shown below.
 Those operations are in addition to the operations inherited from `GM_Object`.
-For example the `distance(…)` operation from ISO 19107 is now completed by a `nearestApproach(…)` operation.
+For example, the `distance(…)` operation from ISO 19107 is now completed by a `nearestApproach(…)` operation.
 
 .Temporal geometry from ISO 19141 figure 6
 image::images/TemporalGeometry.png[alt=UML of temporal geometry,align="center",scaledwidth=100%]
@@ -164,7 +164,7 @@ image::images/TemporalGeometry.png[alt=UML of temporal geometry,align="center",s
 
 The link:http://docs.opengeospatial.org/is/18-075/18-075.html[OGC 18-075 _Moving Features Encoding Part I: XML Core_]
 Standard takes a subset of the ISO 19141 Standard and defines an XML encoding.
-That standard also completes ISO 19141 by allowing to specify attributes whose value change over time.
+That standard also completes ISO 19141 by allowing to specify attributes whose values change over time.
 This extension to the above _General Feature Model_ is shown below:
 
 [[dynamic_atts_18_075]]
