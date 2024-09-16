@@ -127,12 +127,13 @@ The link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html[OGC 17-069, _F
 specifies the fundamental building blocks for interacting with features using a Web API pattern.
 This Standard defines how to get all features available on a server, or to get feature instances by their identifier.
 
+==== OGC API - Features - Part 2: Coordinate Reference Systems by Reference
 
+The link:https://docs.ogc.org/is/18-058r1/18-058r1.html[OGC API - Features - Part 2: Coordinate Reference Systems by Reference] Standard specifies an extension to the link:https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core] Standard that defines the behavior of a server that supports the ability to present geometry valued properties in a response document in one from a list of supported Coordinates Reference Systems (CRS). This part extends the core capabilities specified in Part 1: Core with the ability to use coordinate reference system identifiers other than the defaults defined in the core.
 
 ==== OGC API - Features - Part 3: Filtering
 
-The draft link:https://portal.ogc.org/files/96288[OGC TBD, _Features — Part 3: Filtering and the Common Query Language (CQL)_] standard
-extends the Feature web API with capabilities to encode more sophisticated queries.
+The link:https://docs.ogc.org/is/19-079r2/19-079r2.html[OGC API - Features - Part 3: Filtering Standard (OGC 19-079r2)] extends the Web API defined in link:https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core] with capabilities to encode more sophisticated queries.
 The conceptual model is close to ISO 19143.
 
 
@@ -174,9 +175,9 @@ image::images/DynamicAttribute.png[alt=UML of dynamic attribute,align="center",s
 
 
 
-==== Moving Features JSON encoding (OGC 19-045)
+==== Moving Features JSON encoding (OGC 19-045r3)
 
-The link:http://docs.opengeospatial.org/is/19-045r3/19-045r3.html[OGC 19-045 _Moving Features Encoding Extension — JSON_]
+The link:http://docs.opengeospatial.org/is/19-045r3/19-045r3.html[OGC 19-045r3 _Moving Features Encoding Extension - JSON_]
 Standard takes a subset of the ISO 19141 Standard and defines a JSON encoding.
 The Standard provides various UML diagrams summarizing ISO 19141.
 
