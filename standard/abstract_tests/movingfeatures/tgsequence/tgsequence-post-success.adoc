@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/movingfeatures/tgsequence-post-success
 target:: /req/movingfeatures/tgsequence-post-success
-test-purpose:: Validate that the response of `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence` POST request complies with the required structure and contents.
+test-purpose:: Validate that the response of the `{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence` POST request complies with the required structure and contents.
 test-method::
 +
 --

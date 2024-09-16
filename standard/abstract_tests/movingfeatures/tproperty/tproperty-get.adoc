@@ -13,7 +13,7 @@ For every *TemporalProperty* identified in *MovingFeature*, issue an HTTP GET re
 1. Validate that a document was returned with a status code `200` +
 2. Validate the contents of the returned document using test <<conf_mf_tproperty_get_success,`/conf/movingfeatures/tproperty-get-success`>>
 
-Repeat these tests using the following parameter tests that defined in the OGC API — Common and OGC API — Moving Features: +
+Repeat these tests using the following parameter tests that are defined in the OGC API — Common and OGC API — Moving Features: +
 - Limit: link:http://docs.ogc.org/DRAFTS/20-024.html#_limit_tests[Limit Tests] +
 - Date-Time: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
 - Leaf: <<conf_mf_feature_param_leaf_definition,Leaf Definition Test>> and <<conf_mf_feature_param_leaf_response,Leaf Response Test>>

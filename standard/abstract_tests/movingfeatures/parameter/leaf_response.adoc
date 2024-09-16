@@ -25,7 +25,7 @@ test-purpose:: Validate that the `leaf` query parameter is processed correctly.
 test-method::
 +
 --
-DO FOR each Resource which have `datetimes` property:
+DO FOR each Resource which has a `datetimes` property:
 
 1. Calculate a temporal geometry coordinate (or temporal property value) with the *_pointAtTime_* query at each time included in the `leaf` parameter, using interpolated trajectory according to the `interpolation` property +
 2. Verify that the temporal geometry coordinate (or temporal property value) intersects the interpolated trajectory according to the `interpolation` property, using datetime value defined by the `leaf` parameter

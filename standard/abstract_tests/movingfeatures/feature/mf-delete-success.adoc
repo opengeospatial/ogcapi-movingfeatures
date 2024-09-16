@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/movingfeatures/mf-delete-success
 target:: /req/movingfeatures/mf-delete-success
-test-purpose:: Validate that the response of `{root}/collections/{collectionId}/items/{mFeatureId}` DELETE request complies with the required structure and contents.
+test-purpose:: Validate that the response of the `{root}/collections/{collectionId}/items/{mFeatureId}` DELETE request complies with the required structure and contents.
 test-method::
 +
 --

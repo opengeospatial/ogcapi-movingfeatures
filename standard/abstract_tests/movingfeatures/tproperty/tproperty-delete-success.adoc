@@ -4,7 +4,7 @@
 [%metadata]
 identifier:: /conf/movingfeatures/tproperty-delete-success
 target:: /req/movingfeatures/tproperty-delete-success
-test-purpose:: Validate that the response of `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tpropertyName}` DELETE request complies with the required structure and contents.
+test-purpose:: Validate that the response of the `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tpropertyName}` DELETE request complies with the required structure and contents.
 test-method::
 +
 --

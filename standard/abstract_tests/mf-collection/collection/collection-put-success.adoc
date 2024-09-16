@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/mf-collection/collections-put-success
 target:: /req/mf-collection/collection-put-success
-test-purpose:: Validate that the response of `{root}/collections/{collectionId}` PUT request complies with the required structure and contents.
+test-purpose:: Validate that the response of the `{root}/collections/{collectionId}` PUT request complies with the required structure and contents.
 test-method::
 +
 --
