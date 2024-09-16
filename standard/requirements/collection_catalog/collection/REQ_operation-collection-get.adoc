@@ -3,7 +3,7 @@
 [width="90%",cols="2,6a",options="header"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-get*
-^|A |An implementation of OGC API — MF SHALL comply with the OGC API — Common *Collection* operation requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_operation_2[`http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections/src-md-op`].
+^|A |An implementation of OGC API — Moving Features SHALL comply with the OGC API — Common *Collection* operation requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_operation_2[`http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections/src-md-op`].
 // ^|B |The API-Common link:https://docs.ogc.org/DRAFTS/20-024.html#rec_collections_rc-md-item-type[`/rec/collections/rc-md-item-type`] recommendation SHALL apply to collections where the value of the `itemType` property is specified as *MovingFeature*.
 |===
 ////

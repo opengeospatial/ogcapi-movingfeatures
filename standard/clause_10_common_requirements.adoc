@@ -6,7 +6,7 @@ The following common requirements apply to all OGC APIs.
 
 === Parameters
 The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
-All requirements and recommendations in API — Common regarding these parameters also apply to OGC API — MF.
+All requirements and recommendations in API — Common regarding these parameters also apply to OGC API — Moving Features.
 No modifications are required.
 
 [[limit-section]]

@@ -3,9 +3,9 @@
 [[clause-ATS]]
 == Conformance Class Abstract Test Suite
 === Introduction
-The Abstract Test Suite (ATS) is a compendium of test assertions applicable to implementations of the OGC API — MF. An ATS provides a basis for developing an Executable Test Suite to verify that the implementation under test conforms to all the relevant functional specifications.
+The Abstract Test Suite (ATS) is a compendium of test assertions applicable to implementations of the OGC API — Moving Features. An ATS provides a basis for developing an Executable Test Suite to verify that the implementation under test conforms to all the relevant functional specifications.
 
-The abstract test cases (assertions) are organized into test groups that correspond to distinct conformance test classes defined in the OGC API — MF Standard.
+The abstract test cases (assertions) are organized into test groups that correspond to distinct conformance test classes defined in the OGC API — Moving Features Standard.
 
 Implementations of OGC API Standards are not Web Services in the traditional sense. Rather, they define the behavior and content of a set of Resources exposed through a Web Application Programming Interface (Web API). Therefore, an API may expose resources in addition to those defined by the standard. A test engine shall traverse the API, identify and validate test points, and ignore resource paths which are not to be tested.
 

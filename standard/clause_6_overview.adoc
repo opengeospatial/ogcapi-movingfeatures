@@ -117,7 +117,7 @@ Therefore, an implementation of OGC API — Moving Features shall satisfy the ap
 Instructions on when and how to apply these Requirement Classes are provided in each section.
 
 [[req-mappings]]
-.Mapping OGC API — MF Sections to OGC API — Common, OGC API — Features, and OGC MF-JSON Requirements Classes
+.Mapping OGC API — Moving Features Sections to OGC API — Common, OGC API — Features, and OGC MF-JSON Requirements Classes
 [width="90%",cols=",,",options="header"]
 |====
 ^|*API — MF Section*           ^| *API — MF Requirements Class*           |*API — Common, API — Features, MF-JSON Requirements Class*

@@ -33,7 +33,7 @@ test-purpose:: Validate that resources can be identified and extracted from a *T
 test-method::
 +
 --
-IF any of the query parameters are not empty, validate that the query parameters with the following parameter tests are defined in the OGC API — Common and OGC API — MF: +
+IF any of the query parameters are not empty, validate that the query parameters with the following parameter tests are defined in the OGC API — Common and OGC API — Moving Features: +
 - Date-Time: link:http://docs.ogc.org/DRAFTS/20-024.html#_date_time_tests[Date-Time Tests] +
 - Leaf: <<conf_mf_feature_param_leaf_definition,Leaf Definition Test>> and <<conf_mf_feature_param_leaf_response,Leaf Response Test>> +
 - SubTemporalValue: <<conf_mf_feature_param_subtemporalvalue_definition,SubTemporalValue Definition Test>> and <<conf_mf_feature_param_subtemporalvalue_response,SubTemporalValue Response Test>>
