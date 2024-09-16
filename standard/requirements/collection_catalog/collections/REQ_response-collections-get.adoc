@@ -21,4 +21,4 @@ part:: The `itemType` property of the response schema SHALL be *MovingFeature*.
 ====
 
 [NOTE]
-The usage of the `itemType` property is referred from the OGC API — Common link:http://docs.ogc.org/DRAFTS/20-024.html#collection-item-type-section[item Type section].
+The usage of the `itemType` property is inherited from the OGC API — Common link:http://docs.ogc.org/DRAFTS/20-024.html#collection-item-type-section[item Type section].
