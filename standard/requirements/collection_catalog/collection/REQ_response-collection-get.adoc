@@ -15,7 +15,7 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-get-success
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Common *Collection* response requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_response_2[`/req/collections`].
+part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Common *Collection* response requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_response_2[`/req/collections/src-md-success`].
 part:: The response SHALL only include collection metadata selected by the request.
 part:: The content of that response SHALL be based upon the <<collection-schema, *Collection* response schema>>.
 part:: The `itemType` property of the response schema SHALL be 'movingfeature'.
