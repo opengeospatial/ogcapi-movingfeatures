@@ -15,8 +15,8 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/tproperty-post
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/insert-post-op`].
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` request body requirements link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/insert-body` and `/req/create-replace-delete/insert-content-type`].
+part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/post-op`].
+part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` request body requirements link:http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/post-body` and `/req/create-replace-delete/post-content-type`].
 part:: The content of the request body SHALL be based upon the <<tvalue-schema,TemporalPrimitiveValue>> schema.
 part:: The ending date-time instance (*_t_end_*) in the temporal primitive value object in *TemporalProperty*(<<resource-temporalProperty-section>>), determined by `tPropertyName`, SHALL be earlier than the beginning date-time instance (*_t_new_*) in the temporal primitive value object in the request body, i.e., *_t_end < t_new_*.
 ====
