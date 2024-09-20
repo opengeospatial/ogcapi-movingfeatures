@@ -12,5 +12,5 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/tproperty-post-success
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response[`/req/create-replace-delete/insert-response` and `/req/create-replace-delete/insert-response-rid`].
+part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response[`/req/create-replace-delete/post-response` and `/req/create-replace-delete/post-response-rid`].
 ====
