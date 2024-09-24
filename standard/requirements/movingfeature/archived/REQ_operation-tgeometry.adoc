@@ -14,5 +14,5 @@
 [%metadata]
 identifier:: /req/movingfeatures/temporal-geometry-op
 part:: For every temporal primitive geometry in a moving feature (path `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry`), the server SHALL support the HTTP GET operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}/tgeometry/{tGeometryId}`
-part:: The path parameter `collectionId` is each `id` property in the <<resource-collection-section, *Collection*>> response where the value of the `itemType` property is specified as *MovingFeature*. The path parameter `mFeatureId` is each `id` property in the <<resource-movingfeatures-section, *MovingFeatures*>> response. `tGeometryId` is an `id` property of the temporal geometry.
+part:: The path parameter `collectionId` is each `id` property in the <<resource-collection-section, *Collection*>> response where the value of the `itemType` property is specified as *movingfeature*. The path parameter `mFeatureId` is each `id` property in the <<resource-movingfeatures-section, *MovingFeatures*>> response. `tGeometryId` is an `id` property of the temporal geometry.
 ====

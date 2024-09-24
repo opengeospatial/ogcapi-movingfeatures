@@ -17,7 +17,7 @@
 identifier:: /req/mf-collection/collections-get-success
 part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Common *Collections* response requirement link:https://docs.ogc.org/DRAFTS/20-024.html#_response[`/req/collections/rc-md-success`].
 part:: The content of that response SHALL be based upon the <<collections-schema, *Collections* response schema>>.
-part:: The `itemType` property of the response schema SHALL be *MovingFeature*.
+part:: The `itemType` property of the response schema SHALL be *movingfeature*.
 ====
 
 [NOTE]
