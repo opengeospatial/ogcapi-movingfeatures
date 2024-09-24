@@ -12,5 +12,7 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/features-get
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `Features` operation requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_operation_6[`/req/core/fc-op`].
+// part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `Features` operation requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_operation_6[`/req/core/fc-op`].
+part:: For every moving feature collection identified in the moving feature collections response (path `{root}/collections`), the server SHALL support the HTTP GET operation at the path `{root}/collections/{collectionId}/items`.
+part:: The parameter collectionId is each id property in the feature collections response (JSONPath: `$.collections[*].id`).
 ====

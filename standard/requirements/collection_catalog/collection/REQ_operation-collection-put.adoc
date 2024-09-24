@@ -15,8 +15,13 @@ If the `updateFrequency` is included in the request body, the server SHALL ignor
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-put
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_2[`/req/create-replace-delete/put-op`].
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[`/req/create-replace-delete/put-body` and `/req/create-replace-delete/put-content-type`].
+// part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_2[`/req/create-replace-delete/put-op`].
+// part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[`/req/create-replace-delete/put-body` and `/req/create-replace-delete/put-content-type`].
+part:: For every resource in the collection, the server SHALL support the HTTP PUT operation.
+part:: The `Content-Type` header SHALL be used to indicate the media type of the request body containing the representation of the new resource content.
 part:: The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>, except `updateFrequency`. +
 If the `updateFrequency` is included in the request body, the server SHALL ignore it.
 ====
+
+[NOTE]
+See link:https://www.rfc-editor.org/rfc/rfc9110#field.content-type[section 8.3 of RFC 9110] for details of `Content-Type`.

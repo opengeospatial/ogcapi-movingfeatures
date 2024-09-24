@@ -12,5 +12,8 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collections-get
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Common *Collections* operation requirement https://docs.ogc.org/DRAFTS/20-024.html#_operation[`/req/collections/rc-md-op`].
+// part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Common *Collections* operation requirement https://docs.ogc.org/DRAFTS/20-024.html#_operation[`/req/collections/rc-md-op`].
+part:: The API SHALL support the HTTP GET operation at the path `{root}/collections`
+part:: The API SHALL support the HTTP GET operation on all links to a `Collections` Resource that have the relation type +
+link:http://www.opengis.net/def/rel/ogc/1.0/data[http://www.opengis.net/def/rel/ogc/1.0/data].
 ====

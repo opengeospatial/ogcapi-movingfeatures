@@ -17,7 +17,9 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/mf-collection
 subject:: Web API
+inherit:: http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core
 inherit:: http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
+inherit:: http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 inherit:: http://www.opengis.net/spec/ogcapi-features-4/1.0/req/create-replace-delete
 requirement:: /req/mf-collection/collections-get
 requirement:: /req/mf-collection/collections-post

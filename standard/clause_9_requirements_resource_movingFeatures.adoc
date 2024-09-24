@@ -108,7 +108,7 @@ A successful response to the *MovingFeatures* POST operation is an HTTP status c
 A link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_*] object of <<OGC_19-045r3,MF-JSON>> is a collection of <<resource-movingfeature-section,MovingFeature>> objects.
 Posting a collection of resources is the same as posting a single resource consecutively.
 However, because the result must be returned in a single response, the `Locations` header includes a list of the URIs of the newly added resources.
-In this case, requirement *B* of link:https://docs.ogc.org/DRAFTS/20-002.html#_response[/req/create-replace-delete/post-response] in OGC API — Features is not applicable.
+// In this case, requirement *B* of link:https://docs.ogc.org/DRAFTS/20-002.html#_response[/req/create-replace-delete/post-response] in OGC API — Features is not applicable.
 
 include::requirements/movingfeature/features/REQ_response-features-post.adoc[]
 

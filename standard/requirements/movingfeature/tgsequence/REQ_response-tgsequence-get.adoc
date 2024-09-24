@@ -14,7 +14,8 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/tgsequence-get-success
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
+// part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `Features` response requirement link:http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response_6[`/req/core/fc-response`].
+part:: A successful execution of the operation SHALL be reported as a response with an HTTP status code `200`.
 part:: The response SHALL only include temporal primitive geometry selected by a request with `limit`, `bbox`, `datetime`, and `leaf` (or `subTrajectory`) parameters.
 part:: Each temporal primitive geometry in the response SHALL include the mandatory properties listed in <<temporalPrimitiveGeometry-properties-table>>.
 ====

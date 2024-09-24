@@ -46,7 +46,7 @@ include::examples/collection-post.adoc[]
 ===== Retrieve
 A successful response to the *Collections* GET operation is a document that contains summary metadata for each collection accessible through an instance of an API implementation.
 In a typical deployment of the OGC API - Moving Features Standard, the *Collections* GET response will list collections of all offered resource types.
-The collections where the value of the `itemType` property is *MovingFeature* are collections of moving features.
+The collections where the value of the `itemType` property is *movingfeature* are collections of moving features.
 
 include::requirements/collection_catalog/collections/REQ_response-collections-get.adoc[]
 
