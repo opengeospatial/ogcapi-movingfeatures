@@ -14,7 +14,33 @@
 ====
 [%metadata]
 identifier:: /req/common/param-datetime
-part:: An implementation instance of the OGC API — Moving Features Standard SHALL support the DateTime (`datetime`) parameter for the operation.
-part:: Requests which include the DateTime parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-definition`].
-part:: Responses to DateTime requests SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-response`].
+// part:: An implementation instance of the OGC API — Moving Features Standard SHALL support the DateTime (`datetime`) parameter for the operation.
+// part:: Requests which include the DateTime parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-definition`].
+// part:: Responses to DateTime requests SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#datetime-parameter-requirements[`/req/collections/rc-time-response`].
+[.component,class=part]
+--
+The `datetime` parameter SHALL have the following characteristics (using an OpenAPI Specification 3.0 fragment): +
+[source,yaml]
+name: datetime
+in: query
+required: true
+schema:
+  type: string
+style: form
+explode: false
+--
+part:: Only features that have a temporal primitive geometry (and temporal primitive value) that intersects the temporal information in the `datetime` parameter SHALL be part of the result set, if the parameter is provided.
+[.component,class=part]
+--
+Temporal primitive geometries (and temporal primitive values) are a half-bounded time interval (i.e., *_(t_s, t_e + updateFrequency]_*). The parameter value SHALL conform to the following syntax (using link:https://tools.ietf.org/html/rfc5234[ABNF]):
+[source]
+interval-bounded            = date-time "/" date-time
+interval-half-bounded-start = [".."] "/" date-time
+interval-half-bounded-end   = date-time "/" [".."]
+interval                    = interval-bounded / interval-half-bounded-start / interval-half-bounded-end
+datetime                    = date-time / interval
+--
+part:: Server implementations SHALL interpret the date-time as specified by link:https://tools.ietf.org/html/rfc3339#section-5.6[RFC 3339, 5.6] supporting at least UTC time with the notation ending with a Z (with support for local time offsets optional).
+part:: When a double-dot (`..`) or an empty string is specified in a time interval, the implementation SHALL interpret it as a half-bounded or an unbounded interval (open range).
+part:: If the `datetime` parameter is provided by the client and supported by the server, then only collections whose temporal extent intersects the interval or instant of the `datetime` parameter and collections that do not describe a temporal extent SHALL be part of the result set.
 ====

@@ -7,6 +7,7 @@ identifier:: http://www.opengis.net/spec/ogcapi-movingfeatures-1/1.0/req/common
 subject:: Web API
 inherit:: http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core
 inherit:: http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core
+inherit:: http://www.opengis.net/spec/ogcapi-common-2/1.0/req/core
 requirement:: /req/common/param-limit
 requirement:: /req/common/param-bbox
 requirement:: /req/common/param-datetime

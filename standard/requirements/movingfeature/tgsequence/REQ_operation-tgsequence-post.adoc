@@ -15,8 +15,13 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/tgsequence-post
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/post-op`].
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/post-body` and `/req/create-replace-delete/post-content-type`].
+// part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation[`/req/create-replace-delete/post-op`].
+// part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `CREATE` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body[`/req/create-replace-delete/post-body` and `/req/create-replace-delete/post-content-type`].
+part:: The server SHALL support the HTTP POST operation at the resource endpoint(`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence`).
+part:: A `Content-Type` header SHALL be used to declare the media type of the request body containing a representation of the resource to be added.
 part:: The content of the request body SHALL be based upon the link:https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive[*_TemporalPrimitiveGeometry_* object] in <<OGC_19-045r3,OGC Moving Features JSON Encoding Standard>> schema.
 part:: The ending date-time instance (*_t_end_*) in the temporal geometry object in *MovingFeature*(<<resource-movingfeature-section>>), determined by `mFeatureId`, SHALL be earlier than the beginning date-time instance (*_t_new_*) in the temporal geometry object in the request body, i.e., *_t_end < t_new_*.
 ====
+
+[NOTE]
+See link:https://www.rfc-editor.org/rfc/rfc9110#field.content-type[section 8.3 of RFC 9110] for details of `Content-Type`.

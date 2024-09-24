@@ -12,5 +12,7 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-delete
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
+// part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
+part:: For every resource in the collection (path `{root}/collections`), the server SHALL support the HTTP DELETE operation at the path `{root}/collections/{collectionId}`.
+part:: The parameter `collectionId` is each id property in the `collections` response (JSONPath: `$.collections[*].id`).
 ====

@@ -14,7 +14,28 @@
 ====
 [%metadata]
 identifier:: /req/common/param-limit
-part:: An implementation instance of the OGC API — Moving Features Standard SHALL support the Limit (`limit`) parameter for the operation.
-part:: Requests which include the Limit parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-definition`].
-part:: Responses to Limit requests SHALL comply with OGC API — Common requirements link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-response`]
+// part:: An implementation instance of the OGC API — Moving Features Standard SHALL support the Limit (`limit`) parameter for the operation.
+// part:: Requests which include the Limit parameter SHALL comply with OGC API — Common requirement link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-definition`].
+// part:: Responses to Limit requests SHALL comply with OGC API — Common requirements link:https://docs.ogc.org/DRAFTS/20-024.html#limit-parameter-requirements[`/req/collections/rc-limit-response`]
+[.component,class=part]
+--
+The `limit` parameter SHALL possess the following characteristics (using an OpenAPI Specification 3.0 fragment): +
+[source,yaml]
+name: limit
+in: query
+required: false
+schema:
+  type: integer
+  minimum: 1
+  maximum: 10000
+  default: 10
+style: form
+explode: false
+--
+part:: If the `limit` parameter is provided by the client and supported by the server, then the response SHALL NOT contain more collections than specified by the `limit` parameter.
+part:: If the API definition specifies a maximum value for the `limit` parameter, the response SHALL NOT contain more collections than this maximum value.
+part:: Only items are counted that are on the first level of the collection. Any nested objects contained within the explicitly requested items SHALL not be counted.
 ====
+
+[NOTE]
+The values for `minimum`, `maximum` and `default` are only examples and MAY be changed.

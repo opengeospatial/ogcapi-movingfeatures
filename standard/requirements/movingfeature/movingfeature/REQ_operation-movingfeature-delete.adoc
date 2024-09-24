@@ -14,7 +14,8 @@
 ====
 [%metadata]
 identifier:: /req/movingfeatures/mf-delete
-part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
+// part:: An implementation of the OGC API — Moving Features Standard SHALL comply with the OGC API — Features `DELETE` operation requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_operation_3[`/req/create-replace-delete/delete/delete-op`].
 part:: For every moving feature in a moving feature collection (path `{root}/collections/{collectionId}`), the server SHALL support the HTTP DELETE operation at the path `{root}/collections/{collectionId}/items/{mFeatureId}`
-part:: The path parameter `collectionId` is each `id` property in the *Collection* GET operation response where the value of the `itemType` property is specified as *movingfeature*. The path parameter `mFeatureId` is an `id` property of the moving feature.
+part:: The path parameter `collectionId` is each `id` property in the *Collection*(<<resource-collection-section>>) GET operation response where the value of the `itemType` property is specified as *movingfeature*. +
+The path parameter `mFeatureId` is an `id` property of *MovingFeatures*(<<resource-movingfeatures-section>>) GET response.
 ====

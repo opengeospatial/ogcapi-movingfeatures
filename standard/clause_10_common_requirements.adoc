@@ -2,12 +2,10 @@
 == Common Requirements
 
 include::requirements/common/requirements_class_common.adoc[]
-The following common requirements apply to all OGC APIs.
 
 === Parameters
 The query parameters link:http://docs.opengeospatial.org/DRAFTS/20-024.html#bbox-parameter-requirements[`bbox`], link:http://docs.opengeospatial.org/DRAFTS/20-024.html#datetime-parameter-requirements[`datetime`], and link:http://docs.opengeospatial.org/DRAFTS/20-024.html#limit-parameter-requirements[`limit`] are inherited from OGC API — Common.
 All requirements and recommendations in OGC API — Common regarding these parameters also apply to OGC API — Moving Features.
-No modifications are required.
 
 [[limit-section]]
 ==== Parameter limit
@@ -51,7 +49,7 @@ In addition, other error situations may occur in the transport layer outside of 
 |Status code |Description
 |`200` |A successful request.
 |`201` |The server has been fulfilled the operation and a new resource has been created.
-|`202` |A successful request, but the response is still being generated. The response will include a  `Retry-After` header field giving a recommendation in seconds for the client to retry.
+|`202` |A successful request, but the response is still being generated. The response will include a `Retry-After` header field giving a recommendation in seconds for the client to retry.
 |`204` |A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.
 |`304` |An entity tag was provided in the request and the resource has not been changed since the previous request.
 |`308` |The server cannot process the data through a synchronous request.  The response includes a `Location` header field which contains the URI of the location the result will be available at once the query is complete Asynchronous queries.
@@ -61,7 +59,9 @@ In addition, other error situations may occur in the transport layer outside of 
 |`404` |The requested resource does not exist on the server. For example, a path parameter had an incorrect value.
 |`405` |The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.
 |`406` |Content negotiation failed. For example, the `Accept` header submitted in the request did not support any of the media types supported by the server for the requested resource.
+|`412` |The status code indicates that one or more conditions given in the request header fields evaluated to false when tested by the server.
 |`413` |Request entity too large. For example, the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.
+|`415` |The server is refusing to service the request because the content is in a format not supported by this method on the target resource.
 |`500` |An internal error occurred in the server.
 !===
 

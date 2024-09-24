@@ -13,6 +13,11 @@
 ====
 [%metadata]
 identifier:: /req/mf-collection/collection-put-success
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/put-response`].
-part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/put-rid-exception`].
+// part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` response requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_response_2[`/req/create-replace-delete/put-response`].
+// part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` exception requirement link:http://docs.ogc.org/DRAFTS/20-002.html#_exceptions_2[`/req/create-replace-delete/put-rid-exception`].
+part:: A successful execution of the operation SHALL be reported as a response with an HTTP status code `200` or `204`.
+part:: If the operation is not executed immediately, but is added to a processing queue, the response SHALL have an HTTP status code `202`.
+part:: If the representation of the resource submitted in the request body contained a resource identifier, the server SHALL ignore this identifier.
+part:: If the target resource does not exist and the server does not support creating new resources using PUT, the server SHALL indicate an unsuccessful execution of the operation with an HTTP status code `404`.
+part:: If the request includes an `If-Match` header and the resource does not exist, the server SHALL not create a new resource and indicate an unsuccessful execution of the operation with an HTTP status code `412`.
 ====
