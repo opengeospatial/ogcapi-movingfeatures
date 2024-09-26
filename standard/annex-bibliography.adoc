@@ -2,8 +2,6 @@
 [[Bibliography]]
 == Bibliography
 
-//[[OGC-API-Features-4]]
-* [[[OGC-API-Features-4,Draft OGC 20-002]]], OGC: OGC API - Features - Part 4: Create, Replace, Update and Delete candidate Standard. (2020). https://docs.ogc.org/DRAFTS/20-002.html
 //[[OGC-API-Features]]
 * [[[OGC-API-Features,OGC API - Features website]]],  OGC: OGC API - Features website, https://ogcapi.ogc.org/features/
 //[[OGC-API-Common]]
