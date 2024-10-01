@@ -66,7 +66,7 @@ include::requirements/movingfeature/tgsequence/REQ_operation-tgsequence-post.ado
 The following example adds a new feature (link:https://docs.ogc.org/is/19-045r3/19-045r3.html#tprimitive[*_TemporalPrimitiveGeometry_* object] in <<OGC_19-045r3,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
 The feature is represented as a *_TemporalPrimitiveGeometry_* object in <<OGC_19-045r3,MF-JSON>>, which is an extension of the JSON.
 //And it added to the current temporal geometry object as continuously one, because the time difference between these two temporal geometry objects is less than (or equal to) the update frequency of the created Collection feature by the <<collections-post.adoc-example,Create a New Collection Example>>.
-A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+A pseudo-sequence diagram notation is used, below, to illustrate the details of the HTTP communication between the client and the server.
 
 [[tpgeometry-post-example]]
 .An Example of Creating a New TemporalPrimitiveGeometry Object:

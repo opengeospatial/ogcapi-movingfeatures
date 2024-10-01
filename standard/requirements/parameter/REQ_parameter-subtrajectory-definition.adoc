@@ -30,7 +30,7 @@ include::../../../openapi/parameters/subtrajectory.yaml[]
 
 [.component,class=part]
 --
-The `subTrajectory` parameter SHALL be used with `datetime` parameter.
+The `subTrajectory` parameter SHALL be used with a `datetime` parameter.
 --
 
 [.component,class=part]

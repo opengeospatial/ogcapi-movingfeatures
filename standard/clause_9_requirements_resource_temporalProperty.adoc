@@ -69,7 +69,7 @@ include::../openapi/schemas/temporalPrimitiveValue.yaml[]
 
 The following example adds a new feature (<<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> resource) to the feature created by <<tproperties-post-example,Creating a New TemporalProperty Object Example>>.
 The feature is represented as a JSON payload.
-A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+A pseudo-sequence diagram notation is used, below, to illustrate the details of the HTTP communication between the client and the server.
 
 [[temporalvalue-post-example]]
 .An Example of Creating a New TemporalPrimitiveValue Object:

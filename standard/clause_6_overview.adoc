@@ -3,11 +3,11 @@
 
 The OGC API - Moving Features Standard extends both the OGC API - Features Standard and the OGC API - Common Standard. The <<OGC-API-Features,OGC API — Features>> Standard enables access to resources using the HTTP protocol and its associated operations (GET, PUT, POST, DELETE, etc.).
 The <<OGC-API-Common,OGC API — Common>> Standard defines a set of capabilities that are applicable to all implementations of OGC API Standards.
-Other OGC Standards extend OGC API - Common with capabilities specific to a resource type.
+Other OGC API Standards extend OGC API - Common with capabilities specific to a resource type.
 
-The OGC API - Moving Features - Part 1: Core Standard defines an API with the goal to:
+The OGC API - Moving Features - Part 1: Core Standard defines an API with the goal of:
 
-* Provide a standard interface for creating (HTTP POST), retrieving (HTTP GET), updating (HTTP PUT), and deleting (HTTP DELETE) *_Moving Features_*, with conformance to the OGC Moving Features JSON Encoding Standard (<<OGC_19-045r3>>).
+* Providing a standard interface for creating (HTTP POST), retrieving (HTTP GET), updating (HTTP PUT), and deleting (HTTP DELETE) *_Moving Features_*, with conformance to the OGC Moving Features JSON Encoding Standard (<<OGC_19-045r3>>).
 
 Resources exposed through an implementation of an OGC API Standard may be accessed via a Uniform Resource Identifier (URI).
 The URI representation in this Standard is composed of three sections:

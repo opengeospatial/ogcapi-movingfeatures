@@ -51,7 +51,7 @@ include::../openapi/schemas/temporalProperty.yaml[]
 
 The following example adds a new feature (<<temporal-properties-object,*TemporalProperty* Object>> and link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#pvalues[*_ParametricValues_* Object] in <<OGC_19-045r3,MF-JSON>>) to the feature created by the <<movingfeature-post-example,Creation a MovingFeature Example>>.
 The feature is represented as a JSON payload.
-A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+A pseudo-sequence diagram notation is used, below, to illustrate the details of the HTTP communication between the client and the server.
 
 [[tproperties-post-example]]
 .An Example of Creating a New TemporalProperty Object:

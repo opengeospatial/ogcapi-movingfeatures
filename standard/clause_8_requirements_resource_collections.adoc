@@ -8,7 +8,7 @@ The *Collections* resource supports retrieving and creating operations via GET a
 
 ==== Operation
 ===== Retrieve
-The retrieve operation is defined in the `link:https://docs.ogc.org/DRAFTS/20-024.html#rc-collections-section[Collections]` conformance class of OGC API — Common.
+The retrieve operation is defined in the `link:https://docs.ogc.org/DRAFTS/20-024.html#rc-collections-section[Collections]` requirements class of OGC API — Common.
 No modifications are needed to support *MovingFeature* resources.
 
 . Issue a `GET` request on `{root}/collections` path
@@ -18,7 +18,7 @@ Support for the HTTP GET method on the `{root}/collections` path is specified as
 include::requirements/collection_catalog/collections/REQ_operation-collections-get.adoc[]
 
 ===== Create
-The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
+The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` section of the "Create/Replace/Delete" requirements class of OGC API — Features.
 This operation targets the <<resource-collection-section,*Collection*>> resource.
 
 . Issue a `POST` request on `{root}/collections` path
@@ -36,7 +36,7 @@ include::../openapi/schemas/requestBody/collection.yaml[]
 
 The following example adds a new feature (collection information object) to the feature collections.
 The feature is encoded as JSON.
-A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+A pseudo-sequence diagram notation is used, below, to illustrate the details of the HTTP communication between the client and the server.
 
 [[collections-post-example]]
 .An Example of Creating a New Collection:
@@ -59,7 +59,7 @@ include::../openapi/schemas/collections.yaml[]
 
 The following JSON payload is an example of a response to an OGC API — Moving Features *Collections* GET operation.
 [[collections-example]]
-.An Example of Collections JSON Payload:
+.An Example of a Collections JSON Payload:
 [source,json]
 ----
 include::../openapi/examples/collections.json[]

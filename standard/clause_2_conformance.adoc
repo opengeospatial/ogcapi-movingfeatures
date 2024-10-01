@@ -1,7 +1,7 @@
 == Conformance
 This Standard defines multiple requirements classes and conformance classes that describe different levels of conformance to the Standard.
 These requirements / conformance classes help to ensure interoperability between separate implementations of the Standard and enable data providers to specify which parts of the Standard they support.
-The standardization target is "Web APIs".
+The standardization targets are "Web APIs".
 
 The conformance classes specified in this Standard are:
 
@@ -14,7 +14,7 @@ This includes support for querying and retrieving information about moving featu
 Also, the conformance class enables clients to add, modify, or delete features from the server using HTTP POST, PUT, and DELETE requests.
 Lastly, the conformance class adds support for querying and retrieving features based on their temporal characteristics, such as their position at a specific time or their velocity over a given time interval.
 
-Implementers of the OGC API - Moving Features can choose which conformance classes they want to support based on the specific needs of their use case and the capabilities of their software. However, to be considered compliant with the Standard, an implementation shall support at least the Core conformance class.
+Implementers of the OGC API - Moving Features can choose which conformance classes they want to support based on the specific needs of their use case and the capabilities of their software. However, to be considered compliant with the Standard, an implementation shall support all the conformance classes listed in <<conf_class_uris>>.
 
 The URIs of the associated conformance classes are:
 
