@@ -12,7 +12,7 @@ The two resources defined in this Requirements Class are summarized in <<collect
 
 [[collection-resources]]
 .Moving Feature Collection Catalog Resources
-[width="90%",cols="10,10,5,20",options="header"]
+[width="90%",cols=",,,",options="header"]
 |===
 ^|Resource ^|URI ^|HTTP Method ^|Description
 .2+|<<resource-collections-section,*Collections*>>
