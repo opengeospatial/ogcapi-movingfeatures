@@ -31,7 +31,7 @@ include::requirements/collection_catalog/collection/REQ_mandatory-collection.ado
 
 ==== Operation
 ===== Retrieve
-The retrieve operation is defined in the OGC API — Common `https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection]` conformance class.
+The retrieve operation is defined in the `https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection]` section of the Collections requirements class of OGC API — Common.
 No modifications are required to support *MovingFeature* resources.
 
 . Issue a `GET` request on the `{root}/collections/{collectionId}` path

@@ -7,7 +7,7 @@
 |Test purpose   | Validate that the *TemporalGeometrySequence* complies with the required structure and contents.
 |Test method    |
 1. Validate that the `type` property is present and has a value of `MovingGeometryCollection` +
-2. Validate the `prism` property is present and that it is populated with an array of *TemporalPrimitiveGeometry* items +
+2. Validate that the `prism` property is present and that it is populated with an array of *TemporalPrimitiveGeometry* items +
 3. Validate that only *TemporalPrimitiveGeometry* which match the selection criteria are included in the *MovingFeature* +
 4. If the `links` property is present, validate that all entries comply with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links[/conf/core/fc-links] +
 5. If the `timeStamp` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp[/conf/core/fc-timeStamp] +

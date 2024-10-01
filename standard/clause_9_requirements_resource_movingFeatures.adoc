@@ -41,8 +41,8 @@ image::./images/subTrajectory-example.png[subtrajectory-example, pdfwidth=100%, 
 
 ==== Operation
 ===== Retrieve
-The retrieve operation is defined in the `Features` conformance class of OGC API — Features.
-Additional support for query parameter `subTrajectory` is needed to support the <<resource-movingfeatures-section,*MovingFeatures*>> resource.
+The retrieve operation is defined in the `Features` section of the 'Core' requirements class of OGC API — Features.
+Additional support for the `subTrajectory` query parameter is needed to support the <<resource-movingfeatures-section,*MovingFeatures*>> resource.
 
 . Issue a `GET` request on `{root}/collections/{collectionID}/items` path
 
@@ -50,7 +50,7 @@ Support for GET on the `{root}/collections/{collectionID}/items` path is require
 include::requirements/movingfeature/features/REQ_operation-features-get.adoc[]
 
 ===== Create
-The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` conformance class of OGC API — Features.
+The create operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#create[CREATE]` section of the "Create/Replace/Delete" requirements class of OGC API — Features.
 This operation targets a single or collection of <<resource-movingfeature-section,*MovingFeature*>> resources.
 
 . Issue a `POST` request on `{root}/collections/{collectionID}/items` path
@@ -60,7 +60,7 @@ Support for the HTTP POST method is specified as a requirement in OGC API — Fe
 include::requirements/movingfeature/features/REQ_operation-features-post.adoc[]
 
 The following example adds a new feature (link:https://docs.opengeospatial.org/is/19-045r3/19-045r3.html#mfeature[*_MovingFeature_* object] in <<OGC_19-045r3,MF-JSON>>) to the specific <<resource-collection-section,*Collection*>>.
-The feature is represented as *_MovingFeature_* object (or *_MovingFeatureCollection_* object) in MF-JSON.
+The feature is represented as a *_MovingFeature_* object (or *_MovingFeatureCollection_* object) in MF-JSON.
 A pseudo-sequence diagram notation is used, below, to illustrate the details of the HTTP communication between the client and the server.
 
 [[movingfeature-post-example]]
@@ -73,7 +73,7 @@ A successful response to the *MovingFeatures* GET operation is a document that c
 
 If the value of the `subTrajectory` query parameter is provided, the value of the corresponding `temporalGeometry` property of each moving feature is calculated using the `subTrajectory` parameter value and included in the result, i.e., a link:https://docs.ogc.org/is/19-045r3/19-045r3.html#mfeaturecollection[*_MovingFeatureCollection_* object] of <<OGC_19-045r3,MF-JSON>>.
 
-In a typical deployment of the OGC API - Moving Features, the *MovingFeatures* GET response will list <<resource-movingfeature-section,*MovingFeature*>> resource.
+In a typical deployment of the OGC API - Moving Features, the *MovingFeatures* GET response will list the <<resource-movingfeature-section,*MovingFeature*>> resources.
 
 include::requirements/movingfeature/features/REQ_response-features-get.adoc[]
 

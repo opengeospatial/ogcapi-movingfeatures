@@ -38,7 +38,7 @@ include::requirements/movingfeature/movingfeature/REQ_mandatory-movingfeature.ad
 
 ==== Operation
 ===== Retrieve
-The retrieve operation is defined in the `Feature` conformance class of OGC API — Features.
+The retrieve operation is defined in the `Feature` section of the "Core" requirements class of OGC API — Features.
 No modifications are needed to support <<resource-movingfeature-section,*MovingFeature*>> resources.
 
 . Issue a `GET` request on the `{root}/collections/{collectionId}/items/{mFeatureId}` path
@@ -52,7 +52,7 @@ Support for GET on the `{root}/collections/{collectionID}/items/{mFeatureId}` pa
 include::requirements/movingfeature/movingfeature/REQ_operation-movingfeature-get.adoc[]
 
 ===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` section of the "Create/Replace/Delete" requirements class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}` path
 

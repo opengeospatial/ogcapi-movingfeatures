@@ -48,7 +48,7 @@ In addition, other error situations may occur in the transport layer outside of 
 !===
 |Status code |Description
 |`200` |A successful request.
-|`201` |The server has been fulfilled the operation and a new resource has been created.
+|`201` |The server has fulfilled the operation and a new resource has been created.
 |`202` |A successful request, but the response is still being generated. The response will include a `Retry-After` header field giving a recommendation in seconds for the client to retry.
 |`204` |A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.
 |`304` |An entity tag was provided in the request and the resource has not been changed since the previous request.

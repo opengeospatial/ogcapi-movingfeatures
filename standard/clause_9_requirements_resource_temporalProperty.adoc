@@ -76,7 +76,7 @@ A pseudo-sequence diagram notation is used, below, to illustrate the details of 
 include::examples/temporalValue-post.adoc[]
 
 ===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` section of the "Create/Replace/Delete" requirements class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
