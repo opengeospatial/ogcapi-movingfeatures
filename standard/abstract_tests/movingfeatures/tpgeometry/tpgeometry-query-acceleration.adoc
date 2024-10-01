@@ -29,7 +29,7 @@ target:: /per/movingfeatures/tpgeometry-query
 target:: /req/movingfeatures/tpgeometry-query
 target:: /req/movingfeatures/tpgeometry-query-success
 target:: /req/common/param-datetime
-test-purpose:: Validate that resources can be identified and extracted from a *TemporalPrimitiveGeometry* with a `Acceleration` query using query parameters.
+test-purpose:: Validate that resources can be identified and extracted from a *TemporalPrimitiveGeometry* with an `Acceleration` query using query parameters.
 test-method::
 +
 --

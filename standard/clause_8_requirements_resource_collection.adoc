@@ -22,16 +22,16 @@ The schema for the collection information object presented in this clause is an 
 |*_updateFrequency_*  |O |A time interval of sampling location. The time unit of this property is millisecond.
 |===
 
-NOTE: The _id_, _title_, _description_, _links_, _extent_, and _itemsType_ properties were inherited from link:https://docs.ogc.org/DRAFTS/20-024.html#collection-description[OGC API — Common] and link:https://docs.ogc.org/is/17-069r3/17-069r3.html#_collections_[OGC API — Features].
+NOTE: The _id_, _title_, _description_, _links_, _extent_, and _itemType_ properties were inherited from link:https://docs.ogc.org/DRAFTS/20-024.html#collection-description[OGC API — Common] and link:https://docs.ogc.org/is/17-069r3/17-069r3.html#_collections_[OGC API — Features].
 
-NOTE: An update frequency is one of the most important properties of moving feature collection.
+NOTE: An update frequency is one of the most important properties of a moving feature collection.
 The update frequency can be used to handle the continuity of the moving feature's trajectory.
 
 include::requirements/collection_catalog/collection/REQ_mandatory-collection.adoc[]
 
 ==== Operation
 ===== Retrieve
-The retrieve operation is defined in the OGC API — Common `https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection]` conformance class.
+The retrieve operation is defined in the `https://docs.ogc.org/DRAFTS/20-024.html#collection-description[Collection]` section of the Collections requirements class of OGC API — Common.
 No modifications are required to support *MovingFeature* resources.
 
 . Issue a `GET` request on the `{root}/collections/{collectionId}` path
@@ -45,7 +45,7 @@ Support for the `{root}/collections/{collectionId}` path is required by OGC API 
 include::requirements/collection_catalog/collection/REQ_operation-collection-get.adoc[]
 
 ===== Replace
-The replace operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#replace[REPLACE]` conformance class of OGC API — Features.
+The replace operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#replace[REPLACE]` section of the "Create/Replace/Delete" requirements class of OGC API — Features.
 This operation targets the <<resource-collection-section,*Collection*>> resource.
 
 . Issue a `PUT` request on `{root}/collections/{collectionId}` path
@@ -65,7 +65,7 @@ A pseudo-sequence diagram notation is used to illustrate the details of the HTTP
 include::examples/collection-put.adoc[]
 
 ===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` section of the "Create/Replace/Delete" requirements class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}` path
 

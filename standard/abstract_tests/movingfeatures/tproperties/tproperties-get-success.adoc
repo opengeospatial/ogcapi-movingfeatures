@@ -8,7 +8,7 @@
 |Test method    |
 1. Validate the *TemporalProperties* property is present and that it is populated with an array of <<tproperty-schema, TemporalProperty>> items +
 2. Validate that the `name` and `type` property is present +
-3. Validate the `type` property is present and its value is one of the predefined values (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage') +
+3. Validate that the `type` property is present and its value is one of the predefined values (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage') +
 4. If the `links` property is present, validate that all entries comply with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links[/conf/core/fc-links] +
 5. If the `timeStamp` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp[/conf/core/fc-timeStamp] +
 6. If the `numberMatched` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched[/conf/core/fc-numberMatched] +
@@ -22,13 +22,13 @@
 [%metadata]
 identifier:: /conf/movingfeatures/tproperties-get-success
 target:: /req/movingfeatures/tproperties-get-success
-test-purpose:: Validate that the *TemporalProperties* complies with the required structure and contents.
+test-purpose:: Validate that the *TemporalProperties* property complies with the required structure and contents.
 test-method::
 +
 --
-1. Validate the *TemporalProperties* property is present and that it is populated with an array of <<tproperty-schema, TemporalProperty>> items +
+1. Validate that the *TemporalProperties* property is present and that it is populated with an array of <<tproperty-schema, TemporalProperty>> items +
 2. Validate that the `name` and `type` property is present +
-3. Validate the `type` property is present and its value is one of the predefined values (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage') +
+3. Validate that the `type` property is present and its value is one of the predefined values (i.e., one of 'TBoolean', 'TText', 'TInteger', 'TReal', and 'TImage') +
 4. If the `links` property is present, validate that all entries comply with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-links[/conf/core/fc-links] +
 5. If the `timeStamp` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-timeStamp[/conf/core/fc-timeStamp] +
 6. If the `numberMatched` property is present, validate that it complies with OGC API — Features link:https://docs.opengeospatial.org/is/17-069r4/17-069r4.html#ats_core_fc-numberMatched[/conf/core/fc-numberMatched] +

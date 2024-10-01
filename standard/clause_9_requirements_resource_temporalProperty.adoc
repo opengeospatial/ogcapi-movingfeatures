@@ -69,14 +69,14 @@ include::../openapi/schemas/temporalPrimitiveValue.yaml[]
 
 The following example adds a new feature (<<resource-temporalPrimitiveValue-section,*TemporalPrimitiveValue*>> resource) to the feature created by <<tproperties-post-example,Creating a New TemporalProperty Object Example>>.
 The feature is represented as a JSON payload.
-A pseudo-sequence diagram notation is used to illustrate the details of the HTTP communication between the client and the server.
+A pseudo-sequence diagram notation is used, below, to illustrate the details of the HTTP communication between the client and the server.
 
 [[temporalvalue-post-example]]
 .An Example of Creating a New TemporalPrimitiveValue Object:
 include::examples/temporalValue-post.adoc[]
 
 ===== Delete
-The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` conformance class of OGC API — Features.
+The delete operation is defined in the `link:http://docs.ogc.org/DRAFTS/20-002.html#delete[DELETE]` section of the "Create/Replace/Delete" requirements class of OGC API — Features.
 
 . Issue a `DELETE` request on `{root}/collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}` path
 
