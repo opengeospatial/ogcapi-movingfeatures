@@ -22,7 +22,7 @@ Where:
 
 [[temporalGeometry-query-table]]
 .Table of the query resources
-[cols="40,10,40",options="header"]
+[cols=",,",options="header"]
 |===
 |Path Template      |Query Type |Description
 |`{root}/collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/distance`   |Distance

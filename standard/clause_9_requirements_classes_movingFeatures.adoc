@@ -12,7 +12,7 @@ The seven resources defined in this Requirements Class are summarized in <<mf-re
 
 [[mf-resources]]
 .MovingFeatures Resources
-[width="90%",cols="10,10,10",options="header"]
+[width="90%",cols=",,",options="header"]
 |===
 ^|Resource ^|URI ^|HTTP Method
 |<<resource-movingfeatures-section,*MovingFeatures*>>
