@@ -295,7 +295,7 @@ paths:
                     - '2011-07-15T00:01:01.450Z'
                   length:
                     type: Measure
-                    form: http://www.qudt.org/qudt/owl/1.0.0/quantity/Length
+                    form: http://qudt.org/vocab/quantitykind/Length
                     values:
                       - 1
                       - 2.4
@@ -687,7 +687,7 @@ paths:
                   - '2011-07-15T00:01:01.450Z'
                 length:
                   type: Measure
-                  form: http://www.qudt.org/qudt/owl/1.0.0/quantity/Length
+                  form: http://qudt.org/vocab/quantitykind/Length
                   values:
                     - 1
                     - 2.4
@@ -2194,7 +2194,7 @@ components:
                   - '2011-07-14T22:01:08.000Z'
                 length:
                   type: Measure
-                  form: http://www.qudt.org/qudt/owl/1.0.0/quantity/Length
+                  form: http://qudt.org/vocab/quantitykind/Length
                   values:
                     - 1
                     - 2.4

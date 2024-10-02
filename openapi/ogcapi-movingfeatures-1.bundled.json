@@ -434,7 +434,7 @@
                     ],
                     "length": {
                       "type": "Measure",
-                      "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length",
+                      "form": "http://qudt.org/vocab/quantitykind/Length",
                       "values": [
                         1,
                         2.4,
@@ -1030,7 +1030,7 @@
                   ],
                   "length": {
                     "type": "Measure",
-                    "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length",
+                    "form": "http://qudt.org/vocab/quantitykind/Length",
                     "values": [
                       1,
                       2.4,
@@ -3186,7 +3186,7 @@
                   ],
                   "length": {
                     "type": "Measure",
-                    "form": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Length",
+                    "form": "http://qudt.org/vocab/quantitykind/Length",
                     "values": [
                       1,
                       2.4,
