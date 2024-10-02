@@ -30,4 +30,4 @@ The URIs of the associated conformance classes are:
 
 Conformance with this Standard shall be checked using all the relevant tests specified in <<clause-ATS, Annex A>> of this document.
 The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the
-link:https://docs.ogc.org/pol/08-134r11.html[OGC Compliance Testing Policies and Procedures] and the link:https://cite.ogc.org/teamengine/[OGC Compliance Testing website].
+link:https://docs.ogc.org/pol/08-134r11.html[OGC Compliance Testing Policies and Procedures] and the link:https://cite.ogc.org/teamengine/[OGC Compliance Testing website]. The schemas and example API definition documents specified in this Standard can be found in the https://schemas.opengis.net/ogcapi/movingfeatures/part1/1.0/[OGC Schema Repository].
