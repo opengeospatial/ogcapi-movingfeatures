@@ -64,7 +64,7 @@
  |            ],                                                            |
  |         "length": {                                                      |
  |            "type": "Measure",                                            |
- |            "form": "http://qudt.org/vocab/quantitykind/Length", |
+ |            "form": "http://qudt.org/vocab/quantitykind/Length",          |
  |            "values": [1,2.4,1],                                          |
  |            "interpolation": "Linear",                                    |
  |            "description": "description1"                                 |
