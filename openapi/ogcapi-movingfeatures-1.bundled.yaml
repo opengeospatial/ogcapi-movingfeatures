@@ -2,18 +2,15 @@ openapi: 3.0.3
 info:
   title: 'Building Blocks specified in OGC API - Moving Features - Part 1: Core'
   version: 1.0.0
-  description: This is the OpenAPI definition of Moving Features API specification that conforms to the OGC Moving Features Encoding Extension - JSON.
+  description: 'This is the OpenAPI definition of the OGC API - Moving Features - Part 1: Core Standard. The API also implements the OGC Moving Features Encoding Extension - JSON Standard.'
   contact:
-    name: OGC Moving Features SWG
-    email: moving-features.swg-bounces@lists.ogc.org
+    name: Open Geospatial Consortium
+    email: info@ogc.org
   license:
     name: OGC License
-    url: https://www.ogc.org/ogc/Document
+    url: https://www.ogc.org/legal/
   x-logo:
     url: https://www.ogc.org/pub/www/files/OGC_Logo_2D_Blue_x_0_0.png
-    backgroundColor: '#FFFFFF'
-    altText: OGC logo
-    href: https://www.ogc.org/contacts
 tags:
   - name: Capabilities
     description: Essential characteristics of the information available from the API.
