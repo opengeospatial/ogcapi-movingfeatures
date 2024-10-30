@@ -1,0 +1,36 @@
+== Implementations
+
+=== Services
+
+[#table_implementation,reftext='{table-caption} {counter:table-num}']
+.Service implementations
+[cols=",,",width="75%",options="header",align="center"]
+|===
+|Implementation | Type | Contact
+
+| https://github.com/aistairc/mf-api[mf-api]
+| OGC API - Moving Features
+| https://github.com/TaehoonK[Taehoon Kim]
+
+| https://dive.pygeoapi.io/standards/#[pygeoapi (planned)]
+| OGC API - Moving Features
+| https://github.com/tomkralidis[Tom Kralidis]
+
+| TBA
+| TBA
+| TBA
+|===
+
+
+=== Clients
+
+[#table_implementation,reftext='{table-caption} {counter:table-num}']
+.Client implementations
+[cols=",,",width="75%",options="header",align="center"]
+|===
+|Implementation | Type | Contact
+
+| TBA
+| TBA
+| TBA
+|===
