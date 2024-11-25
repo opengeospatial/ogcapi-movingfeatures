@@ -12,9 +12,9 @@
 | OGC API - Moving Features
 | https://github.com/TaehoonK[Taehoon Kim]
 
-| https://dive.pygeoapi.io/standards/#[pygeoapi (planned)]
+| https://github.com/aistairc/pygeoapi-mf-api[pygeoapi (work-in-progress)]
 | OGC API - Moving Features
-| https://github.com/tomkralidis[Tom Kralidis]
+| https://github.com/TaehoonK[Taehoon Kim] and https://github.com/tomkralidis[Tom Kralidis]
 
 | TBA
 | TBA
@@ -30,7 +30,7 @@
 |===
 |Implementation | Type | Contact
 
-| TBA
-| TBA
-| TBA
+| https://github.com/aistairc/mf-cesium[STINUUM]
+| OGC API - Moving Features, OGC Moving Features JSON
+| https://github.com/breeze0512[Wijae Cho] and https://github.com/TaehoonK[Taehoon Kim]
 |===
