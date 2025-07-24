@@ -160,7 +160,7 @@ paths:
         
         The request body schema is the same the POST's one. 
         
-        However, `updateFrequency` property is NOT updated.
+        However, `samplingInterval` property is NOT updated.
       tags:
         - MovingFeatureCollection
       parameters:

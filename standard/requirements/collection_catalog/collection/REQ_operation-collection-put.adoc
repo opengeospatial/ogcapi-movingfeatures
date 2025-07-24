@@ -5,8 +5,8 @@
 ^|*Requirement {counter:req-id}* |*/req/mf-collection/collection-put*
 ^|A |An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` operation requirement http://docs.ogc.org/DRAFTS/20-002.html#_operation_2[`/req/create-replace-delete/update-put-op`].
 ^|B |An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[`/req/create-replace-delete/update-put-body` and `/req/create-replace-delete/update-put-content-type`].
-^|C |The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>, except `updateFrequency`. +
-If the `updateFrequency` is included in the request body, the server SHALL ignore it.
+^|C |The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>, except `samplingInterval`. +
+If the `samplingInterval` is included in the request body, the server SHALL ignore it.
 |===
 ////
 
@@ -19,8 +19,8 @@ identifier:: /req/mf-collection/collection-put
 // part:: An implementation of the OGC API - Moving Features Standard SHALL comply with the OGC API — Features `PUT` request body requirements http://docs.ogc.org/DRAFTS/20-002.html#_request_body_2[`/req/create-replace-delete/put-body` and `/req/create-replace-delete/put-content-type`].
 part:: For every resource in the collection, the server SHALL support the HTTP PUT operation.
 part:: The `Content-Type` header SHALL be used to indicate the media type of the request body containing the representation of the new resource content.
-part:: The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>, except `updateFrequency`. +
-If the `updateFrequency` is included in the request body, the server SHALL ignore it.
+part:: The content of the request body SHALL be based upon the <<collection-requestbody-schema, *Collection* request body schema>>, except `samplingInterval`. +
+If the `samplingInterval` is included in the request body, the server SHALL ignore it.
 ====
 
 [NOTE]

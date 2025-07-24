@@ -126,7 +126,7 @@
               },
               "example": {
                 "title": "moving_feature_collection_sample",
-                "updateFrequency": 1000,
+                "samplingInterval": 1000,
                 "description": "example",
                 "itemType": "movingfeature"
               }
@@ -204,7 +204,7 @@
       "put": {
         "operationId": "replaceMetadata",
         "summary": "Replace metadata about the collection",
-        "description": "A user SHOULD replace metadata with id `collectionId`.\n\nThe request body schema is the same the POST's one. \n\nHowever, `updateFrequency` property is NOT updated.\n",
+        "description": "A user SHOULD replace metadata with id `collectionId`.\n\nThe request body schema is the same the POST's one. \n\nHowever, `samplingInterval` property is NOT updated.\n",
         "tags": [
           "MovingFeatureCollection"
         ],
@@ -221,7 +221,7 @@
               },
               "example": {
                 "title": "moving_feature_collection_sample",
-                "updateFrequency": 1000,
+                "samplingInterval": 1000,
                 "description": "example",
                 "itemType": "movingfeature"
               }
@@ -1504,7 +1504,7 @@
               "https://www.opengis.net/def/crs/EPSG/0/4326"
             ]
           },
-          "updateFrequency": {
+          "samplingInterval": {
             "description": "a time interval of sampling location. The unit is millisecond.",
             "type": "number"
           }
@@ -1541,7 +1541,7 @@
             "description": "human readable title of the collection",
             "type": "string"
           },
-          "updateFrequency": {
+          "samplingInterval": {
             "description": "a time interval of sampling location. The unit is millisecond.",
             "type": "number"
           },
@@ -2719,7 +2719,7 @@
                   "title": "MovingFeatureCollection_1",
                   "description": "a collection of moving features to manage data in a distinct (physical or logical) space",
                   "itemType": "movingfeature",
-                  "updateFrequency": 1000,
+                  "samplingInterval": 1000,
                   "extent": {
                     "spatial": {
                       "bbox": [
@@ -2769,7 +2769,7 @@
               "id": "mfc-1",
               "title": "moving_feature_collection_sample",
               "itemType": "movingfeature",
-              "updateFrequency": 1000,
+              "samplingInterval": 1000,
               "extent": {
                 "spatial": {
                   "bbox": [

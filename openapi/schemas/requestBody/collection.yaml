@@ -5,7 +5,7 @@ properties:
   title:
     description: human readable title of the collection
     type: string
-  updateFrequency:
+  samplingInterval:
     description: a time interval of sampling location. The unit is millisecond.
     type: number
   description:
