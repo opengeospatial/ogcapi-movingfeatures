@@ -35,7 +35,7 @@ Only features that have a temporal primitive geometry (and temporal primitive va
 --
 [.component,class=part]
 --
-Temporal primitive geometries (and temporal primitive values) are a half-bounded time interval (i.e., *_(t_s, t_e + updateFrequency]_*). The parameter value SHALL conform to the following syntax (using link:https://tools.ietf.org/html/rfc5234[ABNF]):
+Temporal primitive geometries (and temporal primitive values) are a half-bounded time interval (i.e., *_(t_s, t_e + samplingInterval]_*). The parameter value SHALL conform to the following syntax (using link:https://tools.ietf.org/html/rfc5234[ABNF]):
 [source]
 interval-bounded            = date-time "/" date-time
 interval-half-bounded-start = [".."] "/" date-time
